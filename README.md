@@ -13,6 +13,8 @@
 
 **FlytBase AHC SWE Hackathon · 17 Oct 2026 · built by [Arnav Bule](https://github.com/GODOSTROYER)**
 
+**[🎬 Demo video (4:58)](https://drive.google.com/file/d/1KwvtZFQxvvZBo5SuvqWYeBQuoQAiOWl1/view?usp=sharing) · [📄 Report (PDF)](https://drive.google.com/file/d/11CjfCpPdzDSVMne5zPIL03zHPk6Ji_zO/view?usp=sharing) · [🌐 Live showcase](https://asset-intelligence-copilot-iota.vercel.app) · [📋 All 21 final answers](submission/final-run/FINAL_ANSWERS.md)**
+
 <img src="app/docs/screenshots/desktop-status.png" alt="The copilot answering 'Is WELL-0001 producing oil right now?' with a status card, an evidence trail and cited sources" width="900">
 
 </div>
@@ -77,7 +79,7 @@ Of the 21 turns, 19 ran on the hosted Gemini planner and 2 on the deterministic 
 | Metric | Value |
 |---|---|
 | Load + index, test set | about **4 s** for 600 wells and **149,877** evidence documents |
-| Hosted answer latency (final run, 18 hosted turns) | median about 5 s; fastest 1.6 s; slowest 11 s |
+| Hosted answer latency (final run, 19 of 21 turns hosted) | median about 5 s; fastest 1.6 s; slowest 11 s |
 | Provider timeout cap | 25 s, then deterministic fallback |
 | Cost | free-tier Gemini keys with app-side rate caps and a 10-minute plan cache |
 
@@ -407,8 +409,11 @@ Never commit `.env.local`; it is git-ignored.
 
 ## Demo video and report
 
-- **Report:** [`submission/FINAL_REPORT.md`](submission/FINAL_REPORT.md) (a PDF version is placed in [`submission/report/`](submission/report) when available).
-- **Demo video:** (Google Drive link)
+- **Demo video (4:58):** [Google Drive](https://drive.google.com/file/d/1KwvtZFQxvvZBo5SuvqWYeBQuoQAiOWl1/view?usp=sharing).
+  - The first 2 minutes cover the system and its architecture.
+  - The next 3 minutes are a real end-to-end scenario recorded in the live app on the 600-well test set: recalled pumps, a first-hand and a second-hand claim kept unconfirmed and attributed, the OPS-1 gas-response audit, and triage.
+- **Report (3-page PDF):** [Google Drive](https://drive.google.com/file/d/11CjfCpPdzDSVMne5zPIL03zHPk6Ji_zO/view?usp=sharing), also [`submission/report/FINAL_REPORT.pdf`](submission/report/FINAL_REPORT.pdf) in this repo. The Markdown source is [`submission/FINAL_REPORT.md`](submission/FINAL_REPORT.md).
+- **Live showcase:** [asset-intelligence-copilot-iota.vercel.app](https://asset-intelligence-copilot-iota.vercel.app), with the video, report, scorecard and architecture.
 - The video is built with HyperFrames from [`video/`](video): storyboard, design spec and HTML compositions. Voice-over audio and rendered output are not in the repo; `cd video && npm run dev` previews the compositions.
 
 ## Engineering decisions and trade-offs
