@@ -1,0 +1,7 @@
+{
+  "scene": "05-visuals",
+  "duration_s": 14.5,
+  "rules": ["orbit-3d-entry", "split-tilt-cards", "card-morph-anchor", "svg-path-draw", "sine-wave-loop"],
+  "exit": { "vector": "slow camera push scale 1.0->1.03 over 3.65s (~8 px/s at frame edges) plus +/-4 px y float on the four grid cards (~3 px/s) and amber/blue pulse rings; no exit tween", "still_moving": true },
+  "entry": { "vector": "empty grid/glow at rest at t=0; line-chart card flips in from +640 px x, -70deg rotateY, z -420 starting t=0.1 (about -750 px/s at onset, opacity ramps 0->1 in 0.35s)", "from_rest": true }
+}

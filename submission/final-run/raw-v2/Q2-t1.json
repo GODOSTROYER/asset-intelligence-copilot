@@ -1,0 +1,658 @@
+{
+  "q": "Q2",
+  "turn": 1,
+  "asker": "Hayes",
+  "userId": "U-301",
+  "question": "Which well produced the most oil in 2026?",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 10210
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 10210,
+  "response": {
+    "userId": "U-301",
+    "response": {
+      "answer": "The data cannot name the well that produced the most oil in 2026. It holds no oil production volumes (barrels, rates, meter, allocation or tank readings) for any well.\nWhat I scanned: field names in inspection, repair, note, regulatory and metadata records (68 field names in all) and document text. Volume-like fields found: none. The only barrel-valued field is spill_est_volume_bbl, the estimated volume of crude spilled, which is not production. Repair cost and downtime are not production either.\nWhat I can offer is a labelled proxy, not oil volume: producing weeks in the period, meaning inspection readings (about one per week) on which wellhead minus ambient meets the well type's manual threshold (T200 15 C, T350 20 C, T500 25 C above ambient; the type in force on each reading date is used). The maximum is 53 producing readings out of 53, and 52 wells tie at that maximum; another 89 wells have 52. The proxy cannot rank them, and a higher-capacity well type may produce more oil than a smaller one with the same uptime.\nTied wells, listed by least repair downtime in the period as a secondary proxy (still not oil volume): WELL-0147 (T200, Northeast Block 7, 53/53 readings, 22 h downtime); WELL-0315 (T350, Northwest Block 12, 53/53 readings, 22 h downtime); WELL-0008 (T200, Southwest Block 23, 53/53 readings, 24 h downtime); WELL-0266 (T350, Northeast Block 8, 53/53 readings, 25 h downtime); WELL-0242 (T500, Southeast Block 31, 53/53 readings, 27 h downtime); WELL-0497 (T350, Southeast Block 32, 53/53 readings, 27 h downtime); WELL-0530 (T350, Southeast Block 32, 53/53 readings, 27 h downtime); WELL-0480 (T200, Southeast Block 32, 53/53 readings, 29 h downtime); WELL-0327 (T200, Northwest Block 12, 53/53 readings, 30 h downtime); WELL-0339 (T350, Northwest Block 12, 53/53 readings, 30 h downtime); and 42 more.\nTo answer properly the data would need production volumes per well (allocated or metered oil barrels, tank gauge or SCADA flow-rate history) for the period.",
+      "visualization": {
+        "type": "table",
+        "title": "Producing-weeks proxy, tied top wells (not oil volume)",
+        "columns": [
+          "Well",
+          "Type",
+          "Area",
+          "Producing readings",
+          "Readings",
+          "Downtime h (secondary)"
+        ],
+        "rows": [
+          [
+            "WELL-0147",
+            "T200",
+            "Northeast Block 7",
+            53,
+            53,
+            22
+          ],
+          [
+            "WELL-0315",
+            "T350",
+            "Northwest Block 12",
+            53,
+            53,
+            22
+          ],
+          [
+            "WELL-0008",
+            "T200",
+            "Southwest Block 23",
+            53,
+            53,
+            24
+          ],
+          [
+            "WELL-0266",
+            "T350",
+            "Northeast Block 8",
+            53,
+            53,
+            25
+          ],
+          [
+            "WELL-0242",
+            "T500",
+            "Southeast Block 31",
+            53,
+            53,
+            27
+          ],
+          [
+            "WELL-0497",
+            "T350",
+            "Southeast Block 32",
+            53,
+            53,
+            27
+          ],
+          [
+            "WELL-0530",
+            "T350",
+            "Southeast Block 32",
+            53,
+            53,
+            27
+          ],
+          [
+            "WELL-0480",
+            "T200",
+            "Southeast Block 32",
+            53,
+            53,
+            29
+          ],
+          [
+            "WELL-0327",
+            "T200",
+            "Northwest Block 12",
+            53,
+            53,
+            30
+          ],
+          [
+            "WELL-0339",
+            "T350",
+            "Northwest Block 12",
+            53,
+            53,
+            30
+          ],
+          [
+            "WELL-0364",
+            "T200",
+            "Northwest Block 12",
+            53,
+            53,
+            30
+          ],
+          [
+            "WELL-0371",
+            "T200",
+            "Northwest Block 12",
+            53,
+            53,
+            30
+          ],
+          [
+            "WELL-0594",
+            "T200",
+            "Southeast Block 32",
+            53,
+            53,
+            30
+          ],
+          [
+            "WELL-0016",
+            "T200",
+            "Southwest Block 23",
+            53,
+            53,
+            31
+          ],
+          [
+            "WELL-0051",
+            "T200",
+            "Southwest Block 24",
+            53,
+            53,
+            31
+          ],
+          [
+            "WELL-0230",
+            "T500",
+            "Southeast Block 31",
+            53,
+            53,
+            31
+          ],
+          [
+            "WELL-0024",
+            "T350",
+            "Southwest Block 23",
+            53,
+            53,
+            32
+          ],
+          [
+            "WELL-0228",
+            "T500",
+            "Southeast Block 31",
+            53,
+            53,
+            32
+          ],
+          [
+            "WELL-0223",
+            "T500",
+            "Southeast Block 31",
+            53,
+            53,
+            33
+          ],
+          [
+            "WELL-0231",
+            "T200",
+            "Southeast Block 31",
+            53,
+            53,
+            34
+          ],
+          [
+            "WELL-0106",
+            "T200",
+            "Northeast Block 7",
+            53,
+            53,
+            35
+          ],
+          [
+            "WELL-0539",
+            "T200",
+            "Southeast Block 32",
+            53,
+            53,
+            35
+          ],
+          [
+            "WELL-0212",
+            "T500",
+            "Southeast Block 31",
+            53,
+            53,
+            36
+          ],
+          [
+            "WELL-0343",
+            "T200",
+            "Northwest Block 12",
+            53,
+            53,
+            36
+          ],
+          [
+            "WELL-0440",
+            "T500",
+            "Northwest Block 12",
+            53,
+            53,
+            36
+          ]
+        ]
+      },
+      "citations": [
+        {
+          "id": "OM-T200",
+          "title": "T200 operating manual",
+          "type": "manual",
+          "path": "dataset/fleet/well-types/T200.md",
+          "excerpt": "A T200 well is considered **producing (active)** when its wellhead temperature is at least **15 °C above ambient** air temperature at the time of the reading. A difference below 15 °C means the well is **not producing** for that reading, whatever the absolute temperature."
+        },
+        {
+          "id": "OM-T350",
+          "title": "T350 operating manual",
+          "type": "manual",
+          "path": "dataset/fleet/well-types/T350.md",
+          "excerpt": "Because T350 fluid comes from a deeper, hotter zone, a T350 well is considered **producing (active)** only when its wellhead temperature is at least **20 °C above ambient** air temperature at the time of the reading."
+        },
+        {
+          "id": "OM-T500",
+          "title": "T500 operating manual",
+          "type": "manual",
+          "path": "dataset/fleet/well-types/T500.md",
+          "excerpt": "ESP wells move more fluid, and the motor adds heat. A T500 well is considered **producing (active)** only when its wellhead temperature is at least **25 °C above ambient** air temperature at the time of the reading. Below 25 °C the well is **not producing** for that reading."
+        },
+        {
+          "id": "WELL-0147",
+          "title": "Well details · WELL-0147",
+          "type": "well",
+          "path": "dataset/assets/WELL-0147/metadata.json",
+          "excerpt": "asset id: WELL-0147 · name: NE-07 Well 147 · asset category: oil_well · well type: T200 · area id: NE-07 · team id: TEAM-NE · in charge user id: U-201 · installed on: 2019-02-22 · recorded status: active",
+          "assetId": "WELL-0147"
+        },
+        {
+          "id": "WELL-0315",
+          "title": "Well details · WELL-0315",
+          "type": "well",
+          "path": "dataset/assets/WELL-0315/metadata.json",
+          "excerpt": "asset id: WELL-0315 · name: NW-12 Well 315 · asset category: oil_well · well type: T350 · area id: NW-12 · team id: TEAM-NW · in charge user id: U-601 · installed on: 2010-04-06 · recorded status: active",
+          "assetId": "WELL-0315"
+        },
+        {
+          "id": "WELL-0008",
+          "title": "Well details · WELL-0008",
+          "type": "well",
+          "path": "dataset/assets/WELL-0008/metadata.json",
+          "excerpt": "asset id: WELL-0008 · name: SW-23 Well 008 · asset category: oil_well · well type: T200 · area id: SW-23 · team id: TEAM-SW · in charge user id: U-101 · installed on: 2016-06-02 · recorded status: active",
+          "assetId": "WELL-0008"
+        },
+        {
+          "id": "WELL-0266",
+          "title": "Well details · WELL-0266",
+          "type": "well",
+          "path": "dataset/assets/WELL-0266/metadata.json",
+          "excerpt": "asset id: WELL-0266 · name: NE-08 Well 266 · asset category: oil_well · well type: T350 · area id: NE-08 · team id: TEAM-NE · in charge user id: U-201 · installed on: 2019-04-02 · recorded status: active",
+          "assetId": "WELL-0266"
+        },
+        {
+          "id": "WELL-0242",
+          "title": "Well details · WELL-0242",
+          "type": "well",
+          "path": "dataset/assets/WELL-0242/metadata.json",
+          "excerpt": "asset id: WELL-0242 · name: SE-31 Well 242 · asset category: oil_well · well type: T500 · area id: SE-31 · team id: TEAM-SE · in charge user id: U-501 · installed on: 2024-05-16 · recorded status: active",
+          "assetId": "WELL-0242"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [
+        "WELL-0147",
+        "WELL-0315",
+        "WELL-0008",
+        "WELL-0266",
+        "WELL-0242",
+        "WELL-0497",
+        "WELL-0530",
+        "WELL-0480",
+        "WELL-0327",
+        "WELL-0339"
+      ],
+      "trace": [
+        {
+          "tool": "gemini_planner",
+          "detail": "Structured plan validated: data_availability. Only this user’s last five exchanges were supplied.",
+          "durationMs": 9421
+        },
+        {
+          "tool": "data_availability",
+          "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+          "durationMs": 783
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "hosted"
+      },
+      "durationMs": 10204
+    },
+    "history": [
+      {
+        "userText": "Which well produced the most oil in 2026?",
+        "answer": "The data cannot name the well that produced the most oil in 2026. It holds no oil production volumes (barrels, rates, meter, allocation or tank readings) for any well.\nWhat I scanned: field names in inspection, repair, note, regulatory and metadata records (68 field names in all) and document text. Volume-like fields found: none. The only barrel-valued field is spill_est_volume_bbl, the estimated volume of crude spilled, which is not production. Repair cost and downtime are not production either.\nWhat I can offer is a labelled proxy, not oil volume: producing weeks in the period, meaning inspection readings (about one per week) on which wellhead minus ambient meets the well type's manual threshold (T200 15 C, T350 20 C, T500 25 C above ambient; the type in force on each reading date is used). The maximum is 53 producing readings out of 53, and 52 wells tie at that maximum; another 89 wells have 52. The proxy cannot rank them, and a higher-capacity well type may produce more oil than a smaller one with the same uptime.\nTied wells, listed by least repair downtime in the period as a secondary proxy (still not oil volume): WELL-0147 (T200, Northeast Block 7, 53/53 readings, 22 h downtime); WELL-0315 (T350, Northwest Block 12, 53/53 readings, 22 h downtime); WELL-0008 (T200, Southwest Block 23, 53/53 readings, 24 h downtime); WELL-0266 (T350, Northeast Block 8, 53/53 readings, 25 h downtime); WELL-0242 (T500, Southeast Block 31, 53/53 readings, 27 h downtime); WELL-0497 (T350, Southeast Block 32, 53/53 readings, 27 h downtime); WELL-0530 (T350, Southeast Block 32, 53/53 readings, 27 h downtime); WELL-0480 (T200, Southeast Block 32, 53/53 readings, 29 h downtime); WELL-0327 (T200, Northwest Block 12, 53/53 readings, 30 h downtime); WELL-0339 (T350, Northwest Block 12, 53/53 readings, 30 h downtime); and 42 more.\nTo answer properly the data would need production volumes per well (allocated or metered oil barrels, tank gauge or SCADA flow-rate history) for the period.",
+        "wellIds": [
+          "WELL-0147",
+          "WELL-0315",
+          "WELL-0008",
+          "WELL-0266",
+          "WELL-0242",
+          "WELL-0497",
+          "WELL-0530",
+          "WELL-0480",
+          "WELL-0327",
+          "WELL-0339"
+        ],
+        "createdAt": "2026-10-17T11:27:27.258Z",
+        "response": {
+          "answer": "The data cannot name the well that produced the most oil in 2026. It holds no oil production volumes (barrels, rates, meter, allocation or tank readings) for any well.\nWhat I scanned: field names in inspection, repair, note, regulatory and metadata records (68 field names in all) and document text. Volume-like fields found: none. The only barrel-valued field is spill_est_volume_bbl, the estimated volume of crude spilled, which is not production. Repair cost and downtime are not production either.\nWhat I can offer is a labelled proxy, not oil volume: producing weeks in the period, meaning inspection readings (about one per week) on which wellhead minus ambient meets the well type's manual threshold (T200 15 C, T350 20 C, T500 25 C above ambient; the type in force on each reading date is used). The maximum is 53 producing readings out of 53, and 52 wells tie at that maximum; another 89 wells have 52. The proxy cannot rank them, and a higher-capacity well type may produce more oil than a smaller one with the same uptime.\nTied wells, listed by least repair downtime in the period as a secondary proxy (still not oil volume): WELL-0147 (T200, Northeast Block 7, 53/53 readings, 22 h downtime); WELL-0315 (T350, Northwest Block 12, 53/53 readings, 22 h downtime); WELL-0008 (T200, Southwest Block 23, 53/53 readings, 24 h downtime); WELL-0266 (T350, Northeast Block 8, 53/53 readings, 25 h downtime); WELL-0242 (T500, Southeast Block 31, 53/53 readings, 27 h downtime); WELL-0497 (T350, Southeast Block 32, 53/53 readings, 27 h downtime); WELL-0530 (T350, Southeast Block 32, 53/53 readings, 27 h downtime); WELL-0480 (T200, Southeast Block 32, 53/53 readings, 29 h downtime); WELL-0327 (T200, Northwest Block 12, 53/53 readings, 30 h downtime); WELL-0339 (T350, Northwest Block 12, 53/53 readings, 30 h downtime); and 42 more.\nTo answer properly the data would need production volumes per well (allocated or metered oil barrels, tank gauge or SCADA flow-rate history) for the period.",
+          "visualization": {
+            "type": "table",
+            "title": "Producing-weeks proxy, tied top wells (not oil volume)",
+            "columns": [
+              "Well",
+              "Type",
+              "Area",
+              "Producing readings",
+              "Readings",
+              "Downtime h (secondary)"
+            ],
+            "rows": [
+              [
+                "WELL-0147",
+                "T200",
+                "Northeast Block 7",
+                53,
+                53,
+                22
+              ],
+              [
+                "WELL-0315",
+                "T350",
+                "Northwest Block 12",
+                53,
+                53,
+                22
+              ],
+              [
+                "WELL-0008",
+                "T200",
+                "Southwest Block 23",
+                53,
+                53,
+                24
+              ],
+              [
+                "WELL-0266",
+                "T350",
+                "Northeast Block 8",
+                53,
+                53,
+                25
+              ],
+              [
+                "WELL-0242",
+                "T500",
+                "Southeast Block 31",
+                53,
+                53,
+                27
+              ],
+              [
+                "WELL-0497",
+                "T350",
+                "Southeast Block 32",
+                53,
+                53,
+                27
+              ],
+              [
+                "WELL-0530",
+                "T350",
+                "Southeast Block 32",
+                53,
+                53,
+                27
+              ],
+              [
+                "WELL-0480",
+                "T200",
+                "Southeast Block 32",
+                53,
+                53,
+                29
+              ],
+              [
+                "WELL-0327",
+                "T200",
+                "Northwest Block 12",
+                53,
+                53,
+                30
+              ],
+              [
+                "WELL-0339",
+                "T350",
+                "Northwest Block 12",
+                53,
+                53,
+                30
+              ],
+              [
+                "WELL-0364",
+                "T200",
+                "Northwest Block 12",
+                53,
+                53,
+                30
+              ],
+              [
+                "WELL-0371",
+                "T200",
+                "Northwest Block 12",
+                53,
+                53,
+                30
+              ],
+              [
+                "WELL-0594",
+                "T200",
+                "Southeast Block 32",
+                53,
+                53,
+                30
+              ],
+              [
+                "WELL-0016",
+                "T200",
+                "Southwest Block 23",
+                53,
+                53,
+                31
+              ],
+              [
+                "WELL-0051",
+                "T200",
+                "Southwest Block 24",
+                53,
+                53,
+                31
+              ],
+              [
+                "WELL-0230",
+                "T500",
+                "Southeast Block 31",
+                53,
+                53,
+                31
+              ],
+              [
+                "WELL-0024",
+                "T350",
+                "Southwest Block 23",
+                53,
+                53,
+                32
+              ],
+              [
+                "WELL-0228",
+                "T500",
+                "Southeast Block 31",
+                53,
+                53,
+                32
+              ],
+              [
+                "WELL-0223",
+                "T500",
+                "Southeast Block 31",
+                53,
+                53,
+                33
+              ],
+              [
+                "WELL-0231",
+                "T200",
+                "Southeast Block 31",
+                53,
+                53,
+                34
+              ],
+              [
+                "WELL-0106",
+                "T200",
+                "Northeast Block 7",
+                53,
+                53,
+                35
+              ],
+              [
+                "WELL-0539",
+                "T200",
+                "Southeast Block 32",
+                53,
+                53,
+                35
+              ],
+              [
+                "WELL-0212",
+                "T500",
+                "Southeast Block 31",
+                53,
+                53,
+                36
+              ],
+              [
+                "WELL-0343",
+                "T200",
+                "Northwest Block 12",
+                53,
+                53,
+                36
+              ],
+              [
+                "WELL-0440",
+                "T500",
+                "Northwest Block 12",
+                53,
+                53,
+                36
+              ]
+            ]
+          },
+          "citations": [
+            {
+              "id": "OM-T200",
+              "title": "T200 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T200.md",
+              "excerpt": "A T200 well is considered **producing (active)** when its wellhead temperature is at least **15 °C above ambient** air temperature at the time of the reading. A difference below 15 °C means the well is **not producing** for that reading, whatever the absolute temperature."
+            },
+            {
+              "id": "OM-T350",
+              "title": "T350 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T350.md",
+              "excerpt": "Because T350 fluid comes from a deeper, hotter zone, a T350 well is considered **producing (active)** only when its wellhead temperature is at least **20 °C above ambient** air temperature at the time of the reading."
+            },
+            {
+              "id": "OM-T500",
+              "title": "T500 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T500.md",
+              "excerpt": "ESP wells move more fluid, and the motor adds heat. A T500 well is considered **producing (active)** only when its wellhead temperature is at least **25 °C above ambient** air temperature at the time of the reading. Below 25 °C the well is **not producing** for that reading."
+            },
+            {
+              "id": "WELL-0147",
+              "title": "Well details · WELL-0147",
+              "type": "well",
+              "path": "dataset/assets/WELL-0147/metadata.json",
+              "excerpt": "asset id: WELL-0147 · name: NE-07 Well 147 · asset category: oil_well · well type: T200 · area id: NE-07 · team id: TEAM-NE · in charge user id: U-201 · installed on: 2019-02-22 · recorded status: active",
+              "assetId": "WELL-0147"
+            },
+            {
+              "id": "WELL-0315",
+              "title": "Well details · WELL-0315",
+              "type": "well",
+              "path": "dataset/assets/WELL-0315/metadata.json",
+              "excerpt": "asset id: WELL-0315 · name: NW-12 Well 315 · asset category: oil_well · well type: T350 · area id: NW-12 · team id: TEAM-NW · in charge user id: U-601 · installed on: 2010-04-06 · recorded status: active",
+              "assetId": "WELL-0315"
+            },
+            {
+              "id": "WELL-0008",
+              "title": "Well details · WELL-0008",
+              "type": "well",
+              "path": "dataset/assets/WELL-0008/metadata.json",
+              "excerpt": "asset id: WELL-0008 · name: SW-23 Well 008 · asset category: oil_well · well type: T200 · area id: SW-23 · team id: TEAM-SW · in charge user id: U-101 · installed on: 2016-06-02 · recorded status: active",
+              "assetId": "WELL-0008"
+            },
+            {
+              "id": "WELL-0266",
+              "title": "Well details · WELL-0266",
+              "type": "well",
+              "path": "dataset/assets/WELL-0266/metadata.json",
+              "excerpt": "asset id: WELL-0266 · name: NE-08 Well 266 · asset category: oil_well · well type: T350 · area id: NE-08 · team id: TEAM-NE · in charge user id: U-201 · installed on: 2019-04-02 · recorded status: active",
+              "assetId": "WELL-0266"
+            },
+            {
+              "id": "WELL-0242",
+              "title": "Well details · WELL-0242",
+              "type": "well",
+              "path": "dataset/assets/WELL-0242/metadata.json",
+              "excerpt": "asset id: WELL-0242 · name: SE-31 Well 242 · asset category: oil_well · well type: T500 · area id: SE-31 · team id: TEAM-SE · in charge user id: U-501 · installed on: 2024-05-16 · recorded status: active",
+              "assetId": "WELL-0242"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0147",
+            "WELL-0315",
+            "WELL-0008",
+            "WELL-0266",
+            "WELL-0242",
+            "WELL-0497",
+            "WELL-0530",
+            "WELL-0480",
+            "WELL-0327",
+            "WELL-0339"
+          ],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: data_availability. Only this user’s last five exchanges were supplied.",
+              "durationMs": 9421
+            },
+            {
+              "tool": "data_availability",
+              "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+              "durationMs": 783
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 10204
+        }
+      }
+    ],
+    "revision": 2
+  }
+}

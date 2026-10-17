@@ -1,0 +1,1468 @@
+{
+  "q": "Q3",
+  "turn": 1,
+  "asker": "Simmons",
+  "userId": "U-401",
+  "question": "Since 1 Nov 2026, every time an operator note reports gas at a well, did we get someone out to that well in time under our operating procedures? List every report and whether the response met the deadline.",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 9915
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 9915,
+  "response": {
+    "userId": "U-401",
+    "response": {
+      "answer": "26 gas / H2S odor operator notes from Nov 1, 2026 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).",
+      "visualization": {
+        "type": "table",
+        "title": "Gas / H2S odor reports vs OPS-1 response deadline",
+        "columns": [
+          "Well",
+          "Area",
+          "Reported at",
+          "Response (record ID + time)",
+          "Hours to response",
+          "Deadline",
+          "Met / Missed"
+        ],
+        "rows": [
+          [
+            "WELL-0163",
+            "Northeast Block 8",
+            "2026-11-03 20:55Z (CTX-0163-002)",
+            "MNT-0163-019 (maintenance job) at 2026-11-14 08:00Z",
+            251.1,
+            "24 h",
+            "Missed"
+          ],
+          [
+            "WELL-0149",
+            "Northeast Block 7",
+            "2026-11-06 18:20Z (CTX-0149-004)",
+            "MNT-0149-029 (maintenance job) at 2026-11-07 08:00Z",
+            13.7,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0165",
+            "Northeast Block 8",
+            "2026-11-13 20:35Z (CTX-0165-001)",
+            "MNT-0165-031 (maintenance job) at 2026-11-14 08:00Z",
+            11.4,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0341",
+            "Northwest Block 12",
+            "2026-11-19 07:40Z (CTX-0341-002)",
+            "INS-0341-0109 (manual inspection) at 2026-12-17 13:30Z",
+            677.8,
+            "24 h",
+            "Missed"
+          ],
+          [
+            "WELL-0091",
+            "Southwest Block 24",
+            "2026-11-27 22:25Z (CTX-0091-001)",
+            "MNT-0091-019 (maintenance job) at 2026-11-28 08:00Z",
+            9.6,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0423",
+            "Northwest Block 12",
+            "2026-12-03 05:25Z (CTX-0423-002)",
+            "INS-0423-0213 (manual inspection) at 2026-12-03 09:15Z",
+            3.8,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0059",
+            "Southwest Block 24",
+            "2026-12-03 06:10Z (CTX-0059-002)",
+            "INS-0059-0213 (manual inspection) at 2026-12-03 12:15Z",
+            6.1,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0332",
+            "Northwest Block 12",
+            "2026-12-03 12:10Z (CTX-0332-004)",
+            "none",
+            "n/a",
+            "24 h",
+            "Missed"
+          ],
+          [
+            "WELL-0401",
+            "Northwest Block 12",
+            "2026-12-05 13:50Z (CTX-0401-002)",
+            "MNT-0401-033 (maintenance job) at 2026-12-11 08:00Z",
+            138.2,
+            "24 h",
+            "Missed"
+          ],
+          [
+            "WELL-0189",
+            "Northeast Block 8",
+            "2026-12-10 12:35Z (CTX-0189-003)",
+            "MNT-0189-037 (maintenance job) at 2026-12-11 08:00Z",
+            19.4,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0403",
+            "Northwest Block 12",
+            "2026-12-10 21:15Z (CTX-0403-004)",
+            "MNT-0403-024 (maintenance job) at 2026-12-11 08:00Z",
+            10.8,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0244",
+            "Southeast Block 31",
+            "2026-12-11 05:25Z (CTX-0244-002)",
+            "MNT-0244-026 (maintenance job) at 2026-12-11 08:00Z",
+            2.6,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0040",
+            "Southwest Block 23",
+            "2026-12-12 01:55Z (CTX-0040-002)",
+            "MNT-0040-029 (maintenance job) at 2026-12-12 08:00Z",
+            6.1,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0228",
+            "Southeast Block 31",
+            "2026-12-16 19:50Z (CTX-0228-004)",
+            "INS-0228-0144 (manual inspection) at 2026-12-17 12:45Z",
+            16.9,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0052",
+            "Southwest Block 24",
+            "2026-12-18 06:45Z (CTX-0052-003)",
+            "none",
+            "n/a",
+            "24 h",
+            "Missed"
+          ],
+          [
+            "WELL-0370",
+            "Northwest Block 12",
+            "2026-12-21 12:45Z (CTX-0370-005)",
+            "MNT-0370-028 (maintenance job) at 2026-12-22 08:00Z",
+            19.2,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0362",
+            "Northwest Block 12",
+            "2026-12-24 00:15Z (CTX-0362-002)",
+            "MNT-0362-030 (maintenance job) at 2026-12-25 08:00Z",
+            31.8,
+            "24 h",
+            "Missed"
+          ],
+          [
+            "WELL-0161",
+            "Northeast Block 8",
+            "2026-12-25 15:45Z (CTX-0161-006)",
+            "INS-0161-0168 (manual inspection) at 2027-01-14 11:00Z",
+            475.2,
+            "24 h",
+            "Missed"
+          ],
+          [
+            "WELL-0135",
+            "Northeast Block 7",
+            "2026-12-27 03:50Z (CTX-0135-009)",
+            "MNT-0135-034 (maintenance job) at 2026-12-27 08:00Z",
+            4.2,
+            "24 h",
+            "Met"
+          ],
+          [
+            "WELL-0324",
+            "Northwest Block 12",
+            "2027-01-01 22:40Z (CTX-0324-001)",
+            "MNT-0324-036 (maintenance job) at 2027-01-02 08:00Z",
+            9.3,
+            "12 h",
+            "Met"
+          ],
+          [
+            "WELL-0330",
+            "Northwest Block 12",
+            "2027-01-02 21:40Z (CTX-0330-003)",
+            "MNT-0330-030 (maintenance job) at 2027-01-03 08:00Z",
+            10.3,
+            "12 h",
+            "Met"
+          ],
+          [
+            "WELL-0599",
+            "Southeast Block 32",
+            "2027-01-06 17:20Z (CTX-0599-003)",
+            "INS-0599-0196 (manual inspection) at 2027-01-07 09:45Z",
+            16.4,
+            "12 h",
+            "Missed"
+          ],
+          [
+            "WELL-0516",
+            "Southeast Block 32",
+            "2027-01-06 21:15Z (CTX-0516-002)",
+            "INS-0516-0215 (manual inspection) at 2027-01-07 12:15Z",
+            15,
+            "12 h",
+            "Missed"
+          ],
+          [
+            "WELL-0425",
+            "Northwest Block 12",
+            "2027-01-07 05:20Z (CTX-0425-006)",
+            "INS-0425-0218 (manual inspection) at 2027-01-07 09:00Z",
+            3.7,
+            "12 h",
+            "Met"
+          ],
+          [
+            "WELL-0465",
+            "Southeast Block 32",
+            "2027-01-08 23:35Z (CTX-0465-005)",
+            "MNT-0465-031 (maintenance job) at 2027-01-09 08:00Z",
+            8.4,
+            "12 h",
+            "Met"
+          ],
+          [
+            "WELL-0137",
+            "Northeast Block 7",
+            "2027-01-10 23:30Z (CTX-0137-004)",
+            "MNT-0137-032 (maintenance job) at 2027-01-11 08:00Z",
+            8.5,
+            "12 h",
+            "Met"
+          ]
+        ]
+      },
+      "citations": [
+        {
+          "id": "OPERATIONS-SOP-REV2",
+          "title": "operations sop rev2",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/operations-sop-rev2.md",
+          "excerpt": "|---|---|---| | 2 | 1 Oct 2026 | Adds OPS-1 to OPS-6. OPS-1 response time is cut from 24 hours to 12 hours for reports from 1 Jan 2027. | | 1 | 1 Mar 2025 | First issue (shift handover only). |"
+        },
+        {
+          "id": "CTX-0163-002",
+          "title": "Operator note · CTX-0163-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0163/context.jsonl",
+          "excerpt": "asset id: WELL-0163 · created at: 2026-11-03T20:55:00Z · author user id: U-203 · note type: operator_note · text: H2S monitor alarmed at WELL-0163, crew moved upwind and reported it. · valid from: 2026-11-03 · note id: CTX-0163-002",
+          "assetId": "WELL-0163"
+        },
+        {
+          "id": "MNT-0163-019",
+          "title": "Repair · MNT-0163-019",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0163/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0163-019 · asset id: WELL-0163 · started at: 2026-11-14T08:00:00Z · completed at: 2026-11-14T10:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-303 · contractor: Coyote Ridge Well Services · downtime hours: 2",
+          "assetId": "WELL-0163"
+        },
+        {
+          "id": "CTX-0149-004",
+          "title": "Operator note · CTX-0149-004",
+          "type": "note",
+          "path": "dataset/assets/WELL-0149/context.jsonl",
+          "excerpt": "asset id: WELL-0149 · created at: 2026-11-06T18:20:00Z · author user id: U-204 · note type: operator_note · text: Strong gas odor around the WELL-0149 cellar, called it in to the supervisor. · valid from: 2026-11-06 · note id: CTX-0149-004",
+          "assetId": "WELL-0149"
+        },
+        {
+          "id": "MNT-0149-029",
+          "title": "Repair · MNT-0149-029",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0149/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0149-029 · asset id: WELL-0149 · started at: 2026-11-07T08:00:00Z · completed at: 2026-11-18T00:00:00Z · maintenance type: corrective · equipment kind: pump_jack · issue: Walking beam bearing wear · action taken: Replaced saddle bearing and re-greased · technician user id: U-305 · contractor: Coyote Ridge Well Services · downtime hours: 256 · triggered by inspection id: INS-0149-0211 · report file: maintenance-reports/MNT-0149-029.md",
+          "assetId": "WELL-0149"
+        },
+        {
+          "id": "CTX-0165-001",
+          "title": "Operator note · CTX-0165-001",
+          "type": "note",
+          "path": "dataset/assets/WELL-0165/context.jsonl",
+          "excerpt": "asset id: WELL-0165 · created at: 2026-11-13T20:35:00Z · author user id: U-204 · note type: operator_note · text: Rotten-egg smell at the WELL-0165 pad on arrival, called the HSE officer. · valid from: 2026-11-13 · note id: CTX-0165-001",
+          "assetId": "WELL-0165"
+        },
+        {
+          "id": "MNT-0165-031",
+          "title": "Repair · MNT-0165-031",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0165/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0165-031 · asset id: WELL-0165 · started at: 2026-11-14T08:00:00Z · completed at: 2026-11-14T14:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-302 · downtime hours: 6",
+          "assetId": "WELL-0165"
+        },
+        {
+          "id": "CTX-0341-002",
+          "title": "Operator note · CTX-0341-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0341/context.jsonl",
+          "excerpt": "asset id: WELL-0341 · created at: 2026-11-19T07:40:00Z · author user id: U-605 · note type: operator_note · text: H2S monitor alarmed at WELL-0341, crew moved upwind and reported it. · valid from: 2026-11-19 · note id: CTX-0341-002",
+          "assetId": "WELL-0341"
+        },
+        {
+          "id": "INS-0341-0109",
+          "title": "Inspection · INS-0341-0109",
+          "type": "inspection",
+          "path": "dataset/assets/WELL-0341/inspections.jsonl",
+          "excerpt": "inspection id: INS-0341-0109 · asset id: WELL-0341 · inspected at: 2026-12-17T13:30:00Z · inspector user id: U-604 · method: manual · ambient temp c: 11.3 · wellhead temp c: 38.6 · spill detected: false · notes:",
+          "assetId": "WELL-0341"
+        },
+        {
+          "id": "CTX-0091-001",
+          "title": "Operator note · CTX-0091-001",
+          "type": "note",
+          "path": "dataset/assets/WELL-0091/context.jsonl",
+          "excerpt": "asset id: WELL-0091 · created at: 2026-11-27T22:25:00Z · author user id: U-104 · note type: operator_note · text: H2S monitor alarmed at WELL-0091, crew moved upwind and reported it. · valid from: 2026-11-27 · note id: CTX-0091-001",
+          "assetId": "WELL-0091"
+        },
+        {
+          "id": "MNT-0091-019",
+          "title": "Repair · MNT-0091-019",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0091/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0091-019 · asset id: WELL-0091 · started at: 2026-11-28T08:00:00Z · completed at: 2026-11-28T16:00:00Z · maintenance type: scheduled · equipment kind: wellhead · issue: Scheduled wellhead valve service · action taken: Valves serviced and pressure tested · technician user id: U-303 · contractor: Coyote Ridge Well Services · downtime hours: 8",
+          "assetId": "WELL-0091"
+        },
+        {
+          "id": "CTX-0423-002",
+          "title": "Operator note · CTX-0423-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0423/context.jsonl",
+          "excerpt": "asset id: WELL-0423 · created at: 2026-12-03T05:25:00Z · author user id: U-604 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0423 wellhead, area flagged off. · valid from: 2026-12-03 · note id: CTX-0423-002",
+          "assetId": "WELL-0423"
+        },
+        {
+          "id": "INS-0423-0213",
+          "title": "Inspection · INS-0423-0213",
+          "type": "inspection",
+          "path": "dataset/assets/WELL-0423/inspections.jsonl",
+          "excerpt": "inspection id: INS-0423-0213 · asset id: WELL-0423 · inspected at: 2026-12-03T09:15:00Z · inspector user id: U-604 · method: manual · ambient temp c: 11.3 · wellhead temp c: 39.1 · spill detected: false · notes:",
+          "assetId": "WELL-0423"
+        },
+        {
+          "id": "CTX-0059-002",
+          "title": "Operator note · CTX-0059-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0059/context.jsonl",
+          "excerpt": "asset id: WELL-0059 · created at: 2026-12-03T06:10:00Z · author user id: U-103 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0059 wellhead, area flagged off. · valid from: 2026-12-03 · note id: CTX-0059-002",
+          "assetId": "WELL-0059"
+        },
+        {
+          "id": "INS-0059-0213",
+          "title": "Inspection · INS-0059-0213",
+          "type": "inspection",
+          "path": "dataset/assets/WELL-0059/inspections.jsonl",
+          "excerpt": "inspection id: INS-0059-0213 · asset id: WELL-0059 · inspected at: 2026-12-03T12:15:00Z · inspector user id: U-503 · method: manual · ambient temp c: 11.4 · wellhead temp c: 45.8 · spill detected: false · notes:",
+          "assetId": "WELL-0059"
+        },
+        {
+          "id": "CTX-0332-004",
+          "title": "Operator note · CTX-0332-004",
+          "type": "note",
+          "path": "dataset/assets/WELL-0332/context.jsonl",
+          "excerpt": "asset id: WELL-0332 · created at: 2026-12-03T12:10:00Z · author user id: U-602 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0332 wellhead, area flagged off. · valid from: 2026-12-03 · note id: CTX-0332-004",
+          "assetId": "WELL-0332"
+        },
+        {
+          "id": "CTX-0401-002",
+          "title": "Operator note · CTX-0401-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0401/context.jsonl",
+          "excerpt": "asset id: WELL-0401 · created at: 2026-12-05T13:50:00Z · author user id: U-605 · note type: operator_note · text: H2S monitor alarmed at WELL-0401, crew moved upwind and reported it. · valid from: 2026-12-05 · note id: CTX-0401-002",
+          "assetId": "WELL-0401"
+        },
+        {
+          "id": "MNT-0401-033",
+          "title": "Repair · MNT-0401-033",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0401/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0401-033 · asset id: WELL-0401 · started at: 2026-12-11T08:00:00Z · completed at: 2026-12-11T16:00:00Z · maintenance type: scheduled · equipment kind: wellhead · issue: Scheduled wellhead valve service · action taken: Valves serviced and pressure tested · technician user id: U-303 · contractor: Coyote Ridge Well Services · downtime hours: 8",
+          "assetId": "WELL-0401"
+        },
+        {
+          "id": "CTX-0189-003",
+          "title": "Operator note · CTX-0189-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0189/context.jsonl",
+          "excerpt": "asset id: WELL-0189 · created at: 2026-12-10T12:35:00Z · author user id: U-203 · note type: operator_note · text: H2S monitor alarmed at WELL-0189, crew moved upwind and reported it. · valid from: 2026-12-10 · note id: CTX-0189-003",
+          "assetId": "WELL-0189"
+        },
+        {
+          "id": "MNT-0189-037",
+          "title": "Repair · MNT-0189-037",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0189/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0189-037 · asset id: WELL-0189 · started at: 2026-12-11T08:00:00Z · completed at: 2026-12-11T11:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-302 · contractor: Coyote Ridge Well Services · downtime hours: 3",
+          "assetId": "WELL-0189"
+        },
+        {
+          "id": "CTX-0403-004",
+          "title": "Operator note · CTX-0403-004",
+          "type": "note",
+          "path": "dataset/assets/WELL-0403/context.jsonl",
+          "excerpt": "asset id: WELL-0403 · created at: 2026-12-10T21:15:00Z · author user id: U-602 · note type: operator_note · text: Rotten-egg smell at the WELL-0403 pad on arrival, called the HSE officer. · valid from: 2026-12-10 · note id: CTX-0403-004",
+          "assetId": "WELL-0403"
+        },
+        {
+          "id": "MNT-0403-024",
+          "title": "Repair · MNT-0403-024",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0403/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0403-024 · asset id: WELL-0403 · started at: 2026-12-11T08:00:00Z · completed at: 2026-12-12T08:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline leak causing spill · action taken: Replaced leaking flowline section and remediated soil · technician user id: U-303 · downtime hours: 24 · triggered by inspection id: INS-0403-0182 · report file: maintenance-reports/MNT-0403-024.md",
+          "assetId": "WELL-0403"
+        },
+        {
+          "id": "CTX-0244-002",
+          "title": "Operator note · CTX-0244-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0244/context.jsonl",
+          "excerpt": "asset id: WELL-0244 · created at: 2026-12-11T05:25:00Z · author user id: U-505 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0244 wellhead, area flagged off. · valid from: 2026-12-11 · note id: CTX-0244-002",
+          "assetId": "WELL-0244"
+        },
+        {
+          "id": "MNT-0244-026",
+          "title": "Repair · MNT-0244-026",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0244/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0244-026 · asset id: WELL-0244 · started at: 2026-12-11T08:00:00Z · completed at: 2026-12-12T11:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline leak causing spill · action taken: Replaced leaking flowline section and remediated soil · technician user id: U-303 · downtime hours: 27 · triggered by inspection id: INS-0244-0189 · report file: maintenance-reports/MNT-0244-026.md",
+          "assetId": "WELL-0244"
+        },
+        {
+          "id": "CTX-0040-002",
+          "title": "Operator note · CTX-0040-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0040/context.jsonl",
+          "excerpt": "asset id: WELL-0040 · created at: 2026-12-12T01:55:00Z · author user id: U-102 · note type: operator_note · text: Rotten-egg smell at the WELL-0040 pad on arrival, called the HSE officer. · valid from: 2026-12-12 · note id: CTX-0040-002",
+          "assetId": "WELL-0040"
+        },
+        {
+          "id": "MNT-0040-029",
+          "title": "Repair · MNT-0040-029",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0040/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0040-029 · asset id: WELL-0040 · started at: 2026-12-12T08:00:00Z · completed at: 2026-12-12T12:00:00Z · maintenance type: scheduled · equipment kind: flowline · issue: Annual flowline integrity test · action taken: Integrity test passed · technician user id: U-304 · downtime hours: 4",
+          "assetId": "WELL-0040"
+        },
+        {
+          "id": "CTX-0228-004",
+          "title": "Operator note · CTX-0228-004",
+          "type": "note",
+          "path": "dataset/assets/WELL-0228/context.jsonl",
+          "excerpt": "asset id: WELL-0228 · created at: 2026-12-16T19:50:00Z · author user id: U-502 · note type: operator_note · text: Smelled gas downwind of WELL-0228 wellhead, backed off and called it in. · valid from: 2026-12-16 · note id: CTX-0228-004",
+          "assetId": "WELL-0228"
+        },
+        {
+          "id": "INS-0228-0144",
+          "title": "Inspection · INS-0228-0144",
+          "type": "inspection",
+          "path": "dataset/assets/WELL-0228/inspections.jsonl",
+          "excerpt": "inspection id: INS-0228-0144 · asset id: WELL-0228 · inspected at: 2026-12-17T12:45:00Z · inspector user id: U-504 · method: manual · ambient temp c: 7.1 · wellhead temp c: 43.5 · spill detected: false · notes:",
+          "assetId": "WELL-0228"
+        },
+        {
+          "id": "CTX-0052-003",
+          "title": "Operator note · CTX-0052-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0052/context.jsonl",
+          "excerpt": "asset id: WELL-0052 · created at: 2026-12-18T06:45:00Z · author user id: U-103 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0052 wellhead, area flagged off. · valid from: 2026-12-18 · note id: CTX-0052-003",
+          "assetId": "WELL-0052"
+        },
+        {
+          "id": "CTX-0370-005",
+          "title": "Operator note · CTX-0370-005",
+          "type": "note",
+          "path": "dataset/assets/WELL-0370/context.jsonl",
+          "excerpt": "asset id: WELL-0370 · created at: 2026-12-21T12:45:00Z · author user id: U-605 · note type: operator_note · text: Strong gas odor around the WELL-0370 cellar, called it in to the supervisor. · valid from: 2026-12-21 · note id: CTX-0370-005",
+          "assetId": "WELL-0370"
+        },
+        {
+          "id": "MNT-0370-028",
+          "title": "Repair · MNT-0370-028",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0370/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0370-028 · asset id: WELL-0370 · started at: 2026-12-22T08:00:00Z · completed at: 2026-12-22T11:00:00Z · maintenance type: scheduled · equipment kind: esp_pump · issue: Scheduled ESP drive and insulation check · action taken: Drive inspected and insulation readings recorded · technician user id: U-302 · contractor: Coyote Ridge Well Services · downtime hours: 3",
+          "assetId": "WELL-0370"
+        },
+        {
+          "id": "CTX-0362-002",
+          "title": "Operator note · CTX-0362-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0362/context.jsonl",
+          "excerpt": "asset id: WELL-0362 · created at: 2026-12-24T00:15:00Z · author user id: U-605 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0362 wellhead, area flagged off. · valid from: 2026-12-24 · note id: CTX-0362-002",
+          "assetId": "WELL-0362"
+        },
+        {
+          "id": "MNT-0362-030",
+          "title": "Repair · MNT-0362-030",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0362/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0362-030 · asset id: WELL-0362 · started at: 2026-12-25T08:00:00Z · completed at: 2026-12-25T12:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-305 · contractor: Coyote Ridge Well Services · downtime hours: 4",
+          "assetId": "WELL-0362"
+        },
+        {
+          "id": "CTX-0161-006",
+          "title": "Operator note · CTX-0161-006",
+          "type": "note",
+          "path": "dataset/assets/WELL-0161/context.jsonl",
+          "excerpt": "asset id: WELL-0161 · created at: 2026-12-25T15:45:00Z · author user id: U-203 · note type: operator_note · text: Smelled gas downwind of WELL-0161 wellhead, backed off and called it in. · valid from: 2026-12-25 · note id: CTX-0161-006",
+          "assetId": "WELL-0161"
+        },
+        {
+          "id": "INS-0161-0168",
+          "title": "Inspection · INS-0161-0168",
+          "type": "inspection",
+          "path": "dataset/assets/WELL-0161/inspections.jsonl",
+          "excerpt": "inspection id: INS-0161-0168 · asset id: WELL-0161 · inspected at: 2027-01-14T11:00:00Z · inspector user id: U-203 · method: manual · ambient temp c: 6.6 · wellhead temp c: 31.4 · spill detected: false · notes:",
+          "assetId": "WELL-0161"
+        },
+        {
+          "id": "CTX-0135-009",
+          "title": "Operator note · CTX-0135-009",
+          "type": "note",
+          "path": "dataset/assets/WELL-0135/context.jsonl",
+          "excerpt": "asset id: WELL-0135 · created at: 2026-12-27T03:50:00Z · author user id: U-204 · note type: operator_note · text: Smelled gas downwind of WELL-0135 wellhead, backed off and called it in. · valid from: 2026-12-27 · note id: CTX-0135-009",
+          "assetId": "WELL-0135"
+        },
+        {
+          "id": "MNT-0135-034",
+          "title": "Repair · MNT-0135-034",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0135/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0135-034 · asset id: WELL-0135 · started at: 2026-12-27T08:00:00Z · completed at: 2026-12-29T15:00:00Z · maintenance type: corrective · equipment kind: pump_jack · issue: Prime mover failure · action taken: Replaced the electric motor with an exchange unit · technician user id: U-303 · downtime hours: 55 · triggered by inspection id: INS-0135-0215 · report file: maintenance-reports/MNT-0135-034.md",
+          "assetId": "WELL-0135"
+        },
+        {
+          "id": "CTX-0324-001",
+          "title": "Operator note · CTX-0324-001",
+          "type": "note",
+          "path": "dataset/assets/WELL-0324/context.jsonl",
+          "excerpt": "asset id: WELL-0324 · created at: 2027-01-01T22:40:00Z · author user id: U-605 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0324 wellhead, area flagged off. · valid from: 2027-01-01 · note id: CTX-0324-001",
+          "assetId": "WELL-0324"
+        },
+        {
+          "id": "MNT-0324-036",
+          "title": "Repair · MNT-0324-036",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0324/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0324-036 · asset id: WELL-0324 · started at: 2027-01-02T08:00:00Z · completed at: 2027-01-11T21:00:00Z · maintenance type: corrective · equipment kind: pump_jack · issue: Walking beam bearing wear · action taken: Replaced saddle bearing and re-greased · technician user id: U-302 · contractor: Coyote Ridge Well Services · downtime hours: 229 · triggered by inspection id: INS-0324-0218 · report file: maintenance-reports/MNT-0324-036.md",
+          "assetId": "WELL-0324"
+        },
+        {
+          "id": "CTX-0330-003",
+          "title": "Operator note · CTX-0330-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0330/context.jsonl",
+          "excerpt": "asset id: WELL-0330 · created at: 2027-01-02T21:40:00Z · author user id: U-606 · note type: operator_note · text: H2S monitor alarmed at WELL-0330, crew moved upwind and reported it. · valid from: 2027-01-02 · note id: CTX-0330-003",
+          "assetId": "WELL-0330"
+        },
+        {
+          "id": "MNT-0330-030",
+          "title": "Repair · MNT-0330-030",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0330/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0330-030 · asset id: WELL-0330 · started at: 2027-01-03T08:00:00Z · completed at: 2027-01-27T20:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline corrosion pinhole leak · action taken: Cut out and replaced the corroded flowline section · technician user id: U-304 · contractor: Tumbleweed Flowline Co. · downtime hours: 588 · triggered by inspection id: INS-0330-0211 · report file: maintenance-reports/MNT-0330-030.md",
+          "assetId": "WELL-0330"
+        },
+        {
+          "id": "CTX-0599-003",
+          "title": "Operator note · CTX-0599-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0599/context.jsonl",
+          "excerpt": "asset id: WELL-0599 · created at: 2027-01-06T17:20:00Z · author user id: U-506 · note type: operator_note · text: Strong gas odor around the WELL-0599 cellar, called it in to the supervisor. · valid from: 2027-01-06 · note id: CTX-0599-003",
+          "assetId": "WELL-0599"
+        },
+        {
+          "id": "INS-0599-0196",
+          "title": "Inspection · INS-0599-0196",
+          "type": "inspection",
+          "path": "dataset/assets/WELL-0599/inspections.jsonl",
+          "excerpt": "inspection id: INS-0599-0196 · asset id: WELL-0599 · inspected at: 2027-01-07T09:45:00Z · inspector user id: U-502 · method: manual · ambient temp c: 5.8 · wellhead temp c: 8.2 · spill detected: false · notes:",
+          "assetId": "WELL-0599"
+        },
+        {
+          "id": "CTX-0516-002",
+          "title": "Operator note · CTX-0516-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0516/context.jsonl",
+          "excerpt": "asset id: WELL-0516 · created at: 2027-01-06T21:15:00Z · author user id: U-503 · note type: operator_note · text: Rotten-egg smell at the WELL-0516 pad on arrival, called the HSE officer. · valid from: 2027-01-06 · note id: CTX-0516-002",
+          "assetId": "WELL-0516"
+        },
+        {
+          "id": "INS-0516-0215",
+          "title": "Inspection · INS-0516-0215",
+          "type": "inspection",
+          "path": "dataset/assets/WELL-0516/inspections.jsonl",
+          "excerpt": "inspection id: INS-0516-0215 · asset id: WELL-0516 · inspected at: 2027-01-07T12:15:00Z · inspector user id: U-504 · method: manual · ambient temp c: 9.1 · wellhead temp c: 36 · spill detected: false · notes:",
+          "assetId": "WELL-0516"
+        },
+        {
+          "id": "CTX-0425-006",
+          "title": "Operator note · CTX-0425-006",
+          "type": "note",
+          "path": "dataset/assets/WELL-0425/context.jsonl",
+          "excerpt": "asset id: WELL-0425 · created at: 2027-01-07T05:20:00Z · author user id: U-602 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0425 wellhead, area flagged off. · valid from: 2027-01-07 · note id: CTX-0425-006",
+          "assetId": "WELL-0425"
+        },
+        {
+          "id": "INS-0425-0218",
+          "title": "Inspection · INS-0425-0218",
+          "type": "inspection",
+          "path": "dataset/assets/WELL-0425/inspections.jsonl",
+          "excerpt": "inspection id: INS-0425-0218 · asset id: WELL-0425 · inspected at: 2027-01-07T09:00:00Z · inspector user id: U-604 · method: manual · ambient temp c: 4.6 · wellhead temp c: 36.5 · spill detected: false · notes:",
+          "assetId": "WELL-0425"
+        },
+        {
+          "id": "CTX-0465-005",
+          "title": "Operator note · CTX-0465-005",
+          "type": "note",
+          "path": "dataset/assets/WELL-0465/context.jsonl",
+          "excerpt": "asset id: WELL-0465 · created at: 2027-01-08T23:35:00Z · author user id: U-506 · note type: operator_note · text: Strong gas odor around the WELL-0465 cellar, called it in to the supervisor. · valid from: 2027-01-08 · note id: CTX-0465-005",
+          "assetId": "WELL-0465"
+        },
+        {
+          "id": "MNT-0465-031",
+          "title": "Repair · MNT-0465-031",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0465/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0465-031 · asset id: WELL-0465 · started at: 2027-01-09T08:00:00Z · completed at: 2027-01-09T18:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-304 · contractor: Coyote Ridge Well Services · downtime hours: 10",
+          "assetId": "WELL-0465"
+        },
+        {
+          "id": "CTX-0137-004",
+          "title": "Operator note · CTX-0137-004",
+          "type": "note",
+          "path": "dataset/assets/WELL-0137/context.jsonl",
+          "excerpt": "asset id: WELL-0137 · created at: 2027-01-10T23:30:00Z · author user id: U-203 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0137 wellhead, area flagged off. · valid from: 2027-01-10 · note id: CTX-0137-004",
+          "assetId": "WELL-0137"
+        },
+        {
+          "id": "MNT-0137-032",
+          "title": "Repair · MNT-0137-032",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0137/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0137-032 · asset id: WELL-0137 · started at: 2027-01-11T08:00:00Z · completed at: 2027-01-11T12:00:00Z · maintenance type: scheduled · equipment kind: wellhead · issue: Scheduled wellhead valve service · action taken: Valves serviced and pressure tested · technician user id: U-305 · downtime hours: 4",
+          "assetId": "WELL-0137"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [
+        "WELL-0163",
+        "WELL-0149",
+        "WELL-0165",
+        "WELL-0341",
+        "WELL-0091",
+        "WELL-0423",
+        "WELL-0059",
+        "WELL-0332",
+        "WELL-0401",
+        "WELL-0189",
+        "WELL-0403",
+        "WELL-0244",
+        "WELL-0040",
+        "WELL-0228",
+        "WELL-0052",
+        "WELL-0370",
+        "WELL-0362",
+        "WELL-0161",
+        "WELL-0135",
+        "WELL-0324",
+        "WELL-0330",
+        "WELL-0599",
+        "WELL-0516",
+        "WELL-0425",
+        "WELL-0465",
+        "WELL-0137"
+      ],
+      "trace": [
+        {
+          "tool": "gemini_planner",
+          "detail": "Structured plan validated: gas_response. Only this user’s last five exchanges were supplied.",
+          "durationMs": 9852
+        },
+        {
+          "tool": "gas_response",
+          "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+          "durationMs": 56
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "hosted"
+      },
+      "durationMs": 9908
+    },
+    "history": [
+      {
+        "userText": "Since 1 Nov 2026, every time an operator note reports gas at a well, did we get someone out to that well in time under our operating procedures? List every report and whether the response met the deadline.",
+        "answer": "26 gas / H2S odor operator notes from Nov 1, 2026 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).",
+        "wellIds": [
+          "WELL-0163",
+          "WELL-0149",
+          "WELL-0165",
+          "WELL-0341",
+          "WELL-0091",
+          "WELL-0423",
+          "WELL-0059",
+          "WELL-0332",
+          "WELL-0401",
+          "WELL-0189",
+          "WELL-0403",
+          "WELL-0244",
+          "WELL-0040",
+          "WELL-0228",
+          "WELL-0052",
+          "WELL-0370",
+          "WELL-0362",
+          "WELL-0161",
+          "WELL-0135",
+          "WELL-0324",
+          "WELL-0330",
+          "WELL-0599",
+          "WELL-0516",
+          "WELL-0425",
+          "WELL-0465",
+          "WELL-0137"
+        ],
+        "createdAt": "2026-10-17T11:27:37.172Z",
+        "response": {
+          "answer": "26 gas / H2S odor operator notes from Nov 1, 2026 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).",
+          "visualization": {
+            "type": "table",
+            "title": "Gas / H2S odor reports vs OPS-1 response deadline",
+            "columns": [
+              "Well",
+              "Area",
+              "Reported at",
+              "Response (record ID + time)",
+              "Hours to response",
+              "Deadline",
+              "Met / Missed"
+            ],
+            "rows": [
+              [
+                "WELL-0163",
+                "Northeast Block 8",
+                "2026-11-03 20:55Z (CTX-0163-002)",
+                "MNT-0163-019 (maintenance job) at 2026-11-14 08:00Z",
+                251.1,
+                "24 h",
+                "Missed"
+              ],
+              [
+                "WELL-0149",
+                "Northeast Block 7",
+                "2026-11-06 18:20Z (CTX-0149-004)",
+                "MNT-0149-029 (maintenance job) at 2026-11-07 08:00Z",
+                13.7,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0165",
+                "Northeast Block 8",
+                "2026-11-13 20:35Z (CTX-0165-001)",
+                "MNT-0165-031 (maintenance job) at 2026-11-14 08:00Z",
+                11.4,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0341",
+                "Northwest Block 12",
+                "2026-11-19 07:40Z (CTX-0341-002)",
+                "INS-0341-0109 (manual inspection) at 2026-12-17 13:30Z",
+                677.8,
+                "24 h",
+                "Missed"
+              ],
+              [
+                "WELL-0091",
+                "Southwest Block 24",
+                "2026-11-27 22:25Z (CTX-0091-001)",
+                "MNT-0091-019 (maintenance job) at 2026-11-28 08:00Z",
+                9.6,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0423",
+                "Northwest Block 12",
+                "2026-12-03 05:25Z (CTX-0423-002)",
+                "INS-0423-0213 (manual inspection) at 2026-12-03 09:15Z",
+                3.8,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0059",
+                "Southwest Block 24",
+                "2026-12-03 06:10Z (CTX-0059-002)",
+                "INS-0059-0213 (manual inspection) at 2026-12-03 12:15Z",
+                6.1,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0332",
+                "Northwest Block 12",
+                "2026-12-03 12:10Z (CTX-0332-004)",
+                "none",
+                "n/a",
+                "24 h",
+                "Missed"
+              ],
+              [
+                "WELL-0401",
+                "Northwest Block 12",
+                "2026-12-05 13:50Z (CTX-0401-002)",
+                "MNT-0401-033 (maintenance job) at 2026-12-11 08:00Z",
+                138.2,
+                "24 h",
+                "Missed"
+              ],
+              [
+                "WELL-0189",
+                "Northeast Block 8",
+                "2026-12-10 12:35Z (CTX-0189-003)",
+                "MNT-0189-037 (maintenance job) at 2026-12-11 08:00Z",
+                19.4,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0403",
+                "Northwest Block 12",
+                "2026-12-10 21:15Z (CTX-0403-004)",
+                "MNT-0403-024 (maintenance job) at 2026-12-11 08:00Z",
+                10.8,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0244",
+                "Southeast Block 31",
+                "2026-12-11 05:25Z (CTX-0244-002)",
+                "MNT-0244-026 (maintenance job) at 2026-12-11 08:00Z",
+                2.6,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0040",
+                "Southwest Block 23",
+                "2026-12-12 01:55Z (CTX-0040-002)",
+                "MNT-0040-029 (maintenance job) at 2026-12-12 08:00Z",
+                6.1,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0228",
+                "Southeast Block 31",
+                "2026-12-16 19:50Z (CTX-0228-004)",
+                "INS-0228-0144 (manual inspection) at 2026-12-17 12:45Z",
+                16.9,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0052",
+                "Southwest Block 24",
+                "2026-12-18 06:45Z (CTX-0052-003)",
+                "none",
+                "n/a",
+                "24 h",
+                "Missed"
+              ],
+              [
+                "WELL-0370",
+                "Northwest Block 12",
+                "2026-12-21 12:45Z (CTX-0370-005)",
+                "MNT-0370-028 (maintenance job) at 2026-12-22 08:00Z",
+                19.2,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0362",
+                "Northwest Block 12",
+                "2026-12-24 00:15Z (CTX-0362-002)",
+                "MNT-0362-030 (maintenance job) at 2026-12-25 08:00Z",
+                31.8,
+                "24 h",
+                "Missed"
+              ],
+              [
+                "WELL-0161",
+                "Northeast Block 8",
+                "2026-12-25 15:45Z (CTX-0161-006)",
+                "INS-0161-0168 (manual inspection) at 2027-01-14 11:00Z",
+                475.2,
+                "24 h",
+                "Missed"
+              ],
+              [
+                "WELL-0135",
+                "Northeast Block 7",
+                "2026-12-27 03:50Z (CTX-0135-009)",
+                "MNT-0135-034 (maintenance job) at 2026-12-27 08:00Z",
+                4.2,
+                "24 h",
+                "Met"
+              ],
+              [
+                "WELL-0324",
+                "Northwest Block 12",
+                "2027-01-01 22:40Z (CTX-0324-001)",
+                "MNT-0324-036 (maintenance job) at 2027-01-02 08:00Z",
+                9.3,
+                "12 h",
+                "Met"
+              ],
+              [
+                "WELL-0330",
+                "Northwest Block 12",
+                "2027-01-02 21:40Z (CTX-0330-003)",
+                "MNT-0330-030 (maintenance job) at 2027-01-03 08:00Z",
+                10.3,
+                "12 h",
+                "Met"
+              ],
+              [
+                "WELL-0599",
+                "Southeast Block 32",
+                "2027-01-06 17:20Z (CTX-0599-003)",
+                "INS-0599-0196 (manual inspection) at 2027-01-07 09:45Z",
+                16.4,
+                "12 h",
+                "Missed"
+              ],
+              [
+                "WELL-0516",
+                "Southeast Block 32",
+                "2027-01-06 21:15Z (CTX-0516-002)",
+                "INS-0516-0215 (manual inspection) at 2027-01-07 12:15Z",
+                15,
+                "12 h",
+                "Missed"
+              ],
+              [
+                "WELL-0425",
+                "Northwest Block 12",
+                "2027-01-07 05:20Z (CTX-0425-006)",
+                "INS-0425-0218 (manual inspection) at 2027-01-07 09:00Z",
+                3.7,
+                "12 h",
+                "Met"
+              ],
+              [
+                "WELL-0465",
+                "Southeast Block 32",
+                "2027-01-08 23:35Z (CTX-0465-005)",
+                "MNT-0465-031 (maintenance job) at 2027-01-09 08:00Z",
+                8.4,
+                "12 h",
+                "Met"
+              ],
+              [
+                "WELL-0137",
+                "Northeast Block 7",
+                "2027-01-10 23:30Z (CTX-0137-004)",
+                "MNT-0137-032 (maintenance job) at 2027-01-11 08:00Z",
+                8.5,
+                "12 h",
+                "Met"
+              ]
+            ]
+          },
+          "citations": [
+            {
+              "id": "OPERATIONS-SOP-REV2",
+              "title": "operations sop rev2",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/operations-sop-rev2.md",
+              "excerpt": "|---|---|---| | 2 | 1 Oct 2026 | Adds OPS-1 to OPS-6. OPS-1 response time is cut from 24 hours to 12 hours for reports from 1 Jan 2027. | | 1 | 1 Mar 2025 | First issue (shift handover only). |"
+            },
+            {
+              "id": "CTX-0163-002",
+              "title": "Operator note · CTX-0163-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0163/context.jsonl",
+              "excerpt": "asset id: WELL-0163 · created at: 2026-11-03T20:55:00Z · author user id: U-203 · note type: operator_note · text: H2S monitor alarmed at WELL-0163, crew moved upwind and reported it. · valid from: 2026-11-03 · note id: CTX-0163-002",
+              "assetId": "WELL-0163"
+            },
+            {
+              "id": "MNT-0163-019",
+              "title": "Repair · MNT-0163-019",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0163/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0163-019 · asset id: WELL-0163 · started at: 2026-11-14T08:00:00Z · completed at: 2026-11-14T10:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-303 · contractor: Coyote Ridge Well Services · downtime hours: 2",
+              "assetId": "WELL-0163"
+            },
+            {
+              "id": "CTX-0149-004",
+              "title": "Operator note · CTX-0149-004",
+              "type": "note",
+              "path": "dataset/assets/WELL-0149/context.jsonl",
+              "excerpt": "asset id: WELL-0149 · created at: 2026-11-06T18:20:00Z · author user id: U-204 · note type: operator_note · text: Strong gas odor around the WELL-0149 cellar, called it in to the supervisor. · valid from: 2026-11-06 · note id: CTX-0149-004",
+              "assetId": "WELL-0149"
+            },
+            {
+              "id": "MNT-0149-029",
+              "title": "Repair · MNT-0149-029",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0149/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0149-029 · asset id: WELL-0149 · started at: 2026-11-07T08:00:00Z · completed at: 2026-11-18T00:00:00Z · maintenance type: corrective · equipment kind: pump_jack · issue: Walking beam bearing wear · action taken: Replaced saddle bearing and re-greased · technician user id: U-305 · contractor: Coyote Ridge Well Services · downtime hours: 256 · triggered by inspection id: INS-0149-0211 · report file: maintenance-reports/MNT-0149-029.md",
+              "assetId": "WELL-0149"
+            },
+            {
+              "id": "CTX-0165-001",
+              "title": "Operator note · CTX-0165-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0165/context.jsonl",
+              "excerpt": "asset id: WELL-0165 · created at: 2026-11-13T20:35:00Z · author user id: U-204 · note type: operator_note · text: Rotten-egg smell at the WELL-0165 pad on arrival, called the HSE officer. · valid from: 2026-11-13 · note id: CTX-0165-001",
+              "assetId": "WELL-0165"
+            },
+            {
+              "id": "MNT-0165-031",
+              "title": "Repair · MNT-0165-031",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0165/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0165-031 · asset id: WELL-0165 · started at: 2026-11-14T08:00:00Z · completed at: 2026-11-14T14:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-302 · downtime hours: 6",
+              "assetId": "WELL-0165"
+            },
+            {
+              "id": "CTX-0341-002",
+              "title": "Operator note · CTX-0341-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0341/context.jsonl",
+              "excerpt": "asset id: WELL-0341 · created at: 2026-11-19T07:40:00Z · author user id: U-605 · note type: operator_note · text: H2S monitor alarmed at WELL-0341, crew moved upwind and reported it. · valid from: 2026-11-19 · note id: CTX-0341-002",
+              "assetId": "WELL-0341"
+            },
+            {
+              "id": "INS-0341-0109",
+              "title": "Inspection · INS-0341-0109",
+              "type": "inspection",
+              "path": "dataset/assets/WELL-0341/inspections.jsonl",
+              "excerpt": "inspection id: INS-0341-0109 · asset id: WELL-0341 · inspected at: 2026-12-17T13:30:00Z · inspector user id: U-604 · method: manual · ambient temp c: 11.3 · wellhead temp c: 38.6 · spill detected: false · notes:",
+              "assetId": "WELL-0341"
+            },
+            {
+              "id": "CTX-0091-001",
+              "title": "Operator note · CTX-0091-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0091/context.jsonl",
+              "excerpt": "asset id: WELL-0091 · created at: 2026-11-27T22:25:00Z · author user id: U-104 · note type: operator_note · text: H2S monitor alarmed at WELL-0091, crew moved upwind and reported it. · valid from: 2026-11-27 · note id: CTX-0091-001",
+              "assetId": "WELL-0091"
+            },
+            {
+              "id": "MNT-0091-019",
+              "title": "Repair · MNT-0091-019",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0091/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0091-019 · asset id: WELL-0091 · started at: 2026-11-28T08:00:00Z · completed at: 2026-11-28T16:00:00Z · maintenance type: scheduled · equipment kind: wellhead · issue: Scheduled wellhead valve service · action taken: Valves serviced and pressure tested · technician user id: U-303 · contractor: Coyote Ridge Well Services · downtime hours: 8",
+              "assetId": "WELL-0091"
+            },
+            {
+              "id": "CTX-0423-002",
+              "title": "Operator note · CTX-0423-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0423/context.jsonl",
+              "excerpt": "asset id: WELL-0423 · created at: 2026-12-03T05:25:00Z · author user id: U-604 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0423 wellhead, area flagged off. · valid from: 2026-12-03 · note id: CTX-0423-002",
+              "assetId": "WELL-0423"
+            },
+            {
+              "id": "INS-0423-0213",
+              "title": "Inspection · INS-0423-0213",
+              "type": "inspection",
+              "path": "dataset/assets/WELL-0423/inspections.jsonl",
+              "excerpt": "inspection id: INS-0423-0213 · asset id: WELL-0423 · inspected at: 2026-12-03T09:15:00Z · inspector user id: U-604 · method: manual · ambient temp c: 11.3 · wellhead temp c: 39.1 · spill detected: false · notes:",
+              "assetId": "WELL-0423"
+            },
+            {
+              "id": "CTX-0059-002",
+              "title": "Operator note · CTX-0059-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0059/context.jsonl",
+              "excerpt": "asset id: WELL-0059 · created at: 2026-12-03T06:10:00Z · author user id: U-103 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0059 wellhead, area flagged off. · valid from: 2026-12-03 · note id: CTX-0059-002",
+              "assetId": "WELL-0059"
+            },
+            {
+              "id": "INS-0059-0213",
+              "title": "Inspection · INS-0059-0213",
+              "type": "inspection",
+              "path": "dataset/assets/WELL-0059/inspections.jsonl",
+              "excerpt": "inspection id: INS-0059-0213 · asset id: WELL-0059 · inspected at: 2026-12-03T12:15:00Z · inspector user id: U-503 · method: manual · ambient temp c: 11.4 · wellhead temp c: 45.8 · spill detected: false · notes:",
+              "assetId": "WELL-0059"
+            },
+            {
+              "id": "CTX-0332-004",
+              "title": "Operator note · CTX-0332-004",
+              "type": "note",
+              "path": "dataset/assets/WELL-0332/context.jsonl",
+              "excerpt": "asset id: WELL-0332 · created at: 2026-12-03T12:10:00Z · author user id: U-602 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0332 wellhead, area flagged off. · valid from: 2026-12-03 · note id: CTX-0332-004",
+              "assetId": "WELL-0332"
+            },
+            {
+              "id": "CTX-0401-002",
+              "title": "Operator note · CTX-0401-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0401/context.jsonl",
+              "excerpt": "asset id: WELL-0401 · created at: 2026-12-05T13:50:00Z · author user id: U-605 · note type: operator_note · text: H2S monitor alarmed at WELL-0401, crew moved upwind and reported it. · valid from: 2026-12-05 · note id: CTX-0401-002",
+              "assetId": "WELL-0401"
+            },
+            {
+              "id": "MNT-0401-033",
+              "title": "Repair · MNT-0401-033",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0401/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0401-033 · asset id: WELL-0401 · started at: 2026-12-11T08:00:00Z · completed at: 2026-12-11T16:00:00Z · maintenance type: scheduled · equipment kind: wellhead · issue: Scheduled wellhead valve service · action taken: Valves serviced and pressure tested · technician user id: U-303 · contractor: Coyote Ridge Well Services · downtime hours: 8",
+              "assetId": "WELL-0401"
+            },
+            {
+              "id": "CTX-0189-003",
+              "title": "Operator note · CTX-0189-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0189/context.jsonl",
+              "excerpt": "asset id: WELL-0189 · created at: 2026-12-10T12:35:00Z · author user id: U-203 · note type: operator_note · text: H2S monitor alarmed at WELL-0189, crew moved upwind and reported it. · valid from: 2026-12-10 · note id: CTX-0189-003",
+              "assetId": "WELL-0189"
+            },
+            {
+              "id": "MNT-0189-037",
+              "title": "Repair · MNT-0189-037",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0189/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0189-037 · asset id: WELL-0189 · started at: 2026-12-11T08:00:00Z · completed at: 2026-12-11T11:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-302 · contractor: Coyote Ridge Well Services · downtime hours: 3",
+              "assetId": "WELL-0189"
+            },
+            {
+              "id": "CTX-0403-004",
+              "title": "Operator note · CTX-0403-004",
+              "type": "note",
+              "path": "dataset/assets/WELL-0403/context.jsonl",
+              "excerpt": "asset id: WELL-0403 · created at: 2026-12-10T21:15:00Z · author user id: U-602 · note type: operator_note · text: Rotten-egg smell at the WELL-0403 pad on arrival, called the HSE officer. · valid from: 2026-12-10 · note id: CTX-0403-004",
+              "assetId": "WELL-0403"
+            },
+            {
+              "id": "MNT-0403-024",
+              "title": "Repair · MNT-0403-024",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0403/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0403-024 · asset id: WELL-0403 · started at: 2026-12-11T08:00:00Z · completed at: 2026-12-12T08:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline leak causing spill · action taken: Replaced leaking flowline section and remediated soil · technician user id: U-303 · downtime hours: 24 · triggered by inspection id: INS-0403-0182 · report file: maintenance-reports/MNT-0403-024.md",
+              "assetId": "WELL-0403"
+            },
+            {
+              "id": "CTX-0244-002",
+              "title": "Operator note · CTX-0244-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0244/context.jsonl",
+              "excerpt": "asset id: WELL-0244 · created at: 2026-12-11T05:25:00Z · author user id: U-505 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0244 wellhead, area flagged off. · valid from: 2026-12-11 · note id: CTX-0244-002",
+              "assetId": "WELL-0244"
+            },
+            {
+              "id": "MNT-0244-026",
+              "title": "Repair · MNT-0244-026",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0244/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0244-026 · asset id: WELL-0244 · started at: 2026-12-11T08:00:00Z · completed at: 2026-12-12T11:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline leak causing spill · action taken: Replaced leaking flowline section and remediated soil · technician user id: U-303 · downtime hours: 27 · triggered by inspection id: INS-0244-0189 · report file: maintenance-reports/MNT-0244-026.md",
+              "assetId": "WELL-0244"
+            },
+            {
+              "id": "CTX-0040-002",
+              "title": "Operator note · CTX-0040-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0040/context.jsonl",
+              "excerpt": "asset id: WELL-0040 · created at: 2026-12-12T01:55:00Z · author user id: U-102 · note type: operator_note · text: Rotten-egg smell at the WELL-0040 pad on arrival, called the HSE officer. · valid from: 2026-12-12 · note id: CTX-0040-002",
+              "assetId": "WELL-0040"
+            },
+            {
+              "id": "MNT-0040-029",
+              "title": "Repair · MNT-0040-029",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0040/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0040-029 · asset id: WELL-0040 · started at: 2026-12-12T08:00:00Z · completed at: 2026-12-12T12:00:00Z · maintenance type: scheduled · equipment kind: flowline · issue: Annual flowline integrity test · action taken: Integrity test passed · technician user id: U-304 · downtime hours: 4",
+              "assetId": "WELL-0040"
+            },
+            {
+              "id": "CTX-0228-004",
+              "title": "Operator note · CTX-0228-004",
+              "type": "note",
+              "path": "dataset/assets/WELL-0228/context.jsonl",
+              "excerpt": "asset id: WELL-0228 · created at: 2026-12-16T19:50:00Z · author user id: U-502 · note type: operator_note · text: Smelled gas downwind of WELL-0228 wellhead, backed off and called it in. · valid from: 2026-12-16 · note id: CTX-0228-004",
+              "assetId": "WELL-0228"
+            },
+            {
+              "id": "INS-0228-0144",
+              "title": "Inspection · INS-0228-0144",
+              "type": "inspection",
+              "path": "dataset/assets/WELL-0228/inspections.jsonl",
+              "excerpt": "inspection id: INS-0228-0144 · asset id: WELL-0228 · inspected at: 2026-12-17T12:45:00Z · inspector user id: U-504 · method: manual · ambient temp c: 7.1 · wellhead temp c: 43.5 · spill detected: false · notes:",
+              "assetId": "WELL-0228"
+            },
+            {
+              "id": "CTX-0052-003",
+              "title": "Operator note · CTX-0052-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0052/context.jsonl",
+              "excerpt": "asset id: WELL-0052 · created at: 2026-12-18T06:45:00Z · author user id: U-103 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0052 wellhead, area flagged off. · valid from: 2026-12-18 · note id: CTX-0052-003",
+              "assetId": "WELL-0052"
+            },
+            {
+              "id": "CTX-0370-005",
+              "title": "Operator note · CTX-0370-005",
+              "type": "note",
+              "path": "dataset/assets/WELL-0370/context.jsonl",
+              "excerpt": "asset id: WELL-0370 · created at: 2026-12-21T12:45:00Z · author user id: U-605 · note type: operator_note · text: Strong gas odor around the WELL-0370 cellar, called it in to the supervisor. · valid from: 2026-12-21 · note id: CTX-0370-005",
+              "assetId": "WELL-0370"
+            },
+            {
+              "id": "MNT-0370-028",
+              "title": "Repair · MNT-0370-028",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0370/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0370-028 · asset id: WELL-0370 · started at: 2026-12-22T08:00:00Z · completed at: 2026-12-22T11:00:00Z · maintenance type: scheduled · equipment kind: esp_pump · issue: Scheduled ESP drive and insulation check · action taken: Drive inspected and insulation readings recorded · technician user id: U-302 · contractor: Coyote Ridge Well Services · downtime hours: 3",
+              "assetId": "WELL-0370"
+            },
+            {
+              "id": "CTX-0362-002",
+              "title": "Operator note · CTX-0362-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0362/context.jsonl",
+              "excerpt": "asset id: WELL-0362 · created at: 2026-12-24T00:15:00Z · author user id: U-605 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0362 wellhead, area flagged off. · valid from: 2026-12-24 · note id: CTX-0362-002",
+              "assetId": "WELL-0362"
+            },
+            {
+              "id": "MNT-0362-030",
+              "title": "Repair · MNT-0362-030",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0362/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0362-030 · asset id: WELL-0362 · started at: 2026-12-25T08:00:00Z · completed at: 2026-12-25T12:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-305 · contractor: Coyote Ridge Well Services · downtime hours: 4",
+              "assetId": "WELL-0362"
+            },
+            {
+              "id": "CTX-0161-006",
+              "title": "Operator note · CTX-0161-006",
+              "type": "note",
+              "path": "dataset/assets/WELL-0161/context.jsonl",
+              "excerpt": "asset id: WELL-0161 · created at: 2026-12-25T15:45:00Z · author user id: U-203 · note type: operator_note · text: Smelled gas downwind of WELL-0161 wellhead, backed off and called it in. · valid from: 2026-12-25 · note id: CTX-0161-006",
+              "assetId": "WELL-0161"
+            },
+            {
+              "id": "INS-0161-0168",
+              "title": "Inspection · INS-0161-0168",
+              "type": "inspection",
+              "path": "dataset/assets/WELL-0161/inspections.jsonl",
+              "excerpt": "inspection id: INS-0161-0168 · asset id: WELL-0161 · inspected at: 2027-01-14T11:00:00Z · inspector user id: U-203 · method: manual · ambient temp c: 6.6 · wellhead temp c: 31.4 · spill detected: false · notes:",
+              "assetId": "WELL-0161"
+            },
+            {
+              "id": "CTX-0135-009",
+              "title": "Operator note · CTX-0135-009",
+              "type": "note",
+              "path": "dataset/assets/WELL-0135/context.jsonl",
+              "excerpt": "asset id: WELL-0135 · created at: 2026-12-27T03:50:00Z · author user id: U-204 · note type: operator_note · text: Smelled gas downwind of WELL-0135 wellhead, backed off and called it in. · valid from: 2026-12-27 · note id: CTX-0135-009",
+              "assetId": "WELL-0135"
+            },
+            {
+              "id": "MNT-0135-034",
+              "title": "Repair · MNT-0135-034",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0135/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0135-034 · asset id: WELL-0135 · started at: 2026-12-27T08:00:00Z · completed at: 2026-12-29T15:00:00Z · maintenance type: corrective · equipment kind: pump_jack · issue: Prime mover failure · action taken: Replaced the electric motor with an exchange unit · technician user id: U-303 · downtime hours: 55 · triggered by inspection id: INS-0135-0215 · report file: maintenance-reports/MNT-0135-034.md",
+              "assetId": "WELL-0135"
+            },
+            {
+              "id": "CTX-0324-001",
+              "title": "Operator note · CTX-0324-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0324/context.jsonl",
+              "excerpt": "asset id: WELL-0324 · created at: 2027-01-01T22:40:00Z · author user id: U-605 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0324 wellhead, area flagged off. · valid from: 2027-01-01 · note id: CTX-0324-001",
+              "assetId": "WELL-0324"
+            },
+            {
+              "id": "MNT-0324-036",
+              "title": "Repair · MNT-0324-036",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0324/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0324-036 · asset id: WELL-0324 · started at: 2027-01-02T08:00:00Z · completed at: 2027-01-11T21:00:00Z · maintenance type: corrective · equipment kind: pump_jack · issue: Walking beam bearing wear · action taken: Replaced saddle bearing and re-greased · technician user id: U-302 · contractor: Coyote Ridge Well Services · downtime hours: 229 · triggered by inspection id: INS-0324-0218 · report file: maintenance-reports/MNT-0324-036.md",
+              "assetId": "WELL-0324"
+            },
+            {
+              "id": "CTX-0330-003",
+              "title": "Operator note · CTX-0330-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0330/context.jsonl",
+              "excerpt": "asset id: WELL-0330 · created at: 2027-01-02T21:40:00Z · author user id: U-606 · note type: operator_note · text: H2S monitor alarmed at WELL-0330, crew moved upwind and reported it. · valid from: 2027-01-02 · note id: CTX-0330-003",
+              "assetId": "WELL-0330"
+            },
+            {
+              "id": "MNT-0330-030",
+              "title": "Repair · MNT-0330-030",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0330/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0330-030 · asset id: WELL-0330 · started at: 2027-01-03T08:00:00Z · completed at: 2027-01-27T20:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline corrosion pinhole leak · action taken: Cut out and replaced the corroded flowline section · technician user id: U-304 · contractor: Tumbleweed Flowline Co. · downtime hours: 588 · triggered by inspection id: INS-0330-0211 · report file: maintenance-reports/MNT-0330-030.md",
+              "assetId": "WELL-0330"
+            },
+            {
+              "id": "CTX-0599-003",
+              "title": "Operator note · CTX-0599-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0599/context.jsonl",
+              "excerpt": "asset id: WELL-0599 · created at: 2027-01-06T17:20:00Z · author user id: U-506 · note type: operator_note · text: Strong gas odor around the WELL-0599 cellar, called it in to the supervisor. · valid from: 2027-01-06 · note id: CTX-0599-003",
+              "assetId": "WELL-0599"
+            },
+            {
+              "id": "INS-0599-0196",
+              "title": "Inspection · INS-0599-0196",
+              "type": "inspection",
+              "path": "dataset/assets/WELL-0599/inspections.jsonl",
+              "excerpt": "inspection id: INS-0599-0196 · asset id: WELL-0599 · inspected at: 2027-01-07T09:45:00Z · inspector user id: U-502 · method: manual · ambient temp c: 5.8 · wellhead temp c: 8.2 · spill detected: false · notes:",
+              "assetId": "WELL-0599"
+            },
+            {
+              "id": "CTX-0516-002",
+              "title": "Operator note · CTX-0516-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0516/context.jsonl",
+              "excerpt": "asset id: WELL-0516 · created at: 2027-01-06T21:15:00Z · author user id: U-503 · note type: operator_note · text: Rotten-egg smell at the WELL-0516 pad on arrival, called the HSE officer. · valid from: 2027-01-06 · note id: CTX-0516-002",
+              "assetId": "WELL-0516"
+            },
+            {
+              "id": "INS-0516-0215",
+              "title": "Inspection · INS-0516-0215",
+              "type": "inspection",
+              "path": "dataset/assets/WELL-0516/inspections.jsonl",
+              "excerpt": "inspection id: INS-0516-0215 · asset id: WELL-0516 · inspected at: 2027-01-07T12:15:00Z · inspector user id: U-504 · method: manual · ambient temp c: 9.1 · wellhead temp c: 36 · spill detected: false · notes:",
+              "assetId": "WELL-0516"
+            },
+            {
+              "id": "CTX-0425-006",
+              "title": "Operator note · CTX-0425-006",
+              "type": "note",
+              "path": "dataset/assets/WELL-0425/context.jsonl",
+              "excerpt": "asset id: WELL-0425 · created at: 2027-01-07T05:20:00Z · author user id: U-602 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0425 wellhead, area flagged off. · valid from: 2027-01-07 · note id: CTX-0425-006",
+              "assetId": "WELL-0425"
+            },
+            {
+              "id": "INS-0425-0218",
+              "title": "Inspection · INS-0425-0218",
+              "type": "inspection",
+              "path": "dataset/assets/WELL-0425/inspections.jsonl",
+              "excerpt": "inspection id: INS-0425-0218 · asset id: WELL-0425 · inspected at: 2027-01-07T09:00:00Z · inspector user id: U-604 · method: manual · ambient temp c: 4.6 · wellhead temp c: 36.5 · spill detected: false · notes:",
+              "assetId": "WELL-0425"
+            },
+            {
+              "id": "CTX-0465-005",
+              "title": "Operator note · CTX-0465-005",
+              "type": "note",
+              "path": "dataset/assets/WELL-0465/context.jsonl",
+              "excerpt": "asset id: WELL-0465 · created at: 2027-01-08T23:35:00Z · author user id: U-506 · note type: operator_note · text: Strong gas odor around the WELL-0465 cellar, called it in to the supervisor. · valid from: 2027-01-08 · note id: CTX-0465-005",
+              "assetId": "WELL-0465"
+            },
+            {
+              "id": "MNT-0465-031",
+              "title": "Repair · MNT-0465-031",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0465/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0465-031 · asset id: WELL-0465 · started at: 2027-01-09T08:00:00Z · completed at: 2027-01-09T18:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-304 · contractor: Coyote Ridge Well Services · downtime hours: 10",
+              "assetId": "WELL-0465"
+            },
+            {
+              "id": "CTX-0137-004",
+              "title": "Operator note · CTX-0137-004",
+              "type": "note",
+              "path": "dataset/assets/WELL-0137/context.jsonl",
+              "excerpt": "asset id: WELL-0137 · created at: 2027-01-10T23:30:00Z · author user id: U-203 · note type: operator_note · text: Gas odor reported by the pumper near WELL-0137 wellhead, area flagged off. · valid from: 2027-01-10 · note id: CTX-0137-004",
+              "assetId": "WELL-0137"
+            },
+            {
+              "id": "MNT-0137-032",
+              "title": "Repair · MNT-0137-032",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0137/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0137-032 · asset id: WELL-0137 · started at: 2027-01-11T08:00:00Z · completed at: 2027-01-11T12:00:00Z · maintenance type: scheduled · equipment kind: wellhead · issue: Scheduled wellhead valve service · action taken: Valves serviced and pressure tested · technician user id: U-305 · downtime hours: 4",
+              "assetId": "WELL-0137"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0163",
+            "WELL-0149",
+            "WELL-0165",
+            "WELL-0341",
+            "WELL-0091",
+            "WELL-0423",
+            "WELL-0059",
+            "WELL-0332",
+            "WELL-0401",
+            "WELL-0189",
+            "WELL-0403",
+            "WELL-0244",
+            "WELL-0040",
+            "WELL-0228",
+            "WELL-0052",
+            "WELL-0370",
+            "WELL-0362",
+            "WELL-0161",
+            "WELL-0135",
+            "WELL-0324",
+            "WELL-0330",
+            "WELL-0599",
+            "WELL-0516",
+            "WELL-0425",
+            "WELL-0465",
+            "WELL-0137"
+          ],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: gas_response. Only this user’s last five exchanges were supplied.",
+              "durationMs": 9852
+            },
+            {
+              "tool": "gas_response",
+              "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+              "durationMs": 56
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 9908
+        }
+      }
+    ],
+    "revision": 3
+  }
+}

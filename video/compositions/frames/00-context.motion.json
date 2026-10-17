@@ -1,0 +1,7 @@
+{
+  "scene": "00-context",
+  "duration_s": 30,
+  "rules": ["svg-path-draw", "sine-wave-loop", "multi-phase-camera", "viewport-change", "coordinate-target-zoom", "counting-dynamic-scale", "ambient-glow-bloom"],
+  "exit": { "vector": "radial outward ~19 px/s at the frame edge (camera push 0.96 to 0.975 over the last 0.8s, ~10 px/s at 500px from centre) plus pump-jack beams nodding up to +/-17 deg on a ~3s sine and a 5px camera drift; dim overlay easing 0.30 to 0.44 (field settling toward a dark stage)", "still_moving": true },
+  "entry": { "vector": "hero pump jack rises y 26px to 0 over 0.6s (power3.out, ~130 px/s at t=0) while the camera pushes radially outward ~7 px/s at the frame edge (scale 0.96 to 1.0 over 5.6s) and the accent horizon line draws left to right", "from_rest": false }
+}

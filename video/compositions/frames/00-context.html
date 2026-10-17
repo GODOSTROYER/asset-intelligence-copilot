@@ -1,0 +1,1252 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #eef2f8;
+      font-family: "Montserrat", sans-serif;
+    }
+    #root * {
+      box-sizing: border-box;
+    }
+    .f00-layer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      pointer-events: none;
+    }
+    .f00-bgfield {
+      background: radial-gradient(ellipse 80% 75% at 50% 46%, #0d1830 0%, #0a1222 55%, #070d19 100%);
+    }
+    .f00-grid {
+      position: absolute;
+      left: -48px;
+      top: -48px;
+      width: 2016px;
+      height: 1176px;
+      background-image: linear-gradient(rgba(34, 50, 79, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 50, 79, 0.35) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .f00-ghost {
+      position: absolute;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 28px;
+      color: #eef2f8;
+      opacity: 0.05;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+    .f00-glow {
+      position: absolute;
+      left: 310px;
+      top: 80px;
+      width: 1300px;
+      height: 900px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(61, 123, 255, 0.2) 0%, rgba(61, 123, 255, 0.06) 45%, rgba(61, 123, 255, 0) 70%);
+      opacity: 0.8;
+    }
+    .f00-world {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2000px;
+      height: 1400px;
+      transform-origin: 0 0;
+    }
+    .f00-wsvg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2000px;
+      height: 1400px;
+      overflow: visible;
+    }
+    .f00-dim {
+      background: #0a1222;
+      opacity: 0;
+    }
+    .f00-vig {
+      background: linear-gradient(to bottom, rgba(7, 13, 25, 0) 84%, rgba(7, 13, 25, 0.88) 100%),
+        radial-gradient(ellipse 70% 70% at 50% 48%, rgba(7, 13, 25, 0) 45%, rgba(7, 13, 25, 0.8) 100%);
+    }
+    .f00-hudsvg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: visible;
+    }
+    .f00-chip {
+      position: absolute;
+      height: 48px;
+      padding: 0 22px 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(61, 123, 255, 0.45);
+      background: linear-gradient(rgba(61, 123, 255, 0.12), rgba(61, 123, 255, 0.12)), rgba(10, 18, 34, 0.86);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.04em;
+      color: #eef2f8;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+    .f00-chip i {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #3d7bff;
+    }
+    .f00-wh {
+      position: absolute;
+      left: 1060px;
+      top: 220px;
+      width: 640px;
+      padding: 22px 30px 24px 30px;
+      border-radius: 18px;
+      border: 1px solid #22324f;
+      border-left: 4px solid #3d7bff;
+      background: rgba(17, 28, 51, 0.94);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+    .f00-wh b {
+      display: block;
+      font-weight: 800;
+      font-size: 44px;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      color: #eef2f8;
+    }
+    .f00-wh span {
+      display: block;
+      margin-top: 8px;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 1.25;
+      color: #9aa8c0;
+    }
+    .f00-ex {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 0.14em;
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(154, 168, 192, 0.55);
+      color: #9aa8c0;
+      white-space: nowrap;
+    }
+    .f00-th {
+      position: absolute;
+      left: 1200px;
+      top: 400px;
+      width: 480px;
+      height: 300px;
+      border-radius: 18px;
+      border: 1px solid #22324f;
+      background: rgba(17, 28, 51, 0.94);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+    .f00-thh {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.14em;
+      color: #9aa8c0;
+    }
+    .f00-thh em {
+      font-style: normal;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .f00-thh em i {
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #3d7bff;
+    }
+    .f00-thl {
+      position: absolute;
+      left: 30px;
+      top: 92px;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: 0.14em;
+      color: #9aa8c0;
+    }
+    .f00-thv {
+      position: absolute;
+      left: 30px;
+      top: 124px;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+    .f00-thv b {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 112px;
+      line-height: 120px;
+      letter-spacing: -0.04em;
+      color: #eef2f8;
+    }
+    .f00-thv i {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 44px;
+      margin-left: 8px;
+      color: #9aa8c0;
+    }
+    .f00-thbar {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      top: 258px;
+      height: 14px;
+      border-radius: 7px;
+      background: #22324f;
+      overflow: hidden;
+    }
+    .f00-thbar div {
+      width: 100%;
+      height: 100%;
+      background: #3d7bff;
+      transform-origin: 0 50%;
+    }
+    .f00-cmp {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      transform-origin: 100% 0%;
+    }
+    .f00-pan {
+      position: absolute;
+      top: 150px;
+      width: 720px;
+      height: 640px;
+      border-radius: 18px;
+      border: 1px solid #22324f;
+      background: rgba(17, 28, 51, 0.95);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+    #f00-pl {
+      left: 210px;
+    }
+    #f00-pr {
+      left: 990px;
+    }
+    .f00-ph {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      top: 30px;
+      height: 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .f00-case {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.16em;
+      color: #9aa8c0;
+    }
+    .f00-row {
+      position: absolute;
+      left: 40px;
+      width: 640px;
+      height: 110px;
+    }
+    .f00-rlab {
+      position: absolute;
+      left: 0;
+      top: 38px;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: 0.14em;
+      color: #9aa8c0;
+    }
+    .f00-rval {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 72px;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+    .f00-rval b {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 72px;
+      letter-spacing: -0.03em;
+      color: #eef2f8;
+    }
+    .f00-rval i {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      margin-left: 8px;
+      color: #9aa8c0;
+    }
+    .f00-track {
+      position: absolute;
+      left: 0;
+      top: 78px;
+      width: 640px;
+      height: 22px;
+      border-radius: 11px;
+      background: #22324f;
+      overflow: hidden;
+    }
+    .f00-fill {
+      width: 100%;
+      height: 100%;
+      background: #3d7bff;
+      transform-origin: 0 50%;
+    }
+    .f00-fill.air {
+      background: #9aa8c0;
+    }
+    .f00-mark {
+      position: absolute;
+      left: 240px;
+      top: 168px;
+      width: 0;
+      height: 168px;
+      border-left: 2px dashed rgba(238, 242, 248, 0.6);
+      transform-origin: 50% 0%;
+    }
+    .f00-verd {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      top: 366px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .f00-vlab {
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 0.18em;
+      color: #eef2f8;
+      white-space: nowrap;
+    }
+    .f00-varr {
+      width: 28px;
+      height: 46px;
+      margin: 8px 0 10px 0;
+      overflow: visible;
+    }
+    .f00-varr path {
+      fill: none;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .f00-vchip {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      height: 96px;
+      padding: 0 42px 0 32px;
+      border-radius: 999px;
+      border: 2px solid;
+      font-weight: 900;
+      font-size: 60px;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .f00-vchip i {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+    .f00-vchip.ok {
+      color: #3d7bff;
+      border-color: rgba(61, 123, 255, 0.7);
+      background: rgba(61, 123, 255, 0.12);
+    }
+    .f00-vchip.ok i {
+      border-radius: 50%;
+      background: #3d7bff;
+    }
+    .f00-vchip.bad {
+      color: #f2a33a;
+      border-color: rgba(242, 163, 58, 0.7);
+      background: rgba(242, 163, 58, 0.12);
+    }
+    .f00-vchip.bad i {
+      border-radius: 5px;
+      background: #f2a33a;
+    }
+    .f00-vghost {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 440px;
+      height: 96px;
+      margin-left: -220px;
+      border-radius: 999px;
+      border: 2px dashed rgba(154, 168, 192, 0.32);
+    }
+    .f00-pg {
+      position: absolute;
+      left: 110px;
+      top: 330px;
+      width: 500px;
+      height: 300px;
+      border-radius: 50%;
+      opacity: 0;
+    }
+    .f00-pg.ok {
+      background: radial-gradient(ellipse, rgba(61, 123, 255, 0.5) 0%, rgba(61, 123, 255, 0.14) 45%, rgba(61, 123, 255, 0) 70%);
+    }
+    .f00-pg.bad {
+      background: radial-gradient(ellipse, rgba(242, 163, 58, 0.45) 0%, rgba(242, 163, 58, 0.12) 45%, rgba(242, 163, 58, 0) 70%);
+    }
+    .f00-leg {
+      position: absolute;
+      right: 120px;
+      top: 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+    .f00-pill {
+      height: 48px;
+      padding: 0 22px 0 18px;
+      border-radius: 999px;
+      border: 1px solid;
+      background: rgba(10, 18, 34, 0.86);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.04em;
+      color: #9aa8c0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+    .f00-pill b {
+      font-weight: 700;
+    }
+    .f00-pill i {
+      display: block;
+      width: 12px;
+      height: 12px;
+    }
+    .f00-pill.ok {
+      border-color: rgba(61, 123, 255, 0.5);
+    }
+    .f00-pill.ok b {
+      color: #3d7bff;
+    }
+    .f00-pill.ok i {
+      border-radius: 50%;
+      background: #3d7bff;
+    }
+    .f00-pill.bad {
+      border-color: rgba(242, 163, 58, 0.5);
+    }
+    .f00-pill.bad b {
+      color: #f2a33a;
+    }
+    .f00-pill.bad i {
+      border-radius: 3px;
+      background: #f2a33a;
+    }
+  </style>
+
+  <div id="root" data-composition-id="00-context" data-width="1920" data-height="1080">
+    <div class="clip f00-layer" data-start="0" data-duration="30" data-track-index="0" id="f00-bg">
+      <div class="f00-layer f00-bgfield"></div>
+      <div class="f00-glow" id="f00-glow"></div>
+      <div class="f00-grid" id="f00-grid"></div>
+      <div class="f00-layer" id="f00-ghosts" data-layout-allow-overlap data-layout-allow-occlusion></div>
+    </div>
+
+    <div class="clip f00-layer" data-start="0" data-duration="30" data-track-index="1" id="f00-stage">
+      <div class="f00-world" id="f00-world" data-layout-allow-overflow data-layout-allow-overlap data-layout-allow-occlusion>
+        <svg class="f00-wsvg" id="f00-wsvg" viewBox="0 0 2000 1400"></svg>
+      </div>
+      <div class="f00-layer f00-dim" id="f00-dim" data-layout-allow-occlusion></div>
+      <div class="f00-layer f00-vig" data-layout-allow-occlusion></div>
+    </div>
+
+    <div class="clip f00-layer" data-start="0" data-duration="30" data-track-index="2" id="f00-hud">
+      <svg class="f00-hudsvg" id="f00-hudsvg" viewBox="0 0 1920 1080"></svg>
+
+      <div class="f00-chip" id="f00-c-jack" style="left: 300px; top: 152px"><i></i>PUMP JACK</div>
+      <div class="f00-chip" id="f00-c-bore" style="left: 1560px; top: 520px"><i></i>WELL BORE</div>
+      <div class="f00-chip" id="f00-c-res" style="left: 1560px; top: 770px"><i></i>OIL RESERVOIR</div>
+      <div class="f00-chip" id="f00-c-route" style="left: 1320px; top: 72px"><i></i>DRONE · WEEKLY ROUTE</div>
+
+      <div class="f00-wh" id="f00-wh" data-layout-allow-overlap data-layout-allow-occlusion><b>WELLHEAD</b><span>the valve cap where oil comes out</span></div>
+
+      <div class="f00-th" id="f00-th" data-layout-allow-overlap data-layout-allow-occlusion>
+        <div class="f00-thh"><em><i></i>THERMAL SCAN</em><span class="f00-ex">EXAMPLE</span></div>
+        <div class="f00-thl">WELLHEAD</div>
+        <div class="f00-thv"><b id="f00-thn">0</b><i>°C</i></div>
+        <div class="f00-thbar"><div id="f00-thfill"></div></div>
+      </div>
+
+      <div class="f00-cmp" id="f00-cmp" data-layout-allow-overlap data-layout-allow-occlusion>
+        <div class="f00-pan" id="f00-pl" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="f00-pg ok" id="f00-pgl"></div>
+          <div class="f00-ph"><span class="f00-case">CASE A</span><span class="f00-ex">EXAMPLE</span></div>
+          <div class="f00-row" id="f00-lr1" style="top: 92px">
+            <div class="f00-rlab">WELLHEAD</div>
+            <div class="f00-rval"><b id="f00-ln1">0</b><i>°C</i></div>
+            <div class="f00-track"><div class="f00-fill" id="f00-lf1"></div></div>
+          </div>
+          <div class="f00-row" id="f00-lr2" style="top: 214px">
+            <div class="f00-rlab">AIR</div>
+            <div class="f00-rval"><b id="f00-ln2" style="color: #9aa8c0">25</b><i>°C</i></div>
+            <div class="f00-track"><div class="f00-fill air" id="f00-lf2"></div></div>
+          </div>
+          <div class="f00-mark" id="f00-lmk"></div>
+          <div class="f00-verd">
+            <div class="f00-vlab" id="f00-llab">MUCH WARMER</div>
+            <svg class="f00-varr" id="f00-larr" viewBox="0 0 28 46"><path id="f00-larrp" d="M14 2 V40 M5 31 L14 42 L23 31" stroke="#3d7bff" /></svg>
+            <div class="f00-vghost" id="f00-lghost"></div>
+            <div class="f00-vchip ok" id="f00-lchip"><i></i>PRODUCING</div>
+          </div>
+        </div>
+
+        <div class="f00-pan" id="f00-pr" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="f00-pg bad" id="f00-pgr"></div>
+          <div class="f00-ph"><span class="f00-case">CASE B</span><span class="f00-ex">EXAMPLE</span></div>
+          <div class="f00-row" id="f00-rr1" style="top: 92px">
+            <div class="f00-rlab">WELLHEAD</div>
+            <div class="f00-rval"><b id="f00-rn1">70</b><i>°C</i></div>
+            <div class="f00-track"><div class="f00-fill" id="f00-rf1"></div></div>
+          </div>
+          <div class="f00-row" id="f00-rr2" style="top: 214px">
+            <div class="f00-rlab">AIR</div>
+            <div class="f00-rval"><b id="f00-rn2" style="color: #9aa8c0">25</b><i>°C</i></div>
+            <div class="f00-track"><div class="f00-fill air" id="f00-rf2"></div></div>
+          </div>
+          <div class="f00-mark" id="f00-rmk"></div>
+          <div class="f00-verd">
+            <div class="f00-vlab" id="f00-rlab">SAME AS AIR</div>
+            <svg class="f00-varr" id="f00-rarr" viewBox="0 0 28 46"><path id="f00-rarrp" d="M14 2 V40 M5 31 L14 42 L23 31" stroke="#f2a33a" /></svg>
+            <div class="f00-vghost" id="f00-rghost"></div>
+            <div class="f00-vchip bad" id="f00-rchip"><i></i>STOPPED</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="f00-leg" id="f00-leg" data-layout-allow-overlap data-layout-allow-occlusion>
+        <div class="f00-pill ok" id="f00-lg1"><i></i><b>PRODUCING</b> · warmer than air</div>
+        <div class="f00-pill bad" id="f00-lg2"><i></i><b>STOPPED</b> · same as air</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var ID = "00-context";
+      var NS = "http://www.w3.org/2000/svg";
+      var tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines[ID] = tl;
+
+      var ACC = "#3d7bff",
+        ALT = "#f2a33a",
+        FG = "#eef2f8",
+        MUT = "#9aa8c0",
+        LINE = "#22324f",
+        FILL = "#0b1426";
+      var TAU = Math.PI * 2;
+
+      function $(id) {
+        return document.getElementById(id);
+      }
+      function mk(name, attrs, parent) {
+        var n = document.createElementNS(NS, name);
+        for (var k in attrs) n.setAttribute(k, attrs[k]);
+        if (parent) parent.appendChild(n);
+        return n;
+      }
+      function clamp01(u) {
+        return u < 0 ? 0 : u > 1 ? 1 : u;
+      }
+      function eio2(u) {
+        u = clamp01(u);
+        return u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2;
+      }
+
+      /* ======================= WORLD (SVG) ======================= */
+      var svg = $("f00-wsvg");
+      svg.insertAdjacentHTML(
+        "beforeend",
+        '<defs>' +
+          '<linearGradient id="f00-sky" gradientUnits="userSpaceOnUse" x1="0" y1="60" x2="0" y2="700">' +
+          '<stop offset="0" stop-color="#0a1222" stop-opacity="0"/>' +
+          '<stop offset="0.6" stop-color="#14213d" stop-opacity="0.6"/>' +
+          '<stop offset="1" stop-color="#22324f" stop-opacity="0.9"/></linearGradient>' +
+          '<radialGradient id="f00-hglow"><stop offset="0" stop-color="#3d7bff" stop-opacity="0.38"/><stop offset="1" stop-color="#3d7bff" stop-opacity="0"/></radialGradient>' +
+          '<radialGradient id="f00-mglow"><stop offset="0" stop-color="#3d7bff" stop-opacity="0.22"/><stop offset="1" stop-color="#3d7bff" stop-opacity="0"/></radialGradient>' +
+          '<linearGradient id="f00-conegrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d7bff" stop-opacity="0.55"/><stop offset="1" stop-color="#3d7bff" stop-opacity="0.1"/></linearGradient>' +
+          '<radialGradient id="f00-thermg"><stop offset="0" stop-color="#eef2f8" stop-opacity="0.5"/><stop offset="0.35" stop-color="#3d7bff" stop-opacity="0.5"/><stop offset="1" stop-color="#3d7bff" stop-opacity="0"/></radialGradient>' +
+          '<pattern id="f00-hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="14" stroke="#22324f" stroke-width="2"/></pattern>' +
+          '<clipPath id="f00-cutclip"><rect id="f00-cutrect" x="548" y="700" width="840" height="0"/></clipPath>' +
+          '<mask id="f00-routemask" maskUnits="userSpaceOnUse" x="-400" y="0" width="2800" height="900"><path id="f00-routemp" d="" fill="none" stroke="#ffffff" stroke-width="40" stroke-linecap="round"/></mask>' +
+          "</defs>",
+      );
+
+      /* sky, stars, moon, horizon glow */
+      mk("rect", { x: -700, y: -600, width: 3400, height: 1300, fill: "url(#f00-sky)" }, svg);
+      for (var si = 0; si < 44; si++) {
+        mk(
+          "circle",
+          {
+            cx: ((si * 397) % 2300) - 150,
+            cy: ((si * 173) % 420) + 20,
+            r: 1.2 + (si % 3) * 0.5,
+            fill: FG,
+            "fill-opacity": 0.2 + (si % 4) * 0.08,
+          },
+          svg,
+        );
+      }
+      mk("circle", { cx: 1500, cy: 360, r: 300, fill: "url(#f00-mglow)" }, svg);
+      mk("circle", { cx: 1500, cy: 360, r: 62, fill: FG, "fill-opacity": 0.09, stroke: MUT, "stroke-opacity": 0.28, "stroke-width": 1.5 }, svg);
+      mk("ellipse", { cx: 1500, cy: 700, rx: 900, ry: 150, fill: "url(#f00-hglow)" }, svg);
+
+      /* ridges */
+      function ridge1(x) {
+        return 662 - 12 * Math.sin(x / 230) - 7 * Math.sin(x / 83 + 1.3);
+      }
+      function ridge2(x) {
+        return 640 - 18 * Math.sin(x / 310 + 2) - 6 * Math.sin(x / 110);
+      }
+      function ridgePath(fn) {
+        var d = "M -500 720";
+        for (var x = -500; x <= 2500; x += 40) d += " L " + x + " " + fn(x).toFixed(1);
+        return d + " L 2500 720 Z";
+      }
+      mk("path", { d: ridgePath(ridge2), fill: "#10192e" }, svg);
+      var gTiny = mk("g", {}, svg);
+      mk("path", { d: ridgePath(ridge1), fill: "#0b1426" }, svg);
+      var gFar = mk("g", {}, svg);
+
+      /* near ground */
+      mk("rect", { x: -700, y: 700, width: 3400, height: 800, fill: "#070d19", "fill-opacity": 0.96 }, svg);
+      for (var gi = 0; gi < 6; gi++) {
+        mk("path", { d: "M -700 " + (770 + gi * 70) + " H 2700", stroke: LINE, "stroke-opacity": 0.35 - gi * 0.04, "stroke-width": 1.5, fill: "none" }, svg);
+      }
+      var horizon = mk("path", { id: "f00-horizon", d: "M -700 700 H 2700", stroke: ACC, "stroke-width": 2.5, "stroke-opacity": 0.85, fill: "none" }, svg);
+      var gNear = mk("g", {}, svg);
+
+      /* ---------- pump jack builder ---------- */
+      var PV = { x: 0, y: -230 },
+        CC = { x: -70, y: -64 },
+        CR = 34,
+        RT = 118,
+        PL = 170,
+        HR = 168,
+        PHIA = (-32 * Math.PI) / 180,
+        CARR0 = -136;
+      function solve(th) {
+        var qx = CC.x + CR * Math.cos(th),
+          qy = CC.y + CR * Math.sin(th);
+        var dx = qx - PV.x,
+          dy = qy - PV.y;
+        var d = Math.sqrt(dx * dx + dy * dy);
+        var a = (RT * RT - PL * PL + d * d) / (2 * d);
+        var h2 = RT * RT - a * a;
+        if (h2 < 0) h2 = 0;
+        var h = Math.sqrt(h2);
+        var ux = dx / d,
+          uy = dy / d;
+        var mx = PV.x + a * ux,
+          my = PV.y + a * uy;
+        var t1x = mx - h * uy,
+          t1y = my + h * ux,
+          t2x = mx + h * uy,
+          t2y = my - h * ux;
+        var tx = t1x < t2x ? t1x : t2x,
+          ty = t1x < t2x ? t1y : t2y;
+        return { b: Math.atan2(-(ty - PV.y), -(tx - PV.x)), qx: qx, qy: qy, tx: tx, ty: ty };
+      }
+      function pt(r, a) {
+        return (r * Math.cos(a)).toFixed(1) + " " + (PV.y + r * Math.sin(a)).toFixed(1);
+      }
+
+      var jacks = [];
+      function buildJack(parent, o) {
+        var sw = 1.8 / o.s;
+        var wrap = mk("g", {}, parent);
+        var g = mk("g", { transform: "translate(" + o.x + " " + o.y + ") scale(" + o.s + ")" }, wrap);
+        var edge = o.hero ? ACC : MUT,
+          eo = o.hero ? 0.95 : 0.6;
+        function S(name, attrs, par) {
+          var a = { fill: FILL, stroke: edge, "stroke-opacity": eo, "stroke-width": sw, "stroke-linejoin": "round" };
+          for (var k in attrs) a[k] = attrs[k];
+          return mk(name, a, par || g);
+        }
+        /* skid, gearbox, samson post */
+        S("rect", { x: -150, y: -14, width: 260, height: 14, rx: 3 });
+        S("rect", { x: -92, y: -38, width: 44, height: 24 });
+        S("rect", { x: -98, y: -94, width: 56, height: 58, rx: 6 });
+        S("path", { d: "M -50 -14 L -7 -224 H 7 L 50 -14 L 36 -14 L 0 -196 L -36 -14 Z" });
+        S("rect", { x: -28, y: -78, width: 56, height: 7 });
+        S("rect", { x: -17, y: -138, width: 34, height: 6 });
+        /* wellhead glyph (valve cap) */
+        var wx = HR;
+        var whg = mk("g", { transform: "translate(" + wx + " 0)" }, g);
+        S("rect", { x: -22, y: -12, width: 44, height: 12, rx: 2 }, whg);
+        S("rect", { x: 11, y: -44, width: 64, height: 11 }, whg);
+        S("rect", { x: 72, y: -48, width: 6, height: 19 }, whg);
+        S("rect", { x: -11, y: -52, width: 22, height: 40 }, whg);
+        S("rect", { x: -16, y: -34, width: 32, height: 7, rx: 2 }, whg);
+        S("rect", { x: 34, y: -56, width: 20, height: 34, rx: 3 }, whg);
+        S("path", { d: "M 44 -56 V -68", fill: "none" }, whg);
+        S("rect", { x: 31, y: -74, width: 26, height: 6, rx: 3 }, whg);
+        var cap = S("path", { d: "M -17 -52 H 17 L 13 -60 Q 0 -66 -13 -60 Z" }, whg);
+        S("rect", { x: -5, y: -70, width: 10, height: 8, rx: 2 }, whg);
+        if (o.hero) {
+          cap.setAttribute("id", "f00-cap");
+          cap.setAttribute("fill", "#16294d");
+          cap.setAttribute("stroke-opacity", "1");
+        }
+        /* crank + counterweight (rotating) */
+        var crank = mk("g", {}, g);
+        var a1 = Math.PI - 1.05,
+          a2 = Math.PI + 1.05,
+          RW = 48;
+        S(
+          "path",
+          {
+            d:
+              "M " + CC.x + " " + CC.y + " L " + (CC.x + RW * Math.cos(a1)).toFixed(1) + " " + (CC.y + RW * Math.sin(a1)).toFixed(1) +
+              " A " + RW + " " + RW + " 0 0 1 " + (CC.x + RW * Math.cos(a2)).toFixed(1) + " " + (CC.y + RW * Math.sin(a2)).toFixed(1) + " Z",
+          },
+          crank,
+        );
+        S("path", { d: "M " + CC.x + " " + CC.y + " H " + (CC.x + CR), fill: "none", "stroke-width": sw * 2.2 }, crank);
+        S("circle", { cx: CC.x, cy: CC.y, r: 9 }, crank);
+        S("circle", { cx: CC.x + CR, cy: CC.y, r: 6, fill: o.hero ? ACC : MUT, "fill-opacity": 0.9 }, crank);
+        var pit = mk("line", { stroke: edge, "stroke-opacity": eo, "stroke-width": sw * 2.4, "stroke-linecap": "round" }, g);
+        /* walking beam + horse head (rotating) */
+        var beam = mk("g", {}, g);
+        S("rect", { x: -118, y: PV.y - 10, width: 262, height: 20, rx: 5 }, beam);
+        var h1 = (-32 * Math.PI) / 180,
+          h2 = (36 * Math.PI) / 180;
+        S("path", { d: "M " + pt(168, h1) + " A 168 168 0 0 1 " + pt(168, h2) + " L " + pt(134, h2) + " A 134 134 0 0 0 " + pt(134, h1) + " Z" }, beam);
+        S("circle", { cx: PV.x, cy: PV.y, r: 12 }, g);
+        S("circle", { cx: PV.x, cy: PV.y, r: 4, fill: edge, "fill-opacity": 0.9 }, g);
+        /* cable, carrier bar, polished rod */
+        var arc = mk("path", { fill: "none", stroke: edge, "stroke-opacity": eo, "stroke-width": sw * 1.4 }, g);
+        var cab = mk("line", { x1: HR, y1: PV.y, x2: HR, y2: -100, stroke: edge, "stroke-opacity": eo, "stroke-width": sw * 1.4 }, g);
+        var rod = mk("line", { x1: HR, y1: -90, x2: HR, y2: -70, stroke: MUT, "stroke-opacity": 0.85, "stroke-width": sw * 1.8 }, g);
+        var car = S("rect", { x: HR - 11, y: -140, width: 22, height: 9, rx: 2 });
+        var j = { o: o, wrap: wrap, crank: crank, beam: beam, pit: pit, arc: arc, cab: cab, rod: rod, car: car };
+        jacks.push(j);
+        return j;
+      }
+
+      /* far-far tiny jacks (hundreds of wells) */
+      var tinyJacks = [];
+      for (var ti = 0; ti < 12; ti++) {
+        var tx0 = 70 + ti * 172 + ((ti * 37) % 50);
+        tinyJacks.push(buildJack(gTiny, { x: tx0, y: ridge2(tx0) + 3, s: 0.2, ph: ti * 1.7, per: 2.8 + (ti % 5) * 0.22 }));
+      }
+      /* far row */
+      var farDefs = [
+        { x: 190, ph: 0.8, per: 3.3 },
+        { x: 640, ph: 3.3, per: 3.0 },
+        { x: 1470, ph: 5.0, per: 3.1 },
+        { x: 1880, ph: 1.2, per: 2.9 },
+      ];
+      var farJacks = farDefs.map(function (f) {
+        return buildJack(gFar, { x: f.x, y: ridge1(f.x) + 5, s: 0.5, ph: f.ph, per: f.per });
+      });
+      /* near row (hero = WELL-0001) */
+      var hero = buildJack(gNear, { x: 800, y: 700, s: 1.0, ph: 0.0, per: 3.0, hero: true });
+      var nearA = buildJack(gNear, { x: 330, y: 700, s: 0.8, ph: 1.9, per: 3.4 });
+      var nearC = buildJack(gNear, { x: 1250, y: 700, s: 0.85, ph: 4.1, per: 3.2 });
+      var nearD = buildJack(gNear, { x: 1700, y: 700, s: 0.75, ph: 2.6, per: 3.6 });
+      /* the hero's rendering order must sit above its neighbours */
+      var HX = 800 + HR; /* 968: bore / wellhead x */
+
+      /* well labels (under the ground line) */
+      function wlabel(txt, x, anchor) {
+        var t = mk("text", { x: x, y: 738, fill: MUT, "fill-opacity": 0.9, "font-size": 22, "text-anchor": anchor, "letter-spacing": "0.06em" }, svg);
+        t.setAttribute("style", "font-family:'IBM Plex Mono',monospace;font-weight:500");
+        t.setAttribute("data-layout-allow-overlap", "");
+        t.setAttribute("data-layout-allow-occlusion", "");
+        t.textContent = txt;
+        return t;
+      }
+      var lblA = wlabel("WELL-0002", 330 + HR * 0.8 - 18, "end");
+      var lblC = wlabel("WELL-0003", 1250 + HR * 0.85 + 18, "start");
+      var lblD = wlabel("WELL-0004", 1700 + HR * 0.75 - 18, "end");
+
+      /* ---------- cutaway section (clip-revealed) ---------- */
+      var cut = mk("g", { "clip-path": "url(#f00-cutclip)" }, svg);
+      var layers = [
+        [700, 60, "#111c33"],
+        [760, 90, "#0d1830"],
+        [850, 135, "#131f38"],
+        [985, 45, "#0b1326"],
+        [1030, 100, "#0d172b"],
+        [1130, 40, "#0a1224"],
+      ];
+      layers.forEach(function (L) {
+        mk("rect", { x: 548, y: L[0], width: 840, height: L[1], fill: L[2] }, cut);
+      });
+      mk("rect", { x: 548, y: 850, width: 840, height: 135, fill: "url(#f00-hatch)", opacity: 0.45 }, cut);
+      [760, 850, 985, 1030, 1130].forEach(function (y) {
+        mk("path", { d: "M 548 " + y + " H 1388", stroke: LINE, "stroke-width": 1.5, fill: "none" }, cut);
+      });
+      for (var ki = 0; ki < 17; ki++) {
+        var ky = 720 + ki * 28;
+        mk("path", { d: "M 548 " + ky + " H " + (ki % 4 === 0 ? 570 : 558), stroke: MUT, "stroke-opacity": 0.5, "stroke-width": 2, fill: "none" }, cut);
+      }
+      /* oil reservoir pool */
+      var pool = mk("g", { id: "f00-pool" }, cut);
+      mk("path", { d: "M 548 1046 Q 640 1030 730 1044 T 900 1040 T 1070 1048 T 1240 1038 T 1388 1044 V 1130 H 548 Z", fill: "#03060b" }, pool);
+      for (var pi = 0; pi < 46; pi++) {
+        mk("circle", { cx: 560 + ((pi * 131) % 820), cy: 1068 + ((pi * 53) % 52), r: 1.6 + (pi % 3) * 0.7, fill: FG, "fill-opacity": 0.1 + (pi % 3) * 0.04 }, pool);
+      }
+      var poolEdge = mk("path", { id: "f00-pooledge", d: "M 548 1046 Q 640 1030 730 1044 T 900 1040 T 1070 1048 T 1240 1038 T 1388 1044", fill: "none", stroke: ACC, "stroke-width": 3, "stroke-opacity": 0.9, "stroke-linecap": "round" }, pool);
+      var droplets = [];
+      for (var di = 0; di < 9; di++) {
+        droplets.push(mk("circle", { r: 4, fill: ACC, "fill-opacity": 0 }, pool));
+      }
+      /* section outline */
+      var outline = mk("path", { id: "f00-outline", d: "M 548 700 V 1152 Q 548 1170 566 1170 H 1370 Q 1388 1170 1388 1152 V 700", fill: "none", stroke: MUT, "stroke-opacity": 0.55, "stroke-width": 2, "stroke-linecap": "round" }, svg);
+
+      /* well bore (svg-path-draw) */
+      var boreW = mk("path", { id: "f00-bore-w", d: "M " + HX + " 700 V 1092", fill: "none", stroke: LINE, "stroke-width": 28, "stroke-linecap": "butt" }, svg);
+      var boreI = mk("path", { id: "f00-bore-i", d: "M " + HX + " 700 V 1092", fill: "none", stroke: "#04070d", "stroke-width": 15, "stroke-linecap": "butt" }, svg);
+      var boreLen = boreW.getTotalLength();
+      [boreW, boreI].forEach(function (p) {
+        p.style.strokeDasharray = String(boreLen);
+        p.style.strokeDashoffset = String(boreLen);
+      });
+      var gUnder = mk("g", { id: "f00-under", opacity: 0 }, svg);
+      var underRod = mk("line", { x1: HX, y1: 700, x2: HX, y2: 1050, stroke: MUT, "stroke-opacity": 0.9, "stroke-width": 2.2 }, gUnder);
+      var plunger = mk("rect", { x: HX - 6, y: 1046, width: 12, height: 26, rx: 2, fill: "#16294d", stroke: ACC, "stroke-width": 1.5 }, gUnder);
+      var perf = mk("g", { id: "f00-perf", opacity: 0 }, svg);
+      [1058, 1074, 1090].forEach(function (y) {
+        mk("path", { d: "M " + (HX - 14) + " " + y + " H " + (HX - 28) + " M " + (HX + 14) + " " + y + " H " + (HX + 28), stroke: ACC, "stroke-width": 2.2, "stroke-linecap": "round", fill: "none" }, perf);
+      });
+
+      /* oil flow: reservoir -> wellhead -> flowline */
+      var pipe = mk("path", { id: "f00-pipe", d: "M " + (HX + 75) + " 662 H 1100 Q 1114 662 1114 676 V 700", fill: "none", stroke: "#16294d", "stroke-width": 11, "stroke-linejoin": "round" }, svg);
+      var pipeGlow = mk("path", { id: "f00-pipeglow", d: "M " + (HX + 75) + " 662 H 1100 Q 1114 662 1114 676 V 700", fill: "none", stroke: ACC, "stroke-width": 15, "stroke-opacity": 0.4, "stroke-linejoin": "round", opacity: 0 }, svg);
+      var flow = mk("path", { id: "f00-flow", d: "M " + (HX - 6) + " 1090 V 662 H 1100 Q 1114 662 1114 676 V 700", fill: "none", stroke: ACC, "stroke-width": 4.5, "stroke-linecap": "round", "stroke-dasharray": "5 17", opacity: 0 }, svg);
+
+      /* hero labels, cap ring, thermal glow, reticle */
+      var lblH = wlabel("WELL-0001", HX + 20, "start");
+      var capRing = mk("circle", { id: "f00-capring", cx: HX, cy: 650, r: 40, fill: "none", stroke: ACC, "stroke-width": 3, opacity: 0 }, svg);
+      var thermG = mk("circle", { id: "f00-therm", cx: HX, cy: 655, r: 95, fill: "url(#f00-thermg)", opacity: 0 }, svg);
+      var ret = mk("g", { id: "f00-ret", opacity: 0 }, svg);
+      [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(function (c) {
+        var cx = HX + c[0] * 62,
+          cy = 662 + c[1] * 66;
+        mk("path", { d: "M " + cx + " " + (cy - c[1] * 26) + " V " + cy + " H " + (cx - c[0] * 26), stroke: ACC, "stroke-width": 3.5, fill: "none", "stroke-linecap": "round", "stroke-linejoin": "round" }, ret);
+      });
+
+      /* ---------- drone route + drone + scan cone ---------- */
+      var ROUTE = "M -150 260 C 60 180, 180 340, 380 290 S 640 190, 800 300 S 1000 470, 1060 430";
+      var routeVis = mk("path", { id: "f00-route", d: ROUTE, fill: "none", stroke: ACC, "stroke-width": 3.5, "stroke-linecap": "round", "stroke-dasharray": "2 13", "stroke-opacity": 0.9, mask: "url(#f00-routemask)" }, svg);
+      var routeMp = $("f00-routemp");
+      routeMp.setAttribute("d", ROUTE);
+      var routeLen = routeVis.getTotalLength();
+      routeMp.style.strokeDasharray = String(routeLen);
+      routeMp.style.strokeDashoffset = String(routeLen);
+
+      var CAPX = HX,
+        CAPY = 646;
+      var coneG = mk("g", { id: "f00-coneg", opacity: 0 }, svg);
+      var coneP = mk("path", { d: "", fill: "url(#f00-conegrad)", stroke: ACC, "stroke-opacity": 0.6, "stroke-width": 1.8, "stroke-linejoin": "round" }, coneG);
+      mk("ellipse", { cx: CAPX, cy: CAPY, rx: 56, ry: 15, fill: ACC, "fill-opacity": 0.16, stroke: ACC, "stroke-opacity": 0.8, "stroke-width": 2 }, coneG);
+      var sweep = mk("ellipse", { cx: 0, cy: 0, rx: 1, ry: 1, fill: "none", stroke: FG, "stroke-opacity": 0.8, "stroke-width": 2.4 }, coneG);
+
+      var drone = mk("g", { id: "f00-drone", opacity: 0 }, svg);
+      var droneIn = mk("g", {}, drone);
+      mk("path", { d: "M -50 -14 H 50", stroke: MUT, "stroke-width": 4, "stroke-linecap": "round", fill: "none" }, droneIn);
+      mk("path", { d: "M -50 -14 V -24 M 50 -14 V -24", stroke: MUT, "stroke-width": 3, "stroke-linecap": "round", fill: "none" }, droneIn);
+      var discL = mk("ellipse", { cx: -50, cy: -26, rx: 26, ry: 3.5, fill: FG, "fill-opacity": 0.22 }, droneIn);
+      var discR = mk("ellipse", { cx: 50, cy: -26, rx: 26, ry: 3.5, fill: FG, "fill-opacity": 0.22 }, droneIn);
+      var bladeL = mk("path", { d: "", stroke: FG, "stroke-opacity": 0.85, "stroke-width": 2.6, "stroke-linecap": "round", fill: "none" }, droneIn);
+      var bladeR = mk("path", { d: "", stroke: FG, "stroke-opacity": 0.85, "stroke-width": 2.6, "stroke-linecap": "round", fill: "none" }, droneIn);
+      mk("path", { d: "M -34 -4 L -26 -16 H 26 L 34 -4 L 28 8 H -28 Z", fill: "#111c33", stroke: MUT, "stroke-width": 2.2, "stroke-linejoin": "round" }, droneIn);
+      mk("circle", { cx: 0, cy: -6, r: 4, fill: ACC }, droneIn);
+      mk("path", { d: "M -24 12 V 20 H -12 M 24 12 V 20 H 12", stroke: MUT, "stroke-width": 2.6, fill: "none", "stroke-linecap": "round", "stroke-linejoin": "round" }, droneIn);
+      mk("circle", { cx: 0, cy: 14, r: 7.5, fill: "#070d19", stroke: ACC, "stroke-width": 2.2 }, droneIn);
+      mk("circle", { cx: 0, cy: 15, r: 2.6, fill: ACC }, droneIn);
+      var DRONE_S = 1.25;
+
+      /* ======================= HUD leaders ======================= */
+      var hud = $("f00-hudsvg");
+      var leaders = [];
+      function leader(key, ax, ay, wx, wy) {
+        var p = mk("path", { id: "f00-ld-" + key, d: "M " + ax + " " + ay + " L " + ax + " " + ay, fill: "none", stroke: ACC, "stroke-width": 1.6, "stroke-linecap": "round", pathLength: 1 }, hud);
+        p.style.strokeDasharray = "1";
+        p.style.strokeDashoffset = "1";
+        var d0 = mk("circle", { r: 4, cx: ax, cy: ay, fill: ACC, opacity: 0 }, hud);
+        var d1 = mk("circle", { r: 6, fill: ACC, opacity: 0 }, hud);
+        var L = { key: key, ax: ax, ay: ay, wx: wx, wy: wy, p: p, d0: d0, d1: d1 };
+        leaders.push(L);
+        return L;
+      }
+      var ldJack = leader("jack", 492, 176, 800, 470);
+      var ldBore = leader("bore", 1560, 544, HX, 900);
+      var ldRes = leader("res", 1560, 794, 1180, 1085);
+      var ldHead = leader("head", 1060, 285, HX, 636);
+      var ldTherm = leader("therm", 1200, 560, HX, 650);
+
+      /* ======================= CAMERA ======================= */
+      var AX = 960,
+        AY = 470;
+      var worldEl = $("f00-world");
+      var cam = { s: 0.96, x: 960, y: 548 };
+      var TT = { t: 0 };
+      function applyCamera() {
+        var T = TT.t;
+        var dx = Math.sin(T * 0.55) * 5,
+          dy = Math.sin(T * 0.55 * 1.3 + 1) * 3;
+        var tx = AX - cam.s * cam.x + dx,
+          ty = AY - cam.s * cam.y + dy;
+        worldEl.style.transform = "translate(" + tx.toFixed(2) + "px," + ty.toFixed(2) + "px) scale(" + cam.s.toFixed(4) + ")";
+        for (var i = 0; i < leaders.length; i++) {
+          var L = leaders[i];
+          var sx = tx + cam.s * L.wx,
+            sy = ty + cam.s * L.wy;
+          L.p.setAttribute("d", "M " + L.ax + " " + L.ay + " L " + sx.toFixed(1) + " " + sy.toFixed(1));
+          L.d1.setAttribute("cx", sx.toFixed(1));
+          L.d1.setAttribute("cy", sy.toFixed(1));
+        }
+      }
+      var prev = { s: 0.96, x: 960, y: 548 };
+      function leg(t0, dur, to, ease) {
+        var from = { s: prev.s, x: prev.x, y: prev.y };
+        tl.fromTo(cam, from, { s: to.s, x: to.x, y: to.y, duration: dur, ease: ease, immediateRender: false, onUpdate: applyCamera }, t0);
+        prev = { s: to.s, x: to.x, y: to.y };
+      }
+      /* wide establishing push -> dive to the cutaway -> hold -> climb to the wellhead -> slow push */
+      leg(0, 5.6, { s: 1.0, x: 975, y: 548 }, "sine.inOut");
+      leg(5.9, 1.4, { s: 1.06, x: 935, y: 752 }, "expo.inOut");
+      leg(7.3, 2.3, { s: 1.08, x: 935, y: 754 }, "sine.inOut");
+      leg(9.6, 1.3, { s: 3.0, x: 1048, y: 627 }, "expo.inOut");
+      leg(10.9, 4.0, { s: 3.14, x: 1050, y: 628 }, "sine.inOut");
+      /* pull back to the whole field for the drone, then push onto the scan */
+      leg(14.9, 1.5, { s: 1.0, x: 1000, y: 545 }, "power2.inOut");
+      leg(16.4, 0.6, { s: 1.03, x: 1000, y: 545 }, "none");
+      leg(17.0, 1.0, { s: 1.8, x: 990, y: 560 }, "power3.out");
+      leg(18.0, 0.9, { s: 1.84, x: 990, y: 560 }, "none");
+      /* reposition to the field behind the comparison card */
+      leg(18.9, 1.2, { s: 1.04, x: 985, y: 550 }, "power2.inOut");
+      leg(20.1, 7.5, { s: 1.0, x: 975, y: 548 }, "sine.inOut");
+      /* final: pull back to rest on the whole field, then a living hold */
+      leg(27.6, 1.6, { s: 0.96, x: 960, y: 548 }, "power2.inOut");
+      leg(29.2, 0.8, { s: 0.975, x: 960, y: 548 }, "none");
+
+      /* ======================= PER-FRAME (pure function of timeline time) ======================= */
+      var T0_DRONE = 15.2,
+        D_DRONE = 1.85;
+      function frame() {
+        var T = TT.t;
+        var d2r = 180 / Math.PI;
+        var J = jacks;
+        for (var i = 0; i < J.length; i++) {
+          var j = J[i];
+          var th = TAU * (T / j.o.per) + j.o.ph;
+          var r = solve(th);
+          j.crank.setAttribute("transform", "rotate(" + (th * d2r).toFixed(2) + " " + CC.x + " " + CC.y + ")");
+          j.beam.setAttribute("transform", "rotate(" + (r.b * d2r).toFixed(2) + " 0 " + PV.y + ")");
+          j.pit.setAttribute("x1", r.qx.toFixed(1));
+          j.pit.setAttribute("y1", r.qy.toFixed(1));
+          j.pit.setAttribute("x2", r.tx.toFixed(1));
+          j.pit.setAttribute("y2", r.ty.toFixed(1));
+          var ax = HR * Math.cos(PHIA + r.b),
+            ay = PV.y + HR * Math.sin(PHIA + r.b);
+          j.arc.setAttribute("d", "M " + ax.toFixed(1) + " " + ay.toFixed(1) + " A 168 168 0 0 1 168 " + PV.y);
+          var cy = CARR0 + HR * r.b;
+          j.cab.setAttribute("y2", cy.toFixed(1));
+          j.car.setAttribute("y", cy.toFixed(1));
+          j.rod.setAttribute("y1", (cy + 9).toFixed(1));
+          if (j === hero) {
+            var dlt = cy - CARR0;
+            underRod.setAttribute("y2", (1050 + dlt).toFixed(1));
+            plunger.setAttribute("y", (1046 + dlt).toFixed(1));
+          }
+        }
+        /* oil droplets drifting into the bore */
+        for (var k = 0; k < droplets.length; k++) {
+          var u = (T * 0.2 + k / droplets.length) % 1;
+          var x0 = HX + (k % 2 ? 1 : -1) * (90 + ((k * 47) % 260));
+          var dxk = HX + (x0 - HX) * (1 - u);
+          var dyk = 1124 - u * 32;
+          droplets[k].setAttribute("cx", dxk.toFixed(1));
+          droplets[k].setAttribute("cy", dyk.toFixed(1));
+          droplets[k].setAttribute("fill-opacity", (Math.sin(Math.PI * u) * 0.9).toFixed(3));
+        }
+        /* drone: position along the route, bob, rotors, cone */
+        var p = eio2((T - T0_DRONE) / D_DRONE);
+        var len = p * routeLen;
+        var a = routeVis.getPointAtLength(len);
+        var b = routeVis.getPointAtLength(Math.min(routeLen, len + 5));
+        var ang = Math.atan2(b.y - a.y, b.x - a.x) * d2r;
+        var relax = 1 - clamp01((p - 0.9) / 0.1);
+        var tilt = ang * 0.3 * relax;
+        var bobY = Math.sin(T * 2.2) * 4,
+          bobX = p >= 1 ? Math.sin(T * 1.3 + 1) * 3 : 0;
+        var dxp = a.x + bobX,
+          dyp = a.y + bobY;
+        drone.setAttribute("transform", "translate(" + dxp.toFixed(1) + " " + dyp.toFixed(1) + ") rotate(" + tilt.toFixed(2) + ") scale(" + DRONE_S + ")");
+        routeMp.style.strokeDashoffset = (routeLen * (1 - p)).toFixed(1);
+        var cs = Math.abs(Math.cos(T * 43)) * 22 + 2;
+        bladeL.setAttribute("d", "M " + (-50 - cs) + " -26 H " + (-50 + cs));
+        bladeR.setAttribute("d", "M " + (50 - cs) + " -26 H " + (50 + cs));
+        var apx = dxp,
+          apy = dyp + 15 * DRONE_S;
+        coneP.setAttribute("d", "M " + apx.toFixed(1) + " " + apy.toFixed(1) + " L " + (CAPX - 56) + " " + CAPY + " A 56 15 0 0 0 " + (CAPX + 56) + " " + CAPY + " Z");
+        var su = ((T - 17.4) / 0.8) % 1;
+        if (su < 0) su = 0;
+        sweep.setAttribute("cx", (apx + (CAPX - apx) * su).toFixed(1));
+        sweep.setAttribute("cy", (apy + (CAPY - apy) * su).toFixed(1));
+        sweep.setAttribute("rx", (2 + 54 * su).toFixed(1));
+        sweep.setAttribute("ry", (1 + 14 * su).toFixed(1));
+        sweep.setAttribute("stroke-opacity", (T < 17.4 ? 0 : 0.85 * (1 - su * 0.6)).toFixed(3));
+        applyCamera();
+      }
+      tl.to(TT, { t: 30, duration: 30, ease: "none", onUpdate: frame }, 0);
+      frame();
+
+      /* ======================= AMBIENT ======================= */
+      var ghostIds = ["WELL-0001", "T200", "INS-0001-0203", "WELL-0007", "MNT-0151-025", "CTX-0001-003", "WELL-0012", "INS-0001-0140", "WELL-0003", "T200", "WELL-0021", "CTX-0001-003"];
+      var gl = $("f00-ghosts");
+      ghostIds.forEach(function (txt, i) {
+        var d = document.createElement("div");
+        d.className = "f00-ghost";
+        d.setAttribute("data-layout-allow-overlap", "");
+        d.setAttribute("data-layout-allow-occlusion", "");
+        d.textContent = txt;
+        d.style.left = 80 + ((i * 337) % 1500) + "px";
+        d.style.top = 60 + ((i * 211) % 820) + "px";
+        gl.appendChild(d);
+        tl.fromTo(d, { y: 0 }, { y: i % 2 ? -90 : 70, duration: 30, ease: "none" }, 0);
+      });
+      tl.fromTo("#f00-grid", { x: 0, y: 0 }, { x: 96, y: 96, duration: 30, ease: "none" }, 0);
+      var gph = { p: 0 };
+      tl.fromTo(gph, { p: 0 }, { p: TAU * 6, duration: 30, ease: "none", immediateRender: false, onUpdate: function () {
+        $("f00-glow").style.opacity = String(0.8 + Math.sin(gph.p) * 0.12);
+      } }, 0);
+
+      /* ======================= BEAT 1: "Picture an oil field" ======================= */
+      var hs = $("f00-horizon");
+      var hLen = 3400;
+      hs.style.strokeDasharray = String(hLen);
+      hs.style.strokeDashoffset = String(hLen);
+      /* the line starts off-screen left (x=-700); draw it left to right so it sweeps across the frame */
+      tl.to(hs, { strokeDashoffset: 0, duration: 2.2, ease: "power2.out" }, 0.0);
+
+      function jackIn(j, t, dur) {
+        tl.fromTo(j.wrap, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: dur, ease: "power3.out" }, t);
+      }
+      jackIn(hero, 0.0, 0.6);
+      jackIn(nearA, 0.5, 0.7);
+      jackIn(nearC, 0.8, 0.7);
+      jackIn(nearD, 1.1, 0.7);
+      farJacks.forEach(function (j, i) {
+        jackIn(j, 1.3 + i * 0.25, 0.7);
+      });
+      tinyJacks.forEach(function (j, i) {
+        jackIn(j, 2.45 + i * 0.11, 0.5);
+      });
+      [lblH, lblA, lblC, lblD].forEach(function (t, i) {
+        tl.fromTo(t, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 3.2 + i * 0.2);
+      });
+      /* labels of the side wells step aside when the cutaway opens */
+      [lblA, lblC, lblD].forEach(function (t) {
+        tl.to(t, { opacity: 0.25, duration: 0.6, ease: "power2.out" }, 6.8);
+      });
+
+      /* ======================= BEAT 1b: "pump jack" chip ======================= */
+      function chipIn(sel, t) {
+        tl.fromTo(sel, { opacity: 0, scale: 0.6, transformOrigin: "0% 50%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, t);
+      }
+      function chipOut(sel, t) {
+        tl.to(sel, { opacity: 0, duration: 0.4, ease: "power2.in" }, t);
+      }
+      function leaderIn(L, t, dur) {
+        tl.to(L.p, { strokeDashoffset: 0, duration: dur, ease: "power2.out" }, t);
+        tl.fromTo(L.d0, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, t);
+        tl.fromTo(L.d1, { opacity: 0, attr: { r: 0 } }, { opacity: 1, attr: { r: 6 }, duration: 0.4, ease: "back.out(1.6)" }, t + dur - 0.1);
+      }
+      function leaderOut(L, t) {
+        tl.to([L.p, L.d0, L.d1], { opacity: 0, duration: 0.4, ease: "power2.in" }, t);
+      }
+      chipIn("#f00-c-jack", 4.55);
+      leaderIn(ldJack, 4.7, 0.6);
+
+      /* ======================= BEAT 2: cutaway, bore, reservoir ======================= */
+      tl.fromTo("#f00-cutrect", { attr: { height: 0 } }, { attr: { height: 470 }, duration: 1.1, ease: "power2.inOut" }, 6.8);
+      var outLen = outline.getTotalLength();
+      outline.style.strokeDasharray = String(outLen);
+      outline.style.strokeDashoffset = String(outLen);
+      tl.to(outline, { strokeDashoffset: 0, duration: 1.1, ease: "power2.out" }, 6.85);
+      tl.fromTo("#f00-pool", { opacity: 0.2 }, { opacity: 1, duration: 0.8, ease: "power2.out" }, 8.5);
+      var peLen = poolEdge.getTotalLength();
+      poolEdge.style.strokeDasharray = String(peLen);
+      poolEdge.style.strokeDashoffset = String(peLen);
+      tl.to(poolEdge, { strokeDashoffset: 0, duration: 1.0, ease: "power2.out" }, 8.5);
+      tl.fromTo("#f00-under", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 7.6);
+      /* well bore draws down to the reservoir */
+      tl.to(boreW, { strokeDashoffset: 0, duration: 1.5, ease: "power2.out" }, 7.4);
+      tl.to(boreI, { strokeDashoffset: 0, duration: 1.5, ease: "power2.out" }, 7.5);
+      tl.fromTo("#f00-perf", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 8.8);
+      /* flow particles */
+      tl.fromTo("#f00-flow", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 8.95);
+      tl.fromTo(flow, { strokeDashoffset: 0 }, { strokeDashoffset: -2100, duration: 21, ease: "none", immediateRender: false }, 8.95);
+      /* labels */
+      chipIn("#f00-c-bore", 7.95);
+      leaderIn(ldBore, 8.05, 0.6);
+      chipIn("#f00-c-res", 8.65);
+      leaderIn(ldRes, 8.75, 0.6);
+      chipOut("#f00-c-jack", 9.3);
+      leaderOut(ldJack, 9.3);
+      chipOut("#f00-c-bore", 9.3);
+      leaderOut(ldBore, 9.3);
+      chipOut("#f00-c-res", 9.3);
+      leaderOut(ldRes, 9.3);
+
+      /* ======================= BEAT 3: the wellhead ======================= */
+      tl.fromTo("#f00-wh", { opacity: 0, y: 20, scale: 0.96, transformOrigin: "0% 50%" }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" }, 11.9);
+      leaderIn(ldHead, 11.95, 0.7);
+      tl.fromTo("#f00-capring", { opacity: 0, scale: 0.5, transformOrigin: "50% 50%" }, { opacity: 0.95, scale: 1, duration: 0.5, ease: "power3.out" }, 12.78);
+      tl.to("#f00-capring", { scale: 1.22, opacity: 0.45, duration: 0.55, ease: "sine.inOut", yoyo: true, repeat: 3 }, 13.3);
+      tl.fromTo("#f00-pipeglow", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, 13.95);
+      tl.to("#f00-wh", { opacity: 0, y: -10, duration: 0.4, ease: "power2.in" }, 14.7);
+      leaderOut(ldHead, 14.7);
+      tl.to("#f00-capring", { opacity: 0, duration: 0.4, ease: "power2.in" }, 15.55);
+
+      /* ======================= BEAT 4: the drone and the scan ======================= */
+      tl.fromTo("#f00-drone", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 15.1);
+      chipIn("#f00-c-route", 15.5);
+      tl.fromTo("#f00-coneg", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 17.05);
+      tl.fromTo("#f00-ret", { opacity: 0, scale: 1.5, svgOrigin: "968 662" }, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, 17.2);
+      tl.fromTo("#f00-therm", { opacity: 0, scale: 0.6, svgOrigin: "968 655" }, { opacity: 1, scale: 1, duration: 0.9, ease: "power2.out" }, 17.3);
+      chipOut("#f00-c-route", 17.7);
+
+      /* thermal readout card */
+      tl.fromTo("#f00-th", { opacity: 0, y: 24, scale: 0.96, transformOrigin: "0% 50%" }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "power3.out" }, 17.8);
+      leaderIn(ldTherm, 17.9, 0.6);
+      var thn = $("f00-thn");
+      var thS = { v: 0 };
+      tl.fromTo(thS, { v: 0 }, { v: 70, duration: 0.9, ease: "power3.out", onUpdate: function () { thn.textContent = String(Math.round(thS.v)); } }, 17.95);
+      tl.fromTo("#f00-thfill", { scaleX: 0 }, { scaleX: 0.7, duration: 0.9, ease: "power3.out" }, 17.95);
+      tl.to("#f00-th", { opacity: 0, y: -12, duration: 0.35, ease: "power2.in" }, 18.85);
+      leaderOut(ldTherm, 18.85);
+
+      /* dim the world behind the comparison card */
+      tl.to("#f00-dim", { opacity: 0.74, duration: 0.7, ease: "power2.inOut" }, 18.9);
+      tl.to("#f00-coneg", { opacity: 0.4, duration: 0.6, ease: "power2.inOut" }, 18.9);
+      tl.to("#f00-therm", { opacity: 0.55, duration: 0.6, ease: "power2.inOut" }, 18.9);
+
+      /* ======================= BEAT 5: warm means working / cooled means stopped ======================= */
+      var BAR_MAX = 80;
+      /* left panel enters centred, then slides left when the right panel arrives */
+      tl.fromTo("#f00-pl", { opacity: 0, y: 30, x: 390, scale: 0.97 }, { opacity: 1, y: 0, x: 390, scale: 1, duration: 0.6, ease: "power3.out" }, 18.9);
+      tl.fromTo("#f00-lr1", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 19.7);
+      var ln1 = $("f00-ln1"),
+        lS = { v: 0 };
+      tl.fromTo(lS, { v: 0 }, { v: 70, duration: 1.5, ease: "power3.out", immediateRender: false, onUpdate: function () { ln1.textContent = String(Math.round(lS.v)); } }, 19.75);
+      tl.fromTo("#f00-lf1", { scaleX: 0 }, { scaleX: 70 / BAR_MAX, duration: 1.5, ease: "power3.out" }, 19.75);
+      tl.fromTo("#f00-lr2", { opacity: 0, x: -24 }, { opacity: 0.4, x: 0, duration: 0.5, ease: "power3.out" }, 20.1);
+      tl.to("#f00-lr2", { opacity: 1, duration: 0.4, ease: "power2.out" }, 21.75);
+      tl.fromTo("#f00-lr2 .f00-rval", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 21.75);
+      tl.fromTo("#f00-lf2", { scaleX: 0 }, { scaleX: 25 / BAR_MAX, duration: 0.7, ease: "power3.out" }, 21.85);
+      tl.fromTo("#f00-lmk", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.5, ease: "power3.out" }, 22.0);
+      tl.fromTo("#f00-llab", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 22.5);
+      var larrp = $("f00-larrp");
+      var laL = larrp.getTotalLength();
+      larrp.style.strokeDasharray = String(laL);
+      larrp.style.strokeDashoffset = String(laL);
+      tl.to(larrp, { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" }, 22.8);
+      tl.to("#f00-lghost", { opacity: 0, duration: 0.3, ease: "power2.out" }, 23.6);
+      tl.fromTo("#f00-lchip", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.6)" }, 23.6);
+      tl.fromTo("#f00-pgl", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out", immediateRender: false }, 23.6);
+      tl.to("#f00-pgl", { opacity: 0.55, duration: 1.2, ease: "sine.inOut", yoyo: true, repeat: 3 }, 24.4);
+
+      /* right panel: the same well after it has cooled */
+      tl.to("#f00-pl", { x: 0, duration: 1.0, ease: "expo.inOut" }, 24.3);
+      tl.fromTo("#f00-pr", { opacity: 0, x: 140, y: 0, scale: 0.97 }, { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.8, ease: "power3.out" }, 24.5);
+      var rn1 = $("f00-rn1"),
+        rS = { v: 70 };
+      tl.fromTo("#f00-rf1", { scaleX: 70 / BAR_MAX }, { scaleX: 26 / BAR_MAX, duration: 1.3, ease: "power2.inOut" }, 24.8);
+      tl.fromTo(rS, { v: 70 }, { v: 26, duration: 1.3, ease: "power2.inOut", immediateRender: false, onUpdate: function () { rn1.textContent = String(Math.round(rS.v)); } }, 24.8);
+      tl.to("#f00-rf1", { backgroundColor: ALT, duration: 0.8, ease: "none" }, 25.3);
+      tl.to("#f00-rn1", { color: ALT, duration: 0.6, ease: "none" }, 25.6);
+      tl.fromTo("#f00-rr1", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 24.6);
+      tl.fromTo("#f00-rr2", { opacity: 0, x: -24 }, { opacity: 0.4, x: 0, duration: 0.5, ease: "power3.out" }, 24.9);
+      tl.to("#f00-rr2", { opacity: 1, duration: 0.4, ease: "power2.out" }, 25.55);
+      tl.fromTo("#f00-rr2 .f00-rval", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 25.55);
+      tl.fromTo("#f00-rf2", { scaleX: 0 }, { scaleX: 25 / BAR_MAX, duration: 0.7, ease: "power3.out" }, 25.65);
+      tl.fromTo("#f00-rmk", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.5, ease: "power3.out" }, 25.8);
+      tl.fromTo("#f00-rlab", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 26.2);
+      var rarrp = $("f00-rarrp");
+      var raL = rarrp.getTotalLength();
+      rarrp.style.strokeDasharray = String(raL);
+      rarrp.style.strokeDashoffset = String(raL);
+      tl.to(rarrp, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, 26.4);
+      tl.to("#f00-rghost", { opacity: 0, duration: 0.3, ease: "power2.out" }, 26.56);
+      tl.fromTo("#f00-rchip", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.6)" }, 26.56);
+      tl.fromTo("#f00-pgr", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }, 26.56);
+      tl.to("#f00-pgr", { opacity: 0.5, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 1 }, 27.4);
+
+      /* ======================= BEAT 6: "Simple, in theory." ======================= */
+      tl.to("#f00-cmp", { scale: 0.24, x: -150, y: 20, duration: 0.7, ease: "power3.inOut" }, 27.62);
+      tl.to("#f00-cmp", { opacity: 0, duration: 0.3, ease: "power1.in" }, 28.05);
+      tl.fromTo("#f00-lg1", { opacity: 0, x: 24, scale: 0.9, transformOrigin: "100% 50%" }, { opacity: 1, x: 0, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, 28.2);
+      tl.fromTo("#f00-lg2", { opacity: 0, x: 24, scale: 0.9, transformOrigin: "100% 50%" }, { opacity: 1, x: 0, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, 28.35);
+      /* the field comes back up out of the dim, then settles toward the next scene's dark stage */
+      tl.to("#f00-dim", { opacity: 0.3, duration: 1.1, ease: "power2.inOut" }, 27.7);
+      tl.to("#f00-coneg", { opacity: 0.85, duration: 0.8, ease: "power2.inOut" }, 27.9);
+      tl.to("#f00-therm", { opacity: 0.85, duration: 0.8, ease: "power2.inOut" }, 27.9);
+      tl.to("#f00-dim", { opacity: 0.44, duration: 0.9, ease: "sine.inOut" }, 29.1);
+
+      /* keep the timeline exactly 30s long */
+      tl.to({}, { duration: 0.001 }, 29.999);
+    })();
+  </script>
+</template>

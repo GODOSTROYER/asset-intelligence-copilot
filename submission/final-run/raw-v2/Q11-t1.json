@@ -1,0 +1,433 @@
+{
+  "q": "Q11",
+  "turn": 1,
+  "asker": "Grant",
+  "userId": "U-501",
+  "question": "Which region of the field consistently runs hotter?",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 4630
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 4630,
+  "response": {
+    "userId": "U-501",
+    "response": {
+      "answer": "No region genuinely runs hotter. On raw wellhead temperature Southeast Block 31 (SE-31) ranks first, then SE-32 and NW-12 (mean 52.8 C vs 47.7 C for SW-24, a 5.1 C gap), but that is a well-type mix effect, not a regional one.\n1. Ambient air is flat across areas: area means span only 0.08 C (21.47 to 21.55 C), so location does not change the weather in this data.\n2. Wellhead temperature is driven by well type: producing wells run T200 25.9 C, T350 31.0 C, T500 36.2 C above ambient (mean wellhead minus ambient). The raw ranking follows the T500 share of wells (rank correlation 0.95): SE-31 58%, SE-32 25%, NW-12 23%, NE-07 2%, SW-23 6%, NE-08 2%, SW-24 0%.\n3. Compared like with like (wellhead minus ambient within well type, producing readings), the areas differ by at most 0.08 C: type-adjusted delta SW-23 +0.00, SW-24 +0.04, NE-07 +0.05, NE-08 +0.01, SE-31 -0.03, NW-12 -0.03, SE-32 -0.01. That is noise.\nConsistency over 52 months: highest raw mean wellhead was SE-31 in 52 of 52 months (SE-31 52); after the type adjustment the monthly leader is scattered (NE-07 12, SW-24 12, SW-23 10, SE-31 6, NE-08 6, SE-32 4, NW-12 2).\n\"Hotter\" is judged as wellhead minus ambient within well type, the quantity the manuals use for producing status (T200 needs 15 C, T350 needs 20 C, T500 needs 25 C), not absolute wellhead temperature. Period: all inspections to 2027-01-15; 125,198 readings, well type taken from type history on the reading date, data corrections applied.\nTable (area; wells; % T500 wells; mean wellhead C; mean ambient C; mean delta = wellhead minus ambient on producing readings C; type-adjusted delta C):\n- Southwest Block 23 (SW-23): 63 wells; 6% T500; wellhead 48.61; ambient 21.49; delta 28.40; type-adjusted +0.00\n- Southwest Block 24 (SW-24): 63 wells; 0% T500; wellhead 47.74; ambient 21.47; delta 27.84; type-adjusted +0.04\n- Northeast Block 7 (NE-07): 62 wells; 2% T500; wellhead 48.76; ambient 21.55; delta 28.48; type-adjusted +0.05\n- Northeast Block 8 (NE-08): 62 wells; 2% T500; wellhead 48.34; ambient 21.49; delta 28.00; type-adjusted +0.01\n- Southeast Block 31 (SE-31): 50 wells; 58% T500; wellhead 52.85; ambient 21.49; delta 32.41; type-adjusted -0.03\n- Northwest Block 12 (NW-12): 150 wells; 23% T500; wellhead 50.06; ambient 21.49; delta 29.79; type-adjusted -0.03\n- Southeast Block 32 (SE-32): 150 wells; 25% T500; wellhead 50.75; ambient 21.55; delta 30.24; type-adjusted -0.01\nWellhead minus ambient by area and well type (producing readings, C):\n- SW-23: T200 25.96; T350 30.96; T500 36.18\n- SW-24: T200 26.01; T350 30.98; T500 no wells\n- NE-07: T200 26.04; T350 30.95; T500 36.47 (1 well)\n- NE-08: T200 25.89; T350 31.07; T500 36.59 (1 well)\n- SE-31: T200 25.84; T350 30.90; T500 36.25\n- NW-12: T200 25.91; T350 30.95; T500 36.22\n- SE-32: T200 25.95; T350 30.94; T500 36.25",
+      "visualization": {
+        "type": "table",
+        "title": "Wellhead temperature by area: raw, ambient and type-adjusted",
+        "columns": [
+          "Area",
+          "Wells",
+          "% T500",
+          "Mean wellhead C",
+          "Mean ambient C",
+          "Mean delta C",
+          "Type-adjusted delta C"
+        ],
+        "rows": [
+          [
+            "Southwest Block 23 (SW-23)",
+            63,
+            6,
+            48.61,
+            21.49,
+            28.4,
+            0
+          ],
+          [
+            "Southwest Block 24 (SW-24)",
+            63,
+            0,
+            47.74,
+            21.47,
+            27.84,
+            0.04
+          ],
+          [
+            "Northeast Block 7 (NE-07)",
+            62,
+            2,
+            48.76,
+            21.55,
+            28.48,
+            0.05
+          ],
+          [
+            "Northeast Block 8 (NE-08)",
+            62,
+            2,
+            48.34,
+            21.49,
+            28,
+            0.01
+          ],
+          [
+            "Southeast Block 31 (SE-31)",
+            50,
+            58,
+            52.85,
+            21.49,
+            32.41,
+            -0.03
+          ],
+          [
+            "Northwest Block 12 (NW-12)",
+            150,
+            23,
+            50.06,
+            21.49,
+            29.79,
+            -0.03
+          ],
+          [
+            "Southeast Block 32 (SE-32)",
+            150,
+            25,
+            50.75,
+            21.55,
+            30.24,
+            -0.01
+          ]
+        ]
+      },
+      "citations": [
+        {
+          "id": "OM-T200",
+          "title": "T200 operating manual",
+          "type": "manual",
+          "path": "dataset/fleet/well-types/T200.md",
+          "excerpt": "A T200 well is considered **producing (active)** when its wellhead temperature is at least **15 °C above ambient** air temperature at the time of the reading. A difference below 15 °C means the well is **not producing** for that reading, whatever the absolute temperature."
+        },
+        {
+          "id": "OM-T350",
+          "title": "T350 operating manual",
+          "type": "manual",
+          "path": "dataset/fleet/well-types/T350.md",
+          "excerpt": "Because T350 fluid comes from a deeper, hotter zone, a T350 well is considered **producing (active)** only when its wellhead temperature is at least **20 °C above ambient** air temperature at the time of the reading."
+        },
+        {
+          "id": "OM-T500",
+          "title": "T500 operating manual",
+          "type": "manual",
+          "path": "dataset/fleet/well-types/T500.md",
+          "excerpt": "ESP wells move more fluid, and the motor adds heat. A T500 well is considered **producing (active)** only when its wellhead temperature is at least **25 °C above ambient** air temperature at the time of the reading. Below 25 °C the well is **not producing** for that reading."
+        },
+        {
+          "id": "CTX-0067-002",
+          "title": "Operator note · CTX-0067-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0067/context.jsonl",
+          "excerpt": "note id: CTX-0067-002 · asset id: WELL-0067 · created at: 2027-01-09T11:00:00Z · author user id: U-401 · note type: data_correction · inspection id: INS-0067-0216 · field: spill_est_volume_bbl · original value: 4.8 · corrected value: 5.6 · text: Inspection INS-0067-0216: spill volume corrected from 4.8 bbl (AI estimate) to 5.6 bbl measured by the clean-up crew. · valid from: 2027-01-07",
+          "assetId": "WELL-0067"
+        },
+        {
+          "id": "CTX-0201-002",
+          "title": "Operator note · CTX-0201-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0201/context.jsonl",
+          "excerpt": "note id: CTX-0201-002 · asset id: WELL-0201 · created at: 2027-01-14T18:30:00Z · author user id: U-503 · note type: data_correction · inspection id: INS-0201-0218 · field: wellhead_temp_c · original value: 32.1 · corrected value: 10.4 · text: Inspection INS-0201-0218: wellhead_temp_c corrected from 32.1 to 10.4. Reading taken off the hot separator, not the wellhead; handheld re-measure. · valid from: 2027-01-14",
+          "assetId": "WELL-0201"
+        },
+        {
+          "id": "CTX-0213-002",
+          "title": "Operator note · CTX-0213-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0213/context.jsonl",
+          "excerpt": "note id: CTX-0213-002 · asset id: WELL-0213 · created at: 2027-01-14T18:30:00Z · author user id: U-502 · note type: data_correction · inspection id: INS-0213-0221 · field: wellhead_temp_c · original value: 10.7 · corrected value: 30.6 · text: Inspection INS-0213-0221: wellhead_temp_c corrected from 10.7 to 30.6. Thermal camera pointed at the shaded side of the wellhead; handheld re-measure. · valid from: 2027-01-14",
+          "assetId": "WELL-0213"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [],
+      "trace": [
+        {
+          "tool": "gemini_planner",
+          "detail": "Structured plan validated: region_temperature. Only this user’s last five exchanges were supplied.",
+          "durationMs": 1743
+        },
+        {
+          "tool": "region_temperature",
+          "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+          "durationMs": 2867
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "hosted"
+      },
+      "durationMs": 4610
+    },
+    "history": [
+      {
+        "userText": "Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+        "answer": "Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no work order is on record yet; it is attributed to Olivia Grant and visible to all users, but it does not overwrite the maintenance records). 1 well has a recalled pump in the ground (Highline RP-175 LOT-2409-A/LOT-2409-C/LOT-2410-B, notice HPC-RN-2026-07). By area: Southeast Block 32 = 1. The installed pump is the latest \"Parts installed\" line by job start date, so a later non-recalled pump removes the well from the list. Total install cost of the listed jobs: USD 25,500. The replacement deadline was 31 Dec 2026. Status uses the latest inspection against the well-type threshold; \"last repair\" is the latest completed corrective job start date plus any job still in progress today. 1 well carries an unconfirmed replacement report (WELL-0577 second-hand report from Olivia Grant (via Nathan Pierce)). Reports alone do not remove a well: 1 per the records, 0 if those reports are confirmed by a work order.",
+        "wellIds": [
+          "WELL-0577"
+        ],
+        "createdAt": "2026-10-17T11:28:54.117Z",
+        "response": {
+          "answer": "Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no work order is on record yet; it is attributed to Olivia Grant and visible to all users, but it does not overwrite the maintenance records). 1 well has a recalled pump in the ground (Highline RP-175 LOT-2409-A/LOT-2409-C/LOT-2410-B, notice HPC-RN-2026-07). By area: Southeast Block 32 = 1. The installed pump is the latest \"Parts installed\" line by job start date, so a later non-recalled pump removes the well from the list. Total install cost of the listed jobs: USD 25,500. The replacement deadline was 31 Dec 2026. Status uses the latest inspection against the well-type threshold; \"last repair\" is the latest completed corrective job start date plus any job still in progress today. 1 well carries an unconfirmed replacement report (WELL-0577 second-hand report from Olivia Grant (via Nathan Pierce)). Reports alone do not remove a well: 1 per the records, 0 if those reports are confirmed by a work order.",
+          "visualization": {
+            "type": "table",
+            "title": "Recalled pumps still in the ground",
+            "columns": [
+              "Well",
+              "Area",
+              "Pump (model, serial, lot)",
+              "Installed by",
+              "Install cost",
+              "Status now",
+              "Last repair",
+              "Source",
+              "Notes"
+            ],
+            "rows": [
+              [
+                "WELL-0577",
+                "Southeast Block 32",
+                "Highline RP-175, SN-757468, LOT-2409-A",
+                "MNT-0577-028 (Jul 31, 2026)",
+                "USD 25,500",
+                "Producing",
+                "Nov 21, 2026 (MNT-0577-032, Walking beam bearing wear)",
+                "HPC-RN-2026-07; MNT-0577-028 report",
+                "Second-hand: Olivia Grant relayed that Nathan Pierce said the pump was replaced (Oct 17, 2026), unconfirmed: no work order on record"
+              ]
+            ]
+          },
+          "citations": [
+            {
+              "id": "CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+              "title": "Shared feedback · CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+              "type": "claim",
+              "path": "local feedback",
+              "excerpt": "Olivia Grant · 2026-10-17T11:28:54.096Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+              "assetId": "WELL-0577"
+            },
+            {
+              "id": "SUPPLIER-RECALL-NOTICE-2026-12-01",
+              "title": "supplier recall notice 2026 12 01",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/supplier-recall-notice-2026-12-01.md",
+              "excerpt": "## What is recalled Highline RP-175 downhole rod pumps from these manufacturing lots:"
+            },
+            {
+              "id": "CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+              "title": "Shared feedback · CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+              "type": "claim",
+              "path": "local feedback",
+              "excerpt": "Olivia Grant · 2026-10-17T11:28:54.096Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+              "assetId": "WELL-0577"
+            },
+            {
+              "id": "MNT-0577-028",
+              "title": "Repair · MNT-0577-028",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0577/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0577-028 · asset id: WELL-0577 · started at: 2026-07-31T08:00:00Z · completed at: 2026-08-11T12:00:00Z · maintenance type: corrective · equipment kind: downhole_pump · issue: Downhole pump stuck · action taken: Pulled and replaced downhole pump · technician user id: U-303 · downtime hours: 268 · triggered by inspection id: INS-0577-0187 · report file: maintenance-reports/MNT-0577-028.md",
+              "assetId": "WELL-0577"
+            },
+            {
+              "id": "MNT-0577-028",
+              "title": "Repair report · MNT-0577-028",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0577/maintenance-reports/MNT-0577-028.md",
+              "excerpt": "**Parts installed:** Highline RP-175 pump, serial SN-757468, lot LOT-2409-A **Follow-up:** Crew to return within 7 days to check the fluid level and pump fillage.",
+              "assetId": "WELL-0577"
+            },
+            {
+              "id": "MNT-0577-032",
+              "title": "Repair · MNT-0577-032",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0577/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0577-032 · asset id: WELL-0577 · started at: 2026-11-21T08:00:00Z · completed at: 2026-12-01T19:00:00Z · maintenance type: corrective · equipment kind: pump_jack · issue: Walking beam bearing wear · action taken: Replaced saddle bearing and re-greased · technician user id: U-304 · contractor: Coyote Ridge Well Services · downtime hours: 251 · triggered by inspection id: INS-0577-0203 · report file: maintenance-reports/MNT-0577-032.md",
+              "assetId": "WELL-0577"
+            }
+          ],
+          "conflicts": [
+            "WELL-0577: Olivia Grant says Nathan Pierce told them the recalled pump was swapped. This is second-hand and unconfirmed. The records still show recalled LOT-2409-A (MNT-0577-028) installed and no later pump job, so the well stays on the list."
+          ],
+          "referencedWellIds": [
+            "WELL-0577"
+          ],
+          "trace": [
+            {
+              "tool": "deterministic_planner",
+              "detail": "Hosted planner unavailable (timeout); validated domain fallback used. Retry this question to reconnect.",
+              "durationMs": 25005
+            },
+            {
+              "tool": "claim",
+              "detail": "Explicit user feedback applied by the scoped domain tool with provenance.",
+              "durationMs": 21
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "fallback",
+            "reason": "timeout"
+          },
+          "durationMs": 25026
+        }
+      },
+      {
+        "userText": "Which region of the field consistently runs hotter?",
+        "answer": "No region genuinely runs hotter. On raw wellhead temperature Southeast Block 31 (SE-31) ranks first, then SE-32 and NW-12 (mean 52.8 C vs 47.7 C for SW-24, a 5.1 C gap), but that is a well-type mix effect, not a regional one.\n1. Ambient air is flat across areas: area means span only 0.08 C (21.47 to 21.55 C), so location does not change the weather in this data.\n2. Wellhead temperature is driven by well type: producing wells run T200 25.9 C, T350 31.0 C, T500 36.2 C above ambient (mean wellhead minus ambient). The raw ranking follows the T500 share of wells (rank correlation 0.95): SE-31 58%, SE-32 25%, NW-12 23%, NE-07 2%, SW-23 6%, NE-08 2%, SW-24 0%.\n3. Compared like with like (wellhead minus ambient within well type, producing readings), the areas differ by at most 0.08 C: type-adjusted delta SW-23 +0.00, SW-24 +0.04, NE-07 +0.05, NE-08 +0.01, SE-31 -0.03, NW-12 -0.03, SE-32 -0.01. That is noise.\nConsistency over 52 months: highest raw mean wellhead was SE-31 in 52 of 52 months (SE-31 52); after the type adjustment the monthly leader is scattered (NE-07 12, SW-24 12, SW-23 10, SE-31 6, NE-08 6, SE-32 4, NW-12 2).\n\"Hotter\" is judged as wellhead minus ambient within well type, the quantity the manuals use for producing status (T200 needs 15 C, T350 needs 20 C, T500 needs 25 C), not absolute wellhead temperature. Period: all inspections to 2027-01-15; 125,198 readings, well type taken from type history on the reading date, data corrections applied.\nTable (area; wells; % T500 wells; mean wellhead C; mean ambient C; mean delta = wellhead minus ambient on producing readings C; type-adjusted delta C):\n- Southwest Block 23 (SW-23): 63 wells; 6% T500; wellhead 48.61; ambient 21.49; delta 28.40; type-adjusted +0.00\n- Southwest Block 24 (SW-24): 63 wells; 0% T500; wellhead 47.74; ambient 21.47; delta 27.84; type-adjusted +0.04\n- Northeast Block 7 (NE-07): 62 wells; 2% T500; wellhead 48.76; ambient 21.55; delta 28.48; type-adjusted +0.05\n- Northeast Block 8 (NE-08): 62 wells; 2% T500; wellhead 48.34; ambient 21.49; delta 28.00; type-adjusted +0.01\n- Southeast Block 31 (SE-31): 50 wells; 58% T500; wellhead 52.85; ambient 21.49; delta 32.41; type-adjusted -0.03\n- Northwest Block 12 (NW-12): 150 wells; 23% T500; wellhead 50.06; ambient 21.49; delta 29.79; type-adjusted -0.03\n- Southeast Block 32 (SE-32): 150 wells; 25% T500; wellhead 50.75; ambient 21.55; delta 30.24; type-adjusted -0.01\nWellhead minus ambient by area and well type (producing readings, C):\n- SW-23: T200 25.96; T350 30.96; T500 36.18\n- SW-24: T200 26.01; T350 30.98; T500 no wells\n- NE-07: T200 26.04; T350 30.95; T500 36.47 (1 well)\n- NE-08: T200 25.89; T350 31.07; T500 36.59 (1 well)\n- SE-31: T200 25.84; T350 30.90; T500 36.25\n- NW-12: T200 25.91; T350 30.95; T500 36.22\n- SE-32: T200 25.95; T350 30.94; T500 36.25",
+        "wellIds": [],
+        "createdAt": "2026-10-17T11:29:45.088Z",
+        "response": {
+          "answer": "No region genuinely runs hotter. On raw wellhead temperature Southeast Block 31 (SE-31) ranks first, then SE-32 and NW-12 (mean 52.8 C vs 47.7 C for SW-24, a 5.1 C gap), but that is a well-type mix effect, not a regional one.\n1. Ambient air is flat across areas: area means span only 0.08 C (21.47 to 21.55 C), so location does not change the weather in this data.\n2. Wellhead temperature is driven by well type: producing wells run T200 25.9 C, T350 31.0 C, T500 36.2 C above ambient (mean wellhead minus ambient). The raw ranking follows the T500 share of wells (rank correlation 0.95): SE-31 58%, SE-32 25%, NW-12 23%, NE-07 2%, SW-23 6%, NE-08 2%, SW-24 0%.\n3. Compared like with like (wellhead minus ambient within well type, producing readings), the areas differ by at most 0.08 C: type-adjusted delta SW-23 +0.00, SW-24 +0.04, NE-07 +0.05, NE-08 +0.01, SE-31 -0.03, NW-12 -0.03, SE-32 -0.01. That is noise.\nConsistency over 52 months: highest raw mean wellhead was SE-31 in 52 of 52 months (SE-31 52); after the type adjustment the monthly leader is scattered (NE-07 12, SW-24 12, SW-23 10, SE-31 6, NE-08 6, SE-32 4, NW-12 2).\n\"Hotter\" is judged as wellhead minus ambient within well type, the quantity the manuals use for producing status (T200 needs 15 C, T350 needs 20 C, T500 needs 25 C), not absolute wellhead temperature. Period: all inspections to 2027-01-15; 125,198 readings, well type taken from type history on the reading date, data corrections applied.\nTable (area; wells; % T500 wells; mean wellhead C; mean ambient C; mean delta = wellhead minus ambient on producing readings C; type-adjusted delta C):\n- Southwest Block 23 (SW-23): 63 wells; 6% T500; wellhead 48.61; ambient 21.49; delta 28.40; type-adjusted +0.00\n- Southwest Block 24 (SW-24): 63 wells; 0% T500; wellhead 47.74; ambient 21.47; delta 27.84; type-adjusted +0.04\n- Northeast Block 7 (NE-07): 62 wells; 2% T500; wellhead 48.76; ambient 21.55; delta 28.48; type-adjusted +0.05\n- Northeast Block 8 (NE-08): 62 wells; 2% T500; wellhead 48.34; ambient 21.49; delta 28.00; type-adjusted +0.01\n- Southeast Block 31 (SE-31): 50 wells; 58% T500; wellhead 52.85; ambient 21.49; delta 32.41; type-adjusted -0.03\n- Northwest Block 12 (NW-12): 150 wells; 23% T500; wellhead 50.06; ambient 21.49; delta 29.79; type-adjusted -0.03\n- Southeast Block 32 (SE-32): 150 wells; 25% T500; wellhead 50.75; ambient 21.55; delta 30.24; type-adjusted -0.01\nWellhead minus ambient by area and well type (producing readings, C):\n- SW-23: T200 25.96; T350 30.96; T500 36.18\n- SW-24: T200 26.01; T350 30.98; T500 no wells\n- NE-07: T200 26.04; T350 30.95; T500 36.47 (1 well)\n- NE-08: T200 25.89; T350 31.07; T500 36.59 (1 well)\n- SE-31: T200 25.84; T350 30.90; T500 36.25\n- NW-12: T200 25.91; T350 30.95; T500 36.22\n- SE-32: T200 25.95; T350 30.94; T500 36.25",
+          "visualization": {
+            "type": "table",
+            "title": "Wellhead temperature by area: raw, ambient and type-adjusted",
+            "columns": [
+              "Area",
+              "Wells",
+              "% T500",
+              "Mean wellhead C",
+              "Mean ambient C",
+              "Mean delta C",
+              "Type-adjusted delta C"
+            ],
+            "rows": [
+              [
+                "Southwest Block 23 (SW-23)",
+                63,
+                6,
+                48.61,
+                21.49,
+                28.4,
+                0
+              ],
+              [
+                "Southwest Block 24 (SW-24)",
+                63,
+                0,
+                47.74,
+                21.47,
+                27.84,
+                0.04
+              ],
+              [
+                "Northeast Block 7 (NE-07)",
+                62,
+                2,
+                48.76,
+                21.55,
+                28.48,
+                0.05
+              ],
+              [
+                "Northeast Block 8 (NE-08)",
+                62,
+                2,
+                48.34,
+                21.49,
+                28,
+                0.01
+              ],
+              [
+                "Southeast Block 31 (SE-31)",
+                50,
+                58,
+                52.85,
+                21.49,
+                32.41,
+                -0.03
+              ],
+              [
+                "Northwest Block 12 (NW-12)",
+                150,
+                23,
+                50.06,
+                21.49,
+                29.79,
+                -0.03
+              ],
+              [
+                "Southeast Block 32 (SE-32)",
+                150,
+                25,
+                50.75,
+                21.55,
+                30.24,
+                -0.01
+              ]
+            ]
+          },
+          "citations": [
+            {
+              "id": "OM-T200",
+              "title": "T200 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T200.md",
+              "excerpt": "A T200 well is considered **producing (active)** when its wellhead temperature is at least **15 °C above ambient** air temperature at the time of the reading. A difference below 15 °C means the well is **not producing** for that reading, whatever the absolute temperature."
+            },
+            {
+              "id": "OM-T350",
+              "title": "T350 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T350.md",
+              "excerpt": "Because T350 fluid comes from a deeper, hotter zone, a T350 well is considered **producing (active)** only when its wellhead temperature is at least **20 °C above ambient** air temperature at the time of the reading."
+            },
+            {
+              "id": "OM-T500",
+              "title": "T500 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T500.md",
+              "excerpt": "ESP wells move more fluid, and the motor adds heat. A T500 well is considered **producing (active)** only when its wellhead temperature is at least **25 °C above ambient** air temperature at the time of the reading. Below 25 °C the well is **not producing** for that reading."
+            },
+            {
+              "id": "CTX-0067-002",
+              "title": "Operator note · CTX-0067-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0067/context.jsonl",
+              "excerpt": "note id: CTX-0067-002 · asset id: WELL-0067 · created at: 2027-01-09T11:00:00Z · author user id: U-401 · note type: data_correction · inspection id: INS-0067-0216 · field: spill_est_volume_bbl · original value: 4.8 · corrected value: 5.6 · text: Inspection INS-0067-0216: spill volume corrected from 4.8 bbl (AI estimate) to 5.6 bbl measured by the clean-up crew. · valid from: 2027-01-07",
+              "assetId": "WELL-0067"
+            },
+            {
+              "id": "CTX-0201-002",
+              "title": "Operator note · CTX-0201-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0201/context.jsonl",
+              "excerpt": "note id: CTX-0201-002 · asset id: WELL-0201 · created at: 2027-01-14T18:30:00Z · author user id: U-503 · note type: data_correction · inspection id: INS-0201-0218 · field: wellhead_temp_c · original value: 32.1 · corrected value: 10.4 · text: Inspection INS-0201-0218: wellhead_temp_c corrected from 32.1 to 10.4. Reading taken off the hot separator, not the wellhead; handheld re-measure. · valid from: 2027-01-14",
+              "assetId": "WELL-0201"
+            },
+            {
+              "id": "CTX-0213-002",
+              "title": "Operator note · CTX-0213-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0213/context.jsonl",
+              "excerpt": "note id: CTX-0213-002 · asset id: WELL-0213 · created at: 2027-01-14T18:30:00Z · author user id: U-502 · note type: data_correction · inspection id: INS-0213-0221 · field: wellhead_temp_c · original value: 10.7 · corrected value: 30.6 · text: Inspection INS-0213-0221: wellhead_temp_c corrected from 10.7 to 30.6. Thermal camera pointed at the shaded side of the wellhead; handheld re-measure. · valid from: 2027-01-14",
+              "assetId": "WELL-0213"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: region_temperature. Only this user’s last five exchanges were supplied.",
+              "durationMs": 1743
+            },
+            {
+              "tool": "region_temperature",
+              "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+              "durationMs": 2867
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 4610
+        }
+      }
+    ],
+    "revision": 21
+  }
+}

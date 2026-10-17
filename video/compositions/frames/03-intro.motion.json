@@ -1,0 +1,7 @@
+{
+  "scene": "03-intro",
+  "duration_s": 9,
+  "rules": ["center-outward-expansion", "spring-pop-entrance", "svg-path-draw", "ambient-glow-bloom"],
+  "exit": { "vector": "radial outward ~5 px/s (camera push 1.0 to 1.03), wordmark and chip bob under 3 px, glow breathe, ghost-ID drift ~6 px/s vertical", "still_moving": true },
+  "entry": { "vector": "record cards pulled radially inward toward (960,350), ease-in-out starting at 0.05s (peak ~1800 px/s near 0.4s), camera pull-back ~30 px/s inward at t=0", "from_rest": true }
+}

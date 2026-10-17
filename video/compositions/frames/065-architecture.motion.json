@@ -1,0 +1,7 @@
+{
+  "scene": "065-architecture",
+  "duration_s": 38.7,
+  "rules": ["svg-path-draw", "waterfall-entry", "multi-phase-camera", "spring-pop-entrance", "counting-dynamic-scale"],
+  "exit": { "vector": "camera landed at rest in the full-map shot (scale 1.0 by 34.6s, micro-drift eased to 0); last data pulse finishes on the answer wire at ~38.5s; only the background glow opacity breathes (~0 px/s)", "still_moving": false },
+  "entry": { "vector": "empty ground at t=0; dashed wireframe boxes whip up from below 44-80 px over 0.22-0.3s (power4.out, ~200-300 px/s) from t=0.12s, camera at scale 1.0 with ~1 px/s drift", "from_rest": true }
+}

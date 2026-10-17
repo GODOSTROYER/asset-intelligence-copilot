@@ -1,0 +1,331 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: "Montserrat", sans-serif;
+      color: #eef2f8;
+    }
+    #root * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    #close-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 85% 85% at 50% 40%, #0a1222 0%, #0a1222 55%, #070d19 100%);
+    }
+    #close-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(34, 50, 79, 0.35) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(34, 50, 79, 0.35) 1px, transparent 1px);
+      background-size: 48px 48px;
+      -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 42%, #000 30%, transparent 100%);
+      mask-image: radial-gradient(ellipse 75% 75% at 50% 42%, #000 30%, transparent 100%);
+    }
+    #close-glow {
+      position: absolute;
+      left: 160px;
+      top: -90px;
+      width: 1600px;
+      height: 860px;
+      background: radial-gradient(ellipse at center, rgba(61, 123, 255, 0.6), rgba(61, 123, 255, 0) 62%);
+      opacity: 0;
+      z-index: 1;
+    }
+    .close-ghost {
+      position: absolute;
+      font: 400 28px "IBM Plex Mono", monospace;
+      color: #eef2f8;
+      opacity: 0.05;
+      white-space: nowrap;
+      z-index: 1;
+    }
+    #close-wires {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+    #close-wires path.close-th {
+      fill: none;
+      stroke: #3d7bff;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+    }
+    #close-wires circle.close-ring {
+      fill: none;
+      stroke: #3d7bff;
+      stroke-width: 2;
+    }
+    .close-chip {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(61, 123, 255, 0.45);
+      background: rgba(61, 123, 255, 0.1);
+      font: 400 22px "IBM Plex Mono", monospace;
+      color: #eef2f8;
+      white-space: nowrap;
+      z-index: 4;
+    }
+    #close-mark {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 190px;
+      text-align: center;
+      z-index: 5;
+      transform-origin: 50% 50%;
+    }
+    .close-line {
+      display: block;
+      font-weight: 900;
+      font-size: 140px;
+      line-height: 1;
+      letter-spacing: -0.035em;
+      white-space: nowrap;
+    }
+    #close-l2 {
+      color: #3d7bff;
+    }
+    #close-tag {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 600px;
+      display: flex;
+      justify-content: center;
+      gap: 0.28em;
+      font-weight: 700;
+      font-size: 64px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      z-index: 5;
+    }
+    .close-w {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    #close-w-ev {
+      color: #3d7bff;
+    }
+    #close-ul {
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 12px;
+      overflow: visible;
+    }
+    #close-ul path {
+      fill: none;
+      stroke: #3d7bff;
+      stroke-width: 4;
+      stroke-linecap: round;
+    }
+    #close-leader {
+      position: absolute;
+      left: 50%;
+      margin-left: -2px;
+      top: 100%;
+      overflow: visible;
+    }
+    #close-leader path {
+      fill: none;
+      stroke: #3d7bff;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+    #close-evchip {
+      position: absolute;
+      left: 50%;
+      margin-left: -106px;
+      top: calc(100% + 38px);
+      width: 212px;
+      height: 46px;
+      border-radius: 999px;
+      border: 1px solid rgba(61, 123, 255, 0.45);
+      background: rgba(61, 123, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: 400 22px "IBM Plex Mono", monospace;
+      color: #eef2f8;
+    }
+    #close-foot {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 806px;
+      text-align: center;
+      z-index: 5;
+    }
+    .close-fl {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      white-space: nowrap;
+    }
+    #close-f1 {
+      font-weight: 700;
+      font-size: 30px;
+      color: #eef2f8;
+      letter-spacing: 0.01em;
+    }
+    #close-f2 {
+      margin-top: 12px;
+      font-weight: 400;
+      font-size: 24px;
+      color: #9aa8c0;
+      letter-spacing: 0.04em;
+    }
+  </style>
+
+  <div data-hf-id="hf-gzr2" id="root" data-composition-id="08-close" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-8x05" id="close-bg" class="clip" data-start="0" data-duration="30" data-track-index="0"></div>
+    <div data-hf-id="hf-n67k" id="close-grid"></div>
+    <div data-hf-id="hf-3rey" id="close-glow" data-layout-allow-overflow></div>
+
+    <span data-hf-id="hf-7m0x" class="close-ghost" data-layout-allow-occlusion data-layout-allow-overflow id="close-g0" style="left: 90px; top: 860px">MNT-0151-025</span>
+    <span data-hf-id="hf-bil6" class="close-ghost" data-layout-allow-occlusion data-layout-allow-overflow id="close-g1" style="left: 1500px; top: 905px">WELL-0151</span>
+    <span data-hf-id="hf-35e1" class="close-ghost" data-layout-allow-occlusion data-layout-allow-overflow id="close-g2" style="left: 1060px; top: 30px">INS-0001-0203</span>
+    <span data-hf-id="hf-l3xz" class="close-ghost" data-layout-allow-occlusion data-layout-allow-overflow id="close-g3" style="left: 1280px; top: 20px">SOP-RC</span>
+    <span data-hf-id="hf-35s5" class="close-ghost" data-layout-allow-occlusion data-layout-allow-overflow id="close-g4" style="left: 360px; top: 22px">OM-T350</span>
+
+    <svg data-hf-id="hf-zyxb" id="close-wires" width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+      <path data-hf-id="hf-kpjf" class="close-th" id="close-t0" d="M236 126 C236 190 470 150 470 214" />
+      <path data-hf-id="hf-cf0g" class="close-th" id="close-t1" d="M1679 126 C1679 190 1450 150 1450 214" />
+      <path data-hf-id="hf-cx2y" class="close-th" id="close-t2" d="M960 108 C940 150 980 170 960 206" />
+      <path data-hf-id="hf-vi4g" class="close-th" id="close-t3" d="M229 640 C229 520 600 560 600 400" />
+      <path data-hf-id="hf-8o2d" class="close-th" id="close-t4" d="M1709 640 C1709 520 1320 560 1320 400" />
+      <circle data-hf-id="hf-htnm" id="close-d0" cx="470" cy="214" r="6" fill="#3d7bff" />
+      <circle data-hf-id="hf-icvy" id="close-d1" cx="1450" cy="214" r="6" fill="#3d7bff" />
+      <circle data-hf-id="hf-efdl" id="close-d2" cx="960" cy="206" r="6" fill="#3d7bff" />
+      <circle data-hf-id="hf-zs81" id="close-d3" cx="600" cy="400" r="6" fill="#3d7bff" />
+      <circle data-hf-id="hf-t912" id="close-d4" cx="1320" cy="400" r="6" fill="#3d7bff" />
+      <circle data-hf-id="hf-rzbr" class="close-ring" id="close-rg0" cx="470" cy="214" r="10" />
+      <circle data-hf-id="hf-q4ij" class="close-ring" id="close-rg1" cx="1450" cy="214" r="10" />
+      <circle data-hf-id="hf-evmm" class="close-ring" id="close-rg2" cx="960" cy="206" r="10" />
+      <circle data-hf-id="hf-z9u6" class="close-ring" id="close-rg3" cx="600" cy="400" r="10" />
+      <circle data-hf-id="hf-qven" class="close-ring" id="close-rg4" cx="1320" cy="400" r="10" />
+    </svg>
+
+    <span data-hf-id="hf-sdx3" class="close-chip" id="close-c0" style="left: 130px; top: 80px; width: 212px">INS-0001-0203</span>
+    <span data-hf-id="hf-23ke" class="close-chip" id="close-c1" style="left: 1580px; top: 80px; width: 198px">CTX-0001-003</span>
+    <span data-hf-id="hf-tslg" class="close-chip" id="close-c2" style="left: 894px; top: 62px; width: 132px">OM-T200</span>
+    <span data-hf-id="hf-db32" class="close-chip" id="close-c3" style="left: 130px; top: 640px; width: 198px">MNT-0151-025</span>
+    <span data-hf-id="hf-5qwt" class="close-chip" id="close-c4" style="left: 1650px; top: 640px; width: 119px">SOP-SR</span>
+
+    <div data-hf-id="hf-p156" id="close-mark" data-layout-allow-overflow>
+      <span data-hf-id="hf-kjhr" class="close-line" id="close-l1">Asset Intelligence</span>
+      <span data-hf-id="hf-mexd" class="close-line" id="close-l2">Copilot</span>
+    </div>
+
+    <div data-hf-id="hf-2b6g" id="close-tag">
+      <span data-hf-id="hf-9jc0" class="close-w" id="close-w0">Every</span>
+      <span data-hf-id="hf-he3e" class="close-w" id="close-w1">answer,</span>
+      <span data-hf-id="hf-dtor" class="close-w" id="close-w2">with</span>
+      <span data-hf-id="hf-51mc" class="close-w" id="close-w3">its</span>
+      <span data-hf-id="hf-t1e6" class="close-w" id="close-w-ev"
+        >evidence.
+        <svg data-hf-id="hf-odx9" id="close-ul" viewBox="0 0 320 12" preserveAspectRatio="none"><path data-hf-id="hf-ec2s" id="close-ulp" pathLength="1" d="M2 6 L318 6" /></svg>
+        <svg data-hf-id="hf-9r22" id="close-leader" width="4" height="38" viewBox="0 0 4 38"><path data-hf-id="hf-s2k4" id="close-ldp" pathLength="1" d="M2 0 L2 36" /></svg>
+        <span data-hf-id="hf-m0bc" id="close-evchip">INS-0001-0203</span>
+      </span>
+    </div>
+
+    <div data-hf-id="hf-lb9w" id="close-foot">
+      <span data-hf-id="hf-l2fv" class="close-fl" id="close-f1">github.com/GODOSTROYER/flytbase-asset-intelligence-copilot</span>
+      <span data-hf-id="hf-cnhw" class="close-fl" id="close-f2">Arnav Bule · FlytBase AHC SWE Hackathon 2026</span>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      window.__timelines["08-close"] = tl;
+      var $ = function (id) {
+        return document.getElementById(id);
+      };
+      var END = 6.6;
+
+      function prep(el) {
+        el.style.strokeDasharray = el.getAttribute("pathLength") ? "1" : String(el.getTotalLength());
+        el.style.strokeDashoffset = el.getAttribute("pathLength") ? "1" : String(el.getTotalLength());
+      }
+      function draw(el, at, d, ease) {
+        tl.to(el, { strokeDashoffset: 0, duration: d, ease: ease || "power2.out" }, at);
+      }
+
+      /* ---------- ambient: glow bloom + bounded breathe (ambient-glow-bloom) ---------- */
+      var glow = $("close-glow");
+      var gs = { o: 0, sc: 0.85 };
+      function paintGlow(breathe) {
+        glow.style.opacity = String(gs.o + breathe);
+        glow.style.transform = "scale(" + (gs.sc + breathe * 0.4).toFixed(4) + ")";
+      }
+      var gb = { p: 0 };
+      // bloom-in lands with the "Copilot" settle (BLOOM_START + BLOOM_DUR ~ 2.5)
+      tl.to(gs, { o: 0.3, sc: 1, duration: 1.0, ease: "power2.out", onUpdate: function () { paintGlow(Math.sin(gb.p) * 0.03); } }, 1.5);
+      tl.to(gb, { p: Math.PI * 2 * 2, duration: END, ease: "none", onUpdate: function () { paintGlow(Math.sin(gb.p) * 0.03); } }, 0);
+
+      for (var g = 0; g < 5; g++) {
+        tl.fromTo($("close-g" + g), { y: 0 }, { y: -50 - g * 10, duration: END, ease: "none" }, 0);
+      }
+
+      /* ---------- evidence chips pop around the edge ---------- */
+      var order = [0, 1, 2, 3, 4];
+      for (var i = 0; i < order.length; i++) {
+        tl.fromTo($("close-c" + i), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 0.05 + i * 0.07);
+        // slow living drift after pop (finite, linear)
+        tl.fromTo($("close-c" + i), { y: 0 }, { y: i % 2 ? 7 : -7, duration: END, ease: "none", immediateRender: false }, 0);
+      }
+
+      /* ---------- wordmark: calm spring-settle (spring-pop-entrance, power3) ---------- */
+      tl.fromTo($("close-l1"), { opacity: 0, scale: 0.92, y: 22 }, { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.1);
+      tl.fromTo($("close-l2"), { opacity: 0, scale: 0.9, y: 26 }, { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" }, 1.7);
+      // barely perceptible slow scale-up across the hold
+      tl.fromTo($("close-mark"), { scale: 1 }, { scale: 1.014, duration: END, ease: "none", immediateRender: false }, 0);
+
+      /* ---------- evidence threads converge into the wordmark (svg-path-draw) ---------- */
+      for (var t = 0; t < 5; t++) {
+        var th = $("close-t" + t);
+        prep(th);
+        var st = 0.35 + t * 0.13;
+        draw(th, st, 1.0);
+        var land = st + 0.95;
+        tl.fromTo($("close-d" + t), { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.3, ease: "power3.out" }, land);
+        tl.fromTo($("close-rg" + t), { scale: 0.6, opacity: 0.9, transformOrigin: "50% 50%" }, { scale: 3.2, opacity: 0, duration: 0.8, ease: "power2.out" }, land);
+      }
+
+      /* ---------- tagline, one word per beat ---------- */
+      var wt = [2.9, 3.4, 4.05, 4.45, 4.7];
+      var wids = ["close-w0", "close-w1", "close-w2", "close-w3", "close-w-ev"];
+      for (var w = 0; w < wids.length; w++) {
+        tl.fromTo($(wids[w]), { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, wt[w]);
+      }
+      // evidence thread under "evidence." ending on a chip
+      var ulp = $("close-ulp"), ldp = $("close-ldp");
+      prep(ulp); prep(ldp);
+      draw(ulp, 5.0, 0.45);
+      draw(ldp, 5.4, 0.25);
+      tl.fromTo($("close-evchip"), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 5.6);
+
+      /* ---------- footer ---------- */
+      tl.fromTo($("close-f1"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 5.15);
+      tl.fromTo($("close-f2"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 5.35);
+
+      tl.to({}, { duration: 0.01 }, END - 0.01);
+    })();
+  </script>
+</template>

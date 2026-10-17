@@ -1,0 +1,7 @@
+{
+  "scene": "08-close",
+  "duration_s": 6.6,
+  "rules": ["ambient-glow-bloom", "svg-path-draw", "spring-pop-entrance", "titlecard-reveal"],
+  "exit": { "vector": "near-static hold: slow scale-up ~0.002 scale/s (about 2 px/s radial at frame edge), evidence chips drift ~1 px/s, glow breathes +/-0.03 opacity", "still_moving": true },
+  "entry": { "vector": "wordmark rises ~80 px/s upward with scale 0.92 to 1 (~0.3 scale/s) while 5 evidence chips pop in (back.out) at the edges", "from_rest": false }
+}

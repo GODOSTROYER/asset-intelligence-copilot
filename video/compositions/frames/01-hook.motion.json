@@ -1,0 +1,7 @@
+{
+  "scene": "01-hook",
+  "duration_s": 15,
+  "rules": ["counting-dynamic-scale", "kinetic-beat-slam", "ambient-glow-bloom", "svg-path-draw"],
+  "exit": { "vector": "radial outward from frame centre ~9 px/s (slow camera push 1.0 to 1.035) plus ghost-ID drift ~6 px/s vertical, grid drift ~3 px/s diagonal, glow and pile breathe under 5 px", "still_moving": true },
+  "entry": { "vector": "radial outward ~13 px/s (camera push 1.0 to 1.07) plus hero number scale-up 0.5 to 1 starting at 0.3s", "from_rest": false }
+}

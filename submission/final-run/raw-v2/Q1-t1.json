@@ -1,0 +1,174 @@
+{
+  "q": "Q1",
+  "turn": 1,
+  "asker": "Turner",
+  "userId": "U-201",
+  "question": "All our wells feed one reservoir. Map the reservoir pressure across the field from the pressure data.",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 5254
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 5254,
+  "response": {
+    "userId": "U-201",
+    "response": {
+      "answer": "The data cannot answer this. It contains no reservoir pressure, and no tubing, casing, bottom-hole or live wellhead pressure measurements, for any well, so a pressure map or ranking cannot be drawn and I have not estimated one (for example from temperature, well type or production state).\nWhat I scanned: field names in inspection, repair (maintenance), operator note / context, regulatory event, well metadata records (68 field names in all) and the text of 149,877 documents. Pressure-like field names found: none. Reservoir/pool/formation fields in well metadata: none.\nPressure-related facts that do exist, none of which is reservoir pressure:\n- Flowline pressure tests in repair reports: 2,432 reports on 561 wells state a one-off test of a repaired flowline section (test pressure 188 to 400 psi, flowline maximum operating pressure 150 to 320 psi, held 4 hours). These are integrity tests of a repaired section, per job, not a field or reservoir reading.\n- Separator alarm notes: 2 operator note(s) record a high pressure alarm on the separator (CTX-0422-003 on WELL-0422 2027-01-14; CTX-0481-006 on WELL-0481 2027-01-14), with no pressure value. An alarm is an event, not a measurement.\n- Equipment ratings in the well-type manuals (T200: \"Maximum allowable wellhead working pressure: 3,000 psi\") are design limits, not readings. 2004 further repair reports mention pressure testing or bleeding off pressure without a figure.\nThe word \"reservoir\" appears only in generic manual text (OM-T200), and the data never states that wells share one reservoir.\nTo map reservoir pressure the data would need periodic or static pressure surveys (bottom-hole or shut-in wellhead pressure) per well, or a SCADA/well-test pressure feed with timestamps and units. What I can show instead, clearly labelled: wellhead and ambient temperature per inspection with producing status by the manual rule, spill volumes, and downtime. The requested map view is not supported for this result; the available evidence is shown as text.",
+      "citations": [
+        {
+          "id": "MNT-0001-002",
+          "title": "Repair report · MNT-0001-002",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0001/maintenance-reports/MNT-0001-002.md",
+          "excerpt": "Pressure-tested the repaired section at 196 psi (1.25 × the flowline's maximum operating pressure of 157 psi) and held it for 4 hours with no pressure drop (WS-05). The well was returned to production. ## Spill clean-up and waste",
+          "assetId": "WELL-0001"
+        },
+        {
+          "id": "CTX-0422-003",
+          "title": "Operator note · CTX-0422-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0422/context.jsonl",
+          "excerpt": "asset id: WELL-0422 · created at: 2027-01-14T21:35:00Z · author user id: U-606 · note type: operator_note · text: Shut in WELL-0422 for the night, high pressure alarm on the separator. · valid from: 2027-01-14 · note id: CTX-0422-003",
+          "assetId": "WELL-0422"
+        },
+        {
+          "id": "CTX-0481-006",
+          "title": "Operator note · CTX-0481-006",
+          "type": "note",
+          "path": "dataset/assets/WELL-0481/context.jsonl",
+          "excerpt": "asset id: WELL-0481 · created at: 2027-01-14T18:50:00Z · author user id: U-506 · note type: operator_note · text: Shut in WELL-0481 for the night, high pressure alarm on the separator. · valid from: 2027-01-14 · note id: CTX-0481-006",
+          "assetId": "WELL-0481"
+        },
+        {
+          "id": "OM-T200",
+          "title": "T200 operating manual",
+          "type": "manual",
+          "path": "dataset/fleet/well-types/T200.md",
+          "excerpt": "### 9.1 Pressure Maximum allowable wellhead working pressure: 3,000 psi. ### 9.2 Stroke"
+        },
+        {
+          "id": "OM-T350",
+          "title": "T350 operating manual",
+          "type": "manual",
+          "path": "dataset/fleet/well-types/T350.md",
+          "excerpt": "|---|---|---| | Wellhead rating | 3,000 psi | 5,000 psi | | Pump jack | PJ-228 | PJ-456 | | Normal stroke rate | 6–9 spm | 5–8 spm |"
+        },
+        {
+          "id": "OM-T500",
+          "title": "T500 operating manual",
+          "type": "manual",
+          "path": "dataset/fleet/well-types/T500.md",
+          "excerpt": "# T500 Electric Submersible Pump Oil Well — Operating & Maintenance Manual > Fictional manual written for the FlytBase Asset Copilot hackathon. Modelled on typical > electric submersible pump (ESP) well practice. Not for real-world operational use. Document ID: OM-T500 · Revision 1 · Applies to all wells with `well_type = \"T500\"` ## 1. Scope The T500 is a high-rate well lifted by an **electric submersible pump (ESP)** instead of a pump jack and rod string. There is no surface pumping unit: a variable-speed drive on the pad powers a motor and multistage pump hung on the tubing deep in the well."
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [
+        "WELL-0422",
+        "WELL-0481"
+      ],
+      "trace": [
+        {
+          "tool": "gemini_planner",
+          "detail": "Structured plan validated: data_availability. Only this user’s last five exchanges were supplied.",
+          "durationMs": 5134
+        },
+        {
+          "tool": "data_availability",
+          "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+          "durationMs": 62
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "hosted"
+      },
+      "durationMs": 5197
+    },
+    "history": [
+      {
+        "userText": "All our wells feed one reservoir. Map the reservoir pressure across the field from the pressure data.",
+        "answer": "The data cannot answer this. It contains no reservoir pressure, and no tubing, casing, bottom-hole or live wellhead pressure measurements, for any well, so a pressure map or ranking cannot be drawn and I have not estimated one (for example from temperature, well type or production state).\nWhat I scanned: field names in inspection, repair (maintenance), operator note / context, regulatory event, well metadata records (68 field names in all) and the text of 149,877 documents. Pressure-like field names found: none. Reservoir/pool/formation fields in well metadata: none.\nPressure-related facts that do exist, none of which is reservoir pressure:\n- Flowline pressure tests in repair reports: 2,432 reports on 561 wells state a one-off test of a repaired flowline section (test pressure 188 to 400 psi, flowline maximum operating pressure 150 to 320 psi, held 4 hours). These are integrity tests of a repaired section, per job, not a field or reservoir reading.\n- Separator alarm notes: 2 operator note(s) record a high pressure alarm on the separator (CTX-0422-003 on WELL-0422 2027-01-14; CTX-0481-006 on WELL-0481 2027-01-14), with no pressure value. An alarm is an event, not a measurement.\n- Equipment ratings in the well-type manuals (T200: \"Maximum allowable wellhead working pressure: 3,000 psi\") are design limits, not readings. 2004 further repair reports mention pressure testing or bleeding off pressure without a figure.\nThe word \"reservoir\" appears only in generic manual text (OM-T200), and the data never states that wells share one reservoir.\nTo map reservoir pressure the data would need periodic or static pressure surveys (bottom-hole or shut-in wellhead pressure) per well, or a SCADA/well-test pressure feed with timestamps and units. What I can show instead, clearly labelled: wellhead and ambient temperature per inspection with producing status by the manual rule, spill volumes, and downtime. The requested map view is not supported for this result; the available evidence is shown as text.",
+        "wellIds": [
+          "WELL-0422",
+          "WELL-0481"
+        ],
+        "createdAt": "2026-10-17T11:27:17.045Z",
+        "response": {
+          "answer": "The data cannot answer this. It contains no reservoir pressure, and no tubing, casing, bottom-hole or live wellhead pressure measurements, for any well, so a pressure map or ranking cannot be drawn and I have not estimated one (for example from temperature, well type or production state).\nWhat I scanned: field names in inspection, repair (maintenance), operator note / context, regulatory event, well metadata records (68 field names in all) and the text of 149,877 documents. Pressure-like field names found: none. Reservoir/pool/formation fields in well metadata: none.\nPressure-related facts that do exist, none of which is reservoir pressure:\n- Flowline pressure tests in repair reports: 2,432 reports on 561 wells state a one-off test of a repaired flowline section (test pressure 188 to 400 psi, flowline maximum operating pressure 150 to 320 psi, held 4 hours). These are integrity tests of a repaired section, per job, not a field or reservoir reading.\n- Separator alarm notes: 2 operator note(s) record a high pressure alarm on the separator (CTX-0422-003 on WELL-0422 2027-01-14; CTX-0481-006 on WELL-0481 2027-01-14), with no pressure value. An alarm is an event, not a measurement.\n- Equipment ratings in the well-type manuals (T200: \"Maximum allowable wellhead working pressure: 3,000 psi\") are design limits, not readings. 2004 further repair reports mention pressure testing or bleeding off pressure without a figure.\nThe word \"reservoir\" appears only in generic manual text (OM-T200), and the data never states that wells share one reservoir.\nTo map reservoir pressure the data would need periodic or static pressure surveys (bottom-hole or shut-in wellhead pressure) per well, or a SCADA/well-test pressure feed with timestamps and units. What I can show instead, clearly labelled: wellhead and ambient temperature per inspection with producing status by the manual rule, spill volumes, and downtime. The requested map view is not supported for this result; the available evidence is shown as text.",
+          "citations": [
+            {
+              "id": "MNT-0001-002",
+              "title": "Repair report · MNT-0001-002",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0001/maintenance-reports/MNT-0001-002.md",
+              "excerpt": "Pressure-tested the repaired section at 196 psi (1.25 × the flowline's maximum operating pressure of 157 psi) and held it for 4 hours with no pressure drop (WS-05). The well was returned to production. ## Spill clean-up and waste",
+              "assetId": "WELL-0001"
+            },
+            {
+              "id": "CTX-0422-003",
+              "title": "Operator note · CTX-0422-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0422/context.jsonl",
+              "excerpt": "asset id: WELL-0422 · created at: 2027-01-14T21:35:00Z · author user id: U-606 · note type: operator_note · text: Shut in WELL-0422 for the night, high pressure alarm on the separator. · valid from: 2027-01-14 · note id: CTX-0422-003",
+              "assetId": "WELL-0422"
+            },
+            {
+              "id": "CTX-0481-006",
+              "title": "Operator note · CTX-0481-006",
+              "type": "note",
+              "path": "dataset/assets/WELL-0481/context.jsonl",
+              "excerpt": "asset id: WELL-0481 · created at: 2027-01-14T18:50:00Z · author user id: U-506 · note type: operator_note · text: Shut in WELL-0481 for the night, high pressure alarm on the separator. · valid from: 2027-01-14 · note id: CTX-0481-006",
+              "assetId": "WELL-0481"
+            },
+            {
+              "id": "OM-T200",
+              "title": "T200 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T200.md",
+              "excerpt": "### 9.1 Pressure Maximum allowable wellhead working pressure: 3,000 psi. ### 9.2 Stroke"
+            },
+            {
+              "id": "OM-T350",
+              "title": "T350 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T350.md",
+              "excerpt": "|---|---|---| | Wellhead rating | 3,000 psi | 5,000 psi | | Pump jack | PJ-228 | PJ-456 | | Normal stroke rate | 6–9 spm | 5–8 spm |"
+            },
+            {
+              "id": "OM-T500",
+              "title": "T500 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T500.md",
+              "excerpt": "# T500 Electric Submersible Pump Oil Well — Operating & Maintenance Manual > Fictional manual written for the FlytBase Asset Copilot hackathon. Modelled on typical > electric submersible pump (ESP) well practice. Not for real-world operational use. Document ID: OM-T500 · Revision 1 · Applies to all wells with `well_type = \"T500\"` ## 1. Scope The T500 is a high-rate well lifted by an **electric submersible pump (ESP)** instead of a pump jack and rod string. There is no surface pumping unit: a variable-speed drive on the pad powers a motor and multistage pump hung on the tubing deep in the well."
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0422",
+            "WELL-0481"
+          ],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: data_availability. Only this user’s last five exchanges were supplied.",
+              "durationMs": 5134
+            },
+            {
+              "tool": "data_availability",
+              "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+              "durationMs": 62
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 5197
+        }
+      }
+    ],
+    "revision": 1
+  }
+}

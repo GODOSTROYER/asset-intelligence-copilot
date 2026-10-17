@@ -1,0 +1,22 @@
+export type Operation = 'status' | 'area_status' | 'temperature_history' | 'spills' | 'downtime' | 'downtime_ranking' | 'heatmap' | 'compliance' | 'containment' | 'rca' | 'costs' | 'shared_knowledge' | 'search' | 'correction' | 'rule' | 'note' | 'claim' | 'preference' | 'gas_response' | 'cold_weather' | 'bypass_compliance' | 'regulator_letter' | 'recalled_pumps' | 'team_info' | 'status_disagreement' | 'note_risk' | 'delay_reasons' | 'region_temperature' | 'data_availability' | 'triage';
+export type QueryPlan = {
+  operation: Operation;
+  wellIds?: string[];
+  areaId?: string;
+  from?: string;
+  to?: string;
+  year?: number;
+  weeks?: number;
+  topK?: number;
+  equipmentKind?: string;
+  visual?: 'status' | 'table' | 'line' | 'bar' | 'map' | 'heatmap' | 'none';
+  inspectionId?: string;
+  date?: string;
+  field?: 'wellhead_temp_c' | 'ambient_temp_c' | 'spill_est_volume_bbl' | 'spill_detected';
+  value?: number | boolean;
+  wellType?: string;
+  threshold?: number;
+  resolvePrivateHistory?: boolean;
+  reportableOnly?: boolean;
+  reason?: string;
+};

@@ -1,0 +1,520 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #eef2f8;
+      font-family: "Montserrat", sans-serif;
+    }
+    #root * {
+      box-sizing: border-box;
+    }
+    .f03-layer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+    }
+    .f03-bgfield {
+      background: radial-gradient(ellipse 80% 75% at 50% 40%, #0d1830 0%, #0a1222 55%, #070d19 100%);
+    }
+    .f03-grid {
+      position: absolute;
+      left: -48px;
+      top: -48px;
+      width: 2016px;
+      height: 1176px;
+      background-image: linear-gradient(rgba(34, 50, 79, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 50, 79, 0.35) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .f03-vig {
+      background: radial-gradient(ellipse 70% 70% at 50% 44%, rgba(7, 13, 25, 0) 40%, rgba(7, 13, 25, 0.85) 100%);
+    }
+    .f03-glow {
+      position: absolute;
+      left: 310px;
+      top: 0px;
+      width: 1300px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(61, 123, 255, 0.55) 0%, rgba(61, 123, 255, 0.16) 40%, rgba(61, 123, 255, 0) 70%);
+      opacity: 0;
+    }
+    .f03-ghost {
+      position: absolute;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 28px;
+      color: #eef2f8;
+      opacity: 0.05;
+      white-space: nowrap;
+    }
+    .f03-card {
+      position: absolute;
+      left: 960px;
+      top: 540px;
+      width: 210px;
+      height: 76px;
+      margin-left: -105px;
+      margin-top: -38px;
+      border-radius: 12px;
+      background: #111c33;
+      border: 1px solid #22324f;
+      padding: 12px 14px 0 18px;
+      overflow: hidden;
+      will-change: transform;
+    }
+    .f03-card b {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: #3d7bff;
+    }
+    .f03-card.s1 b {
+      background: rgba(61, 123, 255, 0.6);
+    }
+    .f03-card.s2 b {
+      background: #9aa8c0;
+    }
+    .f03-card.s3 b {
+      background: #22324f;
+    }
+    .f03-card span {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 20px;
+      color: #9aa8c0;
+      white-space: nowrap;
+      margin-bottom: 8px;
+    }
+    .f03-card em {
+      display: block;
+      height: 6px;
+      border-radius: 3px;
+      background: #22324f;
+      margin-bottom: 7px;
+    }
+    .f03-pt {
+      position: absolute;
+      left: 960px;
+      top: 350px;
+      width: 28px;
+      height: 28px;
+      margin-left: -14px;
+      margin-top: -14px;
+      border-radius: 50%;
+      background: #3d7bff;
+      box-shadow: 0 0 40px 14px rgba(61, 123, 255, 0.55);
+      opacity: 0;
+    }
+    .f03-ringsvg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: visible;
+    }
+    .f03-kicker {
+      position: absolute;
+      left: 0;
+      top: 100px;
+      width: 1920px;
+      text-align: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: 0.24em;
+      color: #9aa8c0;
+      white-space: nowrap;
+    }
+    .f03-kicker i {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #3d7bff;
+      margin-right: 18px;
+      vertical-align: middle;
+    }
+    .f03-wm {
+      position: absolute;
+      left: 0;
+      top: 170px;
+      width: 1920px;
+      text-align: center;
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      white-space: nowrap;
+    }
+    .f03-wm1 {
+      font-size: 112px;
+      line-height: 124px;
+      color: #eef2f8;
+    }
+    .f03-wm2 {
+      top: 296px;
+      font-size: 168px;
+      line-height: 180px;
+      color: #3d7bff;
+    }
+    .f03-L {
+      display: inline-block;
+      will-change: transform;
+    }
+    .f03-t {
+      position: absolute;
+      left: 0;
+      width: 1920px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 52px;
+      line-height: 64px;
+      color: #eef2f8;
+      white-space: nowrap;
+    }
+    .f03-t span.c {
+      position: relative;
+      display: inline-block;
+      white-space: pre;
+      opacity: 0;
+    }
+    .f03-t span.c u {
+      position: absolute;
+      right: -3px;
+      top: 6px;
+      width: 3px;
+      height: 52px;
+      background: #3d7bff;
+      opacity: 0;
+    }
+    .f03-ev {
+      position: relative;
+      display: inline-block;
+      color: #eef2f8;
+    }
+    .f03-ev .f03-ul {
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 10px;
+      overflow: visible;
+    }
+    .f03-ev .f03-th {
+      position: absolute;
+      right: -6px;
+      top: 100%;
+      margin-top: 4px;
+      width: 220px;
+      height: 80px;
+      overflow: visible;
+    }
+    .f03-chip {
+      position: absolute;
+      right: -20px;
+      top: 100%;
+      margin-top: 84px;
+      width: 240px;
+      height: 48px;
+      border-radius: 999px;
+      border: 1px solid rgba(61, 123, 255, 0.45);
+      background: rgba(61, 123, 255, 0.1);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 46px;
+      color: #eef2f8;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .f03-chip i {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #3d7bff;
+      margin-right: 12px;
+    }
+  </style>
+
+  <div data-hf-id="hf-lxkx" id="root" data-composition-id="03-intro" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-zmax" class="clip f03-layer" data-start="0" data-duration="10.8" data-track-index="0" id="f03-bg">
+      <div data-hf-id="hf-cw4o" class="f03-layer f03-bgfield"></div>
+      <div data-hf-id="hf-ieg2" class="f03-grid" id="f03-grid"></div>
+      <div data-hf-id="hf-vr0y" class="f03-glow" id="f03-glow"></div>
+      <div data-hf-id="hf-i4k5" class="f03-layer" id="f03-ghosts"></div>
+      <div data-hf-id="hf-fbnp" class="f03-layer f03-vig"></div>
+    </div>
+
+    <div data-hf-id="hf-plxq" class="clip f03-layer" data-start="0" data-duration="10.8" data-track-index="1" id="f03-cam">
+      <div data-hf-id="hf-pw3z" class="f03-layer" id="f03-field" data-layout-allow-overlap></div>
+      <div data-hf-id="hf-26nu" class="f03-pt" id="f03-pt"></div>
+      <svg data-hf-id="hf-g8kr" class="f03-ringsvg" id="f03-svg" viewBox="0 0 1920 1080">
+        <circle data-hf-id="hf-kop6" id="f03-shock" cx="960" cy="350" r="120" fill="none" stroke="#3d7bff" stroke-width="4" />
+        <circle data-hf-id="hf-jk66" id="f03-shock2" cx="960" cy="350" r="120" fill="none" stroke="#3d7bff" stroke-width="2" />
+      </svg>
+      <div data-hf-id="hf-r5lq" class="f03-kicker" id="f03-kicker"><i data-hf-id="hf-wt6k"></i>FLYTBASE AHC · HACKTOBERFEST 2026</div>
+      <div data-hf-id="hf-v3sm" class="f03-wm f03-wm1" id="f03-wm1"></div>
+      <div data-hf-id="hf-u2rw" class="f03-wm f03-wm2" id="f03-wm2"></div>
+      <div data-hf-id="hf-cv2o" class="f03-t" id="f03-t1" style="top: 570px"></div>
+      <div data-hf-id="hf-g9rc" class="f03-t" id="f03-t2" style="top: 650px"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var ID = "03-intro";
+      var NS = "http://www.w3.org/2000/svg";
+      var tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines[ID] = tl;
+      var GOLD = Math.PI * (3 - Math.sqrt(5));
+      function hash(i, k) {
+        var x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453;
+        return x - Math.floor(x);
+      }
+      function pad(n, w) {
+        var s = String(n);
+        while (s.length < w) s = "0" + s;
+        return s;
+      }
+      function $(id) {
+        return document.getElementById(id);
+      }
+      var PFX = ["INS", "MNT", "CTX", "REG"];
+      function cardId(s, i) {
+        var a = pad(1 + Math.floor(hash(i, 1) * 199), 4);
+        var b = s === 0 ? pad(1 + Math.floor(hash(i, 2) * 1499), 4) : pad(1 + Math.floor(hash(i, 2) * 99), 3);
+        return PFX[s] + "-" + a + "-" + b;
+      }
+
+      /* ---------- continuity: the same record field as Frame 2, then pulled to one point ---------- */
+      var N = 118;
+      var recs = [];
+      for (var i = 0; i < N; i++) {
+        var r = Math.sqrt((i + 0.5) / N);
+        var ang = i * GOLD;
+        recs.push({ i: i, tx: 960 + Math.cos(ang) * r * 880 + (hash(i, 3) - 0.5) * 50, ty: 480 + Math.sin(ang) * r * 405 + (hash(i, 4) - 0.5) * 40 });
+      }
+      for (var j = 0; j < 18; j++) {
+        var a2 = j * GOLD,
+          rr = Math.sqrt((j + 0.5) / 18);
+        recs.push({ i: 200 + j, tx: 960 + Math.cos(a2) * rr * 520, ty: 470 + Math.sin(a2) * rr * 120 });
+      }
+      var PX = 960,
+        PY = 350;
+      var field = $("f03-field");
+      recs.forEach(function (rec) {
+        var i = rec.i,
+          s = i % 4;
+        var c = document.createElement("div");
+        c.className = "f03-card s" + s;
+        var w1 = 40 + Math.floor(hash(i, 5) * 55),
+          w2 = 30 + Math.floor(hash(i, 6) * 60);
+        c.innerHTML = "<b></b><span>" + cardId(s, i) + "</span><em style='width:" + w1 + "%'></em><em style='width:" + w2 + "%'></em>";
+        field.appendChild(c);
+        var rot = (hash(i, 10) - 0.5) * 34;
+        var sc = 0.86 + hash(i, 11) * 0.36;
+        var dx = rec.tx - 960,
+          dy = rec.ty - 540;
+        var dist = Math.sqrt((rec.tx - PX) * (rec.tx - PX) + (rec.ty - PY) * (rec.ty - PY));
+        var start = 0.05 + (dist / 1100) * 0.45;
+        tl.fromTo(
+          c,
+          { x: dx, y: dy, rotation: rot, scale: sc, opacity: 0.3 },
+          { x: PX - 960, y: PY - 540, rotation: rot + (hash(i, 12) - 0.5) * 260, scale: 0.1, duration: 0.85, ease: "power3.inOut" },
+          start,
+        );
+        tl.to(c, { opacity: 0, duration: 0.3, ease: "power1.in" }, start + 0.55);
+      });
+
+      /* ---------- the accent point, then the bloom ---------- */
+      tl.fromTo("#f03-pt", { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.9, ease: "power2.out" }, 0.25);
+      tl.to("#f03-pt", { scale: 5, opacity: 0, duration: 0.55, ease: "power3.out" }, 1.15);
+      var s1 = $("f03-shock"),
+        s2 = $("f03-shock2");
+      [s1, s2].forEach(function (c, k) {
+        var len = 2 * Math.PI * 120;
+        c.style.strokeDasharray = String(len);
+        c.style.strokeDashoffset = String(len);
+        tl.to(c, { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, 1.1 + k * 0.1);
+        tl.to(c, { scale: 8 + k * 2, opacity: 0, duration: 1.1, ease: "power2.out", transformOrigin: "960px 350px" }, 1.3 + k * 0.1);
+      });
+
+      /* ---------- ambient glow bloom behind the wordmark ---------- */
+      var glow = $("f03-glow");
+      tl.fromTo("#f03-glow", { opacity: 0, scale: 0.8 }, { opacity: 0.32, scale: 1, duration: 1.4, ease: "power2.out" }, 1.3);
+      var gph = { p: 0 };
+      tl.fromTo(gph, { p: 0 }, { immediateRender: false, p: Math.PI * 2 * 1.5, duration: 9 - 2.8, ease: "none", onUpdate: function () {
+        var s = Math.sin(gph.p);
+        gsap.set(glow, { opacity: 0.32 + s * 0.05, scale: 1 + s * 0.025 });
+      } }, 2.8);
+
+      /* ---------- wordmark: letters expand outward from the shared point ---------- */
+      function buildLetters(hostId, text, fs) {
+        var host = $(hostId),
+          out = [];
+        for (var k = 0; k < text.length; k++) {
+          var ch = text[k];
+          var sp = document.createElement("span");
+          sp.className = "f03-L";
+          if (ch === " ") {
+            sp.style.width = fs * 0.26 + "px";
+            sp.innerHTML = "&nbsp;";
+            sp.style.overflow = "hidden";
+          } else sp.textContent = ch;
+          host.appendChild(sp);
+          out.push({ el: sp, space: ch === " " });
+        }
+        return out;
+      }
+      var L1 = buildLetters("f03-wm1", "Asset Intelligence", 112);
+      var L2 = buildLetters("f03-wm2", "Copilot", 168);
+      function bloom(letters, fs, at) {
+        var mid = (letters.length - 1) / 2;
+        letters.forEach(function (L, k) {
+          if (L.space) return;
+          tl.fromTo(
+            L.el,
+            { x: (mid - k) * fs * 0.6, y: (PY - (L.el.parentNode.id === "f03-wm1" ? 232 : 386)) * 0.8, scale: 0.15, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.95, ease: "power3.out" },
+            at + k * 0.03,
+          );
+        });
+      }
+      bloom(L1, 112, 1.2);
+      bloom(L2, 168, 1.45);
+      /* wordmark breath in the hold */
+      var wph = { p: 0 };
+      tl.fromTo(wph, { p: 0 }, { immediateRender: false, p: Math.PI * 2 * 2, duration: 9 - 3.2, ease: "none", onUpdate: function () {
+        var s = Math.sin(wph.p);
+        gsap.set("#f03-wm2", { y: s * 3, scale: 1 + s * 0.004 });
+      } }, 3.2);
+
+      /* kicker: spring-pop (smooth settle) */
+      tl.fromTo("#f03-kicker", { opacity: 0, scale: 0.85, y: 12, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "power3.out" }, 2.1);
+
+      /* ---------- taglines typed ---------- */
+      function buildLine(hostId, parts) {
+        var host = $(hostId),
+          chars = [];
+        parts.forEach(function (part) {
+          var parent = host;
+          if (part.wrap) {
+            parent = document.createElement("span");
+            parent.className = "f03-ev";
+            parent.id = part.wrap;
+            host.appendChild(parent);
+          }
+          for (var k = 0; k < part.text.length; k++) {
+            var sp = document.createElement("span");
+            sp.className = "c";
+            sp.textContent = part.text[k];
+            var u = document.createElement("u");
+            sp.appendChild(u);
+            parent.appendChild(sp);
+            chars.push(sp);
+          }
+        });
+        return chars;
+      }
+      function typeLine(chars, at, rate, keepCaret) {
+        chars.forEach(function (sp, k) {
+          var t = at + k * rate;
+          tl.set(sp, { opacity: 1 }, t);
+          tl.set(sp.lastElementChild, { opacity: 1 }, t);
+          tl.set(sp.lastElementChild, { opacity: 0 }, t + rate);
+        });
+        var end = at + chars.length * rate;
+        if (keepCaret) {
+          var lc = chars[chars.length - 1].lastElementChild;
+          for (var b = 0; b < 6; b++) {
+            tl.set(lc, { opacity: 1 }, end + b * 0.3);
+            tl.set(lc, { opacity: 0 }, end + b * 0.3 + 0.15);
+          }
+        }
+        return end;
+      }
+      var c1 = buildLine("f03-t1", [{ text: "Ask your oil field anything." }]);
+      var c2 = buildLine("f03-t2", [{ text: "Get the answer — with the " }, { text: "evidence", wrap: "f03-ev" }, { text: "." }]);
+      typeLine(c1, 2.9, 0.05, false);
+      var end2 = typeLine(c2, 5.0, 0.05, false);
+
+      /* ---------- evidence thread: underline then chip ---------- */
+      var ev = $("f03-ev");
+      var ul = document.createElementNS(NS, "svg");
+      ul.setAttribute("class", "f03-ul");
+      ul.setAttribute("viewBox", "0 0 100 10");
+      ul.setAttribute("preserveAspectRatio", "none");
+      var upath = document.createElementNS(NS, "path");
+      upath.setAttribute("d", "M 0 5 H 100");
+      upath.setAttribute("pathLength", "1");
+      upath.setAttribute("stroke", "#3d7bff");
+      upath.setAttribute("stroke-width", "4");
+      upath.setAttribute("stroke-linecap", "butt");
+      upath.setAttribute("fill", "none");
+      upath.style.strokeDasharray = "1";
+      upath.style.strokeDashoffset = "1";
+      ul.appendChild(upath);
+      ev.appendChild(ul);
+
+      var th = document.createElementNS(NS, "svg");
+      th.setAttribute("class", "f03-th");
+      th.setAttribute("viewBox", "0 0 220 80");
+      var tpath = document.createElementNS(NS, "path");
+      tpath.setAttribute("d", "M 214 0 C 214 46, 114 36, 114 80");
+      tpath.setAttribute("pathLength", "1");
+      tpath.setAttribute("stroke", "#3d7bff");
+      tpath.setAttribute("stroke-width", "3");
+      tpath.setAttribute("stroke-linecap", "round");
+      tpath.setAttribute("fill", "none");
+      tpath.style.strokeDasharray = "1";
+      tpath.style.strokeDashoffset = "1";
+      th.appendChild(tpath);
+      ev.appendChild(th);
+
+      var chip = document.createElement("div");
+      chip.className = "f03-chip";
+      chip.id = "f03-chip";
+      chip.innerHTML = "<i></i>INS-0001-0203";
+      ev.appendChild(chip);
+
+      var TH = end2 + 0.05;
+      tl.to(upath, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, TH);
+      tl.to(tpath, { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" }, TH + 0.4);
+      tl.fromTo(chip, { opacity: 0, scale: 0.5, transformOrigin: "50% 0%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, TH + 0.9);
+      /* chip border breathe in the hold */
+      var cph = { p: 0 };
+      tl.fromTo(cph, { p: 0 }, { immediateRender: false, p: Math.PI * 0.5 * 2 * 0.5, duration: 9 - (TH + 1.4), ease: "none", onUpdate: function () {
+        var s = Math.sin(cph.p);
+        gsap.set(chip, { y: s * 3 });
+      } }, TH + 1.4);
+
+      /* ---------- ghosts + grid + camera ---------- */
+      var gids = ["INS-0001-0203", "CTX-0001-003", "MNT-0151-025", "INS-0001-0140", "WELL-0001", "T200", "CTX-0001-003", "MNT-0151-025"];
+      var gl = $("f03-ghosts");
+      gids.forEach(function (txt, i) {
+        var d = document.createElement("div");
+        d.className = "f03-ghost";
+        d.textContent = txt;
+        d.style.left = 90 + ((i * 337) % 1650) + "px";
+        d.style.top = 70 + ((i * 211) % 800) + "px";
+        gl.appendChild(d);
+        tl.fromTo(d, { y: 0 }, { y: i % 2 ? -60 : 50, duration: 9, ease: "none" }, 0);
+      });
+      tl.fromTo("#f03-grid", { x: 0, y: 0 }, { x: 48, y: 48, duration: 9, ease: "none" }, 0);
+      tl.fromTo("#f03-cam", { scale: 1.05, transformOrigin: "50% 40%" }, { scale: 1.0, duration: 3.2, ease: "power2.out" }, 0);
+      tl.to("#f03-cam", { scale: 1.03, duration: 9 - 3.2, ease: "none" }, 3.2);
+
+      tl.to({}, { duration: 0.001 }, 8.999);
+    })();
+  </script>
+</template>

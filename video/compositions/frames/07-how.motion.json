@@ -1,0 +1,7 @@
+{
+  "scene": "07-how",
+  "duration_s": 18.5,
+  "rules": ["multi-phase-camera", "svg-path-draw", "counting-dynamic-scale", "spatial-pan-stations", "spring-pop-entrance"],
+  "exit": { "vector": "camera at rest in wide shot (power3.inOut landed at 17.0s); residual micro-drift ~0.2 px/s vertical; ghost IDs (5% opacity) drift up ~4 px/s", "still_moving": true },
+  "entry": { "vector": "card rises ~120 px/s upward (power3.out, 28px over 0.7s) with camera push-in scale 1.22 to 1.30 (~0.11 scale/s, ~110 px/s radial at frame edge)", "from_rest": false }
+}

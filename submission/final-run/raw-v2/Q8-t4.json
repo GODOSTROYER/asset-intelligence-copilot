@@ -1,0 +1,237 @@
+{
+  "q": "Q8",
+  "turn": 4,
+  "asker": "Grant",
+  "userId": "U-501",
+  "question": "Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 25033
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 25033,
+  "response": {
+    "userId": "U-501",
+    "response": {
+      "answer": "Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no work order is on record yet; it is attributed to Olivia Grant and visible to all users, but it does not overwrite the maintenance records). 1 well has a recalled pump in the ground (Highline RP-175 LOT-2409-A/LOT-2409-C/LOT-2410-B, notice HPC-RN-2026-07). By area: Southeast Block 32 = 1. The installed pump is the latest \"Parts installed\" line by job start date, so a later non-recalled pump removes the well from the list. Total install cost of the listed jobs: USD 25,500. The replacement deadline was 31 Dec 2026. Status uses the latest inspection against the well-type threshold; \"last repair\" is the latest completed corrective job start date plus any job still in progress today. 1 well carries an unconfirmed replacement report (WELL-0577 second-hand report from Olivia Grant (via Nathan Pierce)). Reports alone do not remove a well: 1 per the records, 0 if those reports are confirmed by a work order.",
+      "visualization": {
+        "type": "table",
+        "title": "Recalled pumps still in the ground",
+        "columns": [
+          "Well",
+          "Area",
+          "Pump (model, serial, lot)",
+          "Installed by",
+          "Install cost",
+          "Status now",
+          "Last repair",
+          "Source",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "WELL-0577",
+            "Southeast Block 32",
+            "Highline RP-175, SN-757468, LOT-2409-A",
+            "MNT-0577-028 (Jul 31, 2026)",
+            "USD 25,500",
+            "Producing",
+            "Nov 21, 2026 (MNT-0577-032, Walking beam bearing wear)",
+            "HPC-RN-2026-07; MNT-0577-028 report",
+            "Second-hand: Olivia Grant relayed that Nathan Pierce said the pump was replaced (Oct 17, 2026), unconfirmed: no work order on record"
+          ]
+        ]
+      },
+      "citations": [
+        {
+          "id": "CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+          "title": "Shared feedback · CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+          "type": "claim",
+          "path": "local feedback",
+          "excerpt": "Olivia Grant · 2026-10-17T11:28:54.096Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+          "assetId": "WELL-0577"
+        },
+        {
+          "id": "SUPPLIER-RECALL-NOTICE-2026-12-01",
+          "title": "supplier recall notice 2026 12 01",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/supplier-recall-notice-2026-12-01.md",
+          "excerpt": "## What is recalled Highline RP-175 downhole rod pumps from these manufacturing lots:"
+        },
+        {
+          "id": "CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+          "title": "Shared feedback · CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+          "type": "claim",
+          "path": "local feedback",
+          "excerpt": "Olivia Grant · 2026-10-17T11:28:54.096Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+          "assetId": "WELL-0577"
+        },
+        {
+          "id": "MNT-0577-028",
+          "title": "Repair · MNT-0577-028",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0577/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0577-028 · asset id: WELL-0577 · started at: 2026-07-31T08:00:00Z · completed at: 2026-08-11T12:00:00Z · maintenance type: corrective · equipment kind: downhole_pump · issue: Downhole pump stuck · action taken: Pulled and replaced downhole pump · technician user id: U-303 · downtime hours: 268 · triggered by inspection id: INS-0577-0187 · report file: maintenance-reports/MNT-0577-028.md",
+          "assetId": "WELL-0577"
+        },
+        {
+          "id": "MNT-0577-028",
+          "title": "Repair report · MNT-0577-028",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0577/maintenance-reports/MNT-0577-028.md",
+          "excerpt": "**Parts installed:** Highline RP-175 pump, serial SN-757468, lot LOT-2409-A **Follow-up:** Crew to return within 7 days to check the fluid level and pump fillage.",
+          "assetId": "WELL-0577"
+        },
+        {
+          "id": "MNT-0577-032",
+          "title": "Repair · MNT-0577-032",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0577/maintenance.jsonl",
+          "excerpt": "maintenance id: MNT-0577-032 · asset id: WELL-0577 · started at: 2026-11-21T08:00:00Z · completed at: 2026-12-01T19:00:00Z · maintenance type: corrective · equipment kind: pump_jack · issue: Walking beam bearing wear · action taken: Replaced saddle bearing and re-greased · technician user id: U-304 · contractor: Coyote Ridge Well Services · downtime hours: 251 · triggered by inspection id: INS-0577-0203 · report file: maintenance-reports/MNT-0577-032.md",
+          "assetId": "WELL-0577"
+        }
+      ],
+      "conflicts": [
+        "WELL-0577: Olivia Grant says Nathan Pierce told them the recalled pump was swapped. This is second-hand and unconfirmed. The records still show recalled LOT-2409-A (MNT-0577-028) installed and no later pump job, so the well stays on the list."
+      ],
+      "referencedWellIds": [
+        "WELL-0577"
+      ],
+      "trace": [
+        {
+          "tool": "deterministic_planner",
+          "detail": "Hosted planner unavailable (timeout); validated domain fallback used. Retry this question to reconnect.",
+          "durationMs": 25005
+        },
+        {
+          "tool": "claim",
+          "detail": "Explicit user feedback applied by the scoped domain tool with provenance.",
+          "durationMs": 21
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "fallback",
+        "reason": "timeout"
+      },
+      "durationMs": 25026
+    },
+    "history": [
+      {
+        "userText": "Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+        "answer": "Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no work order is on record yet; it is attributed to Olivia Grant and visible to all users, but it does not overwrite the maintenance records). 1 well has a recalled pump in the ground (Highline RP-175 LOT-2409-A/LOT-2409-C/LOT-2410-B, notice HPC-RN-2026-07). By area: Southeast Block 32 = 1. The installed pump is the latest \"Parts installed\" line by job start date, so a later non-recalled pump removes the well from the list. Total install cost of the listed jobs: USD 25,500. The replacement deadline was 31 Dec 2026. Status uses the latest inspection against the well-type threshold; \"last repair\" is the latest completed corrective job start date plus any job still in progress today. 1 well carries an unconfirmed replacement report (WELL-0577 second-hand report from Olivia Grant (via Nathan Pierce)). Reports alone do not remove a well: 1 per the records, 0 if those reports are confirmed by a work order.",
+        "wellIds": [
+          "WELL-0577"
+        ],
+        "createdAt": "2026-10-17T11:28:54.117Z",
+        "response": {
+          "answer": "Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no work order is on record yet; it is attributed to Olivia Grant and visible to all users, but it does not overwrite the maintenance records). 1 well has a recalled pump in the ground (Highline RP-175 LOT-2409-A/LOT-2409-C/LOT-2410-B, notice HPC-RN-2026-07). By area: Southeast Block 32 = 1. The installed pump is the latest \"Parts installed\" line by job start date, so a later non-recalled pump removes the well from the list. Total install cost of the listed jobs: USD 25,500. The replacement deadline was 31 Dec 2026. Status uses the latest inspection against the well-type threshold; \"last repair\" is the latest completed corrective job start date plus any job still in progress today. 1 well carries an unconfirmed replacement report (WELL-0577 second-hand report from Olivia Grant (via Nathan Pierce)). Reports alone do not remove a well: 1 per the records, 0 if those reports are confirmed by a work order.",
+          "visualization": {
+            "type": "table",
+            "title": "Recalled pumps still in the ground",
+            "columns": [
+              "Well",
+              "Area",
+              "Pump (model, serial, lot)",
+              "Installed by",
+              "Install cost",
+              "Status now",
+              "Last repair",
+              "Source",
+              "Notes"
+            ],
+            "rows": [
+              [
+                "WELL-0577",
+                "Southeast Block 32",
+                "Highline RP-175, SN-757468, LOT-2409-A",
+                "MNT-0577-028 (Jul 31, 2026)",
+                "USD 25,500",
+                "Producing",
+                "Nov 21, 2026 (MNT-0577-032, Walking beam bearing wear)",
+                "HPC-RN-2026-07; MNT-0577-028 report",
+                "Second-hand: Olivia Grant relayed that Nathan Pierce said the pump was replaced (Oct 17, 2026), unconfirmed: no work order on record"
+              ]
+            ]
+          },
+          "citations": [
+            {
+              "id": "CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+              "title": "Shared feedback · CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+              "type": "claim",
+              "path": "local feedback",
+              "excerpt": "Olivia Grant · 2026-10-17T11:28:54.096Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+              "assetId": "WELL-0577"
+            },
+            {
+              "id": "SUPPLIER-RECALL-NOTICE-2026-12-01",
+              "title": "supplier recall notice 2026 12 01",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/supplier-recall-notice-2026-12-01.md",
+              "excerpt": "## What is recalled Highline RP-175 downhole rod pumps from these manufacturing lots:"
+            },
+            {
+              "id": "CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+              "title": "Shared feedback · CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+              "type": "claim",
+              "path": "local feedback",
+              "excerpt": "Olivia Grant · 2026-10-17T11:28:54.096Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+              "assetId": "WELL-0577"
+            },
+            {
+              "id": "MNT-0577-028",
+              "title": "Repair · MNT-0577-028",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0577/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0577-028 · asset id: WELL-0577 · started at: 2026-07-31T08:00:00Z · completed at: 2026-08-11T12:00:00Z · maintenance type: corrective · equipment kind: downhole_pump · issue: Downhole pump stuck · action taken: Pulled and replaced downhole pump · technician user id: U-303 · downtime hours: 268 · triggered by inspection id: INS-0577-0187 · report file: maintenance-reports/MNT-0577-028.md",
+              "assetId": "WELL-0577"
+            },
+            {
+              "id": "MNT-0577-028",
+              "title": "Repair report · MNT-0577-028",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0577/maintenance-reports/MNT-0577-028.md",
+              "excerpt": "**Parts installed:** Highline RP-175 pump, serial SN-757468, lot LOT-2409-A **Follow-up:** Crew to return within 7 days to check the fluid level and pump fillage.",
+              "assetId": "WELL-0577"
+            },
+            {
+              "id": "MNT-0577-032",
+              "title": "Repair · MNT-0577-032",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0577/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0577-032 · asset id: WELL-0577 · started at: 2026-11-21T08:00:00Z · completed at: 2026-12-01T19:00:00Z · maintenance type: corrective · equipment kind: pump_jack · issue: Walking beam bearing wear · action taken: Replaced saddle bearing and re-greased · technician user id: U-304 · contractor: Coyote Ridge Well Services · downtime hours: 251 · triggered by inspection id: INS-0577-0203 · report file: maintenance-reports/MNT-0577-032.md",
+              "assetId": "WELL-0577"
+            }
+          ],
+          "conflicts": [
+            "WELL-0577: Olivia Grant says Nathan Pierce told them the recalled pump was swapped. This is second-hand and unconfirmed. The records still show recalled LOT-2409-A (MNT-0577-028) installed and no later pump job, so the well stays on the list."
+          ],
+          "referencedWellIds": [
+            "WELL-0577"
+          ],
+          "trace": [
+            {
+              "tool": "deterministic_planner",
+              "detail": "Hosted planner unavailable (timeout); validated domain fallback used. Retry this question to reconnect.",
+              "durationMs": 25005
+            },
+            {
+              "tool": "claim",
+              "detail": "Explicit user feedback applied by the scoped domain tool with provenance.",
+              "durationMs": 21
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "fallback",
+            "reason": "timeout"
+          },
+          "durationMs": 25026
+        }
+      }
+    ],
+    "revision": 12
+  }
+}

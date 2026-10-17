@@ -1,0 +1,336 @@
+<template>
+  <style>
+    #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; font-family: "Montserrat", sans-serif; color: #EEF2F8; }
+    .clip { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    .m-bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(34,50,79,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(34,50,79,0.35) 1px, transparent 1px); background-size: 48px 48px; }
+    .m-bg-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(10,18,34,0) 40%, rgba(7,13,25,0.85) 100%); }
+    .m-bg-glow { position: absolute; left: 360px; top: 150px; width: 1200px; height: 800px; border-radius: 50%; background: radial-gradient(closest-side, rgba(61,123,255,0.22), rgba(61,123,255,0)); opacity: 0.6; }
+    .m-ghost { position: absolute; font-family: "IBM Plex Mono", monospace; font-size: 30px; color: #3D7BFF; opacity: 0.06; letter-spacing: 0.04em; white-space: nowrap; }
+
+    #m-cam { position: absolute; inset: 0; transform-origin: 50% 45%; }
+    #m-zoom { position: absolute; inset: 0; perspective: 1900px; perspective-origin: 50% 50%; transform-origin: 950px 800px; }
+    #m-world { position: absolute; inset: 0; perspective: 1900px; perspective-origin: 50% 50%; }
+
+    .m-win { position: absolute; left: 310px; top: 150px; width: 1300px; height: 731px; border-radius: 22px; overflow: hidden; border: 1px solid #22324F; box-shadow: 0 50px 60px rgba(0,0,0,0.45); background: #fff; transform-origin: 50% 50%; will-change: transform; }
+    .m-win img { display: block; width: 100%; height: 100%; }
+    .m-ov { position: absolute; left: 0; top: 0; width: 2000px; height: 1125px; transform: scale(0.65); transform-origin: 0 0; }
+    #m-cover { position: absolute; left: 556px; top: 1017px; width: 600px; height: 28px; background: #fff; transform-origin: 100% 50%; }
+    #m-caret { position: absolute; left: 556px; top: 1018px; width: 3px; height: 26px; background: #3D7BFF; }
+
+    .m-card { position: absolute; border-radius: 20px; overflow: hidden; border: 1px solid #22324F; box-shadow: 0 40px 60px rgba(0,0,0,0.45); background: #fff; transform-origin: 50% 50%; }
+    .m-card img { display: block; width: 100%; height: 100%; }
+    .m-grp { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 50% 45%; }
+    .m-svg { position: absolute; left: 0; top: 0; overflow: visible; }
+
+    .m-badges { position: absolute; left: 120px; top: 84px; width: 640px; height: 58px; overflow: hidden; z-index: 90; }
+    .m-badge { position: absolute; left: 0; top: 0; height: 58px; display: flex; align-items: center; gap: 14px; padding: 0 26px 0 7px; border-radius: 999px; background: rgba(17,28,51,0.92); border: 1px solid rgba(61,123,255,0.45); white-space: nowrap; }
+    .m-badge .av { width: 44px; height: 44px; border-radius: 50%; background: rgba(61,123,255,0.25); border: 1px solid rgba(61,123,255,0.6); display: flex; align-items: center; justify-content: center; font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 20px; color: #6FA0FF; }
+    .m-badge .nm { font-weight: 700; font-size: 26px; letter-spacing: -0.01em; }
+    .m-badge .rl { font-family: "IBM Plex Mono", monospace; font-size: 21px; color: #9AA8C0; }
+
+    .m-chip { position: absolute; font-family: "IBM Plex Mono", monospace; font-size: 22px; line-height: 1.3; padding: 11px 18px; border-radius: 16px; border: 1px solid rgba(61,123,255,0.45); background: rgba(14,26,52,0.94); color: #EEF2F8; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .m-chip b { font-weight: 600; letter-spacing: 0.05em; color: #6FA0FF; }
+    .m-chip.amber { border-color: rgba(242,163,58,0.6); background: rgba(40,28,14,0.94); }
+    .m-chip.amber b { color: #F2A33A; }
+    .m-pill { position: absolute; left: 120px; height: 64px; display: flex; align-items: center; gap: 16px; padding: 0 28px 0 22px; border-radius: 999px; border: 1.5px solid rgba(242,163,58,0.65); background: rgba(48,32,12,0.94); font-family: "IBM Plex Mono", monospace; font-size: 28px; font-weight: 600; color: #EEF2F8; white-space: nowrap; letter-spacing: 0.02em; }
+    .m-pill i { display: block; width: 16px; height: 16px; border-radius: 50%; background: #F2A33A; box-shadow: 0 0 0 5px rgba(242,163,58,0.25); }
+    .m-pill b { color: #F2A33A; font-weight: 600; }
+    .m-mono { position: absolute; font-family: "IBM Plex Mono", monospace; font-size: 24px; color: #9AA8C0; white-space: nowrap; }
+    .m-qlabel { position: absolute; text-align: center; font-family: "IBM Plex Mono", monospace; font-size: 26px; font-weight: 500; white-space: nowrap; }
+    .m-qlabel span { display: inline-flex; align-items: center; gap: 14px; padding: 10px 22px; border-radius: 999px; background: rgba(17,28,51,0.9); border: 1px solid rgba(61,123,255,0.45); }
+    .m-qlabel span i { display: block; width: 10px; height: 10px; border-radius: 50%; background: #3D7BFF; }
+
+    #m-big { position: absolute; left: 120px; top: 360px; height: 260px; display: flex; align-items: flex-end; font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 230px; line-height: 260px; font-variant-numeric: tabular-nums; transform-origin: 0% 50%; }
+    .m-oldbox { position: absolute; left: 120px; top: 360px; height: 260px; display: flex; align-items: flex-end; font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 230px; line-height: 260px; color: #9AA8C0; transform-origin: 0 0; }
+    .m-slot { position: relative; width: 138px; height: 260px; overflow: hidden; flex: none; }
+    .m-slot .roll { display: flex; flex-direction: column; }
+    .m-slot .roll span { display: block; height: 260px; text-align: center; }
+    .m-slot .roll .o { color: #9AA8C0; }
+    .m-slot .roll .n { color: #3D7BFF; }
+    .m-dot { width: 84px; height: 260px; text-align: center; flex: none; }
+    .m-dot span { display: block; width: 138px; margin-left: -27px; text-align: center; }
+    .m-oldbox .m-dot span { color: #9AA8C0; }
+    .m-oldbox .m-slot span { display: block; height: 260px; text-align: center; }
+    .m-unit { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 84px; color: #9AA8C0; line-height: 1; margin: 0 0 40px 22px; letter-spacing: -0.03em; }
+    #m-strike { position: absolute; left: -6px; top: 128px; width: 372px; height: 12px; border-radius: 6px; background: #F2A33A; transform-origin: 0 50%; }
+
+    .m-ring { position: absolute; left: 305px; top: 430px; width: 120px; height: 120px; border-radius: 50%; border: 3px solid #F2A33A; box-sizing: border-box; }
+    .m-pf { position: absolute; width: 0; height: 0; }
+    .m-p { position: absolute; left: 0; top: 0; border-radius: 50%; opacity: 0; }
+
+    #m-cursor { position: absolute; left: 0; top: 0; width: 46px; height: 46px; z-index: 80; }
+    .m-cring { position: absolute; width: 90px; height: 90px; border-radius: 50%; border: 2.5px solid #3D7BFF; box-sizing: border-box; }
+
+    .m-th { fill: none; stroke: #3D7BFF; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .m-th.amber { stroke: #F2A33A; }
+    .m-th.muted { stroke: #9AA8C0; }
+  </style>
+
+  <div data-hf-id="hf-m8cn" id="root" data-composition-id="06-memory" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-ts5f" class="clip" id="m-bg" data-start="0" data-duration="25.5" data-track-index="0">
+      <div data-hf-id="hf-zy50" class="m-bg-grid"></div>
+      <div data-hf-id="hf-u7g4" class="m-bg-glow" id="m-glow"></div>
+      <div data-hf-id="hf-8qt3" class="m-ghost" id="m-g1" style="left:90px; top:960px;">INS-0151-0201</div>
+      <div data-hf-id="hf-x5ki" class="m-ghost" id="m-g2" style="left:1400px; top:44px;">SR-01</div>
+      <div data-hf-id="hf-1bmb" class="m-ghost" id="m-g3" style="left:1480px; top:960px;">MNT-0101-029</div>
+      <div data-hf-id="hf-1md6" class="m-bg-vignette"></div>
+    </div>
+
+    <div data-hf-id="hf-oc6o" id="m-cam">
+      <!-- real UI windows -->
+      <div data-hf-id="hf-55hm" id="m-zoom">
+        <div data-hf-id="hf-o1dg" class="m-win" id="m-wa">
+          <img data-hf-id="hf-vz4r" src="assets/ui/09-typed-correction.png" alt="typed correction" />
+          <div data-hf-id="hf-tf2d" class="m-ov">
+            <div data-hf-id="hf-kgdw" id="m-cover"></div>
+            <div data-hf-id="hf-vjek" id="m-caret"></div>
+          </div>
+        </div>
+        <div data-hf-id="hf-wp9b" class="m-win" id="m-wb"><img data-hf-id="hf-tk27" src="assets/ui/11-user-switch.png" alt="user switched to Laura Simmons" /></div>
+
+        <div data-hf-id="hf-z08j" class="m-cring" id="m-cr1" style="left:1150px; top:795px;"></div>
+        <div data-hf-id="hf-v2a8" class="m-cring" id="m-cr2" style="left:1490px; top:132px;"></div>
+        <svg data-hf-id="hf-wvcv" id="m-cursor" viewBox="0 0 46 46"><path data-hf-id="hf-ycqh" d="M6 4 L6 36 L14 29 L19.5 41 L25 38.5 L19.5 26.8 L30 26.2 Z" fill="#EEF2F8" stroke="#0A1222" stroke-width="2.5" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div data-hf-id="hf-4nel" id="m-world">
+        <!-- hero: correction ripple -->
+        <div data-hf-id="hf-844n" class="m-grp" id="m-hero">
+          <div data-hf-id="hf-uhji" class="m-chip" id="m-hlabel" style="left:120px; top:622px;"><b data-hf-id="hf-pc2j">INS-0151-0201</b> · spill est volume</div>
+          <div data-hf-id="hf-qjbz" id="m-big">
+            <div data-hf-id="hf-f7ra" class="m-slot"><div data-hf-id="hf-18vx" class="roll" id="m-roll1"><span data-hf-id="hf-um98" class="o">4</span><span data-hf-id="hf-cipw" class="n">5</span></div></div>
+            <div data-hf-id="hf-eotj" class="m-dot"><span data-hf-id="hf-iyzh">.</span></div>
+            <div data-hf-id="hf-9xxm" class="m-slot"><div data-hf-id="hf-953z" class="roll" id="m-roll3"><span data-hf-id="hf-u7y7" class="o">5</span><span data-hf-id="hf-c4ev" class="n">4</span></div></div>
+            <div data-hf-id="hf-xpmo" class="m-unit">bbl</div>
+          </div>
+          <div data-hf-id="hf-0qvf" class="m-oldbox" id="m-old">
+            <div data-hf-id="hf-ac8n" class="m-slot"><span data-hf-id="hf-gl5b">4</span></div>
+            <div data-hf-id="hf-a56v" class="m-dot"><span data-hf-id="hf-39gx">.</span></div>
+            <div data-hf-id="hf-aqjo" class="m-slot"><span data-hf-id="hf-gzgc">5</span></div>
+            <div data-hf-id="hf-azk9" id="m-strike"></div>
+          </div>
+          <div data-hf-id="hf-adgf" class="m-chip" id="m-keep" style="left:316px; top:198px;"><b data-hf-id="hf-ken6">ORIGINAL KEPT</b></div>
+
+          <div data-hf-id="hf-n8cm" class="m-ring" id="m-rg1"></div>
+          <div data-hf-id="hf-ja8l" class="m-ring" id="m-rg2"></div>
+          <div data-hf-id="hf-iiks" class="m-ring" id="m-rg3"></div>
+
+          <div data-hf-id="hf-26y6" class="m-card" id="m-corr" style="left:1010px; top:360px; width:780px; height:287px;"><img data-hf-id="hf-0qtu" src="assets/ui/10-correction-visual.png" alt="correction applied" /></div>
+          <svg data-hf-id="hf-mykt" class="m-svg" width="1920" height="1080">
+            <path data-hf-id="hf-qukt" class="m-th" id="m-th1" d="M690 490 L1004 490" />
+            <circle data-hf-id="hf-lxa0" id="m-th1d" cx="1006" cy="490" r="6" fill="#3D7BFF" />
+            <rect data-hf-id="hf-mag9" class="m-th" id="m-rc2" x="1526" y="498" width="247" height="67" rx="10" />
+            <rect data-hf-id="hf-gn9e" class="m-th muted" id="m-rc1" x="1028" y="498" width="247" height="67" rx="10" />
+          </svg>
+          <div data-hf-id="hf-8vm4" class="m-chip" id="m-ch1" style="left:1010px; top:676px;"><b data-hf-id="hf-78j8">BY</b> MICHAEL TURNER · PRODUCTION SUPERVISOR</div>
+          <div data-hf-id="hf-isd6" class="m-chip" id="m-ch2" style="left:1010px; top:744px;"><b data-hf-id="hf-drjt">WHY</b> field crew measured 5.4 bbl</div>
+          <div data-hf-id="hf-g4dq" class="m-chip amber" id="m-ch3" style="left:1010px; top:812px;"><b data-hf-id="hf-mp30">MNT-0151-025</b> · “moderate” now stale</div>
+
+          <div data-hf-id="hf-ljs3" class="m-pill" id="m-f1" style="top:690px;"><i data-hf-id="hf-wt6k"></i><b data-hf-id="hf-ddhz">REPORTABLE</b> ≥ 5 bbl</div>
+          <div data-hf-id="hf-78jc" class="m-pill" id="m-f2" style="top:764px;"><i data-hf-id="hf-zeb8"></i><b data-hf-id="hf-al58">SR-01</b> NOTICE MISSING</div>
+          <div data-hf-id="hf-gydx" class="m-pill" id="m-f3" style="top:838px;"><i data-hf-id="hf-y7e5"></i><b data-hf-id="hf-9sj6">SR-03</b> VERIFY BY 23 NOV</div>
+        </div>
+
+        <!-- window B callouts -->
+        <div data-hf-id="hf-2tql" class="m-grp" id="m-pv">
+          <svg data-hf-id="hf-zg75" class="m-svg" width="1920" height="1080">
+            <rect data-hf-id="hf-ohwv" class="m-th amber" id="m-pvr" x="318" y="372" width="142" height="25" rx="6" />
+            <path data-hf-id="hf-tlpf" class="m-th amber" id="m-pvt" d="M540 336 L462 380" />
+          </svg>
+          <div data-hf-id="hf-5p9n" class="m-chip amber" id="m-pvc" style="left:520px; top:290px;"><b data-hf-id="hf-6jpg">PRIVATE HISTORY</b> · her own empty chat</div>
+        </div>
+
+        <!-- Laura's answer -->
+        <div data-hf-id="hf-v5ts" class="m-grp" id="m-lg">
+          <div data-hf-id="hf-vv9k" class="m-qlabel" id="m-lq" style="left:200px; top:168px; width:1100px;"><span data-hf-id="hf-34km"><i data-hf-id="hf-ylp6"></i>Which NE Block 8 spills needed a report?</span></div>
+          <div data-hf-id="hf-ds0w" class="m-card" id="m-lc" style="left:200px; top:240px; width:1100px; height:550px;"><img data-hf-id="hf-t0hn" src="assets/ui/11-laura-answer-card.png" alt="Laura answer" /></div>
+          <svg data-hf-id="hf-0n48" class="m-svg" width="1920" height="1080">
+            <rect data-hf-id="hf-06xj" class="m-th amber" id="m-lr1" x="370" y="383" width="282" height="29" rx="6" />
+            <rect data-hf-id="hf-n9fo" class="m-th amber" id="m-lr2" x="256" y="577" width="1042" height="50" rx="10" />
+            <path data-hf-id="hf-bvf4" class="m-th amber" id="m-lt1" d="M656 398 L1334 398" />
+            <path data-hf-id="hf-cbjq" class="m-th amber" id="m-lt2" d="M1302 602 L1334 602" />
+          </svg>
+          <div data-hf-id="hf-zt95" class="m-chip amber" id="m-lk1" style="left:1338px; top:370px;"><b data-hf-id="hf-9vhg">SR-01</b> · POSSIBLE BREACH</div>
+          <div data-hf-id="hf-du76" class="m-chip amber" id="m-lk2" style="left:1338px; top:574px;"><b data-hf-id="hf-3n3x">WELL-0151</b> · OVERDUE</div>
+        </div>
+
+        <!-- conflict -->
+        <div data-hf-id="hf-i5n5" class="m-grp" id="m-cg">
+          <div data-hf-id="hf-a6up" class="m-chip" id="m-ct" style="left:748px; top:166px;"><b data-hf-id="hf-22n8">WELL-0101</b> · 20 AUG SPILL</div>
+          <div data-hf-id="hf-1hkh" class="m-card" id="m-cc" style="left:460px; top:250px; width:1000px; height:532px;"><img data-hf-id="hf-vr1u" src="assets/ui/12-conflict-card.png" alt="evidence conflict" /></div>
+          <svg data-hf-id="hf-08t7" class="m-svg" width="1920" height="1080">
+            <rect data-hf-id="hf-hnns" class="m-th amber" id="m-cr" x="511" y="515" width="948" height="125" rx="14" />
+            <path data-hf-id="hf-w4iv" class="m-th" id="m-ct1" d="M436 577 L507 577" />
+            <path data-hf-id="hf-lpj5" class="m-th" id="m-ct2" d="M1463 577 L1494 577" />
+          </svg>
+          <div data-hf-id="hf-hwv9" class="m-chip" id="m-cr1c" style="left:130px; top:522px;"><b data-hf-id="hf-8z2t">RYAN BROOKS</b><br data-hf-id="hf-x5px">CTX-0101-002<br data-hf-id="hf-rsrt">“produced water”</div>
+          <div data-hf-id="hf-yake" class="m-chip" id="m-cr2c" style="left:1498px; top:522px;"><b data-hf-id="hf-2i06">CHRIS DALTON</b><br data-hf-id="hf-szow">CTX-0101-003<br data-hf-id="hf-sldv">“confirmed crude”</div>
+          <div data-hf-id="hf-gc1b" class="m-qlabel" id="m-cl" style="left:210px; top:818px; width:1500px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:38px; letter-spacing:-0.02em;"><span data-hf-id="hf-9mm2" style="padding:12px 30px;">Shows the disagreement. Doesn’t pick a side.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-a8cq" class="m-badges" id="m-badges">
+      <div data-hf-id="hf-tki0" class="m-badge" id="m-bm"><div data-hf-id="hf-9xkc" class="av">MT</div><div data-hf-id="hf-q9aw" class="nm">Michael Turner</div><div data-hf-id="hf-mz6d" class="rl">Production supervisor</div></div>
+      <div data-hf-id="hf-uc5t" class="m-badge" id="m-bl"><div data-hf-id="hf-54kw" class="av">LS</div><div data-hf-id="hf-gcgu" class="nm">Laura Simmons</div><div data-hf-id="hf-cqg8" class="rl">HSE officer</div></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    const $ = (s) => document.querySelector(s);
+    const prand = (n) => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+
+    // ---------- initial states (hidden until their voice cue) ----------
+    gsap.set("#m-wa", { opacity: 0, x: -260, y: 40, z: -360, rotationY: -50, scale: 0.92 });
+    gsap.set("#m-wb", { opacity: 0, rotationY: 90 });
+    gsap.set("#m-zoom", { scale: 1 });
+    gsap.set("#m-cursor", { x: 1800, y: 760, opacity: 0 });
+    gsap.set([".m-cring"], { opacity: 0, scale: 0.2 });
+    gsap.set("#m-bm", { opacity: 0, y: -20 });
+    gsap.set("#m-bl", { opacity: 0, y: 44 });
+    gsap.set(["#m-hlabel", "#m-big", "#m-old", "#m-keep", "#m-corr", "#m-ch1", "#m-ch2", "#m-ch3", "#m-f1", "#m-f2", "#m-f3", ".m-ring"], { opacity: 0 });
+    gsap.set("#m-strike", { scaleX: 0 });
+    gsap.set("#m-th1d", { opacity: 0, transformOrigin: "50% 50%" });
+    gsap.set(["#m-pvc", "#m-lq", "#m-lc", "#m-lk1", "#m-lk2", "#m-ct", "#m-cc", "#m-cr1c", "#m-cr2c", "#m-cl"], { opacity: 0 });
+
+    const draws = ["#m-th1", "#m-rc1", "#m-rc2", "#m-pvr", "#m-pvt", "#m-lr1", "#m-lr2", "#m-lt1", "#m-lt2", "#m-cr", "#m-ct1", "#m-ct2"];
+    draws.forEach((s) => { const p = $(s); const len = Math.ceil(p.getTotalLength()) + 2; p.style.strokeDasharray = len; p.style.strokeDashoffset = len; p.dataset.len = len; });
+    const draw = (sel, at, d, ease) => tl.fromTo(sel, { strokeDashoffset: (i, el) => Number(el.dataset.len) }, { strokeDashoffset: 0, duration: d, ease: ease || "power2.out" }, at);
+    const pop = (sel, at, y) => tl.fromTo(sel, { opacity: 0, scale: 0.85, y: y || 0 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, at);
+
+    // deterministic dot burst (particle-burst): ballistic pure function of driver T
+    function burst(parent, ox, oy, at, count, seed, colors) {
+      const field = document.createElement("div"); field.className = "m-pf"; field.style.left = ox + "px"; field.style.top = oy + "px"; parent.appendChild(field);
+      const parts = [];
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement("div"); el.className = "m-p";
+        const size = 5 + prand(seed + i * 3 + 1) * 5; el.style.width = size + "px"; el.style.height = size + "px"; el.style.background = colors[i % colors.length];
+        field.appendChild(el);
+        const ang = prand(seed + i * 5 + 2) * Math.PI * 2, sp = 320 + prand(seed + i * 7 + 3) * 360;
+        parts.push({ el, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp });
+      }
+      const FL = 0.9, G = 140, drive = { T: 0 };
+      tl.fromTo(drive, { T: 0 }, { T: 1, duration: FL, ease: "none", immediateRender: seed === 11, onUpdate: () => {
+        const t = drive.T * FL, fade = Math.min(1, (1 - drive.T) / 0.3);
+        parts.forEach((p) => { p.el.style.transform = "translate(" + (p.vx * t) + "px," + (p.vy * t + 0.5 * G * t * t) + "px)"; p.el.style.opacity = String(drive.T === 0 ? 0 : fade); });
+      } }, at);
+    }
+
+    // ---------- ambient ----------
+    tl.fromTo("#m-glow", { opacity: 0.45, scale: 0.95 }, { opacity: 0.8, scale: 1.08, duration: 12, ease: "sine.inOut" }, 0);
+    tl.to("#m-glow", { opacity: 0.5, scale: 1.0, duration: 13.5, ease: "sine.inOut" }, 12);
+    tl.fromTo("#m-g1", { x: 0 }, { x: 150, duration: 25.5, ease: "none" }, 0);
+    tl.fromTo("#m-g2", { x: 0 }, { x: -170, duration: 25.5, ease: "none" }, 0);
+    tl.fromTo("#m-g3", { x: 0 }, { x: -130, duration: 25.5, ease: "none" }, 0);
+    tl.fromTo("#m-cam", { scale: 1 }, { scale: 1.035, duration: 25.5, ease: "none" }, 0);
+
+    // ---------- Beat 1 (0-5.4): Michael types the correction ----------
+    tl.to("#m-wa", { opacity: 1, x: 0, y: 0, z: 0, rotationY: -4, scale: 1, duration: 0.9, ease: "power3.out" }, 0.1);
+    tl.to("#m-bm", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.45);
+    tl.to("#m-wa", { y: -8, duration: 1.0, ease: "sine.inOut" }, 1.0);
+    tl.to("#m-wa", { rotationY: 0, y: 0, duration: 0.7, ease: "sine.inOut" }, 2.0);
+    // decisive zoom onto the composer
+    tl.to("#m-zoom", { scale: 1.65, duration: 0.9, ease: "expo.inOut" }, 2.7);
+    // typing reveal (cover wipes off, caret follows)
+    tl.fromTo("#m-cover", { scaleX: 1 }, { scaleX: 0, duration: 1.7, ease: "steps(36)" }, 3.3);
+    tl.fromTo("#m-caret", { x: 0, opacity: 1 }, { x: 600, duration: 1.7, ease: "steps(36)" }, 3.3);
+    tl.to("#m-caret", { opacity: 0, duration: 0.01 }, 5.05);
+    // cursor goes to send, clicks (cursor-click-ripple)
+    tl.to("#m-cursor", { opacity: 1, duration: 0.25 }, 4.2);
+    tl.fromTo("#m-cursor", { x: 1500, y: 720 }, { x: 1195, y: 842, duration: 0.8, ease: "power3.out" }, 4.25);
+    tl.to("#m-cursor", { scale: 0.84, duration: 0.09, ease: "power2.in", yoyo: true, repeat: 1 }, 5.1);
+    tl.fromTo("#m-cr1", { scale: 0.2, opacity: 0.95 }, { scale: 2.6, opacity: 0, duration: 0.7, ease: "power2.out", immediateRender: false }, 5.12);
+    tl.to("#m-cursor", { opacity: 0, duration: 0.3 }, 5.5);
+    tl.to("#m-zoom", { scale: 1, duration: 0.9, ease: "expo.inOut" }, 5.4);
+    tl.to("#m-wa", { opacity: 0, scale: 0.9, z: -300, duration: 0.6, ease: "power2.in" }, 5.45);
+
+    // ---------- Beat 2 (5.3-16.8): the 4.5 -> 5.4 morph, provenance, ripple ----------
+    tl.fromTo("#m-hlabel", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 5.5);
+    tl.fromTo("#m-big", { opacity: 0, scale: 0.86, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.65, ease: "power3.out" }, 5.5);
+    // morph: roll both changing digits; the old 4.5 is lifted off, struck through, kept
+    tl.to(["#m-roll1"], { y: -260, duration: 0.7, ease: "power3.inOut" }, 7.1);
+    tl.to(["#m-roll3"], { y: -260, duration: 0.7, ease: "power3.inOut" }, 7.2);
+    tl.set("#m-old", { opacity: 1 }, 7.08);
+    tl.to("#m-old", { y: -170, scale: 0.42, duration: 0.75, ease: "power3.inOut" }, 7.1);
+    tl.to("#m-strike", { scaleX: 1, duration: 0.35, ease: "power2.out" }, 7.75);
+    tl.fromTo("#m-keep", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 8.1);
+    tl.to("#m-big", { scale: 1.05, duration: 0.25, ease: "power2.out", transformOrigin: "0% 50%" }, 7.85);
+    tl.to("#m-big", { scale: 1, duration: 0.35, ease: "power2.inOut" }, 8.1);
+    // "The copilot keeps the original": the real correction card lands, thread to it
+    tl.fromTo("#m-corr", { opacity: 0, x: 90, rotationY: -22, scale: 0.92 }, { opacity: 1, x: 0, rotationY: 0, scale: 1, duration: 0.85, ease: "power3.out" }, 8.4);
+    draw("#m-th1", 8.85, 0.55);
+    tl.to("#m-th1d", { opacity: 1, duration: 0.2 }, 9.35);
+    draw("#m-rc1", 9.1, 0.5);
+    draw("#m-rc2", 9.6, 0.5);
+    // "records who changed it and why"
+    pop("#m-ch1", 10.35, 12);
+    pop("#m-ch2", 11.05, 12);
+    // "immediately flags": shockwave ring + particles + three amber flags
+    tl.set([".m-ring"], { opacity: 0.9 }, 13.2);
+    tl.fromTo(".m-ring", { scale: 0.2, opacity: 0.9 }, { scale: 9, opacity: 0, duration: 1.1, ease: "power2.out", stagger: 0.12, immediateRender: false }, 13.2);
+    burst($("#m-hero"), 365, 490, 13.2, 22, 11, ["#F2A33A", "#3D7BFF", "#EEF2F8"]);
+    tl.to("#m-big", { scale: 1.06, duration: 0.2, ease: "power2.out" }, 13.2);
+    tl.to("#m-big", { scale: 1, duration: 0.4, ease: "power2.inOut" }, 13.4);
+    const emit = (sel, top, at, dur) => tl.fromTo(sel, { opacity: 0, x: 60, y: 490 - (top + 32), scale: 0.25 }, { opacity: 1, x: 0, y: 0, scale: 1, duration: dur, ease: "power3.out" }, at);
+    emit("#m-f1", 690, 13.45, 1.0);                          // lands as "reportable" is said
+    tl.fromTo(".m-ring", { scale: 0.2, opacity: 0.9 }, { scale: 6, opacity: 0, duration: 0.5, ease: "power2.out", immediateRender: false, stagger: 0 }, 15.1);
+    burst($("#m-hero"), 365, 490, 15.1, 14, 23, ["#F2A33A", "#F2A33A", "#EEF2F8"]);
+    emit("#m-f2", 764, 15.1, 0.95);                          // "no notice on file"
+    tl.fromTo(".m-ring", { scale: 0.2, opacity: 0.9 }, { scale: 6, opacity: 0, duration: 0.8, ease: "power2.out", immediateRender: false, stagger: 0 }, 15.65);
+    burst($("#m-hero"), 365, 490, 15.65, 14, 37, ["#F2A33A", "#3D7BFF", "#EEF2F8"]);
+    emit("#m-f3", 838, 15.65, 0.95);
+    pop("#m-ch3", 16.3, 10);
+    // hero cluster clears (scale-swap) as the user switches
+    tl.to("#m-hero", { opacity: 0, scale: 0.94, filter: "blur(10px)", duration: 0.5, ease: "power2.in" }, 16.75);
+
+    // ---------- Beat 3 (16.8-20.7): Laura switches in ----------
+    tl.fromTo("#m-wa", { opacity: 0, scale: 0.94, z: 0, rotationY: 0 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out", immediateRender: false }, 16.85);
+    tl.to("#m-cursor", { opacity: 1, duration: 0.2 }, 16.95);
+    tl.fromTo("#m-cursor", { x: 1700, y: 640 }, { x: 1531, y: 172, duration: 0.7, ease: "power3.out", immediateRender: false }, 16.95);
+    tl.to("#m-cursor", { scale: 0.84, duration: 0.09, ease: "power2.in", yoyo: true, repeat: 1 }, 17.7);
+    tl.fromTo("#m-cr2", { scale: 0.2, opacity: 0.95 }, { scale: 2.4, opacity: 0, duration: 0.7, ease: "power2.out", immediateRender: false }, 17.72);
+    tl.to("#m-cursor", { opacity: 0, duration: 0.3 }, 18.0);
+    // flip A -> B, badge swaps to Laura
+    tl.to("#m-wa", { rotationY: -90, duration: 0.3, ease: "power2.in" }, 17.85);
+    tl.set("#m-wb", { opacity: 1 }, 18.15);
+    tl.fromTo("#m-wb", { rotationY: 90 }, { rotationY: 0, duration: 0.5, ease: "power3.out", immediateRender: false }, 18.15);
+    tl.to("#m-bm", { opacity: 0, y: -44, duration: 0.4, ease: "power2.in" }, 17.9);
+    tl.to("#m-bl", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 18.1);
+    // her own chat is empty and private
+    draw("#m-pvr", 18.75, 0.4);
+    draw("#m-pvt", 18.95, 0.35);
+    pop("#m-pvc", 19.1, 0);
+    // her answer arrives; B steps back
+    tl.to(["#m-pvc", "#m-pvr", "#m-pvt"], { opacity: 0, duration: 0.3 }, 19.5);
+    tl.to("#m-wb", { x: -560, scale: 0.55, rotationY: 32, z: -260, opacity: 0.3, duration: 0.9, ease: "power3.inOut" }, 19.4);
+    tl.fromTo("#m-lc", { opacity: 0, x: 280, rotationY: -55, z: -300, scale: 0.9 }, { opacity: 1, x: 0, rotationY: 0, z: 0, scale: 1, duration: 0.95, ease: "back.out(1.15)" }, 19.5);
+    tl.fromTo("#m-lq", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 19.8);
+    // "she sees it too": overdue highlighted
+    draw("#m-lr1", 20.1, 0.45);
+    draw("#m-lt1", 20.4, 0.5);
+    pop("#m-lk1", 20.8, 0);
+    draw("#m-lr2", 20.6, 0.5);
+    draw("#m-lt2", 21.0, 0.25);
+    pop("#m-lk2", 21.15, 0);
+
+    // ---------- Beat 4 (21.6-25.5): conflict, both sides shown ----------
+    // (Laura's card clears as "if two people disagree" begins)
+    tl.to("#m-lg", { opacity: 0, scale: 0.93, filter: "blur(10px)", duration: 0.5, ease: "power2.in" }, 20.85);
+    tl.to("#m-wb", { opacity: 0, duration: 0.4 }, 20.85);
+    tl.fromTo("#m-cc", { opacity: 0, scale: 0.9, y: 40, rotationX: 14 }, { opacity: 1, scale: 1, y: 0, rotationX: 0, duration: 0.8, ease: "power3.out" }, 21.2);
+    pop("#m-ct", 21.6, 0);
+    pop("#m-cr1c", 21.9, 0);
+    draw("#m-ct1", 22.3, 0.35);
+    pop("#m-cr2c", 22.2, 0);
+    draw("#m-ct2", 22.55, 0.25);
+    draw("#m-cr", 22.9, 0.7);
+    tl.fromTo("#m-cl", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 23.3);
+    // living hold: the amber conflict frame breathes
+    tl.to("#m-cr", { strokeOpacity: 0.45, duration: 0.5, ease: "sine.inOut" }, 24.4);
+    tl.to("#m-cr", { strokeOpacity: 1, duration: 0.55, ease: "sine.inOut" }, 24.9);
+
+    window.__timelines["06-memory"] = tl;
+  </script>
+</template>

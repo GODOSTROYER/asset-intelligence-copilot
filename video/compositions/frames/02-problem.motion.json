@@ -1,0 +1,7 @@
+{
+  "scene": "02-problem",
+  "duration_s": 17,
+  "rules": ["depth-scatter-assemble", "waterfall-entry", "counting-dynamic-scale", "svg-path-draw"],
+  "exit": { "vector": "radial outward ~9 px/s (camera push 1.0 to 1.025 over the last 2.8s), depth-field tumble ~5 px/s lateral, amber strip scan-sweep rightward ~970 px/s (light band only)", "still_moving": true },
+  "entry": { "vector": "radial outward ~3 px/s (camera push) plus grid drift ~3 px/s; first counter and cards begin arriving at 0.6s", "from_rest": true }
+}

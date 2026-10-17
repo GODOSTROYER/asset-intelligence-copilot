@@ -1,0 +1,832 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #eef2f8;
+      font-family: "Montserrat", sans-serif;
+    }
+    #root * {
+      box-sizing: border-box;
+    }
+    .f04-fill-layer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+    }
+    .f04-bgfield {
+      background: radial-gradient(ellipse 80% 75% at 50% 46%, #0d1830 0%, #0a1222 55%, #070d19 100%);
+      overflow: hidden;
+    }
+    .f04-grid {
+      position: absolute;
+      left: -48px;
+      top: -48px;
+      width: 2016px;
+      height: 1176px;
+      background-image: linear-gradient(rgba(34, 50, 79, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 50, 79, 0.35) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .f04-glow {
+      position: absolute;
+      left: 260px;
+      top: -40px;
+      width: 1400px;
+      height: 1100px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, rgba(61, 123, 255, 0.2) 0%, rgba(61, 123, 255, 0.07) 40%, rgba(61, 123, 255, 0) 70%);
+    }
+    .f04-vig {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      background: radial-gradient(ellipse 70% 70% at 50% 48%, rgba(7, 13, 25, 0) 45%, rgba(7, 13, 25, 0.8) 100%);
+    }
+    .f04-ghost {
+      position: absolute;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 28px;
+      color: #eef2f8;
+      opacity: 0.06;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* camera */
+    #f04-stage {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+    }
+    #f04-camO,
+    #f04-camI {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+    }
+    #f04-camO {
+      transform-origin: 50% 50%;
+    }
+    #f04-frame {
+      position: absolute;
+      left: 180px;
+      top: 40px;
+      width: 1560px;
+      height: 877.5px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid #22324f;
+      background: #ffffff;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(61, 123, 255, 0.12);
+    }
+    #f04-frame img,
+    .f04-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1560px;
+      height: 877.5px;
+      display: block;
+    }
+    #f04-patch {
+      position: absolute;
+      left: 437px;
+      top: 790px;
+      width: 215px;
+      height: 28px;
+      background: #ffffff;
+    }
+    #f04-typed {
+      clip-path: inset(790px 1127px 60px 433px);
+    }
+    #f04-sendbtn {
+      background: url(assets/ui/02-typed-status.png) 0 0 / 1560px 877.5px no-repeat;
+      clip-path: inset(808px 470px 30px 1040px);
+    }
+    #f04-caret {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 19px;
+      background: #3d7bff;
+      opacity: 0;
+    }
+    #f04-pill {
+      position: absolute;
+      left: 640px;
+      top: 156px;
+      width: 590px;
+      height: 64px;
+      border-radius: 999px;
+      background: rgba(10, 18, 34, 0.95);
+      border: 1px solid rgba(61, 123, 255, 0.55);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    }
+    #f04-pill svg {
+      position: absolute;
+      left: 22px;
+      top: 19px;
+      width: 26px;
+      height: 26px;
+    }
+    .f04-phrase {
+      position: absolute;
+      left: 66px;
+      top: 0;
+      height: 64px;
+      line-height: 64px;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 500;
+      font-size: 24px;
+      color: #eef2f8;
+      white-space: nowrap;
+    }
+    .f04-ring {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #3d7bff;
+      opacity: 0;
+      pointer-events: none;
+    }
+    #f04-cursor {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+    #f04-cursor-in {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 28px;
+      height: 30px;
+      transform-origin: 0 0;
+      filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.4));
+    }
+    #f04-drawer-bg {
+      clip-path: inset(0 27% 0 0);
+    }
+    #f04-drawer {
+      background: url(assets/ui/04-source-drawer.png) 0 0 / 1560px 877.5px no-repeat;
+      clip-path: inset(0 0 0 100%);
+    }
+
+    /* screen-space annotation layer */
+    #f04-over {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      pointer-events: none;
+    }
+    #f04-svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: visible;
+    }
+    .f04-card {
+      position: absolute;
+      border-radius: 18px;
+      background: #0e182c;
+      border: 1px solid rgba(61, 123, 255, 0.5);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      padding: 20px 28px;
+    }
+    .f04-card.f04-warn {
+      border-color: rgba(242, 163, 58, 0.55);
+    }
+    .f04-k {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: 0.06em;
+      color: #9aa8c0;
+      white-space: nowrap;
+    }
+    .f04-big {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 92px;
+      line-height: 1.05;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+    .f04-big .f04-u {
+      font-size: 44px;
+      letter-spacing: 0;
+      color: #9aa8c0;
+    }
+    .f04-amber {
+      color: #f2a33a;
+    }
+    .f04-accent {
+      color: #3d7bff;
+    }
+    .f04-sub {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 26px;
+      color: #9aa8c0;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+    .f04-bar {
+      position: relative;
+      height: 14px;
+      margin-top: 14px;
+      border-radius: 999px;
+      background: rgba(154, 168, 192, 0.22);
+    }
+    .f04-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 14px;
+      width: 21.3%;
+      border-radius: 999px;
+      background: #f2a33a;
+      transform-origin: 0 50%;
+    }
+    .f04-barlab {
+      position: absolute;
+      left: 0;
+      top: 20px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 22px;
+      color: #f2a33a;
+    }
+    .f04-lt {
+      position: absolute;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 64px;
+      color: #9aa8c0;
+      white-space: nowrap;
+    }
+    .f04-tag {
+      position: absolute;
+      border-radius: 999px;
+      border: 2px solid #f2a33a;
+      background: #2a2217;
+      color: #f2a33a;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .f04-chip {
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(61, 123, 255, 0.14);
+      border: 1px solid rgba(61, 123, 255, 0.55);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+      white-space: nowrap;
+    }
+    .f04-chip .f04-id {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 30px;
+      color: #eef2f8;
+      font-variant-numeric: tabular-nums;
+    }
+    .f04-chip .f04-ds {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: #9aa8c0;
+    }
+    .f04-solid {
+      background: #0e182c;
+    }
+    .f04-name {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 60px;
+      letter-spacing: -0.03em;
+      color: #eef2f8;
+      white-space: nowrap;
+    }
+    .f04-line {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 36px;
+      color: #eef2f8;
+      white-space: nowrap;
+    }
+    .f04-pillid {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 16px;
+      background: rgba(61, 123, 255, 0.12);
+      border: 1px solid rgba(61, 123, 255, 0.55);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 26px;
+      color: #eef2f8;
+    }
+    #f04-diffchip {
+      position: absolute;
+      left: 1100px;
+      top: 429px;
+      width: 330px;
+      height: 56px;
+      border-radius: 999px;
+      background: #0e182c;
+      border: 1px solid rgba(61, 123, 255, 0.6);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 54px;
+      text-align: center;
+      color: #eef2f8;
+      white-space: nowrap;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+    }
+  </style>
+
+  <div data-hf-id="hf-zdmf" id="root" data-composition-id="04-ask" data-width="1920" data-height="1080">
+    <!-- ground -->
+    <div data-hf-id="hf-208t" id="f04-bg" data-layout-ignore class="clip f04-fill-layer f04-bgfield" data-start="0" data-duration="26" data-track-index="0">
+      <div data-hf-id="hf-pir2" class="f04-glow" id="f04-glow"></div>
+      <div data-hf-id="hf-fqke" class="f04-grid" id="f04-grid"></div>
+      <div data-hf-id="hf-i93c" class="f04-ghost" style="left: 24px; top: 120px">INS-0001-0203</div>
+      <div data-hf-id="hf-0584" class="f04-ghost" style="left: 40px; top: 330px">CTX-0001-003</div>
+      <div data-hf-id="hf-q45m" class="f04-ghost" style="left: 18px; top: 560px">OM-T200</div>
+      <div data-hf-id="hf-tv0u" class="f04-ghost" style="left: 30px; top: 780px">MNT-0151-025</div>
+      <div data-hf-id="hf-q9g7" class="f04-ghost" style="left: 1752px; top: 210px">WELL-0001</div>
+      <div data-hf-id="hf-jxul" class="f04-ghost" style="left: 1740px; top: 460px">INS-0001-0188</div>
+      <div data-hf-id="hf-9n64" class="f04-ghost" style="left: 1760px; top: 700px">CTX-0001-002</div>
+      <div data-hf-id="hf-j5qa" class="f04-ghost" style="left: 520px; top: 968px">SW-23 WELL 001</div>
+      <div data-hf-id="hf-flsb" class="f04-ghost" style="left: 1180px; top: 1000px">T200 · +15 °C</div>
+      <div data-hf-id="hf-ofor" class="f04-vig"></div>
+    </div>
+
+    <!-- camera: outer scales, inner translates -->
+    <div data-hf-id="hf-o3xk" id="f04-stage" class="clip" data-start="0" data-duration="26" data-track-index="1">
+      <div data-hf-id="hf-3ss2" id="f04-camO">
+        <div data-hf-id="hf-mh0c" id="f04-camI">
+          <div data-hf-id="hf-vuul" id="f04-frame">
+            <img data-hf-id="hf-lxki" class="f04-img" src="assets/ui/01-empty.png" alt="" />
+            <div data-hf-id="hf-vyp8" id="f04-patch"></div>
+            <img data-hf-id="hf-m9no" id="f04-typed" class="f04-img" src="assets/ui/02-typed-status.png" alt="" />
+            <div data-hf-id="hf-i775" id="f04-sendbtn" class="f04-img"></div>
+            <img data-hf-id="hf-sde3" id="f04-answer" class="f04-img" src="assets/ui/03-answer-status.png" alt="" />
+            <img data-hf-id="hf-idqd" id="f04-drawer-bg" class="f04-img" src="assets/ui/04-source-drawer.png" alt="" />
+            <div data-hf-id="hf-uyoi" id="f04-drawer" class="f04-img"></div>
+            <div data-hf-id="hf-yyab" id="f04-pill">
+              <svg data-hf-id="hf-vadc" viewBox="0 0 26 26" id="f04-spin"><circle data-hf-id="hf-vdmz" cx="13" cy="13" r="10" fill="none" stroke="rgba(61,123,255,0.28)" stroke-width="3"></circle><path data-hf-id="hf-fy3c" d="M13 3 A10 10 0 0 1 23 13" fill="none" stroke="#3d7bff" stroke-width="3" stroke-linecap="round"></path></svg>
+              <div data-hf-id="hf-eub8" class="f04-phrase" id="f04-ph1">Planning · hosted Gemini</div>
+              <div data-hf-id="hf-lvmr" class="f04-phrase" id="f04-ph2">Calling status tool</div>
+              <div data-hf-id="hf-nvra" class="f04-phrase" id="f04-ph3">Citing sources</div>
+            </div>
+          </div>
+          <div data-hf-id="hf-armb" id="f04-caret"></div>
+          <div data-hf-id="hf-nxle" id="f04-ringhost"></div>
+          <div data-hf-id="hf-62dp" id="f04-diffhost">
+            <div data-hf-id="hf-odyk" id="f04-diffchip">25.6 − 22.4 = +3.2 °C</div>
+          </div>
+          <svg data-hf-id="hf-n5bz" id="f04-wsvg" width="1920" height="1080" style="position:absolute;left:0;top:0;overflow:visible"></svg>
+          <div data-hf-id="hf-2gf8" id="f04-cursor">
+            <svg data-hf-id="hf-1n83" id="f04-cursor-in" viewBox="0 0 28 30"><path data-hf-id="hf-9i1j" d="M2 2 L2 23 L7.6 18.2 L11.4 27 L15 25.4 L11.2 16.8 L18.6 16.8 Z" fill="#0a1222" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- screen-space callouts + evidence threads -->
+    <div data-hf-id="hf-qzh3" id="f04-over" class="clip" data-start="0" data-duration="26" data-track-index="2">
+      <svg data-hf-id="hf-udzt" id="f04-svg" width="1920" height="1080"></svg>
+
+      <!-- beat 1 -->
+      <div data-hf-id="hf-9oox" class="f04-chip f04-solid" id="f04-insChip" style="padding: 14px 30px">
+        <div data-hf-id="hf-6etc" class="f04-id">INS-0001-0203</div>
+        <div data-hf-id="hf-o5dm" class="f04-ds">15 Oct 2026 · drone · Ryan Brooks</div>
+      </div>
+      <div data-hf-id="hf-wqkp" class="f04-tag" id="f04-verdict" style="font-size: 34px; padding: 8px 30px; letter-spacing: 0.04em">NOT PRODUCING</div>
+      <div data-hf-id="hf-9qd8" class="f04-card" id="f04-cA">
+        <div data-hf-id="hf-mtm6" class="f04-k">WELLHEAD − AIR</div>
+        <div data-hf-id="hf-3c0l" class="f04-big f04-amber">+3.2<span data-hf-id="hf-7d4u" class="f04-u"> °C</span></div>
+        <div data-hf-id="hf-titq" class="f04-sub">25.6 − 22.4</div>
+      </div>
+      <div data-hf-id="hf-il2e" class="f04-lt f04-amber" id="f04-lt">&lt;</div>
+      <div data-hf-id="hf-ie93" class="f04-card" id="f04-cB">
+        <div data-hf-id="hf-z970" class="f04-k">T200 MINIMUM</div>
+        <div data-hf-id="hf-qzsm" class="f04-big">+15<span data-hf-id="hf-s6jm" class="f04-u"> °C</span></div>
+        <div data-hf-id="hf-syrm" class="f04-bar"><div data-hf-id="hf-qeqe" class="f04-fill" id="f04-fill"></div></div>
+        <div data-hf-id="hf-cjua" style="height:26px"></div>
+      </div>
+
+      <!-- beat 2 -->
+      <div data-hf-id="hf-julr" class="f04-card f04-warn" id="f04-cS">
+        <div data-hf-id="hf-2rk9" class="f04-k">SYSTEM OF RECORD</div>
+        <div data-hf-id="hf-h9y9" style="position: relative; height: 84px; margin-top: 4px">
+          <div data-hf-id="hf-wb7v" class="f04-big" style="position: absolute; left: 0; top: 0; font-size: 72px; color: #9aa8c0; font-weight: 500">active</div>
+          <div data-hf-id="hf-hkdj" id="f04-strikebar" style="position: absolute; left: -6px; top: 40px; width: 272px; height: 6px; border-radius: 3px; background: #f2a33a; transform-origin: 0 50%"></div>
+        </div>
+      </div>
+      <div data-hf-id="hf-r0j0" class="f04-tag" id="f04-stale" style="font-size: 54px; padding: 8px 34px; letter-spacing: 0.04em">STALE</div>
+
+      <!-- beat 3 -->
+      <div data-hf-id="hf-5s97" class="f04-card" id="f04-cN">
+        <div data-hf-id="hf-qjhv" style="display: flex; align-items: center; gap: 20px">
+          <div data-hf-id="hf-ibaq" class="f04-pillid" id="f04-nid">CTX-0001-003</div>
+          <div data-hf-id="hf-r8ia" class="f04-k" id="f04-nk">FIELD NOTE</div>
+        </div>
+        <div data-hf-id="hf-tly1" class="f04-name" id="f04-nname" style="margin-top: 10px">Jake Morales</div>
+        <div data-hf-id="hf-44m5" style="margin-top: 6px; display: flex; gap: 16px">
+          <div data-hf-id="hf-ovkd" class="f04-line" id="f04-nl1">Planned shut-in</div>
+          <div data-hf-id="hf-xzdb" class="f04-line" id="f04-nl2" style="color: #9aa8c0">· rod string replacement</div>
+        </div>
+      </div>
+
+      <!-- beat 4 -->
+      <div data-hf-id="hf-hnfr" class="f04-chip f04-solid" id="f04-c1" style="padding: 14px 30px">
+        <div data-hf-id="hf-jreg" class="f04-id">INS-0001-0203</div>
+        <div data-hf-id="hf-n5c1" class="f04-ds">Inspection · 15 Oct 2026</div>
+      </div>
+      <div data-hf-id="hf-uo3u" class="f04-chip f04-solid" id="f04-c2" style="padding: 14px 30px">
+        <div data-hf-id="hf-t0o5" class="f04-id">OM-T200</div>
+        <div data-hf-id="hf-a5ox" class="f04-ds">T200 operating manual</div>
+      </div>
+      <div data-hf-id="hf-rs9t" class="f04-chip f04-solid" id="f04-c3" style="padding: 14px 30px">
+        <div data-hf-id="hf-468n" class="f04-id">CTX-0001-003</div>
+        <div data-hf-id="hf-y7px" class="f04-ds">Field note · Jake Morales</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var ID = "04-ask";
+      var DUR = 26;
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      window.__timelines[ID] = tl;
+
+      var SVGNS = "http://www.w3.org/2000/svg";
+      var ACC = "#3D7BFF";
+      var AMB = "#F2A33A";
+
+      /* ---------- geometry: display px of the 2000x1125 capture -> stage px ---------- */
+      var FL = 180, FT = 40, K = 0.78;
+      function P(dx, dy) { return [FL + K * dx, FT + K * dy]; }
+      var C = [960, 540];
+      function mk(S, q, D) {
+        return { S: S, T: [(D[0] - C[0]) / S + C[0] - q[0], (D[1] - C[1]) / S + C[1] - q[1]] };
+      }
+      function SC(cam, dx, dy) {
+        var q = P(dx, dy);
+        return [C[0] + cam.S * (q[0] + cam.T[0] - C[0]), C[1] + cam.S * (q[1] + cam.T[1] - C[1])];
+      }
+      var CAM0 = { S: 1, T: [0, 0] };
+      var CAM_PUSH = { S: 1.04, T: [0, 0] };
+      var CAM1 = mk(2.0, P(989, 507), [960, 640]);
+      var CAM2 = mk(3.0, P(794, 668), [960, 560]);
+      var CAM3 = mk(2.2, P(989, 608), [960, 450]);
+      var CAM4 = mk(2.4, P(870, 797), [960, 690]);
+      var CAM_END = { S: 1, T: [0, 0] };
+
+      var camO = document.getElementById("f04-camO");
+      var camI = document.getElementById("f04-camI");
+
+      var prev = CAM0;
+      function zoom(cam, at, dur, from) {
+        var f = from || prev;
+        tl.fromTo("#f04-camO", { scale: f.S }, { scale: cam.S, duration: dur, ease: "expo.inOut", immediateRender: false }, at);
+        tl.fromTo("#f04-camI", { x: f.T[0], y: f.T[1] }, { x: cam.T[0], y: cam.T[1], duration: dur, ease: "expo.inOut", immediateRender: false }, at);
+        prev = cam;
+      }
+
+      /* ---------- helpers ---------- */
+      function place(id, l, t, w, h) {
+        var e = document.getElementById(id);
+        e.style.left = l + "px";
+        e.style.top = t + "px";
+        if (w) e.style.width = w + "px";
+        if (h) e.style.height = h + "px";
+        return e;
+      }
+      var svg = document.getElementById("f04-svg");
+      var wsvg = document.getElementById("f04-wsvg");
+      function group(id, host) {
+        var g = document.createElementNS(SVGNS, "g");
+        g.setAttribute("id", id);
+        (host || svg).appendChild(g);
+        return g;
+      }
+      function bezLen(pts) {
+        var L = 0, px = pts[0][0], py = pts[0][1];
+        for (var i = 1; i <= 48; i++) {
+          var t = i / 48, u = 1 - t;
+          var x = u * u * u * pts[0][0] + 3 * u * u * t * pts[1][0] + 3 * u * t * t * pts[2][0] + t * t * t * pts[3][0];
+          var y = u * u * u * pts[0][1] + 3 * u * u * t * pts[1][1] + 3 * u * t * t * pts[2][1] + t * t * t * pts[3][1];
+          L += Math.hypot(x - px, y - py);
+          px = x; py = y;
+        }
+        return L * 1.03;
+      }
+      /* evidence thread: dot on the UI, curve, dot on the label. svg-path-draw on stroke-dashoffset. */
+      function thread(g, a, b, at, dur, color, vertical) {
+        color = color || ACC;
+        var dy = b[1] - a[1];
+        var dx = b[0] - a[0];
+        var c1 = vertical === false ? [a[0] + dx * 0.5, a[1]] : [a[0], a[1] + dy * 0.5];
+        var c2 = vertical === false ? [b[0] - dx * 0.5, b[1]] : [b[0], b[1] - dy * 0.5];
+        var len = bezLen([a, c1, c2, b]);
+        var p = document.createElementNS(SVGNS, "path");
+        p.setAttribute("d", "M" + a[0] + "," + a[1] + " C" + c1[0] + "," + c1[1] + " " + c2[0] + "," + c2[1] + " " + b[0] + "," + b[1]);
+        p.setAttribute("fill", "none");
+        p.setAttribute("stroke", color);
+        p.setAttribute("stroke-width", "3");
+        p.setAttribute("stroke-linecap", "round");
+        p.style.strokeDasharray = String(len);
+        p.style.strokeDashoffset = String(len);
+        g.appendChild(p);
+        [a, b].forEach(function (pt, i) {
+          var halo = document.createElementNS(SVGNS, "circle");
+          halo.setAttribute("cx", pt[0]); halo.setAttribute("cy", pt[1]); halo.setAttribute("r", 13);
+          halo.setAttribute("fill", color); halo.setAttribute("fill-opacity", "0.22");
+          var dot = document.createElementNS(SVGNS, "circle");
+          dot.setAttribute("cx", pt[0]); dot.setAttribute("cy", pt[1]); dot.setAttribute("r", 6.5);
+          dot.setAttribute("fill", color);
+          g.appendChild(halo); g.appendChild(dot);
+          var when = i === 0 ? at : at + dur * 0.8;
+          tl.fromTo([halo, dot], { scale: 0, opacity: 0, svgOrigin: pt[0] + " " + pt[1] }, { scale: 1, opacity: 1, svgOrigin: pt[0] + " " + pt[1], duration: 0.4, ease: "back.out(1.6)" }, when);
+        });
+        tl.to(p, { strokeDashoffset: 0, duration: dur, ease: "power2.out" }, at);
+      }
+      /* draw a rounded rect outline (svg-path-draw) */
+      function drawRect(g, x, y, w, h, r, color, at, dur, sw) {
+        var rc = document.createElementNS(SVGNS, "rect");
+        rc.setAttribute("x", x); rc.setAttribute("y", y); rc.setAttribute("width", w); rc.setAttribute("height", h);
+        rc.setAttribute("rx", r); rc.setAttribute("fill", "none"); rc.setAttribute("stroke", color);
+        rc.setAttribute("stroke-width", sw || 3); rc.setAttribute("stroke-linejoin", "round");
+        var per = 2 * (w + h) - (8 - 2 * Math.PI) * r;
+        rc.style.strokeDasharray = String(per * 1.02);
+        rc.style.strokeDashoffset = String(per * 1.02);
+        g.appendChild(rc);
+        tl.to(rc, { strokeDashoffset: 0, duration: dur, ease: "power2.out" }, at);
+        return rc;
+      }
+      function pop(sel, at, o) {
+        o = o || {};
+        tl.fromTo(sel, { opacity: 0, y: o.y === undefined ? 26 : o.y, scale: o.s === undefined ? 0.96 : o.s }, { opacity: 1, y: 0, scale: 1, duration: o.d || 0.55, ease: o.ease || "power3.out" }, at);
+      }
+      function fadeOut(sel, at, d) {
+        tl.to(sel, { opacity: 0, duration: d || 0.3, ease: "power1.in" }, at);
+      }
+
+      /* ================= ENTRANCE: ui-frame slides up, tilt settles flat ================= */
+      tl.fromTo("#f04-frame", { y: 150, rotationX: 15, rotationY: -9, transformPerspective: 2200, transformOrigin: "50% 60%" },
+        { y: 0, rotationX: 0, rotationY: 0, transformPerspective: 2200, transformOrigin: "50% 60%", duration: 1.4, ease: "power3.out" }, 0);
+      tl.fromTo("#f04-frame", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 0);
+
+      /* ambient (slow, finite) */
+      tl.fromTo("#f04-glow", { scale: 0.94 }, { scale: 1.1, duration: DUR, ease: "sine.inOut" }, 0);
+      tl.fromTo("#f04-grid", { x: 0, y: 0 }, { x: 48, y: 48, duration: DUR, ease: "none" }, 0);
+      tl.fromTo(".f04-ghost", { y: 0 }, { y: -46, duration: DUR, ease: "none" }, 0);
+
+      /* slow push-in under the typing */
+      tl.fromTo("#f04-camO", { scale: 1 }, { scale: 1.04, duration: 3.6, ease: "sine.inOut" }, 1.2);
+      prev = CAM_PUSH;
+
+      /* ================= CURSOR + TYPING ================= */
+      var tCompose = P(900, 1030);   /* click point in composer */
+      var tSend = P(1362, 1063);     /* send button */
+      var cur = "#f04-cursor";
+      tl.fromTo(cur, { x: tCompose[0] + 560, y: tCompose[1] - 130, opacity: 0 }, { x: tCompose[0], y: tCompose[1], opacity: 1, duration: 0.8, ease: "power3.out" }, 0.8);
+      tl.fromTo("#f04-cursor-in", { scale: 1.15 }, { scale: 1.15, duration: 0.01 }, 0);
+      /* press dip */
+      function press(at, base) {
+        tl.fromTo("#f04-cursor-in", { scale: base }, { scale: base * 0.84, duration: 0.09, ease: "power2.in", immediateRender: false }, at);
+        tl.to("#f04-cursor-in", { scale: base, duration: 0.12, ease: "power2.out" }, at + 0.09);
+      }
+      /* ripple rings (cursor-click-ripple), rings live in DOM at the click centre */
+      var ringHost = document.getElementById("f04-ringhost");
+      function ripple(cx, cy, at, scale, n) {
+        var rings = [];
+        for (var i = 0; i < n; i++) {
+          var r = document.createElement("div");
+          r.className = "f04-ring";
+          r.style.left = cx - 30 + "px";
+          r.style.top = cy - 30 + "px";
+          ringHost.appendChild(r);
+          rings.push(r);
+        }
+        tl.fromTo(rings, { scale: 0, opacity: 0.9 }, { scale: scale, opacity: 0, duration: 0.75, ease: "power2.out", stagger: 0.09 }, at);
+        tl.set(rings, { opacity: 0 }, 0);
+      }
+      press(1.62, 1.15);
+      ripple(tCompose[0], tCompose[1], 1.64, 3.2, 2);
+      /* placeholder clears, caret takes focus */
+      tl.fromTo("#f04-patch", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 1.7);
+
+      /* typed text reveal: stepped, word-paced to the VO (real 02 pixels clipped left to right) */
+      var TY0 = 1.7, TY1 = 3.15;
+      var KEYS = [[0, 0], [1.1, 37 / 78], [1.28, 37 / 78], [TY1 - TY0, 1]];
+      function typedP(t) {
+        for (var i = 1; i < KEYS.length; i++) {
+          if (t <= KEYS[i][0]) {
+            var a = KEYS[i - 1], b = KEYS[i];
+            return a[1] + (b[1] - a[1]) * ((t - a[0]) / (b[0] - a[0]));
+          }
+        }
+        return 1;
+      }
+      var X0 = 562.5, X1 = 1085.4;
+      var typed = document.getElementById("f04-typed");
+      var caretPos = { x: P(X0 - 2, 1031)[0], y: P(0, 1031)[1] - 9.5 };
+      var typedProxy = { t: 0 };
+      function renderTyped(t) {
+        var p = Math.floor(typedP(t) * 78 + 1e-6) / 78;
+        var right = 1127 - p * (1127 - 702);
+        typed.style.clipPath = "inset(790px " + right + "px 60px 433px)";
+        var cx = P(X0 + p * (X1 - X0) - 1, 0)[0];
+        gsap.set("#f04-caret", { x: cx, y: caretPos.y });
+      }
+      renderTyped(0);
+      tl.fromTo(typedProxy, { t: 0 }, { t: TY1 - TY0, duration: TY1 - TY0, ease: "none", onUpdate: function () { renderTyped(typedProxy.t); } }, TY0);
+      /* send button turns solid blue on first keystroke */
+      tl.fromTo("#f04-sendbtn", { opacity: 0 }, { opacity: 1, duration: 0.2 }, TY0 + 0.05);
+      /* context-sensitive caret: solid while typing, square-wave blink at rest (pure function of time) */
+      var caretDrv = { t: 1.62 };
+      tl.fromTo(caretDrv, { t: 1.62 }, { t: 3.6, duration: 3.6 - 1.62, ease: "none", onUpdate: function () {
+        var t = caretDrv.t, o;
+        if (t >= 3.5) o = 0;
+        else if (t >= TY0 && t < TY1 + 0.15) o = 1;
+        else o = Math.sin(((t - 1.62) / 0.8) * Math.PI * 2) > 0 ? 1 : 0;
+        document.getElementById("f04-caret").style.opacity = o;
+      } }, 1.62);
+
+      /* cursor lands the submit */
+      tl.to(cur, { x: tSend[0], y: tSend[1], duration: 0.4, ease: "power3.inOut" }, 3.08);
+      press(3.5, 1.15);
+      ripple(tSend[0], tSend[1], 3.52, 2.6, 2);
+      /* cursor drifts off */
+      tl.to(cur, { x: tSend[0] + 160, y: tSend[1] - 70, duration: 0.8, ease: "power2.out" }, 3.7);
+      tl.to(cur, { opacity: 0, duration: 0.35, ease: "power1.in" }, 4.25);
+
+      /* status theater: Planning -> Calling status tool -> Citing sources, then the answer */
+      tl.fromTo("#f04-pill", { opacity: 0, y: -14, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "power3.out" }, 3.52);
+      tl.fromTo("#f04-ph1", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.15 }, 3.54);
+      tl.to("#f04-ph1", { opacity: 0, y: -8, duration: 0.12 }, 3.78);
+      tl.fromTo("#f04-ph2", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14 }, 3.8);
+      tl.to("#f04-ph2", { opacity: 0, y: -8, duration: 0.12 }, 4.04);
+      tl.fromTo("#f04-ph3", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14 }, 4.06);
+      tl.fromTo("#f04-spin", { rotation: 0, transformOrigin: "50% 50%" }, { rotation: 900, transformOrigin: "50% 50%", duration: 0.85, ease: "none" }, 3.52);
+      tl.to("#f04-pill", { opacity: 0, y: -10, duration: 0.2, ease: "power1.in" }, 4.3);
+      tl.fromTo("#f04-answer", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 4.3);
+      tl.set("#f04-patch", { opacity: 0 }, 4.7);
+
+      /* ================= BEAT 1: +3.2 °C vs T200 minimum ================= */
+      zoom(CAM1, 5.0, 1.25);
+      var cam = CAM1;
+      var g1 = group("f04-g1");
+      /* INS record chip -> Last inspection tile */
+      var tileLI = SC(cam, 1297, 462);
+      var insW = 470, insH = 106;
+      place("f04-insChip", 1320, 150, insW, insH);
+      pop("#f04-insChip", 5.95, { y: -22, s: 0.94 });
+      thread(g1, [tileLI[0], tileLI[1] - 2], [1320 + insW / 2, 150 + insH], 6.05, 0.7);
+      drawRect(g1, SC(cam, 1224, 464)[0], SC(cam, 1224, 464)[1], (1371 - 1224) * K * cam.S, (553 - 464) * K * cam.S, 12, ACC, 6.2, 0.7, 3);
+      /* +3.2 card */
+      var tile32 = SC(cam, 989, 462);
+      var tile32r = [SC(cam, 922, 464), SC(cam, 1061, 553)];
+      var cAx = 330, cAy = 200, cAw = 430, cAh = 215;
+      place("f04-cA", cAx, cAy, cAw, cAh);
+      drawRect(g1, tile32r[0][0], tile32r[0][1], tile32r[1][0] - tile32r[0][0], tile32r[1][1] - tile32r[0][1], 12, AMB, 7.3, 0.6, 3.5);
+      pop("#f04-cA", 7.4, { y: 34 });
+      thread(g1, [tile32[0], tile32[1] - 2], [cAx + cAw / 2, cAy + cAh], 7.5, 0.7, AMB);
+      /* T200 minimum card */
+      var tile15 = SC(cam, 1142, 462);
+      var tile15r = [SC(cam, 1070, 464), SC(cam, 1215, 553)];
+      var cBx = 830, cBy = 200, cBw = 430, cBh = 215;
+      place("f04-cB", cBx, cBy, cBw, cBh);
+      place("f04-lt", 780 - 12, 262, 60, 80);
+      drawRect(g1, tile15r[0][0], tile15r[0][1], tile15r[1][0] - tile15r[0][0], tile15r[1][1] - tile15r[0][1], 12, ACC, 10.15, 0.6, 3);
+      pop("#f04-cB", 10.25, { y: 34 });
+      tl.fromTo("#f04-lt", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 10.55);
+      thread(g1, [tile15[0], tile15[1] - 2], [cBx + cBw / 2, cBy + cBh], 10.3, 0.7);
+      tl.fromTo("#f04-fill", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power3.out" }, 10.7);
+      /* verdict */
+      var vw = 470;
+      place("f04-verdict", 795 - vw / 2, 124, vw, 0);
+      document.getElementById("f04-verdict").style.height = "auto";
+      tl.fromTo("#f04-verdict", { opacity: 0, scale: 1.5, y: -10 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 11.15);
+      /* leave beat 1 */
+      fadeOut(["#f04-cA", "#f04-cB", "#f04-lt", "#f04-verdict", "#f04-insChip", g1], 12.25, 0.3);
+
+      /* ================= BEAT 2: "active" is stale ================= */
+      zoom(CAM2, 12.6, 1.2);
+      cam = CAM2;
+      var g2 = group("f04-g2");
+      var sx0 = SC(cam, 879, 668), sx1 = SC(cam, 984, 668);
+      var rr = [SC(cam, 873, 657), SC(cam, 990, 679)];
+      drawRect(g2, rr[0][0], rr[0][1], rr[1][0] - rr[0][0], rr[1][1] - rr[0][1], 8, AMB, 14.55, 0.5, 3.5);
+      /* strike (svg-path-draw) */
+      var strike = document.createElementNS(SVGNS, "path");
+      strike.setAttribute("d", "M" + (sx0[0] - 10) + "," + (sx0[1] + 3) + " L" + (sx1[0] + 10) + "," + (sx1[1] - 5));
+      strike.setAttribute("fill", "none"); strike.setAttribute("stroke", AMB); strike.setAttribute("stroke-width", "6"); strike.setAttribute("stroke-linecap", "round");
+      var slen = Math.hypot(sx1[0] - sx0[0] + 20, 8) * 1.03;
+      strike.style.strokeDasharray = String(slen); strike.style.strokeDashoffset = String(slen);
+      g2.appendChild(strike);
+      tl.to(strike, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out" }, 15.0);
+      var cSx = 540, cSy = 700, cSw = 840, cSh = 180;
+      place("f04-cS", cSx, cSy, cSw, cSh);
+      pop("#f04-cS", 15.15, { y: 30 });
+      thread(g2, [(sx0[0] + sx1[0]) / 2, sx0[1] + 20], [cSx + 150, cSy], 15.25, 0.6, AMB);
+      tl.fromTo("#f04-strikebar", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.out" }, 15.55);
+      place("f04-stale", cSx + 400, cSy + 52, 0, 0);
+      document.getElementById("f04-stale").style.width = "auto";
+      tl.fromTo("#f04-stale", { opacity: 0, scale: 1.7, rotation: -9, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, rotation: -3, duration: 0.5, ease: "back.out(1.6)", transformOrigin: "50% 50%" }, 16.0);
+      fadeOut(["#f04-cS", "#f04-stale", g2], 16.35, 0.25);
+
+      /* ================= BEAT 3: field note explains why ================= */
+      zoom(CAM3, 16.6, 1.2);
+      cam = CAM3;
+      var g3 = group("f04-g3");
+      var nb = [SC(cam, 603, 567), SC(cam, 1375, 648)];
+      drawRect(g3, nb[0][0] - 6, nb[0][1] - 6, nb[1][0] - nb[0][0] + 12, nb[1][1] - nb[0][1] + 12, 14, ACC, 17.9, 0.9, 3.5);
+      var nEnd = SC(cam, 975, 637);
+      var cNx = 380, cNy = 610, cNw = 1160, cNh = 250;
+      place("f04-cN", cNx, cNy, cNw, cNh);
+      pop("#f04-cN", 18.3, { y: 30 });
+      thread(g3, [nEnd[0], nEnd[1]], [nEnd[0], cNy], 18.2, 0.6);
+      tl.fromTo("#f04-nid", { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 18.45);
+      tl.fromTo("#f04-nk", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 18.6);
+      tl.fromTo("#f04-nname", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 18.7);
+      tl.fromTo("#f04-nl1", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 19.3);
+      tl.fromTo("#f04-nl2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 20.05);
+      fadeOut(["#f04-cN", g3], 21.0, 0.3);
+
+      /* ================= BEAT 4: citations -> source drawer ================= */
+      zoom(CAM4, 21.35, 1.1);
+      cam = CAM4;
+      var g4 = group("f04-g4");
+      var uiChips = [[721, 797], [840, 797], [1089, 797]].map(function (c) { return SC(cam, c[0], c[1] - 14); });
+      var uiMid = [[721, 797], [840, 797], [1089, 797]].map(function (c) { return SC(cam, c[0], c[1]); });
+      var chipDefs = [{ id: "f04-c1", l: 200, w: 460 }, { id: "f04-c2", l: 740, w: 440 }, { id: "f04-c3", l: 1260, w: 470 }];
+      chipDefs.forEach(function (c, i) {
+        var top = 250, h = 104;
+        place(c.id, c.l, top, c.w, h);
+        var at = 22.2 + i * 0.3;
+        var from = [uiMid[i][0] - (c.l + c.w / 2), uiMid[i][1] - (top + h / 2)];
+        tl.fromTo("#" + c.id, { opacity: 0, x: from[0], y: from[1], scale: 0.45 }, { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.7, ease: "power3.out" }, at);
+        thread(g4, [uiChips[i][0], uiChips[i][1]], [c.l + c.w / 2, top + h], at + 0.55, 0.6);
+      });
+      /* cursor re-enters and clicks the real INS chip */
+      var tChip = P(721, 797);
+      var inv = 1 / CAM4.S;
+      tl.fromTo(cur, { x: tChip[0] + 140, y: tChip[1] + 90, opacity: 0 }, { x: tChip[0], y: tChip[1], opacity: 1, duration: 0.7, ease: "power3.out" }, 22.85);
+      tl.fromTo("#f04-cursor-in", { scale: 1.15 * inv }, { scale: 1.15 * inv, duration: 0.01, immediateRender: false }, 22.8);
+      tl.fromTo("#f04-cursor-in", { scale: 1.15 * inv }, { scale: 1.15 * inv * 0.84, duration: 0.09, ease: "power2.in", immediateRender: false }, 23.62);
+      tl.to("#f04-cursor-in", { scale: 1.15 * inv, duration: 0.12, ease: "power2.out" }, 23.71);
+      ripple(tChip[0], tChip[1], 23.64, 2.4, 2);
+      tl.to(cur, { opacity: 0, duration: 0.2 }, 23.85);
+      fadeOut(["#f04-c1", "#f04-c2", "#f04-c3", g4], 23.7, 0.3);
+      /* drawer opens */
+      tl.fromTo("#f04-drawer-bg", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, 23.7);
+      tl.fromTo("#f04-drawer", { clipPath: "inset(0 0 0 100%)" }, { clipPath: "inset(0 0 0 73%)", duration: 0.6, ease: "power3.out" }, 23.75);
+      /* camera pulls back to the whole app */
+      zoom(CAM_END, 23.85, 1.15);
+      /* living hold: slow push + the thread lands on the record's temperatures */
+      tl.fromTo("#f04-camO", { scale: 1 }, { scale: 1.035, duration: DUR - 25.0, ease: "sine.inOut", immediateRender: false }, 25.0);
+      var wg = group("f04-gw", wsvg);
+      var dr = [P(1522, 447), P(1710, 489)];
+      var drw = dr[1][0] - dr[0][0], drh = dr[1][1] - dr[0][1];
+      drawRect(wg, dr[0][0], dr[0][1], drw, drh, 8, ACC, 24.6, 0.7, 3);
+      place("f04-diffchip", 950, 376, 330, 56);
+      tl.fromTo("#f04-diffchip", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 24.75);
+      thread(wg, [1280, 404], [dr[0][0], 404], 24.95, 0.5, ACC, false);
+
+      /* pin timeline length */
+      tl.to({}, { duration: 0.001 }, DUR - 0.001);
+    })();
+  </script>
+</template>

@@ -1,0 +1,716 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #eef2f8;
+      font-family: "Montserrat", sans-serif;
+    }
+    #root * {
+      box-sizing: border-box;
+    }
+    .f01-layer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+    }
+    .f01-bgfield {
+      background: radial-gradient(ellipse 80% 75% at 50% 46%, #0d1830 0%, #0a1222 55%, #070d19 100%);
+    }
+    .f01-grid {
+      position: absolute;
+      left: -48px;
+      top: -48px;
+      width: 2016px;
+      height: 1176px;
+      background-image: linear-gradient(rgba(34, 50, 79, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 50, 79, 0.35) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .f01-vig {
+      background: radial-gradient(ellipse 70% 70% at 50% 48%, rgba(7, 13, 25, 0) 40%, rgba(7, 13, 25, 0.85) 100%);
+    }
+    .f01-ghost {
+      position: absolute;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 28px;
+      color: #eef2f8;
+      opacity: 0.05;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+    .f01-grp {
+      position: absolute;
+      left: 640px;
+      top: 130px;
+      width: 640px;
+      height: 640px;
+    }
+    .f01-glow {
+      position: absolute;
+      left: -130px;
+      top: -130px;
+      width: 900px;
+      height: 900px;
+      border-radius: 50%;
+      opacity: 0;
+    }
+    .f01-glow.acc {
+      background: radial-gradient(circle, rgba(61, 123, 255, 0.55) 0%, rgba(61, 123, 255, 0.18) 38%, rgba(61, 123, 255, 0) 68%);
+    }
+    .f01-glow.amb {
+      background: radial-gradient(circle, rgba(242, 163, 58, 0.5) 0%, rgba(242, 163, 58, 0.15) 38%, rgba(242, 163, 58, 0) 68%);
+    }
+    .f01-ringsvg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 640px;
+      height: 640px;
+      overflow: visible;
+    }
+    .f01-lbl {
+      position: absolute;
+      left: 0;
+      width: 640px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 0.26em;
+      color: #9aa8c0;
+      text-transform: uppercase;
+    }
+    .f01-numwrap {
+      position: absolute;
+      left: 0;
+      width: 640px;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      white-space: nowrap;
+    }
+    .f01-num {
+      display: inline-block;
+      width: 404px;
+      text-align: right;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 168px;
+      line-height: 170px;
+      letter-spacing: -0.04em;
+      font-variant-numeric: tabular-nums;
+      color: #eef2f8;
+    }
+    .f01-unit {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 64px;
+      margin-left: 10px;
+      color: #9aa8c0;
+      opacity: 0;
+    }
+    .f01-pill {
+      position: absolute;
+      left: 220px;
+      width: 200px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(61, 123, 255, 0.45);
+      background: rgba(61, 123, 255, 0.1);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.12em;
+      color: #3d7bff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .f01-pill i {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #3d7bff;
+    }
+    .f01-chip {
+      position: absolute;
+      left: 120px;
+      top: 72px;
+      height: 48px;
+      padding: 0 22px 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(61, 123, 255, 0.45);
+      background: rgba(61, 123, 255, 0.1);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 22px;
+      color: #eef2f8;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+    .f01-chip i {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #3d7bff;
+    }
+    .f01-minus {
+      position: absolute;
+      left: 810px;
+      top: 340px;
+      width: 300px;
+      height: 220px;
+      text-align: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 200px;
+      line-height: 220px;
+      color: #9aa8c0;
+    }
+    .f01-dgrp {
+      position: absolute;
+      left: 220px;
+      top: 230px;
+      width: 800px;
+      height: 380px;
+    }
+    .f01-dgrp .f01-glow {
+      left: -50px;
+      top: -260px;
+      width: 900px;
+      height: 900px;
+    }
+    .f01-dlbl {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 800px;
+      text-align: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: 0.2em;
+      color: #9aa8c0;
+    }
+    .f01-dgrp .f01-numwrap {
+      left: 0;
+      width: 800px;
+      top: 80px;
+    }
+    .f01-ruler {
+      position: absolute;
+      left: 170px;
+      top: 520px;
+      width: 900px;
+      height: 240px;
+    }
+    .f01-rsvg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 900px;
+      height: 240px;
+      overflow: visible;
+    }
+    .f01-rtxt {
+      position: absolute;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 22px;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+    .f01-rcap {
+      position: absolute;
+      left: 0;
+      top: 196px;
+      width: 900px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: 0.1em;
+      color: #9aa8c0;
+      white-space: nowrap;
+    }
+    .f01-stamp {
+      position: absolute;
+      left: 1080px;
+      top: 262px;
+      width: 700px;
+      height: 130px;
+      border: 7px solid #f2a33a;
+      border-radius: 16px;
+      background: rgba(242, 163, 58, 0.1);
+      color: #f2a33a;
+      font-weight: 900;
+      font-size: 68px;
+      letter-spacing: 0.05em;
+      text-align: center;
+      line-height: 116px;
+      white-space: nowrap;
+    }
+    .f01-docs {
+      position: absolute;
+      left: 1120px;
+      top: 470px;
+      width: 520px;
+      height: 360px;
+    }
+    .f01-sheet {
+      position: absolute;
+      left: 145px;
+      top: 30px;
+      width: 230px;
+      height: 270px;
+      border-radius: 14px;
+      background: #111c33;
+      border: 1px solid #22324f;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      padding: 18px 16px;
+      overflow: hidden;
+    }
+    .f01-sheet span {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 20px;
+      color: #9aa8c0;
+      margin-bottom: 14px;
+      white-space: nowrap;
+    }
+    .f01-sheet em {
+      display: block;
+      height: 8px;
+      border-radius: 4px;
+      background: #22324f;
+      margin-bottom: 14px;
+    }
+    .f01-manual {
+      position: absolute;
+      left: 145px;
+      top: 20px;
+      width: 230px;
+      height: 270px;
+      border-radius: 14px;
+      background: #111c33;
+      border: 2px solid #3d7bff;
+      box-shadow: 0 0 40px rgba(61, 123, 255, 0.35), 0 18px 40px rgba(0, 0, 0, 0.45);
+      padding: 18px 16px;
+      overflow: hidden;
+    }
+    .f01-manual b {
+      display: block;
+      font-weight: 900;
+      font-size: 26px;
+      letter-spacing: 0.08em;
+      color: #eef2f8;
+      margin-bottom: 14px;
+    }
+    .f01-manual em {
+      display: block;
+      height: 8px;
+      border-radius: 4px;
+      background: #22324f;
+      margin-bottom: 14px;
+    }
+    .f01-manual em.hl {
+      background: #3d7bff;
+      height: 10px;
+    }
+    .f01-manual span {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 20px;
+      color: #3d7bff;
+      margin-top: 8px;
+      white-space: nowrap;
+    }
+    .f01-thread {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: visible;
+    }
+    .f01-thread path,
+    .f01-rsvg path,
+    .f01-rsvg line {
+      fill: none;
+    }
+    .f01-shock {
+      position: absolute;
+      left: 1430px;
+      top: 327px;
+      width: 40px;
+      height: 40px;
+      margin-left: -20px;
+      margin-top: -20px;
+      border-radius: 50%;
+      border: 2px solid #f2a33a;
+      opacity: 0;
+    }
+  </style>
+
+  <div data-hf-id="hf-lutg" id="root" data-composition-id="01-hook" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-d4cy" class="clip f01-layer" data-start="0" data-duration="15" data-track-index="0" id="f01-bg">
+      <div data-hf-id="hf-t0x8" class="f01-layer f01-bgfield"></div>
+      <div data-hf-id="hf-llbe" class="f01-grid" id="f01-grid"></div>
+      <div data-hf-id="hf-6g9h" class="f01-layer" id="f01-ghosts"></div>
+      <div data-hf-id="hf-kb4h" class="f01-layer f01-vig"></div>
+    </div>
+
+    <div data-hf-id="hf-1uwf" class="clip f01-layer" data-start="0" data-duration="15" data-track-index="1" id="f01-cam">
+      <div data-hf-id="hf-ore6" class="f01-chip" id="f01-chip"><i data-hf-id="hf-wt6k"></i>WELL-0001 · 24 JUL 2025 · INS-0001-0140</div>
+
+      <div data-hf-id="hf-7dm7" class="f01-grp" id="f01-well">
+        <div data-hf-id="hf-hcae" class="f01-glow acc" id="f01-wglow"></div>
+        <svg data-hf-id="hf-sn6f" class="f01-ringsvg" id="f01-wsvg" viewBox="0 0 640 640"></svg>
+        <div data-hf-id="hf-6kq6" class="f01-lbl" id="f01-wlbl" style="top: 130px">WELLHEAD</div>
+        <div data-hf-id="hf-m9yc" class="f01-numwrap" style="top: 232px">
+          <span data-hf-id="hf-fpoq" class="f01-num" id="f01-wnum">0.0</span><span data-hf-id="hf-q4tv" class="f01-unit" id="f01-wunit">°C</span>
+        </div>
+        <div data-hf-id="hf-ov9a" class="f01-pill" id="f01-wpill" style="top: 440px"><i data-hf-id="hf-zeb8"></i>LIVE READING</div>
+      </div>
+
+      <div data-hf-id="hf-57u9" class="f01-grp" id="f01-air">
+        <svg data-hf-id="hf-nf65" class="f01-ringsvg" id="f01-asvg" viewBox="0 0 640 640"></svg>
+        <div data-hf-id="hf-98u6" class="f01-lbl" id="f01-albl" style="top: 130px">AIR</div>
+        <div data-hf-id="hf-i2zg" class="f01-numwrap" style="top: 232px">
+          <span data-hf-id="hf-1v72" class="f01-num" id="f01-anum" style="color: #9aa8c0">0.0</span><span data-hf-id="hf-gwpt" class="f01-unit" id="f01-aunit">°C</span>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-cd2k" class="f01-minus" id="f01-minus">−</div>
+
+      <div data-hf-id="hf-1mqm" class="f01-dgrp" id="f01-diff">
+        <div data-hf-id="hf-jhag" class="f01-glow amb" id="f01-dglow"></div>
+        <div data-hf-id="hf-e13y" class="f01-dlbl" id="f01-dlbl">WELLHEAD − AIR</div>
+        <div data-hf-id="hf-i0hg" class="f01-numwrap">
+          <span data-hf-id="hf-2i5l" class="f01-num" id="f01-dnum" style="width: 430px">+0.0</span><span data-hf-id="hf-kbq4" class="f01-unit" id="f01-dunit">°C</span>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-3omm" class="f01-ruler" id="f01-ruler">
+        <svg data-hf-id="hf-ing5" class="f01-rsvg" id="f01-rsvg" viewBox="0 0 900 240"></svg>
+        <div data-hf-id="hf-2qvj" class="f01-rtxt" id="f01-r15" style="left: 800px; top: 40px; width: 100px; text-align: center; color: #3d7bff">+15 °C</div>
+        <div data-hf-id="hf-wwla" class="f01-rtxt" id="f01-r85" style="left: 453px; top: 48px; width: 100px; text-align: center; color: #f2a33a">+8.5</div>
+        <div data-hf-id="hf-3esg" class="f01-rtxt" id="f01-rshort" style="left: 530px; top: 150px; width: 300px; text-align: center; color: #f2a33a; letter-spacing: 0.2em">SHORT</div>
+        <div data-hf-id="hf-evkt" class="f01-rcap" id="f01-rcap">T200 MANUAL · min +15 °C</div>
+      </div>
+
+      <div data-hf-id="hf-vxgu" class="f01-stamp" id="f01-stamp">NOT PRODUCING</div>
+      <div data-hf-id="hf-1f02" class="f01-shock" id="f01-shock"></div>
+
+      <div data-hf-id="hf-buwq" class="f01-docs" id="f01-docs" data-layout-allow-overlap></div>
+
+      <svg data-hf-id="hf-a3mh" class="f01-thread" id="f01-thread" viewBox="0 0 1920 1080">
+        <path data-hf-id="hf-cto0" id="f01-th1" d="M 400 120 V 176 H 620 V 222" stroke="#3d7bff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <circle data-hf-id="hf-t9eo" id="f01-th1dot" cx="620" cy="222" r="7" fill="#3d7bff" />
+        <path data-hf-id="hf-q8u9" id="f01-th2" d="M 1023 620 C 1120 620, 1150 625, 1262 625" stroke="#3d7bff" stroke-width="3" stroke-linecap="round" />
+        <circle data-hf-id="hf-i07b" id="f01-th2dot" cx="1264" cy="625" r="7" fill="#3d7bff" />
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var ID = "01-hook";
+      var NS = "http://www.w3.org/2000/svg";
+      var tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines[ID] = tl;
+
+      function el(name, attrs, parent) {
+        var n = document.createElementNS(NS, name);
+        for (var k in attrs) n.setAttribute(k, attrs[k]);
+        if (parent) parent.appendChild(n);
+        return n;
+      }
+      function $(id) {
+        return document.getElementById(id);
+      }
+
+      /* ---------- ring instruments ---------- */
+      var R = 290,
+        C = 2 * Math.PI * R;
+      function buildRing(svg, prefix, stroke) {
+        el("circle", { cx: 320, cy: 320, r: R, stroke: "#22324f", "stroke-width": 10, fill: "none" }, svg);
+        var g = el("g", {}, svg);
+        for (var i = 0; i < 72; i++) {
+          var a = (i / 72) * Math.PI * 2,
+            long = i % 6 === 0,
+            r1 = 312,
+            r2 = long ? 336 : 324;
+          el(
+            "line",
+            {
+              x1: 320 + Math.sin(a) * r1,
+              y1: 320 - Math.cos(a) * r1,
+              x2: 320 + Math.sin(a) * r2,
+              y2: 320 - Math.cos(a) * r2,
+              stroke: "#9aa8c0",
+              "stroke-opacity": long ? 0.55 : 0.28,
+              "stroke-width": long ? 3 : 2,
+            },
+            g,
+          );
+        }
+        var arc = el(
+          "circle",
+          {
+            id: prefix + "arc",
+            cx: 320,
+            cy: 320,
+            r: R,
+            fill: "none",
+            stroke: stroke,
+            "stroke-width": 10,
+            "stroke-linecap": "round",
+            transform: "rotate(-90 320 320)",
+          },
+          svg,
+        );
+        arc.style.strokeDasharray = C + " " + C;
+        arc.style.strokeDashoffset = C;
+        var dot = el("circle", { id: prefix + "dot", cx: 320, cy: 30, r: 13, fill: stroke }, svg);
+        dot.style.opacity = 0;
+        return { arc: arc, dot: dot };
+      }
+      var wRing = buildRing($("f01-wsvg"), "f01-w", "#3d7bff");
+      var aRing = buildRing($("f01-asvg"), "f01-a", "#9aa8c0");
+
+      function setArc(ring, frac) {
+        ring.arc.style.strokeDashoffset = String(C * (1 - frac));
+        var ang = frac * Math.PI * 2;
+        ring.dot.setAttribute("cx", String(320 + Math.sin(ang) * R));
+        ring.dot.setAttribute("cy", String(320 - Math.cos(ang) * R));
+      }
+      setArc(wRing, 0);
+      setArc(aRing, 0);
+
+      /* ---------- ruler ---------- */
+      var rs = $("f01-rsvg");
+      var X0 = 50,
+        PX = 800 / 15,
+        RY = 100;
+      el("path", { d: "M " + X0 + " " + RY + " H " + (X0 + 800), stroke: "#22324f", "stroke-width": 4 }, rs);
+      for (var t = 0; t <= 15; t++) {
+        var big = t % 5 === 0;
+        el(
+          "path",
+          {
+            d: "M " + (X0 + t * PX) + " " + (RY - (big ? 18 : 10)) + " V " + (RY + (big ? 18 : 10)),
+            stroke: "#9aa8c0",
+            "stroke-opacity": big ? 0.7 : 0.4,
+            "stroke-width": 2,
+          },
+          rs,
+        );
+      }
+      var fillEnd = X0 + 8.5 * PX;
+      var rDash = el("path", { id: "f01-rdash", d: "M " + fillEnd + " " + RY + " H " + (X0 + 800), stroke: "#9aa8c0", "stroke-width": 4, "stroke-dasharray": "3 12", "stroke-linecap": "round", opacity: 0 }, rs);
+      var rFill = el("path", { id: "f01-rfill", d: "M " + X0 + " " + RY + " H " + fillEnd, stroke: "#f2a33a", "stroke-width": 16, "stroke-linecap": "butt" }, rs);
+      var rFillLen = rFill.getTotalLength();
+      rFill.style.strokeDasharray = String(rFillLen);
+      rFill.style.strokeDashoffset = String(rFillLen);
+      var rEnd = el("circle", { id: "f01-rend", cx: fillEnd, cy: RY, r: 12, fill: "#f2a33a", opacity: 0 }, rs);
+      var rThr = el("path", { id: "f01-rthr", d: "M " + (X0 + 800) + " " + (RY - 34) + " V " + (RY + 34), stroke: "#3d7bff", "stroke-width": 6, "stroke-linecap": "round" }, rs);
+      var rThrLen = 68;
+      rThr.style.strokeDasharray = String(rThrLen);
+      rThr.style.strokeDashoffset = String(rThrLen);
+      var rBr = el("path", { id: "f01-rbr", d: "M " + (fillEnd + 14) + " " + (RY + 28) + " V " + (RY + 40) + " H " + (X0 + 800 - 6) + " V " + (RY + 28), stroke: "#f2a33a", "stroke-width": 3, "stroke-linecap": "round", "stroke-linejoin": "round" }, rs);
+      var rBrLen = rBr.getTotalLength();
+      rBr.style.strokeDasharray = String(rBrLen);
+      rBr.style.strokeDashoffset = String(rBrLen);
+
+      /* thread dasharrays (svg-path-draw) */
+      ["f01-th1", "f01-th2"].forEach(function (id) {
+        var p = $(id),
+          len = p.getTotalLength();
+        p.style.strokeDasharray = String(len);
+        p.style.strokeDashoffset = String(len);
+      });
+
+      /* ---------- ghost ids (deterministic drift) ---------- */
+      var ghostIds = ["INS-0001-0203", "CTX-0001-003", "MNT-0151-025", "INS-0001-0140", "WELL-0001", "T200", "INS-0001-0203", "MNT-0151-025", "CTX-0001-003", "WELL-0001", "INS-0001-0140", "T200"];
+      var gl = $("f01-ghosts");
+      var ghosts = ghostIds.map(function (txt, i) {
+        var d = document.createElement("div");
+        d.className = "f01-ghost";
+        d.textContent = txt;
+        d.style.left = 80 + ((i * 337) % 1700) + "px";
+        d.style.top = 60 + ((i * 211) % 820) + "px";
+        gl.appendChild(d);
+        return d;
+      });
+      ghosts.forEach(function (g, i) {
+        tl.fromTo(g, { y: 0 }, { y: i % 2 ? -90 : 70, duration: 15, ease: "none" }, 0);
+      });
+      tl.fromTo("#f01-grid", { x: 0, y: 0 }, { x: 48, y: 48, duration: 15, ease: "none" }, 0);
+
+      /* ---------- document pile ---------- */
+      var docs = $("f01-docs");
+      function sheet(idText, rot, ox, oy) {
+        var s = document.createElement("div");
+        s.className = "f01-sheet";
+        s.innerHTML = "<span>" + idText + "</span><em></em><em style='width:78%'></em><em></em><em style='width:55%'></em><em></em><em style='width:86%'></em>";
+        s.dataset.rot = rot;
+        s.dataset.ox = ox;
+        s.dataset.oy = oy;
+        docs.appendChild(s);
+        return s;
+      }
+      var base = [sheet("INS-0001-0203", -12, -70, 20), sheet("MNT-0151-025", 9, 60, 36), sheet("CTX-0001-003", -5, -20, 52), sheet("INS-0001-0140", 6, 30, 70)];
+      var manual = document.createElement("div");
+      manual.className = "f01-manual";
+      manual.id = "f01-manual";
+      manual.innerHTML = "<b>MANUAL</b><em></em><em style='width:70%'></em><em class='hl'></em><span>T200 · +15 °C</span><em style='margin-top:14px'></em><em style='width:60%'></em>";
+      docs.appendChild(manual);
+      var cover = [sheet("MNT-0151-025", 7, 70, 60), sheet("CTX-0001-003", -9, -60, 72), sheet("INS-0001-0203", 3, 8, 90)];
+
+      /* ============ TIMELINE ============ */
+      var PULSE = 0.5;
+      var B = { slam: 5.2, airIn: 6.3, minus: 8.0, converge: 8.7, diff: 9.0, ruler: 9.6, stamp: 10.4, thread2: 11.2, manual: 11.6, bury: 12.5 };
+
+      /* camera wrapper: slow push, pull-back on the beat, slow push again */
+      tl.fromTo("#f01-cam", { scale: 1.0, x: 0, y: 0, transformOrigin: "50% 50%" }, { scale: 1.07, duration: B.slam, ease: "power1.inOut" }, 0);
+      tl.to("#f01-cam", { scale: 0.96, duration: 1.3, ease: "expo.inOut" }, B.slam + 0.4);
+      tl.to("#f01-cam", { scale: 1.0, duration: 2.6, ease: "power2.inOut" }, B.diff - 0.5);
+      tl.to("#f01-cam", { scale: 1.035, duration: 15 - (B.diff + 2.1), ease: "none" }, B.diff + 2.1);
+
+      /* chip: source cite */
+      tl.fromTo("#f01-chip", { scale: 0.6, opacity: 0, x: -30, transformOrigin: "0% 50%" }, { scale: 1, opacity: 1, x: 0, duration: 0.55, ease: "back.out(1.6)" }, 0.45);
+
+      /* --- Phase A: wellhead readout counts up (counting-dynamic-scale) --- */
+      var COUNT_AT = 0.3,
+        COUNT_DUR = 2.3;
+      var wnum = $("f01-wnum"),
+        wState = { v: 0 },
+        ringState = { v: 0 };
+      tl.fromTo("#f01-wnum", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, COUNT_AT);
+      tl.to(wState, { v: 51.6, duration: COUNT_DUR, ease: "power3.out", onUpdate: function () { wnum.textContent = wState.v.toFixed(1); } }, COUNT_AT);
+      tl.fromTo("#f01-wnum", { scale: 0.5 }, { scale: 1, duration: COUNT_DUR, ease: "power3.out" }, COUNT_AT);
+      tl.fromTo(ringState, { v: 0 }, { v: 0.516, duration: COUNT_DUR, ease: "power3.out", onUpdate: function () { setArc(wRing, ringState.v); } }, COUNT_AT);
+      tl.fromTo("#f01-wdot", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, COUNT_AT + COUNT_DUR - 0.2);
+      tl.fromTo("#f01-wlbl", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, COUNT_AT + 0.2);
+      tl.fromTo("#f01-wunit", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, COUNT_AT + COUNT_DUR);
+      tl.fromTo("#f01-wpill", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, COUNT_AT + COUNT_DUR + 0.25);
+      /* ambient glow bloom: lands with the settle, then breathes */
+      var wglow = $("f01-wglow");
+      tl.fromTo("#f01-wglow", { opacity: 0, scale: 0.8 }, { opacity: 0.36, scale: 1, duration: 1.2, ease: "power2.out" }, COUNT_AT + COUNT_DUR - 1.0);
+      var wph = { p: 0 };
+      tl.fromTo(wph, { p: 0 }, { immediateRender: false, p: Math.PI * 2 * 1.2, duration: B.slam - (COUNT_AT + COUNT_DUR + 0.2), ease: "none", onUpdate: function () {
+        var s = Math.sin(wph.p);
+        gsap.set(wglow, { opacity: 0.36 + s * 0.04, scale: 1 + s * 0.02 });
+      } }, COUNT_AT + COUNT_DUR + 0.2);
+      /* pill dot pulse */
+      tl.fromTo("#f01-wpill i", { opacity: 1 }, { opacity: 0.3, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 3 }, COUNT_AT + COUNT_DUR + 0.8);
+
+      /* --- Beat: "It isn't." glow drains, ring drains amber, pulse jolt --- */
+      var jolt = B.slam;
+      tl.to("#f01-cam", { x: -10, duration: 0.05, ease: "none" }, jolt);
+      tl.to("#f01-cam", { x: 8, duration: 0.06, ease: "none" }, jolt + 0.05);
+      tl.to("#f01-cam", { x: -4, duration: 0.06, ease: "none" }, jolt + 0.11);
+      tl.to("#f01-cam", { x: 0, duration: 0.1, ease: "power2.out" }, jolt + 0.17);
+      tl.fromTo("#f01-wglow", { opacity: 0.36 }, { opacity: 0, duration: 0.9, ease: "power2.in", immediateRender: false }, jolt);
+      tl.fromTo(ringState, { v: 0.516 }, { v: 0, duration: 0.9, ease: "power2.in", immediateRender: false, onUpdate: function () { setArc(wRing, ringState.v); } }, jolt);
+      tl.to("#f01-warc", { stroke: "#f2a33a", duration: 0.2, ease: "none" }, jolt);
+      tl.to("#f01-wdot", { fill: "#f2a33a", opacity: 0, duration: 0.8, ease: "power2.in" }, jolt);
+      tl.to("#f01-wnum", { color: "#9aa8c0", scale: 0.94, duration: 0.3, ease: "power4.out" }, jolt);
+      tl.to("#f01-wpill", { opacity: 0, y: 10, duration: 0.3, ease: "power2.in" }, jolt);
+      /* well readout slides left, scaled down, to make room for AIR */
+      tl.fromTo("#f01-well", { x: 0, scale: 1, transformOrigin: "50% 50%" }, { x: -440, scale: 0.72, duration: 1.0, ease: "expo.inOut" }, B.slam + 0.7);
+
+      /* --- Phase B: AIR readout whips in and counts --- */
+      var anum = $("f01-anum"),
+        aState = { v: 0 },
+        aRingState = { v: 0 };
+      tl.fromTo("#f01-air", { x: 1500, scale: 0.72, opacity: 0, transformOrigin: "50% 50%" }, { x: 440, scale: 0.72, opacity: 1, duration: 0.9, ease: "expo.out" }, B.airIn);
+      tl.to(aState, { v: 43.1, duration: 1.6, ease: "power3.out", onUpdate: function () { anum.textContent = aState.v.toFixed(1); } }, B.airIn + 0.1);
+      tl.fromTo(aRingState, { v: 0 }, { immediateRender: false, v: 0.431, duration: 1.6, ease: "power3.out", onUpdate: function () { setArc(aRing, aRingState.v); } }, B.airIn + 0.1);
+      tl.fromTo("#f01-adot", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, B.airIn + 1.3);
+      tl.fromTo("#f01-aunit", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, B.airIn + 1.7);
+
+      /* --- Phase C: minus pops, both readouts collapse into the difference --- */
+      tl.fromTo("#f01-minus", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.5, ease: "power3.out" }, B.minus);
+      tl.to("#f01-minus", { scale: 1.08, duration: 0.09, ease: "sine.inOut", yoyo: true, repeat: 1 }, B.minus + 0.5);
+      tl.fromTo("#f01-well", { filter: "blur(0px)", opacity: 1 }, { x: -340, scale: 0.5, opacity: 0, filter: "blur(10px)", duration: 0.6, ease: "power3.in", immediateRender: false }, B.converge);
+      tl.fromTo("#f01-air", { filter: "blur(0px)", opacity: 1 }, { x: -340, scale: 0.5, opacity: 0, filter: "blur(10px)", duration: 0.6, ease: "power3.in", immediateRender: false }, B.converge);
+      tl.to("#f01-minus", { scale: 0, rotation: 120, opacity: 0, duration: 0.5, ease: "power3.in" }, B.converge);
+
+      /* difference slam: kinetic-beat-slam entrance + count */
+      var dnum = $("f01-dnum"),
+        dState = { v: 0 };
+      tl.fromTo("#f01-dnum", { scale: 1.7, opacity: 0, filter: "blur(18px)", transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "power4.out" }, B.diff);
+      tl.to(dState, { v: 8.5, duration: 0.9, ease: "power3.out", onUpdate: function () { dnum.textContent = "+" + dState.v.toFixed(1); } }, B.diff);
+      tl.fromTo("#f01-dlbl", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, B.diff + 0.15);
+      tl.fromTo("#f01-dunit", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, B.diff + 0.8);
+      var dglow = $("f01-dglow");
+      tl.fromTo("#f01-dglow", { opacity: 0, scale: 0.8 }, { opacity: 0.3, scale: 1, duration: 1.2, ease: "power2.out" }, B.diff + 0.2);
+      var dph = { p: 0 };
+      tl.fromTo(dph, { p: 0 }, { immediateRender: false, p: Math.PI * 2 * 3, duration: 15 - (B.diff + 1.4), ease: "none", onUpdate: function () {
+        var s = Math.sin(dph.p);
+        gsap.set(dglow, { opacity: 0.3 + s * 0.05, scale: 1 + s * 0.025 });
+      } }, B.diff + 1.4);
+      /* evidence thread: chip to difference label */
+      tl.fromTo("#f01-th1", { strokeDashoffset: $("f01-th1").getTotalLength() }, { strokeDashoffset: 0, duration: 0.8, ease: "power2.out" }, B.diff + 0.2);
+      tl.fromTo("#f01-th1dot", { scale: 0, opacity: 0, transformOrigin: "620px 222px" }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, B.diff + 0.85);
+
+      /* --- Phase D: ruler under the hero --- */
+      tl.fromTo("#f01-rsvg", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, B.ruler);
+      tl.to("#f01-rfill", { strokeDashoffset: 0, duration: 0.9, ease: "power2.out" }, B.ruler + 0.1);
+      tl.fromTo("#f01-rend", { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, B.ruler + 0.9);
+      tl.fromTo("#f01-r85", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, B.ruler + 0.9);
+      tl.to("#f01-rthr", { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, B.ruler + 0.45);
+      tl.fromTo("#f01-r15", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, B.ruler + 0.7);
+      tl.fromTo("#f01-rdash", { opacity: 0 }, { opacity: 0.8, duration: 0.5, ease: "power1.out" }, B.ruler + 0.9);
+      tl.to("#f01-rbr", { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" }, B.ruler + 1.1);
+      tl.fromTo("#f01-rshort", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, B.ruler + 1.4);
+      tl.fromTo("#f01-rcap", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, B.ruler + 0.75);
+
+      /* --- Stamp: NOT PRODUCING (kinetic slam) --- */
+      tl.fromTo("#f01-stamp", { opacity: 0, scale: 2.4, rotation: -14, filter: "blur(18px)", transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, rotation: -4, filter: "blur(0px)", duration: 0.4, ease: "power4.out" }, B.stamp);
+      tl.fromTo("#f01-shock", { opacity: 0.55, scale: 1 }, { opacity: 0, scale: 20, duration: 0.9, ease: "power2.out", immediateRender: false }, B.stamp + 0.3);
+      tl.to("#f01-cam", { y: 9, duration: 0.05, ease: "none" }, B.stamp + 0.3);
+      tl.to("#f01-cam", { y: -6, duration: 0.06, ease: "none" }, B.stamp + 0.35);
+      tl.to("#f01-cam", { y: 0, duration: 0.14, ease: "power2.out" }, B.stamp + 0.41);
+      tl.to("#f01-stamp", { rotation: -3, duration: 15 - (B.stamp + 0.9), ease: "sine.inOut" }, B.stamp + 0.9);
+
+      /* --- Phase E: manual page sinks into the document stack --- */
+      var allBase = base;
+      allBase.forEach(function (s, i) {
+        tl.fromTo(s, { opacity: 0, y: 160, x: 0, rotation: 0 }, { opacity: 1, y: Number(s.dataset.oy), x: Number(s.dataset.ox), rotation: Number(s.dataset.rot), duration: 0.7, ease: "power3.out" }, B.thread2 + i * 0.1);
+      });
+      tl.to("#f01-th2", { strokeDashoffset: 0, duration: 0.8, ease: "power2.out" }, B.thread2 + 0.2);
+      tl.fromTo("#f01-th2dot", { scale: 0, opacity: 0, transformOrigin: "1264px 625px" }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, B.thread2 + 0.9);
+      tl.fromTo("#f01-manual", { opacity: 0, y: -260, x: 0, rotation: -8, scale: 1 }, { opacity: 1, y: 0, x: 0, rotation: -3, duration: 0.7, ease: "power3.out" }, B.manual);
+      tl.to("#f01-manual", { y: 70, scale: 0.94, rotation: 2, duration: 0.9, ease: "power2.inOut" }, B.bury);
+      tl.to("#f01-manual", { opacity: 0.55, duration: 0.9, ease: "power2.inOut" }, B.bury + 0.2);
+      cover.forEach(function (s, i) {
+        tl.fromTo(s, { opacity: 0, y: -340, x: Number(s.dataset.ox) * 0.5, rotation: Number(s.dataset.rot) * 2 }, { opacity: 1, y: Number(s.dataset.oy) + 20, x: Number(s.dataset.ox), rotation: Number(s.dataset.rot), duration: 0.55, ease: "power3.out" }, B.bury + 0.5 + i * 0.28);
+      });
+      /* docs breathe in the hold */
+      var dockPh = { p: 0 };
+      tl.fromTo(dockPh, { p: 0 }, { immediateRender: false, p: Math.PI * 2 * 1.0, duration: 15 - (B.thread2 + 1.0), ease: "none", onUpdate: function () {
+        gsap.set(docs, { y: Math.sin(dockPh.p) * 5 });
+      } }, B.thread2 + 1.0);
+
+      /* keep the timeline exactly 15s long */
+      tl.to({}, { duration: 0.001 }, 14.999);
+    })();
+  </script>
+</template>

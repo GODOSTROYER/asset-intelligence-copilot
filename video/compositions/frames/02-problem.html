@@ -1,0 +1,680 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #eef2f8;
+      font-family: "Montserrat", sans-serif;
+    }
+    #root * {
+      box-sizing: border-box;
+    }
+    .f02-layer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+    }
+    .f02-bgfield {
+      background: radial-gradient(ellipse 80% 75% at 50% 46%, #0d1830 0%, #0a1222 55%, #070d19 100%);
+    }
+    .f02-grid {
+      position: absolute;
+      left: -48px;
+      top: -48px;
+      width: 2016px;
+      height: 1176px;
+      background-image: linear-gradient(rgba(34, 50, 79, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 50, 79, 0.35) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .f02-vig {
+      background: radial-gradient(ellipse 70% 70% at 50% 48%, rgba(7, 13, 25, 0) 40%, rgba(7, 13, 25, 0.85) 100%);
+    }
+    .f02-glow {
+      position: absolute;
+      left: 360px;
+      top: 140px;
+      width: 1200px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(61, 123, 255, 0.5) 0%, rgba(61, 123, 255, 0.14) 40%, rgba(61, 123, 255, 0) 70%);
+      opacity: 0;
+    }
+    .f02-glow.amb {
+      background: radial-gradient(ellipse, rgba(242, 163, 58, 0.5) 0%, rgba(242, 163, 58, 0.14) 40%, rgba(242, 163, 58, 0) 70%);
+    }
+    .f02-persp {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      perspective: 1500px;
+      perspective-origin: 50% 50%;
+    }
+    .f02-field {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      transform-style: preserve-3d;
+    }
+    .f02-card {
+      position: absolute;
+      left: 960px;
+      top: 540px;
+      width: 210px;
+      height: 76px;
+      margin-left: -105px;
+      margin-top: -38px;
+      border-radius: 12px;
+      background: #111c33;
+      border: 1px solid #22324f;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+      padding: 12px 14px 0 18px;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      will-change: transform;
+      overflow: hidden;
+    }
+    .f02-card b {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: #3d7bff;
+    }
+    .f02-card.s1 b {
+      background: rgba(61, 123, 255, 0.6);
+    }
+    .f02-card.s2 b {
+      background: #9aa8c0;
+    }
+    .f02-card.s3 b {
+      background: #22324f;
+    }
+    .f02-card span {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 20px;
+      color: #9aa8c0;
+      white-space: nowrap;
+      margin-bottom: 8px;
+    }
+    .f02-card em {
+      display: block;
+      height: 6px;
+      border-radius: 3px;
+      background: #22324f;
+      margin-bottom: 7px;
+    }
+    .f02-tangle {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: visible;
+    }
+    .f02-tangle path {
+      fill: none;
+    }
+    .f02-ctr {
+      position: absolute;
+      padding: 20px 30px 22px 30px;
+      border-radius: 22px;
+      background: rgba(10, 18, 34, 0.84);
+      border: 1px solid #22324f;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+    .f02-cn {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 128px;
+      line-height: 130px;
+      letter-spacing: -0.04em;
+      font-variant-numeric: tabular-nums;
+      color: #eef2f8;
+      display: block;
+      transform-origin: 0% 60%;
+    }
+    .f02-ctr.r .f02-cn {
+      transform-origin: 100% 60%;
+      text-align: right;
+    }
+    .f02-ctr.r {
+      text-align: right;
+    }
+    .f02-cl {
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 0.26em;
+      color: #9aa8c0;
+      margin-top: 6px;
+      white-space: nowrap;
+    }
+    .f02-cbar {
+      height: 5px;
+      border-radius: 3px;
+      background: #3d7bff;
+      margin-top: 14px;
+      transform-origin: 0% 50%;
+    }
+    .f02-ctr.r .f02-cbar {
+      transform-origin: 100% 50%;
+    }
+    .f02-dl {
+      font-weight: 900;
+      font-size: 44px;
+      line-height: 56px;
+      letter-spacing: -0.02em;
+      color: #eef2f8;
+      opacity: 0;
+      white-space: nowrap;
+    }
+    .f02-dl i {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #3d7bff;
+      margin-right: 16px;
+      vertical-align: middle;
+    }
+    .f02-q {
+      position: absolute;
+      left: 400px;
+      top: 365px;
+      width: 1120px;
+      height: 210px;
+      border-radius: 22px;
+      background: #111c33;
+      border: 1px solid rgba(61, 123, 255, 0.45);
+      box-shadow: 0 0 60px rgba(61, 123, 255, 0.2), 0 30px 60px rgba(0, 0, 0, 0.5);
+      padding: 24px 40px 0 40px;
+    }
+    .f02-qk {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.18em;
+      color: #3d7bff;
+      margin-bottom: 12px;
+    }
+    .f02-qt {
+      font-weight: 600;
+      font-size: 42px;
+      line-height: 58px;
+      color: #eef2f8;
+    }
+    .f02-qt span {
+      position: relative;
+      opacity: 0;
+    }
+    .f02-qt span u {
+      position: absolute;
+      right: -3px;
+      top: 6px;
+      width: 3px;
+      height: 46px;
+      background: #3d7bff;
+      opacity: 0;
+    }
+    .f02-scrim {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      background: radial-gradient(ellipse 75% 70% at 50% 45%, rgba(10, 18, 34, 0.92) 0%, rgba(10, 18, 34, 0.86) 60%, rgba(10, 18, 34, 0.72) 100%);
+      opacity: 0;
+    }
+    .f02-meters {
+      position: absolute;
+      left: 340px;
+      top: 290px;
+      width: 1240px;
+      height: 470px;
+    }
+    .f02-mlbl {
+      position: absolute;
+      left: 0;
+      font-weight: 900;
+      font-size: 88px;
+      line-height: 96px;
+      letter-spacing: -0.035em;
+      color: #f2a33a;
+      white-space: nowrap;
+      opacity: 0;
+    }
+    .f02-strip {
+      position: absolute;
+      left: 0;
+      width: 1240px;
+      height: 50px;
+      opacity: 0;
+    }
+    .f02-seg {
+      position: absolute;
+      top: 0;
+      width: 30px;
+      height: 50px;
+      border-radius: 6px;
+      border: 2px solid rgba(242, 163, 58, 0.35);
+      overflow: hidden;
+    }
+    .f02-seg i {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #f2a33a;
+      transform-origin: 50% 100%;
+    }
+    .f02-scan {
+      position: absolute;
+      top: -8px;
+      width: 120px;
+      height: 66px;
+      background: linear-gradient(90deg, rgba(242, 163, 58, 0) 0%, rgba(238, 242, 248, 0.38) 50%, rgba(242, 163, 58, 0) 100%);
+      opacity: 0;
+      mix-blend-mode: screen;
+    }
+    .f02-sub {
+      position: absolute;
+      left: 0;
+      width: 1240px;
+      top: 372px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 56px;
+      line-height: 64px;
+      letter-spacing: -0.01em;
+      color: #eef2f8;
+    }
+    .f02-sub span {
+      display: inline-block;
+      opacity: 0;
+    }
+    .f02-subline {
+      position: absolute;
+      left: 0;
+      top: 444px;
+      width: 330px;
+      height: 10px;
+      overflow: visible;
+    }
+  </style>
+
+  <div data-hf-id="hf-4vxr" id="root" data-composition-id="02-problem" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-mify" class="clip f02-layer" data-start="0" data-duration="19.68" data-track-index="0" id="f02-bg">
+      <div data-hf-id="hf-f5pg" class="f02-layer f02-bgfield"></div>
+      <div data-hf-id="hf-y24e" class="f02-grid" id="f02-grid"></div>
+      <div data-hf-id="hf-inc2" class="f02-glow" id="f02-glow"></div>
+      <div data-hf-id="hf-qe1l" class="f02-layer f02-vig"></div>
+    </div>
+
+    <div data-hf-id="hf-x5lf" class="clip f02-layer" data-start="0" data-duration="19.68" data-track-index="1" id="f02-cam">
+      <div data-hf-id="hf-9cwf" class="f02-persp" id="f02-clutter"><div data-hf-id="hf-0d1s" class="f02-field" id="f02-field" data-layout-allow-overlap></div></div>
+      <svg data-hf-id="hf-xi4h" class="f02-tangle" id="f02-tangle" viewBox="0 0 1920 1080"></svg>
+
+      <svg data-hf-id="hf-npbx" class="f02-tangle" id="f02-qsvg" viewBox="0 0 1920 1080">
+        <path data-hf-id="hf-nzj7" id="f02-qline" d="M -20 470 H 396" stroke="#3d7bff" stroke-width="4" stroke-linecap="round" fill="none" />
+        <circle data-hf-id="hf-25wq" id="f02-qdot" cx="400" cy="470" r="9" fill="#3d7bff" />
+      </svg>
+      <div data-hf-id="hf-dtsy" class="f02-q" id="f02-q">
+        <div data-hf-id="hf-roq5" class="f02-qk">QUESTION</div>
+        <div data-hf-id="hf-8a24" class="f02-qt" id="f02-qt" data-layout-allow-overlap></div>
+      </div>
+
+      <div data-hf-id="hf-cpzb" class="f02-persp" id="f02-clutter2"><div data-hf-id="hf-ua8i" class="f02-field" id="f02-field2" data-layout-allow-overlap></div></div>
+      <div data-hf-id="hf-45ew" class="f02-scrim" id="f02-scrim"></div>
+
+      <div data-hf-id="hf-4ui5" class="f02-ctr" id="f02-c1" style="left: 120px; top: 80px; width: 540px">
+        <span data-hf-id="hf-lkxp" class="f02-cn" id="f02-n1">0</span>
+        <div data-hf-id="hf-jsov" class="f02-cl">INSPECTIONS</div>
+        <div data-hf-id="hf-8n33" class="f02-cbar" id="f02-b1"></div>
+      </div>
+      <div data-hf-id="hf-i13s" class="f02-ctr r" id="f02-c2" style="left: 1280px; top: 80px; width: 520px">
+        <span data-hf-id="hf-f9u4" class="f02-cn" id="f02-n2">0</span>
+        <div data-hf-id="hf-8fni" class="f02-cl">REPAIRS</div>
+        <div data-hf-id="hf-zz78" class="f02-cbar" id="f02-b2"></div>
+      </div>
+      <div data-hf-id="hf-sqvr" class="f02-ctr r" id="f02-c3" style="left: 1280px; top: 668px; width: 520px">
+        <span data-hf-id="hf-wrzr" class="f02-cn" id="f02-n3">0</span>
+        <div data-hf-id="hf-j207" class="f02-cl">REPORTS</div>
+        <div data-hf-id="hf-0qv1" class="f02-cbar" id="f02-b3"></div>
+      </div>
+      <div data-hf-id="hf-2yui" class="f02-ctr" id="f02-c4" style="left: 120px; top: 668px; width: 540px">
+        <div data-hf-id="hf-kw3y" class="f02-dl" id="f02-d1"><i data-hf-id="hf-wt6k"></i>MANUALS</div>
+        <div data-hf-id="hf-v0fn" class="f02-dl" id="f02-d2"><i data-hf-id="hf-zeb8"></i>SOPs</div>
+        <div data-hf-id="hf-tpmy" class="f02-dl" id="f02-d3"><i data-hf-id="hf-y7e5"></i>FIELD NOTES</div>
+      </div>
+
+      <div data-hf-id="hf-bm45" class="f02-glow amb" id="f02-aglow" style="left: 320px; top: 230px; width: 1280px; height: 700px"></div>
+      <div data-hf-id="hf-a4ra" class="f02-meters" id="f02-meters">
+        <div data-hf-id="hf-6zsd" class="f02-mlbl" id="f02-m1l" style="top: 0">WELLS IDLE</div>
+        <div data-hf-id="hf-egce" class="f02-strip" id="f02-s1" style="top: 104px"></div>
+        <div data-hf-id="hf-a7ht" class="f02-mlbl" id="f02-m2l" style="top: 190px">LEAKS UNREPORTED</div>
+        <div data-hf-id="hf-mdmb" class="f02-strip" id="f02-s2" style="top: 294px"></div>
+        <div data-hf-id="hf-sko0" class="f02-sub" id="f02-sub"><span data-hf-id="hf-p210">for</span> <span data-hf-id="hf-t2di">weeks</span></div>
+        <svg data-hf-id="hf-y0bj" class="f02-subline" id="f02-subsvg" viewBox="0 0 330 10"><path data-hf-id="hf-08t6" id="f02-subpath" d="M 2 5 H 328" stroke="#f2a33a" stroke-width="5" stroke-linecap="round" fill="none" /></svg>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var ID = "02-problem";
+      var NS = "http://www.w3.org/2000/svg";
+      var tl = gsap.timeline({ paused: true });
+      window.__timelines = window.__timelines || {};
+      window.__timelines[ID] = tl;
+      var GOLD = Math.PI * (3 - Math.sqrt(5));
+      function hash(i, k) {
+        var x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453;
+        return x - Math.floor(x);
+      }
+      function pad(n, w) {
+        var s = String(n);
+        while (s.length < w) s = "0" + s;
+        return s;
+      }
+      function $(id) {
+        return document.getElementById(id);
+      }
+      var PFX = ["INS", "MNT", "CTX", "REG"];
+      function cardId(s, i) {
+        var a = pad(1 + Math.floor(hash(i, 1) * 199), 4);
+        var b = s === 0 ? pad(1 + Math.floor(hash(i, 2) * 1499), 4) : pad(1 + Math.floor(hash(i, 2) * 99), 3);
+        return PFX[s] + "-" + a + "-" + b;
+      }
+      function makeCard(parent, s, i) {
+        var c = document.createElement("div");
+        c.className = "f02-card s" + s;
+        var w1 = 40 + Math.floor(hash(i, 5) * 55),
+          w2 = 30 + Math.floor(hash(i, 6) * 60);
+        c.innerHTML = "<b></b><span>" + cardId(s, i) + "</span><em style='width:" + w1 + "%'></em><em style='width:" + w2 + "%'></em>";
+        parent.appendChild(c);
+        return c;
+      }
+
+      /* ---------- sunflower layout over the frame (index-derived, no Math.random) ---------- */
+      var N = 118;
+      var wave1 = [],
+        wave2 = [];
+      for (var i = 0; i < N; i++) {
+        var r = Math.sqrt((i + 0.5) / N);
+        var ang = i * GOLD;
+        var tx = 960 + Math.cos(ang) * r * 880 + (hash(i, 3) - 0.5) * 50;
+        var ty = 480 + Math.sin(ang) * r * 405 + (hash(i, 4) - 0.5) * 40;
+        var inKeep = tx > 430 && tx < 1490 && ty > 350 && ty < 600;
+        var rec = { i: i, tx: tx, ty: ty };
+        (inKeep ? wave2 : wave1).push(rec);
+      }
+      /* extra swallow cards, fan across the question card */
+      for (var j = 0; j < 18; j++) {
+        var a2 = j * GOLD;
+        var rr = Math.sqrt((j + 0.5) / 18);
+        wave2.push({ i: 200 + j, tx: 960 + Math.cos(a2) * rr * 520, ty: 470 + Math.sin(a2) * rr * 120, big: true });
+      }
+
+      var field = $("f02-field"),
+        field2 = $("f02-field2");
+      var T0 = [0.6, 2.7, 4.8, 6.8];
+      var perStreamCount = [0, 0, 0, 0];
+      wave1.forEach(function (rec) {
+        rec.s = rec.i % 4;
+        rec.k = perStreamCount[rec.s]++;
+      });
+
+      wave1.forEach(function (rec) {
+        var s = rec.s,
+          i = rec.i;
+        var c = makeCard(field, s, i);
+        var h1 = hash(i, 7),
+          h2 = hash(i, 8),
+          h3 = hash(i, 9);
+        var dx = rec.tx - 960,
+          dy = rec.ty - 540;
+        var x0, y0;
+        if (s === 0) {
+          x0 = -(960 + 560 + 260 * h1);
+          y0 = dy * 0.45 + (h2 - 0.5) * 320;
+        } else if (s === 1) {
+          y0 = -(540 + 460 + 200 * h1);
+          x0 = dx * 0.45 + (h2 - 0.5) * 420;
+        } else if (s === 2) {
+          x0 = 960 + 560 + 260 * h1;
+          y0 = dy * 0.45 + (h2 - 0.5) * 320;
+        } else {
+          y0 = 540 + 460 + 200 * h1;
+          x0 = dx * 0.45 + (h2 - 0.5) * 420;
+        }
+        var rot = (hash(i, 10) - 0.5) * 34;
+        var sc = 0.86 + hash(i, 11) * 0.36;
+        var start = T0[s] + 0.15 + rec.k * 0.05;
+        tl.fromTo(
+          c,
+          { x: x0, y: y0, z: -520 + 700 * h3, rotationX: Math.sin(i * GOLD) * 70, rotationY: Math.cos(i * GOLD) * 70, rotation: rot * 3, scale: 0.6, opacity: 0 },
+          { x: dx, y: dy, z: 0, rotationX: 0, rotationY: 0, rotation: rot, scale: sc, opacity: 1, duration: 1.0 + h2 * 0.35, ease: "power3.out" },
+          start,
+        );
+      });
+
+      /* wave 2: close-in swallow of the question */
+      var W2 = 11.2;
+      wave2.forEach(function (rec, k) {
+        var i = rec.i;
+        var s = i % 4;
+        var c = makeCard(field2, s, i);
+        var dx = rec.tx - 960,
+          dy = rec.ty - 540;
+        var a3 = k * GOLD;
+        var rot = (hash(i, 10) - 0.5) * 24;
+        var sc = rec.big ? 1.15 + hash(i, 11) * 0.3 : 1.0 + hash(i, 11) * 0.25;
+        tl.fromTo(
+          c,
+          { x: dx + Math.cos(a3) * 1500, y: dy + Math.sin(a3) * 900, z: -400 + 500 * hash(i, 9), rotationX: Math.sin(a3) * 60, rotationY: Math.cos(a3) * 60, rotation: rot * 3, scale: 0.7, opacity: 0 },
+          { x: dx, y: dy, z: 0, rotationX: 0, rotationY: 0, rotation: rot, scale: sc, opacity: 1, duration: 0.8, ease: "power3.out" },
+          W2 + k * 0.022,
+        );
+      });
+
+      /* cloud life: slow tumble of the whole depth field */
+      tl.fromTo("#f02-field", { rotationY: -3, rotationX: 1.5, transformOrigin: "50% 50%" }, { rotationY: 3.5, rotationX: -1.5, duration: 17, ease: "none" }, 0);
+      tl.fromTo("#f02-field2", { rotationY: -3, rotationX: 1.5, transformOrigin: "50% 50%" }, { rotationY: 3.5, rotationX: -1.5, duration: 17, ease: "none" }, 0);
+      tl.fromTo("#f02-grid", { x: 0, y: 0 }, { x: 48, y: 48, duration: 17, ease: "none" }, 0);
+
+      /* ---------- camera: slow push ---------- */
+      tl.fromTo("#f02-cam", { scale: 1.0, transformOrigin: "50% 50%" }, { scale: 1.045, duration: 12.6, ease: "none" }, 0);
+      tl.to("#f02-cam", { scale: 1.0, duration: 1.6, ease: "power2.inOut" }, 12.6);
+      tl.to("#f02-cam", { scale: 1.025, duration: 17 - 14.2, ease: "none" }, 14.2);
+
+      /* ambient accent glow behind the field */
+      var glow = $("f02-glow");
+      tl.fromTo("#f02-glow", { opacity: 0 }, { opacity: 0.16, duration: 2.0, ease: "power2.out" }, 0.2);
+
+      /* ---------- counters ---------- */
+      function counter(numId, barId, boxId, target, at, fromProps, dur) {
+        var node = $(numId),
+          st = { v: 0 };
+        tl.fromTo(boxId, Object.assign({ opacity: 0 }, fromProps), { x: 0, y: 0, opacity: 1, duration: 0.8, ease: "expo.out" }, at);
+        tl.to(st, { v: target, duration: dur, ease: "power3.out", onUpdate: function () { node.textContent = Math.round(st.v).toLocaleString("en-US"); } }, at + 0.1);
+        tl.fromTo(node, { scale: 0.5 }, { scale: 1, duration: dur, ease: "power3.out" }, at + 0.1);
+        tl.fromTo(barId, { scaleX: 0 }, { scaleX: 1, duration: dur, ease: "power3.out" }, at + 0.1);
+      }
+      counter("f02-n1", "f02-b1", "#f02-c1", 40000, T0[0], { x: -700, y: 0 }, 1.8);
+      counter("f02-n2", "f02-b2", "#f02-c2", 5700, T0[1], { x: 0, y: -400 }, 1.5);
+      counter("f02-n3", "f02-b3", "#f02-c3", 1500, T0[2], { x: 700, y: 0 }, 1.5);
+      /* waterfall-entry for the fourth stream: staggered, binary arrival, from below */
+      tl.fromTo("#f02-c4", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, T0[3]);
+      var F = 1 / 60;
+      var wf = [
+        { id: "#f02-d1", dy: 70, d: 0.24 },
+        { id: "#f02-d2", dy: 50, d: 0.2 },
+        { id: "#f02-d3", dy: 60, d: 0.22 },
+      ];
+      var tw = T0[3] + 0.1;
+      wf.forEach(function (w) {
+        tl.set(w.id, { opacity: 1, y: w.dy }, tw);
+        tl.to(w.id, { y: 0, duration: w.d, ease: "power4.out" }, tw);
+        tw = tw + w.d + 0.12 - 2 * F;
+      });
+
+      /* ---------- tangle: evidence threads drawn through the field ---------- */
+      var tg = $("f02-tangle");
+      var tpaths = [];
+      for (var q = 0; q < 11; q++) {
+        var ax = 120 + hash(q, 21) * 1680,
+          ay = 120 + hash(q, 22) * 740,
+          bx = 120 + hash(q, 23) * 1680,
+          by = 120 + hash(q, 24) * 740;
+        var cx1 = ax + (hash(q, 25) - 0.5) * 900,
+          cy1 = ay + (hash(q, 26) - 0.5) * 700,
+          cx2 = bx + (hash(q, 27) - 0.5) * 900,
+          cy2 = by + (hash(q, 28) - 0.5) * 700;
+        var p = document.createElementNS(NS, "path");
+        p.setAttribute("d", "M " + ax + " " + ay + " C " + cx1 + " " + cy1 + ", " + cx2 + " " + cy2 + ", " + bx + " " + by);
+        p.setAttribute("stroke", "#3d7bff");
+        p.setAttribute("stroke-opacity", "0.5");
+        p.setAttribute("stroke-width", "2.5");
+        p.setAttribute("stroke-linecap", "round");
+        tg.appendChild(p);
+        var len = p.getTotalLength();
+        p.style.strokeDasharray = String(len);
+        p.style.strokeDashoffset = String(len);
+        tpaths.push(p);
+      }
+      tpaths.forEach(function (p, k) {
+        tl.to(p, { strokeDashoffset: 0, duration: 1.1, ease: "power2.out" }, 7.0 + k * 0.17);
+      });
+
+      /* ---------- the question: line cuts in, card, typed text ---------- */
+      var ql = $("f02-qline"),
+        qlen = ql.getTotalLength();
+      ql.style.strokeDasharray = String(qlen);
+      ql.style.strokeDashoffset = String(qlen);
+      tl.to("#f02-qline", { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" }, 8.6);
+      tl.fromTo("#f02-qdot", { scale: 0, opacity: 0, transformOrigin: "400px 470px" }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, 9.0);
+      tl.fromTo("#f02-q", { opacity: 0, scale: 0.9, x: -40, transformOrigin: "0% 50%" }, { opacity: 1, scale: 1, x: 0, duration: 0.55, ease: "power3.out" }, 8.95);
+
+      var QTEXT = "Which wells in my area were down the longest this summer, and why?";
+      var qt = $("f02-qt");
+      var chars = [];
+      QTEXT.split(" ").forEach(function (word, wi, arr) {
+        var wrap = document.createElement("span");
+        wrap.style.cssText = "display:inline-block;opacity:1;white-space:nowrap";
+        for (var c = 0; c < word.length; c++) {
+          var sp = document.createElement("span");
+          sp.textContent = word[c];
+          var caret = document.createElement("u");
+          sp.appendChild(caret);
+          wrap.appendChild(sp);
+          chars.push(sp);
+        }
+        qt.appendChild(wrap);
+        if (wi < arr.length - 1) qt.appendChild(document.createTextNode(" "));
+      });
+      var TY0 = 9.5,
+        TY_RATE = 0.034;
+      chars.forEach(function (sp, k) {
+        var at = TY0 + k * TY_RATE;
+        tl.set(sp, { opacity: 1 }, at);
+        tl.set(sp.firstElementChild, { opacity: 1 }, at);
+        tl.set(sp.firstElementChild, { opacity: 0 }, at + TY_RATE);
+      });
+      var typedEnd = TY0 + chars.length * TY_RATE;
+      /* last caret blinks while waiting */
+      var lastCaret = chars[chars.length - 1].firstElementChild;
+      for (var b = 0; b < 4; b++) {
+        tl.set(lastCaret, { opacity: 1 }, typedEnd + b * 0.3);
+        tl.set(lastCaret, { opacity: 0 }, typedEnd + b * 0.3 + 0.15);
+      }
+
+      /* ---------- swallow: the question is buried, line is lost ---------- */
+      tl.to("#f02-q", { scale: 0.96, opacity: 0.45, duration: 0.9, ease: "power2.in" }, 11.7);
+      tl.to("#f02-qline", { strokeDashoffset: -qlen, duration: 0.8, ease: "power2.in" }, 11.7);
+      tl.to("#f02-qdot", { opacity: 0, duration: 0.4, ease: "power1.in" }, 11.8);
+
+      /* ---------- closing beat: dim everything, amber counters tick ---------- */
+      var CL = 12.4;
+      tl.to("#f02-scrim", { opacity: 1, duration: 0.9, ease: "power2.out" }, CL);
+      tl.to("#f02-c1, #f02-c2, #f02-c3, #f02-c4", { opacity: 0.12, duration: 0.8, ease: "power2.out" }, CL);
+      tl.fromTo("#f02-aglow", { opacity: 0, scale: 0.85 }, { opacity: 0.22, scale: 1, duration: 1.2, ease: "power2.out" }, CL + 0.3);
+      var aglow = $("f02-aglow");
+      var gph = { p: 0 };
+      tl.fromTo(gph, { p: 0 }, { immediateRender: false, p: Math.PI * 2 * 1.4, duration: 17 - (CL + 1.5), ease: "none", onUpdate: function () {
+        var s = Math.sin(gph.p);
+        gsap.set(aglow, { opacity: 0.22 + s * 0.04, scale: 1 + s * 0.02 });
+      } }, CL + 1.5);
+
+      /* strips: 28 segments, week separators every 7 */
+      function buildStrip(id) {
+        var host = $(id),
+          segs = [];
+        for (var k = 0; k < 28; k++) {
+          var d = document.createElement("div");
+          d.className = "f02-seg";
+          d.style.left = k * 42 + Math.floor(k / 7) * 18 + "px";
+          d.innerHTML = "<i></i>";
+          host.appendChild(d);
+          segs.push(d.firstElementChild);
+        }
+        var scan = document.createElement("div");
+        scan.className = "f02-scan";
+        host.appendChild(scan);
+        return { segs: segs, scan: scan };
+      }
+      var st1 = buildStrip("f02-s1"),
+        st2 = buildStrip("f02-s2");
+      function stripTicks(st, at, step) {
+        st.segs.forEach(function (seg, k) {
+          tl.fromTo(seg, { scaleY: 0 }, { scaleY: 1, duration: 0.22, ease: "power3.out" }, at + k * step);
+        });
+      }
+      function waterfallLabel(id, at) {
+        tl.set(id, { opacity: 1, y: 80 }, at);
+        tl.to(id, { y: 0, duration: 0.26, ease: "power4.out" }, at);
+      }
+      tl.fromTo("#f02-s1", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 13.1);
+      tl.fromTo("#f02-s2", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 14.45);
+      waterfallLabel("#f02-m1l", 12.8);
+      stripTicks(st1, 13.2, 0.045);
+      waterfallLabel("#f02-m2l", 14.1);
+      stripTicks(st2, 14.55, 0.045);
+      /* subtitle: for weeks */
+      var subs = document.querySelectorAll("#f02-sub span");
+      tl.set(subs[0], { opacity: 1, y: 50 }, 15.5);
+      tl.to(subs[0], { y: 0, duration: 0.22, ease: "power4.out" }, 15.5);
+      tl.set(subs[1], { opacity: 1, y: 60 }, 15.5 + 0.23);
+      tl.to(subs[1], { y: 0, duration: 0.24, ease: "power4.out" }, 15.5 + 0.23);
+      var sp = $("f02-subpath"),
+        splen = sp.getTotalLength();
+      sp.style.strokeDasharray = String(splen);
+      sp.style.strokeDashoffset = String(splen);
+      tl.to("#f02-subpath", { strokeDashoffset: 0, duration: 0.7, ease: "power2.out" }, 15.7);
+      /* living hold: scanners sweep along the strips, week blocks keep ticking */
+      [st1, st2].forEach(function (st, n) {
+        var sph = { p: 0 };
+        var HS = 15.6 + n * 0.25;
+        tl.fromTo(sph, { p: 0 }, { immediateRender: false, p: 1, duration: 17 - HS, ease: "none", onUpdate: function () {
+          var u = (sph.p % 1);
+          gsap.set(st.scan, { x: -120 + u * 1360, opacity: 1 });
+        } }, HS);
+      });
+
+      tl.to({}, { duration: 0.001 }, 16.999);
+    })();
+  </script>
+</template>

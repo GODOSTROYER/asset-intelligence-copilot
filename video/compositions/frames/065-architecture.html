@@ -1,0 +1,948 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: "Montserrat", sans-serif;
+      color: #eef2f8;
+    }
+    #root * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .arch-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 85% 85% at 50% 42%, #0a1222 0%, #0a1222 55%, #070d19 100%);
+    }
+    #arch-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(34, 50, 79, 0.35) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(34, 50, 79, 0.35) 1px, transparent 1px);
+      background-size: 48px 48px;
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 45%, #000 35%, transparent 100%);
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 45%, #000 35%, transparent 100%);
+    }
+    #arch-glow {
+      position: absolute;
+      left: 330px;
+      top: -60px;
+      width: 1300px;
+      height: 760px;
+      background: radial-gradient(ellipse at center, rgba(61, 123, 255, 0.55), rgba(61, 123, 255, 0) 62%);
+      opacity: 0.14;
+    }
+    #arch-world {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      transform-origin: 0 0;
+      will-change: transform;
+    }
+
+    /* ---------- wireframe scaffold ---------- */
+    .arch-ghost {
+      position: absolute;
+      border-radius: 18px;
+      border: 1.5px dashed rgba(61, 123, 255, 0.42);
+      background: rgba(61, 123, 255, 0.04);
+    }
+    .arch-ghost span {
+      position: absolute;
+      left: 20px;
+      top: 14px;
+      font: 700 20px "IBM Plex Mono", monospace;
+      letter-spacing: 0.14em;
+      color: #9aa8c0;
+    }
+
+    /* ---------- boxes ---------- */
+    .arch-box {
+      position: absolute;
+      border-radius: 18px;
+      background: #111c33;
+      border: 1px solid #22324f;
+      box-shadow: 0 40px 60px rgba(7, 13, 25, 0.6);
+      padding: 16px 20px;
+    }
+    #arch-b-core {
+      background: rgba(14, 24, 46, 0.78);
+      border: 1.5px solid rgba(61, 123, 255, 0.5);
+      padding: 0;
+    }
+    .arch-corelab {
+      position: absolute;
+      left: 26px;
+      top: -14px;
+      padding: 0 12px;
+      background: #0a1222;
+      font: 700 20px "IBM Plex Mono", monospace;
+      letter-spacing: 0.14em;
+      color: #3d7bff;
+      line-height: 28px;
+    }
+    .arch-h {
+      font-weight: 700;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+      line-height: 36px;
+      white-space: nowrap;
+    }
+    .arch-h28 {
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      line-height: 34px;
+      white-space: nowrap;
+    }
+    .arch-hrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .arch-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      padding: 0 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(61, 123, 255, 0.45);
+      background: rgba(61, 123, 255, 0.1);
+      font: 400 20px "IBM Plex Mono", monospace;
+      color: #eef2f8;
+      white-space: nowrap;
+    }
+    .arch-chip-l {
+      height: 40px;
+      padding: 0 16px;
+      font-size: 22px;
+    }
+    .arch-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .arch-mut {
+      font: 400 20px "IBM Plex Mono", monospace;
+      color: #9aa8c0;
+      line-height: 26px;
+      white-space: nowrap;
+    }
+
+    /* users */
+    .arch-urow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      height: 40px;
+      margin-top: 4px;
+    }
+    .arch-av {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid #3d7bff;
+      background: rgba(61, 123, 255, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: 700 20px "IBM Plex Mono", monospace;
+      color: #eef2f8;
+    }
+    .arch-uname {
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    /* planner / validator */
+    .arch-sub {
+      position: absolute;
+      border-radius: 16px;
+      background: #111c33;
+      border: 1px solid #22324f;
+      box-shadow: 0 24px 40px rgba(7, 13, 25, 0.5);
+      padding: 14px 20px;
+    }
+    .arch-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .arch-heroline {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      height: 58px;
+    }
+    .arch-of {
+      font-weight: 700;
+      font-size: 28px;
+      color: #9aa8c0;
+    }
+    .arch-n {
+      display: inline-block;
+      transform-origin: 100% 70%;
+      font: 700 58px "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.04em;
+      color: #eef2f8;
+    }
+    .arch-vrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      height: 32px;
+      margin-top: 2px;
+      font: 400 22px "IBM Plex Mono", monospace;
+    }
+    .arch-vrow svg {
+      flex: none;
+    }
+    .arch-vrow svg circle,
+    .arch-vrow svg path {
+      fill: none;
+      stroke: #3fbf8a;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* router + lanes */
+    .arch-lane {
+      position: absolute;
+      top: 50px;
+      height: 188px;
+      border-radius: 14px;
+      background: #0a1222;
+      border: 1px solid #22324f;
+      padding: 12px 14px;
+    }
+    .arch-lt {
+      font: 700 20px "IBM Plex Mono", monospace;
+      letter-spacing: 0.04em;
+      color: #3d7bff;
+      line-height: 28px;
+      white-space: nowrap;
+    }
+    .arch-lane .arch-chips {
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .arch-ck {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font: 400 20px "IBM Plex Mono", monospace;
+      line-height: 24px;
+      white-space: nowrap;
+    }
+    .arch-ck svg {
+      flex: none;
+    }
+    .arch-ck svg path {
+      fill: none;
+      stroke: #3fbf8a;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #arch-bylab {
+      position: absolute;
+      left: 190px;
+      top: 10px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font: 700 20px "IBM Plex Mono", monospace;
+      color: #3d7bff;
+      white-space: nowrap;
+    }
+    #arch-bylab svg line {
+      stroke: #3d7bff;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 10 8;
+    }
+
+    /* evidence */
+    .arch-count {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      height: 84px;
+      margin-top: 6px;
+    }
+    .arch-count-n {
+      display: inline-block;
+      transform-origin: 0% 70%;
+      font: 700 80px "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.04em;
+      color: #eef2f8;
+    }
+    .arch-ev-chips {
+      margin-top: 6px;
+    }
+
+    /* memory */
+    .arch-half {
+      position: absolute;
+      top: 70px;
+      height: 224px;
+      width: 277px;
+      border-radius: 14px;
+      background: #0a1222;
+      border: 1px solid #22324f;
+      padding: 10px 14px;
+    }
+    .arch-half .arch-chip {
+      padding: 0 10px;
+    }
+    .arch-half .arch-chips {
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .arch-pips {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .arch-pip {
+      display: block;
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      background: #3d7bff;
+      box-shadow: 0 0 12px rgba(61, 123, 255, 0.55);
+    }
+    #arch-split {
+      position: absolute;
+      left: 299px;
+      top: 70px;
+      width: 3px;
+      height: 224px;
+      border-radius: 2px;
+      background: #3d7bff;
+      transform-origin: 50% 0;
+    }
+
+    /* answer */
+    #arch-b-answer .arch-chip-l {
+      height: 36px;
+    }
+    .arch-arow {
+      padding-top: 10px;
+      margin-top: 8px;
+      border-top: 1px solid #22324f;
+    }
+    .arch-alab {
+      font: 700 22px "IBM Plex Mono", monospace;
+      letter-spacing: 0.06em;
+      line-height: 28px;
+      color: #eef2f8;
+    }
+    .arch-bar {
+      display: block;
+      height: 10px;
+      border-radius: 5px;
+      background: rgba(154, 168, 192, 0.5);
+      margin-top: 10px;
+      transform-origin: 0 50%;
+    }
+    .arch-vbars {
+      display: flex;
+      align-items: flex-end;
+      gap: 9px;
+      height: 46px;
+      margin-top: 6px;
+    }
+    .arch-vb {
+      display: block;
+      width: 20px;
+      border-radius: 4px;
+      background: #3d7bff;
+      transform-origin: 50% 100%;
+    }
+    #arch-okbadge {
+      position: absolute;
+      right: -22px;
+      top: -22px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #070d19;
+      border: 2px solid #3fbf8a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #arch-okbadge path {
+      fill: none;
+      stroke: #3fbf8a;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* wires */
+    #arch-wires {
+      position: absolute;
+      left: 0;
+      top: 0;
+      overflow: visible;
+      z-index: 8;
+      pointer-events: none;
+    }
+    #arch-wires path.arch-rail,
+    #arch-wires path.arch-chev {
+      fill: none;
+      stroke: #3d7bff;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #arch-bypass {
+      fill: none;
+      stroke: #3d7bff;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-dasharray: 12 10;
+    }
+  </style>
+
+  <div id="root" data-composition-id="065-architecture" data-width="1920" data-height="1080">
+    <div id="arch-bg" class="arch-bg clip" data-start="0" data-duration="38.7" data-track-index="0"></div>
+    <div id="arch-grid"></div>
+    <div id="arch-glow" data-layout-allow-overflow></div>
+
+    <div id="arch-world" data-layout-allow-overflow>
+      <!-- wireframe scaffold -->
+      <div class="arch-ghost" id="arch-g-users" style="left:60px;top:70px;width:330px;height:210px"><span>USERS</span></div>
+      <div class="arch-ghost" id="arch-g-ui" style="left:60px;top:316px;width:330px;height:270px"><span>UI</span></div>
+      <div class="arch-ghost" id="arch-g-api" style="left:60px;top:622px;width:330px;height:294px"><span>API</span></div>
+      <div class="arch-ghost" id="arch-g-core" style="left:440px;top:70px;width:1060px;height:502px"><span>CORE</span></div>
+      <div class="arch-ghost" id="arch-g-answer" style="left:1550px;top:70px;width:310px;height:502px"><span>ANSWER</span></div>
+      <div class="arch-ghost" id="arch-g-evidence" style="left:440px;top:608px;width:770px;height:308px"><span>EVIDENCE INDEX</span></div>
+      <div class="arch-ghost" id="arch-g-memory" style="left:1250px;top:608px;width:610px;height:308px"><span>MEMORY</span></div>
+
+      <!-- USERS -->
+      <div class="arch-box" id="arch-b-users" style="left:60px;top:70px;width:330px;height:210px">
+        <div class="arch-h" id="arch-users-h">Users</div>
+        <div class="arch-urow" id="arch-u0"><span class="arch-av">MT</span><span class="arch-uname">Michael Turner</span></div>
+        <div class="arch-urow" id="arch-u1"><span class="arch-av">LS</span><span class="arch-uname">Laura Simmons</span></div>
+        <div class="arch-urow" id="arch-u2"><span class="arch-av">JM</span><span class="arch-uname">Jake Morales</span></div>
+      </div>
+
+      <!-- UI -->
+      <div class="arch-box" id="arch-b-ui" style="left:60px;top:316px;width:330px;height:270px">
+        <div class="arch-h" id="arch-ui-h">React chat app</div>
+        <div class="arch-chips" style="margin-top:10px">
+          <span class="arch-chip arch-uic">chat</span><span class="arch-chip arch-uic">user picker</span>
+          <span class="arch-chip arch-uic">source drawer</span>
+          <span class="arch-chip arch-uic">inline visuals</span>
+        </div>
+        <div class="arch-mut" id="arch-ui-viz" style="margin-top:8px">status · table · line ·<br />bar · map · heatmap</div>
+      </div>
+
+      <!-- API -->
+      <div class="arch-box" id="arch-b-api" style="left:60px;top:622px;width:330px;height:294px;padding:16px 16px">
+        <div class="arch-h" id="arch-api-h" style="font-size:28px">Local Express API</div>
+        <div class="arch-chips" style="margin-top:10px">
+          <span class="arch-chip arch-apic">/api/chat</span><span class="arch-chip arch-apic">/api/memory</span>
+          <span class="arch-chip arch-apic">/api/evidence</span>
+          <span class="arch-chip arch-apic">/api/dataset/load</span>
+        </div>
+        <div class="arch-mut" id="arch-api-note" style="margin-top:12px">one request at a time<br />(serialized)</div>
+      </div>
+
+      <!-- CORE frame -->
+      <div class="arch-box" id="arch-b-core" style="left:440px;top:70px;width:1060px;height:502px"><span class="arch-corelab">CORE</span></div>
+
+      <!-- PLANNER -->
+      <div class="arch-sub" id="arch-b-planner" style="left:460px;top:98px;width:560px;height:176px">
+        <div class="arch-hrow" id="arch-pl-h">
+          <span class="arch-h">Planner</span><span class="arch-chip" id="arch-pl-json">JSON schema</span>
+        </div>
+        <div class="arch-hrow" style="margin-top:10px;align-items:flex-start">
+          <span class="arch-chip arch-chip-l" id="arch-pl-gem" style="margin-top:6px">Gemini 3.5 Flash-Lite</span>
+          <div class="arch-hero" id="arch-pl-hero">
+            <div class="arch-heroline"><span class="arch-of">1 of</span><span class="arch-n" id="arch-n17">0</span></div>
+            <span class="arch-mut" style="margin-top:-2px">typed operations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- VALIDATOR -->
+      <div class="arch-sub" id="arch-b-validator" style="left:1070px;top:98px;width:410px;height:176px">
+        <div class="arch-h" id="arch-va-h">Validator</div>
+        <div style="margin-top:6px">
+          <div class="arch-vrow"><svg width="28" height="28" viewBox="0 0 36 36"><circle class="arch-vc" cx="18" cy="18" r="15" /><path class="arch-vk" d="M10 19 L16 25 L26 12" /></svg><span class="arch-vl">well IDs</span></div>
+          <div class="arch-vrow"><svg width="28" height="28" viewBox="0 0 36 36"><circle class="arch-vc" cx="18" cy="18" r="15" /><path class="arch-vk" d="M10 19 L16 25 L26 12" /></svg><span class="arch-vl">dates</span></div>
+          <div class="arch-vrow"><svg width="28" height="28" viewBox="0 0 36 36"><circle class="arch-vc" cx="18" cy="18" r="15" /><path class="arch-vk" d="M10 19 L16 25 L26 12" /></svg><span class="arch-vl">explicit write intent</span></div>
+        </div>
+      </div>
+
+      <!-- ROUTER -->
+      <div class="arch-sub" id="arch-b-router" style="left:460px;top:304px;width:1020px;height:250px;padding:0">
+        <div class="arch-h" id="arch-ro-h" style="position:absolute;left:18px;top:10px">Router</div>
+        <div id="arch-bylab">
+          <svg width="46" height="12" viewBox="0 0 46 12"><line x1="2" y1="6" x2="44" y2="6" /></svg>
+          <span>deterministic planner if the model is unavailable</span>
+        </div>
+
+        <div class="arch-lane" id="arch-l1" style="left:18px;width:360px">
+          <div class="arch-lt">DOMAIN TOOLS</div>
+          <div class="arch-chips">
+            <span class="arch-chip arch-l1c">status</span><span class="arch-chip arch-l1c">downtime</span><span class="arch-chip arch-l1c">spills</span>
+            <span class="arch-chip arch-l1c">heatmap</span><span class="arch-chip arch-l1c">compliance</span><span class="arch-chip arch-l1c">RCA</span>
+            <span class="arch-chip arch-l1c">containment</span><span class="arch-chip arch-l1c">costs</span>
+          </div>
+        </div>
+
+        <div class="arch-lane" id="arch-l2" style="left:394px;width:270px">
+          <div class="arch-lt">RECORDS AGGREGATOR</div>
+          <div class="arch-chips">
+            <span class="arch-chip arch-l2c">filter</span><span class="arch-chip arch-l2c">group</span>
+            <span class="arch-chip arch-l2c">count</span><span class="arch-chip arch-l2c">sum</span>
+          </div>
+        </div>
+
+        <div class="arch-lane" id="arch-l3" style="left:680px;width:320px">
+          <div class="arch-lt">DOCUMENT Q&amp;A</div>
+          <div class="arch-chips">
+            <span class="arch-chip arch-l3c">lexical retrieval</span><span class="arch-chip arch-l3c">Gemini synthesis</span>
+          </div>
+          <div class="arch-ck arch-l3t" style="margin-top:8px">per-sentence source IDs</div>
+          <div class="arch-ck arch-l3t"><svg width="22" height="22" viewBox="0 0 36 36"><path d="M7 19 L15 27 L29 10" /></svg><span>numbers &amp; IDs checked</span></div>
+        </div>
+      </div>
+
+      <!-- ANSWER -->
+      <div class="arch-box" id="arch-b-answer" style="left:1550px;top:70px;width:310px;height:502px">
+        <div class="arch-h" id="arch-an-h">Answer</div>
+        <div class="arch-arow" id="arch-ar0" style="border-top:none;margin-top:6px">
+          <div class="arch-alab">TEXT</div>
+          <span class="arch-bar" style="width:100%"></span><span class="arch-bar" style="width:84%"></span><span class="arch-bar" style="width:58%"></span>
+        </div>
+        <div class="arch-arow" id="arch-ar1">
+          <div class="arch-alab">VISUAL</div>
+          <div class="arch-vbars">
+            <i class="arch-vb" style="height:18px"></i><i class="arch-vb" style="height:28px"></i><i class="arch-vb" style="height:22px"></i><i class="arch-vb" style="height:36px"></i><i class="arch-vb" style="height:32px"></i><i class="arch-vb" style="height:46px"></i><i class="arch-vb" style="height:38px"></i>
+          </div>
+        </div>
+        <div class="arch-arow" id="arch-ar2">
+          <div class="arch-alab">CITATIONS</div>
+          <div class="arch-chips" style="flex-direction:column;align-items:flex-start;margin-top:8px">
+            <span class="arch-chip arch-chip-l arch-cite">INS-0001-0203</span><span class="arch-chip arch-chip-l arch-cite">CTX-0001-003</span>
+          </div>
+        </div>
+        <div class="arch-arow" id="arch-ar3">
+          <div class="arch-alab">CONFLICTS</div>
+          <svg width="150" height="36" viewBox="0 0 96 30" style="margin-top:6px">
+            <circle cx="10" cy="15" r="7" fill="#3d7bff" />
+            <circle cx="86" cy="15" r="7" fill="#9aa8c0" />
+            <path d="M26 15 L70 15" stroke="#9aa8c0" stroke-width="2" stroke-dasharray="6 6" fill="none" />
+            <path d="M42 24 L54 6" stroke="#eef2f8" stroke-width="3" stroke-linecap="round" fill="none" />
+          </svg>
+        </div>
+        <div id="arch-okbadge"><svg width="32" height="32" viewBox="0 0 34 34"><path id="arch-okpath" d="M7 18 L14 25 L27 9" /></svg></div>
+      </div>
+
+      <!-- EVIDENCE INDEX -->
+      <div class="arch-box" id="arch-b-evidence" style="left:440px;top:608px;width:770px;height:308px">
+        <div class="arch-hrow" id="arch-ev-hrow">
+          <span class="arch-h">Evidence index</span><span class="arch-chip" id="arch-ev-load">loaded at startup</span>
+        </div>
+        <div class="arch-count" id="arch-ev-count">
+          <span class="arch-count-n" id="arch-ev-n">0</span><span class="arch-mut" id="arch-ev-lab" style="font-size:22px">evidence records</span>
+        </div>
+        <div class="arch-chips arch-ev-chips">
+          <span class="arch-chip arch-chip-l arch-evc" data-k="0">inspections</span>
+          <span class="arch-chip arch-chip-l arch-evc" data-k="1">repairs</span>
+          <span class="arch-chip arch-chip-l arch-evc" data-k="2">repair reports</span>
+          <span class="arch-chip arch-chip-l arch-evc" data-k="4">notes</span>
+          <span class="arch-chip arch-chip-l arch-evc" data-k="5">regulator events</span>
+          <span class="arch-chip arch-chip-l arch-evc" data-k="3">manuals (T200, T350)</span>
+          <span class="arch-chip arch-chip-l arch-evc" data-k="6">SOPs</span>
+        </div>
+        <div class="arch-mut" id="arch-ev-rules" style="margin-top:12px">rules (thresholds, deadlines) read from the manuals &amp; SOPs</div>
+      </div>
+
+      <!-- MEMORY -->
+      <div class="arch-box" id="arch-b-memory" style="left:1250px;top:608px;width:610px;height:308px">
+        <div class="arch-hrow" id="arch-me-hrow">
+          <span class="arch-h">Memory</span><span class="arch-chip" id="arch-me-state">state.json · atomic saves</span>
+        </div>
+        <div class="arch-half" id="arch-me-shared" style="left:20px">
+          <div class="arch-h28 arch-me-head">Shared</div>
+          <div class="arch-chips">
+            <span class="arch-chip arch-mec">corrections</span><span class="arch-chip arch-mec">notes</span>
+            <span class="arch-chip arch-mec">unconfirmed claims</span>
+            <span class="arch-chip arch-mec">well-type rules</span>
+          </div>
+          <div class="arch-mut" id="arch-me-cap" style="margin-top:6px;line-height:24px">original + author<br />+ reason kept</div>
+        </div>
+        <div class="arch-half" id="arch-me-private" style="left:313px">
+          <div class="arch-h28 arch-me-head">Private</div>
+          <div class="arch-chips"><span class="arch-chip arch-mec2">per-user history</span></div>
+          <div class="arch-mut" id="arch-me-cap2" style="margin-top:8px;line-height:24px">planner sees only<br />that user's last 5</div>
+          <div class="arch-pips" id="arch-pips">
+            <i class="arch-pip"></i><i class="arch-pip"></i><i class="arch-pip"></i><i class="arch-pip"></i><i class="arch-pip"></i>
+          </div>
+        </div>
+        <div id="arch-split"></div>
+      </div>
+
+      <!-- WIRES -->
+      <svg id="arch-wires" width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="arch-bymask" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+            <path id="arch-bymaskpath" d="M390 726 L424 726 L424 332 L460 332" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+          </mask>
+        </defs>
+        <path class="arch-rail" id="arch-w1" d="M225 280 L225 316" />
+        <path class="arch-chev" id="arch-k1" d="M211 300 L225 316 L239 300" />
+        <path class="arch-rail" id="arch-w2" d="M225 586 L225 622" />
+        <path class="arch-chev" id="arch-k2" d="M211 606 L225 622 L239 606" />
+        <path class="arch-rail" id="arch-w3" d="M390 666 L408 666 L408 186 L460 186" />
+        <path class="arch-chev" id="arch-k3" d="M444 172 L460 186 L444 200" />
+        <path class="arch-rail" id="arch-w4" d="M1020 186 L1070 186" />
+        <path class="arch-chev" id="arch-k4" d="M1054 172 L1070 186 L1054 200" />
+        <path class="arch-rail" id="arch-w5" d="M1275 274 L1275 304" />
+        <path class="arch-chev" id="arch-k5" d="M1261 288 L1275 304 L1289 288" />
+        <path class="arch-rail" id="arch-w6" d="M1480 429 L1550 429" />
+        <path class="arch-chev" id="arch-k6" d="M1534 415 L1550 429 L1534 443" />
+        <path class="arch-rail" id="arch-w11" d="M390 850 L440 850" />
+        <path class="arch-chev" id="arch-k11" d="M424 836 L440 850 L424 864" />
+        <!-- router <-> evidence / memory -->
+        <path class="arch-rail" id="arch-s0" d="M700 554 L700 608" />
+        <path class="arch-chev" id="arch-s0a" d="M686 570 L700 554 L714 570" />
+        <path class="arch-chev" id="arch-s0b" d="M686 592 L700 608 L714 592" />
+        <path class="arch-rail" id="arch-s1" d="M990 554 L990 608" />
+        <path class="arch-chev" id="arch-s1a" d="M976 570 L990 554 L1004 570" />
+        <path class="arch-chev" id="arch-s1b" d="M976 592 L990 608 L1004 592" />
+        <path class="arch-rail" id="arch-s2" d="M1180 554 L1180 608" />
+        <path class="arch-chev" id="arch-s2a" d="M1166 570 L1180 554 L1194 570" />
+        <path class="arch-chev" id="arch-s2b" d="M1166 592 L1180 608 L1194 592" />
+        <path class="arch-rail" id="arch-s3" d="M1380 554 L1380 608" />
+        <path class="arch-chev" id="arch-s3a" d="M1366 570 L1380 554 L1394 570" />
+        <path class="arch-chev" id="arch-s3b" d="M1366 592 L1380 608 L1394 592" />
+        <!-- bypass -->
+        <path id="arch-bypass" d="M390 726 L424 726 L424 332 L460 332" mask="url(#arch-bymask)" />
+        <circle id="arch-bydot0" cx="390" cy="726" r="6" fill="#3d7bff" />
+        <circle id="arch-bydot1" cx="460" cy="332" r="6" fill="#3d7bff" />
+        <!-- pulses -->
+        <g id="arch-pa" transform="translate(225 280)" opacity="0">
+          <circle r="22" fill="#3d7bff" opacity="0.25" />
+          <circle r="9" fill="#eef2f8" />
+        </g>
+        <g id="arch-pb" transform="translate(225 280)" opacity="0">
+          <circle r="22" fill="#3d7bff" opacity="0.25" />
+          <circle r="9" fill="#eef2f8" />
+        </g>
+        <g id="arch-pc" transform="translate(225 280)" opacity="0">
+          <circle r="22" fill="#3d7bff" opacity="0.25" />
+          <circle r="9" fill="#eef2f8" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      window.__timelines["065-architecture"] = tl;
+      var $ = function (id) { return document.getElementById(id); };
+      var $$ = function (sel) { return document.querySelectorAll(sel); };
+      var ACC = "#3D7BFF", LINE = "#22324F";
+      var DUR = 38.7;
+
+      /* ================= CAMERA: one writer, phases + micro-drift ================= */
+      var world = $("arch-world"), grid = $("arch-grid");
+      var cam = { cx: 960, cy: 540, s: 1 };
+      var drift = { p: 0 }, amp = { a: 1 };
+      function render() {
+        var dx = Math.sin(drift.p) * 3 * amp.a;
+        var dy = Math.sin(drift.p * 1.3) * 2 * amp.a;
+        var tx = 960 - cam.cx * cam.s + dx;
+        var ty = 540 - cam.cy * cam.s + dy;
+        world.style.transform = "translate(" + tx.toFixed(2) + "px," + ty.toFixed(2) + "px) scale(" + cam.s.toFixed(4) + ")";
+        grid.style.backgroundPosition = (tx * 0.3).toFixed(1) + "px " + (ty * 0.3).toFixed(1) + "px";
+      }
+      render();
+      tl.to(drift, { p: Math.PI * 2 * 2.5, duration: DUR, ease: "none", onUpdate: render }, 0);
+      tl.to(amp, { a: 0, duration: 1.2, ease: "power2.out", onUpdate: render }, 33.4);
+      // establishing wireframe at scale 1 -> left cluster -> evidence -> core -> router -> memory -> pull-back
+      tl.to(cam, { cx: 400, cy: 480, s: 1.14, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 2.1);
+      tl.to(cam, { cx: 800, cy: 650, s: 1.3, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 5.5);
+      tl.to(cam, { cx: 975, cy: 316, s: 1.45, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 12.7);
+      tl.to(cam, { cx: 970, cy: 420, s: 1.55, duration: 1.3, ease: "expo.inOut", onUpdate: render }, 20.0);
+      tl.to(cam, { cx: 1480, cy: 660, s: 1.4, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 27.9);
+      tl.to(cam, { cx: 960, cy: 540, s: 1, duration: 1.6, ease: "power3.inOut", onUpdate: render }, 33.0);
+
+      /* ================= helpers ================= */
+      function prep(el) {
+        var L = 400;
+        try { L = el.getTotalLength(); } catch (e) {}
+        el.style.strokeDasharray = String(L);
+        el.style.strokeDashoffset = String(L);
+        return L;
+      }
+      function draw(el, at, d, ease) {
+        tl.to(el, { strokeDashoffset: 0, duration: d, ease: ease || "power2.out" }, at);
+      }
+      function rise(el, at, d, y) {
+        tl.fromTo(el, { opacity: 0, y: y == null ? 16 : y }, { opacity: 1, y: 0, duration: d || 0.5, ease: "power3.out" }, at);
+      }
+      function pop(el, at) {
+        tl.fromTo(el, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, at);
+      }
+      function shell(id, at, x) {
+        tl.fromTo($(id), { opacity: 0, y: 28, x: x || 0, scale: 0.97 }, { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.7, ease: "power3.out" }, at);
+      }
+      function ghostOut(id, at) {
+        tl.to($(id), { opacity: 0, duration: 0.4, ease: "power1.out" }, at);
+      }
+      function flash(id, at) {
+        var el = $(id);
+        tl.to(el, { borderColor: ACC, boxShadow: "0 0 50px rgba(61,123,255,0.35)", duration: 0.25, ease: "power2.out" }, at);
+        tl.to(el, { borderColor: LINE, boxShadow: "0 40px 60px rgba(7,13,25,0.6)", duration: 0.6, ease: "power2.inOut" }, at + 0.35);
+      }
+      // wire: draw rail then chevron(s)
+      function wire(n, at, d, chevs) {
+        var r = $("arch-" + n);
+        prep(r);
+        draw(r, at, d);
+        for (var i = 0; i < chevs.length; i++) {
+          var c = $("arch-" + chevs[i]);
+          prep(c);
+          draw(c, at + d * 0.7 + i * 0.05, 0.25);
+        }
+      }
+
+      /* pulse travelling along wires; hidden while "inside" a box */
+      function travel(gid, wid, at, dur, rev) {
+        var g = $(gid), p = $(wid), L = p.getTotalLength(), o = { u: 0 };
+        tl.set(g, { opacity: 1 }, at);
+        tl.to(o, { u: 1, duration: dur, ease: "power1.inOut", onUpdate: function () {
+          var pt = p.getPointAtLength((rev ? 1 - o.u : o.u) * L);
+          g.setAttribute("transform", "translate(" + pt.x.toFixed(1) + " " + pt.y.toFixed(1) + ")");
+        } }, at);
+        tl.set(g, { opacity: 0 }, at + dur);
+      }
+
+      /* ================= WIREFRAME SCAFFOLD (waterfall-entry, binary opacity, one direction) ================= */
+      var gh = ["users", "ui", "api", "core", "answer", "evidence", "memory"];
+      var gt = [0.12, 0.3, 0.46, 0.6, 0.72, 0.82, 0.9];
+      var gy = [70, 56, 50, 80, 56, 48, 44];
+      var gd = [0.3, 0.28, 0.26, 0.3, 0.24, 0.22, 0.22];
+      for (var i = 0; i < gh.length; i++) {
+        tl.set($("arch-g-" + gh[i]), { opacity: 1, y: gy[i] }, gt[i]);
+        tl.to($("arch-g-" + gh[i]), { y: 0, duration: gd[i], ease: "power4.out" }, gt[i]);
+      }
+      // initial hidden state of ghosts before their set (seek-safe)
+      for (var j = 0; j < gh.length; j++) tl.set($("arch-g-" + gh[j]), { opacity: 0 }, 0);
+
+      /* ================= ambience ================= */
+      var glow = $("arch-glow"), gp = { p: 0 };
+      tl.to(gp, { p: Math.PI * 2 * 4, duration: DUR, ease: "none", onUpdate: function () {
+        glow.style.opacity = String(0.14 + Math.sin(gp.p) * 0.04);
+      } }, 0);
+
+      /* ================= USERS + UI + API (2.1 - 5.6) ================= */
+      shell("arch-b-users", 2.05); ghostOut("arch-g-users", 2.2);
+      rise($("arch-users-h"), 2.3, 0.5, 12);
+      for (var u = 0; u < 3; u++) rise($("arch-u" + u), 2.4 + u * 0.14, 0.5, 14);
+      wire("w1", 2.75, 0.4, ["k1"]);
+      travel("arch-pa", "arch-w1", 2.8, 0.4);
+
+      shell("arch-b-ui", 2.8); ghostOut("arch-g-ui", 2.95);
+      rise($("arch-ui-h"), 2.95, 0.5, 12);
+      var uic = $$(".arch-uic"), uid = [3.25, 3.55, 3.4, 3.7];
+      for (var c = 0; c < uic.length; c++) pop(uic[c], uid[c]);
+      rise($("arch-ui-viz"), 3.95, 0.5, 10);
+      flash("arch-b-ui", 3.2);
+
+      wire("w2", 4.2, 0.4, ["k2"]);
+      travel("arch-pb", "arch-w2", 4.25, 0.4);
+      shell("arch-b-api", 4.55); ghostOut("arch-g-api", 4.7);
+      rise($("arch-api-h"), 4.7, 0.5, 12);
+      var apic = $$(".arch-apic");
+      for (var a = 0; a < apic.length; a++) pop(apic[a], 4.9 + a * 0.16);
+      rise($("arch-api-note"), 5.45, 0.5, 10);
+      flash("arch-b-api", 4.65);
+
+      /* ================= EVIDENCE INDEX (6.0 - 13) ================= */
+      wire("w11", 5.85, 0.4, ["k11"]);
+      travel("arch-pa", "arch-w11", 5.9, 0.4);
+      shell("arch-b-evidence", 6.1); ghostOut("arch-g-evidence", 6.25);
+      rise($("arch-ev-hrow"), 6.3, 0.5, 12);
+      var evc = $$(".arch-evc");
+      var evt = [7.06, 7.74, 8.21, 8.67, 9.27, 9.7, 10.0];
+      for (var e = 0; e < evc.length; e++) {
+        var k = parseInt(evc[e].getAttribute("data-k"), 10);
+        pop(evc[e], evt[k]);
+      }
+      flash("arch-b-evidence", 10.3);
+      // 47,177 count-up on "forty-seven thousand ... evidence"
+      var cn = $("arch-ev-n"), cs = { v: 0 };
+      function fmt(n) {
+        var s = String(Math.round(n)), out = "", cnt = 0;
+        for (var z = s.length - 1; z >= 0; z--) {
+          out = s.charAt(z) + out; cnt++;
+          if (cnt % 3 === 0 && z > 0) out = "," + out;
+        }
+        return out;
+      }
+      tl.fromTo($("arch-ev-count"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 10.55);
+      tl.to(cs, { v: 47177, duration: 1.9, ease: "power3.out", onUpdate: function () { cn.textContent = fmt(cs.v); } }, 10.7);
+      tl.fromTo(cn, { scale: 0.7 }, { scale: 1, duration: 1.9, ease: "power3.out" }, 10.7);
+      rise($("arch-ev-rules"), 12.75, 0.6, 10);
+
+      /* ================= CORE: PLANNER (12.9 - 18) ================= */
+      shell("arch-b-core", 12.85); ghostOut("arch-g-core", 13.0);
+      wire("w3", 13.05, 0.9, ["k3"]);
+      travel("arch-pb", "arch-w3", 13.1, 0.95);
+      shell("arch-b-planner", 13.45, 30);
+      rise($("arch-pl-h"), 13.8, 0.5, 12);
+      pop($("arch-pl-gem"), 14.85);
+      pop($("arch-pl-json"), 15.4);
+      tl.fromTo($("arch-pl-hero"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 16.0);
+      var n17 = $("arch-n17"), ps = { v: 0 };
+      tl.to(ps, { v: 17, duration: 1.3, ease: "power3.out", onUpdate: function () { n17.textContent = String(Math.round(ps.v)); } }, 16.45);
+      tl.fromTo(n17, { scale: 0.6 }, { scale: 1, duration: 1.3, ease: "power3.out" }, 16.45);
+      flash("arch-b-planner", 15.4);
+
+      /* ================= VALIDATOR (18.2 - 20.2) ================= */
+      wire("w4", 18.15, 0.4, ["k4"]);
+      travel("arch-pa", "arch-w4", 18.2, 0.4);
+      shell("arch-b-validator", 18.5, 30);
+      rise($("arch-va-h"), 18.75, 0.5, 12);
+      var vcs = $$(".arch-vc"), vks = $$(".arch-vk"), vls = $$(".arch-vl");
+      for (var v = 0; v < 3; v++) {
+        var vt = 19.0 + v * 0.32;
+        prep(vcs[v]); prep(vks[v]);
+        rise(vls[v], vt, 0.4, 8);
+        draw(vcs[v], vt, 0.4);
+        draw(vks[v], vt + 0.25, 0.3);
+      }
+      flash("arch-b-validator", 19.9);
+
+      /* ================= ROUTER + BYPASS (20.2 - 28) ================= */
+      wire("w5", 20.2, 0.35, ["k5"]);
+      travel("arch-pb", "arch-w5", 20.2, 0.35);
+      shell("arch-b-router", 20.45);
+      rise($("arch-ro-h"), 20.75, 0.5, 12);
+      // dashed bypass (masked solid draw reveals the dash pattern)
+      var bym = $("arch-bymaskpath");
+      prep(bym);
+      draw(bym, 20.95, 0.9, "power2.inOut");
+      tl.fromTo([$("arch-bydot0"), $("arch-bydot1")], { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.35, ease: "power3.out" }, 20.95);
+      rise($("arch-bylab"), 21.45, 0.5, 10);
+      var bypass = $("arch-bypass");
+      travel("arch-pa", "arch-bypass", 21.0, 0.85);
+
+      // lane 1 — deterministic tools
+      shell("arch-l1", 21.9);
+      var l1c = $$(".arch-l1c");
+      for (var q = 0; q < l1c.length; q++) pop(l1c[q], 22.3 + q * 0.17);
+      wire("s0", 23.1, 0.35, ["s0a", "s0b"]);
+      travel("arch-pb", "arch-s0", 23.15, 0.4);
+      // lane 2 — records aggregator
+      shell("arch-l2", 23.7);
+      var l2c = $$(".arch-l2c");
+      for (var r = 0; r < l2c.length; r++) pop(l2c[r], 24.15 + r * 0.22);
+      wire("s1", 24.85, 0.35, ["s1a", "s1b"]);
+      travel("arch-pa", "arch-s1", 24.9, 0.4);
+      // lane 3 — grounded document retrieval
+      shell("arch-l3", 25.55);
+      var l3c = $$(".arch-l3c");
+      pop(l3c[0], 25.95);
+      pop(l3c[1], 26.6);
+      var l3t = $$(".arch-l3t");
+      rise(l3t[0], 27.0, 0.5, 8);
+      rise(l3t[1], 27.3, 0.5, 8);
+      wire("s2", 27.1, 0.35, ["s2a", "s2b"]);
+      travel("arch-pb", "arch-s2", 27.15, 0.4);
+
+      /* ================= MEMORY (28.3 - 33) ================= */
+      wire("s3", 28.45, 0.35, ["s3a", "s3b"]);
+      travel("arch-pa", "arch-s3", 28.5, 0.4);
+      shell("arch-b-memory", 28.4); ghostOut("arch-g-memory", 28.55);
+      rise($("arch-me-hrow"), 28.7, 0.5, 12);
+      shell("arch-me-shared", 29.45);
+      var mec = $$(".arch-mec"), met = [30.02, 30.28, 30.54, 30.8];
+      for (var m = 0; m < mec.length; m++) pop(mec[m], met[m]);
+      rise($("arch-me-cap"), 31.0, 0.5, 8);
+      shell("arch-me-private", 31.05);
+      pop($$(".arch-mec2")[0], 31.65);
+      rise($("arch-me-cap2"), 31.95, 0.5, 8);
+      var pips = $$(".arch-pip");
+      for (var pp = 0; pp < pips.length; pp++) {
+        tl.fromTo(pips[pp], { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, 32.1 + pp * 0.09);
+      }
+      tl.fromTo($("arch-split"), { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.5, ease: "power3.out" }, 32.55);
+      flash("arch-b-memory", 32.9);
+
+      /* ================= ANSWER (33.2 - 34.7) — whole map built by 34.7 ================= */
+      wire("w6", 33.2, 0.35, ["k6"]);
+      travel("arch-pb", "arch-w6", 33.2, 0.4);
+      shell("arch-b-answer", 33.5); ghostOut("arch-g-answer", 33.65);
+      rise($("arch-an-h"), 33.8, 0.5, 12);
+      var arT = [34.0, 34.2, 34.4, 34.6];
+      for (var w = 0; w < 4; w++) tl.fromTo($("arch-ar" + w), { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, arT[w]);
+      var bars = $$(".arch-bar");
+      for (var b = 0; b < bars.length; b++) tl.fromTo(bars[b], { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 34.1 + b * 0.08);
+      var vbs = $$(".arch-vb");
+      for (var vv = 0; vv < vbs.length; vv++) tl.fromTo(vbs[vv], { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power3.out" }, 34.3 + vv * 0.06);
+      var cites = $$(".arch-cite");
+      pop(cites[0], 34.5); pop(cites[1], 34.65);
+      tl.fromTo($("arch-okbadge"), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 34.7);
+      var okp = $("arch-okpath");
+      prep(okp);
+      draw(okp, 34.85, 0.4);
+
+      // VO-synced spotlight on the answer rows during the hold: visual / sources / conflicts
+      function spot(id, at) {
+        tl.to($(id), { backgroundColor: "rgba(61,123,255,0.14)", duration: 0.25, ease: "power2.out" }, at);
+        tl.to($(id), { backgroundColor: "rgba(61,123,255,0)", duration: 0.7, ease: "power2.inOut" }, at + 0.5);
+      }
+      spot("arch-ar1", 35.17);
+      spot("arch-ar2", 35.94);
+      spot("arch-ar3", 37.01);
+
+      /* ================= FINAL HOLD: data pulse loops the full path ================= */
+      // pass A: users -> UI -> API -> planner -> validator -> router -> answer
+      function pass(g, t0, k) {
+        var sp = [["arch-w1", 0.3], ["arch-w2", 0.3], ["arch-w3", 0.75], ["arch-w4", 0.28], ["arch-w5", 0.24], ["arch-w6", 0.3]];
+        var t = t0, boxes = ["arch-b-ui", "arch-b-api", "arch-b-planner", "arch-b-validator", "arch-b-router", "arch-b-answer"];
+        for (var s = 0; s < sp.length; s++) {
+          travel(g, sp[s][0], t, sp[s][1] * k);
+          flash(boxes[s], t + sp[s][1] * k);
+          t += sp[s][1] * k + 0.1 * k;
+        }
+        return t;
+      }
+      pass("arch-pa", 34.9, 0.8);
+      // second pulse starts the loop again while a third visits evidence + memory
+      pass("arch-pb", 36.4, 0.8);
+      travel("arch-pc", "arch-s0", 35.9, 0.4);
+      travel("arch-pc", "arch-s2", 36.5, 0.4, true);
+      travel("arch-pc", "arch-s3", 37.2, 0.4);
+
+      // keep the timeline spanning the full scene
+      tl.to({}, { duration: 0.01 }, DUR - 0.01);
+      render();
+    })();
+  </script>
+</template>

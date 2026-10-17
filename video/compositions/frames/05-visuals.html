@@ -1,0 +1,241 @@
+<template>
+  <style>
+
+    #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; font-family: "Montserrat", sans-serif; color: #EEF2F8; }
+    .clip { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    .v-bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(34,50,79,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(34,50,79,0.35) 1px, transparent 1px); background-size: 48px 48px; }
+    .v-bg-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(10,18,34,0) 40%, rgba(7,13,25,0.85) 100%); }
+    .v-bg-glow { position: absolute; left: 360px; top: 150px; width: 1200px; height: 800px; border-radius: 50%; background: radial-gradient(closest-side, rgba(61,123,255,0.22), rgba(61,123,255,0)); opacity: 0.6; }
+    .v-ghost { position: absolute; font-family: "IBM Plex Mono", monospace; font-size: 30px; color: #3D7BFF; opacity: 0.06; letter-spacing: 0.04em; white-space: nowrap; }
+
+    #v-cam { position: absolute; inset: 0; transform-origin: 50% 45%; }
+    #v-world { position: absolute; inset: 0; perspective: 1900px; perspective-origin: 50% 50%; }
+
+    .v-panel { position: absolute; width: 820px; height: 330px; border-radius: 22px; background: rgba(17,28,51,0.55); border: 1px solid #22324F; z-index: 0; }
+    .v-glabel { position: absolute; left: 26px; top: 16px; font-family: "IBM Plex Mono", monospace; font-size: 24px; color: #9AA8C0; white-space: nowrap; display: flex; align-items: center; gap: 12px; }
+    .v-glabel i { display: block; width: 10px; height: 10px; border-radius: 50%; background: #3D7BFF; }
+
+    .v-slot { position: absolute; transform-origin: 50% 50%; will-change: transform; }
+    .v-card { position: absolute; left: 0; top: 0; border-radius: 22px; overflow: hidden; box-shadow: 0 40px 60px rgba(0,0,0,0.45); border: 1px solid #22324F; background: #fff; clip-path: inset(0% 0% 0% 0% round 22px); }
+    .v-card img { display: block; width: 100%; height: 100%; }
+    .v-ov { position: absolute; left: 0; top: 0; }
+    .v-ov svg { position: absolute; left: 0; top: 0; overflow: visible; }
+
+    .v-label { position: absolute; width: 1000px; text-align: center; font-family: "IBM Plex Mono", monospace; font-size: 27px; font-weight: 500; color: #EEF2F8; white-space: nowrap; z-index: 40; }
+    .v-label span { display: inline-flex; align-items: center; gap: 14px; padding: 10px 22px; border-radius: 999px; background: rgba(17,28,51,0.85); border: 1px solid rgba(61,123,255,0.45); }
+    .v-label span i { display: block; width: 10px; height: 10px; border-radius: 50%; background: #3D7BFF; }
+
+    .v-chip { position: absolute; font-family: "IBM Plex Mono", monospace; font-size: 22px; line-height: 1.25; padding: 12px 18px; border-radius: 16px; border: 1px solid rgba(61,123,255,0.45); background: rgba(14,26,52,0.92); color: #EEF2F8; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .v-chip b { display: block; font-weight: 600; font-size: 22px; letter-spacing: 0.06em; color: #6FA0FF; }
+    .v-chip.amber { border-color: rgba(242,163,58,0.6); background: rgba(40,28,14,0.92); }
+    .v-chip.amber b { color: #F2A33A; }
+    .v-th { fill: none; stroke: #3D7BFF; stroke-width: 2; stroke-linecap: round; }
+    .v-th.amber { stroke: #F2A33A; }
+    .v-fr { fill: none; stroke: #3D7BFF; stroke-width: 2.5; stroke-linejoin: round; }
+    .v-ring { fill: none; stroke: #F2A33A; stroke-width: 3; }
+    .v-ring.blue { stroke: #3D7BFF; }
+
+    #v-head { position: absolute; left: 0; width: 1920px; top: 78px; text-align: center; font-weight: 800; font-size: 88px; letter-spacing: -0.035em; line-height: 1.1; z-index: 60; white-space: nowrap; }
+    #v-head .w { display: inline-block; margin: 0 0.14em; }
+  </style>
+
+  <div data-hf-id="hf-7lbw" id="root" data-composition-id="05-visuals" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-om88" class="clip v-bg" id="v-bg" data-start="0" data-duration="14.5" data-track-index="0">
+      <div data-hf-id="hf-jrsf" class="v-bg-grid"></div>
+      <div data-hf-id="hf-kth6" class="v-bg-glow" id="v-glow"></div>
+      <div data-hf-id="hf-3e39" class="v-ghost" id="v-g1" style="left:90px; top:960px;">INS-0001-0203</div>
+      <div data-hf-id="hf-mvxr" class="v-ghost" id="v-g2" style="left:1380px; top:60px;">MNT-0151-025</div>
+      <div data-hf-id="hf-x6us" class="v-ghost" id="v-g3" style="left:1500px; top:960px;">CTX-0101-003</div>
+      <div data-hf-id="hf-3vs5" class="v-bg-vignette"></div>
+    </div>
+
+    <div data-hf-id="hf-phe3" id="v-cam">
+      <div data-hf-id="hf-1i9u" id="v-world">
+        <!-- grid panels (end beat) -->
+        <div data-hf-id="hf-vjl1" class="v-panel" id="v-pn0" style="left:120px; top:215px;"><div data-hf-id="hf-66vi" class="v-glabel"><i data-hf-id="hf-wt6k"></i>WELL-0001 · temperature vs air · last 13 weeks</div></div>
+        <div data-hf-id="hf-fyyk" class="v-panel" id="v-pn1" style="left:980px; top:215px;"><div data-hf-id="hf-h18d" class="v-glabel"><i data-hf-id="hf-zeb8"></i>Northeast Block 7 · most downtime · last 4 months</div></div>
+        <div data-hf-id="hf-bdow" class="v-panel" id="v-pn2" style="left:120px; top:575px;"><div data-hf-id="hf-t2k0" class="v-glabel"><i data-hf-id="hf-y7e5"></i>Northeast Block 8 · real spills · 90 days</div></div>
+        <div data-hf-id="hf-mcjp" class="v-panel" id="v-pn3" style="left:980px; top:575px;"><div data-hf-id="hf-on6m" class="v-glabel"><i data-hf-id="hf-ylp6"></i>2026 spills · area × month</div></div>
+
+        <!-- line chart: slot 980x568 at left 410 top 271 -->
+        <div data-hf-id="hf-ug1x" class="v-slot" id="v-s0" style="left:410px; top:271px; width:980px; height:568px; z-index:2;">
+          <div data-hf-id="hf-tgkm" class="v-card" id="v-c0" style="width:980px; height:568px;"><img data-hf-id="hf-0qfc" src="assets/ui/05-line-chart-visual.png" alt="line chart" /></div>
+          <div data-hf-id="hf-l010" class="v-ov" id="v-o0">
+            <svg data-hf-id="hf-1t5t" width="980" height="568">
+              <circle data-hf-id="hf-q64i" class="v-ring" id="v-r0a" cx="870" cy="240" r="16" />
+              <circle data-hf-id="hf-fe9r" class="v-ring" id="v-r0b" cx="943" cy="234" r="16" />
+              <path data-hf-id="hf-27eq" class="v-th amber" id="v-t0" d="M880 240 L1016 236" />
+            </svg>
+            <div data-hf-id="hf-jcjh" class="v-chip" id="v-k0a" style="left:1020px; top:100px;"><b data-hf-id="hf-x10a">13 READINGS</b>wellhead vs air</div>
+            <div data-hf-id="hf-th89" class="v-chip amber" id="v-k0b" style="left:1018px; top:190px;"><b data-hf-id="hf-uqj9">NOT PRODUCING</b>8 OCT · 15 OCT</div>
+          </div>
+        </div>
+
+        <!-- bar chart: slot 980x483 at left 410 top 313 -->
+        <div data-hf-id="hf-adp2" class="v-slot" id="v-s1" style="left:410px; top:313px; width:980px; height:483px; z-index:3;">
+          <div data-hf-id="hf-wn4h" class="v-card" id="v-c1" style="width:980px; height:483px;"><img data-hf-id="hf-n2dj" src="assets/ui/06-bar-chart-visual.png" alt="bar chart" /></div>
+          <div data-hf-id="hf-nzal" class="v-ov" id="v-o1">
+            <svg data-hf-id="hf-i1p9" width="980" height="483">
+              <rect data-hf-id="hf-h5fy" class="v-fr" id="v-f1" x="16" y="118" width="940" height="226" rx="12" />
+              <path data-hf-id="hf-8eke" class="v-th" id="v-t1" d="M958 157 L1016 150" />
+            </svg>
+            <div data-hf-id="hf-yes4" class="v-chip" id="v-k1" style="left:1018px; top:96px;"><b data-hf-id="hf-zijq">DAYS DOWN</b>49 · 42 · 42</div>
+          </div>
+        </div>
+
+        <!-- map: slot 620x581 at left 590 top 265 -->
+        <div data-hf-id="hf-ypjr" class="v-slot" id="v-s2" style="left:590px; top:265px; width:620px; height:581px; z-index:4;">
+          <div data-hf-id="hf-2v1y" class="v-card" id="v-c2" style="width:620px; height:581px;"><img data-hf-id="hf-dg84" src="assets/ui/07-map-visual.png" alt="coordinate plot of spill wells" /></div>
+          <div data-hf-id="hf-rxem" class="v-ov" id="v-o2">
+            <svg data-hf-id="hf-boij" width="620" height="581">
+              <rect data-hf-id="hf-3zxy" class="v-fr" id="v-f2" x="10" y="42" width="599" height="337" rx="12" />
+              <circle data-hf-id="hf-ard2" class="v-ring blue" id="v-r2a" cx="170" cy="91" r="20" />
+              <circle data-hf-id="hf-27s7" class="v-ring blue" id="v-r2b" cx="484" cy="73" r="20" />
+              <circle data-hf-id="hf-gdmr" class="v-ring blue" id="v-r2c" cx="512" cy="164" r="20" />
+              <circle data-hf-id="hf-t3w8" class="v-ring blue" id="v-r2d" cx="100" cy="297" r="20" />
+              <path data-hf-id="hf-ntin" class="v-th" id="v-t2" d="M612 210 L664 210" />
+            </svg>
+            <div data-hf-id="hf-lipr" class="v-chip" id="v-k2" style="left:666px; top:168px;"><b data-hf-id="hf-2efe">4 WELLS</b>recorded coordinates</div>
+          </div>
+        </div>
+
+        <!-- heatmap: slot 1180x373 at left 210 top 368 -->
+        <div data-hf-id="hf-qanj" class="v-slot" id="v-s3" style="left:210px; top:368px; width:1180px; height:373px; z-index:5;">
+          <div data-hf-id="hf-2pg8" class="v-card" id="v-c3" style="width:1180px; height:373px;"><img data-hf-id="hf-sa0y" src="assets/ui/08-heatmap-visual.png" alt="heatmap" /></div>
+          <div data-hf-id="hf-vvin" class="v-ov" id="v-o3">
+            <svg data-hf-id="hf-5tdk" width="1180" height="373">
+              <rect data-hf-id="hf-gnpl" class="v-fr" id="v-f3" x="327" y="170" width="758" height="198" rx="8" />
+              <path data-hf-id="hf-guew" class="v-th" id="v-t3" d="M1088 270 L1214 270" />
+            </svg>
+            <div data-hf-id="hf-sxud" class="v-chip" id="v-k3" style="left:1218px; top:228px;"><b data-hf-id="hf-gjy1">4 AREAS</b>× 10 MONTHS</div>
+          </div>
+        </div>
+
+        <!-- stage labels -->
+        <div data-hf-id="hf-6r76" class="v-label" id="v-l0" style="left:400px; top:200px;"><span data-hf-id="hf-ri5z"><i data-hf-id="hf-0l8b"></i>WELL-0001 · temperature vs air · last 13 weeks</span></div>
+        <div data-hf-id="hf-pmo0" class="v-label" id="v-l1" style="left:400px; top:243px;"><span data-hf-id="hf-r6y2"><i data-hf-id="hf-0zjc"></i>Northeast Block 7 · most downtime · last 4 months</span></div>
+        <div data-hf-id="hf-l3cq" class="v-label" id="v-l2" style="left:400px; top:192px;"><span data-hf-id="hf-64vj"><i data-hf-id="hf-zsm9"></i>Northeast Block 8 · real spills · 90 days</span></div>
+        <div data-hf-id="hf-mupd" class="v-label" id="v-l3" style="left:300px; top:294px;"><span data-hf-id="hf-vkc3"><i data-hf-id="hf-06xa"></i>2026 spills · area × month</span></div>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-19ok" id="v-head"><span data-hf-id="hf-71ll" class="w">Generated</span><span data-hf-id="hf-eyfb" class="w">for</span><span data-hf-id="hf-9o0j" class="w">the</span><span data-hf-id="hf-p9fi" class="w">question.</span></div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    const $ = (s) => document.querySelector(s);
+
+    // ---- stage geometry -------------------------------------------------
+    const C = [
+      { W: 980,  H: 568, cx: 900, cy: 555, crop: 0.61, tw: 700, gx: 530,  gy: 400, tIn: 0.10, dur: 0.85 },
+      { W: 980,  H: 483, cx: 900, cy: 555, crop: 0.79, tw: 600, gx: 1390, gy: 400, tIn: 3.55, dur: 0.95 },
+      { W: 620,  H: 581, cx: 900, cy: 555, crop: 0.655, tw: 407, gx: 530, gy: 760, tIn: 5.90, dur: 0.95 },
+      { W: 1180, H: 373, cx: 800, cy: 555, crop: 1.0,  tw: 780, gx: 1390, gy: 760, tIn: 8.00, dur: 0.90 },
+    ];
+    // recede ages: [apparent width, centre x, centre y, opacity]
+    const AGE = [[440, 270, 590, 0.6], [350, 175, 545, 0.34], [270, 105, 500, 0.2]];
+    
+    C.forEach((c, i) => {
+      const slot = $("#v-s" + i);
+      gsap.set(slot, { x: 640, y: 0, z: -420, rotationY: -70, scale: 0.8, opacity: 0 });
+    });
+    gsap.set(["#v-l0", "#v-l1", "#v-l2", "#v-l3"], { opacity: 0 });
+    gsap.set(["#v-k0a", "#v-k0b", "#v-k1", "#v-k2", "#v-k3"], { opacity: 0, scale: 0.85, transformOrigin: "0% 50%" });
+    gsap.set([".v-ring"], { opacity: 0, transformOrigin: "50% 50%" });
+    gsap.set([".v-panel"], { opacity: 0, scale: 0.96 });
+    gsap.set("#v-head .w", { opacity: 0, y: 40, filter: "blur(10px)" });
+
+    // measure every svg stroke for the draw-on (evidence threads + frames)
+    const draws = ["#v-t0", "#v-t1", "#v-t2", "#v-t3", "#v-f1", "#v-f2", "#v-f3"];
+    draws.forEach((s) => {
+      const p = $(s); const len = Math.ceil(p.getTotalLength ? p.getTotalLength() : 600) + 2;
+      p.style.strokeDasharray = len; p.style.strokeDashoffset = len; p.dataset.len = len;
+    });
+    const draw = (sel, at, d, ease) => tl.fromTo(sel, { strokeDashoffset: (i, el) => Number(el.dataset.len) }, { strokeDashoffset: 0, duration: d, ease: ease || "power2.out" }, at);
+    const pulse = (sel, at, n) => {
+      for (let k = 0; k < n; k++) {
+        tl.fromTo(sel, { scale: 0.7, opacity: 0.95 }, { scale: 2.6, opacity: 0, duration: 0.9, ease: "power2.out", immediateRender: false }, at + k * 0.5);
+      }
+    };
+
+    // ---- ambient ---------------------------------------------------------
+    tl.fromTo("#v-glow", { opacity: 0.45, scale: 0.95 }, { opacity: 0.8, scale: 1.08, duration: 7, ease: "sine.inOut" }, 0);
+    tl.to("#v-glow", { opacity: 0.55, scale: 1.0, duration: 7.5, ease: "sine.inOut" }, 7);
+    tl.fromTo("#v-g1", { x: 0 }, { x: 140, duration: 14.5, ease: "none" }, 0);
+    tl.fromTo("#v-g2", { x: 0 }, { x: -160, duration: 14.5, ease: "none" }, 0);
+    tl.fromTo("#v-g3", { x: 0 }, { x: -120, duration: 14.5, ease: "none" }, 0);
+
+    // camera: slow push, then relax into the grid, then breathe on the hold
+    tl.fromTo("#v-cam", { scale: 1 }, { scale: 1.04, duration: 9.8, ease: "none" }, 0);
+    tl.to("#v-cam", { scale: 1, duration: 1.0, ease: "power2.inOut" }, 9.85);
+    tl.to("#v-cam", { scale: 1.03, duration: 3.65, ease: "none" }, 10.85);
+
+    // ---- card entries (orbit-3d-entry flip, settle with slight tilt) ----------
+    C.forEach((c, i) => {
+      const slot = "#v-s" + i;
+      tl.to(slot, { opacity: 1, duration: 0.35, ease: "power1.out" }, c.tIn);
+      tl.to(slot, { x: 0, y: 0, z: 0, rotationY: -4, scale: 1, duration: c.dur, ease: "back.out(1.25)" }, c.tIn);
+      // question label lands with the card
+      tl.fromTo("#v-l" + i, { opacity: 0, y: 14, clipPath: "inset(0% 100% 0% 0%)" }, { opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0%)", duration: 0.55, ease: "power3.out" }, c.tIn + 0.3);
+    });
+
+    // ---- recede into the stack (split-tilt: older windows turn to face the hero) ----
+    const FADE = ["#v-k0a, #v-k0b, #v-t0", "#v-k1, #v-t1, #v-f1", "#v-k2, #v-t2, #v-f2"];
+    for (let n = 1; n < 4; n++) {
+      const t = C[n].tIn;
+      for (let j = 0; j < n; j++) {
+        const age = n - j, c = C[j];
+        const [aw, ax, ay, ao] = AGE[age - 1];
+        tl.to("#v-s" + j, { x: ax - c.cx, y: ay - c.cy, z: -200 - 60 * age, rotationY: 30 + 4 * age, scale: aw / c.W, opacity: ao, duration: 0.95, ease: "power3.inOut" }, t);
+      }
+      tl.to(FADE[n - 1] + ", #v-l" + (n - 1), { opacity: 0, duration: 0.3, ease: "power1.in" }, t - 0.05);
+    }
+
+    // ---- callouts: evidence threads + pulses, on the voice cues ---------------
+    // line chart: lands on "line chart" (~2.5s)
+    tl.to("#v-k0a", { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 2.55);
+    pulse("#v-r0a", 2.55, 2); pulse("#v-r0b", 2.65, 2);
+    draw("#v-t0", 2.75, 0.6);
+    tl.to("#v-k0b", { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 3.2);
+    // bar chart: lands on "bar chart" (~4.5-5.1s)
+    draw("#v-f1", 4.5, 0.7);
+    draw("#v-t1", 5.05, 0.4);
+    tl.to("#v-k1", { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 5.3);
+    // map: pins pulse, coordinate frame draws (it is a coordinate plot, not a basemap)
+    draw("#v-f2", 6.85, 0.7);
+    ["#v-r2a", "#v-r2b", "#v-r2c", "#v-r2d"].forEach((s, k) => pulse(s, 7.0 + k * 0.18, 1));
+    draw("#v-t2", 7.35, 0.35);
+    tl.to("#v-k2", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 7.55);
+    // heatmap: lands on "heatmap" (~8.4-9s)
+    draw("#v-f3", 8.75, 0.7);
+    draw("#v-t3", 9.2, 0.3);
+    tl.to("#v-k3", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 9.35);
+
+    // ---- end beat: all four fan out to the 2x2 grid (card-morph-anchor: uniform scale + crop) ----
+    const GT = 9.85;
+    tl.to("#v-k3, #v-f3, #v-t3, #v-l3", { opacity: 0, duration: 0.3, ease: "power1.in" }, GT - 0.1);
+    tl.to(".v-panel", { opacity: 1, scale: 1, duration: 0.7, ease: "power3.out", stagger: 0.07 }, GT + 0.25);
+    C.forEach((c, i) => {
+      const s = c.tw / c.W;
+      const vy = (c.crop / 2 - 0.5) * c.H;                 // visible-centre offset inside the natural card
+      const x = c.gx - c.cx, y = (c.gy - s * vy) - c.cy;
+      const tx = GT + i * 0.07;
+      tl.to("#v-s" + i, { x, y, z: 0, rotationY: 0, scale: s, opacity: 1, duration: 1.05, ease: "expo.inOut" }, tx);
+      tl.fromTo("#v-c" + i, { clipPath: "inset(0% 0% 0% 0% round 22px)" }, { clipPath: "inset(0% 0% " + ((1 - c.crop) * 100) + "% 0% round " + (20 / s) + "px)", duration: 1.05, ease: "expo.inOut" }, tx);
+      // slow float on the hold (counter-phase)
+      const dir = i % 2 ? -1 : 1;
+      tl.to("#v-s" + i, { y: y - 5 * dir, duration: 1.4, ease: "sine.inOut" }, 11.4 + i * 0.05);
+      tl.to("#v-s" + i, { y: y + 4 * dir, duration: 1.6, ease: "sine.inOut" }, 12.8 + i * 0.05);
+    });
+    // headline lands on "the question"
+    tl.to("#v-head .w", { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "power3.out", stagger: 0.11 }, 10.35);
+    // living hold: pulses on the real amber dots / pins inside the scaled grid cards
+    pulse("#v-r0a", 11.9, 3); pulse("#v-r0b", 12.0, 3);
+    ["#v-r2a", "#v-r2b", "#v-r2c", "#v-r2d"].forEach((s, k) => pulse(s, 12.1 + k * 0.2, 2));
+    tl.to(["#v-r0a", "#v-r0b"], { opacity: 0, duration: 0.01 }, 14.4);
+
+    window.__timelines["05-visuals"] = tl;
+  </script>
+</template>

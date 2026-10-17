@@ -1,0 +1,19 @@
+{
+  "scene": "04-ask",
+  "duration_s": 26,
+  "rules": [
+    "context-sensitive-cursor",
+    "cursor-click-ripple",
+    "coordinate-target-zoom",
+    "svg-path-draw",
+    "prompt-type-submit-generate"
+  ],
+  "exit": {
+    "vector": "camera push eases to rest at t=26 (sine.inOut, ~0 px/s); only ambient drift remains: ghost mono IDs up ~1.8 px/s, grid down-right ~1.8 px/s, glow breathing",
+    "still_moving": true
+  },
+  "entry": {
+    "vector": "ui-frame rises upward ~320 px/s at t=0 (150px power3.out over 1.4s) with rotateX 15deg settling to flat, fading in over 0.45s",
+    "from_rest": false
+  }
+}

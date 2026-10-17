@@ -1,0 +1,752 @@
+{
+  "q": "Q4",
+  "turn": 1,
+  "asker": "Dalton",
+  "userId": "U-402",
+  "question": "Across all areas, which temporary flowline bypasses are in place right now, and is each one allowed? Also list any bypass, past or present, that stayed in after its approval ran out or was never approved at all.",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 11006
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 11006,
+  "response": {
+    "userId": "U-402",
+    "response": {
+      "answer": "12 temporary flowline bypasses found in the operator notes (3 in place now on 2027-01-15, 9 removed).\nIn place now: WELL-0249 (Southeast Block 31, Expired, valid until 15 Dec 2026; still in place 31 days past expiry (not extended)); WELL-0405 (Northwest Block 12, Not approved; well is named in no MOC memo); WELL-0248 (Southeast Block 31, Allowed, valid until 28 Feb 2027; expires in 44 days). 2 of these 3 are violations (WELL-0249 expired, WELL-0405 not approved).\nPast violations (removed, but overstayed their approval or were never approved): WELL-0158 (Northeast Block 8, Expired, valid until 15 Dec 2026; stayed in 13 days past expiry (not extended)); WELL-0087 (Southwest Block 24, Expired, valid until 15 Dec 2026; stayed in 22 days past expiry (not extended)); WELL-0561 (Southeast Block 32, Not approved; well is named in no MOC memo).\nPast bypasses that stayed within their approval: WELL-0476, WELL-0062, WELL-0013, WELL-0284, WELL-0461, WELL-0356.\nTotal violations: 5 of 12. Rule: a bypass needs a non-expired MOC naming the well; an extension memo replaces the expiry of the memo it extends, and expiry is the end of that day.",
+      "visualization": {
+        "type": "table",
+        "title": "Temporary flowline bypasses and MOC approval",
+        "columns": [
+          "Well",
+          "Area",
+          "Bypass in",
+          "Bypass out",
+          "Approval",
+          "Approval valid until",
+          "Status"
+        ],
+        "rows": [
+          [
+            "WELL-0249",
+            "Southeast Block 31",
+            "2026-11-25",
+            "still in",
+            "MOC-2026-036",
+            "15 Dec 2026",
+            "Expired (in place now)"
+          ],
+          [
+            "WELL-0405",
+            "Northwest Block 12",
+            "2026-12-20",
+            "still in",
+            "none",
+            "n/a",
+            "Not approved (in place now)"
+          ],
+          [
+            "WELL-0248",
+            "Southeast Block 31",
+            "2026-11-05",
+            "still in",
+            "MOC-2026-031, extended by MOC-2026-044",
+            "28 Feb 2027",
+            "Allowed (in place now)"
+          ],
+          [
+            "WELL-0158",
+            "Northeast Block 8",
+            "2026-11-20",
+            "2026-12-28",
+            "MOC-2026-036",
+            "15 Dec 2026",
+            "Expired (past violation)"
+          ],
+          [
+            "WELL-0087",
+            "Southwest Block 24",
+            "2026-12-02",
+            "2027-01-06",
+            "MOC-2026-036",
+            "15 Dec 2026",
+            "Expired (past violation)"
+          ],
+          [
+            "WELL-0561",
+            "Southeast Block 32",
+            "2026-12-08",
+            "2026-12-19",
+            "none",
+            "n/a",
+            "Not approved (past violation)"
+          ],
+          [
+            "WELL-0476",
+            "Southeast Block 32",
+            "2026-10-22",
+            "2026-11-18",
+            "MOC-2026-031, extended by MOC-2026-044",
+            "28 Feb 2027",
+            "Allowed"
+          ],
+          [
+            "WELL-0062",
+            "Southwest Block 24",
+            "2026-11-02",
+            "2026-11-27",
+            "MOC-2026-031, extended by MOC-2026-044",
+            "28 Feb 2027",
+            "Allowed"
+          ],
+          [
+            "WELL-0013",
+            "Southwest Block 23",
+            "2026-11-10",
+            "2027-01-08",
+            "MOC-2026-031, extended by MOC-2026-044",
+            "28 Feb 2027",
+            "Allowed"
+          ],
+          [
+            "WELL-0284",
+            "Southwest Block 24",
+            "2026-11-12",
+            "2026-12-10",
+            "MOC-2026-036",
+            "15 Dec 2026",
+            "Allowed"
+          ],
+          [
+            "WELL-0461",
+            "Southeast Block 32",
+            "2026-11-14",
+            "2026-12-12",
+            "MOC-2026-036",
+            "15 Dec 2026",
+            "Allowed"
+          ],
+          [
+            "WELL-0356",
+            "Northwest Block 12",
+            "2026-11-18",
+            "2026-12-05",
+            "MOC-2026-036",
+            "15 Dec 2026",
+            "Allowed"
+          ]
+        ]
+      },
+      "citations": [
+        {
+          "id": "CTX-0249-002",
+          "title": "Operator note · CTX-0249-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0249/context.jsonl",
+          "excerpt": "asset id: WELL-0249 · created at: 2026-11-25T10:25:00Z · author user id: U-504 · note type: operator_note · text: Bypass installed on WELL-0249 flowline around the leaking check valve. · valid from: 2026-11-25 · note id: CTX-0249-002",
+          "assetId": "WELL-0249"
+        },
+        {
+          "id": "MOC-2026-036",
+          "title": "moc 2026 036",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-036.md",
+          "excerpt": "- Effective from 10 Nov 2026. - The bypass is checked on every daily round and recorded as an operator note on the well when it is put in and when it is taken out."
+        },
+        {
+          "id": "CTX-0405-003",
+          "title": "Operator note · CTX-0405-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0405/context.jsonl",
+          "excerpt": "asset id: WELL-0405 · created at: 2026-12-20T10:15:00Z · author user id: U-604 · note type: operator_note · text: Put the bypass in at WELL-0405 so the flowline can stay in service. · valid from: 2026-12-20 · note id: CTX-0405-003",
+          "assetId": "WELL-0405"
+        },
+        {
+          "id": "CTX-0248-002",
+          "title": "Operator note · CTX-0248-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0248/context.jsonl",
+          "excerpt": "asset id: WELL-0248 · created at: 2026-11-05T13:30:00Z · author user id: U-502 · note type: operator_note · text: Temporary bypass in place on WELL-0248 until the new valve arrives. · valid from: 2026-11-05 · note id: CTX-0248-002",
+          "assetId": "WELL-0248"
+        },
+        {
+          "id": "MOC-2026-031",
+          "title": "moc 2026 031",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-031.md",
+          "excerpt": "- Effective from 20 Oct 2026. - The bypass is checked on every daily round and recorded as an operator note on the well when it is put in and when it is taken out."
+        },
+        {
+          "id": "MOC-2026-044",
+          "title": "moc 2026 044",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-044.md",
+          "excerpt": "This approval expires on 28 Feb 2027."
+        },
+        {
+          "id": "CTX-0158-003",
+          "title": "Operator note · CTX-0158-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0158/context.jsonl",
+          "excerpt": "asset id: WELL-0158 · created at: 2026-11-20T15:20:00Z · author user id: U-204 · note type: operator_note · text: Put the bypass in at WELL-0158 so the flowline can stay in service. · valid from: 2026-11-20 · note id: CTX-0158-003",
+          "assetId": "WELL-0158"
+        },
+        {
+          "id": "CTX-0158-005",
+          "title": "Operator note · CTX-0158-005",
+          "type": "note",
+          "path": "dataset/assets/WELL-0158/context.jsonl",
+          "excerpt": "asset id: WELL-0158 · created at: 2026-12-28T10:35:00Z · author user id: U-203 · note type: operator_note · text: Bypass removed from WELL-0158, flowline back to normal routing. · valid from: 2026-12-28 · note id: CTX-0158-005",
+          "assetId": "WELL-0158"
+        },
+        {
+          "id": "CTX-0087-001",
+          "title": "Operator note · CTX-0087-001",
+          "type": "note",
+          "path": "dataset/assets/WELL-0087/context.jsonl",
+          "excerpt": "asset id: WELL-0087 · created at: 2026-12-02T11:15:00Z · author user id: U-102 · note type: operator_note · text: Crew had the bypass installed at WELL-0087 by mid-morning. · valid from: 2026-12-02 · note id: CTX-0087-001",
+          "assetId": "WELL-0087"
+        },
+        {
+          "id": "CTX-0087-004",
+          "title": "Operator note · CTX-0087-004",
+          "type": "note",
+          "path": "dataset/assets/WELL-0087/context.jsonl",
+          "excerpt": "asset id: WELL-0087 · created at: 2027-01-06T13:20:00Z · author user id: U-104 · note type: operator_note · text: Took the bypass out at WELL-0087 after the valve was replaced. · valid from: 2027-01-06 · note id: CTX-0087-004",
+          "assetId": "WELL-0087"
+        },
+        {
+          "id": "CTX-0561-004",
+          "title": "Operator note · CTX-0561-004",
+          "type": "note",
+          "path": "dataset/assets/WELL-0561/context.jsonl",
+          "excerpt": "asset id: WELL-0561 · created at: 2026-12-08T08:25:00Z · author user id: U-503 · note type: operator_note · text: Crew had the bypass installed at WELL-0561 by mid-morning. · valid from: 2026-12-08 · note id: CTX-0561-004",
+          "assetId": "WELL-0561"
+        },
+        {
+          "id": "CTX-0561-005",
+          "title": "Operator note · CTX-0561-005",
+          "type": "note",
+          "path": "dataset/assets/WELL-0561/context.jsonl",
+          "excerpt": "asset id: WELL-0561 · created at: 2026-12-19T08:55:00Z · author user id: U-506 · note type: operator_note · text: Bypass pulled on WELL-0561, normal flow path restored. · valid from: 2026-12-19 · note id: CTX-0561-005",
+          "assetId": "WELL-0561"
+        },
+        {
+          "id": "CTX-0476-002",
+          "title": "Operator note · CTX-0476-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0476/context.jsonl",
+          "excerpt": "asset id: WELL-0476 · created at: 2026-10-22T15:50:00Z · author user id: U-505 · note type: operator_note · text: Temporary bypass in place on WELL-0476 until the new valve arrives. · valid from: 2026-10-22 · note id: CTX-0476-002",
+          "assetId": "WELL-0476"
+        },
+        {
+          "id": "CTX-0476-003",
+          "title": "Operator note · CTX-0476-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0476/context.jsonl",
+          "excerpt": "asset id: WELL-0476 · created at: 2026-11-18T14:10:00Z · author user id: U-505 · note type: operator_note · text: Bypass removed from WELL-0476, flowline back to normal routing. · valid from: 2026-11-18 · note id: CTX-0476-003",
+          "assetId": "WELL-0476"
+        },
+        {
+          "id": "CTX-0062-002",
+          "title": "Operator note · CTX-0062-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0062/context.jsonl",
+          "excerpt": "asset id: WELL-0062 · created at: 2026-11-02T11:45:00Z · author user id: U-102 · note type: operator_note · text: Crew had the bypass installed at WELL-0062 by mid-morning. · valid from: 2026-11-02 · note id: CTX-0062-002",
+          "assetId": "WELL-0062"
+        },
+        {
+          "id": "CTX-0062-005",
+          "title": "Operator note · CTX-0062-005",
+          "type": "note",
+          "path": "dataset/assets/WELL-0062/context.jsonl",
+          "excerpt": "asset id: WELL-0062 · created at: 2026-11-27T09:20:00Z · author user id: U-103 · note type: operator_note · text: Took the bypass out at WELL-0062 after the valve was replaced. · valid from: 2026-11-27 · note id: CTX-0062-005",
+          "assetId": "WELL-0062"
+        },
+        {
+          "id": "CTX-0013-002",
+          "title": "Operator note · CTX-0013-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0013/context.jsonl",
+          "excerpt": "asset id: WELL-0013 · created at: 2026-11-10T13:15:00Z · author user id: U-102 · note type: operator_note · text: Temporary bypass in place on WELL-0013 until the new valve arrives. · valid from: 2026-11-10 · note id: CTX-0013-002",
+          "assetId": "WELL-0013"
+        },
+        {
+          "id": "CTX-0013-005",
+          "title": "Operator note · CTX-0013-005",
+          "type": "note",
+          "path": "dataset/assets/WELL-0013/context.jsonl",
+          "excerpt": "asset id: WELL-0013 · created at: 2027-01-08T14:45:00Z · author user id: U-104 · note type: operator_note · text: Took the bypass out at WELL-0013 after the valve was replaced. · valid from: 2027-01-08 · note id: CTX-0013-005",
+          "assetId": "WELL-0013"
+        },
+        {
+          "id": "CTX-0284-002",
+          "title": "Operator note · CTX-0284-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0284/context.jsonl",
+          "excerpt": "asset id: WELL-0284 · created at: 2026-11-12T10:55:00Z · author user id: U-103 · note type: operator_note · text: Bypass installed on WELL-0284 flowline around the leaking check valve. · valid from: 2026-11-12 · note id: CTX-0284-002",
+          "assetId": "WELL-0284"
+        },
+        {
+          "id": "CTX-0284-003",
+          "title": "Operator note · CTX-0284-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0284/context.jsonl",
+          "excerpt": "asset id: WELL-0284 · created at: 2026-12-10T15:20:00Z · author user id: U-104 · note type: operator_note · text: WELL-0284: valve work finished and bypass removed. · valid from: 2026-12-10 · note id: CTX-0284-003",
+          "assetId": "WELL-0284"
+        },
+        {
+          "id": "CTX-0461-002",
+          "title": "Operator note · CTX-0461-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0461/context.jsonl",
+          "excerpt": "asset id: WELL-0461 · created at: 2026-11-14T09:50:00Z · author user id: U-503 · note type: operator_note · text: Put the bypass in at WELL-0461 so the flowline can stay in service. · valid from: 2026-11-14 · note id: CTX-0461-002",
+          "assetId": "WELL-0461"
+        },
+        {
+          "id": "CTX-0461-003",
+          "title": "Operator note · CTX-0461-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0461/context.jsonl",
+          "excerpt": "asset id: WELL-0461 · created at: 2026-12-12T15:40:00Z · author user id: U-505 · note type: operator_note · text: Bypass pulled on WELL-0461, normal flow path restored. · valid from: 2026-12-12 · note id: CTX-0461-003",
+          "assetId": "WELL-0461"
+        },
+        {
+          "id": "CTX-0356-002",
+          "title": "Operator note · CTX-0356-002",
+          "type": "note",
+          "path": "dataset/assets/WELL-0356/context.jsonl",
+          "excerpt": "asset id: WELL-0356 · created at: 2026-11-18T09:20:00Z · author user id: U-604 · note type: operator_note · text: Bypass installed on WELL-0356 flowline around the leaking check valve. · valid from: 2026-11-18 · note id: CTX-0356-002",
+          "assetId": "WELL-0356"
+        },
+        {
+          "id": "CTX-0356-003",
+          "title": "Operator note · CTX-0356-003",
+          "type": "note",
+          "path": "dataset/assets/WELL-0356/context.jsonl",
+          "excerpt": "asset id: WELL-0356 · created at: 2026-12-05T12:15:00Z · author user id: U-605 · note type: operator_note · text: Bypass removed from WELL-0356, flowline back to normal routing. · valid from: 2026-12-05 · note id: CTX-0356-003",
+          "assetId": "WELL-0356"
+        },
+        {
+          "id": "OPERATIONS-SOP-REV2",
+          "title": "operations sop rev2",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/operations-sop-rev2.md",
+          "excerpt": "## OPS-2 Temporary bypass A temporary flowline bypass is allowed only on a well named in a management-of-change memo"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [
+        "WELL-0249",
+        "WELL-0405",
+        "WELL-0248",
+        "WELL-0158",
+        "WELL-0087",
+        "WELL-0561",
+        "WELL-0476",
+        "WELL-0062",
+        "WELL-0013",
+        "WELL-0284",
+        "WELL-0461",
+        "WELL-0356"
+      ],
+      "trace": [
+        {
+          "tool": "gemini_planner",
+          "detail": "Structured plan validated: bypass_compliance. Only this user’s last five exchanges were supplied.",
+          "durationMs": 10961
+        },
+        {
+          "tool": "bypass_compliance",
+          "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+          "durationMs": 39
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "hosted"
+      },
+      "durationMs": 11000
+    },
+    "history": [
+      {
+        "userText": "Across all areas, which temporary flowline bypasses are in place right now, and is each one allowed? Also list any bypass, past or present, that stayed in after its approval ran out or was never approved at all.",
+        "answer": "12 temporary flowline bypasses found in the operator notes (3 in place now on 2027-01-15, 9 removed).\nIn place now: WELL-0249 (Southeast Block 31, Expired, valid until 15 Dec 2026; still in place 31 days past expiry (not extended)); WELL-0405 (Northwest Block 12, Not approved; well is named in no MOC memo); WELL-0248 (Southeast Block 31, Allowed, valid until 28 Feb 2027; expires in 44 days). 2 of these 3 are violations (WELL-0249 expired, WELL-0405 not approved).\nPast violations (removed, but overstayed their approval or were never approved): WELL-0158 (Northeast Block 8, Expired, valid until 15 Dec 2026; stayed in 13 days past expiry (not extended)); WELL-0087 (Southwest Block 24, Expired, valid until 15 Dec 2026; stayed in 22 days past expiry (not extended)); WELL-0561 (Southeast Block 32, Not approved; well is named in no MOC memo).\nPast bypasses that stayed within their approval: WELL-0476, WELL-0062, WELL-0013, WELL-0284, WELL-0461, WELL-0356.\nTotal violations: 5 of 12. Rule: a bypass needs a non-expired MOC naming the well; an extension memo replaces the expiry of the memo it extends, and expiry is the end of that day.",
+        "wellIds": [
+          "WELL-0249",
+          "WELL-0405",
+          "WELL-0248",
+          "WELL-0158",
+          "WELL-0087",
+          "WELL-0561",
+          "WELL-0476",
+          "WELL-0062",
+          "WELL-0013",
+          "WELL-0284",
+          "WELL-0461",
+          "WELL-0356"
+        ],
+        "createdAt": "2026-10-17T11:27:48.179Z",
+        "response": {
+          "answer": "12 temporary flowline bypasses found in the operator notes (3 in place now on 2027-01-15, 9 removed).\nIn place now: WELL-0249 (Southeast Block 31, Expired, valid until 15 Dec 2026; still in place 31 days past expiry (not extended)); WELL-0405 (Northwest Block 12, Not approved; well is named in no MOC memo); WELL-0248 (Southeast Block 31, Allowed, valid until 28 Feb 2027; expires in 44 days). 2 of these 3 are violations (WELL-0249 expired, WELL-0405 not approved).\nPast violations (removed, but overstayed their approval or were never approved): WELL-0158 (Northeast Block 8, Expired, valid until 15 Dec 2026; stayed in 13 days past expiry (not extended)); WELL-0087 (Southwest Block 24, Expired, valid until 15 Dec 2026; stayed in 22 days past expiry (not extended)); WELL-0561 (Southeast Block 32, Not approved; well is named in no MOC memo).\nPast bypasses that stayed within their approval: WELL-0476, WELL-0062, WELL-0013, WELL-0284, WELL-0461, WELL-0356.\nTotal violations: 5 of 12. Rule: a bypass needs a non-expired MOC naming the well; an extension memo replaces the expiry of the memo it extends, and expiry is the end of that day.",
+          "visualization": {
+            "type": "table",
+            "title": "Temporary flowline bypasses and MOC approval",
+            "columns": [
+              "Well",
+              "Area",
+              "Bypass in",
+              "Bypass out",
+              "Approval",
+              "Approval valid until",
+              "Status"
+            ],
+            "rows": [
+              [
+                "WELL-0249",
+                "Southeast Block 31",
+                "2026-11-25",
+                "still in",
+                "MOC-2026-036",
+                "15 Dec 2026",
+                "Expired (in place now)"
+              ],
+              [
+                "WELL-0405",
+                "Northwest Block 12",
+                "2026-12-20",
+                "still in",
+                "none",
+                "n/a",
+                "Not approved (in place now)"
+              ],
+              [
+                "WELL-0248",
+                "Southeast Block 31",
+                "2026-11-05",
+                "still in",
+                "MOC-2026-031, extended by MOC-2026-044",
+                "28 Feb 2027",
+                "Allowed (in place now)"
+              ],
+              [
+                "WELL-0158",
+                "Northeast Block 8",
+                "2026-11-20",
+                "2026-12-28",
+                "MOC-2026-036",
+                "15 Dec 2026",
+                "Expired (past violation)"
+              ],
+              [
+                "WELL-0087",
+                "Southwest Block 24",
+                "2026-12-02",
+                "2027-01-06",
+                "MOC-2026-036",
+                "15 Dec 2026",
+                "Expired (past violation)"
+              ],
+              [
+                "WELL-0561",
+                "Southeast Block 32",
+                "2026-12-08",
+                "2026-12-19",
+                "none",
+                "n/a",
+                "Not approved (past violation)"
+              ],
+              [
+                "WELL-0476",
+                "Southeast Block 32",
+                "2026-10-22",
+                "2026-11-18",
+                "MOC-2026-031, extended by MOC-2026-044",
+                "28 Feb 2027",
+                "Allowed"
+              ],
+              [
+                "WELL-0062",
+                "Southwest Block 24",
+                "2026-11-02",
+                "2026-11-27",
+                "MOC-2026-031, extended by MOC-2026-044",
+                "28 Feb 2027",
+                "Allowed"
+              ],
+              [
+                "WELL-0013",
+                "Southwest Block 23",
+                "2026-11-10",
+                "2027-01-08",
+                "MOC-2026-031, extended by MOC-2026-044",
+                "28 Feb 2027",
+                "Allowed"
+              ],
+              [
+                "WELL-0284",
+                "Southwest Block 24",
+                "2026-11-12",
+                "2026-12-10",
+                "MOC-2026-036",
+                "15 Dec 2026",
+                "Allowed"
+              ],
+              [
+                "WELL-0461",
+                "Southeast Block 32",
+                "2026-11-14",
+                "2026-12-12",
+                "MOC-2026-036",
+                "15 Dec 2026",
+                "Allowed"
+              ],
+              [
+                "WELL-0356",
+                "Northwest Block 12",
+                "2026-11-18",
+                "2026-12-05",
+                "MOC-2026-036",
+                "15 Dec 2026",
+                "Allowed"
+              ]
+            ]
+          },
+          "citations": [
+            {
+              "id": "CTX-0249-002",
+              "title": "Operator note · CTX-0249-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0249/context.jsonl",
+              "excerpt": "asset id: WELL-0249 · created at: 2026-11-25T10:25:00Z · author user id: U-504 · note type: operator_note · text: Bypass installed on WELL-0249 flowline around the leaking check valve. · valid from: 2026-11-25 · note id: CTX-0249-002",
+              "assetId": "WELL-0249"
+            },
+            {
+              "id": "MOC-2026-036",
+              "title": "moc 2026 036",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-036.md",
+              "excerpt": "- Effective from 10 Nov 2026. - The bypass is checked on every daily round and recorded as an operator note on the well when it is put in and when it is taken out."
+            },
+            {
+              "id": "CTX-0405-003",
+              "title": "Operator note · CTX-0405-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0405/context.jsonl",
+              "excerpt": "asset id: WELL-0405 · created at: 2026-12-20T10:15:00Z · author user id: U-604 · note type: operator_note · text: Put the bypass in at WELL-0405 so the flowline can stay in service. · valid from: 2026-12-20 · note id: CTX-0405-003",
+              "assetId": "WELL-0405"
+            },
+            {
+              "id": "CTX-0248-002",
+              "title": "Operator note · CTX-0248-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0248/context.jsonl",
+              "excerpt": "asset id: WELL-0248 · created at: 2026-11-05T13:30:00Z · author user id: U-502 · note type: operator_note · text: Temporary bypass in place on WELL-0248 until the new valve arrives. · valid from: 2026-11-05 · note id: CTX-0248-002",
+              "assetId": "WELL-0248"
+            },
+            {
+              "id": "MOC-2026-031",
+              "title": "moc 2026 031",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-031.md",
+              "excerpt": "- Effective from 20 Oct 2026. - The bypass is checked on every daily round and recorded as an operator note on the well when it is put in and when it is taken out."
+            },
+            {
+              "id": "MOC-2026-044",
+              "title": "moc 2026 044",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-044.md",
+              "excerpt": "This approval expires on 28 Feb 2027."
+            },
+            {
+              "id": "CTX-0158-003",
+              "title": "Operator note · CTX-0158-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0158/context.jsonl",
+              "excerpt": "asset id: WELL-0158 · created at: 2026-11-20T15:20:00Z · author user id: U-204 · note type: operator_note · text: Put the bypass in at WELL-0158 so the flowline can stay in service. · valid from: 2026-11-20 · note id: CTX-0158-003",
+              "assetId": "WELL-0158"
+            },
+            {
+              "id": "CTX-0158-005",
+              "title": "Operator note · CTX-0158-005",
+              "type": "note",
+              "path": "dataset/assets/WELL-0158/context.jsonl",
+              "excerpt": "asset id: WELL-0158 · created at: 2026-12-28T10:35:00Z · author user id: U-203 · note type: operator_note · text: Bypass removed from WELL-0158, flowline back to normal routing. · valid from: 2026-12-28 · note id: CTX-0158-005",
+              "assetId": "WELL-0158"
+            },
+            {
+              "id": "CTX-0087-001",
+              "title": "Operator note · CTX-0087-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0087/context.jsonl",
+              "excerpt": "asset id: WELL-0087 · created at: 2026-12-02T11:15:00Z · author user id: U-102 · note type: operator_note · text: Crew had the bypass installed at WELL-0087 by mid-morning. · valid from: 2026-12-02 · note id: CTX-0087-001",
+              "assetId": "WELL-0087"
+            },
+            {
+              "id": "CTX-0087-004",
+              "title": "Operator note · CTX-0087-004",
+              "type": "note",
+              "path": "dataset/assets/WELL-0087/context.jsonl",
+              "excerpt": "asset id: WELL-0087 · created at: 2027-01-06T13:20:00Z · author user id: U-104 · note type: operator_note · text: Took the bypass out at WELL-0087 after the valve was replaced. · valid from: 2027-01-06 · note id: CTX-0087-004",
+              "assetId": "WELL-0087"
+            },
+            {
+              "id": "CTX-0561-004",
+              "title": "Operator note · CTX-0561-004",
+              "type": "note",
+              "path": "dataset/assets/WELL-0561/context.jsonl",
+              "excerpt": "asset id: WELL-0561 · created at: 2026-12-08T08:25:00Z · author user id: U-503 · note type: operator_note · text: Crew had the bypass installed at WELL-0561 by mid-morning. · valid from: 2026-12-08 · note id: CTX-0561-004",
+              "assetId": "WELL-0561"
+            },
+            {
+              "id": "CTX-0561-005",
+              "title": "Operator note · CTX-0561-005",
+              "type": "note",
+              "path": "dataset/assets/WELL-0561/context.jsonl",
+              "excerpt": "asset id: WELL-0561 · created at: 2026-12-19T08:55:00Z · author user id: U-506 · note type: operator_note · text: Bypass pulled on WELL-0561, normal flow path restored. · valid from: 2026-12-19 · note id: CTX-0561-005",
+              "assetId": "WELL-0561"
+            },
+            {
+              "id": "CTX-0476-002",
+              "title": "Operator note · CTX-0476-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0476/context.jsonl",
+              "excerpt": "asset id: WELL-0476 · created at: 2026-10-22T15:50:00Z · author user id: U-505 · note type: operator_note · text: Temporary bypass in place on WELL-0476 until the new valve arrives. · valid from: 2026-10-22 · note id: CTX-0476-002",
+              "assetId": "WELL-0476"
+            },
+            {
+              "id": "CTX-0476-003",
+              "title": "Operator note · CTX-0476-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0476/context.jsonl",
+              "excerpt": "asset id: WELL-0476 · created at: 2026-11-18T14:10:00Z · author user id: U-505 · note type: operator_note · text: Bypass removed from WELL-0476, flowline back to normal routing. · valid from: 2026-11-18 · note id: CTX-0476-003",
+              "assetId": "WELL-0476"
+            },
+            {
+              "id": "CTX-0062-002",
+              "title": "Operator note · CTX-0062-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0062/context.jsonl",
+              "excerpt": "asset id: WELL-0062 · created at: 2026-11-02T11:45:00Z · author user id: U-102 · note type: operator_note · text: Crew had the bypass installed at WELL-0062 by mid-morning. · valid from: 2026-11-02 · note id: CTX-0062-002",
+              "assetId": "WELL-0062"
+            },
+            {
+              "id": "CTX-0062-005",
+              "title": "Operator note · CTX-0062-005",
+              "type": "note",
+              "path": "dataset/assets/WELL-0062/context.jsonl",
+              "excerpt": "asset id: WELL-0062 · created at: 2026-11-27T09:20:00Z · author user id: U-103 · note type: operator_note · text: Took the bypass out at WELL-0062 after the valve was replaced. · valid from: 2026-11-27 · note id: CTX-0062-005",
+              "assetId": "WELL-0062"
+            },
+            {
+              "id": "CTX-0013-002",
+              "title": "Operator note · CTX-0013-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0013/context.jsonl",
+              "excerpt": "asset id: WELL-0013 · created at: 2026-11-10T13:15:00Z · author user id: U-102 · note type: operator_note · text: Temporary bypass in place on WELL-0013 until the new valve arrives. · valid from: 2026-11-10 · note id: CTX-0013-002",
+              "assetId": "WELL-0013"
+            },
+            {
+              "id": "CTX-0013-005",
+              "title": "Operator note · CTX-0013-005",
+              "type": "note",
+              "path": "dataset/assets/WELL-0013/context.jsonl",
+              "excerpt": "asset id: WELL-0013 · created at: 2027-01-08T14:45:00Z · author user id: U-104 · note type: operator_note · text: Took the bypass out at WELL-0013 after the valve was replaced. · valid from: 2027-01-08 · note id: CTX-0013-005",
+              "assetId": "WELL-0013"
+            },
+            {
+              "id": "CTX-0284-002",
+              "title": "Operator note · CTX-0284-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0284/context.jsonl",
+              "excerpt": "asset id: WELL-0284 · created at: 2026-11-12T10:55:00Z · author user id: U-103 · note type: operator_note · text: Bypass installed on WELL-0284 flowline around the leaking check valve. · valid from: 2026-11-12 · note id: CTX-0284-002",
+              "assetId": "WELL-0284"
+            },
+            {
+              "id": "CTX-0284-003",
+              "title": "Operator note · CTX-0284-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0284/context.jsonl",
+              "excerpt": "asset id: WELL-0284 · created at: 2026-12-10T15:20:00Z · author user id: U-104 · note type: operator_note · text: WELL-0284: valve work finished and bypass removed. · valid from: 2026-12-10 · note id: CTX-0284-003",
+              "assetId": "WELL-0284"
+            },
+            {
+              "id": "CTX-0461-002",
+              "title": "Operator note · CTX-0461-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0461/context.jsonl",
+              "excerpt": "asset id: WELL-0461 · created at: 2026-11-14T09:50:00Z · author user id: U-503 · note type: operator_note · text: Put the bypass in at WELL-0461 so the flowline can stay in service. · valid from: 2026-11-14 · note id: CTX-0461-002",
+              "assetId": "WELL-0461"
+            },
+            {
+              "id": "CTX-0461-003",
+              "title": "Operator note · CTX-0461-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0461/context.jsonl",
+              "excerpt": "asset id: WELL-0461 · created at: 2026-12-12T15:40:00Z · author user id: U-505 · note type: operator_note · text: Bypass pulled on WELL-0461, normal flow path restored. · valid from: 2026-12-12 · note id: CTX-0461-003",
+              "assetId": "WELL-0461"
+            },
+            {
+              "id": "CTX-0356-002",
+              "title": "Operator note · CTX-0356-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0356/context.jsonl",
+              "excerpt": "asset id: WELL-0356 · created at: 2026-11-18T09:20:00Z · author user id: U-604 · note type: operator_note · text: Bypass installed on WELL-0356 flowline around the leaking check valve. · valid from: 2026-11-18 · note id: CTX-0356-002",
+              "assetId": "WELL-0356"
+            },
+            {
+              "id": "CTX-0356-003",
+              "title": "Operator note · CTX-0356-003",
+              "type": "note",
+              "path": "dataset/assets/WELL-0356/context.jsonl",
+              "excerpt": "asset id: WELL-0356 · created at: 2026-12-05T12:15:00Z · author user id: U-605 · note type: operator_note · text: Bypass removed from WELL-0356, flowline back to normal routing. · valid from: 2026-12-05 · note id: CTX-0356-003",
+              "assetId": "WELL-0356"
+            },
+            {
+              "id": "OPERATIONS-SOP-REV2",
+              "title": "operations sop rev2",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/operations-sop-rev2.md",
+              "excerpt": "## OPS-2 Temporary bypass A temporary flowline bypass is allowed only on a well named in a management-of-change memo"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0249",
+            "WELL-0405",
+            "WELL-0248",
+            "WELL-0158",
+            "WELL-0087",
+            "WELL-0561",
+            "WELL-0476",
+            "WELL-0062",
+            "WELL-0013",
+            "WELL-0284",
+            "WELL-0461",
+            "WELL-0356"
+          ],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: bypass_compliance. Only this user’s last five exchanges were supplied.",
+              "durationMs": 10961
+            },
+            {
+              "tool": "bypass_compliance",
+              "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+              "durationMs": 39
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 11000
+        }
+      }
+    ],
+    "revision": 4
+  }
+}

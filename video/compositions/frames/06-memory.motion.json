@@ -1,0 +1,7 @@
+{
+  "scene": "06-memory",
+  "duration_s": 25.5,
+  "rules": ["cursor-click-ripple", "particle-burst", "svg-path-draw", "card-morph-anchor", "scale-swap-transition"],
+  "exit": { "vector": "slow camera push scale 1.0->1.035 across the scene (~1 px/s at edges) plus a 0.5s breathing stroke-opacity on the amber conflict frame; no exit tween", "still_moving": true },
+  "entry": { "vector": "empty grid/glow at rest at t=0; typed-correction window flies in from x -260, y +40, z -360, rotateY -50deg starting t=0.1 (about +300 px/s x at onset, opacity 0->1)", "from_rest": true }
+}
