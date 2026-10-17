@@ -7,11 +7,11 @@
   "attempts": [
     {
       "httpStatus": 200,
-      "wallMs": 5290
+      "wallMs": 2424
     }
   ],
   "httpStatus": 200,
-  "wallMs": 5290,
+  "wallMs": 2424,
   "response": {
     "userId": "U-601",
     "response": {
@@ -26,7 +26,7 @@
         {
           "tool": "gemini_planner",
           "detail": "Structured plan validated: preference. Only this user’s last five exchanges were supplied.",
-          "durationMs": 5283
+          "durationMs": 2404
         },
         {
           "tool": "preference",
@@ -38,7 +38,7 @@
         "name": "gemini-3.5-flash-lite",
         "status": "hosted"
       },
-      "durationMs": 5283
+      "durationMs": 2404
     },
     "history": [
       {
@@ -63,7 +63,7 @@
           "WELL-0429",
           "WELL-0452"
         ],
-        "createdAt": "2026-10-17T11:27:59.664Z",
+        "createdAt": "2026-10-17T11:55:26.525Z",
         "response": {
           "answer": "10 well(s) across the whole field have an inspection and an operator note that disagree, where the note is newer: 6 shut-in after a producing reading (now not producing) and 4 restart after a not-producing reading (now producing, unconfirmed). Rule: OPS-3 - current status comes from the more recent of the latest inspection (after any data correction, judged by the well-type manual threshold in force on that date) and the latest operator note that says the well was shut in or restarted. A further 7 well(s) carry an older restart note but their later inspection still reads not producing; the inspection wins and they are listed as not producing. Excluded: 3 plugged/abandoned well(s); notes older than the latest inspection that agree with it (103 older shut-in notes before a producing reading); gas odor, bypass and equipment remarks, which do not set status.",
           "visualization": {
@@ -602,19 +602,19 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: status_disagreement. Only this user’s last five exchanges were supplied.",
-              "durationMs": 4958
+              "durationMs": 2522
             },
             {
               "tool": "status_disagreement",
               "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 103
+              "durationMs": 109
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 5062
+          "durationMs": 2631
         }
       },
       {
@@ -623,7 +623,7 @@
         "wellIds": [
           "WELL-0333"
         ],
-        "createdAt": "2026-10-17T11:28:19.854Z",
+        "createdAt": "2026-10-17T11:55:37.314Z",
         "response": {
           "answer": "Recorded Nathan Pierce’s report as an unconfirmed shared claim on WELL-0333 (no work order is on record yet; it is attributed to Nathan Pierce and visible to all users, but it does not overwrite the maintenance records). 1 well has a recalled pump in the ground (Highline RP-175 LOT-2409-A/LOT-2409-C/LOT-2410-B, notice HPC-RN-2026-07). By area: Northwest Block 12 = 1. The installed pump is the latest \"Parts installed\" line by job start date, so a later non-recalled pump removes the well from the list. Total install cost of the listed jobs: USD 15,440. The replacement deadline was 31 Dec 2026. Status uses the latest inspection against the well-type threshold; \"last repair\" is the latest completed corrective job start date plus any job still in progress today. 1 well carries an unconfirmed replacement report (WELL-0333 report by Nathan Pierce). Reports alone do not remove a well: 1 per the records, 0 if those reports are confirmed by a work order.",
           "visualization": {
@@ -656,11 +656,11 @@
           },
           "citations": [
             {
-              "id": "CLAIM-030f7c95-e1f2-41a4-8d21-042a743a395d",
-              "title": "Shared feedback · CLAIM-030f7c95-e1f2-41a4-8d21-042a743a395d",
+              "id": "CLAIM-f24a665b-e209-48c5-bc9e-974eff89597a",
+              "title": "Shared feedback · CLAIM-f24a665b-e209-48c5-bc9e-974eff89597a",
               "type": "claim",
               "path": "local feedback",
-              "excerpt": "Nathan Pierce · 2026-10-17T11:28:19.833Z · WELL-0333's recalled pump was swapped out yesterday. The work order isn't in the system yet. Please count it as replaced from now on.",
+              "excerpt": "Nathan Pierce · 2026-10-17T11:55:37.292Z · WELL-0333's recalled pump was swapped out yesterday. The work order isn't in the system yet. Please count it as replaced from now on.",
               "assetId": "WELL-0333"
             },
             {
@@ -671,11 +671,11 @@
               "excerpt": "## What is recalled Highline RP-175 downhole rod pumps from these manufacturing lots:"
             },
             {
-              "id": "CLAIM-030f7c95-e1f2-41a4-8d21-042a743a395d",
-              "title": "Shared feedback · CLAIM-030f7c95-e1f2-41a4-8d21-042a743a395d",
+              "id": "CLAIM-f24a665b-e209-48c5-bc9e-974eff89597a",
+              "title": "Shared feedback · CLAIM-f24a665b-e209-48c5-bc9e-974eff89597a",
               "type": "claim",
               "path": "local feedback",
-              "excerpt": "Nathan Pierce · 2026-10-17T11:28:19.833Z · WELL-0333's recalled pump was swapped out yesterday. The work order isn't in the system yet. Please count it as replaced from now on.",
+              "excerpt": "Nathan Pierce · 2026-10-17T11:55:37.292Z · WELL-0333's recalled pump was swapped out yesterday. The work order isn't in the system yet. Please count it as replaced from now on.",
               "assetId": "WELL-0333"
             },
             {
@@ -713,26 +713,26 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: claim. Only this user’s last five exchanges were supplied.",
-              "durationMs": 5583
+              "durationMs": 2377
             },
             {
               "tool": "claim",
               "detail": "Explicit user feedback applied by the scoped domain tool with provenance.",
-              "durationMs": 21
+              "durationMs": 23
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 5604
+          "durationMs": 2400
         }
       },
       {
         "userText": "Also, just for me: whenever you list wells, sort them by area and then by well ID, and show costs in thousands of dollars.",
         "answer": "Saved as a private display preference for Nathan Pierce: “Also, just for me: whenever you list wells, sort them by area and then by well ID, and show costs in thousands of dollars.” It applies only to your future answers; other users are not affected.",
         "wellIds": [],
-        "createdAt": "2026-10-17T11:28:25.144Z",
+        "createdAt": "2026-10-17T11:55:39.740Z",
         "response": {
           "answer": "Saved as a private display preference for Nathan Pierce: “Also, just for me: whenever you list wells, sort them by area and then by well ID, and show costs in thousands of dollars.” It applies only to your future answers; other users are not affected.",
           "citations": [],
@@ -745,7 +745,7 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: preference. Only this user’s last five exchanges were supplied.",
-              "durationMs": 5283
+              "durationMs": 2404
             },
             {
               "tool": "preference",
@@ -757,7 +757,7 @@
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 5283
+          "durationMs": 2404
         }
       }
     ],

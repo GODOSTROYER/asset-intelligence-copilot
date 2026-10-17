@@ -7,11 +7,11 @@
   "attempts": [
     {
       "httpStatus": 200,
-      "wallMs": 1563
+      "wallMs": 2030
     }
   ],
   "httpStatus": 200,
-  "wallMs": 1563,
+  "wallMs": 2030,
   "response": {
     "userId": "U-201",
     "response": {
@@ -1391,19 +1391,19 @@
         {
           "tool": "gemini_planner",
           "detail": "Structured plan validated: delay_reasons. Only this user’s last five exchanges were supplied.",
-          "durationMs": 1523
+          "durationMs": 1984
         },
         {
           "tool": "delay_reasons",
           "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-          "durationMs": 29
+          "durationMs": 33
         }
       ],
       "model": {
         "name": "gemini-3.5-flash-lite",
         "status": "hosted"
       },
-      "durationMs": 1552
+      "durationMs": 2017
     },
     "history": [
       {
@@ -1413,7 +1413,7 @@
           "WELL-0422",
           "WELL-0481"
         ],
-        "createdAt": "2026-10-17T11:27:17.045Z",
+        "createdAt": "2026-10-17T11:55:13.885Z",
         "response": {
           "answer": "The data cannot answer this. It contains no reservoir pressure, and no tubing, casing, bottom-hole or live wellhead pressure measurements, for any well, so a pressure map or ranking cannot be drawn and I have not estimated one (for example from temperature, well type or production state).\nWhat I scanned: field names in inspection, repair (maintenance), operator note / context, regulatory event, well metadata records (68 field names in all) and the text of 149,877 documents. Pressure-like field names found: none. Reservoir/pool/formation fields in well metadata: none.\nPressure-related facts that do exist, none of which is reservoir pressure:\n- Flowline pressure tests in repair reports: 2,432 reports on 561 wells state a one-off test of a repaired flowline section (test pressure 188 to 400 psi, flowline maximum operating pressure 150 to 320 psi, held 4 hours). These are integrity tests of a repaired section, per job, not a field or reservoir reading.\n- Separator alarm notes: 2 operator note(s) record a high pressure alarm on the separator (CTX-0422-003 on WELL-0422 2027-01-14; CTX-0481-006 on WELL-0481 2027-01-14), with no pressure value. An alarm is an event, not a measurement.\n- Equipment ratings in the well-type manuals (T200: \"Maximum allowable wellhead working pressure: 3,000 psi\") are design limits, not readings. 2004 further repair reports mention pressure testing or bleeding off pressure without a figure.\nThe word \"reservoir\" appears only in generic manual text (OM-T200), and the data never states that wells share one reservoir.\nTo map reservoir pressure the data would need periodic or static pressure surveys (bottom-hole or shut-in wellhead pressure) per well, or a SCADA/well-test pressure feed with timestamps and units. What I can show instead, clearly labelled: wellhead and ambient temperature per inspection with producing status by the manual rule, spill volumes, and downtime. The requested map view is not supported for this result; the available evidence is shown as text.",
           "citations": [
@@ -1472,19 +1472,19 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: data_availability. Only this user’s last five exchanges were supplied.",
-              "durationMs": 5134
+              "durationMs": 2439
             },
             {
               "tool": "data_availability",
               "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 62
+              "durationMs": 60
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 5197
+          "durationMs": 2499
         }
       },
       {
@@ -1498,7 +1498,7 @@
           "WELL-0262",
           "WELL-0277"
         ],
-        "createdAt": "2026-10-17T11:27:54.594Z",
+        "createdAt": "2026-10-17T11:55:23.887Z",
         "response": {
           "answer": "The letter from State Oil & Gas Commission dated 20 Nov 2026 covers reportable spills (5 bbl or more) in Northeast Block 7 or Northeast Block 8 discovered since 1 Jun 2026, excluding detections later confirmed not to be crude oil. Soil results are due 15 Jan 2027 (today).\nScope narrowed to your team (TEAM-NE wells at the time of the spill).\n6 spills are covered. Compliance test (HSE note in the letter): the clean-up report must contain the sentence \"Soil samples sent to the lab.\"; field soil readings do not count.\nCompliant (3): WELL-0119, WELL-0168, WELL-0277. Not compliant (3): WELL-0123 (no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.68% TPH)); WELL-0182 (no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.74% TPH)); WELL-0262 (no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.77% TPH)).\nSeparate Spill Response SOP timing findings (not part of the letter test): WELL-0168 - SR-03 verification came 75 days after discovery vs 60 days (REG-0168-010) | WELL-0182 - SR-01 missed: written notice 50 h vs 24 h (REG-0182-003; NOV REG-0182-004 2027-01-02, USD 2,500, open) | WELL-0262 - SR-01 missed: written notice 17 h vs 12 h (REG-0262-001; no NOV yet); SR-02 missed: contained 6.4 h vs 4 h | WELL-0277 - SR-01 missed: written notice 38 h vs 24 h (REG-0277-001; NOV REG-0277-002 2026-10-18, USD 5,000, closed).",
           "visualization": {
@@ -1816,19 +1816,19 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: regulator_letter. Only this user’s last five exchanges were supplied.",
-              "durationMs": 6375
+              "durationMs": 2223
             },
             {
               "tool": "regulator_letter",
               "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 31
+              "durationMs": 34
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 6406
+          "durationMs": 2258
         }
       },
       {
@@ -1928,7 +1928,7 @@
           "WELL-0115",
           "WELL-0116"
         ],
-        "createdAt": "2026-10-17T11:29:40.462Z",
+        "createdAt": "2026-10-17T11:56:24.323Z",
         "response": {
           "answer": "For 634 jobs started in 2026 (of 4360 jobs started in that period; the rest record no wait) the repair report names why the well stayed shut in longer than the repair. Most common: Contractors 33%, Crews 27%, Weather 22%, Parts 18%. Typical (median) extra wait is about 9 days (field-wide median by reason: Parts 9 d, Crews 9 d, Contractors 9 d, Weather 9 d).\nNo area clearly stands out: area medians are 8 to 10 days and the reason mix is within chance (chi-square 10.3 on 18 degrees of freedom, p about 0.92).\nWorth watching only, small-sample noise: Southwest Block 24 (SW-24): Crews 18% of 66 jobs vs 27% field-wide (z -1.6).\nPer area (jobs; each reason as count (share of the area's waiting jobs) / median extra days; last value is the area median):\n- Southwest Block 23 (SW-23): 72 jobs; Parts 16 (22%) / 12.5 d; Crews 19 (26%) / 7 d; Contractors 21 (29%) / 9 d; Weather 16 (22%) / 9 d; area median 8.5 d\n- Southwest Block 24 (SW-24): 66 jobs; Parts 12 (18%) / 8 d; Crews 12 (18%) / 12 d; Contractors 27 (41%) / 9 d; Weather 15 (23%) / 10 d; area median 9 d\n- Northeast Block 7 (NE-07): 64 jobs; Parts 15 (23%) / 15 d; Crews 14 (22%) / 11.5 d; Contractors 20 (31%) / 9 d; Weather 15 (23%) / 9 d; area median 9 d\n- Northeast Block 8 (NE-08): 80 jobs; Parts 13 (16%) / 10 d; Crews 25 (31%) / 9 d; Contractors 24 (30%) / 9 d; Weather 18 (23%) / 8 d; area median 8 d\n- Southeast Block 31 (SE-31): 40 jobs; Parts 6 (15%) / 8.5 d; Crews 9 (23%) / 9 d; Contractors 17 (43%) / 14 d; Weather 8 (20%) / 12.5 d; area median 10 d\n- Northwest Block 12 (NW-12): 172 jobs; Parts 29 (17%) / 9 d; Crews 54 (31%) / 9 d; Contractors 52 (30%) / 9 d; Weather 37 (22%) / 9 d; area median 9 d\n- Southeast Block 32 (SE-32): 140 jobs; Parts 26 (19%) / 9.5 d; Crews 37 (26%) / 10 d; Contractors 46 (33%) / 9 d; Weather 31 (22%) / 8 d; area median 9 d\n- All areas: 634 jobs; Parts 117 (18%) / 9 d; Crews 170 (27%) / 9 d; Contractors 207 (33%) / 9 d; Weather 140 (22%) / 9 d; field median 9 d\nTest used: an area stands out if, with at least 30 jobs, a reason share differs from the field share by |z| >= 3 (binomial z-score; strict because there are 28 comparisons) or its median extra days differs from the field median by at least 3 days.\nReasons are classified from the \"What happened\" sentence of each repair report using this keyword map: Weather = rain, weather, storm, flood, snow, ice, impassable lease road; Parts = back-ordered, replacement part, parts, supplier, vendor, shipment; Crews = crew committed elsewhere (e.g. spill response), personnel; Contractors = weekday contractor slot, contractor; \"workover rig busy\": company rig = Crews, a named contractor rig = Contractors (future-tense reports use the job's contractor field).\nWording found in the reports: replacement part back-ordered 117, heavy rain / lease road impassable 140, contractor workover rig busy 76, crew on higher-priority spill response 112, weekday contractor slot 131, company workover rig busy 58.\nClassification choice: 134 jobs are \"workover rig busy\" waits. If every rig wait were called Crews instead, Crews would be 246 (39%) and Contractors 131 (21%).\n2 jobs are still in progress and their reports use future wording (\"expected to stay shut in\"); they are counted (MNT-0404-034, MNT-0496-033).\nSource: the recorded reason and the number of extra days are only in each repair report's \"What happened\" text; maintenance records have no reason field. 39 generic operator notes about waiting for parts or weather in this period carry no day count and do not reliably match the report of the nearest job, so they were ignored. Extra days are the number stated in the report (for rig waits, the days waited for the rig).",
           "visualization": {
@@ -3306,19 +3306,19 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: delay_reasons. Only this user’s last five exchanges were supplied.",
-              "durationMs": 1523
+              "durationMs": 1984
             },
             {
               "tool": "delay_reasons",
               "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 29
+              "durationMs": 33
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 1552
+          "durationMs": 2017
         }
       }
     ],

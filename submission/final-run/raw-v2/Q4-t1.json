@@ -7,11 +7,11 @@
   "attempts": [
     {
       "httpStatus": 200,
-      "wallMs": 11006
+      "wallMs": 2283
     }
   ],
   "httpStatus": 200,
-  "wallMs": 11006,
+  "wallMs": 2283,
   "response": {
     "userId": "U-402",
     "response": {
@@ -356,19 +356,19 @@
         {
           "tool": "gemini_planner",
           "detail": "Structured plan validated: bypass_compliance. Only this user’s last five exchanges were supplied.",
-          "durationMs": 10961
+          "durationMs": 2234
         },
         {
           "tool": "bypass_compliance",
           "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-          "durationMs": 39
+          "durationMs": 42
         }
       ],
       "model": {
         "name": "gemini-3.5-flash-lite",
         "status": "hosted"
       },
-      "durationMs": 11000
+      "durationMs": 2276
     },
     "history": [
       {
@@ -388,7 +388,7 @@
           "WELL-0461",
           "WELL-0356"
         ],
-        "createdAt": "2026-10-17T11:27:48.179Z",
+        "createdAt": "2026-10-17T11:55:21.614Z",
         "response": {
           "answer": "12 temporary flowline bypasses found in the operator notes (3 in place now on 2027-01-15, 9 removed).\nIn place now: WELL-0249 (Southeast Block 31, Expired, valid until 15 Dec 2026; still in place 31 days past expiry (not extended)); WELL-0405 (Northwest Block 12, Not approved; well is named in no MOC memo); WELL-0248 (Southeast Block 31, Allowed, valid until 28 Feb 2027; expires in 44 days). 2 of these 3 are violations (WELL-0249 expired, WELL-0405 not approved).\nPast violations (removed, but overstayed their approval or were never approved): WELL-0158 (Northeast Block 8, Expired, valid until 15 Dec 2026; stayed in 13 days past expiry (not extended)); WELL-0087 (Southwest Block 24, Expired, valid until 15 Dec 2026; stayed in 22 days past expiry (not extended)); WELL-0561 (Southeast Block 32, Not approved; well is named in no MOC memo).\nPast bypasses that stayed within their approval: WELL-0476, WELL-0062, WELL-0013, WELL-0284, WELL-0461, WELL-0356.\nTotal violations: 5 of 12. Rule: a bypass needs a non-expired MOC naming the well; an extension memo replaces the expiry of the memo it extends, and expiry is the end of that day.",
           "visualization": {
@@ -731,19 +731,19 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: bypass_compliance. Only this user’s last five exchanges were supplied.",
-              "durationMs": 10961
+              "durationMs": 2234
             },
             {
               "tool": "bypass_compliance",
               "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 39
+              "durationMs": 42
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 11000
+          "durationMs": 2276
         }
       }
     ],

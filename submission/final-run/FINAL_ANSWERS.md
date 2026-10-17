@@ -17,7 +17,7 @@ Run settings: SAMPLE_DATA_PATH=test-data/dataset, REFERENCE_DATE=2027-01-15 (600
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=5197, wall=5254 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2499, wall=2579 ms
 
 **Answer (verbatim):**
 
@@ -38,7 +38,7 @@ To map reservoir pressure the data would need periodic or static pressure survey
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (5134 ms): Structured plan validated: data_availability. Only this user’s last five exchanges were supplied. || data_availability (62 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2439 ms): Structured plan validated: data_availability. Only this user’s last five exchanges were supplied. || data_availability (60 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
@@ -53,7 +53,7 @@ To map reservoir pressure the data would need periodic or static pressure survey
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=10204, wall=10210 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=3193, wall=3201 ms
 
 **Answer (verbatim):**
 
@@ -101,7 +101,7 @@ To answer properly the data would need production volumes per well (allocated or
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (9421 ms): Structured plan validated: data_availability. Only this user’s last five exchanges were supplied. || data_availability (783 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2214 ms): Structured plan validated: data_availability. Only this user’s last five exchanges were supplied. || data_availability (979 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
@@ -116,12 +116,12 @@ To answer properly the data would need production volumes per well (allocated or
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=9908, wall=9915 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2230, wall=2238 ms
 
 **Answer (verbatim):**
 
 ~~~text
-26 gas / H2S odor operator notes from Nov 1, 2026 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).
+26 gas / H2S odor operator notes from Nov 1, 2026 to Jan 15, 2027 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).
 ~~~
 
 **Visual:** type=`table`, title="Gas / H2S odor reports vs OPS-1 response deadline"
@@ -161,7 +161,7 @@ To answer properly the data would need production volumes per well (allocated or
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (9852 ms): Structured plan validated: gas_response. Only this user’s last five exchanges were supplied. || gas_response (56 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2153 ms): Structured plan validated: gas_response. Only this user’s last five exchanges were supplied. || gas_response (77 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
@@ -176,7 +176,7 @@ To answer properly the data would need production volumes per well (allocated or
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=11000, wall=11006 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2276, wall=2283 ms
 
 **Answer (verbatim):**
 
@@ -211,7 +211,7 @@ Total violations: 5 of 12. Rule: a bypass needs a non-expired MOC naming the wel
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (10961 ms): Structured plan validated: bypass_compliance. Only this user’s last five exchanges were supplied. || bypass_compliance (39 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2234 ms): Structured plan validated: bypass_compliance. Only this user’s last five exchanges were supplied. || bypass_compliance (42 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
@@ -226,7 +226,7 @@ Total violations: 5 of 12. Rule: a bypass needs a non-expired MOC naming the wel
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=6406, wall=6414 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2258, wall=2274 ms
 
 **Answer (verbatim):**
 
@@ -255,7 +255,7 @@ Separate Spill Response SOP timing findings (not part of the letter test): WELL-
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (6375 ms): Structured plan validated: regulator_letter. Only this user’s last five exchanges were supplied. || regulator_letter (31 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2223 ms): Structured plan validated: regulator_letter. Only this user’s last five exchanges were supplied. || regulator_letter (34 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
@@ -270,7 +270,7 @@ Separate Spill Response SOP timing findings (not part of the letter test): WELL-
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=5062, wall=5069 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2631, wall=2636 ms
 
 **Answer (verbatim):**
 
@@ -314,7 +314,7 @@ Separate Spill Response SOP timing findings (not part of the letter test): WELL-
 ]
 ~~~
 
-**Trace:** gemini_planner (4958 ms): Structured plan validated: status_disagreement. Only this user’s last five exchanges were supplied. || status_disagreement (103 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2522 ms): Structured plan validated: status_disagreement. Only this user’s last five exchanges were supplied. || status_disagreement (109 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
@@ -329,36 +329,36 @@ Separate Spill Response SOP timing findings (not part of the letter test): WELL-
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=9201, wall=9218 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=4201, wall=4208 ms
 
 **Answer (verbatim):**
 
 ~~~text
-175 well(s) have operator notes from 2026-12-15 to 2027-01-15 describing abnormal sound or behaviour (keywords: knocking, grinding, banging, vibration, squeal, rattling, tagging bottom, fluid pound, amps hunting, drive tripping, and similar). 12 of them already had a corrective (non-spill) repair start after the latest such note and are excluded (WELL-0019 (MNT-0019-032); WELL-0033 (MNT-0033-033); WELL-0058 (MNT-0058-033); WELL-0066 (MNT-0066-034); WELL-0069 (MNT-0069-039); WELL-0251 (MNT-0251-029); WELL-0313 (MNT-0313-027); WELL-0316 (MNT-0316-026); WELL-0335 (MNT-0335-032); WELL-0382 (MNT-0382-033); WELL-0540 (MNT-0540-025); WELL-0599 (MNT-0599-030)), leaving 163 candidates. Spill clean-up jobs are not counted as repairs. Plugged wells excluded: 3. Top 10 most likely to need a repair in the next 90 days: 1. WELL-0263 (score 20), 2. WELL-0219 (score 15.5), 3. WELL-0401 (score 13.5), 4. WELL-0428 (score 13), 5. WELL-0023 (score 12), 6. WELL-0061 (score 12), 7. WELL-0336 (score 11.5), 8. WELL-0305 (score 11.5), 9. WELL-0286 (score 11), 10. WELL-0349 (score 11). Area clustering: WELL-0263 and WELL-0023 are both in Southwest Block 23; WELL-0401 and WELL-0428 and WELL-0336 and WELL-0305 and WELL-0349 are both in Northwest Block 12. Next in line: WELL-0202 (11), WELL-0010 (10.5), WELL-0182 (10.5), WELL-0020 (10), WELL-0175 (10). Score = worst symptom (1 to 3) + 1.5 per repeat note (max 3) + 1 for differing symptoms + 3 not producing now + ESP/temperature trend (T500 manual early-warning rule: 3 or more successive falls totalling 3 °C or more; 3, plus 5 if the 14-day check is overdue; 1.5 for rod-lift wells) + 6 recalled pump (8 once the replacement deadline has passed) still in the well (recall notice lots, only the latest installed pump counts) + 4 overdue repair follow-up with no later "Follow-up to" job + 1.5 per recent same-equipment corrective repair (max 3) with 2 more at the RCA trigger - 6 if a repair on the lift equipment is already under way.
+175 well(s) have operator notes from 2026-12-15 to 2027-01-15 describing abnormal sound or behaviour (keywords: knocking, grinding, banging, vibration, squeal, rattling, tagging bottom, fluid pound, amps hunting, drive tripping, and similar). 12 of them already had a corrective (non-spill) repair start after the latest such note and are excluded (WELL-0019 (MNT-0019-032); WELL-0033 (MNT-0033-033); WELL-0058 (MNT-0058-033); WELL-0066 (MNT-0066-034); WELL-0069 (MNT-0069-039); WELL-0251 (MNT-0251-029); WELL-0313 (MNT-0313-027); WELL-0316 (MNT-0316-026); WELL-0335 (MNT-0335-032); WELL-0382 (MNT-0382-033); WELL-0540 (MNT-0540-025); WELL-0599 (MNT-0599-030)), leaving 163 candidates. Spill clean-up jobs are not counted as repairs. Plugged wells excluded: 3. Top 10 most likely to need a repair in the next 90 days: 1. WELL-0263 (score 22.8), 2. WELL-0219 (score 20.1), 3. WELL-0401 (score 16.6), 4. WELL-0202 (score 16), 5. WELL-0428 (score 14.5), 6. WELL-0023 (score 14), 7. WELL-0061 (score 13.5), 8. WELL-0305 (score 13), 9. WELL-0349 (score 12.5), 10. WELL-0336 (score 12.4). Area clustering: WELL-0263 and WELL-0023 are both in Southwest Block 23; WELL-0219 and WELL-0202 are both in Southeast Block 31; WELL-0401 and WELL-0428 and WELL-0305 and WELL-0349 and WELL-0336 are both in Northwest Block 12. Next in line: WELL-0182 (12), WELL-0286 (12), WELL-0020 (11), WELL-0010 (11), WELL-0270 (11). Score = worst symptom (1 to 3) + 1.5 per repeat note (max 3) + 1 for differing symptoms + 3 not producing now + decline trend (rule read from the well-type manual, e.g. T500 s.5: N consecutive drops totalling X °C or more; 0.25 per drop up to 2 plus 0.4 per °C of total fall up to 3, times 0.6 on wells whose own manual has no mandated check) + mandated check from that rule (days read from the manual): 7 plus up to 2 more by weeks late when its due date has PASSED with no check job (failure precursor and compliance breach), only 2 when triggered but not yet due + recalled pump still in the well (recall notice lots, only the latest installed pump counts): 9 once the replacement deadline has passed, else 6 + 5 overdue repair follow-up with no later "Follow-up to" job + repeat-failure history 2 per same-equipment corrective repair in 12 months (max 3) plus 2 at the RCA trigger - 6 if a repair on the lift equipment is already under way, - 3 if one finished during the notes.
 ~~~
 
 **Visual:** type=`table`, title="Operator-note risk ranking"
 
 | Rank | Well | Area | Operator-note evidence (date, quote) | Other warning signs | Last repair |
 | --- | --- | --- | --- | --- | --- |
-| 1 | WELL-0263 | Southwest Block 23 | CTX-0263-004, 2027-01-11: "Heard fluid pound on WELL-0263, unit still running." \| CTX-0263-005, 2027-01-14: "Rod squeal at WELL-0263 stuffing box, greased the polished rod." | 2 notes in the window; different symptoms reported (fluid pound, squeal); not producing now (2027-01-14: 4 °C vs 20 °C limit); wellhead-minus-air fell 3 inspections in a row, 36.5 to 4 (-32.5 °C); recalled pump still in the well: Highline RP-175 pump, serial SN-187332, lot LOT-2410-B (installed MNT-0263-033, 2026-10-16), replacement deadline 2026-12-31 missed; 2 corrective repair(s) on the same equipment in 12 months (MNT-0263-030 downhole pump stuck; MNT-0263-033 downhole pump stuck) [score 20: severity (fluid pound/squeal) +2, 2 notes +1.5, escalating variety +1, not producing now +3, temperature trend +1.5, recalled pump in well +8, 2 recent corrective repair(s) on the same equipment +3] | MNT-0263-035 flowline corrosion pinhole leak, 2027-01-09 to 2027-01-19 (in progress) |
-| 2 | WELL-0219 | Southeast Block 31 | CTX-0219-006, 2027-01-05: "WELL-0219 drive tripping on underload, restarted from the panel." \| CTX-0219-007, 2027-01-13: "Drive on WELL-0219 showing amps hunting between 38 and 44 A." | 2 notes in the window; different symptoms reported (drive tripping, amps hunting); not producing now (2027-01-14: 4.5 °C vs 25 °C limit, "No flow noise at the wellhead."); wellhead-minus-air fell 6 inspections in a row, 37.4 to 4.5 (-32.9 °C) (T500 manual s.5 early warning); ESP drive/insulation check due 2027-01-07, not done [score 15.5: severity (drive tripping/amps hunting) +2, 2 notes +1.5, escalating variety +1, not producing now +3, ESP temperature trend +3, ESP check overdue +5] | MNT-0219-020 wellhead cable penetrator leak, 2026-08-21 to 2026-09-02 |
-| 3 | WELL-0401 | Northwest Block 12 | CTX-0401-003, 2026-12-18: "WELL-0401 amps hunting on the drive panel, still running." \| CTX-0401-004, 2027-01-14: "WELL-0401 amps hunting on the drive panel, still running." | 2 notes in the window; wellhead-minus-air fell 6 inspections in a row, 36.9 to 30.3 (-6.6 °C) (T500 manual s.5 early warning); ESP drive/insulation check due 2027-01-21; only 5.3 °C above the 25 °C producing limit; 2 corrective repair(s) on the same equipment in 12 months (MNT-0401-030 esp power cable insulation failure; MNT-0401-032 esp motor burnout), root-cause-analysis trigger reached [score 13.5: severity (amps hunting) +2, 2 notes +1.5, ESP temperature trend +3, ESP check due +1, near producing limit +1, 2 recent corrective repair(s) on the same equipment +5] | MNT-0401-032 esp motor burnout, 2026-11-27 to 2026-12-01 |
-| 4 | WELL-0428 | Northwest Block 12 | CTX-0428-002, 2027-01-01: "Heard fluid pound on WELL-0428, unit still running." \| CTX-0428-003, 2027-01-06: "Heard fluid pound on WELL-0428, unit still running." | 2 notes in the window; recalled pump still in the well: Highline RP-175 pump, serial SN-708611, lot LOT-2410-B (installed MNT-0428-022, 2026-03-07), replacement deadline 2026-12-31 missed; 1 corrective repair(s) on the same equipment in 12 months (MNT-0428-022 downhole pump stuck) [score 13: severity (fluid pound) +2, 2 notes +1.5, recalled pump in well +8, 1 recent corrective repair(s) on the same equipment +1.5] | MNT-0428-022 downhole pump stuck, 2026-03-07 to 2026-03-17; later: MNT-0428-025 flowline leak causing spill, 2026-04-17 to 2026-04-17 |
-| 5 | WELL-0023 | Southwest Block 23 | CTX-0023-003, 2026-12-27: "Rod squeal at WELL-0023 stuffing box, greased the polished rod." \| CTX-0023-004, 2027-01-04: "Rod squeal at WELL-0023 stuffing box, greased the polished rod." \| CTX-0023-005, 2027-01-10: "Heard fluid pound on WELL-0023, unit still running." | 3 notes in the window; different symptoms reported (squeal, fluid pound); wellhead-minus-air fell 3 inspections in a row, 30.7 to 24.3 (-6.4 °C); 3 corrective repair(s) on the same equipment in 12 months (MNT-0023-025 prime mover failure; MNT-0023-030 walking beam bearing wear; MNT-0023-033 sucker rod parted) [score 12: severity (squeal/fluid pound) +2, 3 notes +3, escalating variety +1, temperature trend +1.5, 3 recent corrective repair(s) on the same equipment +4.5] | MNT-0023-033 sucker rod parted, 2026-12-06 to 2026-12-07 |
-| 6 | WELL-0061 | Southwest Block 24 | CTX-0061-004, 2026-12-26: "WELL-0061 tagging bottom on the downstroke, adjust spacing next visit." \| CTX-0061-005, 2027-01-12: "Heard fluid pound on WELL-0061, unit still running." | 2 notes in the window; different symptoms reported (tagging bottom, fluid pound); 3 corrective repair(s) on the same equipment in 12 months (MNT-0061-025 sucker rod parted; MNT-0061-028 sucker rod parted; MNT-0061-031 sucker rod parted), root-cause-analysis trigger reached [score 12: severity (tagging bottom/fluid pound) +3, 2 notes +1.5, escalating variety +1, 3 recent corrective repair(s) on the same equipment +6.5] | MNT-0061-031 sucker rod parted, 2026-12-11 to 2026-12-21 |
-| 7 | WELL-0336 | Northwest Block 12 | CTX-0336-003, 2026-12-24: "WELL-0336 amps hunting on the drive panel, still running." \| CTX-0336-004, 2027-01-07: "WELL-0336 drive tripping on underload, restarted from the panel." \| CTX-0336-005, 2027-01-14: "WELL-0336 amps hunting on the drive panel, still running." | 3 notes in the window; different symptoms reported (amps hunting, drive tripping); wellhead-minus-air fell 3 inspections in a row, 37.3 to 33.1 (-4.2 °C) (T500 manual s.5 early warning); ESP drive/insulation check due 2027-01-28; 1 corrective repair(s) on the same equipment in 12 months (MNT-0336-026 esp motor burnout) [score 11.5: severity (amps hunting/drive tripping) +2, 3 notes +3, escalating variety +1, ESP temperature trend +3, ESP check due +1, 1 recent corrective repair(s) on the same equipment +1.5] | MNT-0336-026 esp motor burnout, 2026-05-08 to 2026-05-13 |
-| 8 | WELL-0305 | Northwest Block 12 | CTX-0305-004, 2027-01-11: "Pumper reports rattling at WELL-0305 pump jack, keep an eye on it." | recalled pump still in the well: Highline RP-175 pump, serial SN-978137, lot LOT-2409-A (installed MNT-0305-032, 2026-10-16), replacement deadline 2026-12-31 missed; 1 corrective repair(s) on the same equipment in 12 months (MNT-0305-030 gearbox oil leak) [score 11.5: severity (rattling) +2, recalled pump in well +8, 1 recent corrective repair(s) on the same equipment +1.5] | MNT-0305-032 downhole pump stuck, 2026-10-16 to 2026-10-21 |
-| 9 | WELL-0286 | Northeast Block 8 | CTX-0286-002, 2026-12-20: "WELL-0286 tagging bottom on the downstroke, adjust spacing next visit." \| CTX-0286-004, 2026-12-27: "Pumper reports rattling at WELL-0286 pump jack, keep an eye on it." \| CTX-0286-005, 2027-01-03: "Heard fluid pound on WELL-0286, unit still running." | 3 notes in the window; different symptoms reported (tagging bottom, rattling, fluid pound); only 4.6 °C above the 15 °C producing limit; 2 corrective repair(s) on the same equipment in 12 months (MNT-0286-023 walking beam bearing wear; MNT-0286-026 walking beam bearing wear) [score 11: severity (tagging bottom/rattling/fluid pound) +3, 3 notes +3, escalating variety +1, near producing limit +1, 2 recent corrective repair(s) on the same equipment +3] | MNT-0286-026 walking beam bearing wear, 2026-09-25 to 2026-09-30 |
-| 10 | WELL-0349 | Northwest Block 12 | CTX-0349-001, 2026-12-19: "Pumper reports rattling at WELL-0349 pump jack, keep an eye on it." \| CTX-0349-002, 2027-01-03: "WELL-0349 tagging bottom on the downstroke, adjust spacing next visit." | 2 notes in the window; different symptoms reported (rattling, tagging bottom); overdue follow-up from MNT-0349-028 (due 2026-05-20, no later "Follow-up to" job): "Crew to return within 7 days to check the rod load and pump spacing."; 1 corrective repair(s) on the same equipment in 12 months (MNT-0349-028 sucker rod parted) [score 11: severity (rattling/tagging bottom) +3, 2 notes +1.5, escalating variety +1, overdue follow-up MNT-0349-028 +4, 1 recent corrective repair(s) on the same equipment +1.5] | MNT-0349-028 sucker rod parted, 2026-05-01 to 2026-05-13; later: MNT-0349-032 flowline leak causing spill, 2026-10-23 to 2026-10-24 |
+| 1 | WELL-0263 | Southwest Block 23 | CTX-0263-004, 2027-01-11: "Heard fluid pound on WELL-0263, unit still running." \| CTX-0263-005, 2027-01-14: "Rod squeal at WELL-0263 stuffing box, greased the polished rod." | 2 notes in the window; different symptoms reported (fluid pound, squeal); not producing now (2027-01-14: 4 °C vs 20 °C limit); wellhead-minus-air fell 3 inspections in a row, 36.5 to 4 (-32.5 °C) [T500 manual s.5 early warning, rule met at INS-0263-0219]; recalled pump still in the well: Highline RP-175 pump, serial SN-187332, lot LOT-2410-B (installed MNT-0263-033, 2026-10-16), replacement deadline 2026-12-31 missed; 2 corrective repair(s) on the same equipment in 12 months (MNT-0263-030 downhole pump stuck; MNT-0263-033 downhole pump stuck) [score 22.8: severity (fluid pound/squeal) +2, 2 notes +1.5, escalating variety +1, not producing now +3, temperature trend +2.3, recalled pump in well +9, 2 recent corrective repair(s) on the same equipment +4] | MNT-0263-035 flowline corrosion pinhole leak, 2027-01-09 to 2027-01-19 (in progress) |
+| 2 | WELL-0219 | Southeast Block 31 | CTX-0219-006, 2027-01-05: "WELL-0219 drive tripping on underload, restarted from the panel." \| CTX-0219-007, 2027-01-13: "Drive on WELL-0219 showing amps hunting between 38 and 44 A." | 2 notes in the window; different symptoms reported (drive tripping, amps hunting); not producing now (2027-01-14: 4.5 °C vs 25 °C limit, "No flow noise at the wellhead."); wellhead-minus-air fell 6 inspections in a row, 37.4 to 4.5 (-32.9 °C) [T500 manual s.5 early warning, rule met at INS-0219-0168]; ESP drive and insulation check due 2027-01-07 (14 days after the drop on INS-0219-0168, T500 manual s.5), no check job since - 8 days overdue: a failure precursor and a compliance breach [score 20.1: severity (drive tripping/amps hunting) +2, 2 notes +1.5, escalating variety +1, not producing now +3, decline trend +4.5, mandated check OVERDUE +8.1] | MNT-0219-020 wellhead cable penetrator leak, 2026-08-21 to 2026-09-02 |
+| 3 | WELL-0401 | Northwest Block 12 | CTX-0401-003, 2026-12-18: "WELL-0401 amps hunting on the drive panel, still running." \| CTX-0401-004, 2027-01-14: "WELL-0401 amps hunting on the drive panel, still running." | 2 notes in the window; wellhead-minus-air fell 6 inspections in a row, 36.9 to 30.3 (-6.6 °C) [T500 manual s.5 early warning, rule met at INS-0401-0220]; ESP drive and insulation check due 2027-01-21 (T500 manual s.5), not yet overdue; only 5.3 °C above the 25 °C producing limit; 2 corrective repair(s) on the same equipment in 12 months (MNT-0401-030 esp power cable insulation failure; MNT-0401-032 esp motor burnout), root-cause-analysis trigger reached [score 16.6: severity (amps hunting) +2, 2 notes +1.5, decline trend +4.1, mandated check due +2, near producing limit +1, 2 recent corrective repair(s) on the same equipment +6] | MNT-0401-032 esp motor burnout, 2026-11-27 to 2026-12-01 |
+| 4 | WELL-0202 | Southeast Block 31 | CTX-0202-004, 2026-12-28: "WELL-0202 amps hunting on the drive panel, still running." | wellhead-minus-air fell 8 inspections in a row, 36.8 to 29.6 (-7.2 °C) [T500 manual s.5 early warning, rule met at INS-0202-0211]; ESP drive and insulation check due 2027-01-07 (14 days after the drop on INS-0202-0211, T500 manual s.5), no check job since - 8 days overdue: a failure precursor and a compliance breach; only 4.6 °C above the 25 °C producing limit [score 16: severity (amps hunting) +2, decline trend +4.9, mandated check OVERDUE +8.1, near producing limit +1] | MNT-0202-019 flowline corrosion pinhole leak, 2025-04-19 to 2025-04-29; later: MNT-0202-026 flowline leak causing spill, 2026-06-12 to 2026-06-13 |
+| 5 | WELL-0428 | Northwest Block 12 | CTX-0428-002, 2027-01-01: "Heard fluid pound on WELL-0428, unit still running." \| CTX-0428-003, 2027-01-06: "Heard fluid pound on WELL-0428, unit still running." | 2 notes in the window; recalled pump still in the well: Highline RP-175 pump, serial SN-708611, lot LOT-2410-B (installed MNT-0428-022, 2026-03-07), replacement deadline 2026-12-31 missed; 1 corrective repair(s) on the same equipment in 12 months (MNT-0428-022 downhole pump stuck) [score 14.5: severity (fluid pound) +2, 2 notes +1.5, recalled pump in well +9, 1 recent corrective repair(s) on the same equipment +2] | MNT-0428-022 downhole pump stuck, 2026-03-07 to 2026-03-17; later: MNT-0428-025 flowline leak causing spill, 2026-04-17 to 2026-04-17 |
+| 6 | WELL-0023 | Southwest Block 23 | CTX-0023-003, 2026-12-27: "Rod squeal at WELL-0023 stuffing box, greased the polished rod." \| CTX-0023-004, 2027-01-04: "Rod squeal at WELL-0023 stuffing box, greased the polished rod." \| CTX-0023-005, 2027-01-10: "Heard fluid pound on WELL-0023, unit still running." | 3 notes in the window; different symptoms reported (squeal, fluid pound); wellhead-minus-air fell 3 inspections in a row, 30.7 to 24.3 (-6.4 °C) [T500 manual s.5 early warning, rule met at INS-0023-0220]; 3 corrective repair(s) on the same equipment in 12 months (MNT-0023-025 prime mover failure; MNT-0023-030 walking beam bearing wear; MNT-0023-033 sucker rod parted) [score 14: severity (squeal/fluid pound) +2, 3 notes +3, escalating variety +1, temperature trend +2, 3 recent corrective repair(s) on the same equipment +6] | MNT-0023-033 sucker rod parted, 2026-12-06 to 2026-12-07 |
+| 7 | WELL-0061 | Southwest Block 24 | CTX-0061-004, 2026-12-26: "WELL-0061 tagging bottom on the downstroke, adjust spacing next visit." \| CTX-0061-005, 2027-01-12: "Heard fluid pound on WELL-0061, unit still running." | 2 notes in the window; different symptoms reported (tagging bottom, fluid pound); 3 corrective repair(s) on the same equipment in 12 months (MNT-0061-025 sucker rod parted; MNT-0061-028 sucker rod parted; MNT-0061-031 sucker rod parted), root-cause-analysis trigger reached [score 13.5: severity (tagging bottom/fluid pound) +3, 2 notes +1.5, escalating variety +1, 3 recent corrective repair(s) on the same equipment +8] | MNT-0061-031 sucker rod parted, 2026-12-11 to 2026-12-21 |
+| 8 | WELL-0305 | Northwest Block 12 | CTX-0305-004, 2027-01-11: "Pumper reports rattling at WELL-0305 pump jack, keep an eye on it." | recalled pump still in the well: Highline RP-175 pump, serial SN-978137, lot LOT-2409-A (installed MNT-0305-032, 2026-10-16), replacement deadline 2026-12-31 missed; 1 corrective repair(s) on the same equipment in 12 months (MNT-0305-030 gearbox oil leak) [score 13: severity (rattling) +2, recalled pump in well +9, 1 recent corrective repair(s) on the same equipment +2] | MNT-0305-032 downhole pump stuck, 2026-10-16 to 2026-10-21 |
+| 9 | WELL-0349 | Northwest Block 12 | CTX-0349-001, 2026-12-19: "Pumper reports rattling at WELL-0349 pump jack, keep an eye on it." \| CTX-0349-002, 2027-01-03: "WELL-0349 tagging bottom on the downstroke, adjust spacing next visit." | 2 notes in the window; different symptoms reported (rattling, tagging bottom); overdue follow-up from MNT-0349-028 (due 2026-05-20, no later "Follow-up to" job): "Crew to return within 7 days to check the rod load and pump spacing."; 1 corrective repair(s) on the same equipment in 12 months (MNT-0349-028 sucker rod parted) [score 12.5: severity (rattling/tagging bottom) +3, 2 notes +1.5, escalating variety +1, overdue follow-up MNT-0349-028 +5, 1 recent corrective repair(s) on the same equipment +2] | MNT-0349-028 sucker rod parted, 2026-05-01 to 2026-05-13; later: MNT-0349-032 flowline leak causing spill, 2026-10-23 to 2026-10-24 |
+| 10 | WELL-0336 | Northwest Block 12 | CTX-0336-003, 2026-12-24: "WELL-0336 amps hunting on the drive panel, still running." \| CTX-0336-004, 2027-01-07: "WELL-0336 drive tripping on underload, restarted from the panel." \| CTX-0336-005, 2027-01-14: "WELL-0336 amps hunting on the drive panel, still running." | 3 notes in the window; different symptoms reported (amps hunting, drive tripping); wellhead-minus-air fell 3 inspections in a row, 37.3 to 33.1 (-4.2 °C) [T500 manual s.5 early warning, rule met at INS-0336-0218]; ESP drive and insulation check due 2027-01-28 (T500 manual s.5), not yet overdue; 1 corrective repair(s) on the same equipment in 12 months (MNT-0336-026 esp motor burnout) [score 12.4: severity (amps hunting/drive tripping) +2, 3 notes +3, escalating variety +1, decline trend +2.4, mandated check due +2, 1 recent corrective repair(s) on the same equipment +2] | MNT-0336-026 esp motor burnout, 2026-05-08 to 2026-05-13 |
 
 (10 row(s))
 
-**Citations (57):** INS-0263-0219, MNT-0263-033, SUPPLIER-RECALL-NOTICE-2026-12-01, MNT-0263-030, MNT-0263-033, MNT-0263-035, CTX-0263-004, CTX-0263-005, INS-0219-0171, OM-T500, MNT-0219-020, CTX-0219-006, CTX-0219-007, INS-0401-0221, MNT-0401-030, MNT-0401-032, CTX-0401-003, CTX-0401-004, INS-0428-0218, MNT-0428-022, MNT-0428-022, CTX-0428-002, CTX-0428-003, INS-0023-0220, MNT-0023-025, MNT-0023-030, MNT-0023-033, CTX-0023-003, CTX-0023-004, CTX-0023-005, INS-0061-0221, MNT-0061-025, MNT-0061-028, MNT-0061-031, CTX-0061-004, CTX-0061-005, INS-0336-0218, MNT-0336-026, CTX-0336-003, CTX-0336-004 ... (40 of 57 listed)
+**Citations (54):** INS-0263-0219, MNT-0263-033, SUPPLIER-RECALL-NOTICE-2026-12-01, MNT-0263-030, MNT-0263-033, MNT-0263-035, CTX-0263-004, CTX-0263-005, INS-0219-0171, OM-T500, MNT-0219-020, CTX-0219-006, CTX-0219-007, INS-0401-0221, MNT-0401-030, MNT-0401-032, CTX-0401-003, CTX-0401-004, INS-0202-0214, MNT-0202-019, CTX-0202-004, INS-0428-0218, MNT-0428-022, MNT-0428-022, CTX-0428-002, CTX-0428-003, INS-0023-0220, MNT-0023-025, MNT-0023-030, MNT-0023-033, CTX-0023-003, CTX-0023-004, CTX-0023-005, INS-0061-0221, MNT-0061-025, MNT-0061-028, MNT-0061-031, CTX-0061-004, CTX-0061-005, INS-0305-0216 ... (40 of 54 listed)
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (7475 ms): Structured plan validated: note_risk. Only this user’s last five exchanges were supplied. || note_risk (1726 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2300 ms): Structured plan validated: note_risk. Only this user’s last five exchanges were supplied. || note_risk (1901 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 ### Q7 turn 2
 
@@ -368,29 +368,29 @@ Separate Spill Response SOP timing findings (not part of the letter test): WELL-
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=5347, wall=5357 ms
+**Model:** name=gemini-3.5-flash-lite, status=fallback, reason=invalid_plan; **latency:** durationMs=4164, wall=4173 ms
 
 **Answer (verbatim):**
 
 ~~~text
-175 well(s) have operator notes from 2026-12-15 to 2027-01-15 describing abnormal sound or behaviour (keywords: knocking, grinding, banging, vibration, squeal, rattling, tagging bottom, fluid pound, amps hunting, drive tripping, and similar). 12 of them already had a corrective (non-spill) repair start after the latest such note and are excluded (WELL-0019 (MNT-0019-032); WELL-0033 (MNT-0033-033); WELL-0058 (MNT-0058-033); WELL-0066 (MNT-0066-034); WELL-0069 (MNT-0069-039); WELL-0251 (MNT-0251-029); WELL-0313 (MNT-0313-027); WELL-0316 (MNT-0316-026); WELL-0335 (MNT-0335-032); WELL-0382 (MNT-0382-033); WELL-0540 (MNT-0540-025); WELL-0599 (MNT-0599-030)), leaving 163 candidates. Spill clean-up jobs are not counted as repairs. Plugged wells excluded: 3. Send a crew first to: 1. WELL-0263 (Southwest Block 23) - repeat notes (2); already not producing (4 °C above air vs 20 °C); steady temperature decline (-32.5 °C); recalled pump LOT-2410-B past the 2026-12-31 deadline; 2 repairs on the same equipment in 12 months 2. WELL-0219 (Southeast Block 31) - repeat notes (2); already not producing (4.5 °C above air vs 25 °C); steady ESP decline (-32.9 °C); ESP check overdue since 2027-01-07 3. WELL-0401 (Northwest Block 12) - repeat notes (2); steady ESP decline (-6.6 °C); ESP check due 2027-01-21; 2 repairs on the same equipment in 12 months (RCA threshold) The three are in different areas. Score = worst symptom (1 to 3) + 1.5 per repeat note (max 3) + 1 for differing symptoms + 3 not producing now + ESP/temperature trend (T500 manual early-warning rule: 3 or more successive falls totalling 3 °C or more; 3, plus 5 if the 14-day check is overdue; 1.5 for rod-lift wells) + 6 recalled pump (8 once the replacement deadline has passed) still in the well (recall notice lots, only the latest installed pump counts) + 4 overdue repair follow-up with no later "Follow-up to" job + 1.5 per recent same-equipment corrective repair (max 3) with 2 more at the RCA trigger - 6 if a repair on the lift equipment is already under way.
+175 well(s) have operator notes from 2026-12-15 to 2027-01-15 describing abnormal sound or behaviour (keywords: knocking, grinding, banging, vibration, squeal, rattling, tagging bottom, fluid pound, amps hunting, drive tripping, and similar). 12 of them already had a corrective (non-spill) repair start after the latest such note and are excluded (WELL-0019 (MNT-0019-032); WELL-0033 (MNT-0033-033); WELL-0058 (MNT-0058-033); WELL-0066 (MNT-0066-034); WELL-0069 (MNT-0069-039); WELL-0251 (MNT-0251-029); WELL-0313 (MNT-0313-027); WELL-0316 (MNT-0316-026); WELL-0335 (MNT-0335-032); WELL-0382 (MNT-0382-033); WELL-0540 (MNT-0540-025); WELL-0599 (MNT-0599-030)), leaving 163 candidates. Spill clean-up jobs are not counted as repairs. Plugged wells excluded: 3. Send a crew first to: 1. WELL-0263 (Southwest Block 23, score 22.8) - repeat notes (CTX-0263-004, CTX-0263-005); already not producing (INS-0263-0219: 4 °C above air vs 20 °C); steady decline: 3 drops, -32.5 °C (INS-0263-0219); recalled pump LOT-2410-B (MNT-0263-033) past the 2026-12-31 deadline; 2 repairs on the same equipment in 12 months (MNT-0263-030, MNT-0263-033); notes CTX-0263-004, CTX-0263-005. 2. WELL-0219 (Southeast Block 31, score 20.1) - repeat notes (CTX-0219-006, CTX-0219-007); already not producing (INS-0219-0171: 4.5 °C above air vs 25 °C); steady decline: 6 drops, -32.9 °C (INS-0219-0168); T500 manual s.5 mandated ESP drive and insulation check OVERDUE since 2027-01-07 (8 days; drop INS-0219-0168), no check job on record; notes CTX-0219-006, CTX-0219-007. 3. WELL-0202 (Southeast Block 31, score 16) - picked ahead of WELL-0401 (score 16.6) because its score 16 is within 20% of it and it is in the same area (Southeast Block 31) as WELL-0219, so one crew trip covers both; steady decline: 8 drops, -7.2 °C (INS-0202-0211); T500 manual s.5 mandated ESP drive and insulation check OVERDUE since 2027-01-07 (8 days; drop INS-0202-0211), no check job on record; notes CTX-0202-004. Trip logistics: WELL-0219 and WELL-0202 are both in Southeast Block 31, so one crew trip can cover them. Picks start from the top-ranked well, then prefer a high-risk well (within 20% of the next candidate's score) in the same area as one already chosen. Score = worst symptom (1 to 3) + 1.5 per repeat note (max 3) + 1 for differing symptoms + 3 not producing now + decline trend (rule read from the well-type manual, e.g. T500 s.5: N consecutive drops totalling X °C or more; 0.25 per drop up to 2 plus 0.4 per °C of total fall up to 3, times 0.6 on wells whose own manual has no mandated check) + mandated check from that rule (days read from the manual): 7 plus up to 2 more by weeks late when its due date has PASSED with no check job (failure precursor and compliance breach), only 2 when triggered but not yet due + recalled pump still in the well (recall notice lots, only the latest installed pump counts): 9 once the replacement deadline has passed, else 6 + 5 overdue repair follow-up with no later "Follow-up to" job + repeat-failure history 2 per same-equipment corrective repair in 12 months (max 3) plus 2 at the RCA trigger - 6 if a repair on the lift equipment is already under way, - 3 if one finished during the notes.
 ~~~
 
 **Visual:** type=`table`, title="Where to send a crew first"
 
 | Rank | Well | Area | Why send a crew first | Operator-note evidence | Last repair |
 | --- | --- | --- | --- | --- | --- |
-| 1 | WELL-0263 | Southwest Block 23 | repeat notes (2); already not producing (4 °C above air vs 20 °C); steady temperature decline (-32.5 °C); recalled pump LOT-2410-B past the 2026-12-31 deadline; 2 repairs on the same equipment in 12 months (score 20) | CTX-0263-004, 2027-01-11: "Heard fluid pound on WELL-0263, unit still running." \| CTX-0263-005, 2027-01-14: "Rod squeal at WELL-0263 stuffing box, greased the polished rod." | MNT-0263-035 flowline corrosion pinhole leak, 2027-01-09 to 2027-01-19 (in progress) |
-| 2 | WELL-0219 | Southeast Block 31 | repeat notes (2); already not producing (4.5 °C above air vs 25 °C); steady ESP decline (-32.9 °C); ESP check overdue since 2027-01-07 (score 15.5) | CTX-0219-006, 2027-01-05: "WELL-0219 drive tripping on underload, restarted from the panel." \| CTX-0219-007, 2027-01-13: "Drive on WELL-0219 showing amps hunting between 38 and 44 A." | MNT-0219-020 wellhead cable penetrator leak, 2026-08-21 to 2026-09-02 |
-| 3 | WELL-0401 | Northwest Block 12 | repeat notes (2); steady ESP decline (-6.6 °C); ESP check due 2027-01-21; 2 repairs on the same equipment in 12 months (RCA threshold) (score 13.5) | CTX-0401-003, 2026-12-18: "WELL-0401 amps hunting on the drive panel, still running." \| CTX-0401-004, 2027-01-14: "WELL-0401 amps hunting on the drive panel, still running." | MNT-0401-032 esp motor burnout, 2026-11-27 to 2026-12-01 |
+| 1 | WELL-0263 | Southwest Block 23 | repeat notes (CTX-0263-004, CTX-0263-005); already not producing (INS-0263-0219: 4 °C above air vs 20 °C); steady decline: 3 drops, -32.5 °C (INS-0263-0219); recalled pump LOT-2410-B (MNT-0263-033) past the 2026-12-31 deadline; 2 repairs on the same equipment in 12 months (MNT-0263-030, MNT-0263-033); notes CTX-0263-004, CTX-0263-005 (score 22.8) | CTX-0263-004, 2027-01-11: "Heard fluid pound on WELL-0263, unit still running." \| CTX-0263-005, 2027-01-14: "Rod squeal at WELL-0263 stuffing box, greased the polished rod." | MNT-0263-035 flowline corrosion pinhole leak, 2027-01-09 to 2027-01-19 (in progress) |
+| 2 | WELL-0219 | Southeast Block 31 | repeat notes (CTX-0219-006, CTX-0219-007); already not producing (INS-0219-0171: 4.5 °C above air vs 25 °C); steady decline: 6 drops, -32.9 °C (INS-0219-0168); T500 manual s.5 mandated ESP drive and insulation check OVERDUE since 2027-01-07 (8 days; drop INS-0219-0168), no check job on record; notes CTX-0219-006, CTX-0219-007 (score 20.1) | CTX-0219-006, 2027-01-05: "WELL-0219 drive tripping on underload, restarted from the panel." \| CTX-0219-007, 2027-01-13: "Drive on WELL-0219 showing amps hunting between 38 and 44 A." | MNT-0219-020 wellhead cable penetrator leak, 2026-08-21 to 2026-09-02 |
+| 3 | WELL-0202 | Southeast Block 31 | picked ahead of WELL-0401 (score 16.6) because its score 16 is within 20% of it and it is in the same area (Southeast Block 31) as WELL-0219, so one crew trip covers both; steady decline: 8 drops, -7.2 °C (INS-0202-0211); T500 manual s.5 mandated ESP drive and insulation check OVERDUE since 2027-01-07 (8 days; drop INS-0202-0211), no check job on record; notes CTX-0202-004 (score 16) | CTX-0202-004, 2026-12-28: "WELL-0202 amps hunting on the drive panel, still running." | MNT-0202-019 flowline corrosion pinhole leak, 2025-04-19 to 2025-04-29; later: MNT-0202-026 flowline leak causing spill, 2026-06-12 to 2026-06-13 |
 
 (3 row(s))
 
-**Citations (18):** INS-0263-0219, MNT-0263-033, SUPPLIER-RECALL-NOTICE-2026-12-01, MNT-0263-030, MNT-0263-033, MNT-0263-035, CTX-0263-004, CTX-0263-005, INS-0219-0171, OM-T500, MNT-0219-020, CTX-0219-006, CTX-0219-007, INS-0401-0221, MNT-0401-030, MNT-0401-032, CTX-0401-003, CTX-0401-004
+**Citations (16):** INS-0263-0219, MNT-0263-033, SUPPLIER-RECALL-NOTICE-2026-12-01, MNT-0263-030, MNT-0263-033, MNT-0263-035, CTX-0263-004, CTX-0263-005, INS-0219-0171, OM-T500, MNT-0219-020, CTX-0219-006, CTX-0219-007, INS-0202-0214, MNT-0202-019, CTX-0202-004
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (3667 ms): Structured plan validated: note_risk. Only this user’s last five exchanges were supplied. || note_risk (1679 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** deterministic_planner (2401 ms): Hosted planner unavailable (invalid_plan); validated domain fallback used. Retry this question to reconnect. || note_risk (1763 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
@@ -405,7 +405,7 @@ Separate Spill Response SOP timing findings (not part of the letter test): WELL-
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=5604, wall=5611 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2400, wall=2408 ms
 
 **Answer (verbatim):**
 
@@ -421,7 +421,7 @@ Recorded Nathan Pierce’s report as an unconfirmed shared claim on WELL-0333 (n
 
 (1 row(s))
 
-**Citations (6):** CLAIM-030f7c95-e1f2-41a4-8d21-042a743a395d, SUPPLIER-RECALL-NOTICE-2026-12-01, CLAIM-030f7c95-e1f2-41a4-8d21-042a743a395d, MNT-0333-024, MNT-0333-024, MNT-0333-026
+**Citations (6):** CLAIM-f24a665b-e209-48c5-bc9e-974eff89597a, SUPPLIER-RECALL-NOTICE-2026-12-01, CLAIM-f24a665b-e209-48c5-bc9e-974eff89597a, MNT-0333-024, MNT-0333-024, MNT-0333-026
 
 **Conflicts:** 
 
@@ -431,7 +431,7 @@ Recorded Nathan Pierce’s report as an unconfirmed shared claim on WELL-0333 (n
 ]
 ~~~
 
-**Trace:** gemini_planner (5583 ms): Structured plan validated: claim. Only this user’s last five exchanges were supplied. || claim (21 ms): Explicit user feedback applied by the scoped domain tool with provenance.
+**Trace:** gemini_planner (2377 ms): Structured plan validated: claim. Only this user’s last five exchanges were supplied. || claim (23 ms): Explicit user feedback applied by the scoped domain tool with provenance.
 
 ### Q8 turn 2
 
@@ -441,7 +441,7 @@ Recorded Nathan Pierce’s report as an unconfirmed shared claim on WELL-0333 (n
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=5283, wall=5290 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2404, wall=2424 ms
 
 **Answer (verbatim):**
 
@@ -457,7 +457,7 @@ Saved as a private display preference for Nathan Pierce: “Also, just for me: w
 
 **Memory:** ~~~json ["Private preference saved for Nathan Pierce."] ~~~
 
-**Trace:** gemini_planner (5283 ms): Structured plan validated: preference. Only this user’s last five exchanges were supplied. || preference (0 ms): Explicit user feedback applied by the scoped domain tool with provenance.
+**Trace:** gemini_planner (2404 ms): Structured plan validated: preference. Only this user’s last five exchanges were supplied. || preference (0 ms): Explicit user feedback applied by the scoped domain tool with provenance.
 
 ### Q8 turn 3
 
@@ -467,7 +467,7 @@ Saved as a private display preference for Nathan Pierce: “Also, just for me: w
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=fallback, reason=invalid_plan; **latency:** durationMs=3931, wall=3940 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2428, wall=2446 ms
 
 **Answer (verbatim):**
 
@@ -491,7 +491,7 @@ Saved as a private display preference for Nathan Pierce: “Also, just for me: w
 
 (9 row(s))
 
-**Citations (30):** SUPPLIER-RECALL-NOTICE-2026-12-01, CLAIM-030f7c95-e1f2-41a4-8d21-042a743a395d, MNT-0156-027, MNT-0156-027, MNT-0156-030, MNT-0160-028, MNT-0160-028, MNT-0160-029, MNT-0160-032, MNT-0305-032, MNT-0305-032, MNT-0333-024, MNT-0333-024, MNT-0333-026, MNT-0426-030, MNT-0426-030, MNT-0426-033, MNT-0428-022, MNT-0428-022, MNT-0428-025, MNT-0577-028, MNT-0577-028, MNT-0577-032, MNT-0031-027, MNT-0031-027, MNT-0031-033, MNT-0263-033, MNT-0263-033, MNT-0263-034, MNT-0263-035
+**Citations (30):** SUPPLIER-RECALL-NOTICE-2026-12-01, CLAIM-f24a665b-e209-48c5-bc9e-974eff89597a, MNT-0156-027, MNT-0156-027, MNT-0156-030, MNT-0160-028, MNT-0160-028, MNT-0160-029, MNT-0160-032, MNT-0305-032, MNT-0305-032, MNT-0333-024, MNT-0333-024, MNT-0333-026, MNT-0426-030, MNT-0426-030, MNT-0426-033, MNT-0428-022, MNT-0428-022, MNT-0428-025, MNT-0577-028, MNT-0577-028, MNT-0577-032, MNT-0031-027, MNT-0031-027, MNT-0031-033, MNT-0263-033, MNT-0263-033, MNT-0263-034, MNT-0263-035
 
 **Conflicts:** 
 
@@ -501,7 +501,7 @@ Saved as a private display preference for Nathan Pierce: “Also, just for me: w
 ]
 ~~~
 
-**Trace:** deterministic_planner (3885 ms): Hosted planner unavailable (invalid_plan); validated domain fallback used. Retry this question to reconnect. || recalled_pumps (46 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2384 ms): Structured plan validated: recalled_pumps. Only this user’s last five exchanges were supplied. || recalled_pumps (44 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 ### Q8 turn 4
 
@@ -511,7 +511,7 @@ Saved as a private display preference for Nathan Pierce: “Also, just for me: w
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=fallback, reason=timeout; **latency:** durationMs=25026, wall=25033 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=1832, wall=1851 ms
 
 **Answer (verbatim):**
 
@@ -527,7 +527,7 @@ Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no
 
 (1 row(s))
 
-**Citations (6):** CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e, SUPPLIER-RECALL-NOTICE-2026-12-01, CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e, MNT-0577-028, MNT-0577-028, MNT-0577-032
+**Citations (6):** CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb, SUPPLIER-RECALL-NOTICE-2026-12-01, CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb, MNT-0577-028, MNT-0577-028, MNT-0577-032
 
 **Conflicts:** 
 
@@ -537,7 +537,7 @@ Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no
 ]
 ~~~
 
-**Trace:** deterministic_planner (25005 ms): Hosted planner unavailable (timeout); validated domain fallback used. Retry this question to reconnect. || claim (21 ms): Explicit user feedback applied by the scoped domain tool with provenance.
+**Trace:** gemini_planner (1812 ms): Structured plan validated: claim. Only this user’s last five exchanges were supplied. || claim (20 ms): Explicit user feedback applied by the scoped domain tool with provenance.
 
 ### Q8 turn 5
 
@@ -547,7 +547,7 @@ Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=5131, wall=5137 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=1830, wall=1848 ms
 
 **Answer (verbatim):**
 
@@ -566,7 +566,7 @@ Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no
 
 (4 row(s))
 
-**Citations (13):** SUPPLIER-RECALL-NOTICE-2026-12-01, CLAIM-030f7c95-e1f2-41a4-8d21-042a743a395d, MNT-0305-032, MNT-0305-032, MNT-0333-024, MNT-0333-024, MNT-0333-026, MNT-0426-030, MNT-0426-030, MNT-0426-033, MNT-0428-022, MNT-0428-022, MNT-0428-025
+**Citations (13):** SUPPLIER-RECALL-NOTICE-2026-12-01, CLAIM-f24a665b-e209-48c5-bc9e-974eff89597a, MNT-0305-032, MNT-0305-032, MNT-0333-024, MNT-0333-024, MNT-0333-026, MNT-0426-030, MNT-0426-030, MNT-0426-033, MNT-0428-022, MNT-0428-022, MNT-0428-025
 
 **Conflicts:** 
 
@@ -576,7 +576,7 @@ Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no
 ]
 ~~~
 
-**Trace:** gemini_planner (5095 ms): Structured plan validated: recalled_pumps. Only this user’s last five exchanges were supplied. || recalled_pumps (36 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (1799 ms): Structured plan validated: recalled_pumps. Only this user’s last five exchanges were supplied. || recalled_pumps (31 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
@@ -591,7 +591,7 @@ Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=fallback, reason=timeout; **latency:** durationMs=25048, wall=25064 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2279, wall=2286 ms
 
 **Answer (verbatim):**
 
@@ -615,7 +615,7 @@ Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no
 
 (9 row(s))
 
-**Citations (31):** SUPPLIER-RECALL-NOTICE-2026-12-01, CLAIM-030f7c95-e1f2-41a4-8d21-042a743a395d, CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e, MNT-0156-027, MNT-0156-027, MNT-0156-030, MNT-0160-028, MNT-0160-028, MNT-0160-029, MNT-0160-032, MNT-0305-032, MNT-0305-032, MNT-0333-024, MNT-0333-024, MNT-0333-026, MNT-0426-030, MNT-0426-030, MNT-0426-033, MNT-0428-022, MNT-0428-022, MNT-0428-025, MNT-0577-028, MNT-0577-028, MNT-0577-032, MNT-0031-027, MNT-0031-027, MNT-0031-033, MNT-0263-033, MNT-0263-033, MNT-0263-034, MNT-0263-035
+**Citations (31):** SUPPLIER-RECALL-NOTICE-2026-12-01, CLAIM-f24a665b-e209-48c5-bc9e-974eff89597a, CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb, MNT-0156-027, MNT-0156-027, MNT-0156-030, MNT-0160-028, MNT-0160-028, MNT-0160-029, MNT-0160-032, MNT-0305-032, MNT-0305-032, MNT-0333-024, MNT-0333-024, MNT-0333-026, MNT-0426-030, MNT-0426-030, MNT-0426-033, MNT-0428-022, MNT-0428-022, MNT-0428-025, MNT-0577-028, MNT-0577-028, MNT-0577-032, MNT-0031-027, MNT-0031-027, MNT-0031-033, MNT-0263-033, MNT-0263-033, MNT-0263-034, MNT-0263-035
 
 **Conflicts:** 
 
@@ -626,7 +626,7 @@ Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no
 ]
 ~~~
 
-**Trace:** deterministic_planner (25006 ms): Hosted planner unavailable (timeout); validated domain fallback used. Retry this question to reconnect. || recalled_pumps (42 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2236 ms): Structured plan validated: recalled_pumps. Only this user’s last five exchanges were supplied. || recalled_pumps (43 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 ### Q9 turn 2
 
@@ -636,7 +636,7 @@ Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2114, wall=2122 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2231, wall=2238 ms
 
 **Answer (verbatim):**
 
@@ -656,7 +656,7 @@ Nathan Pierce leads Northwest Production (TEAM-NW), which runs 150 wells today (
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (2107 ms): Structured plan validated: team_info. Only this user’s last five exchanges were supplied. || team_info (7 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2225 ms): Structured plan validated: team_info. Only this user’s last five exchanges were supplied. || team_info (6 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 ### Q9 turn 3
 
@@ -666,7 +666,7 @@ Nathan Pierce leads Northwest Production (TEAM-NW), which runs 150 wells today (
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2785, wall=2803 ms
+**Model:** name=gemini-3.5-flash-lite, status=fallback, reason=invalid_plan; **latency:** durationMs=2021, wall=2033 ms
 
 **Answer (verbatim):**
 
@@ -698,7 +698,7 @@ Checked in December 2026: 9 cold readings on producing wells needed a check; 5 M
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (2664 ms): Structured plan validated: cold_weather. Only this user’s last five exchanges were supplied. || cold_weather (121 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** deterministic_planner (1887 ms): Hosted planner unavailable (invalid_plan); validated domain fallback used. Retry this question to reconnect. || cold_weather (134 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 ### Q9 turn 4
 
@@ -708,7 +708,7 @@ Checked in December 2026: 9 cold readings on producing wells needed a check; 5 M
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2263, wall=2269 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2383, wall=2404 ms
 
 **Answer (verbatim):**
 
@@ -728,7 +728,7 @@ No H2S or gas reading is recorded for WELL-0332 on Dec 3, 2026. The note carries
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (2257 ms): Structured plan validated: gas_response. Only this user’s last five exchanges were supplied. || gas_response (6 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2377 ms): Structured plan validated: gas_response. Only this user’s last five exchanges were supplied. || gas_response (6 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 ### Q9 turn 5
 
@@ -738,7 +738,7 @@ No H2S or gas reading is recorded for WELL-0332 on Dec 3, 2026. The note carries
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2787, wall=2802 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=24145, wall=24154 ms
 
 **Answer (verbatim):**
 
@@ -759,7 +759,7 @@ No H2S or gas reading is recorded for WELL-0332 on Dec 3, 2026. The note carries
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (2768 ms): Structured plan validated: recalled_pumps. Only this user’s last five exchanges were supplied. || recalled_pumps (19 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (24114 ms): Structured plan validated: recalled_pumps. Only this user’s last five exchanges were supplied. || recalled_pumps (31 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 ### Q9 turn 6
 
@@ -769,36 +769,41 @@ No H2S or gas reading is recorded for WELL-0332 on Dec 3, 2026. The note carries
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=4548, wall=4575 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=3258, wall=3286 ms
 
 **Answer (verbatim):**
 
 ~~~text
-175 well(s) have operator notes from 2026-12-15 to 2027-01-15 describing abnormal sound or behaviour (keywords: knocking, grinding, banging, vibration, squeal, rattling, tagging bottom, fluid pound, amps hunting, drive tripping, and similar). 12 of them already had a corrective (non-spill) repair start after the latest such note and are excluded (WELL-0019 (MNT-0019-032); WELL-0033 (MNT-0033-033); WELL-0058 (MNT-0058-033); WELL-0066 (MNT-0066-034); WELL-0069 (MNT-0069-039); WELL-0251 (MNT-0251-029); WELL-0313 (MNT-0313-027); WELL-0316 (MNT-0316-026); WELL-0335 (MNT-0335-032); WELL-0382 (MNT-0382-033); WELL-0540 (MNT-0540-025); WELL-0599 (MNT-0599-030)), leaving 163 candidates. Spill clean-up jobs are not counted as repairs. Plugged wells excluded: 3. Top 10 most likely to need a repair in the next 90 days: 1. WELL-0263 (score 20), 2. WELL-0219 (score 15.5), 3. WELL-0401 (score 13.5), 4. WELL-0428 (score 13), 5. WELL-0023 (score 12), 6. WELL-0061 (score 12), 7. WELL-0336 (score 11.5), 8. WELL-0305 (score 11.5), 9. WELL-0286 (score 11), 10. WELL-0349 (score 11). Area clustering: WELL-0263 and WELL-0023 are both in Southwest Block 23; WELL-0401 and WELL-0428 and WELL-0336 and WELL-0305 and WELL-0349 are both in Northwest Block 12. Next in line: WELL-0202 (11), WELL-0010 (10.5), WELL-0182 (10.5), WELL-0020 (10), WELL-0175 (10). Score = worst symptom (1 to 3) + 1.5 per repeat note (max 3) + 1 for differing symptoms + 3 not producing now + ESP/temperature trend (T500 manual early-warning rule: 3 or more successive falls totalling 3 °C or more; 3, plus 5 if the 14-day check is overdue; 1.5 for rod-lift wells) + 6 recalled pump (8 once the replacement deadline has passed) still in the well (recall notice lots, only the latest installed pump counts) + 4 overdue repair follow-up with no later "Follow-up to" job + 1.5 per recent same-equipment corrective repair (max 3) with 2 more at the RCA trigger - 6 if a repair on the lift equipment is already under way.
+Dealing with WELL-0332 (Northwest Block 12) first, out of 57 wells from this conversation. Priority order: SAFETY > COMPLIANCE > unexplained PRODUCTION loss > EQUIPMENT risk; ties broken by number of flags, then most recent evidence. Why: SAFETY: gas/H2S report CTX-0332-004 has no qualifying OPS-1 response; PRODUCTION: not producing (INS-0332-0217 2027-01-14: 0.5 C above air vs 15 C needed) and no in-progress job or shut-in note explains it; EQUIPMENT: operator-note risk (2 notes in the window; different symptoms reported (squeal, rattling)). No H2S reading was taken or recorded for it. Recommended action: send a manual inspection with a personal H2S monitor per the field-work SOP (field work sop WS-03: bump-tested monitor, stop work at 10 ppm), record the reading, and check why the well stopped. Next: 2. WELL-0160 (Northeast Block 8; COMPLIANCE): COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0160-028 still installed); PRODUCTION: not producing (INS-0160-0217 2027-01-14: 3.8 C above air vs 15 C needed), explained by MNT-0160-032 in progress to 2027-01-26; EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-429965, LOT-2409-C, installed MNT-0160-028) 3. WELL-0263 (Southwest Block 23; COMPLIANCE): COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0263-033 still installed); PRODUCTION: not producing (INS-0263-0219 2027-01-14: 4 C above air vs 20 C needed), explained by MNT-0263-035 in progress to 2027-01-19; EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-187332, LOT-2410-B, installed MNT-0263-033); EQUIPMENT: operator-note risk (2 notes in the window; different symptoms reported (fluid pound, squeal) wellhead-minus-air fell 3 inspections)
 ~~~
 
-**Visual:** type=`table`, title="Operator-note risk ranking"
+**Visual:** type=`table`, title="Triage of wells discussed (SAFETY > COMPLIANCE > unexplained PRODUCTION loss > EQUIPMENT risk; ties broken by number of flags, then most recent evidence) - top 15 of 57"
 
-| Rank | Well | Area | Operator-note evidence (date, quote) | Other warning signs | Last repair |
-| --- | --- | --- | --- | --- | --- |
-| 1 | WELL-0263 | Southwest Block 23 | CTX-0263-004, 2027-01-11: "Heard fluid pound on WELL-0263, unit still running." \| CTX-0263-005, 2027-01-14: "Rod squeal at WELL-0263 stuffing box, greased the polished rod." | 2 notes in the window; different symptoms reported (fluid pound, squeal); not producing now (2027-01-14: 4 °C vs 20 °C limit); wellhead-minus-air fell 3 inspections in a row, 36.5 to 4 (-32.5 °C); recalled pump still in the well: Highline RP-175 pump, serial SN-187332, lot LOT-2410-B (installed MNT-0263-033, 2026-10-16), replacement deadline 2026-12-31 missed; 2 corrective repair(s) on the same equipment in 12 months (MNT-0263-030 downhole pump stuck; MNT-0263-033 downhole pump stuck) [score 20: severity (fluid pound/squeal) +2, 2 notes +1.5, escalating variety +1, not producing now +3, temperature trend +1.5, recalled pump in well +8, 2 recent corrective repair(s) on the same equipment +3] | MNT-0263-035 flowline corrosion pinhole leak, 2027-01-09 to 2027-01-19 (in progress) |
-| 2 | WELL-0219 | Southeast Block 31 | CTX-0219-006, 2027-01-05: "WELL-0219 drive tripping on underload, restarted from the panel." \| CTX-0219-007, 2027-01-13: "Drive on WELL-0219 showing amps hunting between 38 and 44 A." | 2 notes in the window; different symptoms reported (drive tripping, amps hunting); not producing now (2027-01-14: 4.5 °C vs 25 °C limit, "No flow noise at the wellhead."); wellhead-minus-air fell 6 inspections in a row, 37.4 to 4.5 (-32.9 °C) (T500 manual s.5 early warning); ESP drive/insulation check due 2027-01-07, not done [score 15.5: severity (drive tripping/amps hunting) +2, 2 notes +1.5, escalating variety +1, not producing now +3, ESP temperature trend +3, ESP check overdue +5] | MNT-0219-020 wellhead cable penetrator leak, 2026-08-21 to 2026-09-02 |
-| 3 | WELL-0401 | Northwest Block 12 | CTX-0401-003, 2026-12-18: "WELL-0401 amps hunting on the drive panel, still running." \| CTX-0401-004, 2027-01-14: "WELL-0401 amps hunting on the drive panel, still running." | 2 notes in the window; wellhead-minus-air fell 6 inspections in a row, 36.9 to 30.3 (-6.6 °C) (T500 manual s.5 early warning); ESP drive/insulation check due 2027-01-21; only 5.3 °C above the 25 °C producing limit; 2 corrective repair(s) on the same equipment in 12 months (MNT-0401-030 esp power cable insulation failure; MNT-0401-032 esp motor burnout), root-cause-analysis trigger reached [score 13.5: severity (amps hunting) +2, 2 notes +1.5, ESP temperature trend +3, ESP check due +1, near producing limit +1, 2 recent corrective repair(s) on the same equipment +5] | MNT-0401-032 esp motor burnout, 2026-11-27 to 2026-12-01 |
-| 4 | WELL-0428 | Northwest Block 12 | CTX-0428-002, 2027-01-01: "Heard fluid pound on WELL-0428, unit still running." \| CTX-0428-003, 2027-01-06: "Heard fluid pound on WELL-0428, unit still running." | 2 notes in the window; recalled pump still in the well: Highline RP-175 pump, serial SN-708611, lot LOT-2410-B (installed MNT-0428-022, 2026-03-07), replacement deadline 2026-12-31 missed; 1 corrective repair(s) on the same equipment in 12 months (MNT-0428-022 downhole pump stuck) [score 13: severity (fluid pound) +2, 2 notes +1.5, recalled pump in well +8, 1 recent corrective repair(s) on the same equipment +1.5] | MNT-0428-022 downhole pump stuck, 2026-03-07 to 2026-03-17; later: MNT-0428-025 flowline leak causing spill, 2026-04-17 to 2026-04-17 |
-| 5 | WELL-0023 | Southwest Block 23 | CTX-0023-003, 2026-12-27: "Rod squeal at WELL-0023 stuffing box, greased the polished rod." \| CTX-0023-004, 2027-01-04: "Rod squeal at WELL-0023 stuffing box, greased the polished rod." \| CTX-0023-005, 2027-01-10: "Heard fluid pound on WELL-0023, unit still running." | 3 notes in the window; different symptoms reported (squeal, fluid pound); wellhead-minus-air fell 3 inspections in a row, 30.7 to 24.3 (-6.4 °C); 3 corrective repair(s) on the same equipment in 12 months (MNT-0023-025 prime mover failure; MNT-0023-030 walking beam bearing wear; MNT-0023-033 sucker rod parted) [score 12: severity (squeal/fluid pound) +2, 3 notes +3, escalating variety +1, temperature trend +1.5, 3 recent corrective repair(s) on the same equipment +4.5] | MNT-0023-033 sucker rod parted, 2026-12-06 to 2026-12-07 |
-| 6 | WELL-0061 | Southwest Block 24 | CTX-0061-004, 2026-12-26: "WELL-0061 tagging bottom on the downstroke, adjust spacing next visit." \| CTX-0061-005, 2027-01-12: "Heard fluid pound on WELL-0061, unit still running." | 2 notes in the window; different symptoms reported (tagging bottom, fluid pound); 3 corrective repair(s) on the same equipment in 12 months (MNT-0061-025 sucker rod parted; MNT-0061-028 sucker rod parted; MNT-0061-031 sucker rod parted), root-cause-analysis trigger reached [score 12: severity (tagging bottom/fluid pound) +3, 2 notes +1.5, escalating variety +1, 3 recent corrective repair(s) on the same equipment +6.5] | MNT-0061-031 sucker rod parted, 2026-12-11 to 2026-12-21 |
-| 7 | WELL-0336 | Northwest Block 12 | CTX-0336-003, 2026-12-24: "WELL-0336 amps hunting on the drive panel, still running." \| CTX-0336-004, 2027-01-07: "WELL-0336 drive tripping on underload, restarted from the panel." \| CTX-0336-005, 2027-01-14: "WELL-0336 amps hunting on the drive panel, still running." | 3 notes in the window; different symptoms reported (amps hunting, drive tripping); wellhead-minus-air fell 3 inspections in a row, 37.3 to 33.1 (-4.2 °C) (T500 manual s.5 early warning); ESP drive/insulation check due 2027-01-28; 1 corrective repair(s) on the same equipment in 12 months (MNT-0336-026 esp motor burnout) [score 11.5: severity (amps hunting/drive tripping) +2, 3 notes +3, escalating variety +1, ESP temperature trend +3, ESP check due +1, 1 recent corrective repair(s) on the same equipment +1.5] | MNT-0336-026 esp motor burnout, 2026-05-08 to 2026-05-13 |
-| 8 | WELL-0305 | Northwest Block 12 | CTX-0305-004, 2027-01-11: "Pumper reports rattling at WELL-0305 pump jack, keep an eye on it." | recalled pump still in the well: Highline RP-175 pump, serial SN-978137, lot LOT-2409-A (installed MNT-0305-032, 2026-10-16), replacement deadline 2026-12-31 missed; 1 corrective repair(s) on the same equipment in 12 months (MNT-0305-030 gearbox oil leak) [score 11.5: severity (rattling) +2, recalled pump in well +8, 1 recent corrective repair(s) on the same equipment +1.5] | MNT-0305-032 downhole pump stuck, 2026-10-16 to 2026-10-21 |
-| 9 | WELL-0286 | Northeast Block 8 | CTX-0286-002, 2026-12-20: "WELL-0286 tagging bottom on the downstroke, adjust spacing next visit." \| CTX-0286-004, 2026-12-27: "Pumper reports rattling at WELL-0286 pump jack, keep an eye on it." \| CTX-0286-005, 2027-01-03: "Heard fluid pound on WELL-0286, unit still running." | 3 notes in the window; different symptoms reported (tagging bottom, rattling, fluid pound); only 4.6 °C above the 15 °C producing limit; 2 corrective repair(s) on the same equipment in 12 months (MNT-0286-023 walking beam bearing wear; MNT-0286-026 walking beam bearing wear) [score 11: severity (tagging bottom/rattling/fluid pound) +3, 3 notes +3, escalating variety +1, near producing limit +1, 2 recent corrective repair(s) on the same equipment +3] | MNT-0286-026 walking beam bearing wear, 2026-09-25 to 2026-09-30 |
-| 10 | WELL-0349 | Northwest Block 12 | CTX-0349-001, 2026-12-19: "Pumper reports rattling at WELL-0349 pump jack, keep an eye on it." \| CTX-0349-002, 2027-01-03: "WELL-0349 tagging bottom on the downstroke, adjust spacing next visit." | 2 notes in the window; different symptoms reported (rattling, tagging bottom); overdue follow-up from MNT-0349-028 (due 2026-05-20, no later "Follow-up to" job): "Crew to return within 7 days to check the rod load and pump spacing."; 1 corrective repair(s) on the same equipment in 12 months (MNT-0349-028 sucker rod parted) [score 11: severity (rattling/tagging bottom) +3, 2 notes +1.5, escalating variety +1, overdue follow-up MNT-0349-028 +4, 1 recent corrective repair(s) on the same equipment +1.5] | MNT-0349-028 sucker rod parted, 2026-05-01 to 2026-05-13; later: MNT-0349-032 flowline leak causing spill, 2026-10-23 to 2026-10-24 |
+| Rank | Well | Area | Safety | Compliance | Production | Equipment | Why |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | WELL-0332 | Northwest Block 12 | Yes: CTX-0332-004 | No | Down, unexplained | Yes: operator-note risk | SAFETY: gas/H2S report CTX-0332-004 has no qualifying OPS-1 response; PRODUCTION: not producing (INS-0332-0217 2027-01-14: 0.5 C above air vs 15 C needed) and no in-progress job or shut-in note explains it; EQUIPMENT: operator-note risk (2 notes in the window; different symptoms reported (squeal, rattling)) |
+| 2 | WELL-0160 | Northeast Block 8 | No | Yes (1): recall replacement deadline 2026-12-31 missed | Down, explained | Yes: recalled pump in the ground | COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0160-028 still installed); PRODUCTION: not producing (INS-0160-0217 2027-01-14: 3.8 C above air vs 15 C needed), explained by MNT-0160-032 in progress to 2027-01-26; EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-429965, LOT-2409-C, installed MNT-0160-028) |
+| 3 | WELL-0263 | Southwest Block 23 | No | Yes (1): recall replacement deadline 2026-12-31 missed | Down, explained | Yes: recalled pump in the ground; operator-note risk | COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0263-033 still installed); PRODUCTION: not producing (INS-0263-0219 2027-01-14: 4 C above air vs 20 C needed), explained by MNT-0263-035 in progress to 2027-01-19; EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-187332, LOT-2410-B, installed MNT-0263-033); EQUIPMENT: operator-note risk (2 notes in the window; different symptoms reported (fluid pound, squeal) wellhead-minus-air fell 3 inspections) |
+| 4 | WELL-0031 | Southwest Block 23 | No | Yes (1): recall replacement deadline 2026-12-31 missed | Producing | Yes: recalled pump in the ground | COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0031-027 still installed); EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-664877, LOT-2409-A, installed MNT-0031-027) |
+| 5 | WELL-0156 | Northeast Block 8 | No | Yes (1): recall replacement deadline 2026-12-31 missed | Producing | Yes: recalled pump in the ground | COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0156-027 still installed); EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-952958, LOT-2409-A, installed MNT-0156-027) |
+| 6 | WELL-0305 | Northwest Block 12 | No | Yes (1): recall replacement deadline 2026-12-31 missed | Producing | Yes: recalled pump in the ground; operator-note risk | COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0305-032 still installed); EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-978137, LOT-2409-A, installed MNT-0305-032); EQUIPMENT: operator-note risk (recalled pump still in the well: Highline RP-175 pump, serial SN-978137, lot LOT-2409-A (installed MNT-0305-03) |
+| 7 | WELL-0333 | Northwest Block 12 | No | Yes (1): recall replacement deadline 2026-12-31 missed | Producing | Yes: recalled pump in the ground | COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0333-024 still installed); EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-507591, LOT-2409-A, installed MNT-0333-024) |
+| 8 | WELL-0401 | Northwest Block 12 | No | Yes (1): OPS-1 gas/H2S response late for CTX-0401-002 | Producing | Yes: operator-note risk | COMPLIANCE: OPS-1 gas/H2S response late for CTX-0401-002 (138.2 h vs 24 h, answered by MNT-0401-033); EQUIPMENT: operator-note risk (2 notes in the window; wellhead-minus-air fell 6 inspections in a row, 36.9 to 30.3 (-6.6 °C) [T500 manual s.5) |
+| 9 | WELL-0426 | Northwest Block 12 | No | Yes (1): recall replacement deadline 2026-12-31 missed | Producing | Yes: recalled pump in the ground | COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0426-030 still installed); EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-880271, LOT-2409-C, installed MNT-0426-030) |
+| 10 | WELL-0428 | Northwest Block 12 | No | Yes (1): recall replacement deadline 2026-12-31 missed | Producing | Yes: recalled pump in the ground; operator-note risk | COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0428-022 still installed); EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-708611, LOT-2410-B, installed MNT-0428-022); EQUIPMENT: operator-note risk (2 notes in the window; recalled pump still in the well: Highline RP-175 pump, serial SN-708611, lot LOT-2410-B) |
+| 11 | WELL-0577 | Southeast Block 32 | No | Yes (1): recall replacement deadline 2026-12-31 missed | Producing | Yes: recalled pump in the ground | COMPLIANCE: recall replacement deadline 2026-12-31 missed (recalled pump from MNT-0577-028 still installed); EQUIPMENT: recalled pump in the ground (Highline RP-175, SN-757468, LOT-2409-A, installed MNT-0577-028) |
+| 12 | WELL-0147 | Northeast Block 7 | No | Yes (1): OPS-1 gas/H2S response late for CTX-0147-001 | Producing | No | COMPLIANCE: OPS-1 gas/H2S response late for CTX-0147-001 (1868.8 h vs 24 h, answered by MNT-0147-029) |
+| 13 | WELL-0310 | Northwest Block 12 | No | Yes (1): OPS-5 heat-trace check missed after cold reading INS-0310-0213 | Producing | No | COMPLIANCE: OPS-5 heat-trace check missed after cold reading INS-0310-0213 (due Dec 24, 2026 07:15Z, no check job) |
+| 14 | WELL-0486 | Southeast Block 32 | No | Yes (1): OPS-5 heat-trace check missed after cold reading INS-0486-0219 | Producing | No | COMPLIANCE: OPS-5 heat-trace check missed after cold reading INS-0486-0219 (due Jan 7, 2027 07:15Z, no check job) |
+| 15 | WELL-0531 | Southeast Block 32 | No | Yes (1): OPS-5 heat-trace check missed after cold reading INS-0531-0217 | Producing | No | COMPLIANCE: OPS-5 heat-trace check missed after cold reading INS-0531-0217 (due Jan 7, 2027 07:30Z, no check job) |
 
-(10 row(s))
+(15 row(s))
 
-**Citations (57):** INS-0263-0219, MNT-0263-033, SUPPLIER-RECALL-NOTICE-2026-12-01, MNT-0263-030, MNT-0263-033, MNT-0263-035, CTX-0263-004, CTX-0263-005, INS-0219-0171, OM-T500, MNT-0219-020, CTX-0219-006, CTX-0219-007, INS-0401-0221, MNT-0401-030, MNT-0401-032, CTX-0401-003, CTX-0401-004, INS-0428-0218, MNT-0428-022, MNT-0428-022, CTX-0428-002, CTX-0428-003, INS-0023-0220, MNT-0023-025, MNT-0023-030, MNT-0023-033, CTX-0023-003, CTX-0023-004, CTX-0023-005, INS-0061-0221, MNT-0061-025, MNT-0061-028, MNT-0061-031, CTX-0061-004, CTX-0061-005, INS-0336-0218, MNT-0336-026, CTX-0336-003, CTX-0336-004 ... (40 of 57 listed)
+**Citations (15):** FIELD-WORK-SOP, OPERATIONS-SOP-REV2, CTX-0332-004, SUPPLIER-RECALL-NOTICE-2026-12-01, MNT-0160-028, MNT-0160-028, MNT-0160-032, MNT-0263-033, MNT-0263-033, MNT-0263-035, INS-0263-0219, INS-0332-0217, INS-0160-0217, MNT-0160-032, MNT-0263-035
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (2919 ms): Structured plan validated: note_risk. Only this user’s last five exchanges were supplied. || note_risk (1629 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2636 ms): Structured plan validated: triage. Only this user’s last five exchanges were supplied. || triage (622 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
@@ -813,7 +818,7 @@ No H2S or gas reading is recorded for WELL-0332 on Dec 3, 2026. The note carries
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=1552, wall=1563 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2017, wall=2030 ms
 
 **Answer (verbatim):**
 
@@ -859,7 +864,7 @@ Field `meta`: `{"stacked":true,"series":["parts","crews","contractors","weather"
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (1523 ms): Structured plan validated: delay_reasons. Only this user’s last five exchanges were supplied. || delay_reasons (29 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (1984 ms): Structured plan validated: delay_reasons. Only this user’s last five exchanges were supplied. || delay_reasons (33 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
@@ -874,7 +879,7 @@ Field `meta`: `{"stacked":true,"series":["parts","crews","contractors","weather"
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=4610, wall=4630 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=5721, wall=5738 ms
 
 **Answer (verbatim):**
 
@@ -921,5 +926,5 @@ Wellhead minus ambient by area and well type (producing readings, C):
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (1743 ms): Structured plan validated: region_temperature. Only this user’s last five exchanges were supplied. || region_temperature (2867 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2408 ms): Structured plan validated: region_temperature. Only this user’s last five exchanges were supplied. || region_temperature (3313 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 

@@ -7,11 +7,11 @@
   "attempts": [
     {
       "httpStatus": 200,
-      "wallMs": 5069
+      "wallMs": 2636
     }
   ],
   "httpStatus": 200,
-  "wallMs": 5069,
+  "wallMs": 2636,
   "response": {
     "userId": "U-601",
     "response": {
@@ -552,19 +552,19 @@
         {
           "tool": "gemini_planner",
           "detail": "Structured plan validated: status_disagreement. Only this user’s last five exchanges were supplied.",
-          "durationMs": 4958
+          "durationMs": 2522
         },
         {
           "tool": "status_disagreement",
           "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-          "durationMs": 103
+          "durationMs": 109
         }
       ],
       "model": {
         "name": "gemini-3.5-flash-lite",
         "status": "hosted"
       },
-      "durationMs": 5062
+      "durationMs": 2631
     },
     "history": [
       {
@@ -589,7 +589,7 @@
           "WELL-0429",
           "WELL-0452"
         ],
-        "createdAt": "2026-10-17T11:27:59.664Z",
+        "createdAt": "2026-10-17T11:55:26.525Z",
         "response": {
           "answer": "10 well(s) across the whole field have an inspection and an operator note that disagree, where the note is newer: 6 shut-in after a producing reading (now not producing) and 4 restart after a not-producing reading (now producing, unconfirmed). Rule: OPS-3 - current status comes from the more recent of the latest inspection (after any data correction, judged by the well-type manual threshold in force on that date) and the latest operator note that says the well was shut in or restarted. A further 7 well(s) carry an older restart note but their later inspection still reads not producing; the inspection wins and they are listed as not producing. Excluded: 3 plugged/abandoned well(s); notes older than the latest inspection that agree with it (103 older shut-in notes before a producing reading); gas odor, bypass and equipment remarks, which do not set status.",
           "visualization": {
@@ -1128,19 +1128,19 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: status_disagreement. Only this user’s last five exchanges were supplied.",
-              "durationMs": 4958
+              "durationMs": 2522
             },
             {
               "tool": "status_disagreement",
               "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 103
+              "durationMs": 109
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 5062
+          "durationMs": 2631
         }
       }
     ],

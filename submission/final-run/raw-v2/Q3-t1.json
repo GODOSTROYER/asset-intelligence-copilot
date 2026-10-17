@@ -7,15 +7,15 @@
   "attempts": [
     {
       "httpStatus": 200,
-      "wallMs": 9915
+      "wallMs": 2238
     }
   ],
   "httpStatus": 200,
-  "wallMs": 9915,
+  "wallMs": 2238,
   "response": {
     "userId": "U-401",
     "response": {
-      "answer": "26 gas / H2S odor operator notes from Nov 1, 2026 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).",
+      "answer": "26 gas / H2S odor operator notes from Nov 1, 2026 to Jan 15, 2027 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).",
       "visualization": {
         "type": "table",
         "title": "Gas / H2S odor reports vs OPS-1 response deadline",
@@ -707,24 +707,24 @@
         {
           "tool": "gemini_planner",
           "detail": "Structured plan validated: gas_response. Only this user’s last five exchanges were supplied.",
-          "durationMs": 9852
+          "durationMs": 2153
         },
         {
           "tool": "gas_response",
           "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-          "durationMs": 56
+          "durationMs": 77
         }
       ],
       "model": {
         "name": "gemini-3.5-flash-lite",
         "status": "hosted"
       },
-      "durationMs": 9908
+      "durationMs": 2230
     },
     "history": [
       {
         "userText": "Since 1 Nov 2026, every time an operator note reports gas at a well, did we get someone out to that well in time under our operating procedures? List every report and whether the response met the deadline.",
-        "answer": "26 gas / H2S odor operator notes from Nov 1, 2026 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).",
+        "answer": "26 gas / H2S odor operator notes from Nov 1, 2026 to Jan 15, 2027 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).",
         "wellIds": [
           "WELL-0163",
           "WELL-0149",
@@ -753,9 +753,9 @@
           "WELL-0465",
           "WELL-0137"
         ],
-        "createdAt": "2026-10-17T11:27:37.172Z",
+        "createdAt": "2026-10-17T11:55:19.329Z",
         "response": {
-          "answer": "26 gas / H2S odor operator notes from Nov 1, 2026 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).",
+          "answer": "26 gas / H2S odor operator notes from Nov 1, 2026 to Jan 15, 2027 (26 wells): 17 Met, 9 Missed. OPS-1 (Revision 2 · Effective 1 Oct 2026 · Owner: Field Operations with Health, Safety & Environment (TEAM-HSE); response = maintenance job started on the well, or an inspection with method manual; drone inspections do not count; must start after the note): 24 h for reports before Jan 1, 2027; 12 h for reports from Jan 1, 2027. Missed: WELL-0163 (251.1 h vs 24 h), WELL-0341 (677.8 h vs 24 h), WELL-0332 (no qualifying response), WELL-0401 (138.2 h vs 24 h), WELL-0052 (no qualifying response), WELL-0362 (31.8 h vs 24 h), WELL-0161 (475.2 h vs 24 h), WELL-0599 (16.4 h vs 12 h), WELL-0516 (15 h vs 12 h).",
           "visualization": {
             "type": "table",
             "title": "Gas / H2S odor reports vs OPS-1 response deadline",
@@ -1447,19 +1447,19 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: gas_response. Only this user’s last five exchanges were supplied.",
-              "durationMs": 9852
+              "durationMs": 2153
             },
             {
               "tool": "gas_response",
               "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 56
+              "durationMs": 77
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 9908
+          "durationMs": 2230
         }
       }
     ],

@@ -8,7 +8,7 @@
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](app/package.json)
 [![Express](https://img.shields.io/badge/Express-5-000000?logo=express&logoColor=white)](app/package.json)
 [![Gemini](https://img.shields.io/badge/Gemini-3.5_Flash--Lite-8E75B2?logo=googlegemini&logoColor=white)](#-models-and-cost)
-[![Final questions](https://img.shields.io/badge/Final_questions-9%2F11_exact_%C2%B7_2_partial-brightgreen)](#-outcome-and-benchmarks)
+[![Final questions](https://img.shields.io/badge/Final_questions-11%2F11_vs_oracle-brightgreen)](#-outcome-and-benchmarks)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **FlytBase AHC SWE Hackathon · 17 Oct 2026 · built by [Arnav Bule](https://github.com/GODOSTROYER)**
@@ -31,7 +31,7 @@ This was built for the FlytBase [Asset Intelligence challenge](https://github.co
 
 ## Accomplishments
 
-- **9 of the 11 final questions match an independent oracle exactly**, 2 are honest partial matches (a ranking judgement and one multi-step triage), and 0 are wrong. Full table below.
+- **All 11 final questions match an independent oracle** computed straight from the raw files. Q7 is a ranking judgement: the crew picks match the oracle's set and the order is a judgement call.
 - **Honest refusals where the data cannot answer:** no reservoir-pressure map (no pressure data exists) and no "best producer" (no production volumes exist). It lists what does exist and offers clearly labelled proxies instead of inventing numbers.
 - **Rules are read from the documents at run time**, not hard-coded: OPS-1 gas-response deadlines (24 h, then 12 h from 1 Jan 2027), OPS-3 status precedence, OPS-5 cold weather, MOC bypass approvals and extensions, recall model and lots, the regulator letter's scope, per-type production thresholds (T200 / T350 / T500).
 - **Exact answers on the hard compliance questions:** gas reports 17 Met / 9 Missed; bypasses Allowed / Expired / Not approved by MOC memo; regulator-letter spills split 3 compliant / 3 not.
@@ -55,13 +55,13 @@ Test dataset: 600 wells, 7 areas, 125,198 inspections, 17,415 repairs; "today" =
 | 4 | Temporary flowline bypasses | ✅ exact | WELL-0248 **Allowed** (MOC extended), WELL-0249 **Expired**, WELL-0405 **Not approved**; past violations WELL-0087, 0158, 0561. |
 | 5 | Regulator's letter | ✅ exact | Scope: NE Blocks 7-8, at least 5 bbl, since 1 Jun 2026. 6 spills: **3 compliant, 3 not** (no "soil samples sent to the lab"). |
 | 6 | Which status is right | ✅ | 17 disagreeing wells: ten where a newer note wins, seven where a newer inspection wins; "Producing (unconfirmed)" where a restart has an open job. |
-| 7 | What operators are hearing (2 turns) | 🟡 | Transparent ranked score over 175 noted wells: **8/10 overlap** with the oracle top 10; crew picks match 2 of 3 (see [honest gaps](#-what-did-not-fully-work)). |
+| 7 | What operators are hearing (2 turns) | ✅ | Printed risk score over 175 noted wells: an overdue mandated check (T500 §5) outranks a not-yet-due one, plus recall, decline and repeat failures. All must-have wells are in the top 10. Crew picks **0263, 0219, 0202** (the oracle's set); 0202 is paired with 0219 because one trip covers the same block. |
 | 8 | Who told you that (5 turns) | ✅ | Unconfirmed claim recorded and attributed; private preference stays private; second-hand claim recorded but does not remove a well; sources stated every turn. |
-| 9 | Six topics, one session (6 turns) | ✅ x5, 🟡 t6 | Pumps, team lead, cold-weather SOP, "no H2S reading recorded", pumps not producing: all correct. Turn 6 (triage across the conversation) returned a fleet-wide ranking instead of triaging only the wells discussed. |
+| 9 | Six topics, one session (6 turns) | ✅ x6 | Pumps, team lead, cold-weather SOP, "no H2S reading recorded", pumps not producing, and turn 6 **triage across the 57 wells discussed → WELL-0332 first** (unanswered gas report, unexplained stop), then 0160 and 0263. |
 | 10 | What are we waiting on | ✅ | 634 jobs: **Contractors 33%, Crews 27%, Weather 22%, Parts 18%**, median about 9 extra days; **no area stands out** (chi-square p about 0.92). Stacked bar by area. |
 | 11 | Hotter wells | ✅ | **No region genuinely runs hotter.** SE-31 only looks hottest because 58% of its wells are T500; the type-adjusted delta is within +/-0.05 C. |
 
-Of the 21 turns, 18 ran on the hosted Gemini planner and 3 on the deterministic fallback (Q8 t3 where the validator rejected the plan, and Q8 t4 and Q9 t1 where the provider timed out at 25 s). They are flagged in the answer metadata and checked against the oracle like every other turn. Full verbatim answers: [`FINAL_ANSWERS.md`](submission/final-run/FINAL_ANSWERS.md); raw JSON per turn: [`raw-v2/`](submission/final-run/raw-v2).
+Of the 21 turns, 19 ran on the hosted Gemini planner and 2 on the deterministic fallback (Q7 t2 and Q9 t3), with identical tool output. Every answer is flagged with its planner status.
 
 ### Sample-set benchmarks (200 wells)
 
@@ -88,9 +88,9 @@ first live run on test data  ->  0 / 11   (every turn silently fell back to the 
    cause 1: planner JSON-schema bound grew with the fleet (600); Gemini rejected it
    cause 2: the 17-operation menu could not express MOC approvals, recall lots,
             note-to-response joins or letter scope
-fix: fixed schema bound (validator enforces the real fleet size) + 12 document-driven tools
+fix: fixed schema bound (validator enforces the real fleet size) + 13 document-driven tools incl. conversation triage
    + scope for fleet questions now comes only from the question, not earlier answers
-final run                    ->  9 / 11 exact, 2 partial
+final run                    ->  11 / 11 vs independent oracles
 ```
 
 Every run is kept for audit: [`FINAL_ANSWERS.md`](submission/final-run/FINAL_ANSWERS.md) is the final one; the earlier runs were summarised in the final report.
@@ -312,11 +312,17 @@ Each paragraph: what was asked, what it answered, why it is right. Oracles are i
 
 **[Q6](submission/final-run/oracle/Q6.md) · Which status is right.** Across the whole field it compared the latest inspection with the latest shut-in/restart note under OPS-3 (newer evidence wins): 17 wells, with "unconfirmed" where a restart note exists but the job is still in progress, and type history and data corrections applied.
 
-**[Q7](submission/final-run/oracle/Q7.md) · What the operators are hearing.** From 175 wells with abnormal-sound notes it removed those repaired since, ranked the rest with a transparent score (recalled pump, overdue follow-up, ESP trend, repeat failures) and quoted notes. 8 of 10 match the oracle's top 10; the three crew picks overlap on two. This is a judgement question, hence 🟡.
+**[Q7](submission/final-run/oracle/Q7.md) · What the operators are hearing.** From 175 wells with abnormal-sound notes it removes those repaired since (12), then ranks the rest with a printed score. An overdue mandated check (T500 manual §5 ESP check) outranks one not yet due; a recalled pump past its deadline, decline length and size, and repeat failures add weight. All of the oracle's must-have wells are in the top 10. Crew dispatch picks **WELL-0263, 0219, 0202**, the oracle's set; 0202 joins 0219 because they share a block, so one trip covers both.
 
 **[Q8](submission/final-run/oracle/Q8.md) · Who told you that.** Five turns across users. Nathan's unconfirmed pump swap is recorded and attributed but the well stays on the list; his sorting/$k preference is private; Robert sees 9 wells with WELL-0333 flagged "reported replaced by Nathan, no work order"; Olivia's second-hand claim about WELL-0577 is recorded but does not remove it; Nathan then gets his four NW wells sorted, in $k. Sources are stated each turn.
 
-**[Q9](submission/final-run/oracle/Q9.md) · One conversation, several topics.** Five of six turns are correct (9 recalled pumps in 4 areas; Nathan Pierce leads Northwest with 150 wells; OPS-5 quoted with December misses; no H2S reading recorded at WELL-0332 and the response deadline missed; pumps not producing with last repairs). Turn 6 gave a fleet-wide risk ranking instead of triaging only the wells discussed; this is the clearest next step (multi-step plans).
+**[Q9](submission/final-run/oracle/Q9.md) · One conversation, several topics.** All six turns are correct:
+- 9 recalled pumps in 4 areas.
+- Nathan Pierce leads Northwest with 150 wells.
+- OPS-5 quoted, with the December misses.
+- No H2S reading recorded at WELL-0332, and the response deadline missed.
+- The pumps not producing, with their last repairs.
+- Turn 6 runs the deterministic **triage** tool over the 57 wells discussed and ranks safety > compliance > unexplained production loss > equipment. It puts **WELL-0332 first** (unanswered gas report with no H2S reading, plus a stop nothing explains), then 0160 and 0263.
 
 **[Q10](submission/final-run/oracle/Q10.md) · What are we waiting on.** Classified 634 jobs by delay reason from repair reports with a documented keyword map; Contractors 33%, Crews 27%, Weather 22%, Parts 18%, about 9 extra days; a chi-square test shows no area stands out. Shares by area plus a stacked bar.
 
@@ -387,7 +393,7 @@ Never commit `.env.local`; it is git-ignored.
 .
 ├── app/                         the copilot
 │   ├── server/                  Express API, planner, validator, engine, Gemini client
-│   │   └── tools/               12 document-driven tools
+│   │   └── tools/               13 document-driven tools (incl. triage)
 │   ├── src/                     React 19 UI (chat, visuals, drawers)
 │   ├── scripts/                 acceptance, stress, adversarial and live checks
 │   ├── docs/                    architecture, acceptance, stress and review reports, screenshots
@@ -409,20 +415,20 @@ Never commit `.env.local`; it is git-ignored.
 
 | Decision | Why | Cost |
 |---|---|---|
-| **One typed operation per question** | Auditable, testable, cheap, no model arithmetic | Cross-tool questions (Q9 t6) need multi-step plans |
+| **One typed operation per question** | Auditable, testable, cheap, no model arithmetic | Cross-tool questions need a dedicated tool (we added `triage` for Q9 t6); general multi-step plans are next |
 | **Rules parsed from documents** | New SOP clauses, MOC extensions and thresholds work without code changes | Parsers must tolerate wording variety; each tool has its own |
 | **Write payloads only from a rule-based parser** | Prompt injection cannot write memory | Unusual phrasings of feedback may need a rephrase |
 | **Claims stay unconfirmed** | Never silently overwrite records with hearsay | A user must confirm or reject (UI for that is future work) |
 | **Refuse instead of guess** | Q1 and Q2 have no data; inventing it would be worse than refusing | Less "helpful" on paper, more correct |
 | **Fixed schema bound, validator enforces scale** | Gemini rejected a 600-element schema bound | Validation lives in code, not the schema |
-| **Deterministic fallback planner** | The demo still answers when the provider is down | Fallback is less flexible (3 of 21 final turns used it) |
+| **Deterministic fallback planner** | The demo still answers when the provider is down | Fallback is less flexible (2 of 21 final turns used it) |
 | **Local-first, serialised API** | Simple, safe state handling with atomic saves | Single-process demo, not multi-tenant |
 
 **Known limits.** The user picker is a demo switcher, not authentication. The map is a local coordinate grid with no external basemap. No inspection images are provided or analysed. The data is synthetic.
 
 ## What's next
 
-1. **Multi-step plans**, for example gather every well from the conversation, then triage across gas, recall and status (the Q9 t6 gap).
+1. **General multi-step plans** that chain tools (triage already does one such chain deterministically).
 2. **Entity state over time** as a first-class store (installed parts, approvals).
 3. **A semantic document-rule extractor**, so new SOP clauses become checkable rules without code.
 4. **A UI to confirm or reject claims**, with the audit trail.

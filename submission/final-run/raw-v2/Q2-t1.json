@@ -7,11 +7,11 @@
   "attempts": [
     {
       "httpStatus": 200,
-      "wallMs": 10210
+      "wallMs": 3201
     }
   ],
   "httpStatus": 200,
-  "wallMs": 10210,
+  "wallMs": 3201,
   "response": {
     "userId": "U-301",
     "response": {
@@ -310,19 +310,19 @@
         {
           "tool": "gemini_planner",
           "detail": "Structured plan validated: data_availability. Only this user’s last five exchanges were supplied.",
-          "durationMs": 9421
+          "durationMs": 2214
         },
         {
           "tool": "data_availability",
           "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-          "durationMs": 783
+          "durationMs": 979
         }
       ],
       "model": {
         "name": "gemini-3.5-flash-lite",
         "status": "hosted"
       },
-      "durationMs": 10204
+      "durationMs": 3193
     },
     "history": [
       {
@@ -340,7 +340,7 @@
           "WELL-0327",
           "WELL-0339"
         ],
-        "createdAt": "2026-10-17T11:27:27.258Z",
+        "createdAt": "2026-10-17T11:55:17.089Z",
         "response": {
           "answer": "The data cannot name the well that produced the most oil in 2026. It holds no oil production volumes (barrels, rates, meter, allocation or tank readings) for any well.\nWhat I scanned: field names in inspection, repair, note, regulatory and metadata records (68 field names in all) and document text. Volume-like fields found: none. The only barrel-valued field is spill_est_volume_bbl, the estimated volume of crude spilled, which is not production. Repair cost and downtime are not production either.\nWhat I can offer is a labelled proxy, not oil volume: producing weeks in the period, meaning inspection readings (about one per week) on which wellhead minus ambient meets the well type's manual threshold (T200 15 C, T350 20 C, T500 25 C above ambient; the type in force on each reading date is used). The maximum is 53 producing readings out of 53, and 52 wells tie at that maximum; another 89 wells have 52. The proxy cannot rank them, and a higher-capacity well type may produce more oil than a smaller one with the same uptime.\nTied wells, listed by least repair downtime in the period as a secondary proxy (still not oil volume): WELL-0147 (T200, Northeast Block 7, 53/53 readings, 22 h downtime); WELL-0315 (T350, Northwest Block 12, 53/53 readings, 22 h downtime); WELL-0008 (T200, Southwest Block 23, 53/53 readings, 24 h downtime); WELL-0266 (T350, Northeast Block 8, 53/53 readings, 25 h downtime); WELL-0242 (T500, Southeast Block 31, 53/53 readings, 27 h downtime); WELL-0497 (T350, Southeast Block 32, 53/53 readings, 27 h downtime); WELL-0530 (T350, Southeast Block 32, 53/53 readings, 27 h downtime); WELL-0480 (T200, Southeast Block 32, 53/53 readings, 29 h downtime); WELL-0327 (T200, Northwest Block 12, 53/53 readings, 30 h downtime); WELL-0339 (T350, Northwest Block 12, 53/53 readings, 30 h downtime); and 42 more.\nTo answer properly the data would need production volumes per well (allocated or metered oil barrels, tank gauge or SCADA flow-rate history) for the period.",
           "visualization": {
@@ -637,19 +637,19 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: data_availability. Only this user’s last five exchanges were supplied.",
-              "durationMs": 9421
+              "durationMs": 2214
             },
             {
               "tool": "data_availability",
               "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 783
+              "durationMs": 979
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 10204
+          "durationMs": 3193
         }
       }
     ],

@@ -7,11 +7,11 @@
   "attempts": [
     {
       "httpStatus": 200,
-      "wallMs": 25033
+      "wallMs": 1851
     }
   ],
   "httpStatus": 200,
-  "wallMs": 25033,
+  "wallMs": 1851,
   "response": {
     "userId": "U-501",
     "response": {
@@ -46,11 +46,11 @@
       },
       "citations": [
         {
-          "id": "CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
-          "title": "Shared feedback · CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+          "id": "CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb",
+          "title": "Shared feedback · CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb",
           "type": "claim",
           "path": "local feedback",
-          "excerpt": "Olivia Grant · 2026-10-17T11:28:54.096Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+          "excerpt": "Olivia Grant · 2026-10-17T11:55:44.017Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
           "assetId": "WELL-0577"
         },
         {
@@ -61,11 +61,11 @@
           "excerpt": "## What is recalled Highline RP-175 downhole rod pumps from these manufacturing lots:"
         },
         {
-          "id": "CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
-          "title": "Shared feedback · CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+          "id": "CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb",
+          "title": "Shared feedback · CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb",
           "type": "claim",
           "path": "local feedback",
-          "excerpt": "Olivia Grant · 2026-10-17T11:28:54.096Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+          "excerpt": "Olivia Grant · 2026-10-17T11:55:44.017Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
           "assetId": "WELL-0577"
         },
         {
@@ -101,22 +101,21 @@
       ],
       "trace": [
         {
-          "tool": "deterministic_planner",
-          "detail": "Hosted planner unavailable (timeout); validated domain fallback used. Retry this question to reconnect.",
-          "durationMs": 25005
+          "tool": "gemini_planner",
+          "detail": "Structured plan validated: claim. Only this user’s last five exchanges were supplied.",
+          "durationMs": 1812
         },
         {
           "tool": "claim",
           "detail": "Explicit user feedback applied by the scoped domain tool with provenance.",
-          "durationMs": 21
+          "durationMs": 20
         }
       ],
       "model": {
         "name": "gemini-3.5-flash-lite",
-        "status": "fallback",
-        "reason": "timeout"
+        "status": "hosted"
       },
-      "durationMs": 25026
+      "durationMs": 1832
     },
     "history": [
       {
@@ -125,7 +124,7 @@
         "wellIds": [
           "WELL-0577"
         ],
-        "createdAt": "2026-10-17T11:28:54.117Z",
+        "createdAt": "2026-10-17T11:55:44.037Z",
         "response": {
           "answer": "Recorded Olivia Grant’s report as an unconfirmed shared claim on WELL-0577 (no work order is on record yet; it is attributed to Olivia Grant and visible to all users, but it does not overwrite the maintenance records). 1 well has a recalled pump in the ground (Highline RP-175 LOT-2409-A/LOT-2409-C/LOT-2410-B, notice HPC-RN-2026-07). By area: Southeast Block 32 = 1. The installed pump is the latest \"Parts installed\" line by job start date, so a later non-recalled pump removes the well from the list. Total install cost of the listed jobs: USD 25,500. The replacement deadline was 31 Dec 2026. Status uses the latest inspection against the well-type threshold; \"last repair\" is the latest completed corrective job start date plus any job still in progress today. 1 well carries an unconfirmed replacement report (WELL-0577 second-hand report from Olivia Grant (via Nathan Pierce)). Reports alone do not remove a well: 1 per the records, 0 if those reports are confirmed by a work order.",
           "visualization": {
@@ -158,11 +157,11 @@
           },
           "citations": [
             {
-              "id": "CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
-              "title": "Shared feedback · CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+              "id": "CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb",
+              "title": "Shared feedback · CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb",
               "type": "claim",
               "path": "local feedback",
-              "excerpt": "Olivia Grant · 2026-10-17T11:28:54.096Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+              "excerpt": "Olivia Grant · 2026-10-17T11:55:44.017Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
               "assetId": "WELL-0577"
             },
             {
@@ -173,11 +172,11 @@
               "excerpt": "## What is recalled Highline RP-175 downhole rod pumps from these manufacturing lots:"
             },
             {
-              "id": "CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
-              "title": "Shared feedback · CLAIM-df7ea4d4-6e33-441f-8117-90e7a8c5846e",
+              "id": "CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb",
+              "title": "Shared feedback · CLAIM-cc28c82c-d8b1-496d-89eb-9d1706310bdb",
               "type": "claim",
               "path": "local feedback",
-              "excerpt": "Olivia Grant · 2026-10-17T11:28:54.096Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+              "excerpt": "Olivia Grant · 2026-10-17T11:55:44.017Z · Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
               "assetId": "WELL-0577"
             },
             {
@@ -213,22 +212,21 @@
           ],
           "trace": [
             {
-              "tool": "deterministic_planner",
-              "detail": "Hosted planner unavailable (timeout); validated domain fallback used. Retry this question to reconnect.",
-              "durationMs": 25005
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: claim. Only this user’s last five exchanges were supplied.",
+              "durationMs": 1812
             },
             {
               "tool": "claim",
               "detail": "Explicit user feedback applied by the scoped domain tool with provenance.",
-              "durationMs": 21
+              "durationMs": 20
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
-            "status": "fallback",
-            "reason": "timeout"
+            "status": "hosted"
           },
-          "durationMs": 25026
+          "durationMs": 1832
         }
       }
     ],
