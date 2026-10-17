@@ -1,0 +1,169 @@
+{
+  "q": "Q3",
+  "turn": 1,
+  "asker": "Simmons",
+  "userId": "U-401",
+  "question": "Since 1 Nov 2026, every time an operator note reports gas at a well, did we get someone out to that well in time under our operating procedures? List every report and whether the response met the deadline.",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 2921
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 2921,
+  "response": {
+    "userId": "U-401",
+    "response": {
+      "answer": "Relevant source passages:\n\nregulator letter 2026 11 20 [REGULATOR-LETTER-2026-11-20]:\n# Letter from the State Oil & Gas Commission\n\n**Internal note from HSE (Laura Simmons, U-401), 22 Nov 2026:** crews must record lab samples in the\r\n\"Spill clean-up and waste\" section of the maintenance report. We treat a spill as compliant only if\r\nits clean-up report contains the sentence \"Soil samples sent to the lab.\" Field soil readings taken\r\non site do not count.\n\noperations sop rev2 [OPERATIONS-SOP-REV2]:\n## OPS-1 Gas odor response\n\nAn operator note reporting a gas smell needs a field response on that well. A gas odor report is an\r\noperator note saying the crew smelled gas, noticed a rotten-egg smell or a gas odor, or that an H2S\r\nmonitor alarmed at a well.\n\nmoc 2026 036 [MOC-2026-036]:\n## Conditions\n\n- Effective from 10 Nov 2026.\r\n- The bypass is checked on every daily round and recorded as an operator note on the well when it\r\n  is put in and when it is taken out.\r\n- Only the wells named above are covered. Any other well needs its own MOC.",
+      "citations": [
+        {
+          "id": "REGULATOR-LETTER-2026-11-20",
+          "title": "regulator letter 2026 11 20",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/regulator-letter-2026-11-20.md",
+          "excerpt": "# Letter from the State Oil & Gas Commission **Internal note from HSE (Laura Simmons, U-401), 22 Nov 2026:** crews must record lab samples in the \"Spill clean-up and waste\" section of the maintenance report. We treat a spill as compliant only if its clean-up report contains the sentence \"Soil samples sent to the lab.\" Field soil readings taken on site do not count. […] # Letter from the State Oil "
+        },
+        {
+          "id": "OPERATIONS-SOP-REV2",
+          "title": "operations sop rev2",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/operations-sop-rev2.md",
+          "excerpt": "## OPS-1 Gas odor response An operator note reporting a gas smell needs a field response on that well. A gas odor report is an operator note saying the crew smelled gas, noticed a rotten-egg smell or a gas odor, or that an H2S monitor alarmed at a well. […] ## Revision history | Revision | Effective | Change | |---|---|---| | 2 | 1 Oct 2026 | Adds OPS-1 to OPS-6. OPS-1 response time is cut from 24"
+        },
+        {
+          "id": "MOC-2026-036",
+          "title": "moc 2026 036",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-036.md",
+          "excerpt": "## Conditions - Effective from 10 Nov 2026. - The bypass is checked on every daily round and recorded as an operator note on the well when it is put in and when it is taken out. - Only the wells named above are covered. Any other well needs its own MOC. […] # Management of Change — MOC-2026-036 **Title:** Temporary flowline bypass during the winter valve program **Date:** 6 Nov 2026 **Requested by"
+        },
+        {
+          "id": "REGULATORY-COMPLIANCE-SOP",
+          "title": "regulatory compliance sop",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/regulatory-compliance-sop.md",
+          "excerpt": "## 2. Protocols | Protocol ID | Requirement | Evidence in the data | |---|---|---| | **RC-01** | Every well must be inspected at least once every **14 days**. | `inspections.jsonl` timestamps | | **RC-02** | Every flowline must pass an **integrity test once per calendar year**. | `maintenance.jsonl` entries with issue \"Annual flowline integrity test\" | | **RC-03** | Any well down for more than **1"
+        },
+        {
+          "id": "MOC-2026-031",
+          "title": "moc 2026 031",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-031.md",
+          "excerpt": "## Conditions - Effective from 20 Oct 2026. - The bypass is checked on every daily round and recorded as an operator note on the well when it is put in and when it is taken out. - Only the wells named above are covered. Any other well needs its own MOC. […] ## Conditions This approval expires on 30 Nov 2026. […] # Management of Change — MOC-2026-031 **Title:** Temporary flowline bypass while check"
+        },
+        {
+          "id": "MNT-0388-035",
+          "title": "Repair report · MNT-0388-035",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0388/maintenance-reports/MNT-0388-035.md",
+          "assetId": "WELL-0388",
+          "excerpt": "# Maintenance Report — MNT-0388-035 **Asset:** WELL-0388 (NW-12 Well 388, T500, Northwest Block 12) **Equipment:** flowline **Work started:** 15 Nov 2026 08:00 · **Finished:** 17 Nov 2026 15:00 · **Well stopped for this job:** 55 hours **Crew lead:** Kevin Price (U-303) · **Crew:** Megan Ward · **Contractor:** Tumbleweed Flowline Co. **Triggered by:** inspection INS-0388-0212 on 2026-11-12 **Repor"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [
+        "WELL-0388"
+      ],
+      "trace": [
+        {
+          "tool": "deterministic_planner",
+          "detail": "Hosted planner unavailable (invalid_response); validated domain fallback used. Retry this question to reconnect.",
+          "durationMs": 2889
+        },
+        {
+          "tool": "document_retrieval",
+          "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+          "durationMs": 24
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "fallback",
+        "reason": "invalid_response"
+      },
+      "durationMs": 2914
+    },
+    "history": [
+      {
+        "userText": "Since 1 Nov 2026, every time an operator note reports gas at a well, did we get someone out to that well in time under our operating procedures? List every report and whether the response met the deadline.",
+        "answer": "Relevant source passages:\n\nregulator letter 2026 11 20 [REGULATOR-LETTER-2026-11-20]:\n# Letter from the State Oil & Gas Commission\n\n**Internal note from HSE (Laura Simmons, U-401), 22 Nov 2026:** crews must record lab samples in the\r\n\"Spill clean-up and waste\" section of the maintenance report. We treat a spill as compliant only if\r\nits clean-up report contains the sentence \"Soil samples sent to the lab.\" Field soil readings taken\r\non site do not count.\n\noperations sop rev2 [OPERATIONS-SOP-REV2]:\n## OPS-1 Gas odor response\n\nAn operator note reporting a gas smell needs a field response on that well. A gas odor report is an\r\noperator note saying the crew smelled gas, noticed a rotten-egg smell or a gas odor, or that an H2S\r\nmonitor alarmed at a well.\n\nmoc 2026 036 [MOC-2026-036]:\n## Conditions\n\n- Effective from 10 Nov 2026.\r\n- The bypass is checked on every daily round and recorded as an operator note on the well when it\r\n  is put in and when it is taken out.\r\n- Only the wells named above are covered. Any other well needs its own MOC.",
+        "wellIds": [
+          "WELL-0388"
+        ],
+        "createdAt": "2026-10-17T11:00:18.371Z",
+        "response": {
+          "answer": "Relevant source passages:\n\nregulator letter 2026 11 20 [REGULATOR-LETTER-2026-11-20]:\n# Letter from the State Oil & Gas Commission\n\n**Internal note from HSE (Laura Simmons, U-401), 22 Nov 2026:** crews must record lab samples in the\r\n\"Spill clean-up and waste\" section of the maintenance report. We treat a spill as compliant only if\r\nits clean-up report contains the sentence \"Soil samples sent to the lab.\" Field soil readings taken\r\non site do not count.\n\noperations sop rev2 [OPERATIONS-SOP-REV2]:\n## OPS-1 Gas odor response\n\nAn operator note reporting a gas smell needs a field response on that well. A gas odor report is an\r\noperator note saying the crew smelled gas, noticed a rotten-egg smell or a gas odor, or that an H2S\r\nmonitor alarmed at a well.\n\nmoc 2026 036 [MOC-2026-036]:\n## Conditions\n\n- Effective from 10 Nov 2026.\r\n- The bypass is checked on every daily round and recorded as an operator note on the well when it\r\n  is put in and when it is taken out.\r\n- Only the wells named above are covered. Any other well needs its own MOC.",
+          "citations": [
+            {
+              "id": "REGULATOR-LETTER-2026-11-20",
+              "title": "regulator letter 2026 11 20",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/regulator-letter-2026-11-20.md",
+              "excerpt": "# Letter from the State Oil & Gas Commission **Internal note from HSE (Laura Simmons, U-401), 22 Nov 2026:** crews must record lab samples in the \"Spill clean-up and waste\" section of the maintenance report. We treat a spill as compliant only if its clean-up report contains the sentence \"Soil samples sent to the lab.\" Field soil readings taken on site do not count. […] # Letter from the State Oil "
+            },
+            {
+              "id": "OPERATIONS-SOP-REV2",
+              "title": "operations sop rev2",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/operations-sop-rev2.md",
+              "excerpt": "## OPS-1 Gas odor response An operator note reporting a gas smell needs a field response on that well. A gas odor report is an operator note saying the crew smelled gas, noticed a rotten-egg smell or a gas odor, or that an H2S monitor alarmed at a well. […] ## Revision history | Revision | Effective | Change | |---|---|---| | 2 | 1 Oct 2026 | Adds OPS-1 to OPS-6. OPS-1 response time is cut from 24"
+            },
+            {
+              "id": "MOC-2026-036",
+              "title": "moc 2026 036",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-036.md",
+              "excerpt": "## Conditions - Effective from 10 Nov 2026. - The bypass is checked on every daily round and recorded as an operator note on the well when it is put in and when it is taken out. - Only the wells named above are covered. Any other well needs its own MOC. […] # Management of Change — MOC-2026-036 **Title:** Temporary flowline bypass during the winter valve program **Date:** 6 Nov 2026 **Requested by"
+            },
+            {
+              "id": "REGULATORY-COMPLIANCE-SOP",
+              "title": "regulatory compliance sop",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/regulatory-compliance-sop.md",
+              "excerpt": "## 2. Protocols | Protocol ID | Requirement | Evidence in the data | |---|---|---| | **RC-01** | Every well must be inspected at least once every **14 days**. | `inspections.jsonl` timestamps | | **RC-02** | Every flowline must pass an **integrity test once per calendar year**. | `maintenance.jsonl` entries with issue \"Annual flowline integrity test\" | | **RC-03** | Any well down for more than **1"
+            },
+            {
+              "id": "MOC-2026-031",
+              "title": "moc 2026 031",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-031.md",
+              "excerpt": "## Conditions - Effective from 20 Oct 2026. - The bypass is checked on every daily round and recorded as an operator note on the well when it is put in and when it is taken out. - Only the wells named above are covered. Any other well needs its own MOC. […] ## Conditions This approval expires on 30 Nov 2026. […] # Management of Change — MOC-2026-031 **Title:** Temporary flowline bypass while check"
+            },
+            {
+              "id": "MNT-0388-035",
+              "title": "Repair report · MNT-0388-035",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0388/maintenance-reports/MNT-0388-035.md",
+              "assetId": "WELL-0388",
+              "excerpt": "# Maintenance Report — MNT-0388-035 **Asset:** WELL-0388 (NW-12 Well 388, T500, Northwest Block 12) **Equipment:** flowline **Work started:** 15 Nov 2026 08:00 · **Finished:** 17 Nov 2026 15:00 · **Well stopped for this job:** 55 hours **Crew lead:** Kevin Price (U-303) · **Crew:** Megan Ward · **Contractor:** Tumbleweed Flowline Co. **Triggered by:** inspection INS-0388-0212 on 2026-11-12 **Repor"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0388"
+          ],
+          "trace": [
+            {
+              "tool": "deterministic_planner",
+              "detail": "Hosted planner unavailable (invalid_response); validated domain fallback used. Retry this question to reconnect.",
+              "durationMs": 2889
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 24
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "fallback",
+            "reason": "invalid_response"
+          },
+          "durationMs": 2914
+        }
+      }
+    ],
+    "revision": 3
+  }
+}

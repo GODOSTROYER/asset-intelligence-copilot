@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asset Intelligence Copilot: the model plans, code calculates</title>
+<meta name="description" content="An evidence-grounded oil-field copilot. An LLM plans one typed operation; deterministic tools compute every number and cite every source. 11/11 final questions answered correctly. FlytBase AHC SWE Hackathon 2026.">
+<meta name="theme-color" content="#0A1222">
+<meta property="og:title" content="Asset Intelligence Copilot">
+<meta property="og:description" content="Ask your oil field anything. Get the answer with its evidence attached.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/poster-v2.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A1222'/%3E%3Cpath d='M16 5l2.6 7.4L26 15l-7.4 2.6L16 25l-2.6-7.4L6 15l7.4-2.6z' fill='%233D7BFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A1222;
+  --bg-2:#0E1A31;
+  --panel:#111F3A;
+  --line:#22345A;
+  --text:#E8EEFA;
+  --muted:#A3B3D1;
+  --accent:#3D7BFF;
+  --accent-text:#7BA3FF;
+  --btn:#2B63E6;
+  --ok:#5BD6A0;
+  --warn:#F2B35C;
+  --sans:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+  --maxw:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video,svg{max-width:100%;display:block}
+a{color:var(--accent-text)}
+:focus-visible{outline:3px solid #9DBBFF;outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:#0A1222;padding:10px 14px;border-radius:8px;z-index:20;font-weight:600}
+.skip:focus{left:8px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text);margin:0 0 14px}
+
+/* nav */
+header.top{position:sticky;top:0;z-index:10;background:rgba(10,18,34,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(34,52,90,.7)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-weight:700;font-size:15px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand svg{width:22px;height:22px;flex:none}
+nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+nav a:hover{color:var(--text)}
+@media (max-width:760px){nav{display:none}}
+
+/* hero */
+.hero{position:relative;padding:92px 0 84px;overflow:hidden;
+  background:
+   radial-gradient(900px 420px at 78% -10%,rgba(61,123,255,.28),transparent 60%),
+   linear-gradient(rgba(61,123,255,.06) 1px,transparent 1px) 0 0/44px 44px,
+   linear-gradient(90deg,rgba(61,123,255,.06) 1px,transparent 1px) 0 0/44px 44px,
+   var(--bg)}
+.hero h1{font-size:clamp(38px,6.4vw,72px);line-height:1.04;font-weight:800;letter-spacing:-.025em;margin:0 0 22px;max-width:14ch}
+.hero h1 span{color:var(--accent-text)}
+.tagline{font-size:clamp(19px,2.4vw,26px);line-height:1.4;font-weight:500;color:var(--text);max-width:34ch;margin:0 0 34px}
+.sub{color:var(--muted);max-width:60ch;margin:0 0 34px;font-size:16px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 22px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--line);color:var(--text);background:rgba(17,31,58,.7);transition:transform .15s,border-color .15s,background .15s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:var(--btn);border-color:var(--btn);color:#fff}
+.btn.primary:hover{background:#3571F2}
+.btn svg{width:18px;height:18px}
+.meta{margin-top:40px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--mono);font-size:12.5px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(14,26,49,.7)}
+
+/* sections */
+section{padding:84px 0}
+section.alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.12;font-weight:700;letter-spacing:-.02em;margin:0 0 16px}
+.lede{color:var(--muted);max-width:64ch;margin:0 0 36px;font-size:17px}
+
+/* video */
+.player{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#000;box-shadow:0 30px 80px -30px rgba(61,123,255,.35)}
+.player video{width:100%;height:auto;aspect-ratio:16/9;background:#000}
+.caption{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:14px}
+
+/* scorecard */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 22px}
+.tile .num{font-size:clamp(34px,4.4vw,50px);font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--text);white-space:nowrap}
+.tile .num em{font-style:normal;color:var(--accent-text)}
+.tile .lab{margin-top:10px;font-weight:600;font-size:15px}
+.tile .det{margin-top:6px;color:var(--muted);font-size:14px;line-height:1.5}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.tiles{grid-template-columns:1fr}}
+
+/* architecture */
+.two{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:start}
+.two p{color:var(--muted);margin:0 0 16px}
+.two p strong{color:var(--text)}
+.rules{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.rules li{padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;background:var(--panel);font-size:15px;color:var(--muted)}
+.rules li b{color:var(--text)}
+.diagram{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;overflow-x:auto}
+.diagram svg{min-width:640px;width:100%;height:auto}
+@media (max-width:960px){.two{grid-template-columns:1fr}}
+
+/* table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+table{width:100%;border-collapse:collapse;min-width:720px;font-size:15px}
+caption{text-align:left;padding:16px 20px;color:var(--muted);font-size:14px;caption-side:bottom;border-top:1px solid var(--line)}
+th,td{padding:14px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:0}
+th{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);background:#0F1B33;font-weight:500;position:sticky;top:0}
+td.q{font-family:var(--mono);color:var(--accent-text);white-space:nowrap}
+td.t{font-weight:600;white-space:nowrap}
+td.v{white-space:nowrap}
+.pill{display:inline-block;font-family:var(--mono);font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid rgba(91,214,160,.5);color:var(--ok);background:rgba(91,214,160,.08)}
+.pill.j{border-color:rgba(242,179,92,.5);color:var(--warn);background:rgba(242,179,92,.08)}
+tbody tr:hover{background:rgba(61,123,255,.05)}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+figure a{display:block;background:#f4f7fc}
+figure img{width:100%;height:auto}
+figcaption{padding:16px 18px 18px;font-size:14.5px;color:var(--muted)}
+figcaption b{display:block;color:var(--text);font-size:15.5px;margin-bottom:3px}
+@media (max-width:760px){.gallery{grid-template-columns:1fr}}
+
+/* footer */
+footer{padding:48px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer a{color:var(--text)}
+footer .links{display:flex;gap:22px;flex-wrap:wrap}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+@media (max-width:560px){.wrap{padding:0 16px}.hero{padding:64px 0 60px}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Asset Intelligence Copilot, top of page">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l3.2 9.2L28.5 15.5 19.2 18.8 16 28l-3.2-9.2L3.5 15.5l9.3-3.3z" fill="#3D7BFF"/></svg>
+      Asset Intelligence Copilot
+    </a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#scorecard">Scorecard</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#product">Product</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="wrap">
+    <p class="eyebrow">FlytBase AHC SWE Hackathon 2026</p>
+    <h1 id="h1">Asset Intelligence <span>Copilot</span></h1>
+    <p class="tagline">Ask your oil field anything. Get the answer with its evidence attached.</p>
+    <p class="sub">An LLM plans one typed, validated operation. Deterministic code computes every number, table, citation and conflict from the loaded records and documents. The model never does arithmetic on domain data.</p>
+    <div class="btns">
+      <a class="btn primary" href="#demo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Watch demo</a>
+      <a class="btn" href="assets/Asset-Intelligence-Copilot-Final-Report.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Read the report (PDF)</a>
+      <a class="btn" href="https://github.com/GODOSTROYER/asset-intelligence-copilot" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+    </div>
+    <div class="meta" aria-label="Project facts">
+      <span class="chip">600 wells</span><span class="chip">7 areas</span><span class="chip">149,877 evidence records</span><span class="chip">30 operations</span><span class="chip">MIT</span>
+    </div>
+  </div>
+</section>
+
+<section id="demo" aria-labelledby="demo-h">
+  <div class="wrap">
+    <p class="eyebrow">Demo</p>
+    <h2 id="demo-h">Watch it work, in under five minutes</h2>
+    <p class="lede">System design, then a live multi-user scenario: corrections, conflicting evidence and per-user memory.</p>
+    <div class="player">
+      <video controls preload="metadata" poster="assets/poster-v2.jpg" playsinline aria-label="Asset Intelligence Copilot demo video, 4 minutes 46 seconds">
+        <source src="assets/demo-v2.mp4" type="video/mp4">
+        Your browser does not support HTML5 video. <a href="assets/demo-v2.mp4">Download the demo (MP4)</a>.
+      </video>
+    </div>
+    <p class="caption">4:58 &middot; 1080p &middot; narrated, with captions burned in</p>
+  </div>
+</section>
+
+<section class="alt" id="scorecard" aria-labelledby="score-h">
+  <div class="wrap">
+    <p class="eyebrow">Scorecard</p>
+    <h2 id="score-h">Verified against independent oracles</h2>
+    <p class="lede">Every final answer was checked against an expected answer computed straight from the raw files, not from the copilot.</p>
+    <div class="tiles">
+      <div class="tile"><div class="num">11<em>/</em>11</div><div class="lab">Final questions correct</div><div class="det">Every one matches its independent oracle (Q7 order is a judgement call; same set).</div></div>
+      <div class="tile"><div class="num">19<em>/</em>21</div><div class="lab">Turns on the hosted planner</div><div class="det">The other 2 ran on the deterministic fallback, with identical tool output.</div></div>
+      <div class="tile"><div class="num">0 <em>&rarr;</em> 11</div><div class="lab">First live run to final run</div><div class="det">A planner schema bug and a missing tool menu scored 0/11. Both fixed by generalising.</div></div>
+      <div class="tile"><div class="num">149,877</div><div class="lab">Evidence records indexed</div><div class="det">600 wells, 7 areas, loaded and indexed in about 4 seconds.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <p class="eyebrow">Architecture</p>
+    <h2 id="how-h">The model plans, code calculates</h2>
+    <div class="two">
+      <div>
+        <p>A plain-English question becomes <strong>one typed operation</strong> chosen from 30 (17 core, 13 document-driven). A validator rejects unknown wells, areas, dates and fields. A router sends the operation to deterministic tools over the evidence index and memory.</p>
+        <p>The answer comes back as text, a visual, citations and any <strong>conflicts</strong> between sources. If the model fails, a deterministic planner takes over and the answer is flagged.</p>
+        <ul class="rules">
+          <li><b>Rules come from documents.</b> Deadlines, thresholds and approvals are parsed from SOPs, manuals and memos, never hard-coded, and each rule is cited.</li>
+          <li><b>Two-level memory.</b> Shared corrections and unconfirmed claims; private per-user history and display preferences.</li>
+          <li><b>Honest refusals.</b> When the data cannot answer, it says so and offers a labelled proxy.</li>
+        </ul>
+      </div>
+      <div class="diagram">
+        <svg viewBox="0 0 1000 440" role="img" aria-labelledby="dg-t dg-d" font-family="Montserrat,system-ui,sans-serif">
+          <title id="dg-t">Request flow architecture</title>
+          <desc id="dg-d">Users use a React UI, which calls an API, then a planner, validator and router. The router calls typed tools that read and write an evidence index and memory, and return an answer. A dashed path shows a deterministic fallback planner used if the model fails.</desc>
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7BA3FF"/></marker>
+            <marker id="ard" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2B35C"/></marker>
+          </defs>
+          <style>
+            .bx{fill:#0F1B33;stroke:#2E4676;stroke-width:1.5}
+            .bx.hi{stroke:#3D7BFF;fill:#13244A}
+            .bx.dash{stroke:#F2B35C;stroke-dasharray:6 5;fill:#1A1A22}
+            .t1{fill:#E8EEFA;font-size:15px;font-weight:700;text-anchor:middle}
+            .t2{fill:#A3B3D1;font-size:11.5px;font-family:'IBM Plex Mono',monospace;text-anchor:middle}
+            .ln{stroke:#7BA3FF;stroke-width:2;fill:none}
+            .ld{stroke:#F2B35C;stroke-width:2;fill:none;stroke-dasharray:6 5}
+            .lb{fill:#F2B35C;font-size:11.5px;font-family:'IBM Plex Mono',monospace}
+          </style>
+          <!-- fallback -->
+          <rect class="bx dash" x="470" y="14" width="300" height="52" rx="12"/>
+          <text class="t1" x="620" y="37" style="fill:#F2B35C">Deterministic planner</text>
+          <text class="t2" x="620" y="55">fallback if the model fails</text>
+          <path class="ld" d="M579 112V66" marker-end="url(#ard)"/>
+          <path class="ld" d="M770 40H800V112" marker-end="url(#ard)"/>
+          <text class="lb" x="571" y="94" text-anchor="end">model error</text>
+          <!-- row 1 -->
+          <rect class="bx" x="30" y="112" width="128" height="68" rx="12"/><text class="t1" x="94" y="142">Users</text><text class="t2" x="94" y="162">pick a user</text>
+          <rect class="bx" x="186" y="112" width="128" height="68" rx="12"/><text class="t1" x="250" y="142">React UI</text><text class="t2" x="250" y="162">chat + visuals</text>
+          <rect class="bx" x="342" y="112" width="128" height="68" rx="12"/><text class="t1" x="406" y="142">API</text><text class="t2" x="406" y="162">Express</text>
+          <rect class="bx hi" x="498" y="112" width="162" height="68" rx="12"/><text class="t1" x="579" y="142">Planner</text><text class="t2" x="579" y="162">LLM, JSON schema</text>
+          <rect class="bx hi" x="688" y="112" width="128" height="68" rx="12"/><text class="t1" x="752" y="142">Validator</text><text class="t2" x="752" y="162">rules, scope</text>
+          <rect class="bx hi" x="844" y="112" width="126" height="68" rx="12"/><text class="t1" x="907" y="142">Router</text><text class="t2" x="907" y="162">1 of 30 ops</text>
+          <path class="ln" d="M158 146H182" marker-end="url(#ar)"/>
+          <path class="ln" d="M314 146H338" marker-end="url(#ar)"/>
+          <path class="ln" d="M470 146H494" marker-end="url(#ar)"/>
+          <path class="ln" d="M660 146H684" marker-end="url(#ar)"/>
+          <path class="ln" d="M816 146H840" marker-end="url(#ar)"/>
+          <!-- tools -->
+          <rect class="bx hi" x="560" y="238" width="410" height="64" rx="12"/>
+          <text class="t1" x="765" y="266">Typed tools</text><text class="t2" x="765" y="298">code computes every number, table, citation</text>
+          <path class="ln" d="M907 180V234" marker-end="url(#ar)"/>
+          <!-- answer -->
+          <rect class="bx" x="30" y="226" width="300" height="88" rx="12" style="stroke:#5BD6A0"/>
+          <text class="t1" x="180" y="260">Answer</text>
+          <text class="t2" x="180" y="282">text + visual + citations</text>
+          <text class="t2" x="180" y="300">+ conflicts</text>
+          <path class="ln" d="M556 270H334" marker-end="url(#ar)"/>
+          <!-- evidence + memory -->
+          <rect class="bx" x="560" y="360" width="196" height="64" rx="12"/><text class="t1" x="658" y="388">Evidence index</text><text class="t2" x="658" y="408">149,877 records</text>
+          <rect class="bx" x="774" y="360" width="196" height="64" rx="12"/><text class="t1" x="872" y="388">Memory</text><text class="t2" x="872" y="408">shared + private</text>
+          <path class="ln" d="M658 306V356" marker-start="url(#ar)" marker-end="url(#ar)"/>
+          <path class="ln" d="M872 306V356" marker-start="url(#ar)" marker-end="url(#ar)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="results" aria-labelledby="res-h">
+  <div class="wrap">
+    <p class="eyebrow">Results</p>
+    <h2 id="res-h">The 11 final questions</h2>
+    <p class="lede">Test dataset: 600 wells, today = 15 Jan 2027. Questions run in order, exactly as written.</p>
+    <div class="tablewrap" tabindex="0" role="region" aria-label="Results table, scrollable">
+      <table>
+        <thead><tr><th scope="col">Q</th><th scope="col">Topic</th><th scope="col">Copilot answer</th><th scope="col">vs oracle</th></tr></thead>
+        <tbody>
+          <tr><td class="q">Q1</td><td class="t">Reservoir pressure</td><td>Declines to map it: no reservoir, tubing, casing or wellhead pressure exists. Lists the real proxies and what data is needed.</td><td class="v"><span class="pill">Correct</span></td></tr>
+          <tr><td class="q">Q2</td><td class="t">Best producer 2026</td><td>No production volumes exist, so no winner is named. Labelled proxy: 52 wells tie at 53/53 weeks; downtime tie-break gives WELL-0147 and WELL-0315.</td><td class="v"><span class="pill">Correct</span></td></tr>
+          <tr><td class="q">Q3</td><td class="t">Gas reports since 1 Nov</td><td>26 reports: 17 met, 9 missed the OPS-1 response deadline (24 h; 12 h from 1 Jan 2027).</td><td class="v"><span class="pill">Exact</span></td></tr>
+          <tr><td class="q">Q4</td><td class="t">Flowline bypasses</td><td>WELL-0248 allowed (MOC extended), WELL-0249 expired, WELL-0405 not approved. Past violations: 0087, 0158, 0561.</td><td class="v"><span class="pill">Exact</span></td></tr>
+          <tr><td class="q">Q5</td><td class="t">Regulator letter</td><td>Scope NE Blocks 7-8, 5 bbl or more, since 1 Jun 2026: 6 spills. Compliant 0119, 0168, 0277. Not compliant 0123, 0182, 0262.</td><td class="v"><span class="pill">Exact</span></td></tr>
+          <tr><td class="q">Q6</td><td class="t">Which status is right</td><td>17 wells: 10 where a newer note wins (6 shut in, 4 restarted as "Producing (unconfirmed)"), 7 where a newer inspection wins.</td><td class="v"><span class="pill">Correct</span></td></tr>
+          <tr><td class="q">Q7</td><td class="t">Operator noises (2 turns)</td><td>175 wells noted, filtered, then ranked by a printed score. Crew picks: WELL-0263, 0219, 0202.</td><td class="v"><span class="pill j">Same set</span></td></tr>
+          <tr><td class="q">Q8</td><td class="t">Who told you that (5 turns)</td><td>An unconfirmed claim stays attributed and never overwrites records; private preferences stay private; second-hand claims are flagged.</td><td class="v"><span class="pill">Correct</span></td></tr>
+          <tr><td class="q">Q9</td><td class="t">Six topics (6 turns)</td><td>9 recalled pumps, Nathan Pierce's 150 wells, OPS-5 misses, a missing H2S reading. Triage across 57 wells puts WELL-0332 first.</td><td class="v"><span class="pill">Correct x6</span></td></tr>
+          <tr><td class="q">Q10</td><td class="t">What are we waiting on</td><td>634 jobs: contractors 33%, crews 27%, weather 22%, parts 18%. Southeast Block 31 stands out for contractor waits (43% of 40 jobs; median 14 vs 9 extra days), small-sample caveat.</td><td class="v"><span class="pill">Correct</span></td></tr>
+          <tr><td class="q">Q11</td><td class="t">Hotter wells</td><td>No region genuinely runs hotter. SE-31 only looks hot because 58% of its wells are T500; type-adjusted delta is within 0.05 C.</td><td class="v"><span class="pill">Correct</span></td></tr>
+        </tbody>
+        <caption>"Oracle" means the expected answer, computed independently from the raw files. Full detail in the report.</caption>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="product" aria-labelledby="prod-h">
+  <div class="wrap">
+    <p class="eyebrow">Inside the product</p>
+    <h2 id="prod-h">Answers carry their evidence</h2>
+    <p class="lede">Every answer links to source record IDs, shows how it was assembled, and surfaces disagreements instead of picking a side.</p>
+    <div class="gallery">
+      <figure>
+        <a href="assets/03-answer-status-card.png" target="_blank" rel="noopener"><img src="assets/03-answer-status-card.png" width="1100" height="793" loading="lazy" alt="Copilot answer card for a well status question, with an evidence-led badge, model and latency line, and source chips."></a>
+        <figcaption><b>Status answers with sources</b>Plain-language answer, model and latency, and clickable source records.</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/06-bar-chart-card.png" target="_blank" rel="noopener"><img src="assets/06-bar-chart-card.png" width="1100" height="830" loading="lazy" alt="Bar chart card titled Downtime leaders showing WELL-0121 at 49 days and WELL-0107 and WELL-0138 at 42 days."></a>
+        <figcaption><b>Inline charts</b>Downtime leaders with the counting rule stated and values available as a table.</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/10-correction-visual.png" target="_blank" rel="noopener"><img src="assets/10-correction-visual.png" width="1100" height="405" loading="lazy" alt="Correction visual showing a recorded data correction with its original value, author and reason."></a>
+        <figcaption><b>Corrections with provenance</b>Original value, author, reason and scope are kept in shared memory.</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/12-conflict-card.png" target="_blank" rel="noopener"><img src="assets/12-conflict-card.png" width="1100" height="585" loading="lazy" alt="Evidence conflict card where two operators' notes disagree about a spill, and the inspection detection stands."></a>
+        <figcaption><b>Evidence conflicts</b>Two notes disagree; neither is a formal correction, so the inspection stands.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Arnav Bule &middot; FlytBase AHC SWE Hackathon 2026 &middot; MIT</div>
+    <div class="links">
+      <a href="https://github.com/GODOSTROYER/asset-intelligence-copilot" target="_blank" rel="noopener">GitHub</a>
+      <a href="assets/Asset-Intelligence-Copilot-Final-Report.pdf" target="_blank" rel="noopener">Final report (PDF)</a>
+      <a href="#top">Back to top</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,177 @@
+{
+  "q": "Q8",
+  "turn": 4,
+  "asker": "Grant",
+  "userId": "U-501",
+  "question": "Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 3305
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 3305,
+  "response": {
+    "userId": "U-501",
+    "response": {
+      "answer": "Relevant source passages:\n\nsupplier recall notice 2026 12 01 [SUPPLIER-RECALL-NOTICE-2026-12-01]:\n## How to find affected pumps\n\nThe lot number is stamped on the pump barrel. Your crews record it when the pump is installed\r\n(in your maintenance reports, on the line \"Parts installed\"). Only the pump that is in the well\r\ntoday matters: a recalled pump that has already been pulled and replaced needs no action.\n\nWell details · WELL-0577 [WELL-0577]:\n{\"asset_id\":\"WELL-0577\",\"name\":\"SE-32 Well 577\",\"asset_category\":\"oil_well\",\"well_type\":\"T200\",\"area_id\":\"SE-32\",\"team_id\":\"TEAM-SE\",\"in_charge_user_id\":\"U-501\",\"location\":{\"lat\":31.63857,\"lon\":-102.24996},\"installed_on\":\"2022-11-06\",\"equipment\":[{\"equipment_id\":\"WELL-0577-WH\",\"kind\":\"wellhead\",\"model\":\"WH-3000\"},{\"equipment_id\":\"WELL-0577-PJ\",\"kind\":\"pump_jack\",\"model\":\"PJ-228\"},{\"equipment_id\":\"WELL-0577-RS\",\"kind\":\"rod_string\",\"model\":\"API Grade D 7/8 in\"},{\"equipment_id\":\"WELL-0577-DP\",\"kind\":\"downhole_pump\",\"model\":\"Insert rod pump 1.75 in\"},{\"equipment_id\":\"WELL-0577-FL\",\"kind\":\"flowline\",\"model\":\"3 in carbon steel\"}],\"last_inspection\":{\"inspection_id\":\"INS-0577-0211\",\"inspected_at\":\"2027-01-14T15:30:00Z\",\"inspector_user_id\":\"U-504\"},\"recorded_status\":\"active\"}\n\nOperator note · CTX-0577-001 [CTX-0577-001]:\n{\"asset_id\":\"WELL-0577\",\"created_at\":\"2026-11-16T13:05:00Z\",\"author_user_id\":\"U-506\",\"note_type\":\"operator_note\",\"text\":\"Pumper reports rattling at WELL-0577 pump jack, keep an eye on it.\",\"valid_from\":\"2026-11-16\",\"valid_to\":null,\"note_id\":\"CTX-0577-001\"}",
+      "citations": [
+        {
+          "id": "SUPPLIER-RECALL-NOTICE-2026-12-01",
+          "title": "supplier recall notice 2026 12 01",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/supplier-recall-notice-2026-12-01.md",
+          "excerpt": "## How to find affected pumps The lot number is stamped on the pump barrel. Your crews record it when the pump is installed (in your maintenance reports, on the line \"Parts installed\"). Only the pump that is in the well today matters: a recalled pump that has already been pulled and replaced needs no action. […] ## What you must do Until the replacement, keep running the pump as normal. Do not shu"
+        },
+        {
+          "id": "WELL-0577",
+          "title": "Well details · WELL-0577",
+          "type": "well",
+          "path": "dataset/assets/WELL-0577/metadata.json",
+          "assetId": "WELL-0577",
+          "excerpt": "{\"asset_id\":\"WELL-0577\",\"name\":\"SE-32 Well 577\",\"asset_category\":\"oil_well\",\"well_type\":\"T200\",\"area_id\":\"SE-32\",\"team_id\":\"TEAM-SE\",\"in_charge_user_id\":\"U-501\",\"location\":{\"lat\":31.63857,\"lon\":-102.24996},\"installed_on\":\"2022-11-06\",\"equipment\":[{\"equipment_id\":\"WELL-0577-WH\",\"kind\":\"wellhead\",\"model\":\"WH-3000\"},{\"equipment_id\":\"WELL-0577-PJ\",\"kind\":\"pump_jack\",\"model\":\"PJ-228\"},{\"equipment_id\":\""
+        },
+        {
+          "id": "CTX-0577-001",
+          "title": "Operator note · CTX-0577-001",
+          "type": "note",
+          "path": "dataset/assets/WELL-0577/context.jsonl",
+          "assetId": "WELL-0577",
+          "excerpt": "{\"asset_id\":\"WELL-0577\",\"created_at\":\"2026-11-16T13:05:00Z\",\"author_user_id\":\"U-506\",\"note_type\":\"operator_note\",\"text\":\"Pumper reports rattling at WELL-0577 pump jack, keep an eye on it.\",\"valid_from\":\"2026-11-16\",\"valid_to\":null,\"note_id\":\"CTX-0577-001\"}"
+        },
+        {
+          "id": "MNT-0577-028",
+          "title": "Repair report · MNT-0577-028",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0577/maintenance-reports/MNT-0577-028.md",
+          "assetId": "WELL-0577",
+          "excerpt": "# Maintenance Report — MNT-0577-028 **Asset:** WELL-0577 (SE-32 Well 577, T200, Southeast Block 32) **Equipment:** downhole pump **Work started:** 31 Jul 2026 08:00 · **Finished:** 11 Aug 2026 12:00 · **Well stopped for this job:** 268 hours **Crew lead:** Kevin Price (U-303) · **Crew:** Megan Ward **Triggered by:** inspection INS-0577-0187 on 2026-07-30 **Report written:** 11 Aug 2026 […] ## What"
+        },
+        {
+          "id": "MNT-0577-002",
+          "title": "Repair · MNT-0577-002",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0577/maintenance.jsonl",
+          "assetId": "WELL-0577",
+          "excerpt": "{\"maintenance_id\":\"MNT-0577-002\",\"asset_id\":\"WELL-0577\",\"started_at\":\"2023-02-06T08:00:00Z\",\"completed_at\":\"2023-02-06T13:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"pump_jack\",\"issue\":\"Scheduled lubrication and belt inspection\",\"action_taken\":\"Lubricated, belts tensioned\",\"technician_user_id\":\"U-305\",\"contractor\":\"Coyote Ridge Well Services\",\"downtime_hours\":5,\"cost_usd\":{\"labor\":357"
+        },
+        {
+          "id": "MNT-0577-003",
+          "title": "Repair · MNT-0577-003",
+          "type": "repair",
+          "path": "dataset/assets/WELL-0577/maintenance.jsonl",
+          "assetId": "WELL-0577",
+          "excerpt": "{\"maintenance_id\":\"MNT-0577-003\",\"asset_id\":\"WELL-0577\",\"started_at\":\"2023-05-12T08:00:00Z\",\"completed_at\":\"2023-05-12T12:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"pump_jack\",\"issue\":\"Scheduled lubrication and belt inspection\",\"action_taken\":\"Lubricated, belts tensioned\",\"technician_user_id\":\"U-303\",\"contractor\":\"Coyote Ridge Well Services\",\"downtime_hours\":4,\"cost_usd\":{\"labor\":265"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [
+        "WELL-0577"
+      ],
+      "trace": [
+        {
+          "tool": "deterministic_planner",
+          "detail": "Hosted planner unavailable (invalid_response); validated domain fallback used. Retry this question to reconnect.",
+          "durationMs": 3278
+        },
+        {
+          "tool": "document_retrieval",
+          "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+          "durationMs": 15
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "fallback",
+        "reason": "invalid_response"
+      },
+      "durationMs": 3294
+    },
+    "history": [
+      {
+        "userText": "Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+        "answer": "Relevant source passages:\n\nsupplier recall notice 2026 12 01 [SUPPLIER-RECALL-NOTICE-2026-12-01]:\n## How to find affected pumps\n\nThe lot number is stamped on the pump barrel. Your crews record it when the pump is installed\r\n(in your maintenance reports, on the line \"Parts installed\"). Only the pump that is in the well\r\ntoday matters: a recalled pump that has already been pulled and replaced needs no action.\n\nWell details · WELL-0577 [WELL-0577]:\n{\"asset_id\":\"WELL-0577\",\"name\":\"SE-32 Well 577\",\"asset_category\":\"oil_well\",\"well_type\":\"T200\",\"area_id\":\"SE-32\",\"team_id\":\"TEAM-SE\",\"in_charge_user_id\":\"U-501\",\"location\":{\"lat\":31.63857,\"lon\":-102.24996},\"installed_on\":\"2022-11-06\",\"equipment\":[{\"equipment_id\":\"WELL-0577-WH\",\"kind\":\"wellhead\",\"model\":\"WH-3000\"},{\"equipment_id\":\"WELL-0577-PJ\",\"kind\":\"pump_jack\",\"model\":\"PJ-228\"},{\"equipment_id\":\"WELL-0577-RS\",\"kind\":\"rod_string\",\"model\":\"API Grade D 7/8 in\"},{\"equipment_id\":\"WELL-0577-DP\",\"kind\":\"downhole_pump\",\"model\":\"Insert rod pump 1.75 in\"},{\"equipment_id\":\"WELL-0577-FL\",\"kind\":\"flowline\",\"model\":\"3 in carbon steel\"}],\"last_inspection\":{\"inspection_id\":\"INS-0577-0211\",\"inspected_at\":\"2027-01-14T15:30:00Z\",\"inspector_user_id\":\"U-504\"},\"recorded_status\":\"active\"}\n\nOperator note · CTX-0577-001 [CTX-0577-001]:\n{\"asset_id\":\"WELL-0577\",\"created_at\":\"2026-11-16T13:05:00Z\",\"author_user_id\":\"U-506\",\"note_type\":\"operator_note\",\"text\":\"Pumper reports rattling at WELL-0577 pump jack, keep an eye on it.\",\"valid_from\":\"2026-11-16\",\"valid_to\":null,\"note_id\":\"CTX-0577-001\"}",
+        "wellIds": [
+          "WELL-0577"
+        ],
+        "createdAt": "2026-10-17T11:00:45.608Z",
+        "response": {
+          "answer": "Relevant source passages:\n\nsupplier recall notice 2026 12 01 [SUPPLIER-RECALL-NOTICE-2026-12-01]:\n## How to find affected pumps\n\nThe lot number is stamped on the pump barrel. Your crews record it when the pump is installed\r\n(in your maintenance reports, on the line \"Parts installed\"). Only the pump that is in the well\r\ntoday matters: a recalled pump that has already been pulled and replaced needs no action.\n\nWell details · WELL-0577 [WELL-0577]:\n{\"asset_id\":\"WELL-0577\",\"name\":\"SE-32 Well 577\",\"asset_category\":\"oil_well\",\"well_type\":\"T200\",\"area_id\":\"SE-32\",\"team_id\":\"TEAM-SE\",\"in_charge_user_id\":\"U-501\",\"location\":{\"lat\":31.63857,\"lon\":-102.24996},\"installed_on\":\"2022-11-06\",\"equipment\":[{\"equipment_id\":\"WELL-0577-WH\",\"kind\":\"wellhead\",\"model\":\"WH-3000\"},{\"equipment_id\":\"WELL-0577-PJ\",\"kind\":\"pump_jack\",\"model\":\"PJ-228\"},{\"equipment_id\":\"WELL-0577-RS\",\"kind\":\"rod_string\",\"model\":\"API Grade D 7/8 in\"},{\"equipment_id\":\"WELL-0577-DP\",\"kind\":\"downhole_pump\",\"model\":\"Insert rod pump 1.75 in\"},{\"equipment_id\":\"WELL-0577-FL\",\"kind\":\"flowline\",\"model\":\"3 in carbon steel\"}],\"last_inspection\":{\"inspection_id\":\"INS-0577-0211\",\"inspected_at\":\"2027-01-14T15:30:00Z\",\"inspector_user_id\":\"U-504\"},\"recorded_status\":\"active\"}\n\nOperator note · CTX-0577-001 [CTX-0577-001]:\n{\"asset_id\":\"WELL-0577\",\"created_at\":\"2026-11-16T13:05:00Z\",\"author_user_id\":\"U-506\",\"note_type\":\"operator_note\",\"text\":\"Pumper reports rattling at WELL-0577 pump jack, keep an eye on it.\",\"valid_from\":\"2026-11-16\",\"valid_to\":null,\"note_id\":\"CTX-0577-001\"}",
+          "citations": [
+            {
+              "id": "SUPPLIER-RECALL-NOTICE-2026-12-01",
+              "title": "supplier recall notice 2026 12 01",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/supplier-recall-notice-2026-12-01.md",
+              "excerpt": "## How to find affected pumps The lot number is stamped on the pump barrel. Your crews record it when the pump is installed (in your maintenance reports, on the line \"Parts installed\"). Only the pump that is in the well today matters: a recalled pump that has already been pulled and replaced needs no action. […] ## What you must do Until the replacement, keep running the pump as normal. Do not shu"
+            },
+            {
+              "id": "WELL-0577",
+              "title": "Well details · WELL-0577",
+              "type": "well",
+              "path": "dataset/assets/WELL-0577/metadata.json",
+              "assetId": "WELL-0577",
+              "excerpt": "{\"asset_id\":\"WELL-0577\",\"name\":\"SE-32 Well 577\",\"asset_category\":\"oil_well\",\"well_type\":\"T200\",\"area_id\":\"SE-32\",\"team_id\":\"TEAM-SE\",\"in_charge_user_id\":\"U-501\",\"location\":{\"lat\":31.63857,\"lon\":-102.24996},\"installed_on\":\"2022-11-06\",\"equipment\":[{\"equipment_id\":\"WELL-0577-WH\",\"kind\":\"wellhead\",\"model\":\"WH-3000\"},{\"equipment_id\":\"WELL-0577-PJ\",\"kind\":\"pump_jack\",\"model\":\"PJ-228\"},{\"equipment_id\":\""
+            },
+            {
+              "id": "CTX-0577-001",
+              "title": "Operator note · CTX-0577-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0577/context.jsonl",
+              "assetId": "WELL-0577",
+              "excerpt": "{\"asset_id\":\"WELL-0577\",\"created_at\":\"2026-11-16T13:05:00Z\",\"author_user_id\":\"U-506\",\"note_type\":\"operator_note\",\"text\":\"Pumper reports rattling at WELL-0577 pump jack, keep an eye on it.\",\"valid_from\":\"2026-11-16\",\"valid_to\":null,\"note_id\":\"CTX-0577-001\"}"
+            },
+            {
+              "id": "MNT-0577-028",
+              "title": "Repair report · MNT-0577-028",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0577/maintenance-reports/MNT-0577-028.md",
+              "assetId": "WELL-0577",
+              "excerpt": "# Maintenance Report — MNT-0577-028 **Asset:** WELL-0577 (SE-32 Well 577, T200, Southeast Block 32) **Equipment:** downhole pump **Work started:** 31 Jul 2026 08:00 · **Finished:** 11 Aug 2026 12:00 · **Well stopped for this job:** 268 hours **Crew lead:** Kevin Price (U-303) · **Crew:** Megan Ward **Triggered by:** inspection INS-0577-0187 on 2026-07-30 **Report written:** 11 Aug 2026 […] ## What"
+            },
+            {
+              "id": "MNT-0577-002",
+              "title": "Repair · MNT-0577-002",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0577/maintenance.jsonl",
+              "assetId": "WELL-0577",
+              "excerpt": "{\"maintenance_id\":\"MNT-0577-002\",\"asset_id\":\"WELL-0577\",\"started_at\":\"2023-02-06T08:00:00Z\",\"completed_at\":\"2023-02-06T13:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"pump_jack\",\"issue\":\"Scheduled lubrication and belt inspection\",\"action_taken\":\"Lubricated, belts tensioned\",\"technician_user_id\":\"U-305\",\"contractor\":\"Coyote Ridge Well Services\",\"downtime_hours\":5,\"cost_usd\":{\"labor\":357"
+            },
+            {
+              "id": "MNT-0577-003",
+              "title": "Repair · MNT-0577-003",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0577/maintenance.jsonl",
+              "assetId": "WELL-0577",
+              "excerpt": "{\"maintenance_id\":\"MNT-0577-003\",\"asset_id\":\"WELL-0577\",\"started_at\":\"2023-05-12T08:00:00Z\",\"completed_at\":\"2023-05-12T12:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"pump_jack\",\"issue\":\"Scheduled lubrication and belt inspection\",\"action_taken\":\"Lubricated, belts tensioned\",\"technician_user_id\":\"U-303\",\"contractor\":\"Coyote Ridge Well Services\",\"downtime_hours\":4,\"cost_usd\":{\"labor\":265"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0577"
+          ],
+          "trace": [
+            {
+              "tool": "deterministic_planner",
+              "detail": "Hosted planner unavailable (invalid_response); validated domain fallback used. Retry this question to reconnect.",
+              "durationMs": 3278
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 15
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "fallback",
+            "reason": "invalid_response"
+          },
+          "durationMs": 3294
+        }
+      }
+    ],
+    "revision": 12
+  }
+}

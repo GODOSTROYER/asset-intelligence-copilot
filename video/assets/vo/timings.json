@@ -1,0 +1,62 @@
+[
+  {
+    "frame": 1,
+    "file": "assets/vo/00-context.wav",
+    "durationSec": 28.72,
+    "text": "Picture an oil field. Hundreds of wells, each with a pump jack nodding up and down, lifting crude oil from deep underground. On top of every well sits the wellhead, the valve cap where the oil comes out. Every week, a drone flies over and checks its temperature. Oil comes up warm, so a wellhead much warmer than the air means the well is working. One that has cooled to air temperature has stopped. Simple, in theory."
+  },
+  {
+    "frame": 2,
+    "file": "assets/vo/01-hook.wav",
+    "durationSec": 13.44,
+    "text": "This wellhead reads fifty-one point six degrees. Looks like a working well. It isn't. The air that day was forty-three. The well had stopped, and the rule that says so was buried in a manual."
+  },
+  {
+    "frame": 3,
+    "file": "assets/vo/02-problem.wav",
+    "durationSec": 18.48,
+    "text": "An oil field generates forty thousand inspections, fifty-seven hundred repairs, fifteen hundred free-text reports, and the notes people write. Answering one simple question means digging through all of it. So wells sit idle, and leaks go unreported, for weeks."
+  },
+  {
+    "frame": 4,
+    "file": "assets/vo/03-intro.wav",
+    "durationSec": 9.6,
+    "text": "This is Asset Intelligence Copilot. Ask your oil field anything, in plain English, and get the answer, with the evidence attached."
+  },
+  {
+    "frame": 5,
+    "file": "assets/vo/04-ask.wav",
+    "durationSec": 23.76,
+    "text": "Is WELL-0001 producing oil right now? No. The latest drone inspection shows the wellhead just three point two degrees above the air, below the fifteen-degree limit in the T200 manual. The system of record still says active, which is stale. And a field note explains why: a planned shut-in for a rod string replacement. Every claim links to its source."
+  },
+  {
+    "frame": 6,
+    "file": "assets/vo/05-visuals.wav",
+    "durationSec": 12.92,
+    "text": "Ask for a trend, and you get a line chart. Compare wells, a bar chart. Spills across the field, a map or a heatmap. The visual is chosen for the question, or the one you ask for."
+  },
+  {
+    "frame": 7,
+    "file": "assets/vo/06-memory.wav",
+    "durationSec": 24.28,
+    "text": "And it learns from the people in the field. Michael corrects an AI spill estimate: four point five barrels was actually five point four. The copilot keeps the original, records who changed it and why, and immediately flags that the spill is now reportable, with no notice on file. When Laura from safety asks later, she sees it too. And if two people disagree, it says so instead of picking a side."
+  },
+  {
+    "frame": 8,
+    "file": "assets/vo/065-architecture.wav",
+    "durationSec": 40.24,
+    "text": "Here is the whole system. A React chat app talks to a local API. At startup, every inspection, repair, report, manual and note is loaded and indexed: about a hundred and fifty thousand pieces of evidence. For each question, a Gemini planner picks one of thirty typed operations, and a validator checks it. Then the work goes to deterministic tools, including tools that read their rules straight from the SOPs, memos and notices, or to grounded document retrieval. A memory layer keeps shared corrections and private conversations apart. Every answer returns with its visual, its sources, and any conflicts."
+  },
+  {
+    "frame": 9,
+    "file": "assets/vo/07-how.wav",
+    "durationSec": 22.32,
+    "text": "Under the hood, the language model only plans. Deterministic tools do every calculation, against the rules in your manuals and SOPs. On the unseen six-hundred-well test set, all eleven final questions matched answers computed independently from the raw data. And if the model goes down, the copilot keeps answering."
+  },
+  {
+    "frame": 10,
+    "file": "assets/vo/08-close.wav",
+    "durationSec": 5.4,
+    "text": "Asset Intelligence Copilot. Every answer, with its evidence."
+  }
+]

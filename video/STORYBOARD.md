@@ -11,7 +11,8 @@ design: frame.md
 ## Frame 1 — Context: how an oil field works
 
 - scene: Wide dusk oil field; pump jacks nod; a cutaway shows the well going down to the oil; the wellhead is labelled; a drone flies the inspection route and thermal-scans a wellhead; WARM = producing vs AIR TEMPERATURE = stopped
-- duration: 30s
+- duration: 29.5s
+- fixed_duration: 29.5
 - poster: 15s
 - transition_in: cut
 - status: outline
@@ -26,7 +27,7 @@ Explain the domain to a non-expert in one continuous illustrated world (flat, en
 ## Frame 2 — Hook: the hot well that isn't working
 
 - scene: Thermal readout 51.6 °C counts up and looks healthy; air 43.1 °C slides in; the difference collapses to +8.5 °C, stamped NOT PRODUCING in amber
-- duration: 15s
+- duration: 14.64s
 - poster: 11s
 - transition_in: cut
 - status: outline
@@ -128,22 +129,22 @@ Motion rules for this scene: cursor-click-ripple, particle-burst. Evidence-threa
 ## Frame 8 — The whole system: architecture
 
 - scene: A full architecture map assembles layer by layer: users → React chat UI → local API → planner + validator → tool router (domain tools, query-records aggregator, grounded retrieval) → evidence index + memory → answer with visual, citations and conflicts; a fallback path is shown
-- duration: 38.7s
+- duration: 41.44s
 - poster: 24s
 - transition_in: crossfade
 - status: outline
 - blueprint: constellation-hub
 - rules: svg-path-draw, waterfall-entry, multi-phase-camera
 - vo_file: assets/vo/065-architecture.wav
-- voiceover: "Here is the whole system. A React chat app talks to a local API. At startup, every inspection, repair, report, manual and note is loaded and indexed, forty-seven thousand pieces of evidence. For each question, a Gemini planner picks one typed operation, and a validator checks it. Then the work goes to deterministic tools, a records aggregator, or grounded document retrieval. A memory layer keeps shared corrections and private conversations apart. Every answer returns with its visual, its sources, and any conflicts."
+- voiceover: "Here is the whole system. A React chat app talks to a local API. At startup, every inspection, repair, report, manual and note is loaded and indexed: about a hundred and fifty thousand pieces of evidence. For each question, a Gemini planner picks one of thirty typed operations, and a validator checks it. Then the work goes to deterministic tools, including tools that read their rules straight from the SOPs, memos and notices, or to grounded document retrieval. A memory layer keeps shared corrections and private conversations apart. Every answer returns with its visual, its sources, and any conflicts."
 - src: compositions/frames/065-architecture.html
 
 One clean, legible system map (a judge must be able to pause on the final frame and understand the whole architecture). Build it progressively, then pull back to the full map for the final ~5s. Layout, left to right with data underneath:
 - LEFT · USERS: a user-picker stack of 3 avatars with names (Michael Turner · Laura Simmons · Jake Morales).
 - UI · "React chat app": chips for chat, inline visuals (status · table · line · bar · map · heatmap), source drawer, user picker.
 - API · "Local Express API": chips /api/chat · /api/evidence · /api/memory · /api/dataset/load, and "one request at a time (serialized)".
-- CORE (centre, the largest box): PLANNER "Gemini 3.5 Flash-Lite · JSON schema · picks 1 of 17 typed operations" → VALIDATOR "well IDs · dates · explicit write intent" → ROUTER with three lanes: (1) DOMAIN TOOLS: status · downtime · spills · heatmap · compliance · containment · RCA · costs; (2) RECORDS AGGREGATOR: "filter · group · count · sum"; (3) DOCUMENT Q&A: "lexical retrieval → Gemini synthesis with per-sentence source IDs; numbers & IDs checked".
-- BOTTOM · EVIDENCE INDEX: "loaded at startup · 47,177 evidence records", with source-type chips: inspections · repairs · repair reports · regulator events · notes · manuals (T200, T350) · SOPs. A small label: "rules (thresholds, deadlines) read from the manuals & SOPs".
+- CORE (centre, the largest box): PLANNER "Gemini 3.5 Flash-Lite · JSON schema · picks 1 of 30 typed operations" → VALIDATOR "well IDs · dates · explicit write intent" → ROUTER with three lanes: (1) DOMAIN TOOLS: status · downtime · spills · heatmap · compliance · containment · RCA · costs; (2) RECORDS AGGREGATOR: "filter · group · count · sum"; (3) DOCUMENT Q&A: "lexical retrieval → Gemini synthesis with per-sentence source IDs; numbers & IDs checked".
+- BOTTOM · EVIDENCE INDEX: "loaded at startup · 149,877 evidence records", with source-type chips: inspections · repairs · repair reports · regulator events · notes · manuals (T200, T350) · SOPs. A small label: "rules (thresholds, deadlines) read from the manuals & SOPs".
 - RIGHT-BOTTOM · MEMORY "state.json · atomic saves", split in two: SHARED (corrections keep the original + author + reason · notes · unconfirmed claims · well-type rules) and PRIVATE (per-user conversation history; the planner sees only that user's last 5).
 - RIGHT · ANSWER: a card with text · visual · citations · conflicts.
 - Dashed amber-free accent bypass from the Question straight to the ROUTER, labelled "deterministic planner if the model is unavailable".
@@ -154,17 +155,17 @@ Motion rules for this scene: svg-path-draw, waterfall-entry, multi-phase-camera.
 ## Frame 9 — How it works: the model plans, code calculates
 
 - scene: Architecture pipeline draws left→right: Question → Gemini planner → validated typed plan → deterministic tools (manuals & SOP rules) → answer + visual + citations; a fallback path lights when the model is cut
-- duration: 16s
+- duration: 23.52s
 - poster: 10s
 - transition_in: cut
 - status: outline
 - blueprint: spatial-pan-stations
 - rules: multi-phase-camera, svg-path-draw, counting-dynamic-scale
 - vo_file: assets/vo/07-how.wav
-- voiceover: "Under the hood, the language model only plans. Deterministic tools do every calculation, against the rules in your manuals and SOPs. So the numbers come from your data, not from guesswork. And if the model goes down, the copilot keeps answering."
+- voiceover: "Under the hood, the language model only plans. Deterministic tools do every calculation, against the rules in your manuals and SOPs. On the unseen six-hundred-well test set, all eleven final questions matched answers computed independently from the raw data. And if the model goes down, the copilot keeps answering."
 - src: compositions/frames/07-how.html
 
-Stations on one wide canvas, with a camera pan across them: QUESTION (plain English) → PLANNER (Gemini · picks 1 of 17 typed operations, JSON schema) → VALIDATOR (well IDs, dates, write intent) → TOOLS (status · downtime · spills · compliance · costs · RCA … each a mono chip; ruled by OM-T200 / OM-T350 / SOP-SR / SOP-RC documents) → ANSWER (text · visual · citations · conflicts). The planner node then gets a red "×" (model unavailable) and a dashed amber bypass "deterministic planner" lights, so the answer still arrives. Proof strip at the bottom, with count-ups: 18/18 sample scenarios · 25/25 acceptance checks · 109/109 domain stress checks · 0 numbers computed by the LLM.
+Stations on one wide canvas, with a camera pan across them: QUESTION (plain English) → PLANNER (Gemini · picks 1 of 30 typed operations, JSON schema) → VALIDATOR (well IDs, dates, write intent) → TOOLS (status · downtime · spills · compliance · costs · RCA … each a mono chip; ruled by OM-T200 / OM-T350 / SOP-SR / SOP-RC documents) → ANSWER (text · visual · citations · conflicts). The planner node then gets a red "×" (model unavailable) and a dashed amber bypass "deterministic planner" lights, so the answer still arrives. Proof strip at the bottom, with count-ups: 11/11 final questions (unseen 600-well test set) · 25/25 acceptance checks · 109/109 domain checks · numbers computed by code, not the LLM.
 
 Motion rules for this scene: multi-phase-camera, svg-path-draw, counting-dynamic-scale. Evidence-thread signature move uses svg-path-draw.
 

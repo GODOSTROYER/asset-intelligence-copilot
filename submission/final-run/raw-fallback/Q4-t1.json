@@ -1,0 +1,169 @@
+{
+  "q": "Q4",
+  "turn": 1,
+  "asker": "Dalton",
+  "userId": "U-402",
+  "question": "Across all areas, which temporary flowline bypasses are in place right now, and is each one allowed? Also list any bypass, past or present, that stayed in after its approval ran out or was never approved at all.",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 3177
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 3177,
+  "response": {
+    "userId": "U-402",
+    "response": {
+      "answer": "Relevant source passages:\n\nmoc 2026 036 [MOC-2026-036]:\n# Management of Change — MOC-2026-036\n\n**Title:** Temporary flowline bypass during the winter valve program\r\n**Date:** 6 Nov 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE\n\nmoc 2026 031 [MOC-2026-031]:\n# Management of Change — MOC-2026-031\n\n**Title:** Temporary flowline bypass while check valves are on back-order\r\n**Date:** 19 Oct 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE\n\nmoc 2026 044 [MOC-2026-044]:\n# Management of Change — MOC-2026-044\n\n**Title:** Extension of MOC-2026-031 (temporary flowline bypass)\r\n**Date:** 24 Nov 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE",
+      "citations": [
+        {
+          "id": "MOC-2026-036",
+          "title": "moc 2026 036",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-036.md",
+          "excerpt": "# Management of Change — MOC-2026-036 **Title:** Temporary flowline bypass during the winter valve program **Date:** 6 Nov 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE […] ## Change A temporary flowline bypass is authorized on these wells: WELL-0087, WELL-0158, WELL-0249, WELL-0284, WELL-0356"
+        },
+        {
+          "id": "MOC-2026-031",
+          "title": "moc 2026 031",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-031.md",
+          "excerpt": "# Management of Change — MOC-2026-031 **Title:** Temporary flowline bypass while check valves are on back-order **Date:** 19 Oct 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE […] ## Change A temporary flowline bypass is authorized on these wells: WELL-0013, WELL-0062, WELL-0118, WELL-0248, WELL"
+        },
+        {
+          "id": "MOC-2026-044",
+          "title": "moc 2026 044",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-044.md",
+          "excerpt": "# Management of Change — MOC-2026-044 **Title:** Extension of MOC-2026-031 (temporary flowline bypass) **Date:** 24 Nov 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE […] ## Change This memo extends MOC-2026-031. The replacement check valves are still on back-order, so the temporary flowline byp"
+        },
+        {
+          "id": "OPERATIONS-SOP-REV2",
+          "title": "operations sop rev2",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/operations-sop-rev2.md",
+          "excerpt": "## OPS-2 Temporary bypass A temporary flowline bypass is allowed only on a well named in a management-of-change memo (the `moc-*.md` files in `fleet/sops/`) that has not expired. A memo that extends an earlier memo replaces its expiry date. […] ## OPS-2 Temporary bypass A bypass is in place from the operator note that puts it in until the operator note that takes it out. It is a violation if: - th"
+        },
+        {
+          "id": "FIELD-WORK-SOP",
+          "title": "field work sop",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/field-work-sop.md",
+          "excerpt": "## 3. Protocols | Protocol ID | Requirement | |---|---| | **WS-01** | Hold and record a **pre-job safety meeting** (job safety analysis) with the whole crew before any work starts. | | **WS-02** | **Isolate energy** before touching moving or pressurised equipment. Stop the prime mover at the bottom of the stroke, set and chain the brake, lock and tag the motor disconnect, close and tag the wellhea"
+        },
+        {
+          "id": "MNT-0001-029",
+          "title": "Repair report · MNT-0001-029",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0001/maintenance-reports/MNT-0001-june-2026-flowline-spill.md",
+          "assetId": "WELL-0001",
+          "excerpt": "## Work done 1. Removed free oil from the pad with a vacuum truck and absorbent pads. 2. Excavated around the coupling and exposed 6 m of flowline. 3. Cut out the failed coupling and 4 m of corroded pipe. 4. Welded in new pipe and a new coupling, then wrapped the joint. 5. Excavated the stained soil around the coupling and across the pad. […] ## What happened The weekly drone inspection INS-0001-0"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [
+        "WELL-0001"
+      ],
+      "trace": [
+        {
+          "tool": "deterministic_planner",
+          "detail": "Hosted planner unavailable (invalid_response); validated domain fallback used. Retry this question to reconnect.",
+          "durationMs": 3124
+        },
+        {
+          "tool": "document_retrieval",
+          "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+          "durationMs": 36
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "fallback",
+        "reason": "invalid_response"
+      },
+      "durationMs": 3160
+    },
+    "history": [
+      {
+        "userText": "Across all areas, which temporary flowline bypasses are in place right now, and is each one allowed? Also list any bypass, past or present, that stayed in after its approval ran out or was never approved at all.",
+        "answer": "Relevant source passages:\n\nmoc 2026 036 [MOC-2026-036]:\n# Management of Change — MOC-2026-036\n\n**Title:** Temporary flowline bypass during the winter valve program\r\n**Date:** 6 Nov 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE\n\nmoc 2026 031 [MOC-2026-031]:\n# Management of Change — MOC-2026-031\n\n**Title:** Temporary flowline bypass while check valves are on back-order\r\n**Date:** 19 Oct 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE\n\nmoc 2026 044 [MOC-2026-044]:\n# Management of Change — MOC-2026-044\n\n**Title:** Extension of MOC-2026-031 (temporary flowline bypass)\r\n**Date:** 24 Nov 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE",
+        "wellIds": [
+          "WELL-0001"
+        ],
+        "createdAt": "2026-10-17T11:00:21.551Z",
+        "response": {
+          "answer": "Relevant source passages:\n\nmoc 2026 036 [MOC-2026-036]:\n# Management of Change — MOC-2026-036\n\n**Title:** Temporary flowline bypass during the winter valve program\r\n**Date:** 6 Nov 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE\n\nmoc 2026 031 [MOC-2026-031]:\n# Management of Change — MOC-2026-031\n\n**Title:** Temporary flowline bypass while check valves are on back-order\r\n**Date:** 19 Oct 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE\n\nmoc 2026 044 [MOC-2026-044]:\n# Management of Change — MOC-2026-044\n\n**Title:** Extension of MOC-2026-031 (temporary flowline bypass)\r\n**Date:** 24 Nov 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE",
+          "citations": [
+            {
+              "id": "MOC-2026-036",
+              "title": "moc 2026 036",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-036.md",
+              "excerpt": "# Management of Change — MOC-2026-036 **Title:** Temporary flowline bypass during the winter valve program **Date:** 6 Nov 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE […] ## Change A temporary flowline bypass is authorized on these wells: WELL-0087, WELL-0158, WELL-0249, WELL-0284, WELL-0356"
+            },
+            {
+              "id": "MOC-2026-031",
+              "title": "moc 2026 031",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-031.md",
+              "excerpt": "# Management of Change — MOC-2026-031 **Title:** Temporary flowline bypass while check valves are on back-order **Date:** 19 Oct 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE […] ## Change A temporary flowline bypass is authorized on these wells: WELL-0013, WELL-0062, WELL-0118, WELL-0248, WELL"
+            },
+            {
+              "id": "MOC-2026-044",
+              "title": "moc 2026 044",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-044.md",
+              "excerpt": "# Management of Change — MOC-2026-044 **Title:** Extension of MOC-2026-031 (temporary flowline bypass) **Date:** 24 Nov 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE […] ## Change This memo extends MOC-2026-031. The replacement check valves are still on back-order, so the temporary flowline byp"
+            },
+            {
+              "id": "OPERATIONS-SOP-REV2",
+              "title": "operations sop rev2",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/operations-sop-rev2.md",
+              "excerpt": "## OPS-2 Temporary bypass A temporary flowline bypass is allowed only on a well named in a management-of-change memo (the `moc-*.md` files in `fleet/sops/`) that has not expired. A memo that extends an earlier memo replaces its expiry date. […] ## OPS-2 Temporary bypass A bypass is in place from the operator note that puts it in until the operator note that takes it out. It is a violation if: - th"
+            },
+            {
+              "id": "FIELD-WORK-SOP",
+              "title": "field work sop",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/field-work-sop.md",
+              "excerpt": "## 3. Protocols | Protocol ID | Requirement | |---|---| | **WS-01** | Hold and record a **pre-job safety meeting** (job safety analysis) with the whole crew before any work starts. | | **WS-02** | **Isolate energy** before touching moving or pressurised equipment. Stop the prime mover at the bottom of the stroke, set and chain the brake, lock and tag the motor disconnect, close and tag the wellhea"
+            },
+            {
+              "id": "MNT-0001-029",
+              "title": "Repair report · MNT-0001-029",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0001/maintenance-reports/MNT-0001-june-2026-flowline-spill.md",
+              "assetId": "WELL-0001",
+              "excerpt": "## Work done 1. Removed free oil from the pad with a vacuum truck and absorbent pads. 2. Excavated around the coupling and exposed 6 m of flowline. 3. Cut out the failed coupling and 4 m of corroded pipe. 4. Welded in new pipe and a new coupling, then wrapped the joint. 5. Excavated the stained soil around the coupling and across the pad. […] ## What happened The weekly drone inspection INS-0001-0"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0001"
+          ],
+          "trace": [
+            {
+              "tool": "deterministic_planner",
+              "detail": "Hosted planner unavailable (invalid_response); validated domain fallback used. Retry this question to reconnect.",
+              "durationMs": 3124
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 36
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "fallback",
+            "reason": "invalid_response"
+          },
+          "durationMs": 3160
+        }
+      }
+    ],
+    "revision": 4
+  }
+}

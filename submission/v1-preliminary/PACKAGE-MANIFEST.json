@@ -1,0 +1,330 @@
+{
+  "format": 1,
+  "purpose": "Local source snapshot; not a final event submission",
+  "sampleUpstreamCommit": "b8de8c9bd68f40334e5d06922126169e4f3bf3ca",
+  "excluded": [
+    "credentials",
+    "saved user histories",
+    "datasets",
+    "dependencies",
+    "build output",
+    "Git history"
+  ],
+  "entries": [
+    {
+      "path": "01-problem-statement.md",
+      "bytes": 9817,
+      "sha256": "a70d846d533b335acab624f0936d93b6f5c418e7c4edb12d82fecc45078c77ef"
+    },
+    {
+      "path": "02-dataset-guide.md",
+      "bytes": 11251,
+      "sha256": "f5c8869562248dc74a6905ae5bd07eefd8cb5e5e7db8029df71d7486696b93e5"
+    },
+    {
+      "path": "03-evaluation-queries.md",
+      "bytes": 14589,
+      "sha256": "c0a7ae962aa1f2129191aed4244d47babded1de6c5da7e587e5554f9245b68f6"
+    },
+    {
+      "path": "04-prerequisites.md",
+      "bytes": 12399,
+      "sha256": "f95c9291ccdb40c3bd3e8ebdbbdfb74248b78c2b80b0b4c1b4e210ee36bebf3b"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1086,
+      "sha256": "a1e6c10180c388ad60c20468a0fa5f016982442789d9d1e6379b31b16631bfdb"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/.env.example",
+      "bytes": 624,
+      "sha256": "3037b8cf673fd3d046b06a20215ef272006cf226dd6a13dfbc3c911ed6df5509"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/.gitignore",
+      "bytes": 44,
+      "sha256": "9b222ebe063a5eb2da311b51aa9e7ff1ac607d89daf40274e0aafce6fe185db2"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/README.md",
+      "bytes": 8308,
+      "sha256": "3c6fd8b2101e226c5f7bcac0a8718e3ca35eb21e142d3f0bb9a887c9fa37a258"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/design/IMPLEMENTATION.md",
+      "bytes": 10606,
+      "sha256": "8f6f001adf9b2d97fb6814cf9f7b29910e059ab743d43a541d7b1cbf828b131c"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/ACCEPTANCE.md",
+      "bytes": 4812,
+      "sha256": "4a00d7d61a948adef6a0956ebe400cba3921dc959cbf24f778fb554167c12e08"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/ARCHITECTURE.md",
+      "bytes": 12249,
+      "sha256": "72a94b16a2f9db614d4114e406a03c939fee8288b55111c4407622ab8671212a"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/DELIVERY.md",
+      "bytes": 6961,
+      "sha256": "b471523e854449cda13e4833ad2a46286902aafc0049c4ef38f5add35d9774a4"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/DOMAIN_STRESS.md",
+      "bytes": 6386,
+      "sha256": "c48e33dc5085d6acae6d55f60c1e41e9078fa3a45a738858f605d6fcf2f53fe1"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/FINAL_DATA_READINESS.md",
+      "bytes": 4915,
+      "sha256": "2ccdc28809edee24e99f35b246679f26ac95f0977b6077760652393e5d23e88a"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/LIVE_CHECKS.md",
+      "bytes": 37371,
+      "sha256": "33b2552f05c57c60901c3abbad18104e3a75f285b4d9962471825a1ca9c7ee58"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/PROVIDER_STRESS.md",
+      "bytes": 7391,
+      "sha256": "0f340668a4b4b9e9118f2ee0bfa77245e70d536e709acf1200b39579cf0a674f"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/RESEARCH_APPLIED.md",
+      "bytes": 4572,
+      "sha256": "e33b9f3e52f9a61386582c5116b363fe65fffe2f505679aa9a81f816c6e1d901"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/REVIEW.md",
+      "bytes": 7378,
+      "sha256": "8ae8bef23916c7eb67cb433010b1834904a3d6d6e6f2e754ef45b7c528de728b"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/UI_STRESS.md",
+      "bytes": 7952,
+      "sha256": "574e398f0d2c95c4ed3bbe7ec08137cf178a24715440b04562a8ba5eefbc15af"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/UNSEEN_LIVE_CHECKS.md",
+      "bytes": 106539,
+      "sha256": "239a4946b51d220980f7f24f3e875ba32eccbf2e05f37d5caf7ae581879175d3"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/screenshots/built-cost-chart.png",
+      "bytes": 128213,
+      "sha256": "88af2804f76742b554e82e95de9540c503817520ba5c44fbc4a6c324c84fc7e4"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/screenshots/desktop-chart.png",
+      "bytes": 135913,
+      "sha256": "6c4df87216ba6f1ce4564ecef3b65686bf15ea06974339170c7ebe5b92d4a3ab"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/screenshots/desktop-empty.png",
+      "bytes": 89840,
+      "sha256": "9f45db95304c7f3be8aadddfc5e9d48c0361e14dda20a7f4188826972642d53a"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/screenshots/desktop-status.png",
+      "bytes": 120582,
+      "sha256": "2539bfd1f47a16103a35865da20aceff74eca8dc8415f6986ee4e70ce1b87c18"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/docs/screenshots/mobile-status.png",
+      "bytes": 47828,
+      "sha256": "5a035cfdabcb42e317a54468a181876725e2e10cb6e4b818b7f74f7dbb3b2f49"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/index.html",
+      "bytes": 457,
+      "sha256": "e802cfb60a90ad0e32afd702c130d8da50cfbce3ef9d664e941524fef4da3a61"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/package-lock.json",
+      "bytes": 120476,
+      "sha256": "c3a16d9ffd37e6d2c6f9d7141492e602a12392213dd5e148992bf69cd95ba694"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/package.json",
+      "bytes": 809,
+      "sha256": "a127847160a8a5395d113225499c8fd12af06c9c151d24255bdda196cd0fbf30"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/acceptance.ts",
+      "bytes": 24324,
+      "sha256": "89f189b292fad3c912e44179b3e5916ec0c74683ca8780a91b5e37602d19a72e"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/api-check.ts",
+      "bytes": 9160,
+      "sha256": "90f3705a95ba4ba5c3f332152b02765453009d3afda2492a7017dacaa1a3c3ef"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/data-check.ts",
+      "bytes": 4778,
+      "sha256": "ff4e7595c3f62eecbb63cd138e5a1e330e484e6db42ed2dea4729e7035cea357"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/data-stress.ts",
+      "bytes": 14308,
+      "sha256": "9d79454a8a72b63067294bd1696b5a66df210d2cee745d8c48a38bd00f8a3f13"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/domain-stress.ts",
+      "bytes": 22798,
+      "sha256": "d3e6d32ffa9db4c73f72f7ab134499e94d7a3949038aa534e06f7535387b97e2"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/engine-check.ts",
+      "bytes": 4371,
+      "sha256": "178ea1dd140eeea70764a222028420c5d5d297cc874312ae8ef2f10a32a863cc"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/live-check.ts",
+      "bytes": 16846,
+      "sha256": "d2bdafc612a28e64b91d3fde48b3e501acbbfa5c3661856b1d0b2a833b11178c"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/provider-check.ts",
+      "bytes": 5074,
+      "sha256": "09f3023e1813d2b0c42a6e7c840da7ad5739b0ed9e2ddf16fc0f26fa87d4e3e6"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/provider-current-status-check.ts",
+      "bytes": 3808,
+      "sha256": "abd39f44337c97247063b3cb5c7f7b9edcd12144358fe69952c8d76ed241d1b9"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/provider-stress-check.ts",
+      "bytes": 8035,
+      "sha256": "42bb2431d76b3727b4618298e8f0be3611372433ab22fc46792508488efcb265"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/review-check.ts",
+      "bytes": 4598,
+      "sha256": "b79d918c82abfa71424e351bd34bfb9f0f14729dae9f9aa27897f8e9d366a961"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/synthesis-review-check.ts",
+      "bytes": 4810,
+      "sha256": "272118cc1932d716d3412df3230b88a0c5beef9dd57ebd4370d3c66784dc71bc"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/unseen-live-check.ts",
+      "bytes": 23593,
+      "sha256": "5de0715a95a27b6f60f2e6341bb10a798937a46df635f170f50b1a079fe4354d"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/scripts/visual-check.ts",
+      "bytes": 3755,
+      "sha256": "904924b3c7f36f22718b5e66df3adf44da060fee7939ea72316371efe3f48c6e"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/server/agent.ts",
+      "bytes": 41625,
+      "sha256": "9cffe791e7b18da6a0c15961663f5e4f675ac7a392639ee25cade06357d8cc78"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/server/data.ts",
+      "bytes": 13520,
+      "sha256": "fc8bac66eaed7fdae8a84f6355a70c3bc81173dbab03fdadc52e4a35d2bc5ffb"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/server/engine.ts",
+      "bytes": 72255,
+      "sha256": "42294f88dd51a3cee4e88489f7ee228e0cc6c518c8741951ac3421a38f58b00b"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/server/gemini.ts",
+      "bytes": 11725,
+      "sha256": "b19b9fe28520d1324d2e88d772df67166b39e1e2b6a48959da2ceb2f6057ecbe"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/server/index.ts",
+      "bytes": 9259,
+      "sha256": "9a79a639a90b813c4bf96c9426cd0acdef37a76784cbb88a256701e2caa5a215"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/server/plan.ts",
+      "bytes": 823,
+      "sha256": "b2ab0b7b67dc71c34ea4020989e3fe4ae3e6700572d0f002ddcf2c4a846205ef"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/src/App.tsx",
+      "bytes": 42208,
+      "sha256": "877911c4c461cbd39c98964e2e789fe0736353e684ac32247f52f8a9e5f045fc"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/src/ResultControls.tsx",
+      "bytes": 1528,
+      "sha256": "0eb639fa6699b5f76ab26d633d925cf35e32f95c848c51a3244194be86ff64a9"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/src/VisualBlock.tsx",
+      "bytes": 21508,
+      "sha256": "9e0ababc84e84cc8fa5872d8b1f7a48ac33f6f0bc22646b0d63f06b587ea4d64"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/src/contracts.ts",
+      "bytes": 1398,
+      "sha256": "1a4242c04a6b2bfff34f40437ed0b34dea9e387540de589c852c461f1ddcb23b"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/src/main.tsx",
+      "bytes": 229,
+      "sha256": "a45849ddd4aec3f0a89c0df2ca0f0650f91fa9cc8fa87994ba6382a0fe95e3b2"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/src/styles.css",
+      "bytes": 49157,
+      "sha256": "ea1568ee8715a02f45cec3812e3c6569717344ae83fb3772680addf295f19ab3"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/submission/REPRODUCE.md",
+      "bytes": 3598,
+      "sha256": "614d06a749b849162ecbf9d99a4f72f69bc10faac65007a28ce413b35104bdbf"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/submission/build-package.py",
+      "bytes": 5497,
+      "sha256": "1778b6aa849a7909ad89032ed002ce3e86ecc5cca3fcb507648a703176186a64"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/submission/public-repository-README.md",
+      "bytes": 3967,
+      "sha256": "88d2fb3e181f5abe9fcbd422645d806746e0143da49058a14843a0cf694cef58"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/submission/recording-script.md",
+      "bytes": 4076,
+      "sha256": "d8d6fc34d1d3ba746ae4d26a95fe227a937aa5a48950308b50cc5fd000476850"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/submission/shotlist.md",
+      "bytes": 3803,
+      "sha256": "5217c2a174c8429a658373bb3545a44be9854399dad222c87190c0db8748fdfb"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/submission/stage-public-release.py",
+      "bytes": 3006,
+      "sha256": "c1112bac07ae4b1d0cd1f206b5245f23e9a512be3ec4b36d1dada267e32ea052"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/submission/writeup.md",
+      "bytes": 6729,
+      "sha256": "85f30d42f7a57a660fdccc5b04625a112cdca3bf663a13d0c1ce84f5ce315514"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/tsconfig.json",
+      "bytes": 457,
+      "sha256": "084d9d3f0a5529d7b0733b96c33c308e44b18d53ad277b229a6a103f56c80ef1"
+    },
+    {
+      "path": "apps/asset-intelligence-copilot/vite.config.ts",
+      "bytes": 240,
+      "sha256": "eddbf184bf1fd89cc69d17fb076925f4e3a5770ad6462a4ce838aab273718646"
+    }
+  ]
+}

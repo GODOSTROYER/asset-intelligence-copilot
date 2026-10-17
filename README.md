@@ -378,6 +378,18 @@ REFERENCE_DATE=2027-01-15 COPILOT_STATE_DIR=/tmp/copilot-final npm run dev
 
 **Production-style run:** `npm run build && npm start` (serves the built UI from the API).
 
+**One-command live demo** (fresh memory each run; API on :4178, UI on :5173):
+
+```bash
+SAMPLE_DATA_PATH=../../flytbase-ahc-swe-asset-intelligence-dataset/test-data/dataset npm run demo
+```
+
+**Gemma 4 planner test:** runs 8 final questions through Gemma 4 with the production prompt, validator and engine. It needs `OPENROUTER_API_KEY`, or AI Studio keys with `google:gemma-4-31b-it`:
+
+```bash
+SAMPLE_DATA_PATH=<test-data/dataset> REFERENCE_DATE=2027-01-15 npm run gemma-test -- google:gemma-4-31b-it 8
+```
+
 **Run the checks** (from `app/`, with `SAMPLE_DATA_PATH` pointing at the sample dataset; no API key needed):
 
 ```bash
@@ -395,17 +407,27 @@ Never commit `.env.local`; it is git-ignored.
 .
 ├── app/                         the copilot
 │   ├── server/                  Express API, planner, validator, engine, Gemini client
-│   │   └── tools/               13 document-driven tools (incl. triage)
+│   │   └── tools/               12 document-driven tools (incl. triage)
 │   ├── src/                     React 19 UI (chat, visuals, drawers)
-│   ├── scripts/                 acceptance, stress, adversarial and live checks
+│   ├── scripts/                 checks (acceptance, stress, adversarial, live), demo launcher, Gemma 4 test
 │   ├── docs/                    architecture, acceptance, stress and review reports, screenshots
+│   ├── design/                  UI concept and implementation notes
 │   └── .env.example
 ├── submission/
 │   ├── FINAL_REPORT.md          the written report (authoritative numbers)
-│   ├── report/                  report PDF (if included)
-│   └── final-run/               FINAL_ANSWERS.md, oracle/Q1-Q11.md, raw-v2/*.json
-└── video/                       HyperFrames project for the demo video
+│   ├── report/                  FINAL_REPORT.pdf + its generator (build-report.mjs, report.html, page previews)
+│   ├── final-run/               FINAL_ANSWERS.md (final), oracle/Q1-Q11.md, raw-v2/ (final run),
+│   │                            raw-hosted-before-tools/, raw-fallback/ + FINAL_ANSWERS.fallback-run.md, RUN_NOTES.md
+│   └── v1-preliminary/          the preliminary sample-data write-up and packaging scripts
+├── video/                       HyperFrames project for the demo video (scenes, storyboard, design spec,
+│   │                            voice-over for Part 1, assemble/TTS scripts)
+│   ├── narration/               Part 2 narration scripts and shot logs
+│   └── remotion-draft/          the first (superseded) Remotion draft
+├── showcase/                    the static showcase site (deploy with `vercel deploy --prod`)
+└── docs/                        build handoff notes and the challenge brief
 ```
+
+**Large files** (final demo MP4s, report PDF and source zip) are attached to the [v1.0-submission release](https://github.com/GODOSTROYER/asset-intelligence-copilot/releases/tag/v1.0-submission).
 
 ## Demo video and report
 
@@ -414,7 +436,7 @@ Never commit `.env.local`; it is git-ignored.
   - The next 3 minutes are a real end-to-end scenario recorded in the live app on the 600-well test set: recalled pumps, a first-hand and a second-hand claim kept unconfirmed and attributed, the OPS-1 gas-response audit, and triage.
 - **Report (3-page PDF):** [Google Drive](https://drive.google.com/file/d/11CjfCpPdzDSVMne5zPIL03zHPk6Ji_zO/view?usp=sharing), also [`submission/report/FINAL_REPORT.pdf`](submission/report/FINAL_REPORT.pdf) in this repo. The Markdown source is [`submission/FINAL_REPORT.md`](submission/FINAL_REPORT.md).
 - **Live showcase:** [asset-intelligence-copilot-iota.vercel.app](https://asset-intelligence-copilot-iota.vercel.app), with the video, report, scorecard and architecture.
-- The video is built with HyperFrames from [`video/`](video): storyboard, design spec and HTML compositions. Voice-over audio and rendered output are not in the repo; `cd video && npm run dev` previews the compositions.
+- The video is built with HyperFrames from [`video/`](video): storyboard, design spec, HTML compositions and the Part 1 voice-over. `cd video && npm install && npm run dev` previews it, and `node scripts/assemble.mjs` re-times it after a voice-over swap. The rendered MP4s (final 4:58 cut, Part 1 and Part 2) are on the [v1.0-submission release](https://github.com/GODOSTROYER/asset-intelligence-copilot/releases/tag/v1.0-submission).
 
 ## Engineering decisions and trade-offs
 

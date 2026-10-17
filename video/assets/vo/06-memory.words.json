@@ -1,0 +1,362 @@
+[
+  {
+    "word": "And",
+    "start": 0.194,
+    "end": 0.366
+  },
+  {
+    "word": "it",
+    "start": 0.366,
+    "end": 0.494
+  },
+  {
+    "word": "learns",
+    "start": 0.494,
+    "end": 0.795
+  },
+  {
+    "word": "from",
+    "start": 0.795,
+    "end": 1.01
+  },
+  {
+    "word": "the",
+    "start": 1.01,
+    "end": 1.181
+  },
+  {
+    "word": "people",
+    "start": 1.181,
+    "end": 1.482
+  },
+  {
+    "word": "in",
+    "start": 1.482,
+    "end": 1.611
+  },
+  {
+    "word": "the",
+    "start": 1.611,
+    "end": 1.782
+  },
+  {
+    "word": "field.",
+    "start": 1.782,
+    "end": 2.04
+  },
+  {
+    "word": "Michael",
+    "start": 2.486,
+    "end": 2.923
+  },
+  {
+    "word": "corrects",
+    "start": 2.923,
+    "end": 3.414
+  },
+  {
+    "word": "an",
+    "start": 3.414,
+    "end": 3.578
+  },
+  {
+    "word": "AI",
+    "start": 3.578,
+    "end": 3.742
+  },
+  {
+    "word": "spill",
+    "start": 3.742,
+    "end": 4.07
+  },
+  {
+    "word": "estimate:",
+    "start": 4.07,
+    "end": 4.643
+  },
+  {
+    "word": "four",
+    "start": 4.643,
+    "end": 4.916
+  },
+  {
+    "word": "point",
+    "start": 4.916,
+    "end": 5.244
+  },
+  {
+    "word": "five",
+    "start": 5.244,
+    "end": 5.517
+  },
+  {
+    "word": "barrels",
+    "start": 5.517,
+    "end": 5.954
+  },
+  {
+    "word": "was",
+    "start": 5.954,
+    "end": 6.173
+  },
+  {
+    "word": "actually",
+    "start": 6.173,
+    "end": 6.665
+  },
+  {
+    "word": "five",
+    "start": 6.665,
+    "end": 6.938
+  },
+  {
+    "word": "point",
+    "start": 6.938,
+    "end": 7.265
+  },
+  {
+    "word": "four.",
+    "start": 7.265,
+    "end": 7.539
+  },
+  {
+    "word": "The",
+    "start": 7.934,
+    "end": 8.166
+  },
+  {
+    "word": "copilot",
+    "start": 8.166,
+    "end": 8.63
+  },
+  {
+    "word": "keeps",
+    "start": 8.63,
+    "end": 8.979
+  },
+  {
+    "word": "the",
+    "start": 8.979,
+    "end": 9.211
+  },
+  {
+    "word": "original,",
+    "start": 9.211,
+    "end": 9.821
+  },
+  {
+    "word": "records",
+    "start": 9.821,
+    "end": 10.285
+  },
+  {
+    "word": "who",
+    "start": 10.285,
+    "end": 10.518
+  },
+  {
+    "word": "changed",
+    "start": 10.518,
+    "end": 10.982
+  },
+  {
+    "word": "it",
+    "start": 10.982,
+    "end": 11.156
+  },
+  {
+    "word": "and",
+    "start": 11.156,
+    "end": 11.389
+  },
+  {
+    "word": "why,",
+    "start": 11.389,
+    "end": 11.708
+  },
+  {
+    "word": "and",
+    "start": 11.708,
+    "end": 11.94
+  },
+  {
+    "word": "immediately",
+    "start": 11.94,
+    "end": 12.637
+  },
+  {
+    "word": "flags",
+    "start": 12.637,
+    "end": 12.986
+  },
+  {
+    "word": "that",
+    "start": 12.986,
+    "end": 13.276
+  },
+  {
+    "word": "the",
+    "start": 13.276,
+    "end": 13.508
+  },
+  {
+    "word": "spill",
+    "start": 13.508,
+    "end": 13.857
+  },
+  {
+    "word": "is",
+    "start": 13.857,
+    "end": 14.031
+  },
+  {
+    "word": "now",
+    "start": 14.031,
+    "end": 14.263
+  },
+  {
+    "word": "reportable,",
+    "start": 14.263,
+    "end": 14.989
+  },
+  {
+    "word": "with",
+    "start": 14.989,
+    "end": 15.28
+  },
+  {
+    "word": "no",
+    "start": 15.28,
+    "end": 15.454
+  },
+  {
+    "word": "notice",
+    "start": 15.454,
+    "end": 15.86
+  },
+  {
+    "word": "on",
+    "start": 15.86,
+    "end": 16.034
+  },
+  {
+    "word": "file.",
+    "start": 16.034,
+    "end": 16.325
+  },
+  {
+    "word": "When",
+    "start": 16.849,
+    "end": 17.153
+  },
+  {
+    "word": "Laura",
+    "start": 17.153,
+    "end": 17.518
+  },
+  {
+    "word": "from",
+    "start": 17.518,
+    "end": 17.822
+  },
+  {
+    "word": "safety",
+    "start": 17.822,
+    "end": 18.248
+  },
+  {
+    "word": "asks",
+    "start": 18.248,
+    "end": 18.552
+  },
+  {
+    "word": "later,",
+    "start": 18.552,
+    "end": 19.008
+  },
+  {
+    "word": "she",
+    "start": 19.008,
+    "end": 19.251
+  },
+  {
+    "word": "sees",
+    "start": 19.251,
+    "end": 19.555
+  },
+  {
+    "word": "it",
+    "start": 19.555,
+    "end": 19.738
+  },
+  {
+    "word": "too.",
+    "start": 19.738,
+    "end": 19.981
+  },
+  {
+    "word": "And",
+    "start": 20.402,
+    "end": 20.62
+  },
+  {
+    "word": "if",
+    "start": 20.62,
+    "end": 20.784
+  },
+  {
+    "word": "two",
+    "start": 20.784,
+    "end": 21.003
+  },
+  {
+    "word": "people",
+    "start": 21.003,
+    "end": 21.386
+  },
+  {
+    "word": "disagree,",
+    "start": 21.386,
+    "end": 21.96
+  },
+  {
+    "word": "it",
+    "start": 21.96,
+    "end": 22.124
+  },
+  {
+    "word": "says",
+    "start": 22.124,
+    "end": 22.397
+  },
+  {
+    "word": "so",
+    "start": 22.397,
+    "end": 22.561
+  },
+  {
+    "word": "instead",
+    "start": 22.561,
+    "end": 22.998
+  },
+  {
+    "word": "of",
+    "start": 22.998,
+    "end": 23.162
+  },
+  {
+    "word": "picking",
+    "start": 23.162,
+    "end": 23.599
+  },
+  {
+    "word": "a",
+    "start": 23.599,
+    "end": 23.709
+  },
+  {
+    "word": "side.",
+    "start": 23.709,
+    "end": 23.982
+  }
+]

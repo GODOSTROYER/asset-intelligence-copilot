@@ -223,7 +223,10 @@
       border-radius: 14px;
       background: #0a1222;
       border: 1px solid #22324f;
-      padding: 12px 14px;
+      padding: 12px 12px;
+    }
+    .arch-lane .arch-chip {
+      padding: 0 7px;
     }
     .arch-lt {
       font: 700 20px "IBM Plex Mono", monospace;
@@ -420,7 +423,7 @@
   </style>
 
   <div id="root" data-composition-id="065-architecture" data-width="1920" data-height="1080">
-    <div id="arch-bg" class="arch-bg clip" data-start="0" data-duration="38.7" data-track-index="0"></div>
+    <div id="arch-bg" class="arch-bg clip" data-start="0" data-duration="41.44" data-track-index="0"></div>
     <div id="arch-grid"></div>
     <div id="arch-glow" data-layout-allow-overflow></div>
 
@@ -499,30 +502,31 @@
           <span>deterministic planner if the model is unavailable</span>
         </div>
 
-        <div class="arch-lane" id="arch-l1" style="left:18px;width:360px">
+        <div class="arch-lane" id="arch-l1" style="left:10px;width:368px">
           <div class="arch-lt">DOMAIN TOOLS</div>
           <div class="arch-chips">
             <span class="arch-chip arch-l1c">status</span><span class="arch-chip arch-l1c">downtime</span><span class="arch-chip arch-l1c">spills</span>
             <span class="arch-chip arch-l1c">heatmap</span><span class="arch-chip arch-l1c">compliance</span><span class="arch-chip arch-l1c">RCA</span>
-            <span class="arch-chip arch-l1c">containment</span><span class="arch-chip arch-l1c">costs</span>
+            <span class="arch-chip arch-l1c">containment</span><span class="arch-chip arch-l1c">costs</span><span class="arch-chip arch-l1c">records</span>
           </div>
         </div>
 
-        <div class="arch-lane" id="arch-l2" style="left:394px;width:270px">
-          <div class="arch-lt">RECORDS AGGREGATOR</div>
+        <div class="arch-lane" id="arch-l2" style="left:386px;width:308px">
+          <div class="arch-lt">DOCUMENT-DRIVEN TOOLS</div>
           <div class="arch-chips">
-            <span class="arch-chip arch-l2c">filter</span><span class="arch-chip arch-l2c">group</span>
-            <span class="arch-chip arch-l2c">count</span><span class="arch-chip arch-l2c">sum</span>
+            <span class="arch-chip arch-l2c">gas</span><span class="arch-chip arch-l2c">MOC bypass</span>
+            <span class="arch-chip arch-l2c">letter</span><span class="arch-chip arch-l2c">recall</span><span class="arch-chip arch-l2c">triage</span>
+            <span class="arch-chip arch-l2c">+7</span>
           </div>
         </div>
 
-        <div class="arch-lane" id="arch-l3" style="left:680px;width:320px">
+        <div class="arch-lane" id="arch-l3" style="left:702px;width:308px">
           <div class="arch-lt">DOCUMENT Q&amp;A</div>
           <div class="arch-chips">
             <span class="arch-chip arch-l3c">lexical retrieval</span><span class="arch-chip arch-l3c">Gemini synthesis</span>
           </div>
           <div class="arch-ck arch-l3t" style="margin-top:8px">per-sentence source IDs</div>
-          <div class="arch-ck arch-l3t"><svg width="22" height="22" viewBox="0 0 36 36"><path d="M7 19 L15 27 L29 10" /></svg><span>numbers &amp; IDs checked</span></div>
+          <div class="arch-ck arch-l3t" style="gap:6px"><svg width="20" height="20" viewBox="0 0 36 36"><path d="M7 19 L15 27 L29 10" /></svg><span>numbers &amp; IDs checked</span></div>
         </div>
       </div>
 
@@ -665,7 +669,7 @@
       var $ = function (id) { return document.getElementById(id); };
       var $$ = function (sel) { return document.querySelectorAll(sel); };
       var ACC = "#3D7BFF", LINE = "#22324F";
-      var DUR = 38.7;
+      var DUR = 41.44;
 
       /* ================= CAMERA: one writer, phases + micro-drift ================= */
       var world = $("arch-world"), grid = $("arch-grid");
@@ -681,14 +685,14 @@
       }
       render();
       tl.to(drift, { p: Math.PI * 2 * 2.5, duration: DUR, ease: "none", onUpdate: render }, 0);
-      tl.to(amp, { a: 0, duration: 1.2, ease: "power2.out", onUpdate: render }, 33.4);
+      tl.to(amp, { a: 0, duration: 1.2, ease: "power2.out", onUpdate: render }, 35.2);
       // establishing wireframe at scale 1 -> left cluster -> evidence -> core -> router -> memory -> pull-back
       tl.to(cam, { cx: 400, cy: 480, s: 1.14, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 2.1);
-      tl.to(cam, { cx: 800, cy: 650, s: 1.3, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 5.5);
-      tl.to(cam, { cx: 975, cy: 316, s: 1.45, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 12.7);
-      tl.to(cam, { cx: 970, cy: 420, s: 1.55, duration: 1.3, ease: "expo.inOut", onUpdate: render }, 20.0);
-      tl.to(cam, { cx: 1480, cy: 660, s: 1.4, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 27.9);
-      tl.to(cam, { cx: 960, cy: 540, s: 1, duration: 1.6, ease: "power3.inOut", onUpdate: render }, 33.0);
+      tl.to(cam, { cx: 800, cy: 650, s: 1.3, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 5.3);
+      tl.to(cam, { cx: 975, cy: 316, s: 1.45, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 14.5);
+      tl.to(cam, { cx: 970, cy: 420, s: 1.55, duration: 1.3, ease: "expo.inOut", onUpdate: render }, 19.9);
+      tl.to(cam, { cx: 1480, cy: 660, s: 1.4, duration: 1.4, ease: "expo.inOut", onUpdate: render }, 31.0);
+      tl.to(cam, { cx: 960, cy: 540, s: 1, duration: 1.8, ease: "power3.inOut", onUpdate: render }, 35.3);
 
       /* ================= helpers ================= */
       function prep(el) {
@@ -782,19 +786,19 @@
       rise($("arch-api-note"), 5.45, 0.5, 10);
       flash("arch-b-api", 4.65);
 
-      /* ================= EVIDENCE INDEX (6.0 - 13) ================= */
-      wire("w11", 5.85, 0.4, ["k11"]);
-      travel("arch-pa", "arch-w11", 5.9, 0.4);
-      shell("arch-b-evidence", 6.1); ghostOut("arch-g-evidence", 6.25);
-      rise($("arch-ev-hrow"), 6.3, 0.5, 12);
+      /* ================= EVIDENCE INDEX (5.5 - 14.4) ================= */
+      wire("w11", 5.55, 0.4, ["k11"]);
+      travel("arch-pa", "arch-w11", 5.6, 0.4);
+      shell("arch-b-evidence", 5.8); ghostOut("arch-g-evidence", 5.95);
+      rise($("arch-ev-hrow"), 6.1, 0.5, 12);
       var evc = $$(".arch-evc");
-      var evt = [7.06, 7.74, 8.21, 8.67, 9.27, 9.7, 10.0];
+      var evt = [6.75, 7.55, 8.05, 8.6, 9.3, 9.85, 10.15];
       for (var e = 0; e < evc.length; e++) {
         var k = parseInt(evc[e].getAttribute("data-k"), 10);
         pop(evc[e], evt[k]);
       }
-      flash("arch-b-evidence", 10.3);
-      // 47,177 count-up on "forty-seven thousand ... evidence"
+      flash("arch-b-evidence", 10.5);
+      // 149,877 count-up on "about a hundred and fifty thousand ... evidence"
       var cn = $("arch-ev-n"), cs = { v: 0 };
       function fmt(n) {
         var s = String(Math.round(n)), out = "", cnt = 0;
@@ -804,122 +808,121 @@
         }
         return out;
       }
-      tl.fromTo($("arch-ev-count"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 10.55);
-      tl.to(cs, { v: 47177, duration: 1.9, ease: "power3.out", onUpdate: function () { cn.textContent = fmt(cs.v); } }, 10.7);
-      tl.fromTo(cn, { scale: 0.7 }, { scale: 1, duration: 1.9, ease: "power3.out" }, 10.7);
-      rise($("arch-ev-rules"), 12.75, 0.6, 10);
+      tl.fromTo($("arch-ev-count"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 10.95);
+      tl.to(cs, { v: 149877, duration: 2.5, ease: "power3.out", onUpdate: function () { cn.textContent = fmt(cs.v); } }, 11.1);
+      tl.fromTo(cn, { scale: 0.7 }, { scale: 1, duration: 2.5, ease: "power3.out" }, 11.1);
+      rise($("arch-ev-rules"), 14.2, 0.6, 10);
 
-      /* ================= CORE: PLANNER (12.9 - 18) ================= */
-      shell("arch-b-core", 12.85); ghostOut("arch-g-core", 13.0);
-      wire("w3", 13.05, 0.9, ["k3"]);
-      travel("arch-pb", "arch-w3", 13.1, 0.95);
-      shell("arch-b-planner", 13.45, 30);
-      rise($("arch-pl-h"), 13.8, 0.5, 12);
-      pop($("arch-pl-gem"), 14.85);
-      pop($("arch-pl-json"), 15.4);
-      tl.fromTo($("arch-pl-hero"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 16.0);
+      /* ================= CORE: PLANNER (14.5 - 18.3) ================= */
+      shell("arch-b-core", 14.55); ghostOut("arch-g-core", 14.7);
+      wire("w3", 14.75, 0.9, ["k3"]);
+      travel("arch-pb", "arch-w3", 14.8, 0.95);
+      shell("arch-b-planner", 15.3, 30);
+      rise($("arch-pl-h"), 15.6, 0.5, 12);
+      pop($("arch-pl-gem"), 16.2);
+      pop($("arch-pl-json"), 16.85);
+      tl.fromTo($("arch-pl-hero"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 17.0);
       var n17 = $("arch-n17"), ps = { v: 0 };
-      tl.to(ps, { v: 17, duration: 1.3, ease: "power3.out", onUpdate: function () { n17.textContent = String(Math.round(ps.v)); } }, 16.45);
-      tl.fromTo(n17, { scale: 0.6 }, { scale: 1, duration: 1.3, ease: "power3.out" }, 16.45);
-      flash("arch-b-planner", 15.4);
+      tl.to(ps, { v: 30, duration: 1.0, ease: "power3.out", onUpdate: function () { n17.textContent = String(Math.round(ps.v)); } }, 17.3);
+      tl.fromTo(n17, { scale: 0.6 }, { scale: 1, duration: 1.0, ease: "power3.out" }, 17.3);
+      flash("arch-b-planner", 16.9);
 
-      /* ================= VALIDATOR (18.2 - 20.2) ================= */
-      wire("w4", 18.15, 0.4, ["k4"]);
-      travel("arch-pa", "arch-w4", 18.2, 0.4);
-      shell("arch-b-validator", 18.5, 30);
-      rise($("arch-va-h"), 18.75, 0.5, 12);
+      /* ================= VALIDATOR (18.3 - 20) ================= */
+      wire("w4", 18.3, 0.4, ["k4"]);
+      travel("arch-pa", "arch-w4", 18.35, 0.4);
+      shell("arch-b-validator", 18.6, 30);
+      rise($("arch-va-h"), 18.8, 0.5, 12);
       var vcs = $$(".arch-vc"), vks = $$(".arch-vk"), vls = $$(".arch-vl");
       for (var v = 0; v < 3; v++) {
-        var vt = 19.0 + v * 0.32;
+        var vt = 19.0 + v * 0.28;
         prep(vcs[v]); prep(vks[v]);
         rise(vls[v], vt, 0.4, 8);
         draw(vcs[v], vt, 0.4);
         draw(vks[v], vt + 0.25, 0.3);
       }
-      flash("arch-b-validator", 19.9);
+      flash("arch-b-validator", 19.75);
 
-      /* ================= ROUTER + BYPASS (20.2 - 28) ================= */
-      wire("w5", 20.2, 0.35, ["k5"]);
-      travel("arch-pb", "arch-w5", 20.2, 0.35);
-      shell("arch-b-router", 20.45);
-      rise($("arch-ro-h"), 20.75, 0.5, 12);
-      // dashed bypass (masked solid draw reveals the dash pattern)
+      /* ================= ROUTER + BYPASS (19.9 - 31) ================= */
+      wire("w5", 19.85, 0.35, ["k5"]);
+      travel("arch-pb", "arch-w5", 19.85, 0.35);
+      shell("arch-b-router", 20.15);
+      rise($("arch-ro-h"), 20.4, 0.5, 12);
       var bym = $("arch-bymaskpath");
       prep(bym);
-      draw(bym, 20.95, 0.9, "power2.inOut");
-      tl.fromTo([$("arch-bydot0"), $("arch-bydot1")], { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.35, ease: "power3.out" }, 20.95);
-      rise($("arch-bylab"), 21.45, 0.5, 10);
-      var bypass = $("arch-bypass");
-      travel("arch-pa", "arch-bypass", 21.0, 0.85);
+      draw(bym, 20.55, 0.9, "power2.inOut");
+      tl.fromTo([$("arch-bydot0"), $("arch-bydot1")], { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.35, ease: "power3.out" }, 20.55);
+      rise($("arch-bylab"), 21.0, 0.5, 10);
+      travel("arch-pa", "arch-bypass", 20.6, 0.85);
 
-      // lane 1 — deterministic tools
-      shell("arch-l1", 21.9);
+      // lane 1 - domain tools ("deterministic tools," 21.3 - 22.3)
+      shell("arch-l1", 21.2);
       var l1c = $$(".arch-l1c");
-      for (var q = 0; q < l1c.length; q++) pop(l1c[q], 22.3 + q * 0.17);
-      wire("s0", 23.1, 0.35, ["s0a", "s0b"]);
-      travel("arch-pb", "arch-s0", 23.15, 0.4);
-      // lane 2 — records aggregator
-      shell("arch-l2", 23.7);
+      for (var q = 0; q < l1c.length; q++) pop(l1c[q], 21.5 + q * 0.13);
+      wire("s0", 22.4, 0.35, ["s0a", "s0b"]);
+      travel("arch-pb", "arch-s0", 22.45, 0.4);
+      // lane 2 - document-driven tools ("including tools that read their rules straight from the SOPs, memos and notices")
+      shell("arch-l2", 22.75);
       var l2c = $$(".arch-l2c");
-      for (var r = 0; r < l2c.length; r++) pop(l2c[r], 24.15 + r * 0.22);
-      wire("s1", 24.85, 0.35, ["s1a", "s1b"]);
-      travel("arch-pa", "arch-s1", 24.9, 0.4);
-      // lane 3 — grounded document retrieval
-      shell("arch-l3", 25.55);
+      var l2t = [23.5, 24.4, 25.2, 26.1, 26.9, 27.9];
+      for (var r = 0; r < l2c.length; r++) pop(l2c[r], l2t[r]);
+      wire("s1", 24.0, 0.35, ["s1a", "s1b"]);
+      travel("arch-pa", "arch-s1", 24.05, 0.4);
+      // lane 3 - grounded document retrieval ("or to grounded document retrieval")
+      shell("arch-l3", 28.5);
       var l3c = $$(".arch-l3c");
-      pop(l3c[0], 25.95);
-      pop(l3c[1], 26.6);
+      pop(l3c[0], 29.0);
+      pop(l3c[1], 29.7);
       var l3t = $$(".arch-l3t");
-      rise(l3t[0], 27.0, 0.5, 8);
-      rise(l3t[1], 27.3, 0.5, 8);
-      wire("s2", 27.1, 0.35, ["s2a", "s2b"]);
-      travel("arch-pb", "arch-s2", 27.15, 0.4);
+      rise(l3t[0], 30.2, 0.5, 8);
+      rise(l3t[1], 30.55, 0.5, 8);
+      wire("s2", 29.2, 0.35, ["s2a", "s2b"]);
+      travel("arch-pb", "arch-s2", 29.25, 0.4);
 
-      /* ================= MEMORY (28.3 - 33) ================= */
-      wire("s3", 28.45, 0.35, ["s3a", "s3b"]);
-      travel("arch-pa", "arch-s3", 28.5, 0.4);
-      shell("arch-b-memory", 28.4); ghostOut("arch-g-memory", 28.55);
-      rise($("arch-me-hrow"), 28.7, 0.5, 12);
-      shell("arch-me-shared", 29.45);
-      var mec = $$(".arch-mec"), met = [30.02, 30.28, 30.54, 30.8];
+      /* ================= MEMORY (31.1 - 35.7) ================= */
+      wire("s3", 31.2, 0.35, ["s3a", "s3b"]);
+      travel("arch-pa", "arch-s3", 31.25, 0.4);
+      shell("arch-b-memory", 31.45); ghostOut("arch-g-memory", 31.6);
+      rise($("arch-me-hrow"), 31.65, 0.5, 12);
+      shell("arch-me-shared", 32.4);
+      var mec = $$(".arch-mec"), met = [32.85, 33.15, 33.45, 33.75];
       for (var m = 0; m < mec.length; m++) pop(mec[m], met[m]);
-      rise($("arch-me-cap"), 31.0, 0.5, 8);
-      shell("arch-me-private", 31.05);
-      pop($$(".arch-mec2")[0], 31.65);
-      rise($("arch-me-cap2"), 31.95, 0.5, 8);
+      rise($("arch-me-cap"), 34.0, 0.5, 8);
+      shell("arch-me-private", 33.95);
+      pop($$(".arch-mec2")[0], 34.45);
+      rise($("arch-me-cap2"), 34.8, 0.5, 8);
       var pips = $$(".arch-pip");
       for (var pp = 0; pp < pips.length; pp++) {
-        tl.fromTo(pips[pp], { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, 32.1 + pp * 0.09);
+        tl.fromTo(pips[pp], { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, 35.0 + pp * 0.09);
       }
-      tl.fromTo($("arch-split"), { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.5, ease: "power3.out" }, 32.55);
-      flash("arch-b-memory", 32.9);
+      tl.fromTo($("arch-split"), { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.5, ease: "power3.out" }, 35.3);
+      flash("arch-b-memory", 35.6);
 
-      /* ================= ANSWER (33.2 - 34.7) — whole map built by 34.7 ================= */
-      wire("w6", 33.2, 0.35, ["k6"]);
-      travel("arch-pb", "arch-w6", 33.2, 0.4);
-      shell("arch-b-answer", 33.5); ghostOut("arch-g-answer", 33.65);
-      rise($("arch-an-h"), 33.8, 0.5, 12);
-      var arT = [34.0, 34.2, 34.4, 34.6];
+      /* ================= ANSWER (35.9 - 40.2) ================= */
+      wire("w6", 35.9, 0.35, ["k6"]);
+      travel("arch-pb", "arch-w6", 35.95, 0.4);
+      shell("arch-b-answer", 36.15); ghostOut("arch-g-answer", 36.3);
+      rise($("arch-an-h"), 36.4, 0.5, 12);
+      var arT = [36.55, 37.7, 38.45, 39.55];
       for (var w = 0; w < 4; w++) tl.fromTo($("arch-ar" + w), { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, arT[w]);
       var bars = $$(".arch-bar");
-      for (var b = 0; b < bars.length; b++) tl.fromTo(bars[b], { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 34.1 + b * 0.08);
+      for (var b = 0; b < bars.length; b++) tl.fromTo(bars[b], { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 36.65 + b * 0.08);
       var vbs = $$(".arch-vb");
-      for (var vv = 0; vv < vbs.length; vv++) tl.fromTo(vbs[vv], { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power3.out" }, 34.3 + vv * 0.06);
+      for (var vv = 0; vv < vbs.length; vv++) tl.fromTo(vbs[vv], { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power3.out" }, 37.85 + vv * 0.06);
       var cites = $$(".arch-cite");
-      pop(cites[0], 34.5); pop(cites[1], 34.65);
-      tl.fromTo($("arch-okbadge"), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 34.7);
+      pop(cites[0], 38.6); pop(cites[1], 38.75);
+      tl.fromTo($("arch-okbadge"), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 40.0);
       var okp = $("arch-okpath");
       prep(okp);
-      draw(okp, 34.85, 0.4);
+      draw(okp, 40.15, 0.4);
 
-      // VO-synced spotlight on the answer rows during the hold: visual / sources / conflicts
+      // VO-synced spotlight on the answer rows: visual / sources / conflicts
       function spot(id, at) {
         tl.to($(id), { backgroundColor: "rgba(61,123,255,0.14)", duration: 0.25, ease: "power2.out" }, at);
         tl.to($(id), { backgroundColor: "rgba(61,123,255,0)", duration: 0.7, ease: "power2.inOut" }, at + 0.5);
       }
-      spot("arch-ar1", 35.17);
-      spot("arch-ar2", 35.94);
-      spot("arch-ar3", 37.01);
+      spot("arch-ar1", 37.93);
+      spot("arch-ar2", 38.69);
+      spot("arch-ar3", 39.76);
 
       /* ================= FINAL HOLD: data pulse loops the full path ================= */
       // pass A: users -> UI -> API -> planner -> validator -> router -> answer
@@ -933,12 +936,12 @@
         }
         return t;
       }
-      pass("arch-pa", 34.9, 0.8);
+      pass("arch-pa", 37.1, 0.8);
       // second pulse starts the loop again while a third visits evidence + memory
-      pass("arch-pb", 36.4, 0.8);
-      travel("arch-pc", "arch-s0", 35.9, 0.4);
-      travel("arch-pc", "arch-s2", 36.5, 0.4, true);
-      travel("arch-pc", "arch-s3", 37.2, 0.4);
+      pass("arch-pb", 38.9, 0.8);
+      travel("arch-pc", "arch-s0", 37.8, 0.4);
+      travel("arch-pc", "arch-s2", 38.5, 0.4, true);
+      travel("arch-pc", "arch-s3", 39.3, 0.4);
 
       // keep the timeline spanning the full scene
       tl.to({}, { duration: 0.01 }, DUR - 0.01);

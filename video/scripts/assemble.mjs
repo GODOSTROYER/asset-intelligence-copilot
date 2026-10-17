@@ -16,7 +16,7 @@ const TAIL = 0.75;   // breathing room after the VO ends
 const board = readFileSync(join(root, 'STORYBOARD.md'), 'utf8');
 const frames = board.split(/^## Frame /m).slice(1).map(block => {
   const get = key => block.match(new RegExp(`^- ${key}: (.*)$`, 'm'))?.[1]?.trim();
-  return { id: get('src').replace(/^compositions\/frames\//, '').replace(/\.html$/, ''), src: get('src'), planned: parseFloat(get('duration')), vo: get('vo_file') };
+  return { id: get('src').replace(/^compositions\/frames\//, '').replace(/\.html$/, ''), src: get('src'), planned: parseFloat(get('duration')), fixed: get('fixed_duration') ? parseFloat(get('fixed_duration')) : undefined, vo: get('vo_file') };
 });
 
 const timings = existsSync(join(root, 'assets/vo/timings.json')) ? JSON.parse(readFileSync(join(root, 'assets/vo/timings.json'), 'utf8')) : [];
@@ -31,7 +31,7 @@ if (sceneFilter) {
 }
 const scenes = selected.map(f => {
   const vo = voDuration(f.vo);
-  const duration = Math.round(Math.max(f.planned, vo ? LEAD + vo + TAIL : f.planned) * 100) / 100;
+  const duration = f.fixed ?? Math.round(Math.max(f.planned, vo ? LEAD + vo + TAIL : f.planned) * 100) / 100;
   const scene = { ...f, start: Math.round(cursor * 100) / 100, duration, voSec: vo };
   cursor += duration;
   return scene;

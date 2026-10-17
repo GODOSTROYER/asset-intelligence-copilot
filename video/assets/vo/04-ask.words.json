@@ -1,0 +1,302 @@
+[
+  {
+    "word": "Is",
+    "start": 0.292,
+    "end": 0.504
+  },
+  {
+    "word": "WELL-0001",
+    "start": 0.504,
+    "end": 1.138
+  },
+  {
+    "word": "producing",
+    "start": 1.138,
+    "end": 1.843
+  },
+  {
+    "word": "oil",
+    "start": 1.843,
+    "end": 2.125
+  },
+  {
+    "word": "right",
+    "start": 2.125,
+    "end": 2.548
+  },
+  {
+    "word": "now?",
+    "start": 2.548,
+    "end": 2.83
+  },
+  {
+    "word": "No.",
+    "start": 3.411,
+    "end": 3.71
+  },
+  {
+    "word": "The",
+    "start": 4.32,
+    "end": 4.537
+  },
+  {
+    "word": "latest",
+    "start": 4.537,
+    "end": 4.916
+  },
+  {
+    "word": "drone",
+    "start": 4.916,
+    "end": 5.241
+  },
+  {
+    "word": "inspection",
+    "start": 5.241,
+    "end": 5.837
+  },
+  {
+    "word": "shows",
+    "start": 5.837,
+    "end": 6.162
+  },
+  {
+    "word": "the",
+    "start": 6.162,
+    "end": 6.379
+  },
+  {
+    "word": "wellhead",
+    "start": 6.379,
+    "end": 6.867
+  },
+  {
+    "word": "just",
+    "start": 6.867,
+    "end": 7.138
+  },
+  {
+    "word": "three",
+    "start": 7.138,
+    "end": 7.463
+  },
+  {
+    "word": "point",
+    "start": 7.463,
+    "end": 7.788
+  },
+  {
+    "word": "two",
+    "start": 7.788,
+    "end": 8.005
+  },
+  {
+    "word": "degrees",
+    "start": 8.005,
+    "end": 8.438
+  },
+  {
+    "word": "above",
+    "start": 8.438,
+    "end": 8.763
+  },
+  {
+    "word": "the",
+    "start": 8.763,
+    "end": 8.98
+  },
+  {
+    "word": "air,",
+    "start": 8.98,
+    "end": 9.278
+  },
+  {
+    "word": "below",
+    "start": 9.278,
+    "end": 9.603
+  },
+  {
+    "word": "the",
+    "start": 9.603,
+    "end": 9.82
+  },
+  {
+    "word": "fifteen-degree",
+    "start": 9.82,
+    "end": 10.578
+  },
+  {
+    "word": "limit",
+    "start": 10.578,
+    "end": 10.903
+  },
+  {
+    "word": "in",
+    "start": 10.903,
+    "end": 11.066
+  },
+  {
+    "word": "the",
+    "start": 11.066,
+    "end": 11.282
+  },
+  {
+    "word": "T200",
+    "start": 11.282,
+    "end": 11.553
+  },
+  {
+    "word": "manual.",
+    "start": 11.553,
+    "end": 11.932
+  },
+  {
+    "word": "The",
+    "start": 12.736,
+    "end": 12.965
+  },
+  {
+    "word": "system",
+    "start": 12.965,
+    "end": 13.367
+  },
+  {
+    "word": "of",
+    "start": 13.367,
+    "end": 13.539
+  },
+  {
+    "word": "record",
+    "start": 13.539,
+    "end": 13.94
+  },
+  {
+    "word": "still",
+    "start": 13.94,
+    "end": 14.284
+  },
+  {
+    "word": "says",
+    "start": 14.284,
+    "end": 14.571
+  },
+  {
+    "word": "active,",
+    "start": 14.571,
+    "end": 15.058
+  },
+  {
+    "word": "which",
+    "start": 15.058,
+    "end": 15.402
+  },
+  {
+    "word": "is",
+    "start": 15.402,
+    "end": 15.574
+  },
+  {
+    "word": "stale.",
+    "start": 15.574,
+    "end": 15.918
+  },
+  {
+    "word": "And",
+    "start": 16.422,
+    "end": 16.66
+  },
+  {
+    "word": "a",
+    "start": 16.66,
+    "end": 16.778
+  },
+  {
+    "word": "field",
+    "start": 16.778,
+    "end": 17.134
+  },
+  {
+    "word": "note",
+    "start": 17.134,
+    "end": 17.431
+  },
+  {
+    "word": "explains",
+    "start": 17.431,
+    "end": 17.964
+  },
+  {
+    "word": "why:",
+    "start": 17.964,
+    "end": 18.29
+  },
+  {
+    "word": "a",
+    "start": 18.29,
+    "end": 18.409
+  },
+  {
+    "word": "planned",
+    "start": 18.409,
+    "end": 18.883
+  },
+  {
+    "word": "shut-in",
+    "start": 18.883,
+    "end": 19.299
+  },
+  {
+    "word": "for",
+    "start": 19.299,
+    "end": 19.536
+  },
+  {
+    "word": "a",
+    "start": 19.536,
+    "end": 19.654
+  },
+  {
+    "word": "rod",
+    "start": 19.654,
+    "end": 19.892
+  },
+  {
+    "word": "string",
+    "start": 19.892,
+    "end": 20.307
+  },
+  {
+    "word": "replacement.",
+    "start": 20.307,
+    "end": 21.018
+  },
+  {
+    "word": "Every",
+    "start": 21.693,
+    "end": 22.036
+  },
+  {
+    "word": "claim",
+    "start": 22.036,
+    "end": 22.38
+  },
+  {
+    "word": "links",
+    "start": 22.38,
+    "end": 22.723
+  },
+  {
+    "word": "to",
+    "start": 22.723,
+    "end": 22.895
+  },
+  {
+    "word": "its",
+    "start": 22.895,
+    "end": 23.124
+  },
+  {
+    "word": "source.",
+    "start": 23.124,
+    "end": 23.525
+  }
+]

@@ -1,0 +1,497 @@
+[
+  {
+    "word": "Here",
+    "start": 0.213,
+    "end": 0.5
+  },
+  {
+    "word": "is",
+    "start": 0.5,
+    "end": 0.672
+  },
+  {
+    "word": "the",
+    "start": 0.672,
+    "end": 0.901
+  },
+  {
+    "word": "whole",
+    "start": 0.901,
+    "end": 1.245
+  },
+  {
+    "word": "system.",
+    "start": 1.245,
+    "end": 1.646
+  },
+  {
+    "word": "A",
+    "start": 2.234,
+    "end": 2.368
+  },
+  {
+    "word": "React",
+    "start": 2.368,
+    "end": 2.773
+  },
+  {
+    "word": "chat",
+    "start": 2.773,
+    "end": 3.11
+  },
+  {
+    "word": "app",
+    "start": 3.11,
+    "end": 3.38
+  },
+  {
+    "word": "talks",
+    "start": 3.38,
+    "end": 3.785
+  },
+  {
+    "word": "to",
+    "start": 3.785,
+    "end": 3.987
+  },
+  {
+    "word": "a",
+    "start": 3.987,
+    "end": 4.122
+  },
+  {
+    "word": "local",
+    "start": 4.122,
+    "end": 4.527
+  },
+  {
+    "word": "API.",
+    "start": 4.527,
+    "end": 4.796
+  },
+  {
+    "word": "At",
+    "start": 5.101,
+    "end": 5.293
+  },
+  {
+    "word": "startup,",
+    "start": 5.293,
+    "end": 5.898
+  },
+  {
+    "word": "every",
+    "start": 5.898,
+    "end": 6.281
+  },
+  {
+    "word": "inspection,",
+    "start": 6.281,
+    "end": 7.078
+  },
+  {
+    "word": "repair,",
+    "start": 7.078,
+    "end": 7.62
+  },
+  {
+    "word": "report,",
+    "start": 7.62,
+    "end": 8.162
+  },
+  {
+    "word": "manual",
+    "start": 8.162,
+    "end": 8.609
+  },
+  {
+    "word": "and",
+    "start": 8.609,
+    "end": 8.864
+  },
+  {
+    "word": "note",
+    "start": 8.864,
+    "end": 9.183
+  },
+  {
+    "word": "is",
+    "start": 9.183,
+    "end": 9.374
+  },
+  {
+    "word": "loaded",
+    "start": 9.374,
+    "end": 9.821
+  },
+  {
+    "word": "and",
+    "start": 9.821,
+    "end": 10.076
+  },
+  {
+    "word": "indexed:",
+    "start": 10.076,
+    "end": 10.681
+  },
+  {
+    "word": "about",
+    "start": 10.681,
+    "end": 11.064
+  },
+  {
+    "word": "a",
+    "start": 11.064,
+    "end": 11.192
+  },
+  {
+    "word": "hundred",
+    "start": 11.192,
+    "end": 11.702
+  },
+  {
+    "word": "and",
+    "start": 11.702,
+    "end": 11.957
+  },
+  {
+    "word": "fifty",
+    "start": 11.957,
+    "end": 12.34
+  },
+  {
+    "word": "thousand",
+    "start": 12.34,
+    "end": 12.914
+  },
+  {
+    "word": "pieces",
+    "start": 12.914,
+    "end": 13.36
+  },
+  {
+    "word": "of",
+    "start": 13.36,
+    "end": 13.551
+  },
+  {
+    "word": "evidence.",
+    "start": 13.551,
+    "end": 14.125
+  },
+  {
+    "word": "For",
+    "start": 14.858,
+    "end": 15.025
+  },
+  {
+    "word": "each",
+    "start": 15.025,
+    "end": 15.233
+  },
+  {
+    "word": "question,",
+    "start": 15.233,
+    "end": 15.672
+  },
+  {
+    "word": "a",
+    "start": 15.672,
+    "end": 15.755
+  },
+  {
+    "word": "Gemini",
+    "start": 15.755,
+    "end": 16.048
+  },
+  {
+    "word": "planner",
+    "start": 16.048,
+    "end": 16.382
+  },
+  {
+    "word": "picks",
+    "start": 16.382,
+    "end": 16.632
+  },
+  {
+    "word": "one",
+    "start": 16.632,
+    "end": 16.799
+  },
+  {
+    "word": "of",
+    "start": 16.799,
+    "end": 16.925
+  },
+  {
+    "word": "thirty",
+    "start": 16.925,
+    "end": 17.217
+  },
+  {
+    "word": "typed",
+    "start": 17.217,
+    "end": 17.467
+  },
+  {
+    "word": "operations,",
+    "start": 17.467,
+    "end": 17.989
+  },
+  {
+    "word": "and",
+    "start": 17.989,
+    "end": 18.156
+  },
+  {
+    "word": "a",
+    "start": 18.156,
+    "end": 18.24
+  },
+  {
+    "word": "validator",
+    "start": 18.24,
+    "end": 18.657
+  },
+  {
+    "word": "checks",
+    "start": 18.657,
+    "end": 18.95
+  },
+  {
+    "word": "it.",
+    "start": 18.95,
+    "end": 19.075
+  },
+  {
+    "word": "Then",
+    "start": 19.287,
+    "end": 19.638
+  },
+  {
+    "word": "the",
+    "start": 19.638,
+    "end": 19.918
+  },
+  {
+    "word": "work",
+    "start": 19.918,
+    "end": 20.269
+  },
+  {
+    "word": "goes",
+    "start": 20.269,
+    "end": 20.619
+  },
+  {
+    "word": "to",
+    "start": 20.619,
+    "end": 20.83
+  },
+  {
+    "word": "deterministic",
+    "start": 20.83,
+    "end": 21.811
+  },
+  {
+    "word": "tools,",
+    "start": 21.811,
+    "end": 22.337
+  },
+  {
+    "word": "including",
+    "start": 22.337,
+    "end": 23.038
+  },
+  {
+    "word": "tools",
+    "start": 23.038,
+    "end": 23.459
+  },
+  {
+    "word": "that",
+    "start": 23.459,
+    "end": 23.809
+  },
+  {
+    "word": "read",
+    "start": 23.809,
+    "end": 24.16
+  },
+  {
+    "word": "their",
+    "start": 24.16,
+    "end": 24.58
+  },
+  {
+    "word": "rules",
+    "start": 24.58,
+    "end": 25.001
+  },
+  {
+    "word": "straight",
+    "start": 25.001,
+    "end": 25.632
+  },
+  {
+    "word": "from",
+    "start": 25.632,
+    "end": 25.982
+  },
+  {
+    "word": "the",
+    "start": 25.982,
+    "end": 26.263
+  },
+  {
+    "word": "SOPs,",
+    "start": 26.263,
+    "end": 26.719
+  },
+  {
+    "word": "memos",
+    "start": 26.719,
+    "end": 27.139
+  },
+  {
+    "word": "and",
+    "start": 27.139,
+    "end": 27.42
+  },
+  {
+    "word": "notices,",
+    "start": 27.42,
+    "end": 28.086
+  },
+  {
+    "word": "or",
+    "start": 28.086,
+    "end": 28.296
+  },
+  {
+    "word": "to",
+    "start": 28.296,
+    "end": 28.506
+  },
+  {
+    "word": "grounded",
+    "start": 28.506,
+    "end": 29.137
+  },
+  {
+    "word": "document",
+    "start": 29.137,
+    "end": 29.768
+  },
+  {
+    "word": "retrieval.",
+    "start": 29.768,
+    "end": 30.469
+  },
+  {
+    "word": "A",
+    "start": 31.172,
+    "end": 31.282
+  },
+  {
+    "word": "memory",
+    "start": 31.282,
+    "end": 31.665
+  },
+  {
+    "word": "layer",
+    "start": 31.665,
+    "end": 31.994
+  },
+  {
+    "word": "keeps",
+    "start": 31.994,
+    "end": 32.323
+  },
+  {
+    "word": "shared",
+    "start": 32.323,
+    "end": 32.706
+  },
+  {
+    "word": "corrections",
+    "start": 32.706,
+    "end": 33.364
+  },
+  {
+    "word": "and",
+    "start": 33.364,
+    "end": 33.583
+  },
+  {
+    "word": "private",
+    "start": 33.583,
+    "end": 34.021
+  },
+  {
+    "word": "conversations",
+    "start": 34.021,
+    "end": 34.789
+  },
+  {
+    "word": "apart.",
+    "start": 34.789,
+    "end": 35.117
+  },
+  {
+    "word": "Every",
+    "start": 35.659,
+    "end": 36.024
+  },
+  {
+    "word": "answer",
+    "start": 36.024,
+    "end": 36.449
+  },
+  {
+    "word": "returns",
+    "start": 36.449,
+    "end": 36.936
+  },
+  {
+    "word": "with",
+    "start": 36.936,
+    "end": 37.24
+  },
+  {
+    "word": "its",
+    "start": 37.24,
+    "end": 37.483
+  },
+  {
+    "word": "visual,",
+    "start": 37.483,
+    "end": 38
+  },
+  {
+    "word": "its",
+    "start": 38,
+    "end": 38.244
+  },
+  {
+    "word": "sources,",
+    "start": 38.244,
+    "end": 38.821
+  },
+  {
+    "word": "and",
+    "start": 38.821,
+    "end": 39.065
+  },
+  {
+    "word": "any",
+    "start": 39.065,
+    "end": 39.308
+  },
+  {
+    "word": "conflicts.",
+    "start": 39.308,
+    "end": 39.916
+  }
+]

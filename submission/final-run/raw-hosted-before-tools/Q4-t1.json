@@ -1,0 +1,137 @@
+{
+  "q": "Q4",
+  "turn": 1,
+  "asker": "Dalton",
+  "userId": "U-402",
+  "question": "Across all areas, which temporary flowline bypasses are in place right now, and is each one allowed? Also list any bypass, past or present, that stayed in after its approval ran out or was never approved at all.",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 3822
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 3822,
+  "response": {
+    "userId": "U-402",
+    "response": {
+      "answer": "The provided sources do not contain information listing all temporary flowline bypasses currently in place across all areas or stating whether each specific bypass is allowed right now. [MOC-2026-036] [MOC-2026-031] [MOC-2026-044]\n\nThe provided sources do not contain records of any past or present temporary flowline bypass that stayed in place after its approval ran out or was never approved at all. [MOC-2026-036] [MOC-2026-031] [MOC-2026-044]",
+      "citations": [
+        {
+          "id": "MOC-2026-036",
+          "title": "moc 2026 036",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-036.md",
+          "excerpt": "# Management of Change — MOC-2026-036 **Title:** Temporary flowline bypass during the winter valve program **Date:** 6 Nov 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE […] ## Change A temporary flowline bypass is authorized on these wells: WELL-0087, WELL-0158, WELL-0249, WELL-0284, WELL-0356"
+        },
+        {
+          "id": "MOC-2026-031",
+          "title": "moc 2026 031",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-031.md",
+          "excerpt": "# Management of Change — MOC-2026-031 **Title:** Temporary flowline bypass while check valves are on back-order **Date:** 19 Oct 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE […] ## Change A temporary flowline bypass is authorized on these wells: WELL-0013, WELL-0062, WELL-0118, WELL-0248, WELL"
+        },
+        {
+          "id": "MOC-2026-044",
+          "title": "moc 2026 044",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-044.md",
+          "excerpt": "# Management of Change — MOC-2026-044 **Title:** Extension of MOC-2026-031 (temporary flowline bypass) **Date:** 24 Nov 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE […] ## Change This memo extends MOC-2026-031. The replacement check valves are still on back-order, so the temporary flowline byp"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [],
+      "trace": [
+        {
+          "tool": "gemini_planner",
+          "detail": "Structured plan validated: search. Only this user’s last five exchanges were supplied.",
+          "durationMs": 2476
+        },
+        {
+          "tool": "document_retrieval",
+          "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+          "durationMs": 24
+        },
+        {
+          "tool": "synthesis_routing",
+          "detail": "Ordinary evidence lookup uses the primary fast model. Requested model: gemini-3.5-flash-lite.",
+          "durationMs": 0
+        },
+        {
+          "tool": "gemini_synthesis",
+          "detail": "Actual model: gemini-3.5-flash-lite. Grounded prose accepted after source-ID and numerical-token validation.",
+          "durationMs": 1310
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "hosted"
+      },
+      "durationMs": 3810
+    },
+    "history": [
+      {
+        "userText": "Across all areas, which temporary flowline bypasses are in place right now, and is each one allowed? Also list any bypass, past or present, that stayed in after its approval ran out or was never approved at all.",
+        "answer": "The provided sources do not contain information listing all temporary flowline bypasses currently in place across all areas or stating whether each specific bypass is allowed right now. [MOC-2026-036] [MOC-2026-031] [MOC-2026-044]\n\nThe provided sources do not contain records of any past or present temporary flowline bypass that stayed in place after its approval ran out or was never approved at all. [MOC-2026-036] [MOC-2026-031] [MOC-2026-044]",
+        "wellIds": [],
+        "createdAt": "2026-10-17T11:10:42.922Z",
+        "response": {
+          "answer": "The provided sources do not contain information listing all temporary flowline bypasses currently in place across all areas or stating whether each specific bypass is allowed right now. [MOC-2026-036] [MOC-2026-031] [MOC-2026-044]\n\nThe provided sources do not contain records of any past or present temporary flowline bypass that stayed in place after its approval ran out or was never approved at all. [MOC-2026-036] [MOC-2026-031] [MOC-2026-044]",
+          "citations": [
+            {
+              "id": "MOC-2026-036",
+              "title": "moc 2026 036",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-036.md",
+              "excerpt": "# Management of Change — MOC-2026-036 **Title:** Temporary flowline bypass during the winter valve program **Date:** 6 Nov 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE […] ## Change A temporary flowline bypass is authorized on these wells: WELL-0087, WELL-0158, WELL-0249, WELL-0284, WELL-0356"
+            },
+            {
+              "id": "MOC-2026-031",
+              "title": "moc 2026 031",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-031.md",
+              "excerpt": "# Management of Change — MOC-2026-031 **Title:** Temporary flowline bypass while check valves are on back-order **Date:** 19 Oct 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE […] ## Change A temporary flowline bypass is authorized on these wells: WELL-0013, WELL-0062, WELL-0118, WELL-0248, WELL"
+            },
+            {
+              "id": "MOC-2026-044",
+              "title": "moc 2026 044",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-044.md",
+              "excerpt": "# Management of Change — MOC-2026-044 **Title:** Extension of MOC-2026-031 (temporary flowline bypass) **Date:** 24 Nov 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE […] ## Change This memo extends MOC-2026-031. The replacement check valves are still on back-order, so the temporary flowline byp"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: search. Only this user’s last five exchanges were supplied.",
+              "durationMs": 2476
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 24
+            },
+            {
+              "tool": "synthesis_routing",
+              "detail": "Ordinary evidence lookup uses the primary fast model. Requested model: gemini-3.5-flash-lite.",
+              "durationMs": 0
+            },
+            {
+              "tool": "gemini_synthesis",
+              "detail": "Actual model: gemini-3.5-flash-lite. Grounded prose accepted after source-ID and numerical-token validation.",
+              "durationMs": 1310
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 3810
+        }
+      }
+    ],
+    "revision": 4
+  }
+}

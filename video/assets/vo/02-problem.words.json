@@ -1,0 +1,197 @@
+[
+  {
+    "word": "An",
+    "start": 0.36,
+    "end": 0.559
+  },
+  {
+    "word": "oil",
+    "start": 0.559,
+    "end": 0.825
+  },
+  {
+    "word": "field",
+    "start": 0.825,
+    "end": 1.223
+  },
+  {
+    "word": "generates",
+    "start": 1.223,
+    "end": 1.887
+  },
+  {
+    "word": "forty",
+    "start": 1.887,
+    "end": 2.285
+  },
+  {
+    "word": "thousand",
+    "start": 2.285,
+    "end": 2.883
+  },
+  {
+    "word": "inspections,",
+    "start": 2.883,
+    "end": 3.779
+  },
+  {
+    "word": "fifty-seven",
+    "start": 3.779,
+    "end": 4.51
+  },
+  {
+    "word": "hundred",
+    "start": 4.51,
+    "end": 5.041
+  },
+  {
+    "word": "repairs,",
+    "start": 5.041,
+    "end": 5.672
+  },
+  {
+    "word": "fifteen",
+    "start": 5.672,
+    "end": 6.203
+  },
+  {
+    "word": "hundred",
+    "start": 6.203,
+    "end": 6.734
+  },
+  {
+    "word": "free-text",
+    "start": 6.734,
+    "end": 7.332
+  },
+  {
+    "word": "reports,",
+    "start": 7.332,
+    "end": 7.962
+  },
+  {
+    "word": "and",
+    "start": 7.962,
+    "end": 8.228
+  },
+  {
+    "word": "the",
+    "start": 8.228,
+    "end": 8.494
+  },
+  {
+    "word": "notes",
+    "start": 8.494,
+    "end": 8.892
+  },
+  {
+    "word": "people",
+    "start": 8.892,
+    "end": 9.357
+  },
+  {
+    "word": "write.",
+    "start": 9.357,
+    "end": 9.755
+  },
+  {
+    "word": "Answering",
+    "start": 10.218,
+    "end": 10.825
+  },
+  {
+    "word": "one",
+    "start": 10.825,
+    "end": 11.067
+  },
+  {
+    "word": "simple",
+    "start": 11.067,
+    "end": 11.492
+  },
+  {
+    "word": "question",
+    "start": 11.492,
+    "end": 12.038
+  },
+  {
+    "word": "means",
+    "start": 12.038,
+    "end": 12.402
+  },
+  {
+    "word": "digging",
+    "start": 12.402,
+    "end": 12.887
+  },
+  {
+    "word": "through",
+    "start": 12.887,
+    "end": 13.372
+  },
+  {
+    "word": "all",
+    "start": 13.372,
+    "end": 13.615
+  },
+  {
+    "word": "of",
+    "start": 13.615,
+    "end": 13.797
+  },
+  {
+    "word": "it.",
+    "start": 13.797,
+    "end": 13.979
+  },
+  {
+    "word": "So",
+    "start": 14.233,
+    "end": 14.449
+  },
+  {
+    "word": "wells",
+    "start": 14.449,
+    "end": 14.883
+  },
+  {
+    "word": "sit",
+    "start": 14.883,
+    "end": 15.172
+  },
+  {
+    "word": "idle,",
+    "start": 15.172,
+    "end": 15.642
+  },
+  {
+    "word": "and",
+    "start": 15.642,
+    "end": 15.931
+  },
+  {
+    "word": "leaks",
+    "start": 15.931,
+    "end": 16.364
+  },
+  {
+    "word": "go",
+    "start": 16.364,
+    "end": 16.581
+  },
+  {
+    "word": "unreported,",
+    "start": 16.581,
+    "end": 17.484
+  },
+  {
+    "word": "for",
+    "start": 17.484,
+    "end": 17.773
+  },
+  {
+    "word": "weeks.",
+    "start": 17.773,
+    "end": 18.206
+  }
+]

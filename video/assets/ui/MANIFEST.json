@@ -1,0 +1,226 @@
+[
+  {
+    "file": "01-empty.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Welcome / empty state with example prompts",
+    "question": "(none)",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "02-typed-status.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Composer filled with the status question before sending",
+    "question": "Is WELL-0001 producing oil right now? When was it last inspected, and by whom?",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "03-answer-status.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Full viewport: status answer (not producing, +3.2 C, CTX-0001-003)",
+    "question": "Is WELL-0001 producing oil right now? When was it last inspected, and by whom?",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "03-answer-status-card.png",
+    "width": 1620,
+    "height": 1168,
+    "description": "Assistant message element: text, status visual, citations",
+    "question": "Is WELL-0001 producing oil right now? When was it last inspected, and by whom?",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "03-answer-status-visual.png",
+    "width": 1538,
+    "height": 652,
+    "description": "Status visual block crop (extra)",
+    "question": "Is WELL-0001 producing oil right now? When was it last inspected, and by whom?",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "04-source-drawer.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Source drawer open on INS-0001-0203",
+    "question": "(click INS-0001-0203 citation chip)",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "05-line-chart.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Full viewport: wellhead vs air line chart, 13 readings, 8 Oct and 15 Oct non-producing",
+    "question": "Show a line chart of WELL-0001's wellhead temperature against air temperature for the last 13 weeks, and mark when it was not producing oil.",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "05-line-chart-card.png",
+    "width": 1620,
+    "height": 1256,
+    "description": "Message element",
+    "question": "same as 05",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "05-line-chart-visual.png",
+    "width": 1538,
+    "height": 892,
+    "description": "Visual block crop",
+    "question": "same as 05",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "06-bar-chart.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Full viewport: bar chart WELL-0121 49, WELL-0107 42, WELL-0138 42",
+    "question": "Which 3 wells in Northeast Block 7 had the most downtime in the last 4 months? Show a bar chart.",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "06-bar-chart-card.png",
+    "width": 1620,
+    "height": 1222,
+    "description": "Message element",
+    "question": "same as 06",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "06-bar-chart-visual.png",
+    "width": 1538,
+    "height": 758,
+    "description": "Visual block crop",
+    "question": "same as 06",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "07-map.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Full viewport: 4 spill pins (coordinate plot) NE Block 8",
+    "question": "Show on a map every well in Northeast Block 8 with a real spill in the last 90 days.",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "07-map-card.png",
+    "width": 1620,
+    "height": 1854,
+    "description": "Message element (4 pins + record list)",
+    "question": "same as 07",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "07-map-visual.png",
+    "width": 1538,
+    "height": 1440,
+    "description": "Visual block crop",
+    "question": "same as 07",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "08-heatmap.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Full viewport: 2026 spills heatmap by area and month",
+    "question": "Show a heatmap of 2026 spills by geographic area and month.",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "08-heatmap-card.png",
+    "width": 1620,
+    "height": 848,
+    "description": "Message element",
+    "question": "same as 08",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "08-heatmap-visual.png",
+    "width": 1538,
+    "height": 486,
+    "description": "Visual block crop",
+    "question": "same as 08",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "09-typed-correction.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Composer filled with the correction before sending",
+    "question": "The AI estimated the 24 Sep spill at WELL-0151 as 4.5 bbl. The field crew measured 5.4 bbl.",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "10-correction.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Full viewport: correction applied (4.5 -> 5.4 bbl, reportable, SR-01 breach)",
+    "question": "The AI estimated the 24 Sep spill at WELL-0151 as 4.5 bbl. The field crew measured 5.4 bbl.",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "10-correction-card.png",
+    "width": 1620,
+    "height": 1284,
+    "description": "Message element",
+    "question": "same as 10",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "10-correction-visual.png",
+    "width": 1538,
+    "height": 566,
+    "description": "Correction visual block crop",
+    "question": "same as 10",
+    "user": "Michael Turner"
+  },
+  {
+    "file": "11-user-switch.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Right after switching dropdown to Laura Simmons (her own empty chat + welcome)",
+    "question": "(none)",
+    "user": "Laura Simmons"
+  },
+  {
+    "file": "11-laura-answer.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Full viewport: 1 reportable spill, WELL-0151 flagged (SR-01 overdue)",
+    "question": "Which spills in Northeast Block 8 in the last 90 days needed a report to the regulator?",
+    "user": "Laura Simmons"
+  },
+  {
+    "file": "11-laura-answer-card.png",
+    "width": 1620,
+    "height": 810,
+    "description": "Message element",
+    "question": "same as 11-laura-answer",
+    "user": "Laura Simmons"
+  },
+  {
+    "file": "11-laura-answer-visual.png",
+    "width": 1538,
+    "height": 294,
+    "description": "Table visual crop",
+    "question": "same as 11-laura-answer",
+    "user": "Laura Simmons"
+  },
+  {
+    "file": "12-conflict.png",
+    "width": 3840,
+    "height": 2160,
+    "description": "Full viewport: conflict answer with Evidence conflict box visible",
+    "question": "Was the 20 Aug spill at WELL-0101 real oil?",
+    "user": "Laura Simmons"
+  },
+  {
+    "file": "12-conflict-card.png",
+    "width": 1620,
+    "height": 862,
+    "description": "Message element with conflict box (no visual block exists)",
+    "question": "same as 12",
+    "user": "Laura Simmons"
+  }
+]

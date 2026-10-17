@@ -1,0 +1,15 @@
+An operator's question crosses inspections, repair reports, manuals, and people's notes. Asset Intelligence Copilot brings those records into one conversation, with evidence you can open and check.
+
+The design keeps interpretation and calculation separate. Hosted Gemini interprets the question and selects typed tools. Local code applies the domain rules, computes the numbers, and returns the visual and citations together.
+
+Here is a recorded run on the supplied sample data, using October sixteenth, twenty twenty-six as the reference date. Is well zero zero zero one producing oil right now? The answer is no. Its latest wellhead reading is twenty-five point six degrees Celsius. Air temperature is twenty-two point four. That is just three point two degrees above air, below the T two hundred manual's fifteen-degree threshold.
+
+The old active label is stale. A field note reports a planned rod string replacement. The reading establishes the status; the note explains the reported cause. Inspection and manual citations make that chain inspectable.
+
+The thirteen-week chart adds context. The final two readings sit close to the ambient temperature, and the interface marks them as non-producing. These are calculated results from dated inspections, with their sources alongside the chart.
+
+Fleet questions use the same approach. For downtime, every non-producing weekly inspection adds seven days; a missed inspection adds none. Here, a direct comparison of three named wells returns exact repair-cost totals alongside its bar chart, with the maintenance records attached.
+
+Shared knowledge is separate from private history. Explicit corrections and field notes can be shared across users, while a conversation stays scoped to the selected user. Source provenance and conflicting claims remain visible. A same-format folder import lets the application load a new dataset locally.
+
+This is a draft review film with AI narration, to be replaced by the entrant's own voice. The screen evidence shown here uses sample data. Final event-dataset evaluation remains separate. The goal is practical: an answer whose numbers, sources, and corrections can be checked in the same conversation.

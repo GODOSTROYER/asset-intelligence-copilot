@@ -8,7 +8,9 @@
     "dev:server": "tsx watch server/index.ts",
     "dev:web": "vite --host 127.0.0.1",
     "build": "tsc --noEmit && vite build",
-    "start": "tsx server/index.ts"
+    "start": "tsx server/index.ts",
+    "demo": "node scripts/start-demo.mjs",
+    "gemma-test": "node --import tsx scripts/gemma-planner-test.mts"
   },
   "dependencies": {
     "concurrently": "^9.2.1",

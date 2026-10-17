@@ -1,0 +1,42 @@
+[
+  {
+    "word": "Asset",
+    "start": 0.28,
+    "end": 0.665
+  },
+  {
+    "word": "Intelligence",
+    "start": 0.665,
+    "end": 1.5
+  },
+  {
+    "word": "Copilot.",
+    "start": 1.5,
+    "end": 2.013
+  },
+  {
+    "word": "Every",
+    "start": 2.563,
+    "end": 3.039
+  },
+  {
+    "word": "answer,",
+    "start": 3.039,
+    "end": 3.713
+  },
+  {
+    "word": "with",
+    "start": 3.713,
+    "end": 4.11
+  },
+  {
+    "word": "its",
+    "start": 4.11,
+    "end": 4.427
+  },
+  {
+    "word": "evidence.",
+    "start": 4.427,
+    "end": 5.141
+  }
+]

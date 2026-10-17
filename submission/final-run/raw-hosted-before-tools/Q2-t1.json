@@ -1,0 +1,202 @@
+{
+  "q": "Q2",
+  "turn": 1,
+  "asker": "Hayes",
+  "userId": "U-301",
+  "question": "Which well produced the most oil in 2026?",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 2286
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 2286,
+  "response": {
+    "userId": "U-301",
+    "response": {
+      "answer": "This calculation needs a supported domain tool or a narrower scope. The retrieved passages are evidence only and have not been aggregated.\n\nRelevant source passages:\n\nRepair report · MNT-0454-021 [MNT-0454-021]:\n# Maintenance Report — MNT-0454-021\n\n**Asset:** WELL-0454 (SE-32 Well 454, T350, Southeast Block 32)\r\n**Equipment:** pump jack\r\n**Work started:** 04 Jan 2026 08:00 · **Finished:** 07 Jan 2026 02:00 · **Well stopped for this job:** 66 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0454-0164 on 2026-01-01\r\n**Report written:** 08 Jan 2026\n\nRepair report · MNT-0020-030 [MNT-0020-030]:\n# Maintenance Report — MNT-0020-030\n\n**Asset:** WELL-0020 (SW-23 Well 020, T200, Southwest Block 23)\r\n**Equipment:** pump jack\r\n**Work started:** 06 Mar 2026 08:00 · **Finished:** 11 Mar 2026 09:00 · **Well stopped for this job:** 121 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0020-0175 on 2026-03-05\r\n**Report written:** 13 Mar 2026\n\nRepair report · MNT-0135-033 [MNT-0135-033]:\n# Maintenance Report — MNT-0135-033\n\n**Asset:** WELL-0135 (NE-07 Well 135, T200, Northeast Block 7)\r\n**Equipment:** pump jack\r\n**Work started:** 15 Nov 2026 08:00 · **Finished:** 18 Nov 2026 16:00 · **Well stopped for this job:** 80 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0135-0209 on 2026-11-12\r\n**Report written:** 19 Nov 2026",
+      "citations": [
+        {
+          "id": "MNT-0454-021",
+          "title": "Repair report · MNT-0454-021",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0454/maintenance-reports/MNT-0454-021.md",
+          "assetId": "WELL-0454",
+          "excerpt": "# Maintenance Report — MNT-0454-021 **Asset:** WELL-0454 (SE-32 Well 454, T350, Southeast Block 32) **Equipment:** pump jack **Work started:** 04 Jan 2026 08:00 · **Finished:** 07 Jan 2026 02:00 · **Well stopped for this job:** 66 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0454-0164 on 2026-01-01 **R"
+        },
+        {
+          "id": "MNT-0020-030",
+          "title": "Repair report · MNT-0020-030",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0020/maintenance-reports/MNT-0020-030.md",
+          "assetId": "WELL-0020",
+          "excerpt": "# Maintenance Report — MNT-0020-030 **Asset:** WELL-0020 (SW-23 Well 020, T200, Southwest Block 23) **Equipment:** pump jack **Work started:** 06 Mar 2026 08:00 · **Finished:** 11 Mar 2026 09:00 · **Well stopped for this job:** 121 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0020-0175 on 2026-03-05 "
+        },
+        {
+          "id": "MNT-0135-033",
+          "title": "Repair report · MNT-0135-033",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0135/maintenance-reports/MNT-0135-033.md",
+          "assetId": "WELL-0135",
+          "excerpt": "# Maintenance Report — MNT-0135-033 **Asset:** WELL-0135 (NE-07 Well 135, T200, Northeast Block 7) **Equipment:** pump jack **Work started:** 15 Nov 2026 08:00 · **Finished:** 18 Nov 2026 16:00 · **Well stopped for this job:** 80 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0135-0209 on "
+        },
+        {
+          "id": "MNT-0084-027",
+          "title": "Repair report · MNT-0084-027",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0084/maintenance-reports/MNT-0084-027.md",
+          "assetId": "WELL-0084",
+          "excerpt": "# Maintenance Report — MNT-0084-027 **Asset:** WELL-0084 (SW-24 Well 084, T200, Southwest Block 24) **Equipment:** pump jack **Work started:** 21 Mar 2026 08:00 · **Finished:** 24 Mar 2026 11:00 · **Well stopped for this job:** 75 hours **Crew lead:** Daniel Foster (U-302) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0084-0177 on 2026-03-19 "
+        },
+        {
+          "id": "MNT-0121-031",
+          "title": "Repair report · MNT-0121-031",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0121/maintenance-reports/MNT-0121-031.md",
+          "assetId": "WELL-0121",
+          "excerpt": "# Maintenance Report — MNT-0121-031 **Asset:** WELL-0121 (NE-07 Well 121, T200, Northeast Block 7) **Equipment:** pump jack **Work started:** 30 May 2026 08:00 · **Finished:** 23 Jun 2026 06:00 · **Well stopped for this job:** 574 hours **Crew lead:** Brian Coleman (U-304) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0121-0186"
+        },
+        {
+          "id": "MNT-0196-029",
+          "title": "Repair report · MNT-0196-029",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0196/maintenance-reports/MNT-0196-029.md",
+          "assetId": "WELL-0196",
+          "excerpt": "# Maintenance Report — MNT-0196-029 **Asset:** WELL-0196 (NE-08 Well 196, T200, Northeast Block 8) **Equipment:** pump jack **Work started:** 10 May 2026 08:00 · **Finished:** 20 May 2026 18:00 · **Well stopped for this job:** 250 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0196-0182 on 2026-05-07 *"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [
+        "WELL-0454",
+        "WELL-0020",
+        "WELL-0135",
+        "WELL-0084",
+        "WELL-0121",
+        "WELL-0196"
+      ],
+      "trace": [
+        {
+          "tool": "gemini_planner",
+          "detail": "Structured plan validated: search. Only this user’s last five exchanges were supplied.",
+          "durationMs": 2268
+        },
+        {
+          "tool": "document_retrieval",
+          "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+          "durationMs": 9
+        },
+        {
+          "tool": "calculation_guard",
+          "detail": "Unsupported aggregate request returned source passages without model arithmetic.",
+          "durationMs": 0
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "hosted"
+      },
+      "durationMs": 2278
+    },
+    "history": [
+      {
+        "userText": "Which well produced the most oil in 2026?",
+        "answer": "This calculation needs a supported domain tool or a narrower scope. The retrieved passages are evidence only and have not been aggregated.\n\nRelevant source passages:\n\nRepair report · MNT-0454-021 [MNT-0454-021]:\n# Maintenance Report — MNT-0454-021\n\n**Asset:** WELL-0454 (SE-32 Well 454, T350, Southeast Block 32)\r\n**Equipment:** pump jack\r\n**Work started:** 04 Jan 2026 08:00 · **Finished:** 07 Jan 2026 02:00 · **Well stopped for this job:** 66 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0454-0164 on 2026-01-01\r\n**Report written:** 08 Jan 2026\n\nRepair report · MNT-0020-030 [MNT-0020-030]:\n# Maintenance Report — MNT-0020-030\n\n**Asset:** WELL-0020 (SW-23 Well 020, T200, Southwest Block 23)\r\n**Equipment:** pump jack\r\n**Work started:** 06 Mar 2026 08:00 · **Finished:** 11 Mar 2026 09:00 · **Well stopped for this job:** 121 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0020-0175 on 2026-03-05\r\n**Report written:** 13 Mar 2026\n\nRepair report · MNT-0135-033 [MNT-0135-033]:\n# Maintenance Report — MNT-0135-033\n\n**Asset:** WELL-0135 (NE-07 Well 135, T200, Northeast Block 7)\r\n**Equipment:** pump jack\r\n**Work started:** 15 Nov 2026 08:00 · **Finished:** 18 Nov 2026 16:00 · **Well stopped for this job:** 80 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0135-0209 on 2026-11-12\r\n**Report written:** 19 Nov 2026",
+        "wellIds": [
+          "WELL-0454",
+          "WELL-0020",
+          "WELL-0135",
+          "WELL-0084",
+          "WELL-0121",
+          "WELL-0196"
+        ],
+        "createdAt": "2026-10-17T11:10:33.989Z",
+        "response": {
+          "answer": "This calculation needs a supported domain tool or a narrower scope. The retrieved passages are evidence only and have not been aggregated.\n\nRelevant source passages:\n\nRepair report · MNT-0454-021 [MNT-0454-021]:\n# Maintenance Report — MNT-0454-021\n\n**Asset:** WELL-0454 (SE-32 Well 454, T350, Southeast Block 32)\r\n**Equipment:** pump jack\r\n**Work started:** 04 Jan 2026 08:00 · **Finished:** 07 Jan 2026 02:00 · **Well stopped for this job:** 66 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0454-0164 on 2026-01-01\r\n**Report written:** 08 Jan 2026\n\nRepair report · MNT-0020-030 [MNT-0020-030]:\n# Maintenance Report — MNT-0020-030\n\n**Asset:** WELL-0020 (SW-23 Well 020, T200, Southwest Block 23)\r\n**Equipment:** pump jack\r\n**Work started:** 06 Mar 2026 08:00 · **Finished:** 11 Mar 2026 09:00 · **Well stopped for this job:** 121 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0020-0175 on 2026-03-05\r\n**Report written:** 13 Mar 2026\n\nRepair report · MNT-0135-033 [MNT-0135-033]:\n# Maintenance Report — MNT-0135-033\n\n**Asset:** WELL-0135 (NE-07 Well 135, T200, Northeast Block 7)\r\n**Equipment:** pump jack\r\n**Work started:** 15 Nov 2026 08:00 · **Finished:** 18 Nov 2026 16:00 · **Well stopped for this job:** 80 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0135-0209 on 2026-11-12\r\n**Report written:** 19 Nov 2026",
+          "citations": [
+            {
+              "id": "MNT-0454-021",
+              "title": "Repair report · MNT-0454-021",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0454/maintenance-reports/MNT-0454-021.md",
+              "assetId": "WELL-0454",
+              "excerpt": "# Maintenance Report — MNT-0454-021 **Asset:** WELL-0454 (SE-32 Well 454, T350, Southeast Block 32) **Equipment:** pump jack **Work started:** 04 Jan 2026 08:00 · **Finished:** 07 Jan 2026 02:00 · **Well stopped for this job:** 66 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0454-0164 on 2026-01-01 **R"
+            },
+            {
+              "id": "MNT-0020-030",
+              "title": "Repair report · MNT-0020-030",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0020/maintenance-reports/MNT-0020-030.md",
+              "assetId": "WELL-0020",
+              "excerpt": "# Maintenance Report — MNT-0020-030 **Asset:** WELL-0020 (SW-23 Well 020, T200, Southwest Block 23) **Equipment:** pump jack **Work started:** 06 Mar 2026 08:00 · **Finished:** 11 Mar 2026 09:00 · **Well stopped for this job:** 121 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0020-0175 on 2026-03-05 "
+            },
+            {
+              "id": "MNT-0135-033",
+              "title": "Repair report · MNT-0135-033",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0135/maintenance-reports/MNT-0135-033.md",
+              "assetId": "WELL-0135",
+              "excerpt": "# Maintenance Report — MNT-0135-033 **Asset:** WELL-0135 (NE-07 Well 135, T200, Northeast Block 7) **Equipment:** pump jack **Work started:** 15 Nov 2026 08:00 · **Finished:** 18 Nov 2026 16:00 · **Well stopped for this job:** 80 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0135-0209 on "
+            },
+            {
+              "id": "MNT-0084-027",
+              "title": "Repair report · MNT-0084-027",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0084/maintenance-reports/MNT-0084-027.md",
+              "assetId": "WELL-0084",
+              "excerpt": "# Maintenance Report — MNT-0084-027 **Asset:** WELL-0084 (SW-24 Well 084, T200, Southwest Block 24) **Equipment:** pump jack **Work started:** 21 Mar 2026 08:00 · **Finished:** 24 Mar 2026 11:00 · **Well stopped for this job:** 75 hours **Crew lead:** Daniel Foster (U-302) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0084-0177 on 2026-03-19 "
+            },
+            {
+              "id": "MNT-0121-031",
+              "title": "Repair report · MNT-0121-031",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0121/maintenance-reports/MNT-0121-031.md",
+              "assetId": "WELL-0121",
+              "excerpt": "# Maintenance Report — MNT-0121-031 **Asset:** WELL-0121 (NE-07 Well 121, T200, Northeast Block 7) **Equipment:** pump jack **Work started:** 30 May 2026 08:00 · **Finished:** 23 Jun 2026 06:00 · **Well stopped for this job:** 574 hours **Crew lead:** Brian Coleman (U-304) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0121-0186"
+            },
+            {
+              "id": "MNT-0196-029",
+              "title": "Repair report · MNT-0196-029",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0196/maintenance-reports/MNT-0196-029.md",
+              "assetId": "WELL-0196",
+              "excerpt": "# Maintenance Report — MNT-0196-029 **Asset:** WELL-0196 (NE-08 Well 196, T200, Northeast Block 8) **Equipment:** pump jack **Work started:** 10 May 2026 08:00 · **Finished:** 20 May 2026 18:00 · **Well stopped for this job:** 250 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0196-0182 on 2026-05-07 *"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0454",
+            "WELL-0020",
+            "WELL-0135",
+            "WELL-0084",
+            "WELL-0121",
+            "WELL-0196"
+          ],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: search. Only this user’s last five exchanges were supplied.",
+              "durationMs": 2268
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 9
+            },
+            {
+              "tool": "calculation_guard",
+              "detail": "Unsupported aggregate request returned source passages without model arithmetic.",
+              "durationMs": 0
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 2278
+        }
+      }
+    ],
+    "revision": 2
+  }
+}

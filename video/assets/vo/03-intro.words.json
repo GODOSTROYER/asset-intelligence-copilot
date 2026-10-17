@@ -1,0 +1,107 @@
+[
+  {
+    "word": "This",
+    "start": 0.258,
+    "end": 0.64
+  },
+  {
+    "word": "is",
+    "start": 0.64,
+    "end": 0.869
+  },
+  {
+    "word": "Asset",
+    "start": 0.869,
+    "end": 1.327
+  },
+  {
+    "word": "Intelligence",
+    "start": 1.327,
+    "end": 2.32
+  },
+  {
+    "word": "Copilot.",
+    "start": 2.32,
+    "end": 2.931
+  },
+  {
+    "word": "Ask",
+    "start": 3.205,
+    "end": 3.461
+  },
+  {
+    "word": "your",
+    "start": 3.461,
+    "end": 3.78
+  },
+  {
+    "word": "oil",
+    "start": 3.78,
+    "end": 4.036
+  },
+  {
+    "word": "field",
+    "start": 4.036,
+    "end": 4.42
+  },
+  {
+    "word": "anything,",
+    "start": 4.42,
+    "end": 5.091
+  },
+  {
+    "word": "in",
+    "start": 5.091,
+    "end": 5.283
+  },
+  {
+    "word": "plain",
+    "start": 5.283,
+    "end": 5.667
+  },
+  {
+    "word": "English,",
+    "start": 5.667,
+    "end": 6.274
+  },
+  {
+    "word": "and",
+    "start": 6.274,
+    "end": 6.53
+  },
+  {
+    "word": "get",
+    "start": 6.53,
+    "end": 6.786
+  },
+  {
+    "word": "the",
+    "start": 6.786,
+    "end": 7.042
+  },
+  {
+    "word": "answer,",
+    "start": 7.042,
+    "end": 7.585
+  },
+  {
+    "word": "with",
+    "start": 7.585,
+    "end": 7.905
+  },
+  {
+    "word": "the",
+    "start": 7.905,
+    "end": 8.161
+  },
+  {
+    "word": "evidence",
+    "start": 8.161,
+    "end": 8.736
+  },
+  {
+    "word": "attached.",
+    "start": 8.736,
+    "end": 9.312
+  }
+]

@@ -1,0 +1,247 @@
+[
+  {
+    "word": "Under",
+    "start": 0.225,
+    "end": 0.631
+  },
+  {
+    "word": "the",
+    "start": 0.631,
+    "end": 0.901
+  },
+  {
+    "word": "hood,",
+    "start": 0.901,
+    "end": 1.34
+  },
+  {
+    "word": "the",
+    "start": 1.34,
+    "end": 1.61
+  },
+  {
+    "word": "language",
+    "start": 1.61,
+    "end": 2.217
+  },
+  {
+    "word": "model",
+    "start": 2.217,
+    "end": 2.623
+  },
+  {
+    "word": "only",
+    "start": 2.623,
+    "end": 2.96
+  },
+  {
+    "word": "plans.",
+    "start": 2.96,
+    "end": 3.365
+  },
+  {
+    "word": "Deterministic",
+    "start": 3.786,
+    "end": 4.741
+  },
+  {
+    "word": "tools",
+    "start": 4.741,
+    "end": 5.15
+  },
+  {
+    "word": "do",
+    "start": 5.15,
+    "end": 5.354
+  },
+  {
+    "word": "every",
+    "start": 5.354,
+    "end": 5.763
+  },
+  {
+    "word": "calculation,",
+    "start": 5.763,
+    "end": 6.684
+  },
+  {
+    "word": "against",
+    "start": 6.684,
+    "end": 7.229
+  },
+  {
+    "word": "the",
+    "start": 7.229,
+    "end": 7.502
+  },
+  {
+    "word": "rules",
+    "start": 7.502,
+    "end": 7.911
+  },
+  {
+    "word": "in",
+    "start": 7.911,
+    "end": 8.115
+  },
+  {
+    "word": "your",
+    "start": 8.115,
+    "end": 8.456
+  },
+  {
+    "word": "manuals",
+    "start": 8.456,
+    "end": 9.002
+  },
+  {
+    "word": "and",
+    "start": 9.002,
+    "end": 9.274
+  },
+  {
+    "word": "SOPs.",
+    "start": 9.274,
+    "end": 9.615
+  },
+  {
+    "word": "On",
+    "start": 10.301,
+    "end": 10.494
+  },
+  {
+    "word": "the",
+    "start": 10.494,
+    "end": 10.752
+  },
+  {
+    "word": "unseen",
+    "start": 10.752,
+    "end": 11.202
+  },
+  {
+    "word": "six-hundred-well",
+    "start": 11.202,
+    "end": 12.167
+  },
+  {
+    "word": "test",
+    "start": 12.167,
+    "end": 12.489
+  },
+  {
+    "word": "set,",
+    "start": 12.489,
+    "end": 12.843
+  },
+  {
+    "word": "all",
+    "start": 12.843,
+    "end": 13.101
+  },
+  {
+    "word": "eleven",
+    "start": 13.101,
+    "end": 13.551
+  },
+  {
+    "word": "final",
+    "start": 13.551,
+    "end": 13.937
+  },
+  {
+    "word": "questions",
+    "start": 13.937,
+    "end": 14.581
+  },
+  {
+    "word": "matched",
+    "start": 14.581,
+    "end": 15.096
+  },
+  {
+    "word": "answers",
+    "start": 15.096,
+    "end": 15.611
+  },
+  {
+    "word": "computed",
+    "start": 15.611,
+    "end": 16.19
+  },
+  {
+    "word": "independently",
+    "start": 16.19,
+    "end": 17.091
+  },
+  {
+    "word": "from",
+    "start": 17.091,
+    "end": 17.413
+  },
+  {
+    "word": "the",
+    "start": 17.413,
+    "end": 17.67
+  },
+  {
+    "word": "raw",
+    "start": 17.67,
+    "end": 17.927
+  },
+  {
+    "word": "data.",
+    "start": 17.927,
+    "end": 18.249
+  },
+  {
+    "word": "And",
+    "start": 18.621,
+    "end": 18.861
+  },
+  {
+    "word": "if",
+    "start": 18.861,
+    "end": 19.041
+  },
+  {
+    "word": "the",
+    "start": 19.041,
+    "end": 19.281
+  },
+  {
+    "word": "model",
+    "start": 19.281,
+    "end": 19.641
+  },
+  {
+    "word": "goes",
+    "start": 19.641,
+    "end": 19.942
+  },
+  {
+    "word": "down,",
+    "start": 19.942,
+    "end": 20.332
+  },
+  {
+    "word": "the",
+    "start": 20.332,
+    "end": 20.572
+  },
+  {
+    "word": "copilot",
+    "start": 20.572,
+    "end": 21.052
+  },
+  {
+    "word": "keeps",
+    "start": 21.052,
+    "end": 21.413
+  },
+  {
+    "word": "answering.",
+    "start": 21.413,
+    "end": 22.013
+  }
+]

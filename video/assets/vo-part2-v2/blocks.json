@@ -1,0 +1,56 @@
+[
+  {
+    "n": 1,
+    "start": 0,
+    "end": 11,
+    "text": "Part two, live on the test dataset. Robert Hayes, the maintenance lead, asks which recalled pumps are still in the ground right now."
+  },
+  {
+    "n": 2,
+    "start": 11,
+    "end": 31,
+    "text": "The hosted Gemini model only plans: it picks one typed operation, recalled pumps. A deterministic tool then reads the supplier recall notice and the parts-installed line of every repair report, keeps the latest pump per well, and returns nine wells. Nothing here is written by the model."
+  },
+  {
+    "n": 3,
+    "start": 31,
+    "end": 53,
+    "text": "Now Nathan Pierce says WELL-0333's pump was swapped yesterday, but there's no work order yet. The planner routes this to a claim operation. It is stored as an unconfirmed claim, attributed to Nathan, with a timestamp. It never overwrites a maintenance record, and WELL-0333 stays on the list."
+  },
+  {
+    "n": 4,
+    "start": 53,
+    "end": 74,
+    "text": "Next, Olivia Grant asks to take WELL-0577 off the recall list, because Nathan told her it was swapped. That's second-hand, and the system keeps the chain: Olivia, via Nathan. It's recorded as another unconfirmed claim, the well is not removed, and hearsay is never treated as fact."
+  },
+  {
+    "n": 5,
+    "start": 74,
+    "end": 102,
+    "text": "Back as Robert, I ask the same question again. Same nine wells, because a report alone never removes a well. But now WELL-0333 and WELL-0577 are flagged in the Notes column, with who said what, whether it's confirmed, and that second-hand chain via Nathan."
+  },
+  {
+    "n": 6,
+    "start": 102,
+    "end": 118,
+    "text": "A conflict box and the answer count it both ways: nine per the records, seven if work orders confirm. I open the citation and see the raw claim itself: author Nathan Pierce, confirmed false."
+  },
+  {
+    "n": 7,
+    "start": 118,
+    "end": 140,
+    "text": "Laura Simmons, the HSE officer, asks whether every gas report since the first of November got a timely response under our procedures. The planner picks a gas-response operation. The deadline comes from the SOP itself, OPS-1: twenty-four hours, then twelve hours from the first of January."
+  },
+  {
+    "n": 8,
+    "start": 140,
+    "end": 159,
+    "text": "Twenty-six gas notes: seventeen met, nine missed. Each row shows the report, the first qualifying response, and the hours taken. Drone inspections don't count, and the response must start after the note. Late ones show the exact hours over."
+  },
+  {
+    "n": 9,
+    "start": 159,
+    "end": 178,
+    "text": "Last, a judgment call: of all the wells we've talked about, which first? Triage ranks safety, then compliance, then production, then equipment. WELL-0332 wins: an unanswered gas report, no H2S reading, and it's not producing. Every line cites its record."
+  }
+]

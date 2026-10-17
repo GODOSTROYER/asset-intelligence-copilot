@@ -1,0 +1,90 @@
+[
+ {
+  "n": 1,
+  "nominal": 0,
+  "start": 0,
+  "dur": 17.23,
+  "tempo": 1.03,
+  "end": 16.73
+ },
+ {
+  "n": 2,
+  "nominal": 17,
+  "start": 16.98,
+  "dur": 29.9,
+  "tempo": 1,
+  "end": 46.87
+ },
+ {
+  "n": 3,
+  "nominal": 52,
+  "start": 51.4,
+  "dur": 7.56,
+  "tempo": 1,
+  "end": 58.96
+ },
+ {
+  "n": 4,
+  "nominal": 61,
+  "start": 60.4,
+  "dur": 10.95,
+  "tempo": 1.15,
+  "end": 69.92
+ },
+ {
+  "n": 5,
+  "nominal": 69,
+  "start": 70.17,
+  "dur": 8.82,
+  "tempo": 1.15,
+  "end": 77.84
+ },
+ {
+  "n": 6,
+  "nominal": 77,
+  "start": 78.09,
+  "dur": 10.23,
+  "tempo": 1,
+  "end": 88.32
+ },
+ {
+  "n": 7,
+  "nominal": 89,
+  "start": 88.57,
+  "dur": 21.49,
+  "tempo": 1.07,
+  "end": 108.66
+ },
+ {
+  "n": 8,
+  "nominal": 109,
+  "start": 108.91,
+  "dur": 8.55,
+  "tempo": 1,
+  "end": 117.46
+ },
+ {
+  "n": 9,
+  "nominal": 120,
+  "start": 119.4,
+  "dur": 9.16,
+  "tempo": 1,
+  "end": 128.56
+ },
+ {
+  "n": 10,
+  "nominal": 131,
+  "start": 130.4,
+  "dur": 18.92,
+  "tempo": 1,
+  "end": 149.32
+ },
+ {
+  "n": 11,
+  "nominal": 152,
+  "start": 151.4,
+  "dur": 22.09,
+  "tempo": 1.05,
+  "end": 172.44
+ }
+]

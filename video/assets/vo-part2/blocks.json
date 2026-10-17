@@ -1,0 +1,68 @@
+[
+  {
+    "n": 1,
+    "start": 0,
+    "end": 17,
+    "text": "This is the real app running on the test dataset: six hundred wells, over a hundred and twenty-five thousand inspections. I'm Michael Turner, a production supervisor, and I start my morning with a plain-English question about Northwest Block 12: which wells are not producing oil, and why."
+  },
+  {
+    "n": 2,
+    "start": 17,
+    "end": 52,
+    "text": "A hosted Gemini model only plans the question. It picks one typed operation, here area status, and the server validates that plan. A deterministic tool then does the work: it applies each well type's rule from its manual to the latest inspection, and joins repairs and field notes. Twelve wells come back, in a table with the reason for each. Notice the stored status still says active on most of them. The evidence says otherwise, and nothing in this table was written by the model."
+  },
+  {
+    "n": 3,
+    "start": 52,
+    "end": 61,
+    "text": "I'll pick WELL-0309, a pump-stuck well at the top of the list, and ask whether it's producing and who inspected it last."
+  },
+  {
+    "n": 4,
+    "start": 61,
+    "end": 69,
+    "text": "Not producing. Inspected January fourteenth by Caleb Whitaker: wellhead thirteen point one against air ten point six, only two and a half degrees above ambient."
+  },
+  {
+    "n": 5,
+    "start": 69,
+    "end": 77,
+    "text": "The T200 manual needs fifteen. Every claim carries a citation, so I open the first one and see the raw inspection record itself."
+  },
+  {
+    "n": 6,
+    "start": 77,
+    "end": 89,
+    "text": "Next I ask for a chart: wellhead against air temperature for thirteen weeks, with the non-producing readings marked. I type it exactly as I'd say it to a colleague."
+  },
+  {
+    "n": 7,
+    "start": 89,
+    "end": 109,
+    "text": "Same pattern. The planner chooses a temperature-history operation, and the tool returns the exact readings. The well ran twenty to thirty degrees above ambient for weeks, then dropped to two and a half on January fourteenth. That single orange marker is the only non-producing reading, and each point links back to its inspection."
+  },
+  {
+    "n": 8,
+    "start": 109,
+    "end": 120,
+    "text": "Now a hand-off. I tell the system that WELL-0309 will be shut in from the sixteenth of January for a five-day planned workover."
+  },
+  {
+    "n": 9,
+    "start": 120,
+    "end": 131,
+    "text": "That isn't a question, so it's saved as shared field knowledge, with me as the author and the date attached. Now I switch users to Robert Hayes."
+  },
+  {
+    "n": 10,
+    "start": 131,
+    "end": 152,
+    "text": "Robert is the maintenance lead and has never seen my conversation. He asks whether any downtime is planned for WELL-0309. The answer is yes: the workover from January sixteenth, five days, according to Michael Turner. My note reached him through shared memory, attributed to me, with a citation."
+  },
+  {
+    "n": 11,
+    "start": 152,
+    "end": 173,
+    "text": "Opening the memory drawer shows why. Shared well knowledge holds my note and is visible to everyone. Corrections, claims and rules are empty. Below that is Robert's private memory, only his own questions. So the system shares facts, not chat history: planner for understanding, tools for the numbers, citations for trust, shared memory for the team."
+  }
+]

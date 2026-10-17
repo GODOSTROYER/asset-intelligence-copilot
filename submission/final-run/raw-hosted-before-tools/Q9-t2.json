@@ -1,0 +1,636 @@
+{
+  "q": "Q9",
+  "turn": 2,
+  "asker": "Hayes",
+  "userId": "U-301",
+  "question": "Different topic. Who leads Northwest Production, and how many wells does that team run?",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 4471
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 4471,
+  "response": {
+    "userId": "U-301",
+    "response": {
+      "answer": "This calculation needs a supported domain tool or a narrower scope. The retrieved passages are evidence only and have not been aggregated.\n\nRelevant source passages:\n\nmoc 2026 031 [MOC-2026-031]:\n# Management of Change — MOC-2026-031\n\n**Title:** Temporary flowline bypass while check valves are on back-order\r\n**Date:** 19 Oct 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE\n\nmoc 2026 036 [MOC-2026-036]:\n# Management of Change — MOC-2026-036\n\n**Title:** Temporary flowline bypass during the winter valve program\r\n**Date:** 6 Nov 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE\n\nRepair report · MNT-0445-014 [MNT-0445-014]:\n# Maintenance Report — MNT-0445-014\n\n**Asset:** WELL-0445 (NW-12 Well 445, T500, Northwest Block 12)\r\n**Equipment:** esp pump\r\n**Work started:** 04 Jan 2025 08:00 · **Finished:** 14 Jan 2025 01:00 · **Well stopped for this job:** 233 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Brian Coleman\r\n**Triggered by:** inspection INS-0445-0114 on 2025-01-02\r\n**Report written:** 15 Jan 2025",
+      "citations": [
+        {
+          "id": "MOC-2026-031",
+          "title": "moc 2026 031",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-031.md",
+          "excerpt": "# Management of Change — MOC-2026-031 **Title:** Temporary flowline bypass while check valves are on back-order **Date:** 19 Oct 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE […] ## Change The bypass routes production around a leaking check valve so the flowline can stay in service until the re"
+        },
+        {
+          "id": "MOC-2026-036",
+          "title": "moc 2026 036",
+          "type": "SOP",
+          "path": "dataset/fleet/sops/moc-2026-036.md",
+          "excerpt": "# Management of Change — MOC-2026-036 **Title:** Temporary flowline bypass during the winter valve program **Date:** 6 Nov 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE […] ## Change A temporary flowline bypass is authorized on these wells: WELL-0087, WELL-0158, WELL-0249, WELL-0284, WELL-0356"
+        },
+        {
+          "id": "MNT-0445-014",
+          "title": "Repair report · MNT-0445-014",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0445/maintenance-reports/MNT-0445-014.md",
+          "assetId": "WELL-0445",
+          "excerpt": "# Maintenance Report — MNT-0445-014 **Asset:** WELL-0445 (NW-12 Well 445, T500, Northwest Block 12) **Equipment:** esp pump **Work started:** 04 Jan 2025 08:00 · **Finished:** 14 Jan 2025 01:00 · **Well stopped for this job:** 233 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Brian Coleman **Triggered by:** inspection INS-0445-0114 on 2025-01-02 **Report written:** 15 Jan 2025 […] ## Testing"
+        },
+        {
+          "id": "MNT-0329-031",
+          "title": "Repair report · MNT-0329-031",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0329/maintenance-reports/MNT-0329-031.md",
+          "assetId": "WELL-0329",
+          "excerpt": "# Maintenance Report — MNT-0329-031 **Asset:** WELL-0329 (NW-12 Well 329, T500, Northwest Block 12) **Equipment:** esp pump **Work started:** 25 Sep 2026 08:00 · **Finished:** 29 Sep 2026 21:00 · **Well stopped for this job:** 109 hours **Crew lead:** Brian Coleman (U-304) · **Crew:** Kevin Price **Triggered by:** inspection INS-0329-0203 on 2026-09-24 **Report written:** 01 Oct 2026 […] ## Testin"
+        },
+        {
+          "id": "MNT-0401-030",
+          "title": "Repair report · MNT-0401-030",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0401/maintenance-reports/MNT-0401-030.md",
+          "assetId": "WELL-0401",
+          "excerpt": "# Maintenance Report — MNT-0401-030 **Asset:** WELL-0401 (NW-12 Well 401, T500, Northwest Block 12) **Equipment:** esp pump **Work started:** 26 Jul 2026 08:00 · **Finished:** 12 Aug 2026 07:00 · **Well stopped for this job:** 407 hours **Crew lead:** Brian Coleman (U-304) · **Crew:** Megan Ward, Daniel Foster **Triggered by:** inspection INS-0401-0196 on 2026-07-23 **Report written:** 14 Aug 2026"
+        },
+        {
+          "id": "MNT-0352-012",
+          "title": "Repair report · MNT-0352-012",
+          "type": "repair report",
+          "path": "dataset/assets/WELL-0352/maintenance-reports/MNT-0352-012.md",
+          "assetId": "WELL-0352",
+          "excerpt": "# Maintenance Report — MNT-0352-012 **Asset:** WELL-0352 (NW-12 Well 352, T500, Northwest Block 12) **Equipment:** esp pump **Work started:** 21 Sep 2024 08:00 · **Finished:** 25 Sep 2024 14:00 · **Well stopped for this job:** 102 hours **Crew lead:** Daniel Foster (U-302) · **Crew:** Megan Ward, Brian Coleman **Triggered by:** inspection INS-0352-0099 on 2024-09-19 **Report written:** 26 Sep 2024"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [
+        "WELL-0445",
+        "WELL-0329",
+        "WELL-0401",
+        "WELL-0352"
+      ],
+      "trace": [
+        {
+          "tool": "gemini_planner",
+          "detail": "Structured plan validated: search. Only this user’s last five exchanges were supplied.",
+          "durationMs": 4452
+        },
+        {
+          "tool": "document_retrieval",
+          "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+          "durationMs": 5
+        },
+        {
+          "tool": "calculation_guard",
+          "detail": "Unsupported aggregate request returned source passages without model arithmetic.",
+          "durationMs": 0
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "hosted"
+      },
+      "durationMs": 4458
+    },
+    "history": [
+      {
+        "userText": "Which well produced the most oil in 2026?",
+        "answer": "This calculation needs a supported domain tool or a narrower scope. The retrieved passages are evidence only and have not been aggregated.\n\nRelevant source passages:\n\nRepair report · MNT-0454-021 [MNT-0454-021]:\n# Maintenance Report — MNT-0454-021\n\n**Asset:** WELL-0454 (SE-32 Well 454, T350, Southeast Block 32)\r\n**Equipment:** pump jack\r\n**Work started:** 04 Jan 2026 08:00 · **Finished:** 07 Jan 2026 02:00 · **Well stopped for this job:** 66 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0454-0164 on 2026-01-01\r\n**Report written:** 08 Jan 2026\n\nRepair report · MNT-0020-030 [MNT-0020-030]:\n# Maintenance Report — MNT-0020-030\n\n**Asset:** WELL-0020 (SW-23 Well 020, T200, Southwest Block 23)\r\n**Equipment:** pump jack\r\n**Work started:** 06 Mar 2026 08:00 · **Finished:** 11 Mar 2026 09:00 · **Well stopped for this job:** 121 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0020-0175 on 2026-03-05\r\n**Report written:** 13 Mar 2026\n\nRepair report · MNT-0135-033 [MNT-0135-033]:\n# Maintenance Report — MNT-0135-033\n\n**Asset:** WELL-0135 (NE-07 Well 135, T200, Northeast Block 7)\r\n**Equipment:** pump jack\r\n**Work started:** 15 Nov 2026 08:00 · **Finished:** 18 Nov 2026 16:00 · **Well stopped for this job:** 80 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0135-0209 on 2026-11-12\r\n**Report written:** 19 Nov 2026",
+        "wellIds": [
+          "WELL-0454",
+          "WELL-0020",
+          "WELL-0135",
+          "WELL-0084",
+          "WELL-0121",
+          "WELL-0196"
+        ],
+        "createdAt": "2026-10-17T11:10:33.989Z",
+        "response": {
+          "answer": "This calculation needs a supported domain tool or a narrower scope. The retrieved passages are evidence only and have not been aggregated.\n\nRelevant source passages:\n\nRepair report · MNT-0454-021 [MNT-0454-021]:\n# Maintenance Report — MNT-0454-021\n\n**Asset:** WELL-0454 (SE-32 Well 454, T350, Southeast Block 32)\r\n**Equipment:** pump jack\r\n**Work started:** 04 Jan 2026 08:00 · **Finished:** 07 Jan 2026 02:00 · **Well stopped for this job:** 66 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0454-0164 on 2026-01-01\r\n**Report written:** 08 Jan 2026\n\nRepair report · MNT-0020-030 [MNT-0020-030]:\n# Maintenance Report — MNT-0020-030\n\n**Asset:** WELL-0020 (SW-23 Well 020, T200, Southwest Block 23)\r\n**Equipment:** pump jack\r\n**Work started:** 06 Mar 2026 08:00 · **Finished:** 11 Mar 2026 09:00 · **Well stopped for this job:** 121 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0020-0175 on 2026-03-05\r\n**Report written:** 13 Mar 2026\n\nRepair report · MNT-0135-033 [MNT-0135-033]:\n# Maintenance Report — MNT-0135-033\n\n**Asset:** WELL-0135 (NE-07 Well 135, T200, Northeast Block 7)\r\n**Equipment:** pump jack\r\n**Work started:** 15 Nov 2026 08:00 · **Finished:** 18 Nov 2026 16:00 · **Well stopped for this job:** 80 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services\r\n**Triggered by:** inspection INS-0135-0209 on 2026-11-12\r\n**Report written:** 19 Nov 2026",
+          "citations": [
+            {
+              "id": "MNT-0454-021",
+              "title": "Repair report · MNT-0454-021",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0454/maintenance-reports/MNT-0454-021.md",
+              "assetId": "WELL-0454",
+              "excerpt": "# Maintenance Report — MNT-0454-021 **Asset:** WELL-0454 (SE-32 Well 454, T350, Southeast Block 32) **Equipment:** pump jack **Work started:** 04 Jan 2026 08:00 · **Finished:** 07 Jan 2026 02:00 · **Well stopped for this job:** 66 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0454-0164 on 2026-01-01 **R"
+            },
+            {
+              "id": "MNT-0020-030",
+              "title": "Repair report · MNT-0020-030",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0020/maintenance-reports/MNT-0020-030.md",
+              "assetId": "WELL-0020",
+              "excerpt": "# Maintenance Report — MNT-0020-030 **Asset:** WELL-0020 (SW-23 Well 020, T200, Southwest Block 23) **Equipment:** pump jack **Work started:** 06 Mar 2026 08:00 · **Finished:** 11 Mar 2026 09:00 · **Well stopped for this job:** 121 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0020-0175 on 2026-03-05 "
+            },
+            {
+              "id": "MNT-0135-033",
+              "title": "Repair report · MNT-0135-033",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0135/maintenance-reports/MNT-0135-033.md",
+              "assetId": "WELL-0135",
+              "excerpt": "# Maintenance Report — MNT-0135-033 **Asset:** WELL-0135 (NE-07 Well 135, T200, Northeast Block 7) **Equipment:** pump jack **Work started:** 15 Nov 2026 08:00 · **Finished:** 18 Nov 2026 16:00 · **Well stopped for this job:** 80 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0135-0209 on "
+            },
+            {
+              "id": "MNT-0084-027",
+              "title": "Repair report · MNT-0084-027",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0084/maintenance-reports/MNT-0084-027.md",
+              "assetId": "WELL-0084",
+              "excerpt": "# Maintenance Report — MNT-0084-027 **Asset:** WELL-0084 (SW-24 Well 084, T200, Southwest Block 24) **Equipment:** pump jack **Work started:** 21 Mar 2026 08:00 · **Finished:** 24 Mar 2026 11:00 · **Well stopped for this job:** 75 hours **Crew lead:** Daniel Foster (U-302) · **Crew:** Kevin Price · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0084-0177 on 2026-03-19 "
+            },
+            {
+              "id": "MNT-0121-031",
+              "title": "Repair report · MNT-0121-031",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0121/maintenance-reports/MNT-0121-031.md",
+              "assetId": "WELL-0121",
+              "excerpt": "# Maintenance Report — MNT-0121-031 **Asset:** WELL-0121 (NE-07 Well 121, T200, Northeast Block 7) **Equipment:** pump jack **Work started:** 30 May 2026 08:00 · **Finished:** 23 Jun 2026 06:00 · **Well stopped for this job:** 574 hours **Crew lead:** Brian Coleman (U-304) · **Crew:** Kevin Price, Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0121-0186"
+            },
+            {
+              "id": "MNT-0196-029",
+              "title": "Repair report · MNT-0196-029",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0196/maintenance-reports/MNT-0196-029.md",
+              "assetId": "WELL-0196",
+              "excerpt": "# Maintenance Report — MNT-0196-029 **Asset:** WELL-0196 (NE-08 Well 196, T200, Northeast Block 8) **Equipment:** pump jack **Work started:** 10 May 2026 08:00 · **Finished:** 20 May 2026 18:00 · **Well stopped for this job:** 250 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Daniel Foster · **Contractor:** Coyote Ridge Well Services **Triggered by:** inspection INS-0196-0182 on 2026-05-07 *"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0454",
+            "WELL-0020",
+            "WELL-0135",
+            "WELL-0084",
+            "WELL-0121",
+            "WELL-0196"
+          ],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: search. Only this user’s last five exchanges were supplied.",
+              "durationMs": 2268
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 9
+            },
+            {
+              "tool": "calculation_guard",
+              "detail": "Unsupported aggregate request returned source passages without model arithmetic.",
+              "durationMs": 0
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 2278
+        }
+      },
+      {
+        "userText": "Over the last month the operators have written notes about wells that sound or behave wrong. Which of those wells haven't had a repair since? Rank the 10 most likely to need a repair in the next 90 days, other than a spill clean-up, and quote the notes as evidence.",
+        "answer": "Repair costs by maintenance start date, Jan 1, 2027 through Jan 15, 2027: WELL-0020 USD 0 · WELL-0084 USD 1,211 · WELL-0121 USD 0 · WELL-0135 USD 315 · WELL-0196 USD 0 · WELL-0454 USD 18,740.",
+        "wellIds": [
+          "WELL-0020",
+          "WELL-0084",
+          "WELL-0121",
+          "WELL-0135",
+          "WELL-0196",
+          "WELL-0454"
+        ],
+        "createdAt": "2026-10-17T11:10:50.099Z",
+        "response": {
+          "answer": "Repair costs by maintenance start date, Jan 1, 2027 through Jan 15, 2027: WELL-0020 USD 0 · WELL-0084 USD 1,211 · WELL-0121 USD 0 · WELL-0135 USD 315 · WELL-0196 USD 0 · WELL-0454 USD 18,740.",
+          "visualization": {
+            "type": "table",
+            "title": "Repair costs",
+            "columns": [
+              "Well",
+              "Repair jobs",
+              "Total cost"
+            ],
+            "rows": [
+              [
+                "WELL-0020",
+                0,
+                "USD 0"
+              ],
+              [
+                "WELL-0084",
+                1,
+                "USD 1,211"
+              ],
+              [
+                "WELL-0121",
+                0,
+                "USD 0"
+              ],
+              [
+                "WELL-0135",
+                1,
+                "USD 315"
+              ],
+              [
+                "WELL-0196",
+                0,
+                "USD 0"
+              ],
+              [
+                "WELL-0454",
+                1,
+                "USD 18,740"
+              ]
+            ]
+          },
+          "citations": [
+            {
+              "id": "MNT-0084-033",
+              "title": "Repair · MNT-0084-033",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0084/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0084-033 · asset id: WELL-0084 · started at: 2027-01-01T08:00:00Z · completed at: 2027-01-01T15:00:00Z · maintenance type: scheduled · equipment kind: wellhead · issue: Scheduled wellhead valve service · action taken: Valves serviced and pressure tested · technician user id: U-302 · contractor: Coyote Ridge Well Services · downtime hours: 7",
+              "assetId": "WELL-0084"
+            },
+            {
+              "id": "MNT-0135-035",
+              "title": "Repair · MNT-0135-035",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0135/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0135-035 · asset id: WELL-0135 · started at: 2027-01-02T08:00:00Z · completed at: 2027-01-02T11:00:00Z · maintenance type: scheduled · equipment kind: pump_jack · issue: Scheduled lubrication and belt inspection · action taken: Lubricated, belts tensioned · technician user id: U-305 · contractor: Coyote Ridge Well Services · downtime hours: 3",
+              "assetId": "WELL-0135"
+            },
+            {
+              "id": "MNT-0454-029",
+              "title": "Repair · MNT-0454-029",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0454/maintenance.jsonl",
+              "excerpt": "maintenance id: MNT-0454-029 · asset id: WELL-0454 · started at: 2027-01-03T08:00:00Z · completed at: 2027-01-12T19:00:00Z · maintenance type: corrective · equipment kind: rod_string · issue: Sucker rod parted · action taken: Fished and replaced parted rod section · technician user id: U-304 · contractor: Sandstone Rod & Pump · downtime hours: 227 · triggered by inspection id: INS-0454-0215 · report file: maintenance-reports/MNT-0454-029.md",
+              "assetId": "WELL-0454"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0020",
+            "WELL-0084",
+            "WELL-0121",
+            "WELL-0135",
+            "WELL-0196",
+            "WELL-0454"
+          ],
+          "memory": [
+            "Resolved from Robert Hayes’s private conversation: WELL-0454, WELL-0020, WELL-0135, WELL-0084, WELL-0121, WELL-0196"
+          ],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: costs. Only this user’s last five exchanges were supplied.",
+              "durationMs": 2081
+            },
+            {
+              "tool": "costs",
+              "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+              "durationMs": 4
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 2085
+        }
+      },
+      {
+        "userText": "Which three would you send a crew to first this week, and why?",
+        "answer": "Relevant source passages:\n\nOperator note · CTX-0002-001 [CTX-0002-001]:\n{\"asset_id\":\"WELL-0002\",\"created_at\":\"2026-09-03T18:00:00Z\",\"author_user_id\":\"U-201\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2026-09-03\",\"valid_to\":\"2026-10-08\",\"note_id\":\"CTX-0002-001\"}\n\nOperator note · CTX-0003-001 [CTX-0003-001]:\n{\"asset_id\":\"WELL-0003\",\"created_at\":\"2024-07-04T18:00:00Z\",\"author_user_id\":\"U-201\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2024-07-04\",\"valid_to\":\"2024-08-08\",\"note_id\":\"CTX-0003-001\"}\n\nOperator note · CTX-0005-001 [CTX-0005-001]:\n{\"asset_id\":\"WELL-0005\",\"created_at\":\"2024-05-02T18:00:00Z\",\"author_user_id\":\"U-101\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2024-05-02\",\"valid_to\":\"2024-05-16\",\"note_id\":\"CTX-0005-001\"}",
+        "wellIds": [
+          "WELL-0002",
+          "WELL-0003",
+          "WELL-0005",
+          "WELL-0007",
+          "WELL-0012",
+          "WELL-0020"
+        ],
+        "createdAt": "2026-10-17T11:10:52.431Z",
+        "response": {
+          "answer": "Relevant source passages:\n\nOperator note · CTX-0002-001 [CTX-0002-001]:\n{\"asset_id\":\"WELL-0002\",\"created_at\":\"2026-09-03T18:00:00Z\",\"author_user_id\":\"U-201\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2026-09-03\",\"valid_to\":\"2026-10-08\",\"note_id\":\"CTX-0002-001\"}\n\nOperator note · CTX-0003-001 [CTX-0003-001]:\n{\"asset_id\":\"WELL-0003\",\"created_at\":\"2024-07-04T18:00:00Z\",\"author_user_id\":\"U-201\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2024-07-04\",\"valid_to\":\"2024-08-08\",\"note_id\":\"CTX-0003-001\"}\n\nOperator note · CTX-0005-001 [CTX-0005-001]:\n{\"asset_id\":\"WELL-0005\",\"created_at\":\"2024-05-02T18:00:00Z\",\"author_user_id\":\"U-101\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2024-05-02\",\"valid_to\":\"2024-05-16\",\"note_id\":\"CTX-0005-001\"}",
+          "citations": [
+            {
+              "id": "CTX-0002-001",
+              "title": "Operator note · CTX-0002-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0002/context.jsonl",
+              "assetId": "WELL-0002",
+              "excerpt": "{\"asset_id\":\"WELL-0002\",\"created_at\":\"2026-09-03T18:00:00Z\",\"author_user_id\":\"U-201\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2026-09-03\",\"valid_to\":\"2026-10-08\",\"note_id\":\"CTX-0002-001\"}"
+            },
+            {
+              "id": "CTX-0003-001",
+              "title": "Operator note · CTX-0003-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0003/context.jsonl",
+              "assetId": "WELL-0003",
+              "excerpt": "{\"asset_id\":\"WELL-0003\",\"created_at\":\"2024-07-04T18:00:00Z\",\"author_user_id\":\"U-201\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2024-07-04\",\"valid_to\":\"2024-08-08\",\"note_id\":\"CTX-0003-001\"}"
+            },
+            {
+              "id": "CTX-0005-001",
+              "title": "Operator note · CTX-0005-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0005/context.jsonl",
+              "assetId": "WELL-0005",
+              "excerpt": "{\"asset_id\":\"WELL-0005\",\"created_at\":\"2024-05-02T18:00:00Z\",\"author_user_id\":\"U-101\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2024-05-02\",\"valid_to\":\"2024-05-16\",\"note_id\":\"CTX-0005-001\"}"
+            },
+            {
+              "id": "CTX-0007-001",
+              "title": "Operator note · CTX-0007-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0007/context.jsonl",
+              "assetId": "WELL-0007",
+              "excerpt": "{\"asset_id\":\"WELL-0007\",\"created_at\":\"2025-04-17T18:00:00Z\",\"author_user_id\":\"U-201\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2025-04-17\",\"valid_to\":\"2025-05-08\",\"note_id\":\"CTX-0007-001\"}"
+            },
+            {
+              "id": "CTX-0012-001",
+              "title": "Operator note · CTX-0012-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0012/context.jsonl",
+              "assetId": "WELL-0012",
+              "excerpt": "{\"asset_id\":\"WELL-0012\",\"created_at\":\"2024-02-08T18:00:00Z\",\"author_user_id\":\"U-101\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2024-02-08\",\"valid_to\":\"2024-03-14\",\"note_id\":\"CTX-0012-001\"}"
+            },
+            {
+              "id": "CTX-0020-001",
+              "title": "Operator note · CTX-0020-001",
+              "type": "note",
+              "path": "dataset/assets/WELL-0020/context.jsonl",
+              "assetId": "WELL-0020",
+              "excerpt": "{\"asset_id\":\"WELL-0020\",\"created_at\":\"2026-08-13T18:00:00Z\",\"author_user_id\":\"U-201\",\"note_type\":\"operator_note\",\"text\":\"Workover rig delayed by weather; restart pushed back about a week.\",\"valid_from\":\"2026-08-13\",\"valid_to\":\"2026-09-03\",\"note_id\":\"CTX-0020-001\"}"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0002",
+            "WELL-0003",
+            "WELL-0005",
+            "WELL-0007",
+            "WELL-0012",
+            "WELL-0020"
+          ],
+          "trace": [
+            {
+              "tool": "deterministic_planner",
+              "detail": "Hosted planner unavailable (invalid_plan); validated domain fallback used. Retry this question to reconnect.",
+              "durationMs": 2299
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 5
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "fallback",
+            "reason": "invalid_plan"
+          },
+          "durationMs": 2305
+        }
+      },
+      {
+        "userText": "Which recalled pumps are still in the ground right now?",
+        "answer": "The provided evidence does not contain information to determine which specific recalled pumps are still in the ground right now. [SUPPLIER-RECALL-NOTICE-2026-12-01]",
+        "wellIds": [],
+        "createdAt": "2026-10-17T11:10:59.777Z",
+        "response": {
+          "answer": "The provided evidence does not contain information to determine which specific recalled pumps are still in the ground right now. [SUPPLIER-RECALL-NOTICE-2026-12-01]",
+          "citations": [
+            {
+              "id": "SUPPLIER-RECALL-NOTICE-2026-12-01",
+              "title": "supplier recall notice 2026 12 01",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/supplier-recall-notice-2026-12-01.md",
+              "excerpt": "## How to find affected pumps The lot number is stamped on the pump barrel. Your crews record it when the pump is installed (in your maintenance reports, on the line \"Parts installed\"). Only the pump that is in the well today matters: a recalled pump that has already been pulled and replaced needs no action. […] # Supplier Recall Notice — Downhole Rod Pumps **From:** Highline Pump Co., Quality Dep"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: search. Only this user’s last five exchanges were supplied.",
+              "durationMs": 1788
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 1
+            },
+            {
+              "tool": "synthesis_routing",
+              "detail": "Ordinary evidence lookup uses the primary fast model. Requested model: gemini-3.5-flash-lite.",
+              "durationMs": 0
+            },
+            {
+              "tool": "gemini_synthesis",
+              "detail": "Actual model: gemini-3.5-flash-lite. Grounded prose accepted after source-ID and numerical-token validation.",
+              "durationMs": 954
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 2743
+        }
+      },
+      {
+        "userText": "How many recalled pumps are still in the ground, and in which areas?",
+        "answer": "This calculation needs a supported domain tool or a narrower scope. The retrieved passages are evidence only and have not been aggregated.\n\nRelevant source passages:\n\nsupplier recall notice 2026 12 01 [SUPPLIER-RECALL-NOTICE-2026-12-01]:\n## How to find affected pumps\n\nThe lot number is stamped on the pump barrel. Your crews record it when the pump is installed\r\n(in your maintenance reports, on the line \"Parts installed\"). Only the pump that is in the well\r\ntoday matters: a recalled pump that has already been pulled and replaced needs no action.\n\nRepair · MNT-0302-031 [MNT-0302-031]:\n{\"maintenance_id\":\"MNT-0302-031\",\"asset_id\":\"WELL-0302\",\"started_at\":\"2026-12-22T07:00:00Z\",\"completed_at\":\"2026-12-23T10:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"downhole_pump\",\"issue\":\"Recalled downhole pump replaced\",\"action_taken\":\"Pulled the recalled pump and ran in a new insert pump\",\"technician_user_id\":\"U-302\",\"contractor\":\"Sandstone Rod & Pump\",\"downtime_hours\":27,\"cost_usd\":{\"labor\":5227,\"parts\":11965,\"total\":17192},\"triggered_by_inspection_id\":null,\"report_file\":\"maintenance-reports/MNT-0302-031.md\"}\n\nRepair · MNT-0340-038 [MNT-0340-038]:\n{\"maintenance_id\":\"MNT-0340-038\",\"asset_id\":\"WELL-0340\",\"started_at\":\"2027-01-02T07:00:00Z\",\"completed_at\":\"2027-01-03T16:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"downhole_pump\",\"issue\":\"Recalled downhole pump replaced\",\"action_taken\":\"Pulled the recalled pump and ran in a new insert pump\",\"technician_user_id\":\"U-302\",\"contractor\":\"Sandstone Rod & Pump\",\"downtime_hours\":33,\"cost_usd\":{\"labor\":8483,\"parts\":11708,\"total\":20191},\"triggered_by_inspection_id\":null,\"report_file\":\"maintenance-reports/MNT-0340-038.md\"}",
+        "wellIds": [
+          "WELL-0302",
+          "WELL-0340",
+          "WELL-0345",
+          "WELL-0398",
+          "WELL-0427"
+        ],
+        "createdAt": "2026-10-17T11:11:05.802Z",
+        "response": {
+          "answer": "This calculation needs a supported domain tool or a narrower scope. The retrieved passages are evidence only and have not been aggregated.\n\nRelevant source passages:\n\nsupplier recall notice 2026 12 01 [SUPPLIER-RECALL-NOTICE-2026-12-01]:\n## How to find affected pumps\n\nThe lot number is stamped on the pump barrel. Your crews record it when the pump is installed\r\n(in your maintenance reports, on the line \"Parts installed\"). Only the pump that is in the well\r\ntoday matters: a recalled pump that has already been pulled and replaced needs no action.\n\nRepair · MNT-0302-031 [MNT-0302-031]:\n{\"maintenance_id\":\"MNT-0302-031\",\"asset_id\":\"WELL-0302\",\"started_at\":\"2026-12-22T07:00:00Z\",\"completed_at\":\"2026-12-23T10:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"downhole_pump\",\"issue\":\"Recalled downhole pump replaced\",\"action_taken\":\"Pulled the recalled pump and ran in a new insert pump\",\"technician_user_id\":\"U-302\",\"contractor\":\"Sandstone Rod & Pump\",\"downtime_hours\":27,\"cost_usd\":{\"labor\":5227,\"parts\":11965,\"total\":17192},\"triggered_by_inspection_id\":null,\"report_file\":\"maintenance-reports/MNT-0302-031.md\"}\n\nRepair · MNT-0340-038 [MNT-0340-038]:\n{\"maintenance_id\":\"MNT-0340-038\",\"asset_id\":\"WELL-0340\",\"started_at\":\"2027-01-02T07:00:00Z\",\"completed_at\":\"2027-01-03T16:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"downhole_pump\",\"issue\":\"Recalled downhole pump replaced\",\"action_taken\":\"Pulled the recalled pump and ran in a new insert pump\",\"technician_user_id\":\"U-302\",\"contractor\":\"Sandstone Rod & Pump\",\"downtime_hours\":33,\"cost_usd\":{\"labor\":8483,\"parts\":11708,\"total\":20191},\"triggered_by_inspection_id\":null,\"report_file\":\"maintenance-reports/MNT-0340-038.md\"}",
+          "citations": [
+            {
+              "id": "SUPPLIER-RECALL-NOTICE-2026-12-01",
+              "title": "supplier recall notice 2026 12 01",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/supplier-recall-notice-2026-12-01.md",
+              "excerpt": "## How to find affected pumps The lot number is stamped on the pump barrel. Your crews record it when the pump is installed (in your maintenance reports, on the line \"Parts installed\"). Only the pump that is in the well today matters: a recalled pump that has already been pulled and replaced needs no action. […] # Supplier Recall Notice — Downhole Rod Pumps **From:** Highline Pump Co., Quality Dep"
+            },
+            {
+              "id": "MNT-0302-031",
+              "title": "Repair · MNT-0302-031",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0302/maintenance.jsonl",
+              "assetId": "WELL-0302",
+              "excerpt": "{\"maintenance_id\":\"MNT-0302-031\",\"asset_id\":\"WELL-0302\",\"started_at\":\"2026-12-22T07:00:00Z\",\"completed_at\":\"2026-12-23T10:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"downhole_pump\",\"issue\":\"Recalled downhole pump replaced\",\"action_taken\":\"Pulled the recalled pump and ran in a new insert pump\",\"technician_user_id\":\"U-302\",\"contractor\":\"Sandstone Rod & Pump\",\"downtime_hours\":27,\"cost_us"
+            },
+            {
+              "id": "MNT-0340-038",
+              "title": "Repair · MNT-0340-038",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0340/maintenance.jsonl",
+              "assetId": "WELL-0340",
+              "excerpt": "{\"maintenance_id\":\"MNT-0340-038\",\"asset_id\":\"WELL-0340\",\"started_at\":\"2027-01-02T07:00:00Z\",\"completed_at\":\"2027-01-03T16:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"downhole_pump\",\"issue\":\"Recalled downhole pump replaced\",\"action_taken\":\"Pulled the recalled pump and ran in a new insert pump\",\"technician_user_id\":\"U-302\",\"contractor\":\"Sandstone Rod & Pump\",\"downtime_hours\":33,\"cost_us"
+            },
+            {
+              "id": "MNT-0345-039",
+              "title": "Repair · MNT-0345-039",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0345/maintenance.jsonl",
+              "assetId": "WELL-0345",
+              "excerpt": "{\"maintenance_id\":\"MNT-0345-039\",\"asset_id\":\"WELL-0345\",\"started_at\":\"2026-12-26T07:00:00Z\",\"completed_at\":\"2026-12-27T14:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"downhole_pump\",\"issue\":\"Recalled downhole pump replaced\",\"action_taken\":\"Pulled the recalled pump and ran in a new insert pump\",\"technician_user_id\":\"U-303\",\"contractor\":\"Sandstone Rod & Pump\",\"downtime_hours\":31,\"cost_us"
+            },
+            {
+              "id": "MNT-0398-025",
+              "title": "Repair · MNT-0398-025",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0398/maintenance.jsonl",
+              "assetId": "WELL-0398",
+              "excerpt": "{\"maintenance_id\":\"MNT-0398-025\",\"asset_id\":\"WELL-0398\",\"started_at\":\"2026-12-25T07:00:00Z\",\"completed_at\":\"2026-12-26T15:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"downhole_pump\",\"issue\":\"Recalled downhole pump replaced\",\"action_taken\":\"Pulled the recalled pump and ran in a new insert pump\",\"technician_user_id\":\"U-305\",\"contractor\":\"Sandstone Rod & Pump\",\"downtime_hours\":32,\"cost_us"
+            },
+            {
+              "id": "MNT-0427-025",
+              "title": "Repair · MNT-0427-025",
+              "type": "repair",
+              "path": "dataset/assets/WELL-0427/maintenance.jsonl",
+              "assetId": "WELL-0427",
+              "excerpt": "{\"maintenance_id\":\"MNT-0427-025\",\"asset_id\":\"WELL-0427\",\"started_at\":\"2026-12-08T07:00:00Z\",\"completed_at\":\"2026-12-09T10:00:00Z\",\"maintenance_type\":\"scheduled\",\"equipment_kind\":\"downhole_pump\",\"issue\":\"Recalled downhole pump replaced\",\"action_taken\":\"Pulled the recalled pump and ran in a new insert pump\",\"technician_user_id\":\"U-302\",\"contractor\":\"Sandstone Rod & Pump\",\"downtime_hours\":27,\"cost_us"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0302",
+            "WELL-0340",
+            "WELL-0345",
+            "WELL-0398",
+            "WELL-0427"
+          ],
+          "trace": [
+            {
+              "tool": "deterministic_planner",
+              "detail": "Hosted planner unavailable (invalid_plan); validated domain fallback used. Retry this question to reconnect.",
+              "durationMs": 2583
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 1
+            },
+            {
+              "tool": "calculation_guard",
+              "detail": "Unsupported aggregate request returned source passages without model arithmetic.",
+              "durationMs": 0
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "fallback",
+            "reason": "invalid_plan"
+          },
+          "durationMs": 2584
+        }
+      },
+      {
+        "userText": "Different topic. Who leads Northwest Production, and how many wells does that team run?",
+        "answer": "This calculation needs a supported domain tool or a narrower scope. The retrieved passages are evidence only and have not been aggregated.\n\nRelevant source passages:\n\nmoc 2026 031 [MOC-2026-031]:\n# Management of Change — MOC-2026-031\n\n**Title:** Temporary flowline bypass while check valves are on back-order\r\n**Date:** 19 Oct 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE\n\nmoc 2026 036 [MOC-2026-036]:\n# Management of Change — MOC-2026-036\n\n**Title:** Temporary flowline bypass during the winter valve program\r\n**Date:** 6 Nov 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE\n\nRepair report · MNT-0445-014 [MNT-0445-014]:\n# Maintenance Report — MNT-0445-014\n\n**Asset:** WELL-0445 (NW-12 Well 445, T500, Northwest Block 12)\r\n**Equipment:** esp pump\r\n**Work started:** 04 Jan 2025 08:00 · **Finished:** 14 Jan 2025 01:00 · **Well stopped for this job:** 233 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Brian Coleman\r\n**Triggered by:** inspection INS-0445-0114 on 2025-01-02\r\n**Report written:** 15 Jan 2025",
+        "wellIds": [
+          "WELL-0445",
+          "WELL-0329",
+          "WELL-0401",
+          "WELL-0352"
+        ],
+        "createdAt": "2026-10-17T11:11:10.275Z",
+        "response": {
+          "answer": "This calculation needs a supported domain tool or a narrower scope. The retrieved passages are evidence only and have not been aggregated.\n\nRelevant source passages:\n\nmoc 2026 031 [MOC-2026-031]:\n# Management of Change — MOC-2026-031\n\n**Title:** Temporary flowline bypass while check valves are on back-order\r\n**Date:** 19 Oct 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE\n\nmoc 2026 036 [MOC-2026-036]:\n# Management of Change — MOC-2026-036\n\n**Title:** Temporary flowline bypass during the winter valve program\r\n**Date:** 6 Nov 2026\r\n**Requested by:** Robert Hayes (U-301), maintenance lead\r\n**Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE\n\nRepair report · MNT-0445-014 [MNT-0445-014]:\n# Maintenance Report — MNT-0445-014\n\n**Asset:** WELL-0445 (NW-12 Well 445, T500, Northwest Block 12)\r\n**Equipment:** esp pump\r\n**Work started:** 04 Jan 2025 08:00 · **Finished:** 14 Jan 2025 01:00 · **Well stopped for this job:** 233 hours\r\n**Crew lead:** Megan Ward (U-305) · **Crew:** Brian Coleman\r\n**Triggered by:** inspection INS-0445-0114 on 2025-01-02\r\n**Report written:** 15 Jan 2025",
+          "citations": [
+            {
+              "id": "MOC-2026-031",
+              "title": "moc 2026 031",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-031.md",
+              "excerpt": "# Management of Change — MOC-2026-031 **Title:** Temporary flowline bypass while check valves are on back-order **Date:** 19 Oct 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Emily Carter (U-101), production supervisor; Laura Simmons (U-401), HSE […] ## Change The bypass routes production around a leaking check valve so the flowline can stay in service until the re"
+            },
+            {
+              "id": "MOC-2026-036",
+              "title": "moc 2026 036",
+              "type": "SOP",
+              "path": "dataset/fleet/sops/moc-2026-036.md",
+              "excerpt": "# Management of Change — MOC-2026-036 **Title:** Temporary flowline bypass during the winter valve program **Date:** 6 Nov 2026 **Requested by:** Robert Hayes (U-301), maintenance lead **Approved by:** Michael Turner (U-201), production supervisor; Chris Dalton (U-402), HSE […] ## Change A temporary flowline bypass is authorized on these wells: WELL-0087, WELL-0158, WELL-0249, WELL-0284, WELL-0356"
+            },
+            {
+              "id": "MNT-0445-014",
+              "title": "Repair report · MNT-0445-014",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0445/maintenance-reports/MNT-0445-014.md",
+              "assetId": "WELL-0445",
+              "excerpt": "# Maintenance Report — MNT-0445-014 **Asset:** WELL-0445 (NW-12 Well 445, T500, Northwest Block 12) **Equipment:** esp pump **Work started:** 04 Jan 2025 08:00 · **Finished:** 14 Jan 2025 01:00 · **Well stopped for this job:** 233 hours **Crew lead:** Megan Ward (U-305) · **Crew:** Brian Coleman **Triggered by:** inspection INS-0445-0114 on 2025-01-02 **Report written:** 15 Jan 2025 […] ## Testing"
+            },
+            {
+              "id": "MNT-0329-031",
+              "title": "Repair report · MNT-0329-031",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0329/maintenance-reports/MNT-0329-031.md",
+              "assetId": "WELL-0329",
+              "excerpt": "# Maintenance Report — MNT-0329-031 **Asset:** WELL-0329 (NW-12 Well 329, T500, Northwest Block 12) **Equipment:** esp pump **Work started:** 25 Sep 2026 08:00 · **Finished:** 29 Sep 2026 21:00 · **Well stopped for this job:** 109 hours **Crew lead:** Brian Coleman (U-304) · **Crew:** Kevin Price **Triggered by:** inspection INS-0329-0203 on 2026-09-24 **Report written:** 01 Oct 2026 […] ## Testin"
+            },
+            {
+              "id": "MNT-0401-030",
+              "title": "Repair report · MNT-0401-030",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0401/maintenance-reports/MNT-0401-030.md",
+              "assetId": "WELL-0401",
+              "excerpt": "# Maintenance Report — MNT-0401-030 **Asset:** WELL-0401 (NW-12 Well 401, T500, Northwest Block 12) **Equipment:** esp pump **Work started:** 26 Jul 2026 08:00 · **Finished:** 12 Aug 2026 07:00 · **Well stopped for this job:** 407 hours **Crew lead:** Brian Coleman (U-304) · **Crew:** Megan Ward, Daniel Foster **Triggered by:** inspection INS-0401-0196 on 2026-07-23 **Report written:** 14 Aug 2026"
+            },
+            {
+              "id": "MNT-0352-012",
+              "title": "Repair report · MNT-0352-012",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0352/maintenance-reports/MNT-0352-012.md",
+              "assetId": "WELL-0352",
+              "excerpt": "# Maintenance Report — MNT-0352-012 **Asset:** WELL-0352 (NW-12 Well 352, T500, Northwest Block 12) **Equipment:** esp pump **Work started:** 21 Sep 2024 08:00 · **Finished:** 25 Sep 2024 14:00 · **Well stopped for this job:** 102 hours **Crew lead:** Daniel Foster (U-302) · **Crew:** Megan Ward, Brian Coleman **Triggered by:** inspection INS-0352-0099 on 2024-09-19 **Report written:** 26 Sep 2024"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0445",
+            "WELL-0329",
+            "WELL-0401",
+            "WELL-0352"
+          ],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: search. Only this user’s last five exchanges were supplied.",
+              "durationMs": 4452
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 5
+            },
+            {
+              "tool": "calculation_guard",
+              "detail": "Unsupported aggregate request returned source passages without model arithmetic.",
+              "durationMs": 0
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 4458
+        }
+      }
+    ],
+    "revision": 15
+  }
+}

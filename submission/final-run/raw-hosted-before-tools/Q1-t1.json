@@ -1,0 +1,109 @@
+{
+  "q": "Q1",
+  "turn": 1,
+  "asker": "Turner",
+  "userId": "U-201",
+  "question": "All our wells feed one reservoir. Map the reservoir pressure across the field from the pressure data.",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 6194
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 6194,
+  "response": {
+    "userId": "U-201",
+    "response": {
+      "answer": "The provided evidence is insufficient to map the reservoir pressure across the field from the pressure data. [OM-T200]",
+      "citations": [
+        {
+          "id": "OM-T200",
+          "title": "T200 operating manual",
+          "type": "manual",
+          "path": "dataset/fleet/well-types/T200.md",
+          "excerpt": "# T200 Rod-Lift Oil Well — Operating & Maintenance Manual Document ID: OM-T200 · Revision 4 · Applies to all wells with `well_type = \"T200\"` […] ## 2. Equipment overview | Equipment | Typical model | Function | |---|---|---| | Wellhead | WH-3000 | Seals the well, holds the stuffing box and production valves | | Pump jack | PJ-228 | Converts motor rotation to reciprocating rod motion | | Rod string"
+        }
+      ],
+      "conflicts": [],
+      "referencedWellIds": [],
+      "trace": [
+        {
+          "tool": "gemini_planner",
+          "detail": "Structured plan validated: search. Only this user’s last five exchanges were supplied.",
+          "durationMs": 1916
+        },
+        {
+          "tool": "document_retrieval",
+          "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+          "durationMs": 3051
+        },
+        {
+          "tool": "synthesis_routing",
+          "detail": "Ordinary evidence lookup uses the primary fast model. Requested model: gemini-3.5-flash-lite.",
+          "durationMs": 0
+        },
+        {
+          "tool": "gemini_synthesis",
+          "detail": "Actual model: gemini-3.5-flash-lite. Grounded prose accepted after source-ID and numerical-token validation.",
+          "durationMs": 1162
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "hosted"
+      },
+      "durationMs": 6130
+    },
+    "history": [
+      {
+        "userText": "All our wells feed one reservoir. Map the reservoir pressure across the field from the pressure data.",
+        "answer": "The provided evidence is insufficient to map the reservoir pressure across the field from the pressure data. [OM-T200]",
+        "wellIds": [],
+        "createdAt": "2026-10-17T11:10:31.700Z",
+        "response": {
+          "answer": "The provided evidence is insufficient to map the reservoir pressure across the field from the pressure data. [OM-T200]",
+          "citations": [
+            {
+              "id": "OM-T200",
+              "title": "T200 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T200.md",
+              "excerpt": "# T200 Rod-Lift Oil Well — Operating & Maintenance Manual Document ID: OM-T200 · Revision 4 · Applies to all wells with `well_type = \"T200\"` […] ## 2. Equipment overview | Equipment | Typical model | Function | |---|---|---| | Wellhead | WH-3000 | Seals the well, holds the stuffing box and production valves | | Pump jack | PJ-228 | Converts motor rotation to reciprocating rod motion | | Rod string"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [],
+          "trace": [
+            {
+              "tool": "gemini_planner",
+              "detail": "Structured plan validated: search. Only this user’s last five exchanges were supplied.",
+              "durationMs": 1916
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 3051
+            },
+            {
+              "tool": "synthesis_routing",
+              "detail": "Ordinary evidence lookup uses the primary fast model. Requested model: gemini-3.5-flash-lite.",
+              "durationMs": 0
+            },
+            {
+              "tool": "gemini_synthesis",
+              "detail": "Actual model: gemini-3.5-flash-lite. Grounded prose accepted after source-ID and numerical-token validation.",
+              "durationMs": 1162
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "hosted"
+          },
+          "durationMs": 6130
+        }
+      }
+    ],
+    "revision": 1
+  }
+}

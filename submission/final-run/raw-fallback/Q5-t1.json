@@ -1,0 +1,193 @@
+{
+  "q": "Q5",
+  "turn": 1,
+  "asker": "Turner",
+  "userId": "U-201",
+  "question": "The State Oil & Gas Commission wrote to us in November 2026 about spills. Which of our spills does the letter cover, and on which ones are we not compliant? Show me a table.",
+  "attempts": [
+    {
+      "httpStatus": 200,
+      "wallMs": 2952
+    }
+  ],
+  "httpStatus": 200,
+  "wallMs": 2952,
+  "response": {
+    "userId": "U-201",
+    "response": {
+      "answer": "The field had 0 real spills, totalling 0 bbl from Nov 20, 2026 through Nov 20, 2026. ",
+      "visualization": {
+        "type": "table",
+        "title": "Real spills",
+        "columns": [
+          "Well",
+          "Date",
+          "Barrels",
+          "Area",
+          "Latitude",
+          "Longitude",
+          "Inspection"
+        ],
+        "rows": []
+      },
+      "citations": [],
+      "conflicts": [],
+      "referencedWellIds": [],
+      "trace": [
+        {
+          "tool": "deterministic_planner",
+          "detail": "Hosted planner unavailable (invalid_response); validated domain fallback used. Retry this question to reconnect.",
+          "durationMs": 2934
+        },
+        {
+          "tool": "spills",
+          "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+          "durationMs": 10
+        }
+      ],
+      "model": {
+        "name": "gemini-3.5-flash-lite",
+        "status": "fallback",
+        "reason": "invalid_response"
+      },
+      "durationMs": 2944
+    },
+    "history": [
+      {
+        "userText": "All our wells feed one reservoir. Map the reservoir pressure across the field from the pressure data.",
+        "answer": "Relevant source passages:\n\nOperator note · CTX-0067-002 [CTX-0067-002]:\n{\"note_id\":\"CTX-0067-002\",\"asset_id\":\"WELL-0067\",\"created_at\":\"2027-01-09T11:00:00Z\",\"author_user_id\":\"U-401\",\"note_type\":\"data_correction\",\"inspection_id\":\"INS-0067-0216\",\"field\":\"spill_est_volume_bbl\",\"original_value\":4.8,\"corrected_value\":5.6,\"text\":\"Inspection INS-0067-0216: spill volume corrected from 4.8 bbl (AI estimate) to 5.6 bbl measured by the clean-up crew.\",\"valid_from\":\"2027-01-07\",\"valid_to\":null}\n\nOperator note · CTX-0213-002 [CTX-0213-002]:\n{\"note_id\":\"CTX-0213-002\",\"asset_id\":\"WELL-0213\",\"created_at\":\"2027-01-14T18:30:00Z\",\"author_user_id\":\"U-502\",\"note_type\":\"data_correction\",\"inspection_id\":\"INS-0213-0221\",\"field\":\"wellhead_temp_c\",\"original_value\":10.7,\"corrected_value\":30.6,\"text\":\"Inspection INS-0213-0221: wellhead_temp_c corrected from 10.7 to 30.6. Thermal camera pointed at the shaded side of the wellhead; handheld re-measure.\",\"valid_from\":\"2027-01-14\",\"valid_to\":null}\n\nOperator note · CTX-0201-002 [CTX-0201-002]:\n{\"note_id\":\"CTX-0201-002\",\"asset_id\":\"WELL-0201\",\"created_at\":\"2027-01-14T18:30:00Z\",\"author_user_id\":\"U-503\",\"note_type\":\"data_correction\",\"inspection_id\":\"INS-0201-0218\",\"field\":\"wellhead_temp_c\",\"original_value\":32.1,\"corrected_value\":10.4,\"text\":\"Inspection INS-0201-0218: wellhead_temp_c corrected from 32.1 to 10.4. Reading taken off the hot separator, not the wellhead; handheld re-measure.\",\"valid_from\":\"2027-01-14\",\"valid_to\":null}",
+        "wellIds": [
+          "WELL-0067",
+          "WELL-0213",
+          "WELL-0201",
+          "WELL-0294",
+          "WELL-0556"
+        ],
+        "createdAt": "2026-10-17T11:00:12.210Z",
+        "response": {
+          "answer": "Relevant source passages:\n\nOperator note · CTX-0067-002 [CTX-0067-002]:\n{\"note_id\":\"CTX-0067-002\",\"asset_id\":\"WELL-0067\",\"created_at\":\"2027-01-09T11:00:00Z\",\"author_user_id\":\"U-401\",\"note_type\":\"data_correction\",\"inspection_id\":\"INS-0067-0216\",\"field\":\"spill_est_volume_bbl\",\"original_value\":4.8,\"corrected_value\":5.6,\"text\":\"Inspection INS-0067-0216: spill volume corrected from 4.8 bbl (AI estimate) to 5.6 bbl measured by the clean-up crew.\",\"valid_from\":\"2027-01-07\",\"valid_to\":null}\n\nOperator note · CTX-0213-002 [CTX-0213-002]:\n{\"note_id\":\"CTX-0213-002\",\"asset_id\":\"WELL-0213\",\"created_at\":\"2027-01-14T18:30:00Z\",\"author_user_id\":\"U-502\",\"note_type\":\"data_correction\",\"inspection_id\":\"INS-0213-0221\",\"field\":\"wellhead_temp_c\",\"original_value\":10.7,\"corrected_value\":30.6,\"text\":\"Inspection INS-0213-0221: wellhead_temp_c corrected from 10.7 to 30.6. Thermal camera pointed at the shaded side of the wellhead; handheld re-measure.\",\"valid_from\":\"2027-01-14\",\"valid_to\":null}\n\nOperator note · CTX-0201-002 [CTX-0201-002]:\n{\"note_id\":\"CTX-0201-002\",\"asset_id\":\"WELL-0201\",\"created_at\":\"2027-01-14T18:30:00Z\",\"author_user_id\":\"U-503\",\"note_type\":\"data_correction\",\"inspection_id\":\"INS-0201-0218\",\"field\":\"wellhead_temp_c\",\"original_value\":32.1,\"corrected_value\":10.4,\"text\":\"Inspection INS-0201-0218: wellhead_temp_c corrected from 32.1 to 10.4. Reading taken off the hot separator, not the wellhead; handheld re-measure.\",\"valid_from\":\"2027-01-14\",\"valid_to\":null}",
+          "citations": [
+            {
+              "id": "CTX-0067-002",
+              "title": "Operator note · CTX-0067-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0067/context.jsonl",
+              "assetId": "WELL-0067",
+              "excerpt": "{\"note_id\":\"CTX-0067-002\",\"asset_id\":\"WELL-0067\",\"created_at\":\"2027-01-09T11:00:00Z\",\"author_user_id\":\"U-401\",\"note_type\":\"data_correction\",\"inspection_id\":\"INS-0067-0216\",\"field\":\"spill_est_volume_bbl\",\"original_value\":4.8,\"corrected_value\":5.6,\"text\":\"Inspection INS-0067-0216: spill volume corrected from 4.8 bbl (AI estimate) to 5.6 bbl measured by the clean-up crew.\",\"valid_from\":\"2027-01-07\",\""
+            },
+            {
+              "id": "CTX-0213-002",
+              "title": "Operator note · CTX-0213-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0213/context.jsonl",
+              "assetId": "WELL-0213",
+              "excerpt": "{\"note_id\":\"CTX-0213-002\",\"asset_id\":\"WELL-0213\",\"created_at\":\"2027-01-14T18:30:00Z\",\"author_user_id\":\"U-502\",\"note_type\":\"data_correction\",\"inspection_id\":\"INS-0213-0221\",\"field\":\"wellhead_temp_c\",\"original_value\":10.7,\"corrected_value\":30.6,\"text\":\"Inspection INS-0213-0221: wellhead_temp_c corrected from 10.7 to 30.6. Thermal camera pointed at the shaded side of the wellhead; handheld re-measure"
+            },
+            {
+              "id": "CTX-0201-002",
+              "title": "Operator note · CTX-0201-002",
+              "type": "note",
+              "path": "dataset/assets/WELL-0201/context.jsonl",
+              "assetId": "WELL-0201",
+              "excerpt": "{\"note_id\":\"CTX-0201-002\",\"asset_id\":\"WELL-0201\",\"created_at\":\"2027-01-14T18:30:00Z\",\"author_user_id\":\"U-503\",\"note_type\":\"data_correction\",\"inspection_id\":\"INS-0201-0218\",\"field\":\"wellhead_temp_c\",\"original_value\":32.1,\"corrected_value\":10.4,\"text\":\"Inspection INS-0201-0218: wellhead_temp_c corrected from 32.1 to 10.4. Reading taken off the hot separator, not the wellhead; handheld re-measure.\",\""
+            },
+            {
+              "id": "OM-T200",
+              "title": "T200 operating manual",
+              "type": "manual",
+              "path": "dataset/fleet/well-types/T200.md",
+              "excerpt": "# T200 Rod-Lift Oil Well — Operating & Maintenance Manual Document ID: OM-T200 · Revision 4 · Applies to all wells with `well_type = \"T200\"` […] ## 2. Equipment overview | Equipment | Typical model | Function | |---|---|---| | Wellhead | WH-3000 | Seals the well, holds the stuffing box and production valves | | Pump jack | PJ-228 | Converts motor rotation to reciprocating rod motion | | Rod string"
+            },
+            {
+              "id": "MNT-0294-009",
+              "title": "Repair report · MNT-0294-009",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0294/maintenance-reports/MNT-0294-009.md",
+              "assetId": "WELL-0294",
+              "excerpt": "## Safety and permits - Pre-job safety meeting held with the crew before work started (WS-01). - Energy isolated: prime mover stopped at the bottom of the stroke, brake set and chained, motor disconnect locked and tagged, wellhead wing valve closed and tagged, pressure bled off (WS-02). - Personal H2S monitors worn; highest reading 4 ppm, below the 10 ppm stop-work level; one crew member's monitor"
+            },
+            {
+              "id": "MNT-0556-003",
+              "title": "Repair report · MNT-0556-003",
+              "type": "repair report",
+              "path": "dataset/assets/WELL-0556/maintenance-reports/MNT-0556-003.md",
+              "assetId": "WELL-0556",
+              "excerpt": "## Safety and permits - Pre-job safety meeting held with the crew before work started (WS-01). - Energy isolated: ESP drive stopped, drive disconnect locked and tagged, wellhead wing valve closed and tagged, pressure bled off (WS-02). - Personal H2S monitors worn; highest reading 0 ppm, below the 10 ppm stop-work level; one crew member's monitor had not been bump-tested that day (WS-03). […] ## Wh"
+            }
+          ],
+          "conflicts": [],
+          "referencedWellIds": [
+            "WELL-0067",
+            "WELL-0213",
+            "WELL-0201",
+            "WELL-0294",
+            "WELL-0556"
+          ],
+          "trace": [
+            {
+              "tool": "deterministic_planner",
+              "detail": "Hosted planner unavailable (invalid_response); validated domain fallback used. Retry this question to reconnect.",
+              "durationMs": 3049
+            },
+            {
+              "tool": "document_retrieval",
+              "detail": "Lexical index reused per dataset; 6 bounded evidence passages selected from 149877 records.",
+              "durationMs": 3558
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "fallback",
+            "reason": "invalid_response"
+          },
+          "durationMs": 6610
+        }
+      },
+      {
+        "userText": "The State Oil & Gas Commission wrote to us in November 2026 about spills. Which of our spills does the letter cover, and on which ones are we not compliant? Show me a table.",
+        "answer": "The field had 0 real spills, totalling 0 bbl from Nov 20, 2026 through Nov 20, 2026. ",
+        "wellIds": [],
+        "createdAt": "2026-10-17T11:00:24.504Z",
+        "response": {
+          "answer": "The field had 0 real spills, totalling 0 bbl from Nov 20, 2026 through Nov 20, 2026. ",
+          "visualization": {
+            "type": "table",
+            "title": "Real spills",
+            "columns": [
+              "Well",
+              "Date",
+              "Barrels",
+              "Area",
+              "Latitude",
+              "Longitude",
+              "Inspection"
+            ],
+            "rows": []
+          },
+          "citations": [],
+          "conflicts": [],
+          "referencedWellIds": [],
+          "trace": [
+            {
+              "tool": "deterministic_planner",
+              "detail": "Hosted planner unavailable (invalid_response); validated domain fallback used. Retry this question to reconnect.",
+              "durationMs": 2934
+            },
+            {
+              "tool": "spills",
+              "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
+              "durationMs": 10
+            }
+          ],
+          "model": {
+            "name": "gemini-3.5-flash-lite",
+            "status": "fallback",
+            "reason": "invalid_response"
+          },
+          "durationMs": 2944
+        }
+      }
+    ],
+    "revision": 5
+  }
+}
