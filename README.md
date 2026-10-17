@@ -58,7 +58,7 @@ Test dataset: 600 wells, 7 areas, 125,198 inspections, 17,415 repairs; "today" =
 | 7 | What operators are hearing (2 turns) | ✅ | Printed risk score over 175 noted wells: an overdue mandated check (T500 §5) outranks a not-yet-due one, plus recall, decline and repeat failures. All must-have wells are in the top 10. Crew picks **0263, 0219, 0202** (the oracle's set); 0202 is paired with 0219 because one trip covers the same block. |
 | 8 | Who told you that (5 turns) | ✅ | Unconfirmed claim recorded and attributed; private preference stays private; second-hand claim recorded but does not remove a well; sources stated every turn. |
 | 9 | Six topics, one session (6 turns) | ✅ x6 | Pumps, team lead, cold-weather SOP, "no H2S reading recorded", pumps not producing, and turn 6 **triage across the 57 wells discussed → WELL-0332 first** (unanswered gas report, unexplained stop), then 0160 and 0263. |
-| 10 | What are we waiting on | ✅ | 634 jobs: **Contractors 33%, Crews 27%, Weather 22%, Parts 18%**, median about 9 extra days; **no area stands out** (chi-square p about 0.92). Stacked bar by area. |
+| 10 | What are we waiting on | ✅ | 634 jobs: **Contractors 33%, Crews 27%, Weather 22%, Parts 18%**, median about 9 extra days. **Southeast Block 31 stands out** for contractor waits (43% of 40 jobs vs 33%; median 14 vs 9 extra days), with a small-sample caveat (chi-square p about 0.92). Stacked bar by area. |
 | 11 | Hotter wells | ✅ | **No region genuinely runs hotter.** SE-31 only looks hottest because 58% of its wells are T500; the type-adjusted delta is within +/-0.05 C. |
 
 Of the 21 turns, 19 ran on the hosted Gemini planner and 2 on the deterministic fallback (Q7 t2 and Q9 t3), with identical tool output. Every answer is flagged with its planner status.
@@ -324,7 +324,7 @@ Each paragraph: what was asked, what it answered, why it is right. Oracles are i
 - The pumps not producing, with their last repairs.
 - Turn 6 runs the deterministic **triage** tool over the 57 wells discussed and ranks safety > compliance > unexplained production loss > equipment. It puts **WELL-0332 first** (unanswered gas report with no H2S reading, plus a stop nothing explains), then 0160 and 0263.
 
-**[Q10](submission/final-run/oracle/Q10.md) · What are we waiting on.** Classified 634 jobs by delay reason from repair reports with a documented keyword map; Contractors 33%, Crews 27%, Weather 22%, Parts 18%, about 9 extra days; a chi-square test shows no area stands out. Shares by area plus a stacked bar.
+**[Q10](submission/final-run/oracle/Q10.md) · What are we waiting on.** Classifies 634 jobs by delay reason from the repair reports, using a documented keyword map: Contractors 33%, Crews 27%, Weather 22%, Parts 18%, about 9 extra days. It flags **Southeast Block 31** as standing out for contractor waits (43% of its 40 jobs; median 14 vs 9 extra days). It also states the caveat that, on 40 jobs, this is not statistically significant on its own (chi-square p ≈ 0.92), so it is an operational signal to check. Shares by area, plus a stacked bar.
 
 **[Q11](submission/final-run/oracle/Q11.md) · Hotter wells.** Naive temperatures make SE-31 look hottest, but 58% of its wells are T500 (which run warmer). Ambient is flat and the type-adjusted difference is within +/-0.05 C, so the honest answer is that no region consistently runs hotter.
 

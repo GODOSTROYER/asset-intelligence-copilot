@@ -7,15 +7,15 @@
   "attempts": [
     {
       "httpStatus": 200,
-      "wallMs": 2030
+      "wallMs": 2707
     }
   ],
   "httpStatus": 200,
-  "wallMs": 2030,
+  "wallMs": 2707,
   "response": {
     "userId": "U-201",
     "response": {
-      "answer": "For 634 jobs started in 2026 (of 4360 jobs started in that period; the rest record no wait) the repair report names why the well stayed shut in longer than the repair. Most common: Contractors 33%, Crews 27%, Weather 22%, Parts 18%. Typical (median) extra wait is about 9 days (field-wide median by reason: Parts 9 d, Crews 9 d, Contractors 9 d, Weather 9 d).\nNo area clearly stands out: area medians are 8 to 10 days and the reason mix is within chance (chi-square 10.3 on 18 degrees of freedom, p about 0.92).\nWorth watching only, small-sample noise: Southwest Block 24 (SW-24): Crews 18% of 66 jobs vs 27% field-wide (z -1.6).\nPer area (jobs; each reason as count (share of the area's waiting jobs) / median extra days; last value is the area median):\n- Southwest Block 23 (SW-23): 72 jobs; Parts 16 (22%) / 12.5 d; Crews 19 (26%) / 7 d; Contractors 21 (29%) / 9 d; Weather 16 (22%) / 9 d; area median 8.5 d\n- Southwest Block 24 (SW-24): 66 jobs; Parts 12 (18%) / 8 d; Crews 12 (18%) / 12 d; Contractors 27 (41%) / 9 d; Weather 15 (23%) / 10 d; area median 9 d\n- Northeast Block 7 (NE-07): 64 jobs; Parts 15 (23%) / 15 d; Crews 14 (22%) / 11.5 d; Contractors 20 (31%) / 9 d; Weather 15 (23%) / 9 d; area median 9 d\n- Northeast Block 8 (NE-08): 80 jobs; Parts 13 (16%) / 10 d; Crews 25 (31%) / 9 d; Contractors 24 (30%) / 9 d; Weather 18 (23%) / 8 d; area median 8 d\n- Southeast Block 31 (SE-31): 40 jobs; Parts 6 (15%) / 8.5 d; Crews 9 (23%) / 9 d; Contractors 17 (43%) / 14 d; Weather 8 (20%) / 12.5 d; area median 10 d\n- Northwest Block 12 (NW-12): 172 jobs; Parts 29 (17%) / 9 d; Crews 54 (31%) / 9 d; Contractors 52 (30%) / 9 d; Weather 37 (22%) / 9 d; area median 9 d\n- Southeast Block 32 (SE-32): 140 jobs; Parts 26 (19%) / 9.5 d; Crews 37 (26%) / 10 d; Contractors 46 (33%) / 9 d; Weather 31 (22%) / 8 d; area median 9 d\n- All areas: 634 jobs; Parts 117 (18%) / 9 d; Crews 170 (27%) / 9 d; Contractors 207 (33%) / 9 d; Weather 140 (22%) / 9 d; field median 9 d\nTest used: an area stands out if, with at least 30 jobs, a reason share differs from the field share by |z| >= 3 (binomial z-score; strict because there are 28 comparisons) or its median extra days differs from the field median by at least 3 days.\nReasons are classified from the \"What happened\" sentence of each repair report using this keyword map: Weather = rain, weather, storm, flood, snow, ice, impassable lease road; Parts = back-ordered, replacement part, parts, supplier, vendor, shipment; Crews = crew committed elsewhere (e.g. spill response), personnel; Contractors = weekday contractor slot, contractor; \"workover rig busy\": company rig = Crews, a named contractor rig = Contractors (future-tense reports use the job's contractor field).\nWording found in the reports: replacement part back-ordered 117, heavy rain / lease road impassable 140, contractor workover rig busy 76, crew on higher-priority spill response 112, weekday contractor slot 131, company workover rig busy 58.\nClassification choice: 134 jobs are \"workover rig busy\" waits. If every rig wait were called Crews instead, Crews would be 246 (39%) and Contractors 131 (21%).\n2 jobs are still in progress and their reports use future wording (\"expected to stay shut in\"); they are counted (MNT-0404-034, MNT-0496-033).\nSource: the recorded reason and the number of extra days are only in each repair report's \"What happened\" text; maintenance records have no reason field. 39 generic operator notes about waiting for parts or weather in this period carry no day count and do not reliably match the report of the nearest job, so they were ignored. Extra days are the number stated in the report (for rig waits, the days waited for the rig).",
+      "answer": "For 634 jobs started in 2026 (of 4360 jobs started in that period; the rest record no wait) the repair report names why the well stayed shut in longer than the repair. Most common: Contractors 33%, Crews 27%, Weather 22%, Parts 18%. Typical (median) extra wait is about 9 days (field-wide median by reason: Parts 9 d, Crews 9 d, Contractors 9 d, Weather 9 d).\nStands out: Southeast Block 31 (SE-31) for Contractors waits: 43% of its 40 waiting jobs vs 33% field-wide, and a median extra wait of 14 d for those jobs vs 9 d field-wide. Caveat: this rests on 40 jobs, so on its own it is not statistically significant (chi-square 10.3 on 18 degrees of freedom, p about 0.92); treat it as an operational signal worth checking with the contractors in that area.\nWorth watching only, small-sample noise: Southwest Block 24 (SW-24): Crews 18% of 66 jobs vs 27% field-wide (z -1.6).\nPer area (jobs; each reason as count (share of the area's waiting jobs) / median extra days; last value is the area median):\n- Southwest Block 23 (SW-23): 72 jobs; Parts 16 (22%) / 12.5 d; Crews 19 (26%) / 7 d; Contractors 21 (29%) / 9 d; Weather 16 (22%) / 9 d; area median 8.5 d\n- Southwest Block 24 (SW-24): 66 jobs; Parts 12 (18%) / 8 d; Crews 12 (18%) / 12 d; Contractors 27 (41%) / 9 d; Weather 15 (23%) / 10 d; area median 9 d\n- Northeast Block 7 (NE-07): 64 jobs; Parts 15 (23%) / 15 d; Crews 14 (22%) / 11.5 d; Contractors 20 (31%) / 9 d; Weather 15 (23%) / 9 d; area median 9 d\n- Northeast Block 8 (NE-08): 80 jobs; Parts 13 (16%) / 10 d; Crews 25 (31%) / 9 d; Contractors 24 (30%) / 9 d; Weather 18 (23%) / 8 d; area median 8 d\n- Southeast Block 31 (SE-31): 40 jobs; Parts 6 (15%) / 8.5 d; Crews 9 (23%) / 9 d; Contractors 17 (43%) / 14 d; Weather 8 (20%) / 12.5 d; area median 10 d\n- Northwest Block 12 (NW-12): 172 jobs; Parts 29 (17%) / 9 d; Crews 54 (31%) / 9 d; Contractors 52 (30%) / 9 d; Weather 37 (22%) / 9 d; area median 9 d\n- Southeast Block 32 (SE-32): 140 jobs; Parts 26 (19%) / 9.5 d; Crews 37 (26%) / 10 d; Contractors 46 (33%) / 9 d; Weather 31 (22%) / 8 d; area median 9 d\n- All areas: 634 jobs; Parts 117 (18%) / 9 d; Crews 170 (27%) / 9 d; Contractors 207 (33%) / 9 d; Weather 140 (22%) / 9 d; field median 9 d\nTest used: an area stands out if, with at least 30 jobs, a reason share differs from the field share by |z| >= 3 (binomial z-score; strict because there are 28 comparisons) or its median extra days differs from the field median by at least 3 days.\nReasons are classified from the \"What happened\" sentence of each repair report using this keyword map: Weather = rain, weather, storm, flood, snow, ice, impassable lease road; Parts = back-ordered, replacement part, parts, supplier, vendor, shipment; Crews = crew committed elsewhere (e.g. spill response), personnel; Contractors = weekday contractor slot, contractor; \"workover rig busy\": company rig = Crews, a named contractor rig = Contractors (future-tense reports use the job's contractor field).\nWording found in the reports: replacement part back-ordered 117, heavy rain / lease road impassable 140, contractor workover rig busy 76, crew on higher-priority spill response 112, weekday contractor slot 131, company workover rig busy 58.\nClassification choice: 134 jobs are \"workover rig busy\" waits. If every rig wait were called Crews instead, Crews would be 246 (39%) and Contractors 131 (21%).\n2 jobs are still in progress and their reports use future wording (\"expected to stay shut in\"); they are counted (MNT-0404-034, MNT-0496-033).\nSource: the recorded reason and the number of extra days are only in each repair report's \"What happened\" text; maintenance records have no reason field. 39 generic operator notes about waiting for parts or weather in this period carry no day count and do not reliably match the report of the nearest job, so they were ignored. Extra days are the number stated in the report (for rig waits, the days waited for the rig).",
       "visualization": {
         "type": "bar",
         "title": "Why wells stayed shut in longer than the repair, by area (jobs started 2026)",
@@ -1391,449 +1391,24 @@
         {
           "tool": "gemini_planner",
           "detail": "Structured plan validated: delay_reasons. Only this user’s last five exchanges were supplied.",
-          "durationMs": 1984
+          "durationMs": 2586
         },
         {
           "tool": "delay_reasons",
           "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-          "durationMs": 33
+          "durationMs": 73
         }
       ],
       "model": {
         "name": "gemini-3.5-flash-lite",
         "status": "hosted"
       },
-      "durationMs": 2017
+      "durationMs": 2659
     },
     "history": [
       {
-        "userText": "All our wells feed one reservoir. Map the reservoir pressure across the field from the pressure data.",
-        "answer": "The data cannot answer this. It contains no reservoir pressure, and no tubing, casing, bottom-hole or live wellhead pressure measurements, for any well, so a pressure map or ranking cannot be drawn and I have not estimated one (for example from temperature, well type or production state).\nWhat I scanned: field names in inspection, repair (maintenance), operator note / context, regulatory event, well metadata records (68 field names in all) and the text of 149,877 documents. Pressure-like field names found: none. Reservoir/pool/formation fields in well metadata: none.\nPressure-related facts that do exist, none of which is reservoir pressure:\n- Flowline pressure tests in repair reports: 2,432 reports on 561 wells state a one-off test of a repaired flowline section (test pressure 188 to 400 psi, flowline maximum operating pressure 150 to 320 psi, held 4 hours). These are integrity tests of a repaired section, per job, not a field or reservoir reading.\n- Separator alarm notes: 2 operator note(s) record a high pressure alarm on the separator (CTX-0422-003 on WELL-0422 2027-01-14; CTX-0481-006 on WELL-0481 2027-01-14), with no pressure value. An alarm is an event, not a measurement.\n- Equipment ratings in the well-type manuals (T200: \"Maximum allowable wellhead working pressure: 3,000 psi\") are design limits, not readings. 2004 further repair reports mention pressure testing or bleeding off pressure without a figure.\nThe word \"reservoir\" appears only in generic manual text (OM-T200), and the data never states that wells share one reservoir.\nTo map reservoir pressure the data would need periodic or static pressure surveys (bottom-hole or shut-in wellhead pressure) per well, or a SCADA/well-test pressure feed with timestamps and units. What I can show instead, clearly labelled: wellhead and ambient temperature per inspection with producing status by the manual rule, spill volumes, and downtime. The requested map view is not supported for this result; the available evidence is shown as text.",
-        "wellIds": [
-          "WELL-0422",
-          "WELL-0481"
-        ],
-        "createdAt": "2026-10-17T11:55:13.885Z",
-        "response": {
-          "answer": "The data cannot answer this. It contains no reservoir pressure, and no tubing, casing, bottom-hole or live wellhead pressure measurements, for any well, so a pressure map or ranking cannot be drawn and I have not estimated one (for example from temperature, well type or production state).\nWhat I scanned: field names in inspection, repair (maintenance), operator note / context, regulatory event, well metadata records (68 field names in all) and the text of 149,877 documents. Pressure-like field names found: none. Reservoir/pool/formation fields in well metadata: none.\nPressure-related facts that do exist, none of which is reservoir pressure:\n- Flowline pressure tests in repair reports: 2,432 reports on 561 wells state a one-off test of a repaired flowline section (test pressure 188 to 400 psi, flowline maximum operating pressure 150 to 320 psi, held 4 hours). These are integrity tests of a repaired section, per job, not a field or reservoir reading.\n- Separator alarm notes: 2 operator note(s) record a high pressure alarm on the separator (CTX-0422-003 on WELL-0422 2027-01-14; CTX-0481-006 on WELL-0481 2027-01-14), with no pressure value. An alarm is an event, not a measurement.\n- Equipment ratings in the well-type manuals (T200: \"Maximum allowable wellhead working pressure: 3,000 psi\") are design limits, not readings. 2004 further repair reports mention pressure testing or bleeding off pressure without a figure.\nThe word \"reservoir\" appears only in generic manual text (OM-T200), and the data never states that wells share one reservoir.\nTo map reservoir pressure the data would need periodic or static pressure surveys (bottom-hole or shut-in wellhead pressure) per well, or a SCADA/well-test pressure feed with timestamps and units. What I can show instead, clearly labelled: wellhead and ambient temperature per inspection with producing status by the manual rule, spill volumes, and downtime. The requested map view is not supported for this result; the available evidence is shown as text.",
-          "citations": [
-            {
-              "id": "MNT-0001-002",
-              "title": "Repair report · MNT-0001-002",
-              "type": "repair report",
-              "path": "dataset/assets/WELL-0001/maintenance-reports/MNT-0001-002.md",
-              "excerpt": "Pressure-tested the repaired section at 196 psi (1.25 × the flowline's maximum operating pressure of 157 psi) and held it for 4 hours with no pressure drop (WS-05). The well was returned to production. ## Spill clean-up and waste",
-              "assetId": "WELL-0001"
-            },
-            {
-              "id": "CTX-0422-003",
-              "title": "Operator note · CTX-0422-003",
-              "type": "note",
-              "path": "dataset/assets/WELL-0422/context.jsonl",
-              "excerpt": "asset id: WELL-0422 · created at: 2027-01-14T21:35:00Z · author user id: U-606 · note type: operator_note · text: Shut in WELL-0422 for the night, high pressure alarm on the separator. · valid from: 2027-01-14 · note id: CTX-0422-003",
-              "assetId": "WELL-0422"
-            },
-            {
-              "id": "CTX-0481-006",
-              "title": "Operator note · CTX-0481-006",
-              "type": "note",
-              "path": "dataset/assets/WELL-0481/context.jsonl",
-              "excerpt": "asset id: WELL-0481 · created at: 2027-01-14T18:50:00Z · author user id: U-506 · note type: operator_note · text: Shut in WELL-0481 for the night, high pressure alarm on the separator. · valid from: 2027-01-14 · note id: CTX-0481-006",
-              "assetId": "WELL-0481"
-            },
-            {
-              "id": "OM-T200",
-              "title": "T200 operating manual",
-              "type": "manual",
-              "path": "dataset/fleet/well-types/T200.md",
-              "excerpt": "### 9.1 Pressure Maximum allowable wellhead working pressure: 3,000 psi. ### 9.2 Stroke"
-            },
-            {
-              "id": "OM-T350",
-              "title": "T350 operating manual",
-              "type": "manual",
-              "path": "dataset/fleet/well-types/T350.md",
-              "excerpt": "|---|---|---| | Wellhead rating | 3,000 psi | 5,000 psi | | Pump jack | PJ-228 | PJ-456 | | Normal stroke rate | 6–9 spm | 5–8 spm |"
-            },
-            {
-              "id": "OM-T500",
-              "title": "T500 operating manual",
-              "type": "manual",
-              "path": "dataset/fleet/well-types/T500.md",
-              "excerpt": "# T500 Electric Submersible Pump Oil Well — Operating & Maintenance Manual > Fictional manual written for the FlytBase Asset Copilot hackathon. Modelled on typical > electric submersible pump (ESP) well practice. Not for real-world operational use. Document ID: OM-T500 · Revision 1 · Applies to all wells with `well_type = \"T500\"` ## 1. Scope The T500 is a high-rate well lifted by an **electric submersible pump (ESP)** instead of a pump jack and rod string. There is no surface pumping unit: a variable-speed drive on the pad powers a motor and multistage pump hung on the tubing deep in the well."
-            }
-          ],
-          "conflicts": [],
-          "referencedWellIds": [
-            "WELL-0422",
-            "WELL-0481"
-          ],
-          "trace": [
-            {
-              "tool": "gemini_planner",
-              "detail": "Structured plan validated: data_availability. Only this user’s last five exchanges were supplied.",
-              "durationMs": 2439
-            },
-            {
-              "tool": "data_availability",
-              "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 60
-            }
-          ],
-          "model": {
-            "name": "gemini-3.5-flash-lite",
-            "status": "hosted"
-          },
-          "durationMs": 2499
-        }
-      },
-      {
-        "userText": "The State Oil & Gas Commission wrote to us in November 2026 about spills. Which of our spills does the letter cover, and on which ones are we not compliant? Show me a table.",
-        "answer": "The letter from State Oil & Gas Commission dated 20 Nov 2026 covers reportable spills (5 bbl or more) in Northeast Block 7 or Northeast Block 8 discovered since 1 Jun 2026, excluding detections later confirmed not to be crude oil. Soil results are due 15 Jan 2027 (today).\nScope narrowed to your team (TEAM-NE wells at the time of the spill).\n6 spills are covered. Compliance test (HSE note in the letter): the clean-up report must contain the sentence \"Soil samples sent to the lab.\"; field soil readings do not count.\nCompliant (3): WELL-0119, WELL-0168, WELL-0277. Not compliant (3): WELL-0123 (no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.68% TPH)); WELL-0182 (no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.74% TPH)); WELL-0262 (no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.77% TPH)).\nSeparate Spill Response SOP timing findings (not part of the letter test): WELL-0168 - SR-03 verification came 75 days after discovery vs 60 days (REG-0168-010) | WELL-0182 - SR-01 missed: written notice 50 h vs 24 h (REG-0182-003; NOV REG-0182-004 2027-01-02, USD 2,500, open) | WELL-0262 - SR-01 missed: written notice 17 h vs 12 h (REG-0262-001; no NOV yet); SR-02 missed: contained 6.4 h vs 4 h | WELL-0277 - SR-01 missed: written notice 38 h vs 24 h (REG-0277-001; NOV REG-0277-002 2026-10-18, USD 5,000, closed).",
-        "wellIds": [
-          "WELL-0119",
-          "WELL-0123",
-          "WELL-0168",
-          "WELL-0182",
-          "WELL-0262",
-          "WELL-0277"
-        ],
-        "createdAt": "2026-10-17T11:55:23.887Z",
-        "response": {
-          "answer": "The letter from State Oil & Gas Commission dated 20 Nov 2026 covers reportable spills (5 bbl or more) in Northeast Block 7 or Northeast Block 8 discovered since 1 Jun 2026, excluding detections later confirmed not to be crude oil. Soil results are due 15 Jan 2027 (today).\nScope narrowed to your team (TEAM-NE wells at the time of the spill).\n6 spills are covered. Compliance test (HSE note in the letter): the clean-up report must contain the sentence \"Soil samples sent to the lab.\"; field soil readings do not count.\nCompliant (3): WELL-0119, WELL-0168, WELL-0277. Not compliant (3): WELL-0123 (no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.68% TPH)); WELL-0182 (no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.74% TPH)); WELL-0262 (no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.77% TPH)).\nSeparate Spill Response SOP timing findings (not part of the letter test): WELL-0168 - SR-03 verification came 75 days after discovery vs 60 days (REG-0168-010) | WELL-0182 - SR-01 missed: written notice 50 h vs 24 h (REG-0182-003; NOV REG-0182-004 2027-01-02, USD 2,500, open) | WELL-0262 - SR-01 missed: written notice 17 h vs 12 h (REG-0262-001; no NOV yet); SR-02 missed: contained 6.4 h vs 4 h | WELL-0277 - SR-01 missed: written notice 38 h vs 24 h (REG-0277-001; NOV REG-0277-002 2026-10-18, USD 5,000, closed).",
-          "visualization": {
-            "type": "table",
-            "title": "Spills covered by regulator letter 2026 11 20 and soil-sample compliance",
-            "columns": [
-              "Well",
-              "Area",
-              "Inspection",
-              "Volume (bbl)",
-              "Clean-up job",
-              "Compliant?"
-            ],
-            "rows": [
-              [
-                "WELL-0119",
-                "Northeast Block 7",
-                "INS-0119-0209, 2026-11-05",
-                6,
-                "MNT-0119-029 (flowline, 2026-11-06)",
-                "Yes - report says \"Soil samples sent to the lab.\""
-              ],
-              [
-                "WELL-0123",
-                "Northeast Block 7",
-                "INS-0123-0093, 2026-09-24",
-                6,
-                "MNT-0123-014 (flowline, 2026-09-25)",
-                "No - no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.68% TPH)"
-              ],
-              [
-                "WELL-0168",
-                "Northeast Block 8",
-                "INS-0168-0190, 2026-06-11",
-                5.6,
-                "MNT-0168-024 (flowline, 2026-06-12)",
-                "Yes - report says \"Soil samples sent to the lab.\". Also: SR-03 verification came 75 days after discovery vs 60 days (REG-0168-010)"
-              ],
-              [
-                "WELL-0182",
-                "Northeast Block 8",
-                "INS-0182-0208, 2026-12-03",
-                5.2,
-                "MNT-0182-028 (flowline, 2026-12-04)",
-                "No - no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.74% TPH). Also: SR-01 missed: written notice 50 h vs 24 h (REG-0182-003; NOV REG-0182-004 2027-01-02, USD 2,500, open)"
-              ],
-              [
-                "WELL-0262",
-                "Northeast Block 8",
-                "INS-0262-0218, 2027-01-07",
-                6.1,
-                "MNT-0262-029 (flowline, 2027-01-08)",
-                "No - no \"Soil samples sent to the lab.\" sentence in the clean-up report (only 4 field soil samples, 0.77% TPH). Also: SR-01 missed: written notice 17 h vs 12 h (REG-0262-001; no NOV yet); SR-02 missed: contained 6.4 h vs 4 h"
-              ],
-              [
-                "WELL-0277",
-                "Northeast Block 7",
-                "INS-0277-0205, 2026-10-01",
-                6.2,
-                "MNT-0277-031 (flowline, 2026-10-02)",
-                "Yes - report says \"Soil samples sent to the lab.\". Also: SR-01 missed: written notice 38 h vs 24 h (REG-0277-001; NOV REG-0277-002 2026-10-18, USD 5,000, closed)"
-              ]
-            ]
-          },
-          "citations": [
-            {
-              "id": "REGULATOR-LETTER-2026-11-20",
-              "title": "regulator letter 2026 11 20",
-              "type": "SOP",
-              "path": "dataset/fleet/sops/regulator-letter-2026-11-20.md",
-              "excerpt": "**Date:** 20 Nov 2026 **Subject:** Soil sampling after reportable spills in Northeast Block 7 and Northeast Block 8 Our review of recent spill reports from your Northeast Block 7 and Northeast Block 8 leases found"
-            },
-            {
-              "id": "SPILL-RESPONSE-SOP",
-              "title": "spill response sop",
-              "type": "SOP",
-              "path": "dataset/fleet/sops/spill-response-sop.md",
-              "excerpt": "|---|---|---| | 5 | from 1 Jan 2027 | SR-01 written notice deadline cut from 24 hours to **12 hours** | | 4 | before 1 Jan 2027 | SR-01 written notice within 24 hours |"
-            },
-            {
-              "id": "INS-0119-0209",
-              "title": "Inspection · INS-0119-0209",
-              "type": "inspection",
-              "path": "dataset/assets/WELL-0119/inspections.jsonl",
-              "excerpt": "inspection id: INS-0119-0209 · asset id: WELL-0119 · inspected at: 2026-11-05T14:15:00Z · inspector user id: U-202 · method: drone · ambient temp c: 15 · wellhead temp c: 47 · spill detected: true · spill area pct: 11.6 · spill est volume bbl: 6 · notes: Staining along flowline route.",
-              "assetId": "WELL-0119"
-            },
-            {
-              "id": "MNT-0119-029",
-              "title": "Repair · MNT-0119-029",
-              "type": "repair",
-              "path": "dataset/assets/WELL-0119/maintenance.jsonl",
-              "excerpt": "maintenance id: MNT-0119-029 · asset id: WELL-0119 · started at: 2026-11-06T08:00:00Z · completed at: 2026-11-07T02:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline leak causing spill · action taken: Replaced leaking flowline section and remediated soil · technician user id: U-303 · contractor: Tumbleweed Flowline Co. · downtime hours: 18 · triggered by inspection id: INS-0119-0209 · report file: maintenance-reports/MNT-0119-029.md",
-              "assetId": "WELL-0119"
-            },
-            {
-              "id": "MNT-0119-029",
-              "title": "Repair report · MNT-0119-029",
-              "type": "repair report",
-              "path": "dataset/assets/WELL-0119/maintenance-reports/MNT-0119-029.md",
-              "excerpt": "- 4 soil samples taken around the spill; the highest result after clean-up was 0.83% TPH, below the 1.0% target (SR-03). - Soil samples sent to the lab. ## Parts and cost",
-              "assetId": "WELL-0119"
-            },
-            {
-              "id": "INS-0123-0093",
-              "title": "Inspection · INS-0123-0093",
-              "type": "inspection",
-              "path": "dataset/assets/WELL-0123/inspections.jsonl",
-              "excerpt": "inspection id: INS-0123-0093 · asset id: WELL-0123 · inspected at: 2026-09-24T13:30:00Z · inspector user id: U-204 · method: drone · ambient temp c: 25 · wellhead temp c: 45.3 · spill detected: true · spill area pct: 10.1 · spill est volume bbl: 6 · notes: Staining along flowline route.",
-              "assetId": "WELL-0123"
-            },
-            {
-              "id": "MNT-0123-014",
-              "title": "Repair · MNT-0123-014",
-              "type": "repair",
-              "path": "dataset/assets/WELL-0123/maintenance.jsonl",
-              "excerpt": "maintenance id: MNT-0123-014 · asset id: WELL-0123 · started at: 2026-09-25T08:00:00Z · completed at: 2026-09-25T21:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline leak causing spill · action taken: Replaced leaking flowline section and remediated soil · technician user id: U-302 · contractor: Tumbleweed Flowline Co. · downtime hours: 13 · triggered by inspection id: INS-0123-0093 · report file: maintenance-reports/MNT-0123-014.md",
-              "assetId": "WELL-0123"
-            },
-            {
-              "id": "MNT-0123-014",
-              "title": "Repair report · MNT-0123-014",
-              "type": "repair report",
-              "path": "dataset/assets/WELL-0123/maintenance-reports/MNT-0123-014.md",
-              "excerpt": "## Spill clean-up and waste - About 3.5 m³ of stained soil excavated, bagged and sent to an approved disposal site under waste manifest WM-0123-014 (WS-06).",
-              "assetId": "WELL-0123"
-            },
-            {
-              "id": "INS-0168-0190",
-              "title": "Inspection · INS-0168-0190",
-              "type": "inspection",
-              "path": "dataset/assets/WELL-0168/inspections.jsonl",
-              "excerpt": "inspection id: INS-0168-0190 · asset id: WELL-0168 · inspected at: 2026-06-11T07:00:00Z · inspector user id: U-202 · method: manual · ambient temp c: 35.4 · wellhead temp c: 66.4 · spill detected: true · spill area pct: 10.7 · spill est volume bbl: 5.6 · notes: Staining along flowline route.",
-              "assetId": "WELL-0168"
-            },
-            {
-              "id": "MNT-0168-024",
-              "title": "Repair · MNT-0168-024",
-              "type": "repair",
-              "path": "dataset/assets/WELL-0168/maintenance.jsonl",
-              "excerpt": "maintenance id: MNT-0168-024 · asset id: WELL-0168 · started at: 2026-06-12T08:00:00Z · completed at: 2026-06-13T02:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline leak causing spill · action taken: Replaced leaking flowline section and remediated soil · technician user id: U-304 · contractor: Tumbleweed Flowline Co. · downtime hours: 18 · triggered by inspection id: INS-0168-0190 · report file: maintenance-reports/MNT-0168-024.md",
-              "assetId": "WELL-0168"
-            },
-            {
-              "id": "MNT-0168-024",
-              "title": "Repair report · MNT-0168-024",
-              "type": "repair report",
-              "path": "dataset/assets/WELL-0168/maintenance-reports/MNT-0168-024.md",
-              "excerpt": "- 4 soil samples taken around the spill; the highest result after clean-up was 0.61% TPH, below the 1.0% target (SR-03). - Soil samples sent to the lab. ## Parts and cost",
-              "assetId": "WELL-0168"
-            },
-            {
-              "id": "REG-0168-009",
-              "title": "Regulator event · REG-0168-009",
-              "type": "regulator",
-              "path": "dataset/assets/WELL-0168/regulatory-events.jsonl",
-              "excerpt": "asset id: WELL-0168 · date: 2026-06-12 · agency: State Oil & Gas Commission · event type: spill_report_filed · protocol id: SR-01 · related inspection id: INS-0168-0190 · detail: Operator filed spill report 18 h after detection; est. 5.6 bbl crude. · hours to report: 18 · fine usd: 0 · status: closed · event id: REG-0168-009",
-              "assetId": "WELL-0168"
-            },
-            {
-              "id": "REG-0168-010",
-              "title": "Regulator event · REG-0168-010",
-              "type": "regulator",
-              "path": "dataset/assets/WELL-0168/regulatory-events.jsonl",
-              "excerpt": "asset id: WELL-0168 · date: 2026-08-25 · agency: Regional Environmental Protection Office · event type: site_inspection · protocol id: SR-03 · related inspection id: INS-0168-0190 · detail: Remediation verified; site meets cleanup standard. · fine usd: 0 · status: closed · event id: REG-0168-010",
-              "assetId": "WELL-0168"
-            },
-            {
-              "id": "INS-0182-0208",
-              "title": "Inspection · INS-0182-0208",
-              "type": "inspection",
-              "path": "dataset/assets/WELL-0182/inspections.jsonl",
-              "excerpt": "inspection id: INS-0182-0208 · asset id: WELL-0182 · inspected at: 2026-12-03T11:45:00Z · inspector user id: U-204 · method: drone · ambient temp c: 9.5 · wellhead temp c: 40.9 · spill detected: true · spill area pct: 8.8 · spill est volume bbl: 5.2 · notes: Dark staining on pad.",
-              "assetId": "WELL-0182"
-            },
-            {
-              "id": "MNT-0182-028",
-              "title": "Repair · MNT-0182-028",
-              "type": "repair",
-              "path": "dataset/assets/WELL-0182/maintenance.jsonl",
-              "excerpt": "maintenance id: MNT-0182-028 · asset id: WELL-0182 · started at: 2026-12-04T08:00:00Z · completed at: 2026-12-05T10:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline leak causing spill · action taken: Replaced leaking flowline section and remediated soil · technician user id: U-303 · contractor: Tumbleweed Flowline Co. · downtime hours: 26 · triggered by inspection id: INS-0182-0208 · report file: maintenance-reports/MNT-0182-028.md",
-              "assetId": "WELL-0182"
-            },
-            {
-              "id": "MNT-0182-028",
-              "title": "Repair report · MNT-0182-028",
-              "type": "repair report",
-              "path": "dataset/assets/WELL-0182/maintenance-reports/MNT-0182-028.md",
-              "excerpt": "## Spill clean-up and waste - About 3.1 m³ of stained soil excavated, bagged and sent to an approved disposal site under waste manifest WM-0182-028 (WS-06).",
-              "assetId": "WELL-0182"
-            },
-            {
-              "id": "REG-0182-003",
-              "title": "Regulator event · REG-0182-003",
-              "type": "regulator",
-              "path": "dataset/assets/WELL-0182/regulatory-events.jsonl",
-              "excerpt": "asset id: WELL-0182 · date: 2026-12-05 · agency: State Oil & Gas Commission · event type: spill_report_filed · protocol id: SR-01 · related inspection id: INS-0182-0208 · detail: Operator filed spill report 50 h after detection; est. 5.2 bbl crude. · hours to report: 50 · fine usd: 0 · status: closed · event id: REG-0182-003",
-              "assetId": "WELL-0182"
-            },
-            {
-              "id": "REG-0182-004",
-              "title": "Regulator event · REG-0182-004",
-              "type": "regulator",
-              "path": "dataset/assets/WELL-0182/regulatory-events.jsonl",
-              "excerpt": "asset id: WELL-0182 · date: 2027-01-02 · agency: State Oil & Gas Commission · event type: notice_of_violation · protocol id: SR-01 · related inspection id: INS-0182-0208 · detail: Reportable spill not reported within 24 hours of discovery. · hours to report: 50 · fine usd: 2500 · status: open · event id: REG-0182-004",
-              "assetId": "WELL-0182"
-            },
-            {
-              "id": "REG-0182-005",
-              "title": "Regulator event · REG-0182-005",
-              "type": "regulator",
-              "path": "dataset/assets/WELL-0182/regulatory-events.jsonl",
-              "excerpt": "asset id: WELL-0182 · date: 2027-01-12 · agency: Regional Environmental Protection Office · event type: site_inspection · protocol id: SR-03 · related inspection id: INS-0182-0208 · detail: Remediation verified; site meets cleanup standard. · fine usd: 0 · status: closed · event id: REG-0182-005",
-              "assetId": "WELL-0182"
-            },
-            {
-              "id": "INS-0262-0218",
-              "title": "Inspection · INS-0262-0218",
-              "type": "inspection",
-              "path": "dataset/assets/WELL-0262/inspections.jsonl",
-              "excerpt": "inspection id: INS-0262-0218 · asset id: WELL-0262 · inspected at: 2027-01-07T08:30:00Z · inspector user id: U-204 · method: drone · ambient temp c: 9.3 · wellhead temp c: 33 · spill detected: true · spill area pct: 12.6 · spill est volume bbl: 6.1 · notes: Staining along flowline route.",
-              "assetId": "WELL-0262"
-            },
-            {
-              "id": "MNT-0262-029",
-              "title": "Repair · MNT-0262-029",
-              "type": "repair",
-              "path": "dataset/assets/WELL-0262/maintenance.jsonl",
-              "excerpt": "maintenance id: MNT-0262-029 · asset id: WELL-0262 · started at: 2027-01-08T08:00:00Z · completed at: 2027-01-08T19:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline leak causing spill · action taken: Replaced leaking flowline section and remediated soil · technician user id: U-305 · contractor: Tumbleweed Flowline Co. · downtime hours: 11 · triggered by inspection id: INS-0262-0218 · report file: maintenance-reports/MNT-0262-029.md",
-              "assetId": "WELL-0262"
-            },
-            {
-              "id": "MNT-0262-029",
-              "title": "Repair report · MNT-0262-029",
-              "type": "repair report",
-              "path": "dataset/assets/WELL-0262/maintenance-reports/MNT-0262-029.md",
-              "excerpt": "## Spill clean-up and waste - About 4.4 m³ of stained soil excavated, bagged and sent to an approved disposal site under waste manifest WM-0262-029 (WS-06).",
-              "assetId": "WELL-0262"
-            },
-            {
-              "id": "REG-0262-001",
-              "title": "Regulator event · REG-0262-001",
-              "type": "regulator",
-              "path": "dataset/assets/WELL-0262/regulatory-events.jsonl",
-              "excerpt": "asset id: WELL-0262 · date: 2027-01-08 · agency: State Oil & Gas Commission · event type: spill_report_filed · protocol id: SR-01 · related inspection id: INS-0262-0218 · detail: Operator filed spill report 17 h after detection; est. 6.1 bbl crude. · hours to report: 17 · fine usd: 0 · status: closed · event id: REG-0262-001",
-              "assetId": "WELL-0262"
-            },
-            {
-              "id": "INS-0277-0205",
-              "title": "Inspection · INS-0277-0205",
-              "type": "inspection",
-              "path": "dataset/assets/WELL-0277/inspections.jsonl",
-              "excerpt": "inspection id: INS-0277-0205 · asset id: WELL-0277 · inspected at: 2026-10-01T11:45:00Z · inspector user id: U-204 · method: drone · ambient temp c: 21.6 · wellhead temp c: 56.7 · spill detected: true · spill area pct: 11.4 · spill est volume bbl: 6.2 · notes: Pooled fluid near flowline.",
-              "assetId": "WELL-0277"
-            },
-            {
-              "id": "MNT-0277-031",
-              "title": "Repair · MNT-0277-031",
-              "type": "repair",
-              "path": "dataset/assets/WELL-0277/maintenance.jsonl",
-              "excerpt": "maintenance id: MNT-0277-031 · asset id: WELL-0277 · started at: 2026-10-02T08:00:00Z · completed at: 2026-10-03T08:00:00Z · maintenance type: corrective · equipment kind: flowline · issue: Flowline leak causing spill · action taken: Replaced leaking flowline section and remediated soil · technician user id: U-304 · downtime hours: 24 · triggered by inspection id: INS-0277-0205 · report file: maintenance-reports/MNT-0277-031.md",
-              "assetId": "WELL-0277"
-            },
-            {
-              "id": "MNT-0277-031",
-              "title": "Repair report · MNT-0277-031",
-              "type": "repair report",
-              "path": "dataset/assets/WELL-0277/maintenance-reports/MNT-0277-031.md",
-              "excerpt": "- 4 soil samples taken around the spill; the highest result after clean-up was 0.85% TPH, below the 1.0% target (SR-03). - Soil samples sent to the lab. ## Parts and cost",
-              "assetId": "WELL-0277"
-            },
-            {
-              "id": "REG-0277-001",
-              "title": "Regulator event · REG-0277-001",
-              "type": "regulator",
-              "path": "dataset/assets/WELL-0277/regulatory-events.jsonl",
-              "excerpt": "asset id: WELL-0277 · date: 2026-10-03 · agency: State Oil & Gas Commission · event type: spill_report_filed · protocol id: SR-01 · related inspection id: INS-0277-0205 · detail: Operator filed spill report 38 h after detection; est. 6.2 bbl crude. · hours to report: 38 · fine usd: 0 · status: closed · event id: REG-0277-001",
-              "assetId": "WELL-0277"
-            },
-            {
-              "id": "REG-0277-002",
-              "title": "Regulator event · REG-0277-002",
-              "type": "regulator",
-              "path": "dataset/assets/WELL-0277/regulatory-events.jsonl",
-              "excerpt": "asset id: WELL-0277 · date: 2026-10-18 · agency: State Oil & Gas Commission · event type: notice_of_violation · protocol id: SR-01 · related inspection id: INS-0277-0205 · detail: Reportable spill not reported within 24 hours of discovery. · hours to report: 38 · fine usd: 5000 · status: closed · event id: REG-0277-002",
-              "assetId": "WELL-0277"
-            },
-            {
-              "id": "REG-0277-003",
-              "title": "Regulator event · REG-0277-003",
-              "type": "regulator",
-              "path": "dataset/assets/WELL-0277/regulatory-events.jsonl",
-              "excerpt": "asset id: WELL-0277 · date: 2026-10-26 · agency: State Oil & Gas Commission · event type: nov_response_filed · protocol id: RC-04 · related inspection id: INS-0277-0205 · detail: Operator response and corrective action plan submitted. · fine usd: 0 · status: closed · event id: REG-0277-003",
-              "assetId": "WELL-0277"
-            },
-            {
-              "id": "REG-0277-004",
-              "title": "Regulator event · REG-0277-004",
-              "type": "regulator",
-              "path": "dataset/assets/WELL-0277/regulatory-events.jsonl",
-              "excerpt": "asset id: WELL-0277 · date: 2026-11-10 · agency: Regional Environmental Protection Office · event type: site_inspection · protocol id: SR-03 · related inspection id: INS-0277-0205 · detail: Remediation verified; site meets cleanup standard. · fine usd: 0 · status: closed · event id: REG-0277-004",
-              "assetId": "WELL-0277"
-            }
-          ],
-          "conflicts": [],
-          "referencedWellIds": [
-            "WELL-0119",
-            "WELL-0123",
-            "WELL-0168",
-            "WELL-0182",
-            "WELL-0262",
-            "WELL-0277"
-          ],
-          "trace": [
-            {
-              "tool": "gemini_planner",
-              "detail": "Structured plan validated: regulator_letter. Only this user’s last five exchanges were supplied.",
-              "durationMs": 2223
-            },
-            {
-              "tool": "regulator_letter",
-              "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 34
-            }
-          ],
-          "model": {
-            "name": "gemini-3.5-flash-lite",
-            "status": "hosted"
-          },
-          "durationMs": 2258
-        }
-      },
-      {
         "userText": "When a well stays shut in longer than the repair itself, what are we usually waiting on: parts, crews, contractors or weather? Break it down by area for jobs started in 2026, with the typical number of extra days, and tell me if any area stands out.",
-        "answer": "For 634 jobs started in 2026 (of 4360 jobs started in that period; the rest record no wait) the repair report names why the well stayed shut in longer than the repair. Most common: Contractors 33%, Crews 27%, Weather 22%, Parts 18%. Typical (median) extra wait is about 9 days (field-wide median by reason: Parts 9 d, Crews 9 d, Contractors 9 d, Weather 9 d).\nNo area clearly stands out: area medians are 8 to 10 days and the reason mix is within chance (chi-square 10.3 on 18 degrees of freedom, p about 0.92).\nWorth watching only, small-sample noise: Southwest Block 24 (SW-24): Crews 18% of 66 jobs vs 27% field-wide (z -1.6).\nPer area (jobs; each reason as count (share of the area's waiting jobs) / median extra days; last value is the area median):\n- Southwest Block 23 (SW-23): 72 jobs; Parts 16 (22%) / 12.5 d; Crews 19 (26%) / 7 d; Contractors 21 (29%) / 9 d; Weather 16 (22%) / 9 d; area median 8.5 d\n- Southwest Block 24 (SW-24): 66 jobs; Parts 12 (18%) / 8 d; Crews 12 (18%) / 12 d; Contractors 27 (41%) / 9 d; Weather 15 (23%) / 10 d; area median 9 d\n- Northeast Block 7 (NE-07): 64 jobs; Parts 15 (23%) / 15 d; Crews 14 (22%) / 11.5 d; Contractors 20 (31%) / 9 d; Weather 15 (23%) / 9 d; area median 9 d\n- Northeast Block 8 (NE-08): 80 jobs; Parts 13 (16%) / 10 d; Crews 25 (31%) / 9 d; Contractors 24 (30%) / 9 d; Weather 18 (23%) / 8 d; area median 8 d\n- Southeast Block 31 (SE-31): 40 jobs; Parts 6 (15%) / 8.5 d; Crews 9 (23%) / 9 d; Contractors 17 (43%) / 14 d; Weather 8 (20%) / 12.5 d; area median 10 d\n- Northwest Block 12 (NW-12): 172 jobs; Parts 29 (17%) / 9 d; Crews 54 (31%) / 9 d; Contractors 52 (30%) / 9 d; Weather 37 (22%) / 9 d; area median 9 d\n- Southeast Block 32 (SE-32): 140 jobs; Parts 26 (19%) / 9.5 d; Crews 37 (26%) / 10 d; Contractors 46 (33%) / 9 d; Weather 31 (22%) / 8 d; area median 9 d\n- All areas: 634 jobs; Parts 117 (18%) / 9 d; Crews 170 (27%) / 9 d; Contractors 207 (33%) / 9 d; Weather 140 (22%) / 9 d; field median 9 d\nTest used: an area stands out if, with at least 30 jobs, a reason share differs from the field share by |z| >= 3 (binomial z-score; strict because there are 28 comparisons) or its median extra days differs from the field median by at least 3 days.\nReasons are classified from the \"What happened\" sentence of each repair report using this keyword map: Weather = rain, weather, storm, flood, snow, ice, impassable lease road; Parts = back-ordered, replacement part, parts, supplier, vendor, shipment; Crews = crew committed elsewhere (e.g. spill response), personnel; Contractors = weekday contractor slot, contractor; \"workover rig busy\": company rig = Crews, a named contractor rig = Contractors (future-tense reports use the job's contractor field).\nWording found in the reports: replacement part back-ordered 117, heavy rain / lease road impassable 140, contractor workover rig busy 76, crew on higher-priority spill response 112, weekday contractor slot 131, company workover rig busy 58.\nClassification choice: 134 jobs are \"workover rig busy\" waits. If every rig wait were called Crews instead, Crews would be 246 (39%) and Contractors 131 (21%).\n2 jobs are still in progress and their reports use future wording (\"expected to stay shut in\"); they are counted (MNT-0404-034, MNT-0496-033).\nSource: the recorded reason and the number of extra days are only in each repair report's \"What happened\" text; maintenance records have no reason field. 39 generic operator notes about waiting for parts or weather in this period carry no day count and do not reliably match the report of the nearest job, so they were ignored. Extra days are the number stated in the report (for rig waits, the days waited for the rig).",
+        "answer": "For 634 jobs started in 2026 (of 4360 jobs started in that period; the rest record no wait) the repair report names why the well stayed shut in longer than the repair. Most common: Contractors 33%, Crews 27%, Weather 22%, Parts 18%. Typical (median) extra wait is about 9 days (field-wide median by reason: Parts 9 d, Crews 9 d, Contractors 9 d, Weather 9 d).\nStands out: Southeast Block 31 (SE-31) for Contractors waits: 43% of its 40 waiting jobs vs 33% field-wide, and a median extra wait of 14 d for those jobs vs 9 d field-wide. Caveat: this rests on 40 jobs, so on its own it is not statistically significant (chi-square 10.3 on 18 degrees of freedom, p about 0.92); treat it as an operational signal worth checking with the contractors in that area.\nWorth watching only, small-sample noise: Southwest Block 24 (SW-24): Crews 18% of 66 jobs vs 27% field-wide (z -1.6).\nPer area (jobs; each reason as count (share of the area's waiting jobs) / median extra days; last value is the area median):\n- Southwest Block 23 (SW-23): 72 jobs; Parts 16 (22%) / 12.5 d; Crews 19 (26%) / 7 d; Contractors 21 (29%) / 9 d; Weather 16 (22%) / 9 d; area median 8.5 d\n- Southwest Block 24 (SW-24): 66 jobs; Parts 12 (18%) / 8 d; Crews 12 (18%) / 12 d; Contractors 27 (41%) / 9 d; Weather 15 (23%) / 10 d; area median 9 d\n- Northeast Block 7 (NE-07): 64 jobs; Parts 15 (23%) / 15 d; Crews 14 (22%) / 11.5 d; Contractors 20 (31%) / 9 d; Weather 15 (23%) / 9 d; area median 9 d\n- Northeast Block 8 (NE-08): 80 jobs; Parts 13 (16%) / 10 d; Crews 25 (31%) / 9 d; Contractors 24 (30%) / 9 d; Weather 18 (23%) / 8 d; area median 8 d\n- Southeast Block 31 (SE-31): 40 jobs; Parts 6 (15%) / 8.5 d; Crews 9 (23%) / 9 d; Contractors 17 (43%) / 14 d; Weather 8 (20%) / 12.5 d; area median 10 d\n- Northwest Block 12 (NW-12): 172 jobs; Parts 29 (17%) / 9 d; Crews 54 (31%) / 9 d; Contractors 52 (30%) / 9 d; Weather 37 (22%) / 9 d; area median 9 d\n- Southeast Block 32 (SE-32): 140 jobs; Parts 26 (19%) / 9.5 d; Crews 37 (26%) / 10 d; Contractors 46 (33%) / 9 d; Weather 31 (22%) / 8 d; area median 9 d\n- All areas: 634 jobs; Parts 117 (18%) / 9 d; Crews 170 (27%) / 9 d; Contractors 207 (33%) / 9 d; Weather 140 (22%) / 9 d; field median 9 d\nTest used: an area stands out if, with at least 30 jobs, a reason share differs from the field share by |z| >= 3 (binomial z-score; strict because there are 28 comparisons) or its median extra days differs from the field median by at least 3 days.\nReasons are classified from the \"What happened\" sentence of each repair report using this keyword map: Weather = rain, weather, storm, flood, snow, ice, impassable lease road; Parts = back-ordered, replacement part, parts, supplier, vendor, shipment; Crews = crew committed elsewhere (e.g. spill response), personnel; Contractors = weekday contractor slot, contractor; \"workover rig busy\": company rig = Crews, a named contractor rig = Contractors (future-tense reports use the job's contractor field).\nWording found in the reports: replacement part back-ordered 117, heavy rain / lease road impassable 140, contractor workover rig busy 76, crew on higher-priority spill response 112, weekday contractor slot 131, company workover rig busy 58.\nClassification choice: 134 jobs are \"workover rig busy\" waits. If every rig wait were called Crews instead, Crews would be 246 (39%) and Contractors 131 (21%).\n2 jobs are still in progress and their reports use future wording (\"expected to stay shut in\"); they are counted (MNT-0404-034, MNT-0496-033).\nSource: the recorded reason and the number of extra days are only in each repair report's \"What happened\" text; maintenance records have no reason field. 39 generic operator notes about waiting for parts or weather in this period carry no day count and do not reliably match the report of the nearest job, so they were ignored. Extra days are the number stated in the report (for rig waits, the days waited for the rig).",
         "wellIds": [
           "WELL-0001",
           "WELL-0004",
@@ -1928,9 +1503,9 @@
           "WELL-0115",
           "WELL-0116"
         ],
-        "createdAt": "2026-10-17T11:56:24.323Z",
+        "createdAt": "2026-10-17T13:39:03.162Z",
         "response": {
-          "answer": "For 634 jobs started in 2026 (of 4360 jobs started in that period; the rest record no wait) the repair report names why the well stayed shut in longer than the repair. Most common: Contractors 33%, Crews 27%, Weather 22%, Parts 18%. Typical (median) extra wait is about 9 days (field-wide median by reason: Parts 9 d, Crews 9 d, Contractors 9 d, Weather 9 d).\nNo area clearly stands out: area medians are 8 to 10 days and the reason mix is within chance (chi-square 10.3 on 18 degrees of freedom, p about 0.92).\nWorth watching only, small-sample noise: Southwest Block 24 (SW-24): Crews 18% of 66 jobs vs 27% field-wide (z -1.6).\nPer area (jobs; each reason as count (share of the area's waiting jobs) / median extra days; last value is the area median):\n- Southwest Block 23 (SW-23): 72 jobs; Parts 16 (22%) / 12.5 d; Crews 19 (26%) / 7 d; Contractors 21 (29%) / 9 d; Weather 16 (22%) / 9 d; area median 8.5 d\n- Southwest Block 24 (SW-24): 66 jobs; Parts 12 (18%) / 8 d; Crews 12 (18%) / 12 d; Contractors 27 (41%) / 9 d; Weather 15 (23%) / 10 d; area median 9 d\n- Northeast Block 7 (NE-07): 64 jobs; Parts 15 (23%) / 15 d; Crews 14 (22%) / 11.5 d; Contractors 20 (31%) / 9 d; Weather 15 (23%) / 9 d; area median 9 d\n- Northeast Block 8 (NE-08): 80 jobs; Parts 13 (16%) / 10 d; Crews 25 (31%) / 9 d; Contractors 24 (30%) / 9 d; Weather 18 (23%) / 8 d; area median 8 d\n- Southeast Block 31 (SE-31): 40 jobs; Parts 6 (15%) / 8.5 d; Crews 9 (23%) / 9 d; Contractors 17 (43%) / 14 d; Weather 8 (20%) / 12.5 d; area median 10 d\n- Northwest Block 12 (NW-12): 172 jobs; Parts 29 (17%) / 9 d; Crews 54 (31%) / 9 d; Contractors 52 (30%) / 9 d; Weather 37 (22%) / 9 d; area median 9 d\n- Southeast Block 32 (SE-32): 140 jobs; Parts 26 (19%) / 9.5 d; Crews 37 (26%) / 10 d; Contractors 46 (33%) / 9 d; Weather 31 (22%) / 8 d; area median 9 d\n- All areas: 634 jobs; Parts 117 (18%) / 9 d; Crews 170 (27%) / 9 d; Contractors 207 (33%) / 9 d; Weather 140 (22%) / 9 d; field median 9 d\nTest used: an area stands out if, with at least 30 jobs, a reason share differs from the field share by |z| >= 3 (binomial z-score; strict because there are 28 comparisons) or its median extra days differs from the field median by at least 3 days.\nReasons are classified from the \"What happened\" sentence of each repair report using this keyword map: Weather = rain, weather, storm, flood, snow, ice, impassable lease road; Parts = back-ordered, replacement part, parts, supplier, vendor, shipment; Crews = crew committed elsewhere (e.g. spill response), personnel; Contractors = weekday contractor slot, contractor; \"workover rig busy\": company rig = Crews, a named contractor rig = Contractors (future-tense reports use the job's contractor field).\nWording found in the reports: replacement part back-ordered 117, heavy rain / lease road impassable 140, contractor workover rig busy 76, crew on higher-priority spill response 112, weekday contractor slot 131, company workover rig busy 58.\nClassification choice: 134 jobs are \"workover rig busy\" waits. If every rig wait were called Crews instead, Crews would be 246 (39%) and Contractors 131 (21%).\n2 jobs are still in progress and their reports use future wording (\"expected to stay shut in\"); they are counted (MNT-0404-034, MNT-0496-033).\nSource: the recorded reason and the number of extra days are only in each repair report's \"What happened\" text; maintenance records have no reason field. 39 generic operator notes about waiting for parts or weather in this period carry no day count and do not reliably match the report of the nearest job, so they were ignored. Extra days are the number stated in the report (for rig waits, the days waited for the rig).",
+          "answer": "For 634 jobs started in 2026 (of 4360 jobs started in that period; the rest record no wait) the repair report names why the well stayed shut in longer than the repair. Most common: Contractors 33%, Crews 27%, Weather 22%, Parts 18%. Typical (median) extra wait is about 9 days (field-wide median by reason: Parts 9 d, Crews 9 d, Contractors 9 d, Weather 9 d).\nStands out: Southeast Block 31 (SE-31) for Contractors waits: 43% of its 40 waiting jobs vs 33% field-wide, and a median extra wait of 14 d for those jobs vs 9 d field-wide. Caveat: this rests on 40 jobs, so on its own it is not statistically significant (chi-square 10.3 on 18 degrees of freedom, p about 0.92); treat it as an operational signal worth checking with the contractors in that area.\nWorth watching only, small-sample noise: Southwest Block 24 (SW-24): Crews 18% of 66 jobs vs 27% field-wide (z -1.6).\nPer area (jobs; each reason as count (share of the area's waiting jobs) / median extra days; last value is the area median):\n- Southwest Block 23 (SW-23): 72 jobs; Parts 16 (22%) / 12.5 d; Crews 19 (26%) / 7 d; Contractors 21 (29%) / 9 d; Weather 16 (22%) / 9 d; area median 8.5 d\n- Southwest Block 24 (SW-24): 66 jobs; Parts 12 (18%) / 8 d; Crews 12 (18%) / 12 d; Contractors 27 (41%) / 9 d; Weather 15 (23%) / 10 d; area median 9 d\n- Northeast Block 7 (NE-07): 64 jobs; Parts 15 (23%) / 15 d; Crews 14 (22%) / 11.5 d; Contractors 20 (31%) / 9 d; Weather 15 (23%) / 9 d; area median 9 d\n- Northeast Block 8 (NE-08): 80 jobs; Parts 13 (16%) / 10 d; Crews 25 (31%) / 9 d; Contractors 24 (30%) / 9 d; Weather 18 (23%) / 8 d; area median 8 d\n- Southeast Block 31 (SE-31): 40 jobs; Parts 6 (15%) / 8.5 d; Crews 9 (23%) / 9 d; Contractors 17 (43%) / 14 d; Weather 8 (20%) / 12.5 d; area median 10 d\n- Northwest Block 12 (NW-12): 172 jobs; Parts 29 (17%) / 9 d; Crews 54 (31%) / 9 d; Contractors 52 (30%) / 9 d; Weather 37 (22%) / 9 d; area median 9 d\n- Southeast Block 32 (SE-32): 140 jobs; Parts 26 (19%) / 9.5 d; Crews 37 (26%) / 10 d; Contractors 46 (33%) / 9 d; Weather 31 (22%) / 8 d; area median 9 d\n- All areas: 634 jobs; Parts 117 (18%) / 9 d; Crews 170 (27%) / 9 d; Contractors 207 (33%) / 9 d; Weather 140 (22%) / 9 d; field median 9 d\nTest used: an area stands out if, with at least 30 jobs, a reason share differs from the field share by |z| >= 3 (binomial z-score; strict because there are 28 comparisons) or its median extra days differs from the field median by at least 3 days.\nReasons are classified from the \"What happened\" sentence of each repair report using this keyword map: Weather = rain, weather, storm, flood, snow, ice, impassable lease road; Parts = back-ordered, replacement part, parts, supplier, vendor, shipment; Crews = crew committed elsewhere (e.g. spill response), personnel; Contractors = weekday contractor slot, contractor; \"workover rig busy\": company rig = Crews, a named contractor rig = Contractors (future-tense reports use the job's contractor field).\nWording found in the reports: replacement part back-ordered 117, heavy rain / lease road impassable 140, contractor workover rig busy 76, crew on higher-priority spill response 112, weekday contractor slot 131, company workover rig busy 58.\nClassification choice: 134 jobs are \"workover rig busy\" waits. If every rig wait were called Crews instead, Crews would be 246 (39%) and Contractors 131 (21%).\n2 jobs are still in progress and their reports use future wording (\"expected to stay shut in\"); they are counted (MNT-0404-034, MNT-0496-033).\nSource: the recorded reason and the number of extra days are only in each repair report's \"What happened\" text; maintenance records have no reason field. 39 generic operator notes about waiting for parts or weather in this period carry no day count and do not reliably match the report of the nearest job, so they were ignored. Extra days are the number stated in the report (for rig waits, the days waited for the rig).",
           "visualization": {
             "type": "bar",
             "title": "Why wells stayed shut in longer than the repair, by area (jobs started 2026)",
@@ -3306,22 +2881,22 @@
             {
               "tool": "gemini_planner",
               "detail": "Structured plan validated: delay_reasons. Only this user’s last five exchanges were supplied.",
-              "durationMs": 1984
+              "durationMs": 2586
             },
             {
               "tool": "delay_reasons",
               "detail": "Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.",
-              "durationMs": 33
+              "durationMs": 73
             }
           ],
           "model": {
             "name": "gemini-3.5-flash-lite",
             "status": "hosted"
           },
-          "durationMs": 2017
+          "durationMs": 2659
         }
       }
     ],
-    "revision": 20
+    "revision": 1
   }
 }

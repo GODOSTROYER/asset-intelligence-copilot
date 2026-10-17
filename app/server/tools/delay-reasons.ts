@@ -175,9 +175,22 @@ export function delayReasons(d: Dataset, s: CopilotState, userId: string, q: str
   const lines: string[] = [];
   const topReason = [...REASONS].sort((x, y) => fieldShare[y] - fieldShare[x]);
   lines.push('For ' + total + ' jobs started in ' + periodLabel + ' (of ' + jobsStarted + ' jobs started in that period; the rest record no wait) the repair report names why the well stayed shut in longer than the repair. Most common: ' + topReason.map(r => LABEL[r] + ' ' + Math.round(fieldShare[r] * 100) + '%').join(', ') + '. Typical (median) extra wait is about ' + (Number.isInteger(fieldMedian) ? fieldMedian : fieldMedian.toFixed(1)) + ' days (field-wide median by reason: ' + REASONS.map(r => LABEL[r] + ' ' + med(jobs.filter(j => j.reason === r).map(j => j.days))).join(', ') + ').');
-  lines.push(standouts.length
-    ? 'Stands out (rule below): ' + standouts.join('; ') + '.'
-    : 'No area clearly stands out: area medians are ' + Math.min(...rows.map(r => r.median)) + ' to ' + Math.max(...rows.map(r => r.median)) + ' days and the reason mix is within chance (chi-square ' + chi.toFixed(1) + ' on ' + df + ' degrees of freedom, p about ' + pValue.toFixed(2) + ').');
+  // Operational stand-out: the largest practical deviation (a reason share at least 8 points above the
+  // field share, with enough jobs), reported even when it is not statistically significant on its own.
+  const PRACTICAL_PP = 0.08;
+  let practical: { r: typeof rows[number]; reason: typeof REASONS[number]; gap: number } | undefined;
+  for (const r of rows) {
+    if (r.n < MIN_JOBS) continue;
+    for (const reason of REASONS) {
+      const gap = r.counts[reason] / r.n - fieldShare[reason];
+      if (gap >= PRACTICAL_PP && (!practical || gap > practical.gap)) practical = { r, reason, gap };
+    }
+  }
+  if (standouts.length) lines.push('Stands out (rule below): ' + standouts.join('; ') + '.');
+  else if (practical) {
+    const { r, reason } = practical;
+    lines.push('Stands out: ' + aLabel(r.id) + ' for ' + LABEL[reason] + ' waits: ' + Math.round(r.counts[reason] / r.n * 100) + '% of its ' + r.n + ' waiting jobs vs ' + Math.round(fieldShare[reason] * 100) + '% field-wide, and a median extra wait of ' + med(r.meds[reason]) + ' for those jobs vs ' + med(jobs.filter(j => j.reason === reason).map(j => j.days)) + ' field-wide. Caveat: this rests on ' + r.n + ' jobs, so on its own it is not statistically significant (chi-square ' + chi.toFixed(1) + ' on ' + df + ' degrees of freedom, p about ' + pValue.toFixed(2) + '); treat it as an operational signal worth checking with the contractors in that area.');
+  } else lines.push('No area clearly stands out: area medians are ' + Math.min(...rows.map(r => r.median)) + ' to ' + Math.max(...rows.map(r => r.median)) + ' days and the reason mix is within chance (chi-square ' + chi.toFixed(1) + ' on ' + df + ' degrees of freedom, p about ' + pValue.toFixed(2) + ').');
   if (watch.length) lines.push('Worth watching only, small-sample noise: ' + watch.slice(0, 3).map(w => w.text).join('; ') + '.');
   lines.push('Per area (jobs; each reason as count (share of the area\'s waiting jobs) / median extra days; last value is the area median):');
   for (const r of rows) lines.push('- ' + aLabel(r.id) + ': ' + r.n + ' jobs; ' + REASONS.map(x => LABEL[x] + ' ' + r.counts[x] + ' (' + pct(r.counts[x], r.n) + ') / ' + med(r.meds[x])).join('; ') + '; area median ' + r.median + ' d' + (r.n < MIN_JOBS ? ' [fewer than ' + MIN_JOBS + ' jobs]' : ''));

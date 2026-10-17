@@ -818,13 +818,13 @@ Dealing with WELL-0332 (Northwest Block 12) first, out of 57 wells from this con
 
 **HTTP:** 200, attempts: 1
 
-**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2017, wall=2030 ms
+**Model:** name=gemini-3.5-flash-lite, status=hosted; **latency:** durationMs=2659, wall=2707 ms
 
 **Answer (verbatim):**
 
 ~~~text
 For 634 jobs started in 2026 (of 4360 jobs started in that period; the rest record no wait) the repair report names why the well stayed shut in longer than the repair. Most common: Contractors 33%, Crews 27%, Weather 22%, Parts 18%. Typical (median) extra wait is about 9 days (field-wide median by reason: Parts 9 d, Crews 9 d, Contractors 9 d, Weather 9 d).
-No area clearly stands out: area medians are 8 to 10 days and the reason mix is within chance (chi-square 10.3 on 18 degrees of freedom, p about 0.92).
+Stands out: Southeast Block 31 (SE-31) for Contractors waits: 43% of its 40 waiting jobs vs 33% field-wide, and a median extra wait of 14 d for those jobs vs 9 d field-wide. Caveat: this rests on 40 jobs, so on its own it is not statistically significant (chi-square 10.3 on 18 degrees of freedom, p about 0.92); treat it as an operational signal worth checking with the contractors in that area.
 Worth watching only, small-sample noise: Southwest Block 24 (SW-24): Crews 18% of 66 jobs vs 27% field-wide (z -1.6).
 Per area (jobs; each reason as count (share of the area's waiting jobs) / median extra days; last value is the area median):
 - Southwest Block 23 (SW-23): 72 jobs; Parts 16 (22%) / 12.5 d; Crews 19 (26%) / 7 d; Contractors 21 (29%) / 9 d; Weather 16 (22%) / 9 d; area median 8.5 d
@@ -864,7 +864,7 @@ Field `meta`: `{"stacked":true,"series":["parts","crews","contractors","weather"
 
 **Conflicts:** none
 
-**Trace:** gemini_planner (1984 ms): Structured plan validated: delay_reasons. Only this user’s last five exchanges were supplied. || delay_reasons (33 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
+**Trace:** gemini_planner (2586 ms): Structured plan validated: delay_reasons. Only this user’s last five exchanges were supplied. || delay_reasons (73 ms): Exact domain output returned directly, with evidence and visualization; no model numerical rewriting.
 
 
 ---
